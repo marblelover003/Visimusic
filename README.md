@@ -4,6 +4,8 @@
 
 There are 47 songs to choose from. Select one from the dropdown and watch it get visualized! It might take a minute for the visualizer to gather the needed data, but it will definitely be worth it in the end.
 
+This is the list of the songs that are available:
+
 |                          Song | Artist                    |
 |-------------------------------|---------------------------|
 |                     Barracuda | Noisestorm                |
