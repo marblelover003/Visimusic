@@ -9,6 +9,21 @@ function initPage(song) {
   source.connect(analyser);
   analyser.connect(context.destination);
   frequency_array = new Uint8Array(analyser.frequencyBinCount);
+  canvas = document.getElementById("renderer");
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  ctx = canvas.getContext("2d");
+  center_x = canvas.width / 2;
+  center_y = canvas.height / 2;
+  var gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+  gradient.addColorStop(0, "rgba(35, 7, 77, 1)");
+  gradient.addColorStop(1, "rgba(204, 83, 51, 1)");
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.beginPath();
+  ctx.arc(center_x, center_y, radius, 0, 2*Math.PI);
+  ctx.stroke();
+  analyser.getByteFrequencyData(frequency_array);
   setTimeout(function() {
     audio.load();
     audio.play();
