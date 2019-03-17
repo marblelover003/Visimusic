@@ -1,4 +1,4 @@
-var canvas, ctx, center_x, center_y, radius = 75, bars = 200, x_end, y_end, bar_height, bar_width = 2, frequency_array;
+var canvas, ctx, center_x, center_y, radius = 30, bars = 512, x_end, y_end, bar_height, bar_width = 2, frequency_array;
 function initPage(song) {
   audio = new Audio();
   context = new (window.AudioContext || window.webkitAudioContext());
@@ -26,16 +26,18 @@ function animationLooper(){
   ctx.beginPath();
   ctx.arc(center_x, center_y, radius, 0, 2*Math.PI);
   ctx.stroke();
+  ctx.rotate(-90*Math.PI/180);
   analyser.getByteFrequencyData(frequency_array);
   for(var i = 0; i < bars; i++){
     rads = Math.PI * 2 / bars;
-    bar_height = frequency_array[i]*0.7;
+    bar_height = frequency_array[i]*1;
     x = center_x + Math.cos(rads * i) * (radius);
     y = center_y + Math.sin(rads * i) * (radius);
     x_end = center_x + Math.cos(rads * i)*(radius + bar_height);
     y_end = center_y + Math.sin(rads * i)*(radius + bar_height);
     drawBar(x, y, x_end, y_end, bar_width, frequency_array[i]);
   }
+  ctx.rotate(90*Math.PI/180);
   window.requestAnimationFrame(animationLooper);
 }
 function drawBar(x1, y1, x2, y2, width, frequency){
