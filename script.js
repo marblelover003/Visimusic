@@ -26,7 +26,6 @@ function animationLooper(){
   ctx.beginPath();
   ctx.arc(center_x, center_y, radius, 0, 2*Math.PI);
   ctx.stroke();
-  ctx.rotate(-90*Math.PI/180);
   analyser.getByteFrequencyData(frequency_array);
   for(var i = 0; i < bars; i++){
     rads = Math.PI * 2 / bars;
@@ -37,7 +36,6 @@ function animationLooper(){
     y_end = center_y + Math.sin(rads * i)*(radius + bar_height);
     drawBar(x, y, x_end, y_end, bar_width, frequency_array[i]);
   }
-  ctx.rotate(90*Math.PI/180);
   window.requestAnimationFrame(animationLooper);
 }
 function drawBar(x1, y1, x2, y2, width, frequency){
