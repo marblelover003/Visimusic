@@ -9,9 +9,11 @@ function initPage(song) {
   source.connect(analyser);
   analyser.connect(context.destination);
   frequency_array = new Uint8Array(analyser.frequencyBinCount);
-  audio.load();
-  audio.play();
-  animationLooper();
+  setTimeout(function() {
+    audio.load();
+    audio.play();
+    animationLooper();
+  }, 3000);
 }
 function animationLooper(){
   canvas = document.getElementById("renderer");
