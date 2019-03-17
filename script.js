@@ -1,6 +1,7 @@
 var canvas, ctx, center_x, center_y, radius = 180, bars = 100, x_end, y_end, bar_height, bar_width = 10, frequency_array;
 function initPage(song) {
-  audio = new Audio();
+  audio = document.getElementById("audio");
+  audio.pause();
   context = new (window.AudioContext || window.webkitAudioContext());
   analyser = context.createAnalyser();
   audio.src = song + ".mp3";
@@ -8,6 +9,7 @@ function initPage(song) {
   source.connect(analyser);
   analyser.connect(context.destination);
   frequency_array = new Uint8Array(analyser.frequencyBinCount);
+  audio.load();
   audio.play();
   animationLooper();
 }
