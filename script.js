@@ -28,7 +28,7 @@ function initPage(song) {
     audio.load();
     audio.play();
     animationLooper();
-  }, 3000);
+  }, 1000);
 }
 function animationLooper(){
   canvas = document.getElementById("renderer");
