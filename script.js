@@ -58,7 +58,7 @@ function animationLooper(){
   window.requestAnimationFrame(animationLooper);
 }
 function drawBar(x1, y1, x2, y2, width, frequency){
-  var lineColor = "rgb(" + 255 + ", " + frequency + ", " + frequency + ")";
+  var lineColor = "rgb(" + 255 + ", " + frequency + ", " + 0 + ")";
   ctx.strokeStyle = lineColor;
   ctx.lineWidth = width;
   ctx.beginPath();
