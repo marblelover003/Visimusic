@@ -2,12 +2,12 @@
 
 [Check it out!](http://marblelover003.github.io/Visimusic/)
 
-There are 47 songs to choose from. Select one from the dropdown and watch it get visualized! It might take a minute for the visualizer to gather the needed data, but it will definitely be worth it in the end.
+There are 48 songs to choose from. Select one from the dropdown and watch it get visualized! It might take a second for the visualizer to gather the needed data, but it will definitely be worth it in the end.
 
 This is the list of the songs that are available:
 
 |                          Song | Artist                    |
-|-------------------------------|---------------------------|
+|------------------------------:|:--------------------------|
 |                     Barracuda | Noisestorm                |
 |                       Cascade | Kubbi                     |
 |                   Cheat Codes | Nitro Fun                 |
@@ -31,6 +31,7 @@ This is the list of the songs that are available:
 |                          HYPE | Tokyo Machine             |
 |                 Into The Zone | Shirobon                  |
 |          Legacy *(feat. Zef)* | Danimal Cannon            |
+|                      Livewire | Zef                       |
 |              Logic Gatekeeper | Danimal Cannon & Zef      |
 |       Long Live The New Fresh | Danimal Cannon            |
 |                    Milky Ways | Bossfight                 |
