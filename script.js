@@ -24,8 +24,7 @@ function initPage() {
   ctx.beginPath();
   ctx.arc(center_x, center_y, radius, 0, 2*Math.PI);
   ctx.stroke();
-  analyser.smoothingTimeConstant = 0;
-  analyser.maxDecibels = 0;
+  analyser.smoothingTimeConstant = 0.4;
   analyser.getByteFrequencyData(frequency_array);
   document.getElementById("button").style.visibility = "hidden";
   document.getElementById("song").style.visibility = "hidden";
