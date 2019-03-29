@@ -26,7 +26,7 @@ function initPage() {
   ctx.stroke();
   analyser.fftSize = 8192;
   analyser.smoothingTimeConstant = 0.2;
-  analyser.minDecibels = -60;
+  analyser.minDecibels = -65;
   analyser.maxDecibels = -25;
   analyser.getByteFrequencyData(frequency_array);
   document.getElementById("button").style.visibility = "hidden";
