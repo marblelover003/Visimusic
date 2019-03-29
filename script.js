@@ -3,7 +3,7 @@ function initPage() {
   var song = document.getElementById("song").value;
   audio = document.getElementById("audio");
   audio.pause();
-  context = new (window.AudioContext || window.webkitAudioContext());
+  context = new (window.AudioContext || window.webkitAudioContext)();
   analyser = context.createAnalyser();
   audio.src = song + ".mp3";
   source = context.createMediaElementSource(audio);
@@ -24,6 +24,8 @@ function initPage() {
   ctx.beginPath();
   ctx.arc(center_x, center_y, radius, 0, 2*Math.PI);
   ctx.stroke();
+  analyser.smoothingTimeConstant = 0;
+  analyser.maxDecibels = 0;
   analyser.getByteFrequencyData(frequency_array);
   document.getElementById("button").style.visibility = "hidden";
   document.getElementById("song").style.visibility = "hidden";
