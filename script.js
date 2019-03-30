@@ -18,8 +18,8 @@ function initPage() {
   center_x = canvas.width / 2;
   center_y = canvas.height / 2;
   var gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-  gradient.addColorStop(0, "rgba(35, 7, 77, 1)");
-  gradient.addColorStop(1, "rgba(204, 83, 51, 1)");
+  gradient.addColorStop(0, "rgba(64, 64, 64, 1)");
+  gradient.addColorStop(1, "rgba(64, 64, 64, 1)");
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   ctx.beginPath();
