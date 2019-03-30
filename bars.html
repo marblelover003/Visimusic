@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<style>
-			body {
+  <head>
+    <style>
+      body {
         background: black;
         overflow: hidden;
         font-size: 0;
@@ -12,9 +12,9 @@
         width: 2px;
         display: inline-block;
       }
-		</style>
-	</head>
-	<body>
+    </style>
+  </head>
+  <body>
     <span style="position: absolute;">
       <select id="song">
         <option></option>
@@ -670,16 +670,17 @@
     <div></div>
     <div></div>
     <div></div>
-    <div style="background: black; height: 500px;"></div>
-	</body>
-	<script>
-		var bar_height, frequency_array;
+    <div></div>
+    <div style="background: black; height: 500px; display: inline-block;"></div>
+  </body>
+  <script>
+    var bar_height, frequency_array;
     function initPage() {
       var song = document.getElementById("song").value;
       audio = document.getElementById("audio");
       context = new (window.AudioContext || window.webkitAudioContext)();
       analyser = context.createAnalyser();
-      audio.src = song + ".mp3";
+      audio.src = "C:/Users/scott.carroll/Music/" + song + ".mp3";
       source = context.createMediaElementSource(audio);
       source.connect(analyser);
       analyser.connect(context.destination);
@@ -700,7 +701,7 @@
     function animationLooper(){
       analyser.getByteFrequencyData(frequency_array);
       for(var i = 0; i < 600; i++){
-        bar_height = frequency_array[i]*1.5;
+        bar_height = frequency_array[i];
         setH(i, bar_height);
       }
       window.requestAnimationFrame(animationLooper);
@@ -708,5 +709,5 @@
     function setH(barID, height) {
       document.getElementsByTagName("div")[barID].style.height = height + "px";
     }
-	</script>
+  </script>
 </html>
