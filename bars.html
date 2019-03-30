@@ -240,7 +240,7 @@
       frequency_array = new Uint8Array(analyser.frequencyBinCount);
       analyser.fftSize = 1024;
       analyser.smoothingTimeConstant = 0.4;
-      analyser.minDecibels = -65;
+      analyser.minDecibels = -60;
       analyser.maxDecibels = -25;
       analyser.getByteFrequencyData(frequency_array);
       document.getElementById("button").style.visibility = "hidden";
