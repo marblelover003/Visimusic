@@ -224,7 +224,7 @@
     <div></div>
     <div></div>
     <div></div>
-    <div style="background: black; height: 300px; display: inline-block;"></div>
+    <div style="background: black; height: 600px; display: inline-block;"></div>
   </body>
   <script>
     var bar_height, frequency_array;
@@ -238,8 +238,8 @@
       source.connect(analyser);
       analyser.connect(context.destination);
       frequency_array = new Uint8Array(analyser.frequencyBinCount);
-      analyser.fftSize = 4096;
-      analyser.smoothingTimeConstant = 0.1;
+      analyser.fftSize = 1024;
+      analyser.smoothingTimeConstant = 0.4;
       analyser.minDecibels = -65;
       analyser.maxDecibels = -25;
       analyser.getByteFrequencyData(frequency_array);
@@ -254,7 +254,7 @@
     function animationLooper(){
       analyser.getByteFrequencyData(frequency_array);
       for(var i = 0; i < 150; i++){
-        bar_height = frequency_array[i];
+        bar_height = frequency_array[i]*2;
         setH(i, bar_height);
       }
       window.requestAnimationFrame(animationLooper);
