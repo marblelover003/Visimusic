@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Visimusic: Bars</title>
     <style>
       body {
         background: black;
@@ -238,9 +239,9 @@
       source.connect(analyser);
       analyser.connect(context.destination);
       frequency_array = new Uint8Array(analyser.frequencyBinCount);
-      analyser.fftSize = 8192;
+      analyser.fftSize = 4096;
       analyser.smoothingTimeConstant = 0.4;
-      analyser.minDecibels = -60;
+      analyser.minDecibels = -75;
       analyser.maxDecibels = -25;
       analyser.getByteFrequencyData(frequency_array);
       document.getElementById("button").style.visibility = "hidden";
