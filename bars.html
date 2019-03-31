@@ -228,7 +228,13 @@
     <div style="background: black; height: 600px; display: inline-block;"></div>
   </body>
   <script>
-    var bar_height, frequency_array;
+    var bar_height, frequency_array,
+        styles = {
+          alternating: "alternating",
+          sequential: "sequential",
+          random: "random",
+          single: "single"
+        };
     function initPage() {
       var song = document.getElementById("song").value;
       audio = document.getElementById("audio");
@@ -246,6 +252,165 @@
       analyser.getByteFrequencyData(frequency_array);
       document.getElementById("button").style.visibility = "hidden";
       document.getElementById("song").style.visibility = "hidden";
+      var colors, style;
+      switch (song) {
+        case "Barracuda":
+          colors = ["#e7e7e7", "#efefef", "#f7f7f7"];
+          style = styles.random;
+          break;
+        case "Cascade":
+          colors = ["#e5af71", "#ac4534", "#e8bc7d"];
+          style = styles.random;
+          break;
+        case "Cheat Codes":
+        case "FTW":
+        case "Once Again":
+        case "Till It\'s Over":
+          colors = ["#ffff00"];
+          style = styles.single;
+          break;
+        case "Checkpoint":
+          colors = ["#ff4e5b"];
+          style = styles.single;
+          break;
+        case "Chip Zeal":
+          colors = ["#ff0000", "#ffff00"];
+          style = styles.alternating;
+          break;
+        case "Chronos":
+        case "Corrupted":
+        case "Legacy":
+        case "Logic Gatekeeper":
+        case "Parallel Processing":
+        case "The Lunar Whale":
+          colors = ["#335566"];
+          style = styles.single;
+          if (song == "Corrupted") {
+            colors[1] = "#ff0080";
+            style = styles.alternating;
+          }
+          break;
+        case "Commando Steve":
+        case "Milky Ways":
+          colors = ["#ff0000", "#ffffff"];
+          style = styles.alternating;
+          break;
+        case "Cool Friends":
+          colors = ["#4643d2", "#c38ef8"];
+          style = styles.alternating;
+          break;
+        case "Core":
+        case "Cruise Control":
+        case "Livewire":
+        case "Tension":
+          colors = ["#ff8000"];
+          style = styles.single;
+          break;
+        case "Courtesy":
+        case "Focus":
+        case "Otis":
+          colors = ["#0432ea"];
+          style = styles.single;
+          break;
+        case "Dance of the Incognizant":
+          colors = ["#cf0200", "#f34b4a", "#a00000", "#871514", "#9f3134"];
+          style = styles.random;
+          break;
+        case "Destroid 8 - Annihilate":
+        case "Destroid 10 - Funk Hole":
+          colors = ["#ff0000", "#ff3300", "#ff6600", "#ff9900", "#ffcc00", "#ffff00"];
+          style = styles.random;
+          break;
+        case "Final Boss":
+          colors = ["#8b008b"];
+          style = styles.single;
+          break;
+        case "FOX":
+        case "On The Run":
+          colors = ["#008fdd", "#fc00eb", "#6624f8"];
+          style = styles.random;
+          break;
+        case "Houston":
+          colors = ["#99ff00"];
+          style = styles.single;
+          break;
+        case "HYPE":
+          colors = ["#209f07", "#bae967", "#89e952", "#38fa03", "#8ee050"];
+          style = styles.random;
+          break;
+        case "Into The Zone":
+          colors = ["#ff729c", "#fe0b41", "#bb96ff", "#462784"];
+          style = styles.random;
+          break;
+        case "Long Live The New Fresh":
+          colors = ["#801b55", "#483872"];
+          style = styles.alternating;
+          break;
+        case "New Game":
+          colors = ["#00bf00", "#00c300", "#00c700", "#00ca00", "#00cf00", "#00d300", "#00d700", "#00da00", "#00df00", "#00e300", "#00e700", "#00ea00", "#00ef00", "#00f300", "#00f700", "#00fa00", "#00ff00"];
+          style = styles.random;
+          break;
+        case "Paper Dolls":
+          colors = ["#ffffff"];
+          style = styles.single;
+          break;
+        case "Peer Gynt":
+          colors = ["#334422", "#fdeed1"];
+          style = styles.alternating;
+          break;
+        case "Rainbow Road":
+        case "Spectra":
+          colors = ["#ff0000", "#ff5500", "#ffaa00", "#ffff00", "#aaff00", "#55ff00", "#00ff00", "#00ff55", "#00ffaa", "#00ffff", "#00aaff", "#0055ff", "#0000ff", "#5500ff", "#aa00ff", "#ff00ff", "#ff00aa", "#ff0055"];
+          style = styles.sequential;
+          break;
+        case "Sevcon":
+        case "Wicked":
+          colors = ["#ff0000"];
+          style = styles.single;
+          break;
+        case "Sugar Rush":
+          colors = ["#7fffd4"];
+          style = styles.single;
+          break;
+        case "Termination Shock":
+          colors = ["#0000ff", "#00ffff"];
+          style = styles.alternating;
+          break;
+        case "The Art of War":
+          colors = ["#ffd700"];
+          style = styles.single;
+          break;
+        case "Tokyo Skies":
+          colors = ["#00008b"];
+          style = styles.single;
+          break;
+        case "Try This":
+          colors = ["#ff0080"];
+          style = styles.single;
+          break;
+        case "Unlocked":
+          colors = ["#eeeeee"];
+          style = styles.single;
+          break;
+        case "Vindicate Me":
+          colors = ["#00ff80"];
+          style = styles.single;
+          break;
+      }
+      for (var i = 0; i < 150; i++) {
+        switch (style) {
+          case "alternating":
+          case "sequential":
+            document.getElementsByTagName("div")[i].style.background = colors[i % colors.length];
+            break;
+          case "random":
+            document.getElementsByTagName("div")[i].style.background = colors[Math.floor(Math.random() * colors.length)];
+            break;
+          case "single":
+            document.getElementsByTagName("div")[i].style.background = colors[0];
+            break;
+        }
+      }
       setTimeout(function() {
         audio.load();
         audio.play();
