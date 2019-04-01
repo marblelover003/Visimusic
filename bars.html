@@ -246,7 +246,7 @@
       analyser.connect(context.destination);
       frequency_array = new Uint8Array(analyser.frequencyBinCount);
       analyser.fftSize = 4096;
-      analyser.smoothingTimeConstant = 0.4;
+      analyser.smoothingTimeConstant = 0;
       analyser.minDecibels = -75;
       analyser.maxDecibels = -25;
       analyser.getByteFrequencyData(frequency_array);
@@ -283,7 +283,7 @@
         case "Logic Gatekeeper":
         case "Parallel Processing":
         case "The Lunar Whale":
-          colors = ["#335566"];
+          colors = ["#113344"];
           style = styles.single;
           if (song == "Corrupted") {
             colors[1] = "#ff0080";
