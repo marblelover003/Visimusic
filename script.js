@@ -17,21 +17,21 @@ function initPage() {
   center_x = canvas.width / 2;
   center_y = canvas.height / 2;
   var gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-  gradient.addColorStop(0, "rgba(64, 64, 64, 1)");
-  gradient.addColorStop(1, "rgba(64, 64, 64, 1)");
+  gradient.addColorStop(0, "rgba(0, 0, 0, 1)");
+  gradient.addColorStop(1, "rgba(0, 0, 0, 1)");
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   ctx.beginPath();
   ctx.strokeStyle = "#ff0000";
+  ctx.lineWidth = 3;
   ctx.arc(center_x, center_y, radius, 0, 2*Math.PI);
   ctx.stroke();
-  analyser.fftSize = 8192;
+  analyser.fftSize = 4096;
   analyser.smoothingTimeConstant = 0.2;
   analyser.minDecibels = -75;
-  analyser.maxDecibels = 0;
+  analyser.maxDecibels = 15;
   analyser.getByteFrequencyData(frequency_array);
-  document.getElementById("button").style.visibility = "hidden";
-  document.getElementById("song").style.visibility = "hidden";
+  document.getElementById("songSelectMenu").style.visibility = "hidden";
   setTimeout(function() {
     audio.load();
     audio.play();
@@ -46,10 +46,11 @@ function animationLooper(){
   center_x = canvas.width / 2;
   center_y = canvas.height / 2;
   var gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-  gradient.addColorStop(0, "rgba(64, 64, 64, 1)");
-  gradient.addColorStop(1, "rgba(64, 64, 64, 1)");
+  gradient.addColorStop(0, "rgba(0, 0, 0, 1)");
+  gradient.addColorStop(1, "rgba(0, 0, 0, 1)");
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.lineWidth = 3;
   ctx.strokeStyle = "#ff0000";
   ctx.beginPath();
   ctx.arc(center_x, center_y, radius, 0, 2*Math.PI);
@@ -57,7 +58,7 @@ function animationLooper(){
   analyser.getByteFrequencyData(frequency_array);
   for(var i = 0; i < bars; i++){
     rads = Math.PI * 2 / bars;
-    bar_height = frequency_array[i];
+    bar_height = frequency_array[i]*2;
     x = center_x + Math.cos(rads * i) * (radius);
     y = center_y + Math.sin(rads * i) * (radius);
     x_end = center_x + Math.cos(rads * i)*(radius + bar_height);
@@ -67,7 +68,7 @@ function animationLooper(){
   window.requestAnimationFrame(animationLooper);
 }
 function drawBar(x1, y1, x2, y2, width, frequency){
-  var lineColor = "rgb(" + 255 + ", " + 0 + ", " + 0 + ")";
+  var lineColor = "rgb(" + 255 + ", " + frequency + ", " + 0 + ")";
   ctx.strokeStyle = lineColor;
   ctx.lineWidth = width;
   ctx.beginPath();
