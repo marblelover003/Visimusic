@@ -26,7 +26,7 @@ function initPage() {
   ctx.lineWidth = 3;
   ctx.arc(center_x, center_y, radius, 0, 2*Math.PI);
   ctx.stroke();
-  analyser.fftSize = 4096;
+  analyser.fftSize = 8192;
   analyser.smoothingTimeConstant = 0.2;
   analyser.minDecibels = -75;
   analyser.maxDecibels = 15;
