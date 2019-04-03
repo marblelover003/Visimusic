@@ -36,6 +36,13 @@ function initPage() {
     audio.load();
     audio.play();
     animationLooper();
+    audio.addEventListener("ended", function() {
+      ctx.font = "40px Arial";
+      ctx.fillText("Song has ended.", 10, 10);
+      ctx.fillText("Reload the page to", 10, 70);
+      ctx.fillText("pick a new song to", 10, 130);
+      ctx.fillText("visualize.", 10, 190);
+    });
   }, 1000);
 }
 function animationLooper(){
@@ -65,7 +72,7 @@ function animationLooper(){
     y_end = center_y + Math.sin(rads * i)*(radius + bar_height);
     drawBar(x, y, x_end, y_end, bar_width, frequency_array[i]);
   }
-  window.requestAnimationFrame(animationLooper);
+  if (audio.ended == false) {window.requestAnimationFrame(animationLooper);}
 }
 function drawBar(x1, y1, x2, y2, width, frequency){
   var lineColor = "rgb(" + 255 + ", " + frequency*2 + ", " + 0 + ")";
