@@ -424,7 +424,7 @@
     function animationLooper(){
       analyser.getByteFrequencyData(frequency_array);
       for(var i = 0; i < 150; i++){
-        bar_height = frequency_array[i]*2;
+        bar_height = Math.pow(frequency_array[i], 4) / 8388608;
         setH(i, bar_height);
       }
       window.requestAnimationFrame(animationLooper);
