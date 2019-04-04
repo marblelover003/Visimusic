@@ -255,7 +255,7 @@
           style = styles.random;
           break;
         case "Cascade":
-          colors = ["#e5af71", "#ac4534", "#e8bc7d"];
+          colors = ["#e5af71", "#d19d64", "#e8bc7d"];
           style = styles.random;
           break;
         case "Cheat Codes":
@@ -282,13 +282,13 @@
           colors = ["#113344"];
           style = styles.single;
           if (song == "Corrupted") {
-            colors[1] = "#ff0080";
+            colors[1] = "#800040";
             style = styles.alternating;
           }
           break;
         case "Commando Steve":
         case "Milky Ways":
-          colors = ["#ff0000", "#ffffff"];
+          colors = ["#ffbfbf", "#ffffff"];
           style = styles.alternating;
           break;
         case "Cool Friends":
@@ -309,7 +309,7 @@
           style = styles.single;
           break;
         case "Dance of the Incognizant":
-          colors = ["#cf0200", "#f34b4a", "#a00000", "#871514", "#9f3134"];
+          colors = ["#cf0200", "#190c0b", "#a00000", "#871514", "#9f3134"];
           style = styles.random;
           break;
         case "Destroid 8 - Annihilate":
@@ -331,11 +331,11 @@
           style = styles.single;
           break;
         case "HYPE":
-          colors = ["#209f07", "#bae967", "#89e952", "#38fa03", "#8ee050"];
+          colors = ["#58f639", "#bae967", "#89e952", "#38fa03", "#8ee050"];
           style = styles.random;
           break;
         case "Into The Zone":
-          colors = ["#ff729c", "#fe0b41", "#bb96ff", "#462784"];
+          colors = ["#c00039", "#fe0b41", "#4300bd", "#462784"];
           style = styles.random;
           break;
         case "Long Live The New Fresh":
@@ -351,7 +351,7 @@
           style = styles.single;
           break;
         case "Peer Gynt":
-          colors = ["#334422", "#fdeed1"];
+          colors = ["#78a050", "#f5a915"];
           style = styles.alternating;
           break;
         case "Rainbow Road":
@@ -369,8 +369,8 @@
           style = styles.single;
           break;
         case "Termination Shock":
-          colors = ["#0000ff", "#00ffff"];
-          style = styles.alternating;
+          colors = ["#0000ff", "#0010ff", "#0020ff", "#0030ff", "#0040ff", "#0050ff", "#0060ff", "#0070ff", "#0080ff", "#008fff", "#009fff", "#00afff", "#00bfff", "#00cfff", "#00dfff", "#00efff", "#00ffff", "#00efff", "#00dfff", "#00cfff", "#00bfff", "#00afff", "#009fff", "#008fff", "#0080ff", "#0070ff", "#0060ff", "#0050ff", "#0040ff", "#0030ff", "#0020ff", "#0010ff"];
+          style = styles.sequential;
           break;
         case "The Art of War":
           colors = ["#ffd700"];
@@ -420,13 +420,13 @@
     function animationLooper(){
       analyser.getByteFrequencyData(frequency_array);
       for(var i = 0; i < 120; i++){
-        bar_height = Math.pow((frequency_array[i] * 4) / 41, 2);
+        bar_height = frequency_array[i] / 255 * 768;
         setH(i, bar_height);
       }
       window.requestAnimationFrame(animationLooper);
     }
     function setH(barID, height) {
-      document.getElementsByTagName("div")[barID].style.height = (height+1) + "px";
+      document.getElementsByTagName("div")[barID].style.height = height + "px";
     }
   </script>
 </html>
