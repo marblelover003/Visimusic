@@ -224,16 +224,6 @@
       analyser.maxDecibels = -25;
       analyser.getByteFrequencyData(frequency_array);
       pageInitiated = true;
-    }
-    function selectSong() {
-      var song = document.getElementById("song").value;
-      audio = document.getElementById("audio");
-      audio.src = song + ".mp3";
-      if (pageInitiated == false) {
-        initPage();
-      }
-      document.getElementById("button").style.visibility = "hidden";
-      document.getElementById("song").style.visibility = "hidden";
       audio.addEventListener("ended", function() {
         alert(document.getElementById("song").value + " has ended. If you wish, feel free to pick another song.");
         audio.src = "";
@@ -248,6 +238,16 @@
         document.getElementById("button").style.visibility = "visible";
         document.getElementById("song").style.visibility = "visible";
       });
+    }
+    function selectSong() {
+      var song = document.getElementById("song").value;
+      audio = document.getElementById("audio");
+      audio.src = song + ".mp3";
+      if (pageInitiated == false) {
+        initPage();
+      }
+      document.getElementById("button").style.visibility = "hidden";
+      document.getElementById("song").style.visibility = "hidden";
       var colors, style;
       switch (song) {
         case "Barracuda":
