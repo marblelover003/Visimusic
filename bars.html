@@ -343,7 +343,7 @@
       source = context.createMediaElementSource(audio);
       source.connect(analyser);
       analyser.connect(context.destination);
-      frequency_array = new Uint8Array(analyser.frequencyBinCount);
+      frequency_array = new Float32Array(analyser.frequencyBinCount);
       analyser.fftSize = 4096;
       analyser.smoothingTimeConstant = 0.25;
       analyser.minDecibels = -75;
