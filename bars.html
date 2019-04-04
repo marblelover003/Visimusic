@@ -230,9 +230,11 @@
         audio.src = "";
         document.getElementById("song").selectedIndex = 0;
         alert(("" + audio.src).slice(0, (audio.src).length - 5) + " has ended. If you wish, feel free to pick another song.");
+        var x = 0;
         for (var i = 0; i < 120; i++) {
           setTimeout(function() {
-            document.getElementsByTagName("div")[i].style.background = "#ffffff";
+            document.getElementsByTagName("div")[x].style.background = "#ffffff";
+            x++;
           }, 33*i);
         }
         document.getElementById("button").style.visibility = "visible";
@@ -383,20 +385,22 @@
           style = styles.single;
           break;
       }
+      var y = 0;
       for (var i = 0; i < 120; i++) {
         setTimeout(function() {
           switch (style) {
             case "alternating":
             case "sequential":
-              document.getElementsByTagName("div")[i].style.background = colors[i % colors.length];
+              document.getElementsByTagName("div")[y].style.background = colors[y % colors.length];
               break;
             case "random":
-              document.getElementsByTagName("div")[i].style.background = colors[Math.floor(Math.random() * colors.length)];
+              document.getElementsByTagName("div")[y].style.background = colors[Math.floor(Math.random() * colors.length)];
               break;
             case "single":
-              document.getElementsByTagName("div")[i].style.background = colors[0];
+              document.getElementsByTagName("div")[y].style.background = colors[0];
               break;
           }
+          y++;
         }, 33*i);
       }
       setTimeout(function() {
