@@ -74,7 +74,7 @@
         <option value="Vindicate Me">Vindicate Me</option>
         <option value="Wicked">Wicked</option>
       </select>
-      <button onclick="initPage()" id="button">Go</button>
+      <button onclick="selectSong()" id="button">Go</button>
     </span>
     <audio src="" id="audio"></audio>
     <span style="position: absolute; bottom: 0; width: 1500px; z-index: -99;">
@@ -208,13 +208,12 @@
           sequential: "sequential",
           random: "random",
           single: "single"
-        };
+        },
+        pageInitiated = false;
     function initPage() {
-      var song = document.getElementById("song").value;
       audio = document.getElementById("audio");
       context = new (window.AudioContext || window.webkitAudioContext)();
       analyser = context.createAnalyser();
-      audio.src = song + ".mp3";
       source = context.createMediaElementSource(audio);
       source.connect(analyser);
       analyser.connect(context.destination);
@@ -224,12 +223,21 @@
       analyser.minDecibels = -75;
       analyser.maxDecibels = -25;
       analyser.getByteFrequencyData(frequency_array);
+      pageInitiated = true;
+    }
+    function selectSong() {
+      var song = document.getElementById("song").value;
+      audio = document.getElementById("audio");
+      audio.src = song + ".mp3";
+      if (pageInitiated == false) {
+        initPage();
+      }
       document.getElementById("button").style.visibility = "hidden";
       document.getElementById("song").style.visibility = "hidden";
       audio.addEventListener("ended", function() {
+        alert(("" + audio.src).slice(0, (audio.src).length - 5) + " has ended. If you wish, feel free to pick another song.");
         audio.src = "";
         document.getElementById("song").selectedIndex = 0;
-        alert(("" + audio.src).slice(0, (audio.src).length - 5) + " has ended. If you wish, feel free to pick another song.");
         var x = 0;
         for (var i = 0; i < 120; i++) {
           setTimeout(function() {
