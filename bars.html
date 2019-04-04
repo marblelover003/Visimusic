@@ -235,7 +235,7 @@
       document.getElementById("button").style.visibility = "hidden";
       document.getElementById("song").style.visibility = "hidden";
       audio.addEventListener("ended", function() {
-        alert(("" + audio.src).slice(0, (audio.src).length - 5) + " has ended. If you wish, feel free to pick another song.");
+        alert(document.getElementById("song").value + " has ended. If you wish, feel free to pick another song.");
         audio.src = "";
         document.getElementById("song").selectedIndex = 0;
         var x = 0;
