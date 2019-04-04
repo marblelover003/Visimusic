@@ -198,36 +198,6 @@
       <div></div>
       <div></div>
       <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
       <div style="height: 1000px; background: black;"></div>
     </span>
   </body>
@@ -256,6 +226,18 @@
       analyser.getByteFrequencyData(frequency_array);
       document.getElementById("button").style.visibility = "hidden";
       document.getElementById("song").style.visibility = "hidden";
+      audio.addEventListener("ended", function() {
+        audio.src = "";
+        document.getElementById("song").selectedIndex = 0;
+        alert(("" + audio.src).slice(0, (audio.src).length - 5) + " has ended. If you wish, feel free to pick another song.");
+        for (var i = 0; i < 120; i++) {
+          setTimeout(function() {
+            document.getElementsByTagName("div")[i].style.background = "#ffffff";
+          }, 33*i);
+        }
+        document.getElementById("button").style.visibility = "visible";
+        document.getElementById("song").style.visibility = "visible";
+      });
       var colors, style;
       switch (song) {
         case "Barracuda":
@@ -401,22 +383,21 @@
           style = styles.single;
           break;
       }
-      for (var i = 0; i < 150; i++) {
-        switch (style) {
-          case "alternating":
-          case "sequential":
-            document.getElementsByTagName("div")[i].style.background = colors[i % colors.length];
-            break;
-          case "random":
-            document.getElementsByTagName("div")[i].style.background = colors[Math.floor(Math.random() * colors.length)];
-            if (song == "Destroid 8 - Annihilate" || song == "Destroid 10 - Funk Hole") {
-              document.getElementsByTagName("div")[i].style.background = "linear-gradient(to bottom, " + colors[Math.floor(Math.random() * colors.length)] + " 0px, " + colors[Math.floor(Math.random() * colors.length)] + " 32px, " + colors[Math.floor(Math.random() * colors.length)] + " 64px, " + colors[Math.floor(Math.random() * colors.length)] + " 96px, " + colors[Math.floor(Math.random() * colors.length)] + " 128px, " + colors[Math.floor(Math.random() * colors.length)] + " 160px, " + colors[Math.floor(Math.random() * colors.length)] + " 192px, " + colors[Math.floor(Math.random() * colors.length)] + " 224px, " + colors[Math.floor(Math.random() * colors.length)] + " 256px, " + colors[Math.floor(Math.random() * colors.length)] + " 288px, " + colors[Math.floor(Math.random() * colors.length)] + " 320px, " + colors[Math.floor(Math.random() * colors.length)] + " 352px, " + colors[Math.floor(Math.random() * colors.length)] + " 384px, " + colors[Math.floor(Math.random() * colors.length)] + " 416px, " + colors[Math.floor(Math.random() * colors.length)] + " 448px, " + colors[Math.floor(Math.random() * colors.length)] + " 480px, " + colors[Math.floor(Math.random() * colors.length)] + " 512px)";
-            }
-            break;
-          case "single":
-            document.getElementsByTagName("div")[i].style.background = colors[0];
-            break;
-        }
+      for (var i = 0; i < 120; i++) {
+        setTimeout(function() {
+          switch (style) {
+            case "alternating":
+            case "sequential":
+              document.getElementsByTagName("div")[i].style.background = colors[i % colors.length];
+              break;
+            case "random":
+              document.getElementsByTagName("div")[i].style.background = colors[Math.floor(Math.random() * colors.length)];
+              break;
+            case "single":
+              document.getElementsByTagName("div")[i].style.background = colors[0];
+              break;
+          }
+        }, 33*i);
       }
       setTimeout(function() {
         audio.load();
@@ -426,8 +407,8 @@
     }
     function animationLooper(){
       analyser.getByteFrequencyData(frequency_array);
-      for(var i = 0; i < 150; i++){
-        bar_height = Math.pow(frequency_array[i] / 11, 2);
+      for(var i = 0; i < 120; i++){
+        bar_height = Math.pow((frequency_array[i] * 4) / 41, 2);
         setH(i, bar_height);
       }
       window.requestAnimationFrame(animationLooper);
