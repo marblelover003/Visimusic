@@ -324,7 +324,6 @@
       <div></div>
       <div></div>
       <div></div>
-      <div style="height: 1000px; background: black;"></div>
     </span>
   </body>
   <script>
@@ -348,7 +347,7 @@
       analyser.fftSize = 4096;
       analyser.smoothingTimeConstant = 0.25;
       analyser.minDecibels = -75;
-      analyser.maxDecibels = -25;
+      analyser.maxDecibels = 25;
       analyser.getByteFrequencyData(frequency_array);
       pageInitiated = true;
       audio.addEventListener("ended", function() {
