@@ -441,8 +441,8 @@
           break;
         case "Destroid 8 - Annihilate":
         case "Destroid 10 - Funk Hole":
-          colors = ["#ff0000", "#ff3300", "#ff6600", "#ff9900", "#ffcc00", "#ffff00"];
-          style = styles.random;
+          colors = ["linear-gradient(to top, #ff0000, #ffff00)"];
+          style = styles.single;
           break;
         case "Final Boss":
           colors = ["#8b008b"];
@@ -547,7 +547,7 @@
     function animationLooper(){
       analyser.getByteFrequencyData(frequency_array);
       for(var i = 0; i < 250; i++){
-        bar_height = Math.pow(frequency_array[i] / 255 * Math.pow(window.innerHeight, 1/3), 3);
+        bar_height = Math.pow(frequency_array[i] / 255 * Math.pow(window.innerHeight, 1/5), 5);
         setH(i, bar_height);
       }
       window.requestAnimationFrame(animationLooper);
