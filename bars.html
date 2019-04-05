@@ -348,12 +348,12 @@
       source = context.createMediaElementSource(audio);
       source.connect(analyser);
       analyser.connect(context.destination);
-      frequency_array = new Float32Array(analyser.frequencyBinCount);
+      frequency_array = new Uint8Array(analyser.frequencyBinCount);
       analyser.fftSize = 4096;
       analyser.smoothingTimeConstant = 0.25;
       analyser.minDecibels = -75;
       analyser.maxDecibels = -20;
-      analyser.getFloatFrequencyData(frequency_array);
+      analyser.getByteFrequencyData(frequency_array);
       pageInitiated = true;
       audio.addEventListener("ended", function() {
         alert(document.getElementById("song").value + " has ended. If you wish, feel free to pick another song.");
@@ -549,7 +549,7 @@
       }, 1000);
     }
     function animationLooper(){
-      analyser.getFloatFrequencyData(frequency_array);
+      analyser.getByteFrequencyData(frequency_array);
       for(var i = 0; i < 250; i++){
         bar_height = Math.pow(frequency_array[i] / 255 * Math.pow(window.innerHeight, 1/5), 5);
         setH(i, bar_height);
