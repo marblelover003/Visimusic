@@ -258,7 +258,7 @@
         audio.src = "";
         document.getElementById("song").selectedIndex = 0;
         var x = 0;
-        for (var i = 0; i < 250; i++) {
+        for (var i = 0; i < 150; i++) {
           setTimeout(function() {
             document.getElementsByTagName("div")[x].style.background = "#ffffff";
             x++;
@@ -423,7 +423,7 @@
           break;
       }
       var y = 0;
-      for (var i = 0; i < 250; i++) {
+      for (var i = 0; i < 150; i++) {
         setTimeout(function() {
           switch (style) {
             case "alternating":
@@ -448,7 +448,7 @@
     }
     function animationLooper(){
       analyser.getByteFrequencyData(frequency_array);
-      for(var i = 0; i < 250; i++){
+      for(var i = 0; i < 150; i++){
         bar_height = Math.pow(frequency_array[i] / 255 * Math.pow(window.innerWidth, 1/5), 5);
         setH(i, bar_height);
       }
