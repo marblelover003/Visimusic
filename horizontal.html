@@ -249,8 +249,8 @@
       frequency_array = new Uint8Array(analyser.frequencyBinCount);
       analyser.fftSize = 4096;
       analyser.smoothingTimeConstant = 0.25;
-      analyser.minDecibels = -75;
-      analyser.maxDecibels = -20;
+      analyser.minDecibels = -80;
+      analyser.maxDecibels = -25;
       analyser.getByteFrequencyData(frequency_array);
       pageInitiated = true;
       audio.addEventListener("ended", function() {
