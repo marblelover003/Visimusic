@@ -23,7 +23,6 @@ function initPage() {
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   ctx.beginPath();
   ctx.strokeStyle = "#ff0000";
-  ctx.lineWidth = 3;
   ctx.arc(center_x, center_y, radius, 0, 2*Math.PI);
   ctx.stroke();
   analyser.fftSize = 8192;
@@ -57,7 +56,6 @@ function animationLooper(){
   gradient.addColorStop(1, "rgba(0, 0, 0, 1)");
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
-  ctx.lineWidth = 3;
   ctx.strokeStyle = "#ff0000";
   ctx.beginPath();
   ctx.arc(center_x, center_y, radius, 0, 2*Math.PI);
