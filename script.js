@@ -25,8 +25,8 @@ function initPage() {
   ctx.strokeStyle = "#ff0000";
   ctx.arc(center_x, center_y, radius, 0, 2*Math.PI);
   ctx.stroke();
-  analyser.fftSize = 8192;
-  analyser.smoothingTimeConstant = 0.2;
+  analyser.fftSize = 4096;
+  analyser.smoothingTimeConstant = 0.1;
   analyser.minDecibels = -75;
   analyser.maxDecibels = -15;
   analyser.getByteFrequencyData(frequency_array);
@@ -36,11 +36,7 @@ function initPage() {
     audio.play();
     animationLooper();
     audio.addEventListener("ended", function() {
-      ctx.font = "40px Arial";
-      ctx.fillText("Song has ended.", 10, 10);
-      ctx.fillText("Reload the page to", 10, 70);
-      ctx.fillText("pick a new song to", 10, 130);
-      ctx.fillText("visualize.", 10, 190);
+      alert(song + " has ended. Reload the page to select a new song.");
     });
   }, 1000);
 }
