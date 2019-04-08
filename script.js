@@ -66,7 +66,7 @@ function animationLooper(){
     y_end = center_y + Math.sin(rads * i)*(radius + bar_height);
     drawBar(x, y, x_end, y_end, bar_width);
   }
-  if (audio.ended == false) {window.requestAnimationFrame(animationLooper);}
+  window.requestAnimationFrame(animationLooper);
 }
 function drawBar(x1, y1, x2, y2, width){
   var lineColor = "rgb(" + 255 + ", " + 255 + ", " + 0 + ")";
