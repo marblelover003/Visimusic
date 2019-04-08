@@ -29,7 +29,7 @@ function initPage() {
   analyser.fftSize = 8192;
   analyser.smoothingTimeConstant = 0.2;
   analyser.minDecibels = -75;
-  analyser.maxDecibels = 15;
+  analyser.maxDecibels = 0;
   analyser.getByteFrequencyData(frequency_array);
   document.getElementById("songSelectMenu").style.visibility = "hidden";
   setTimeout(function() {
