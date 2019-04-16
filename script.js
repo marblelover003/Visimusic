@@ -26,9 +26,9 @@ function initPage() {
   ctx.arc(center_x, center_y, radius, 0, 2*Math.PI);
   ctx.stroke();
   analyser.fftSize = 4096;
-  analyser.smoothingTimeConstant = 0.3;
+  analyser.smoothingTimeConstant = 0;
   analyser.minDecibels = -75;
-  analyser.maxDecibels = -15;
+  analyser.maxDecibels = -25;
   analyser.getByteFrequencyData(frequency_array);
   document.getElementById("songSelectMenu").style.visibility = "hidden";
   setTimeout(function() {
@@ -52,14 +52,14 @@ function animationLooper(){
   gradient.addColorStop(1, "rgba(0, 0, 0, 1)");
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
-  ctx.strokeStyle = "#ff0000";
+  ctx.strokeStyle = "#0000ff";
   ctx.beginPath();
   ctx.arc(center_x, center_y, radius, 0, 2*Math.PI);
   ctx.stroke();
   analyser.getByteFrequencyData(frequency_array);
   for(var i = 0; i < bars; i++){
     rads = Math.PI * 2 / bars;
-    bar_height = Math.pow(frequency_array[i] / 255 * Math.pow(window.innerHeight, 1/4), 4);
+    bar_height = Math.pow(frequency_array[i] / 255 * Math.pow(window.innerHeight / 2, 1/4), 4);
     x = center_x + Math.cos(rads * i) * (radius);
     y = center_y + Math.sin(rads * i) * (radius);
     x_end = center_x + Math.cos(rads * i)*(radius + bar_height);
@@ -69,7 +69,7 @@ function animationLooper(){
   window.requestAnimationFrame(animationLooper);
 }
 function drawBar(x1, y1, x2, y2, width){
-  var lineColor = "rgb(" + 255 + ", " + 255 + ", " + 0 + ")";
+  var lineColor = "rgb(" + 0 + ", " + 0 + ", " + 255 + ")";
   ctx.strokeStyle = lineColor;
   ctx.lineWidth = width;
   ctx.beginPath();
