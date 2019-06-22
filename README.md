@@ -2,7 +2,7 @@
 
 [Check it out!](http://marblelover003.github.io/Visimusic/)
 
-There are 48 songs to choose from. Select one from the dropdown and watch it get visualized! It might take a second for the visualizer to gather the needed data, but it will definitely be worth it in the end.
+There are 49 songs to choose from. Select one from the dropdown and watch it get visualized! It might take a second for the visualizer to gather the needed data, but it will definitely be worth it in the end.
 
 This is the list of the songs that are available:
 
@@ -43,6 +43,7 @@ This is the list of the songs that are available:
 |           Parallel Processing | Danimal Cannon & Zef      |
 |                     Peer Gynt | cYsmix                    |
 |                  Rainbow Road | nanobii                   |
+|                    Rocktronik | Pegboard Nerds            |
 |                        Sevcon | Big Giant Circles         |
 |                       Spectra | chipzel                   |
 |                    Sugar Rush | PIXL                      |
