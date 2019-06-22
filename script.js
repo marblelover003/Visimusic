@@ -26,9 +26,9 @@ function initPage() {
   ctx.arc(center_x, center_y, radius, 0, 2*Math.PI);
   ctx.stroke();
   analyser.fftSize = 4096;
-  analyser.smoothingTimeConstant = 0.2;
+  analyser.smoothingTimeConstant = 0;
   analyser.minDecibels = -75;
-  analyser.maxDecibels = 0;
+  analyser.maxDecibels = -10;
   analyser.getByteFrequencyData(frequency_array);
   document.getElementById("songSelectMenu").style.visibility = "hidden";
   setTimeout(function() {
