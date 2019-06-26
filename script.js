@@ -1,4 +1,4 @@
-var canvas, ctx, center_x, center_y, radius = 100, bars = 600, x_end, y_end, bar_height, bar_width = 2, frequency_array;
+var canvas, ctx, center_x, center_y, radius = 50, bars = 600, x_end, y_end, bar_height, bar_width = 2, frequency_array;
 function initPage() {
   var song = document.getElementById("song").value;
   audio = document.getElementById("audio");
@@ -59,7 +59,7 @@ function animationLooper(){
   analyser.getByteFrequencyData(frequency_array);
   for(var i = 0; i < bars; i++){
     rads = Math.PI * 2 / bars;
-    bar_height = Math.pow(frequency_array[i] / 255 * Math.pow(window.innerHeight / 4, 1/4), 4);
+    bar_height = Math.pow(frequency_array[i] / 255 * Math.pow(window.innerHeight / 2, 1/4), 4);
     x = center_x + Math.cos(rads * i) * (radius);
     y = center_y + Math.sin(rads * i) * (radius);
     x_end = center_x + Math.cos(rads * i)*(radius + bar_height);
