@@ -1,4 +1,4 @@
-var canvas, ctx, center_x, center_y, radius = 50, bars = 300, x_end, y_end, bar_height, bar_width = 4, frequency_array;
+var canvas, ctx, center_x, center_y, radius = 75, bars = 200, x_end, y_end, bar_height, bar_width = 6, frequency_array;
 function initPage() {
   var song = document.getElementById("song").value;
   audio = document.getElementById("audio");
@@ -27,7 +27,7 @@ function initPage() {
   ctx.stroke();
   analyser.fftSize = 4096;
   analyser.smoothingTimeConstant = 0;
-  analyser.minDecibels = -75;
+  analyser.minDecibels = -90;
   analyser.maxDecibels = -10;
   analyser.getByteFrequencyData(frequency_array);
   document.getElementById("songSelectMenu").style.visibility = "hidden";
