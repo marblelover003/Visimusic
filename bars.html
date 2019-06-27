@@ -7,11 +7,12 @@
       body {
         background: black;
         overflow: hidden;
+        white-space: nowrap;
         font-size: 0;
       }
       div {
-        background: white;
-        width: 3px;
+        background: black;
+        width: 4px;
         height: 1px;
         display: inline-block;
       }
@@ -351,7 +352,7 @@
       source.connect(analyser);
       analyser.connect(context.destination);
       frequency_array = new Uint8Array(analyser.frequencyBinCount);
-      analyser.fftSize = 8192;
+      analyser.fftSize = 4096;
       analyser.smoothingTimeConstant = 0;
       analyser.minDecibels = -75;
       analyser.maxDecibels = -10;
