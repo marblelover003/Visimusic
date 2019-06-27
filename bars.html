@@ -352,7 +352,7 @@
       analyser.connect(context.destination);
       frequency_array = new Uint8Array(analyser.frequencyBinCount);
       analyser.fftSize = 8192;
-      analyser.smoothingTimeConstant = 0.25;
+      analyser.smoothingTimeConstant = 0;
       analyser.minDecibels = -75;
       analyser.maxDecibels = -10;
       analyser.getByteFrequencyData(frequency_array);
