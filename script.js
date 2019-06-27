@@ -25,7 +25,7 @@ function initPage() {
   ctx.strokeStyle = "#0000ff";
   ctx.arc(center_x, center_y, radius, 0, 2*Math.PI);
   ctx.stroke();
-  analyser.fftSize = 16384;
+  analyser.fftSize = 8192;
   analyser.smoothingTimeConstant = 0;
   analyser.minDecibels = -90;
   analyser.maxDecibels = -10;
