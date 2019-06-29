@@ -83,6 +83,7 @@
       <a href="horizontal.html">See a horizontal version here!</a>
     </span>
     <audio src="" id="audio"></audio>
+    <img width="381" height="146" style="position: sticky; top: 8px; right: 8px;" id="songTag" src="No song.JPG"> 
     <span style="position: absolute; bottom: 0; z-index: -99;">
       <div></div>
       <div></div>
@@ -362,6 +363,7 @@
       audio.addEventListener("ended", function() {
         alert(document.getElementById("song").value + " has ended. If you wish, feel free to pick another song.");
         audio.src = "";
+        document.getElementById("songTag").src = "https://marblelover003.github.io/Visimusic/No song.JPG";
         document.getElementById("song").selectedIndex = 0;
         var x = 0;
         for (var i = 0; i < 250; i++) {
@@ -378,6 +380,7 @@
       var song = document.getElementById("song").value;
       audio = document.getElementById("audio");
       audio.src = "https://marblelover003.github.io/Visimusic/" + song + ".mp3";
+      document.getElementById("songTag").src = "https://marblelover003.github.io/Visimusic/" + song + ".JPG";
       if (pageInitiated == false) {
         initPage();
       }
