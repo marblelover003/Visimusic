@@ -2,7 +2,7 @@
 
 [Check it out!](http://marblelover003.github.io/Visimusic/)
 
-There are 49 songs to choose from. Select one from the dropdown and watch it get visualized! It might take a second for the visualizer to gather the needed data, but it will definitely be worth it in the end.
+There are 52 songs to choose from. Select one from the dropdown and watch it get visualized! It might take a second for the visualizer to gather the needed data, but it will definitely be worth it in the end.
 
 This is the list of the songs that are available:
 
@@ -60,3 +60,5 @@ This is the list of the songs that are available:
 | 50 |                      Unlocked | Plesco                    |
 | 51 |                  Vindicate Me | Big Giant Circles         |
 | 52 |                        Wicked | Avenza                    |
+
+Also check out the [Music Albums Directory](https://marblelover003.github.io/Visimusic/Music-Albums/dir.html)!
