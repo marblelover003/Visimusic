@@ -26,7 +26,9 @@
     <span style="position: absolute; z-index: 99;" id="songSelectMenu">
       <select id="song">
         <option></option>
+        <option value="Astrocat">PIXL - Astrocat</option>
         <option value="Barracuda">Noisestorm - Barracuda</option>
+        <option value="Be Gone Mr. Gawne">Bossfight - Be Gone Mr. Gawne</option>
         <option value="Buzz Kill">PIXL - Buzz Kill</option>
         <option value="Cascade">Kubbi - Cascade</option>
         <option value="Cheat Codes">Nitro Fun - Cheat Codes</option>
@@ -38,42 +40,51 @@
         <option value="Cool Friends">Silva Hound - Cool Friends (Murtagh &amp; Veschell Remix)</option>
         <option value="Core">Zef - Core</option>
         <option value="Corrupted">Danimal Cannon &amp; Zef - Corrupted</option>
-        <option value="Courtesy">chipzel - Courtesy</option>
+        <option value="Courtesy">Chipzel - Courtesy</option>
         <option value="Cruise Control">Zef - Cruise Control</option>
         <option value="Crystal Tokyo">FantomenK &amp; meganeko - Crystal Tokyo</option>
         <option value="Dance of the Incognizant">FantomenK - Dance of the Incognizant</option>
         <option value="Destroid 8 - Annihilate">Excision &amp; Far Too Loud - Destroid 8 Annihilate</option>
         <option value="Destroid 10 - Funk Hole">Excision &amp; Space Laces - Destroid 10 Funk Hole</option>
         <option value="Final Boss">Nitro Fun - Final Boss</option>
-        <option value="Focus">chipzel - Focus</option>
+        <option value="Flirt Flirt Oh It Hurts">Bossfight - Flirt Flirt Oh It Hurts</option>
+        <option value="Focus">Chipzel - Focus</option>
         <option value="FOX">Shirobon - FOX</option>
         <option value="FTW">Lets Be Friends - FTW</option>
         <option value="Houston">Big Giant Circles - Houston</option>
         <option value="HYPE">Tokyo Machine - HYPE</option>
         <option value="Into The Zone">Shirobon - Into the Zone</option>
+        <option value="Jack Russel">Bossfight - Jack Russel</option>
         <option value="Legacy">Danimal Cannon - Legacy (feat. Zef)</option>
         <option value="Livewire">Zef - Livewire</option>
         <option value="Logic Gatekeeper">Danimal Cannon &amp; Zef - Logic Gatekeeper</option>
         <option value="Long Live The New Fresh">Danimal Cannon - Long Live the New Fresh</option>
         <option value="Milky Ways">Bossfight - Milky Ways</option>
         <option value="New Game">Nitro Fun - New Game</option>
+        <option value="No Party Like a Mojang Party">Big Giant Circles - No Party Like a Mojang Party</option>
         <option value="On The Run">Shirobon - On the Run</option>
         <option value="Once Again">Tristam - Once Again</option>
-        <option value="Otis">chipzel - Otis</option>
+        <option value="Otis">Chipzel - Otis</option>
         <option value="Paper Dolls">Shawn Daley - Paper Dolls</option>
         <option value="Parallel Processing">Danimal Cannon &amp; Zef - Parallel Processing</option>
+        <option value="Partyt Ar Igang">Bossfight - Partyt A&#776;r Iga&#778;ng!</option>
         <option value="Peer Gynt">cYsmix - Peer Gynt</option>
+        <option value="Pirate Manners">Bossfight - Pirate Manners</option>
+        <option value="Quake">Stereotronique - Quake</option>
         <option value="Rainbow Road">nanobii - Rainbow Road</option>
         <option value="Rocktronik">Pegboard Nerds - Rocktronik</option>
         <option value="Sevcon">Big Giant Circles - Sevcon</option>
-        <option value="Spectra">chipzel - Spectra</option>
+        <option value="So Far Away">Nitro Fun - So Far Away</option>
+        <option value="Spectra">Chipzel - Spectra</option>
         <option value="Sugar Rush">PIXL - Sugar Rush</option>
         <option value="Tension">Zef - Tension</option>
         <option value="Termination Shock">Sabrepulse - Termination Shock</option>
-        <option value="The Art of War">chipzel - The Art of War</option>
+        <option value="The Art of War">Chipzel - The Art of War</option>
+        <option value="The Cave, The Treasure">Bossfight - The Cave, The Treasure</option>
         <option value="The Lunar Whale">Danimal Cannon - The Lunar Whale (feat. Zef)</option>
+        <option value="The Maze of Mayonnaise">Bossfight - The Maze of Mayonnaise</option>
         <option value="Till It's Over">Tristam - Till It's Over</option>
-        <option value="Tokyo Skies">chipzel - Tokyo Skies</option>
+        <option value="Tokyo Skies">Chipzel - Tokyo Skies</option>
         <option value="Try This">Pegboard Nerds - Try This</option>
         <option value="Unlocked">Plesco - Unlocked</option>
         <option value="Vindicate Me">Big Giant Circles - Vindicate Me</option>
@@ -83,7 +94,7 @@
       <a href="horizontal.html">See a horizontal version here!</a>
     </span>
     <audio src="" id="audio"></audio>
-    <img width="381" height="146" style="position: absolute; top: 8px; right: 8px;" id="songTag" src="No song.png"> 
+    <img width="145" height="217" style="position: absolute; top: 8px; right: 8px;" id="songTag" src="">
     <span style="position: absolute; bottom: 0; z-index: -99;">
       <div></div>
       <div></div>
@@ -363,12 +374,12 @@
       audio.addEventListener("ended", function() {
         alert(document.getElementById("song").value + " has ended. If you wish, feel free to pick another song.");
         audio.src = "";
-        document.getElementById("songTag").src = "https://marblelover003.github.io/Visimusic/No song.png";
+        document.getElementById("songTag").src = "";
         document.getElementById("song").selectedIndex = 0;
         var x = 0;
         for (var i = 0; i < 250; i++) {
           setTimeout(function() {
-            document.getElementsByTagName("div")[x].style.background = "#ffffff";
+            document.getElementsByTagName("div")[x].style.background = "#000000";
             x++;
           }, 5*i);
         }
@@ -380,7 +391,7 @@
       var song = document.getElementById("song").value;
       audio = document.getElementById("audio");
       audio.src = "https://marblelover003.github.io/Visimusic/" + song + ".mp3";
-      document.getElementById("songTag").src = "https://marblelover003.github.io/Visimusic/" + song + ".JPG";
+      document.getElementById("songTag").src = "https://marblelover003.github.io/Visimusic/Song-Tags" + song + ".JPG";
       if (pageInitiated == false) {
         initPage();
       }
@@ -396,9 +407,11 @@
           colors = ["#e5af71", "#d19d64", "#e8bc7d"];
           style = styles.random;
           break;
+        case "Astrocat":
         case "Cheat Codes":
         case "FTW":
         case "Once Again":
+        case "Quake":
         case "Till It\'s Over":
           colors = ["#ffff00"];
           style = styles.single;
@@ -424,9 +437,16 @@
           colors = ["#113344"];
           style = styles.single;
           break;
+        case "Be Gone Mr. Gawne":
         case "Commando Steve":
+        case "Flirt Flirt Oh It Hurts":
+        case "Jack Russel":
         case "Milky Ways":
-          colors = ["#ffbfbf", "#ffffff"];
+        case "Partyt Ar Igang":
+        case "Pirate Manners":
+        case "The Cave, The Treasure":
+        case "The Maze of Mayonnaise":
+          colors = ["#ff9999", "#ffffff"];
           style = styles.alternating;
           break;
         case "Cool Friends":
@@ -509,10 +529,15 @@
           colors = ["#707070", "#747474", "#787878", "#7c7c7c", "#808080", "#848484", "#888888", "#8c8c8c"];
           style = styles.random;
           break;
+        case "No Party Like a Mojang Party":
         case "Sevcon":
         case "Wicked":
           colors = ["#ff0000"];
           style = styles.single;
+          break;
+        case "So Far Away":
+          colors = ["#ff9900", "#ffaa00"];
+          style = styles.alternating;
           break;
         case "Sugar Rush":
           colors = ["#7fffd4"];
