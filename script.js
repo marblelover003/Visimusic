@@ -59,7 +59,7 @@ function animationLooper(){
   analyser.getByteFrequencyData(frequency_array);
   for(var i = 0; i < bars; i++){
     rads = Math.PI * 2 / bars;
-    bar_height = Math.pow(frequency_array[i] / 255 * Math.pow(window.innerHeight / 2, 1/4), 4);
+    bar_height = frequency_array[i];
     x = center_x + Math.cos(rads * i) * (radius);
     y = center_y + Math.sin(rads * i) * (radius);
     x_end = center_x + Math.cos(rads * i)*(radius + bar_height);
