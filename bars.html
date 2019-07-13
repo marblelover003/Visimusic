@@ -632,20 +632,20 @@
         audio.load();
         audio.play();
         animationLooper();
-        audio.onplay = function {
-        positions = setInterval(function() {
+        audio.onplay = function() {
+          positions = setInterval(function() {
             var curpos = Math.floor(audio.currentTime);
             var m = Math.floor(curpos / 60);
             var s = Math.floor(curpos % 60);
             document.getElementById("pos").innerHTML = m + ":" + ("0" + s).slice(-2) + " / " + length;
           }, 0);
-        }
+        };
       }, 1000);
     }
     function animationLooper(){
       analyser.getByteFrequencyData(frequency_array);
       for(var i = 0; i < 250; i++){
-        bar_height = Math.pow(frequency_array[i] / 255 * Math.pow(window.innerHeight, 1/5), 5);
+        bar_height = Math.pow(frequency_array[i] / 255 * Math.pow(240, 1/5), 5);
         setH(i, bar_height);
       }
       window.requestAnimationFrame(animationLooper);
