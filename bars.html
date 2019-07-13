@@ -461,7 +461,7 @@
         case "The Maze of Mayonnaise":
           colors = ["#ff9999", "#ffffff"];
           style = styles.alternating;
-          if (song == "Be Gone Mr. Gawne") {length = "4:17";} else if (song == "Commando Steve") {length = "3:26";} else if (song == "Flirt Flirt Oh It Hurts") {length = "3:31";} else if (song == "Jack Russel") {length = "3:21";} else if (song == "Milky Ways") {length = "3:07";} else if (song == "Party Ar Igang") {length = "2:57";} else if (song == "Pirate Manners") {length = "3:02";} else if (song == "The Cave, The Treasure") {length = "3:27";} else if (song == "The Maze of Mayonnaise") {length = "3:11";}
+          if (song == "Be Gone Mr. Gawne") {length = "4:17";} else if (song == "Commando Steve") {length = "3:26";} else if (song == "Flirt Flirt Oh It Hurts") {length = "3:31";} else if (song == "Jack Russel") {length = "3:21";} else if (song == "Milky Ways") {length = "3:07";} else if (song == "Partyt Ar Igang") {length = "2:57";} else if (song == "Pirate Manners") {length = "3:02";} else if (song == "The Cave, The Treasure") {length = "3:27";} else if (song == "The Maze of Mayonnaise") {length = "3:11";}
           break;
         case "Cool Friends":
           colors = ["#4643d2", "#c38ef8"];
@@ -632,12 +632,14 @@
         audio.load();
         audio.play();
         animationLooper();
+        audio.onplay = function {
         positions = setInterval(function() {
-          var curpos = Math.floor(audio.currentTime);
-          var m = Math.floor(curpos / 60);
-          var s = Math.floor(curpos % 60);
-          document.getElementById("pos").innerHTML = m + ":" + ("0" + s).slice(-2) + " / " + length;
-        }, 0);
+            var curpos = Math.floor(audio.currentTime);
+            var m = Math.floor(curpos / 60);
+            var s = Math.floor(curpos % 60);
+            document.getElementById("pos").innerHTML = m + ":" + ("0" + s).slice(-2) + " / " + length;
+          }, 0);
+        }
       }, 1000);
     }
     function animationLooper(){
