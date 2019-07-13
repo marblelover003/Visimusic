@@ -1,4 +1,4 @@
-var canvas, ctx, center_x, center_y, radius = 75, bars = 250, x_end, y_end, bar_height, bar_width = 5, frequency_array;
+var canvas, ctx, center_x, center_y, radius = 75, bars = 400, x_end, y_end, bar_height, bar_width = 3, frequency_array;
 function initPage() {
   var song = document.getElementById("song").value;
   audio = document.getElementById("audio");
