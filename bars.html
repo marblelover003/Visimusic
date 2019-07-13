@@ -360,7 +360,7 @@
           single: "single"
         },
         pageInitiated = false,
-        length;
+        length, positions;
     function initPage() {
       audio = document.getElementById("audio");
       context = new (window.AudioContext || window.webkitAudioContext)();
@@ -389,6 +389,7 @@
         }
         document.getElementById("button").style.visibility = "visible";
         document.getElementById("song").style.visibility = "visible";
+        clearInterval(positions);
         document.getElementById("pos").innerHTML = "-:-- / -:--";
       });
     }
@@ -447,7 +448,7 @@
         case "The Lunar Whale":
           colors = ["#113344"];
           style = styles.single;
-          if (song == "Chronos") {length = "4:29";} else if (song == "Corrupted") {length = "6:16";} else if (song == "Legacy") {length = "5:17";} else if (song == "Logic Gatekeeper") {length = "4:58";} else if (song == "Parallel Processing";) {length = "8:29";} else if (song == "The Lunar Whale") {length = "4:35";}
+          if (song == "Chronos") {length = "4:29";} else if (song == "Corrupted") {length = "6:16";} else if (song == "Legacy") {length = "5:17";} else if (song == "Logic Gatekeeper") {length = "4:58";} else if (song == "Parallel Processing") {length = "8:29";} else if (song == "The Lunar Whale") {length = "4:35";}
           break;
         case "Be Gone Mr. Gawne":
         case "Commando Steve":
@@ -631,6 +632,12 @@
         audio.load();
         audio.play();
         animationLooper();
+        positions = setInterval(function() {
+          var curpos = Math.floor(audio.currentTime);
+          var m = Math.floor(curpos / 60);
+          var s = Math.floor(curpos % 60);
+          document.getElementById("pos").innerHTML = m + ":" + ("0" + s).slice(-2) + " / " + length;
+        }, 0);
       }, 1000);
     }
     function animationLooper(){
@@ -639,10 +646,6 @@
         bar_height = Math.pow(frequency_array[i] / 255 * Math.pow(window.innerHeight, 1/5), 5);
         setH(i, bar_height);
       }
-      var curpos = Math.floor(audio.currentTime);
-      var m = Math.floor(curpos / 60);
-      var s = Math.floor(curpos % 60);
-      document.getElementById("pos").innerHTML = m + ":" + ("0" + s).slice(-2) + " / " + length;
       window.requestAnimationFrame(animationLooper);
     }
     function setH(barID, height) {
