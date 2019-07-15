@@ -62,6 +62,7 @@
         <option value="Logic Gatekeeper">Danimal Cannon &amp; Zef - Logic Gatekeeper</option>
         <option value="Long Live The New Fresh">Danimal Cannon - Long Live the New Fresh</option>
         <option value="Milky Ways">Bossfight - Milky Ways</option>
+        <option value="MOSHI">Pegboard Nerds &amp; Tokyo Machine - MOSHI</option>
         <option value="New Game">Nitro Fun - New Game</option>
         <option value="No Party Like a Mojang Party">Big Giant Circles - No Party Like a Mojang Party</option>
         <option value="On The Run">Shirobon - On the Run</option>
@@ -376,7 +377,11 @@
       analyser.getByteFrequencyData(frequency_array);
       pageInitiated = true;
       audio.addEventListener("ended", function() {
-        alert(document.getElementById("song").value + " has ended. If you wish, feel free to pick another song.");
+        if (document.getElementById("song").value == "Partyt Ar Igang") {
+          alert("Partyt A\x0308r Iga\x030Ang! has ended. If you wish, feel free to pick another song.");
+        } else {
+          alert(document.getElementById("song").value + " has ended. If you wish, feel free to pick another song.");
+        }
         audio.src = "";
         document.getElementById("songTag").src = "https://marblelover003.github.io/Visimusic/Visimusic.png";
         document.getElementById("song").selectedIndex = 0;
@@ -418,12 +423,13 @@
         case "Astrocat":
         case "Cheat Codes":
         case "FTW":
+        case "MOSHI":
         case "Once Again":
         case "Quake":
         case "Till It\'s Over":
           colors = ["#ffff00"];
           style = styles.single;
-          if (song == "Astrocat") {length = "5:21";} else if (song == "Cheat Codes") {length = "3:32";} else if (song == "FTW") {length = "4:17";} else if (song == "Once Again") {length = "3:46";} else if (song == "Quake") {length = "5:41";} else if (song == "Till It\'s Over") {length = "4:30";}
+          if (song == "Astrocat") {length = "5:21";} else if (song == "Cheat Codes") {length = "3:32";} else if (song == "FTW") {length = "4:17";} else if (song == "MOSHI") {length = "3:36";} else if (song == "Once Again") {length = "3:46";} else if (song == "Quake") {length = "5:41";} else if (song == "Till It\'s Over") {length = "4:30";}
           break;
         case "Cheat Codes VIP":
           colors = ["#dfdf60"];
