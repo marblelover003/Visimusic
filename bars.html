@@ -11,6 +11,7 @@
         font-size: 0;
         width: 768px;
         color: white;
+        font-family: Roboto;
       }
       div {
         background: black;
@@ -22,10 +23,14 @@
         color: white;
         font-size: 16px;
       }
+      button, select {
+        font-size: 16px;
+      }
     </style>
   </head>
   <body>
     <span style="position: absolute; z-index: 99;" id="songSelectMenu">
+      Select a song:
       <select id="song">
         <option></option>
         <option value="Astrocat">PIXL - Astrocat</option>
@@ -94,23 +99,52 @@
         <option value="Unlocked">Plesco - Unlocked</option>
         <option value="Vindicate Me">Big Giant Circles - Vindicate Me</option>
         <option value="Wicked">Avenza - Wicked</option>
-      </select>
+      </select><br>
+      FFT Size:
       <select id="fftsize">
-        <option value=1024>FFT Size 1024</option>
-        <option value=2048>FFT Size 2048</option>
-        <option value=4096 selected>FFT Size 4096 (Default)</option>
-        <option value=8192>FFT Size 8192</option>
-        <option value=16384>FFT Size 16384</option>
-      </select>
+        <option value=1024>1024</option>
+        <option value=2048 selected>2048</option>
+        <option value=4096>4096</option>
+        <option value=8192>8192</option>
+        <option value=16384>16384</option>
+      </select><br>
+      Number of Bars:
       <select id="bars">
-        <option value=250 selected>250 Bars XL (Default)</option>
-        <option value=200>200 Bars L</option>
-        <option value=150>150 Bars M</option>
-        <option value=125>125 Bars S</option>
-        <option value=100>100 Bars XS</option>
-      </select>
-      <button onclick="selectSong()" id="button">Go</button>
-      <a href="horizontal.html">See a horizontal version here!</a>
+        <option value=250 selected>250 (Default)</option>
+        <option value=200>200</option>
+        <option value=150>150</option>
+        <option value=125>125</option>
+        <option value=100>100</option>
+      </select><br>
+      Smoothing:
+      <select id="smoothing">
+        <option value=0 selected>None (0) (Default)</option>
+        <option value=0.05>Very little (0.05)</option>
+        <option value=0.1>Less (0.1)</option>
+        <option value=0.2>Some (0.2)</option>
+        <option value=0.35>More (0.35)</option>
+        <option value=0.5>A lot (0.5)</option>
+      </select><br>
+      Maximum bar height (relative to window height):
+      <select id="maxheight">
+        <option value=1 selected>1x (Default)</option>
+        <option value=0.9>0.9x</option>
+        <option value=0.8>0.8x</option>
+        <option value=0.7>0.7x</option>
+        <option value=0.6>0.6x</option>
+        <option value=0.5>0.5x</option>
+      </select><br>
+      Curve power:
+      <select id="power">
+        <option value=1 selected>1x (Default)</option>
+        <option value=2>2x</option>
+        <option value=3>3x</option>
+        <option value=4>4x</option>
+        <option value=5>5x</option>
+        <option value=6>6x</option>
+        <option value=8>8x</option>
+        <option value=10>10x</option>
+      <button onclick="selectSong()" id="button">START THE VISUALIZATION!</button>
     </span>
     <audio src="" id="audio"></audio>
     <img width="145" height="217" style="position: absolute; top: 8px; right: 8px;" id="songTag" src="Visimusic.png">
@@ -128,7 +162,8 @@
           single: "single"
         },
         pageInitiated = false,
-        length, positions;
+        length, positions,
+        maxheight, curvepower;
     function initPage() {
       audio = document.getElementById("audio");
       context = new (window.AudioContext || window.webkitAudioContext)();
@@ -145,7 +180,7 @@
       pageInitiated = true;
       audio.addEventListener("ended", function() {
         if (document.getElementById("song").value == "Partyt Ar Igang") {
-          alert("Partyt A\x0308r Iga\x030Ang! has ended. If you wish, feel free to pick another song.");
+          alert("Partyt A\u0308r Iga\u030Ang! has ended. If you wish, feel free to pick another song.");
         } else {
           alert(document.getElementById("song").value + " has ended. If you wish, feel free to pick another song.");
         }
@@ -159,10 +194,9 @@
             x++;
           }, 5*i);
         }
-        document.getElementById("button").style.visibility = "visible";
-        document.getElementById("song").style.visibility = "visible";
+        document.getElementById("songSelectMenu").style.visibility = "visible";
         clearInterval(positions);
-        document.getElementById("pos").innerHTML = "-:-- / -:--";
+        document.getElementById("pos").innerHTML = "--:-- / --:--";
       });
     }
     function selectSong() {
@@ -182,8 +216,10 @@
         initPage();
       }
       analyser.fftSize = parseInt(document.getElementById("fftsize").value);
-      document.getElementById("button").style.visibility = "hidden";
-      document.getElementById("song").style.visibility = "hidden";
+      analyser.smoothingTimeConstant = parseInt(document.getElementById("smoothing").value);
+      maxheight = parseInt(document.getElementById("maxheight").value);
+      curvepower = parseInt(document.getElementById("power").value);
+      document.getElementById("songSelectMenu").style.visibility = "hidden";
       var colors, style;
       switch (song) {
         case "Barracuda":
@@ -416,7 +452,7 @@
         audio.load();
         audio.play();
         animationLooper();
-        audio.onplay = function() {
+        audio.oncanplay = function() {
           positions = setInterval(function() {
             var curpos = Math.floor(audio.currentTime);
             var m = Math.floor(curpos / 60);
@@ -429,7 +465,7 @@
     function animationLooper(){
       analyser.getByteFrequencyData(frequency_array);
       for(var i = 0; i < parseInt(document.getElementById("bars").value); i++){
-        bar_height = Math.pow(frequency_array[i] / 255 * Math.pow(window.innerHeight, 1/5), 5);
+        bar_height = Math.pow(frequency_array[i] / 255 * Math.pow(window.innerHeight, 1/curvepower), curvepower) * maxheight;
         setH(i, bar_height);
       }
       window.requestAnimationFrame(animationLooper);
