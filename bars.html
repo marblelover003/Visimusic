@@ -24,7 +24,7 @@
         font-size: 16px;
       }
       button, select, #songSelectMenu {
-        font-size: 16px;
+        font: 16px Roboto;
       }
     </style>
   </head>
@@ -103,7 +103,7 @@
       FFT Size:
       <select id="fftsize">
         <option value=1024>1024</option>
-        <option value=2048 selected>2048</option>
+        <option value=2048 selected>2048 (Default)</option>
         <option value=4096>4096</option>
         <option value=8192>8192</option>
         <option value=16384>16384</option>
@@ -136,15 +136,35 @@
       </select><br>
       Curve power:
       <select id="power">
-        <option value=1 selected>1x (Default)</option>
+        <option value=1>1x</option>
         <option value=2>2x</option>
         <option value=3>3x</option>
         <option value=4>4x</option>
-        <option value=5>5x</option>
+        <option value=5 selected>5x (Default)</option>
         <option value=6>6x</option>
         <option value=8>8x</option>
         <option value=10>10x</option>
-      </select>
+      </select><br>
+      Max dB:
+      <select id="maxdb">
+        <option>0</option>
+        <option>-5</option>
+        <option value=-10 selected>-10 (Default)</option>
+        <option>-15</option>
+        <option>-20</option>
+        <option>-25</option>
+        <option>-30</option>
+      </select><br>
+      Min dB:
+      <select id="mindb">
+        <option>-100</option>
+        <option>-95</option>
+        <option value=-90 selected>-90 (Default)</option>
+        <option>-85</option>
+        <option>-80</option>
+        <option>-75</option>
+        <option>-70</option>
+      </select><br>
       <button onclick="selectSong()" id="button">START THE VISUALIZATION!</button>
     </span>
     <audio src="" id="audio"></audio>
@@ -218,6 +238,8 @@
       }
       analyser.fftSize = parseInt(document.getElementById("fftsize").value);
       analyser.smoothingTimeConstant = parseFloat(document.getElementById("smoothing").value);
+      analyser.minDecibels = parseInt(document.getElementById("mindb").value);
+      analyser.maxDecibels = parseInt(document.getElementById("maxdb").value);
       maxheight = parseFloat(document.getElementById("maxheight").value);
       curvepower = parseInt(document.getElementById("power").value);
       document.getElementById("songSelectMenu").style.visibility = "hidden";
