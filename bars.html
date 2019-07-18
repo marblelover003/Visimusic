@@ -217,8 +217,8 @@
         initPage();
       }
       analyser.fftSize = parseInt(document.getElementById("fftsize").value);
-      analyser.smoothingTimeConstant = parseInt(document.getElementById("smoothing").value);
-      maxheight = parseInt(document.getElementById("maxheight").value);
+      analyser.smoothingTimeConstant = parseFloat(document.getElementById("smoothing").value);
+      maxheight = parseFloat(document.getElementById("maxheight").value);
       curvepower = parseInt(document.getElementById("power").value);
       document.getElementById("songSelectMenu").style.visibility = "hidden";
       var colors, style;
