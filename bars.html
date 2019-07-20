@@ -26,6 +26,22 @@
       button, select, #songSelectMenu {
         font: 16px Roboto;
       }
+      progress {
+        width: 100%;
+        -webkit-appearance: none;
+      }
+      progress::-webkit-progress-bar {
+        background: linear-gradient(to bottom, #ccc 0%, #ddd 50%, #bbb 50%, #ccc 100%);
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.2) inset;
+      }
+      progress::-webkit-progress-value {
+        background: #99f;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        box-shadow: 0px 0px 9px 1px rgba(0, 0, 255, 0.5) inset;
+      }
     </style>
   </head>
   <body>
@@ -172,7 +188,10 @@
     <span style="position: absolute; bottom: 0; z-index: -99;">
       <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
     </span>
-    <span id="pos" style="position: absolute; bottom: 8px; right: 8px; font: 30px Roboto;">-:-- &sol; -:--</span>
+    <span id="pos" style="position: absolute; bottom: 8px; right: 8px; font: 30px Roboto; width: 100px;">
+      --:-- &sol; --:--<br>
+      <progress id="progress" value="0" max="0"></progress>
+    </span>
   </body>
   <script>
     var bar_height, frequency_array,
@@ -184,7 +203,8 @@
         },
         pageInitiated = false,
         length, positions,
-        maxheight, curvepower;
+        maxheight, curvepower,
+        progress = document.getElementById("progress");
     function initPage() {
       audio = document.getElementById("audio");
       context = new (window.AudioContext || window.webkitAudioContext)();
@@ -218,6 +238,8 @@
         document.getElementById("songSelectMenu").style.visibility = "visible";
         clearInterval(positions);
         document.getElementById("pos").innerHTML = "--:-- / --:--";
+        progress.value = 0;
+        progress.max = 0;
       });
     }
     function selectSong() {
@@ -452,6 +474,10 @@
           length = "3:26";
           break;
       }
+      var l_m = parseInt(length[0]);
+      var l_s = parseInt(length[2] + length[3]);
+      l_m *= 60;
+      progress.max = l_m + l_s;
       document.getElementById("pos").innerHTML = "-:-- / " + length;
       var y = 0;
       for (var i = 0; i < 250; i++) {
@@ -475,12 +501,13 @@
         audio.load();
         audio.play();
         animationLooper();
-        audio.oncanplay = function() {
+        audio.oncanplaythrough = function() {
           positions = setInterval(function() {
             var curpos = Math.floor(audio.currentTime);
             var m = Math.floor(curpos / 60);
             var s = Math.floor(curpos % 60);
             document.getElementById("pos").innerHTML = m + ":" + ("0" + s).slice(-2) + " / " + length;
+            progress.value = (m * 60) + s;
           }, 0);
         };
       }, 1000);
