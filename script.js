@@ -22,7 +22,7 @@ function initPage() {
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   ctx.beginPath();
-  ctx.strokeStyle = "#ffffff";
+  ctx.strokeStyle = "#0000ff";
   ctx.arc(center_x, center_y, radius, 0, 2*Math.PI);
   ctx.stroke();
   analyser.fftSize = 4096;
@@ -34,7 +34,9 @@ function initPage() {
   setTimeout(function() {
     audio.load();
     audio.play();
-    animationLooper();
+    audio.oncanplaythrough = function() {
+      animationLooper();
+    }
     audio.addEventListener("ended", function() {
       alert(song + " has ended. Reload the page to select a new song.");
     });
