@@ -241,6 +241,7 @@
         document.getElementById("pos").innerHTML = "--:-- / --:--";
         progress.value = 0;
         progress.max = 0;
+        document.title = "Visimusic: Bars";
       });
     }
     function selectSong() {
@@ -266,7 +267,136 @@
       maxheight = parseFloat(document.getElementById("maxheight").value);
       curvepower = parseInt(document.getElementById("power").value);
       document.getElementById("songSelectMenu").style.visibility = "hidden";
-      var colors, style;
+      var colors, style, artist;
+      switch (song) {
+        case "Astrocat":
+        case "Buzz Kill":
+        case "Sugar Rush":
+          artist = "PIXL";
+          break;
+        case "Barracuda":
+          artist = "Noisestorm";
+          break;
+        case "Be Gone Mr. Gawne":
+        case "Commando Steve":
+        case "Flirt Flirt Oh It Hurts":
+        case "Jack Russel":
+        case "Milky Ways":
+        case "Pirate Manners":
+        case "The Cave, The Treasure":
+        case "The Maze of Mayonnaise":
+          artist = "Bossfight";
+          break;
+        case "Cascade":
+          artist = "Kubbi";
+          break;
+        case "Cheat Codes":
+        case "Cheat Codes VIP":
+        case "Final Boss":
+        case "New Game":
+        case "So Far Away":
+          artist = "Nitro Fun";
+          break;
+        case "Checkpoint":
+          artist = "Nitro Fun and Hyper Potions";
+          break;
+        case "Chip Zeal":
+        case "Houston":
+        case "No Party Like a Mojang Party":
+        case "Sevcon":
+        case "Vindicate Me":
+          artist = "Big Giant Circles";
+          break;
+        case "Chronos":
+        case "Corrupted":
+        case "Legacy":
+        case "Logic Gatekeeper":
+        case "Parallel Processing":
+        case "The Lunar Whale":
+          artist = "Danimal Cannon and Zef";
+          break;
+        case "Core":
+        case "Cruise Control":
+        case "Livewire":
+        case "Tension":
+          artist = "Zef";
+          break;
+        case "Courtesy":
+        case "Focus":
+        case "Otis":
+        case "Spectra":
+        case "The Art of War":
+        case "Tokyo Skies":
+          artist = "Chipzel";
+          break;
+        case "Crystal Tokyo":
+          artist = "FantomenK and meganeko";
+          break;
+        case "Dance of the Incognizant":
+          artist = "FantomenK";
+          break;
+        case "Destroid 8 - Annihilate":
+          artist = "Excision and Far Too Loud";
+          break;
+        case "Destroid 10 - Funk Hole":
+          artist = "Excision and Space Laces";
+          break;
+        case "FOX":
+        case "Into The Zone":
+        case "On The Run":
+          artist = "Shirobon";
+          break;
+        case "FTW":
+          artist = "Lets Be Friends";
+          break;
+        case "Grind":
+        case "Quake":
+        case "Stock & Pull":
+          artist = "Stereotronique";
+          break;
+        case "HYPE":
+          artist = "Tokyo Machine";
+          break;
+        case "Long Live The New Fresh":
+          artist = "Danimal Cannon";
+          break;
+        case "MOSHI":
+          artist = "Pegboard Nerds and Tokyo Machine";
+          break;
+        case "Once Again":
+        case "Till It\'s Over":
+          artist = "Tristam";
+          break;
+        case "Paper Dolls":
+          artist = "Shawn Daley";
+          break;
+        case "Peer Gynt":
+          artist = "cYsmix";
+          break;
+        case "Rainbow Road":
+          artist = "nanobii";
+          break;
+        case "Rocktronik":
+        case "Try This":
+          artist = "Pegboard Nerds";
+          break;
+        case "Termination Shock":
+          artist = "Sabrepulse";
+          break;
+        case "Unlocked":
+          artist = "Plesco";
+          break;
+        case "Wicked":
+          artist = "Avenza";
+          break;
+      }
+      if (song == "Cool Friends") {
+        document.title = "Playing Cool Friends (Murtagh & Veschell Remix) by Silva Hound on Visimusic";
+      } else if (song == "Partyt Ar Igang") {
+        document.title = "Playing Partyt A\u0308r Iga\u030Ang! by Bossfight on Visimusic";
+      } else {
+        document.title = "Playing " + song + " by " + artist + " on Visimusic";
+      }
       switch (song) {
         case "Barracuda":
           colors = ["#e7e7e7", "#efefef", "#f7f7f7"];
