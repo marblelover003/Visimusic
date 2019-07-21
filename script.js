@@ -61,9 +61,9 @@ function animationLooper(){
   analyser.getByteFrequencyData(frequency_array);
   for(var i = 0; i < bars; i++){
     rads = Math.PI * 2 / bars;
-    bar_height = Math.pow(frequency_array[i] / 255 * Math.pow(480, 1/4), 4);
-    x = center_x + Math.cos(rads * i) * (radius - (bar_height / 8));
-    y = center_y + Math.sin(rads * i) * (radius - (bar_height / 8));
+    bar_height = Math.pow(frequency_array[i] / 255 * Math.pow(240, 1/4), 4);
+    x = center_x + Math.cos(rads * i) * (radius - (bar_height / 2));
+    y = center_y + Math.sin(rads * i) * (radius - (bar_height / 2));
     x_end = center_x + Math.cos(rads * i)*(radius + bar_height);
     y_end = center_y + Math.sin(rads * i)*(radius + bar_height);
     drawBar(x, y, x_end, y_end, bar_width);
