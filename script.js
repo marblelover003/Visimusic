@@ -1,4 +1,4 @@
-var canvas, ctx, center_x, center_y, radius = 150, bars = 200, x_end, y_end, bar_height, bar_width = 2, frequency_array;
+var canvas, ctx, center_x, center_y, radius = 150, bars = 200, x_end, y_end, bar_height, bar_width = 4, frequency_array;
 function initPage() {
   var song = document.getElementById("song").value;
   audio = document.getElementById("audio");
@@ -21,10 +21,6 @@ function initPage() {
   gradient.addColorStop(1, "rgba(0, 0, 0, 1)");
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
-  ctx.beginPath();
-  ctx.strokeStyle = "#0000ff";
-  ctx.arc(center_x, center_y, radius, 0, 2*Math.PI);
-  ctx.stroke();
   analyser.fftSize = 4096;
   analyser.smoothingTimeConstant = 0;
   analyser.minDecibels = -90;
@@ -55,9 +51,6 @@ function animationLooper(){
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   ctx.strokeStyle = "#ffffff";
-  ctx.beginPath();
-  ctx.arc(center_x, center_y, radius, 0, 2*Math.PI);
-  ctx.stroke();
   analyser.getByteFrequencyData(frequency_array);
   for(var i = 0; i < bars; i++){
     rads = Math.PI / bars;
