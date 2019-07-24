@@ -115,6 +115,7 @@
         <option value="Unlocked">Plesco - Unlocked</option>
         <option value="Vindicate Me">Big Giant Circles - Vindicate Me</option>
         <option value="Wicked">Avenza - Wicked</option>
+        <option value="Yo! Ho! And a Bottle of Bass!">Omnitica - Yo! Ho! And a Bottle of Bass!</option>
       </select><br>
       FFT Size:
       <select id="fftsize">
@@ -388,6 +389,9 @@
         case "Wicked":
           artist = "Avenza";
           break;
+        case "Yo! Ho! And a Bottle of Bass!":
+          artist = "Omnitica";
+          break;
       }
       if (song == "Cool Friends") {
         document.title = "Playing Cool Friends (Murtagh & Veschell Remix) by Silva Hound on Visimusic";
@@ -602,6 +606,11 @@
           colors = ["#00ff80"];
           style = styles.single;
           length = "3:26";
+          break;
+        case "Yo! Ho! And a Bottle of Bass!":
+          colors = ["#7070ff", "#8080ff", "#8f8fff"];
+          style = styles.random;
+          length = "6:24";
           break;
       }
       var l_m = parseInt(length[0]);
