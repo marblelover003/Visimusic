@@ -153,10 +153,11 @@
       FFT Size:
       <select id="fftsize">
         <option value=1024>1024</option>
-        <option value=2048 selected>2048 (Default)</option>
-        <option value=4096>4096</option>
+        <option value=2048>2048</option>
+        <option value=4096 selected>4096 (Default)</option>
         <option value=8192>8192</option>
         <option value=16384>16384</option>
+        <option value=32768>32768</option>
       </select><br>
       Number of Bars:
       <select id="bars">
@@ -165,6 +166,8 @@
         <option value=150>150</option>
         <option value=125>125</option>
         <option value=100>100</option>
+        <option value=80>80</option>
+        <option value=60>60</option>
       </select><br>
       Smoothing:
       <select id="smoothing">
@@ -186,14 +189,11 @@
       </select><br>
       Curve power:
       <select id="power">
-        <option value=1>1x</option>
-        <option value=2>2x</option>
         <option value=3>3x</option>
         <option value=4>4x</option>
         <option value=5 selected>5x (Default)</option>
         <option value=6>6x</option>
         <option value=8>8x</option>
-        <option value=10>10x</option>
       </select><br>
       Max dB:
       <select id="maxdb">
@@ -202,8 +202,6 @@
         <option value=-10 selected>-10 (Default)</option>
         <option>-15</option>
         <option>-20</option>
-        <option>-25</option>
-        <option>-30</option>
       </select><br>
       Min dB:
       <select id="mindb">
@@ -214,6 +212,10 @@
         <option>-80</option>
         <option>-75</option>
         <option>-70</option>
+        <option>-65</option>
+        <option>-60</option>
+        <option>-55</option>
+        <option>-50</option>
       </select><br>
       <button onclick="selectSong()" id="button">START THE VISUALIZATION!</button>
     </span>
@@ -279,7 +281,7 @@
     }
     function selectSong() {
       var barwidth, bars = parseInt(document.getElementById("bars").value);
-      if (bars == 250) {barwidth = 3;} else if (bars == 200) {barwidth = 3.75;} else if (bars == 150) {barwidth = 5;} else if (bars == 125) {barwidth = 6;} else if (bars == 100) {barwidth = 7.5;}
+      if (bars == 250) {barwidth = 3;} else if (bars == 200) {barwidth = 3.75;} else if (bars == 150) {barwidth = 5;} else if (bars == 125) {barwidth = 6;} else if (bars == 100) {barwidth = 7.5;} else if (bars == 80) {barwidth = 9.375;} else if (bars == 60) {barwidth = 12.5;}
       for (var i = 0; i < bars; i++) {
         document.getElementsByTagName("div")[i].style.width = barwidth + "px";
       }
