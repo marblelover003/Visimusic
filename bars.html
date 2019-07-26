@@ -35,7 +35,7 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        font: 16px Montserrat;
+        font: 24px Montserrat;
       }
       progress::-webkit-progress-bar {
         background: linear-gradient(to bottom, #ccc 0%, #ddd 50%, #bbb 50%, #ccc 100%);
@@ -237,8 +237,8 @@
     <span class="progressContainer">
       <progress id="progress" value="0" max="0"></progress><span id="timeLeft">--:--</span>
     </span>
-    <span style="position: absolute; bottom: 8px; right: 8px; font: 30px Montserrat; width: 200px; text-align: right;">
-      <span id="pos">--:-- &sol; --:--</span><br>
+    <span style="position: absolute; bottom: 8px; right: 8px; font: 50px Montserrat; width: 225px; text-align: right;">
+      <span id="pos">--:--</span><br>
     </span>
   </body>
   <script>
@@ -285,7 +285,7 @@
         }
         document.getElementById("songSelectMenu").style.visibility = "visible";
         clearInterval(positions);
-        document.getElementById("pos").innerHTML = "--:-- / --:--";
+        document.getElementById("pos").innerHTML = "--:--";
         document.getElementById("timeLeft").innerHTML = "--:--";
         progress.value = 0;
         progress.max = 0;
@@ -736,7 +736,7 @@
             var timeLeft = len - pos;
             var t_m = Math.floor(timeLeft / 60);
             var t_s = Math.floor(timeLeft % 60);
-            document.getElementById("pos").innerHTML = m + ":" + ("0" + s).slice(-2) + " / " + length;
+            document.getElementById("pos").innerHTML = m + ":" + ("0" + s).slice(-2);
             document.getElementById("timeLeft").innerHTML = "-" + t_m + ":" + ("0" + t_s).slice(-2);
             progress.value = pos;
           }, 0);
