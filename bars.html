@@ -716,8 +716,8 @@
             var curpos = Math.floor(audio.currentTime);
             var m = Math.floor(curpos / 60);
             var s = Math.floor(curpos % 60);
-            var l_m = parseInt(length.slice(0,1));
-            var l_s = parseInt(length.slice(2,2));
+            var l_m = parseInt(length[0]);
+            var l_s = parseInt(length[2] + length[3]);
             var pos = (m * 60) + s;
             var len = (l_m * 60) + l_s;
             var timeLeft = len - pos;
