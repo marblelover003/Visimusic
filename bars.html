@@ -295,7 +295,7 @@
     function selectSong() {
       document.getElementById("visualizer").style.width = (window.innerWidth - 225) + "px";
       var barwidth, bars = parseInt(document.getElementById("bars").value);
-      barwidth = (document.getElementById("visualizer").style.width / bars * 100) + "%";
+      barwidth = (parseInt(document.getElementById("visualizer").style.width.slice(0,-2)) / bars * 100) + "%";
       for (var i = 0; i < bars; i++) {
         document.getElementsByTagName("div")[i].style.width = barwidth + "px";
       }
