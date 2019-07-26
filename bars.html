@@ -293,9 +293,8 @@
       });
     }
     function selectSong() {
-      document.getElementById("visualizer").style.width = (window.innerWidth - 225) + "px";
       var barwidth, bars = parseInt(document.getElementById("bars").value);
-      barwidth = (parseInt(document.getElementById("visualizer").style.width.slice(0,-2)) / bars * 100) + "%";
+      if (bars == 250) {barwidth = 3;} else if (bars == 200) {barwidth = 3.75;} else if (bars == 150) {barwidth = 5;} else if (bars == 125) {barwidth = 6;} else if (bars == 100) {barwidth = 7.5;} else if (bars == 80) {barwidth = 9.375;} else if (bars == 60) {barwidth = 12.5;}
       for (var i = 0; i < bars; i++) {
         document.getElementsByTagName("div")[i].style.width = barwidth + "px";
       }
