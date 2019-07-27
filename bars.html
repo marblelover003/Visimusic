@@ -85,6 +85,7 @@
       .c33::-webkit-progress-value {background: #00ff80;}
       .c34::-webkit-progress-value {background: linear-gradient(to bottom, #7070ff, #8f8fff);}
       .c35::-webkit-progress-value {background: #00af30;}
+      .c36::-webkit-progress-value {background: #ffffee;}
     </style>
   </head>
   <body>
@@ -112,6 +113,7 @@
         <option value="Dance of the Incognizant">FantomenK - Dance of the Incognizant</option>
         <option value="Destroid 8 - Annihilate">Excision &amp; Far Too Loud - Destroid 8 Annihilate</option>
         <option value="Destroid 10 - Funk Hole">Excision &amp; Space Laces - Destroid 10 Funk Hole</option>
+        <option value="Faster Than Light">Far Too Loud - Faster Than Light</option>
         <option value="Final Boss">Nitro Fun - Final Boss</option>
         <option value="Flirt Flirt Oh It Hurts">Bossfight - Flirt Flirt Oh It Hurts</option>
         <option value="Focus">Chipzel - Focus</option>
@@ -440,6 +442,9 @@
         case "Yo! Ho! And a Bottle of Bass!":
           artist = "Omnitica";
           break;
+        case "Faster Than Light":
+          artist = "Far Too Loud";
+          break;
       }
       if (song == "Cool Friends") {
         document.title = "Playing Cool Friends (Murtagh & Veschell Remix) by Silva Hound on Visimusic";
@@ -692,8 +697,13 @@
           length = "5:41";
           barcolor = 35;
           break;
+        case "Faster Than Light":
+          colors = ["#ffffee"];
+          style = styles.single;
+          length = "5:03";
+          barcolor = 36;
       }
-      for (var i = 1; i <= 35; i++) {
+      for (var i = 1; i <= 36; i++) {
         progress.classList.remove("c" + i);
       }
       progress.classList.add("c" + barcolor);
