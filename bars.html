@@ -121,6 +121,7 @@
         <option value="FTW">Lets Be Friends - FTW</option>
         <option value="Glitch">Danimal Cannon &amp; Zef - Glitch</option>
         <option value="Grind">Stereotronique - Grind</option>
+        <option value="Halcyon">Au5 &amp; Fractal - Halcyon</option>
         <option value="Houston">Big Giant Circles - Houston</option>
         <option value="HYPE">Tokyo Machine - HYPE</option>
         <option value="Into The Zone">Shirobon - Into the Zone</option>
@@ -447,6 +448,9 @@
         case "Faster Than Light":
           artist = "Far Too Loud";
           break;
+        case "Halcyon":
+          artist = "Au5 & Fractal";
+          break;
       }
       if (song == "Cool Friends") {
         document.title = "Playing Cool Friends (Murtagh & Veschell Remix) by Silva Hound on Visimusic";
@@ -671,9 +675,10 @@
           barcolor = 30;
           break;
         case "Try This":
+        case "Halcyon":
           colors = ["#ff0080"];
           style = styles.single;
-          length = "3:49";
+          if (song == "Try This") {length = "3:49";} else if (song == "Halcyon") {length = "6:10";}
           barcolor = 31;
           break;
         case "Unlocked":
