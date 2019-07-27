@@ -264,12 +264,12 @@
       source = context.createMediaElementSource(audio);
       source.connect(analyser);
       analyser.connect(context.destination);
-      frequency_array = new Uint8Array(analyser.frequencyBinCount);
+      frequency_array = new Float32Array(analyser.frequencyBinCount);
       analyser.fftSize = 8192;
       analyser.smoothingTimeConstant = 0;
       analyser.minDecibels = -90;
       analyser.maxDecibels = -10;
-      analyser.getByteFrequencyData(frequency_array);
+      analyser.getFloatFrequencyData(frequency_array);
       pageInitiated = true;
       audio.addEventListener("ended", function() {
         if (document.getElementById("song").value == "Partyt Ar Igang") {
@@ -761,7 +761,7 @@
       }, 1000);
     }
     function animationLooper(){
-      analyser.getByteFrequencyData(frequency_array);
+      analyser.getFloatFrequencyData(frequency_array);
       for(var i = 0; i < parseInt(document.getElementById("bars").value); i++){
         bar_height = Math.pow(frequency_array[i] / 255 * Math.pow(window.innerHeight - 24, 1/curvepower), curvepower) * maxheight;
         setH(i, bar_height);
