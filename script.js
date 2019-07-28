@@ -1,4 +1,4 @@
-var canvas, ctx, center_x, center_y, radius = 150, bars = 200, x_end, y_end, bar_height, bar_width = 4, frequency_array;
+var canvas, ctx, bars = 400, frequency_array;
 function initPage() {
   var song = document.getElementById("song").value;
   audio = document.getElementById("audio");
@@ -14,8 +14,6 @@ function initPage() {
   ctx = canvas.getContext("2d");
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
-  center_x = canvas.width / 2;
-  center_y = canvas.height / 2;
   var gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
   gradient.addColorStop(0, "rgba(0, 0, 0, 1)");
   gradient.addColorStop(1, "rgba(0, 0, 0, 1)");
@@ -43,38 +41,22 @@ function animationLooper(){
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   ctx = canvas.getContext("2d");
-  center_x = canvas.width / 2;
-  center_y = canvas.height / 2;
   var gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
   gradient.addColorStop(0, "rgba(0, 0, 0, 1)");
   gradient.addColorStop(1, "rgba(0, 0, 0, 1)");
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
-  ctx.strokeStyle = "#ffffff";
   analyser.getByteFrequencyData(frequency_array);
-  for(var i = 0; i < bars; i++){
-    rads = Math.PI / bars;
-    var rads2 = -(Math.PI / bars);
-    bar_height = Math.pow(frequency_array[i] / 255 * Math.pow(150, 1/4), 4);
-    x = center_x + Math.cos(rads * i) * (radius - bar_height);
-    y = center_y + Math.sin(rads * i) * (radius - bar_height);
-    x_end = center_x + Math.cos(rads * i)*(radius + bar_height);
-    y_end = center_y + Math.sin(rads * i)*(radius + bar_height);
-    var x2 = center_x + Math.cos(rads2 * i) * (radius - bar_height);
-    var y2 = center_y + Math.sin(rads2 * i) * (radius - bar_height);
-    var x_end2 = center_x + Math.cos(rads2 * i)*(radius + bar_height);
-    var y_end2 = center_y + Math.sin(rads2 * i)*(radius + bar_height);
-    drawBar(x, y, x_end, y_end, bar_width);
-    drawBar(x2,y2,x_end2,y_end2,bar_width);
+  var width = canvas.width / bars, height, x;
+  for (var i = 0; i < bars; i++) {
+    height = Math.pow(frequency_array[i] / 255 * Math.pow(canvas.height, 1/5), 5);
+    drawBar(x, canvas.height - height, width, height);
+    x += width;
   }
   window.requestAnimationFrame(animationLooper);
 }
-function drawBar(x1, y1, x2, y2, width){
-  var lineColor = "rgb(" + 255 + ", " + 255 + ", " + 255 + ")";
-  ctx.strokeStyle = lineColor;
-  ctx.lineWidth = width;
-  ctx.beginPath();
-  ctx.moveTo(x1,y1);
-  ctx.lineTo(x2,y2);
-  ctx.stroke();
+function drawBar(x, y, w, h, index){
+  var barcolor = "rgb(" + 255 + ", " + frequency_array[index] + ", " + frequency_array[index] + ")";
+  ctx.fillStyle = barcolor;
+  ctx.fillRect(x, y, w, h);
 }
