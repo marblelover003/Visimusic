@@ -50,7 +50,7 @@ function animationLooper(){
   var width = canvas.width / bars, height, x;
   for (var i = 0; i < bars; i++) {
     height = Math.pow(frequency_array[i] / 255 * Math.pow(canvas.height, 1/5), 5);
-    drawBar(x, canvas.height - height, width, height);
+    drawBar(x, canvas.height - height, width, height, i);
     x += width;
   }
   window.requestAnimationFrame(animationLooper);
