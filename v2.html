@@ -785,7 +785,7 @@
     function animationLooper(){
       analyser.getFloatFrequencyData(frequency_array);
       for(var i = 0; i < parseInt(document.getElementById("bars").value); i++){
-        bar_height = Math.pow(frequency_array[i] / 255 * Math.pow(window.innerHeight - 24, 1/curvepower), curvepower) * maxheight;
+        bar_height = Math.pow((frequency_array[i] + 140) / 255 * Math.pow(window.innerHeight - 24, 1/curvepower), curvepower) * maxheight;
         setH(i, bar_height);
       }
       window.requestAnimationFrame(animationLooper);
