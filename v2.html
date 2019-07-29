@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Visimusic v2</title>
+    <link rel="icon" href="https://marblelover003.github.io/Visimusic/Visimusic.png">
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Roboto|Montserrat");
+      body {
+        background: black;
+        overflow: hidden;
+        font-size: 0;
+        width: 768px;
+        color: white;
+        font-family: Roboto;
+      }
+      div {
+        background: black;
+        width: 3px;
+        height: 1px;
+        display: inline-block;
+      }
+      a, a:visited {
+        color: white;
+        font-size: 16px;
+      }
+      button, select, #songSelectMenu {
+        font: 16px Roboto;
+      }
+      progress {
+        width: 750px;
+        height: 24px;
+        -webkit-appearance: none;
+      }
+      .progressContainer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font: 24px Montserrat;
+      }
+      progress::-webkit-progress-bar {
+        background: linear-gradient(to bottom, #ccc 0%, #ddd 50%, #bbb 50%, #ccc 100%);
+        box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.2) inset;
+      }
+      progress::-webkit-progress-value {
+        box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.5) inset;
+      }
+      #visualizer {
+        position: absolute;
+        bottom: 24px;
+        left: 0;
+        z-index: -99;
+      }
+      .c1::-webkit-progress-value {background: linear-gradient(to bottom, #e7e7e7 0%, #f7f7f7 50%, #e7e7e7 100%);}
+      .c2::-webkit-progress-value {background: linear-gradient(to bottom, #e5af71 0%, #d19d64 50%, #e8bc7d 100%);}
+      .c3::-webkit-progress-value {background: #ffff00;}
+      .c4::-webkit-progress-value {background: #bfbfff;}
+      .c5::-webkit-progress-value {background: #ff4e5b;}
+      .c6::-webkit-progress-value {background: linear-gradient(to right, #ff0000 0px, #ffff00 750px);}
+      .c7::-webkit-progress-value {background: #113344;}
+      .c8::-webkit-progress-value {background: linear-gradient(to bottom, #ff0000 49.99999999%, #ffffff 50%);}
+      .c9::-webkit-progress-value {background: linear-gradient(to bottom, #4643d2 49.99999999%, #c38ef8 50%);}
+      .c10::-webkit-progress-value {background: #ff8000;}
+      .c11::-webkit-progress-value {background: #0432ea;}
+      .c12::-webkit-progress-value {background: linear-gradient(to bottom, #333333 49.99999999%, #ffff00 50%);}
+      .c13::-webkit-progress-value {background: linear-gradient(to bottom, #0000ff 49.99999999%, #ffffff 50%);}
+      .c14::-webkit-progress-value {background: #a00000;}
+      .c15::-webkit-progress-value {background: linear-gradient(to right, #ff0000 0%, #ff8000 80%, #ffff00 100%);}
+      .c16::-webkit-progress-value {background: #8b008b;}
+      .c17::-webkit-progress-value {background: linear-gradient(to bottom, #008fdd 49.99999999%, #6624f8 50%);}
+      .c18::-webkit-progress-value {background: #99ff00;}
+      .c19::-webkit-progress-value {background: #8ee050;}
+      .c20::-webkit-progress-value {background: #c00039;}
+      .c21::-webkit-progress-value {background: linear-gradient(to bottom, #801b55 49.99999999%, #483872 50%);}
+      .c22::-webkit-progress-value {background: linear-gradient(to right, #00bf00, #00ff00);}
+      .c23::-webkit-progress-value {background: #ffffff;}
+      .c24::-webkit-progress-value {background: linear-gradient(to bottom, #78a050 49.99999999%, #f5a915 50%);}
+      .c25::-webkit-progress-value {background: linear-gradient(to bottom, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);}
+      .c26::-webkit-progress-value {background: #808080;}
+      .c27::-webkit-progress-value {background: #ff0000;}
+      .c28::-webkit-progress-value {background: linear-gradient(to bottom, #ff9900 49.99999999%, #ffaa00 50%);}
+      .c29::-webkit-progress-value {background: #7fffd4;}
+      .c30::-webkit-progress-value {background: linear-gradient(to right, #0000ff, #ffffff);}
+      .c31::-webkit-progress-value {background: #ff0080;}
+      .c32::-webkit-progress-value {background: #eeeeee;}
+      .c33::-webkit-progress-value {background: #00ff80;}
+      .c34::-webkit-progress-value {background: linear-gradient(to bottom, #7070ff, #8f8fff);}
+      .c35::-webkit-progress-value {background: #00af30;}
+      .c36::-webkit-progress-value {background: #ffffee;}
+      .c37::-webkit-progress-value {background: #ffd700;}
+      .c38::-webkit-progress-value {background: #ff0040;}
+    </style>
+  </head>
+  <body>
+    <span style="position: absolute; z-index: 99;" id="songSelectMenu">
+      Select a song:
+      <select id="song">
+        <option></option>
+        <option value="Astrocat">PIXL - Astrocat</option>
+        <option value="Barracuda">Noisestorm - Barracuda</option>
+        <option value="Be Gone Mr. Gawne">Bossfight - Be Gone Mr. Gawne</option>
+        <option value="Buzz Kill">PIXL - Buzz Kill</option>
+        <option value="Cascade">Kubbi - Cascade</option>
+        <option value="Cheat Codes">Nitro Fun - Cheat Codes</option>
+        <option value="Cheat Codes VIP">Nitro Fun - Cheat Codes VIP</option>
+        <option value="Checkpoint">Nitro Fun &amp; Hyper Potions - Checkpoint</option>
+        <option value="Chip Zeal">Big Giant Circles - Chip Zeal</option>
+        <option value="Chronos">Danimal Cannon &amp; Zef - Chronos</option>
+        <option value="Commando Steve">Bossfight - Commando Steve</option>
+        <option value="Cool Friends">Silva Hound - Cool Friends (Murtagh &amp; Veschell Remix)</option>
+        <option value="Core">Zef - Core</option>
+        <option value="Corrupted">Danimal Cannon &amp; Zef - Corrupted</option>
+        <option value="Courtesy">Chipzel - Courtesy</option>
+        <option value="Cruise Control">Zef - Cruise Control</option>
+        <option value="Crystal Tokyo">FantomenK &amp; meganeko - Crystal Tokyo</option>
+        <option value="Dance of the Incognizant">FantomenK - Dance of the Incognizant</option>
+        <option value="Destroid 8 - Annihilate">Excision &amp; Far Too Loud - Destroid 8 Annihilate</option>
+        <option value="Destroid 10 - Funk Hole">Excision &amp; Space Laces - Destroid 10 Funk Hole</option>
+        <option value="Dubwoofer Substep">Omnitica - Dubwoofer Substep</option>
+        <option value="Faster Than Light">Far Too Loud - Faster Than Light</option>
+        <option value="FIGHT">Tokyo Machine - FIGHT</option>
+        <option value="Final Boss">Nitro Fun - Final Boss</option>
+        <option value="Flirt Flirt Oh It Hurts">Bossfight - Flirt Flirt Oh It Hurts</option>
+        <option value="Focus">Chipzel - Focus</option>
+        <option value="FOX">Shirobon - FOX</option>
+        <option value="FTW">Lets Be Friends - FTW</option>
+        <option value="Glitch">Danimal Cannon &amp; Zef - Glitch</option>
+        <option value="Grind">Stereotronique - Grind</option>
+        <option value="Halcyon">Au5 &amp; Fractal - Halcyon</option>
+        <option value="Houston">Big Giant Circles - Houston</option>
+        <option value="HYPE">Tokyo Machine - HYPE</option>
+        <option value="Into The Zone">Shirobon - Into the Zone</option>
+        <option value="Jack Russel">Bossfight - Jack Russel</option>
+        <option value="Legacy">Danimal Cannon &amp; Zef - Legacy</option>
+        <option value="Livewire">Zef - Livewire</option>
+        <option value="Logic Gatekeeper">Danimal Cannon &amp; Zef - Logic Gatekeeper</option>
+        <option value="Long Live The New Fresh">Danimal Cannon - Long Live the New Fresh</option>
+        <option value="Milky Ways">Bossfight - Milky Ways</option>
+        <option value="MOSHI">Pegboard Nerds &amp; Tokyo Machine - MOSHI</option>
+        <option value="New Game">Nitro Fun - New Game</option>
+        <option value="No Party Like a Mojang Party">Big Giant Circles - No Party Like a Mojang Party</option>
+        <option value="On The Run">Shirobon - On the Run</option>
+        <option value="Once Again">Tristam - Once Again</option>
+        <option value="Otis">Chipzel - Otis</option>
+        <option value="Paper Dolls">Shawn Daley - Paper Dolls</option>
+        <option value="Parallel Processing">Danimal Cannon &amp; Zef - Parallel Processing</option>
+        <option value="Partyt Ar Igang">Bossfight - Partyt A&#776;r Iga&#778;ng!</option>
+        <option value="Peer Gynt">cYsmix - Peer Gynt</option>
+        <option value="Pirate Manners">Bossfight - Pirate Manners</option>
+        <option value="PLAY">Tokyo Machine - PLAY</option>
+        <option value="Quake">Stereotronique - Quake</option>
+        <option value="Rainbow Road">nanobii - Rainbow Road</option>
+        <option value="Rhapsody">Danimal Cannon & Zef - Rhapsody</option>
+        <option value="Rocktronik">Pegboard Nerds - Rocktronik</option>
+        <option value="SAIKOU">Tokyo Machine - SAIKOU</option>
+        <option value="Sevcon">Big Giant Circles - Sevcon</option>
+        <option value="So Far Away">Nitro Fun - So Far Away</option>
+        <option value="Spectra">Chipzel - Spectra</option>
+        <option value="Stock & Pull">Stereotronique - Stock &amp; Pull</option>
+        <option value="Sugar Rush">PIXL - Sugar Rush</option>
+        <option value="Tension">Zef - Tension</option>
+        <option value="Termination Shock">Sabrepulse - Termination Shock</option>
+        <option value="The Art of War">Chipzel - The Art of War</option>
+        <option value="The Cave, The Treasure">Bossfight - The Cave, The Treasure</option>
+        <option value="The Lunar Whale">Danimal Cannon &amp; Zef - The Lunar Whale</option>
+        <option value="The Maze of Mayonnaise">Bossfight - The Maze of Mayonnaise</option>
+        <option value="Till It's Over">Tristam - Till It's Over</option>
+        <option value="Tokyo Skies">Chipzel - Tokyo Skies</option>
+        <option value="Try This">Pegboard Nerds - Try This</option>
+        <option value="Unlocked">Plesco - Unlocked</option>
+        <option value="Vindicate Me">Big Giant Circles - Vindicate Me</option>
+        <option value="Wicked">Avenza - Wicked</option>
+        <option value="Yo! Ho! And a Bottle of Bass!">Omnitica - Yo! Ho! And a Bottle of Bass!</option>
+      </select><br>
+      Number of Bars:
+      <select id="bars">
+        <option value=250 selected>250 (Default)</option>
+        <option value=200>200</option>
+        <option value=150>150</option>
+        <option value=125>125</option>
+        <option value=100>100</option>
+        <option value=80>80</option>
+        <option value=60>60</option>
+      </select><br>
+      Smoothing:
+      <select id="smoothing">
+        <option value=0 selected>None (0) (Default)</option>
+        <option value=0.05>Very little (0.05)</option>
+        <option value=0.1>Less (0.1)</option>
+        <option value=0.2>Some (0.2)</option>
+        <option value=0.35>More (0.35)</option>
+        <option value=0.5>A lot (0.5)</option>
+      </select><br>
+      Maximum bar height (relative to window height):
+      <select id="maxheight">
+        <option value=1 selected>1x (Default)</option>
+        <option value=0.9>0.9x</option>
+        <option value=0.8>0.8x</option>
+        <option value=0.7>0.7x</option>
+        <option value=0.6>0.6x</option>
+        <option value=0.5>0.5x</option>
+      </select><br>
+      Curve power:
+      <select id="power">
+        <option value=3>3x</option>
+        <option value=4>4x</option>
+        <option value=5 selected>5x (Default)</option>
+        <option value=6>6x</option>
+        <option value=8>8x</option>
+      </select><br>
+      Max dB:
+      <select id="maxdb">
+        <option>0</option>
+        <option>-5</option>
+        <option value=-10 selected>-10 (Default)</option>
+        <option>-15</option>
+        <option>-20</option>
+      </select><br>
+      Min dB:
+      <select id="mindb">
+        <option>-100</option>
+        <option>-95</option>
+        <option value=-90 selected>-90 (Default)</option>
+        <option>-85</option>
+        <option>-80</option>
+        <option>-75</option>
+        <option>-70</option>
+        <option>-65</option>
+        <option>-60</option>
+        <option>-55</option>
+        <option>-50</option>
+      </select><br>
+      <button onclick="selectSong()" id="button">START THE VISUALIZATION!</button><a href="index.html">Check out v1 here!</a>
+    </span>
+    <audio src="" id="audio"></audio>
+    <img width="218" height="326" style="position: absolute; top: 8px; right: 8px;" id="songTag" src="Visimusic.png">
+    <span id="visualizer">
+      <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    </span>
+    <span class="progressContainer">
+      <progress id="progress" value="0" max="0"></progress><span id="timeLeft">--:--</span>
+    </span>
+    <span style="position: absolute; bottom: 8px; right: 8px; font: 50px Montserrat; width: 225px; text-align: right;">
+      <span id="pos">--:--</span><br>
+    </span>
+  </body>
+  <script>
+    var bar_height, frequency_array,
+        styles = {
+          alternating: "alternating",
+          sequential: "sequential",
+          random: "random",
+          single: "single"
+        },
+        pageInitiated = false,
+        length, positions,
+        maxheight, curvepower,
+        progress = document.getElementById("progress");
+    function initPage() {
+      audio = document.getElementById("audio");
+      context = new (window.AudioContext || window.webkitAudioContext)();
+      analyser = context.createAnalyser();
+      source = context.createMediaElementSource(audio);
+      source.connect(analyser);
+      analyser.connect(context.destination);
+      frequency_array = new Float32Array(analyser.frequencyBinCount);
+      analyser.fftSize = 256;
+      analyser.smoothingTimeConstant = 0;
+      analyser.minDecibels = -90;
+      analyser.maxDecibels = -10;
+      analyser.getFloatFrequencyData(frequency_array);
+      pageInitiated = true;
+      audio.addEventListener("ended", function() {
+        if (document.getElementById("song").value == "Partyt Ar Igang") {
+          alert("Partyt A\u0308r Iga\u030Ang! has ended. If you wish, feel free to pick another song.");
+        } else {
+          alert(document.getElementById("song").value + " has ended. If you wish, feel free to pick another song.");
+        }
+        audio.src = "";
+        document.getElementById("songTag").src = "https://marblelover003.github.io/Visimusic/Visimusic.png";
+        document.getElementById("song").selectedIndex = 0;
+        var x = 0;
+        for (var i = 0; i < 250; i++) {
+          setTimeout(function() {
+            document.getElementsByTagName("div")[x].style.background = "#000000";
+            x++;
+          }, 5*i);
+        }
+        document.getElementById("songSelectMenu").style.visibility = "visible";
+        clearInterval(positions);
+        document.getElementById("pos").innerHTML = "--:--";
+        document.getElementById("timeLeft").innerHTML = "--:--";
+        progress.value = 0;
+        progress.max = 0;
+        document.title = "Visimusic";
+      });
+    }
+    function selectSong() {
+      var barwidth, bars = parseInt(document.getElementById("bars").value);
+      if (bars == 250) {barwidth = 3;} else if (bars == 200) {barwidth = 3.75;} else if (bars == 150) {barwidth = 5;} else if (bars == 125) {barwidth = 6;} else if (bars == 100) {barwidth = 7.5;} else if (bars == 80) {barwidth = 9.375;} else if (bars == 60) {barwidth = 12.5;}
+      for (var i = 0; i < bars; i++) {
+        document.getElementsByTagName("div")[i].style.width = barwidth + "px";
+      }
+      for (var i = bars; i < 250; i++) {
+        document.getElementsByTagName("div")[i].style.width = "0px";
+      }
+      var song = document.getElementById("song").value;
+      audio = document.getElementById("audio");
+      audio.src = "https://marblelover003.github.io/Visimusic/" + song + ".mp3";
+      document.getElementById("songTag").src = "https://marblelover003.github.io/Visimusic/Song-Tags/" + song + ".JPG";
+      if (pageInitiated == false) {
+        initPage();
+      }
+      analyser.smoothingTimeConstant = parseFloat(document.getElementById("smoothing").value);
+      analyser.minDecibels = parseInt(document.getElementById("mindb").value);
+      analyser.maxDecibels = parseInt(document.getElementById("maxdb").value);
+      maxheight = parseFloat(document.getElementById("maxheight").value);
+      curvepower = parseInt(document.getElementById("power").value);
+      document.getElementById("songSelectMenu").style.visibility = "hidden";
+      var colors, style, artist;
+      switch (song) {
+        case "Astrocat":
+        case "Buzz Kill":
+        case "Sugar Rush":
+          artist = "PIXL";
+          break;
+        case "Barracuda":
+          artist = "Noisestorm";
+          break;
+        case "Be Gone Mr. Gawne":
+        case "Commando Steve":
+        case "Flirt Flirt Oh It Hurts":
+        case "Jack Russel":
+        case "Milky Ways":
+        case "Pirate Manners":
+        case "The Cave, The Treasure":
+        case "The Maze of Mayonnaise":
+          artist = "Bossfight";
+          break;
+        case "Cascade":
+          artist = "Kubbi";
+          break;
+        case "Cheat Codes":
+        case "Cheat Codes VIP":
+        case "Final Boss":
+        case "New Game":
+        case "So Far Away":
+          artist = "Nitro Fun";
+          break;
+        case "Checkpoint":
+          artist = "Nitro Fun & Hyper Potions";
+          break;
+        case "Chip Zeal":
+        case "Houston":
+        case "No Party Like a Mojang Party":
+        case "Sevcon":
+        case "Vindicate Me":
+          artist = "Big Giant Circles";
+          break;
+        case "Chronos":
+        case "Corrupted":
+        case "Glitch":
+        case "Legacy":
+        case "Logic Gatekeeper":
+        case "Parallel Processing":
+        case "Rhapsody":
+        case "The Lunar Whale":
+          artist = "Danimal Cannon & Zef";
+          break;
+        case "Core":
+        case "Cruise Control":
+        case "Livewire":
+        case "Tension":
+          artist = "Zef";
+          break;
+        case "Courtesy":
+        case "Focus":
+        case "Otis":
+        case "Spectra":
+        case "The Art of War":
+        case "Tokyo Skies":
+          artist = "Chipzel";
+          break;
+        case "Crystal Tokyo":
+          artist = "FantomenK & meganeko";
+          break;
+        case "Dance of the Incognizant":
+          artist = "FantomenK";
+          break;
+        case "Destroid 8 - Annihilate":
+          artist = "Excision & Far Too Loud";
+          break;
+        case "Destroid 10 - Funk Hole":
+          artist = "Excision & Space Laces";
+          break;
+        case "FOX":
+        case "Into The Zone":
+        case "On The Run":
+          artist = "Shirobon";
+          break;
+        case "FTW":
+          artist = "Lets Be Friends";
+          break;
+        case "Grind":
+        case "Quake":
+        case "Stock & Pull":
+          artist = "Stereotronique";
+          break;
+        case "FIGHT":
+        case "HYPE":
+        case "PLAY":
+        case "SAIKOU":
+          artist = "Tokyo Machine";
+          break;
+        case "Long Live The New Fresh":
+          artist = "Danimal Cannon";
+          break;
+        case "MOSHI":
+          artist = "Pegboard Nerds & Tokyo Machine";
+          break;
+        case "Once Again":
+        case "Till It\'s Over":
+          artist = "Tristam";
+          break;
+        case "Paper Dolls":
+          artist = "Shawn Daley";
+          break;
+        case "Peer Gynt":
+          artist = "cYsmix";
+          break;
+        case "Rainbow Road":
+          artist = "nanobii";
+          break;
+        case "Rocktronik":
+        case "Try This":
+          artist = "Pegboard Nerds";
+          break;
+        case "Termination Shock":
+          artist = "Sabrepulse";
+          break;
+        case "Unlocked":
+          artist = "Plesco";
+          break;
+        case "Wicked":
+          artist = "Avenza";
+          break;
+        case "Dubwoofer Substep":
+        case "Yo! Ho! And a Bottle of Bass!":
+          artist = "Omnitica";
+          break;
+        case "Faster Than Light":
+          artist = "Far Too Loud";
+          break;
+        case "Halcyon":
+          artist = "Au5 & Fractal";
+          break;
+      }
+      if (song == "Cool Friends") {
+        document.title = "Playing Cool Friends (Murtagh & Veschell Remix) by Silva Hound on Visimusic";
+      } else if (song == "Partyt Ar Igang") {
+        document.title = "Playing Partyt A\u0308r Iga\u030Ang! by Bossfight on Visimusic";
+      } else if (song == "Destroid 8 - Annihilate") {
+        document.title = "Playing Destroid 8 Annihilate by Excision & Far Too Loud on Visimusic";
+      } else if (song == "Destroid 10 - Funk Hole") {
+        document.title = "Plyaing Destroid 10 Funk Hole by Excision & Space Laces on Visimusic";
+      } else {
+        document.title = "Playing " + song + " by " + artist + " on Visimusic";
+      }
+      var barcolor;
+      switch (song) {
+        case "Barracuda":
+          colors = ["#e7e7e7", "#efefef", "#f7f7f7"];
+          style = styles.random;
+          length = "4:22";
+          barcolor = 1;
+          break;
+        case "Cascade":
+          colors = ["#e5af71", "#d19d64", "#e8bc7d"];
+          style = styles.random;
+          length = "4:20";
+          barcolor = 2;
+          break;
+        case "Astrocat":
+        case "Cheat Codes":
+        case "Grind":
+        case "FTW":
+        case "MOSHI":
+        case "Once Again":
+        case "PLAY":
+        case "Stock & Pull":
+        case "Till It\'s Over":
+          colors = ["#ffff00"];
+          style = styles.single;
+          if (song == "Astrocat") {length = "5:21";} else if (song == "Cheat Codes") {length = "3:32";} else if (song == "FTW") {length = "4:17";} else if (song == "Grind") {length = "5:15";} else if (song == "MOSHI") {length = "3:35";} else if (song == "Once Again") {length = "3:46";} else if (song == "Stock & Pull") {length = "5:51";} else if (song == "Till It\'s Over") {length = "4:30";} else if (song == "PLAY") {length = "3:04";}
+          barcolor = 3;
+          break;
+        case "Cheat Codes VIP":
+          colors = ["#bfbfff"];
+          style = styles.single;
+          length = "3:24";
+          barcolor = 4;
+          break;
+        case "Checkpoint":
+          colors = ["#ff4e5b"];
+          style = styles.single;
+          length = "3:43";
+          barcolor = 5;
+          break;
+        case "Chip Zeal":
+          colors = ["#ff0000", "#ff0200", "#ff0400", "#ff0600", "#ff0900", "#ff0b00", "#ff0d00", "#ff0f00", "#ff1100", "#ff1300", "#ff1500", "#ff1800", "#ff1a00", "#ff1c00", "#ff1e00", "#ff2000", "#ff2200", "#ff2400", "#ff2700", "#ff2900", "#ff2b00", "#ff2d00", "#ff2f00", "#ff3100", "#ff3300", "#ff3600", "#ff3800", "#ff3a00", "#ff3c00", "#ff3e00", "#ff4000", "#ff4200", "#ff4500", "#ff4700", "#ff4900", "#ff4b00", "#ff4d00", "#ff4f00", "#ff5100", "#ff5400", "#ff5600", "#ff5800", "#ff5a00", "#ff5c00", "#ff5e00", "#ff6000", "#ff6300", "#ff6500", "#ff6700", "#ff6900", "#ff6b00", "#ff6d00", "#ff6f00", "#ff7200", "#ff7400", "#ff7600", "#ff7800", "#ff7a00", "#ff7c00", "#ff7e00", "#ff8100", "#ff8300", "#ff8500", "#ff8700", "#ff8900", "#ff8b00", "#ff8d00", "#ff9000", "#ff9200", "#ff9400", "#ff9600", "#ff9800", "#ff9a00", "#ff9c00", "#ff9f00", "#ffa100", "#ffa300", "#ffa500", "#ffa700", "#ffa900", "#ffab00", "#ffae00", "#ffb000", "#ffb200", "#ffb400", "#ffb600", "#ffb800", "#ffba00", "#ffbd00", "#ffbf00", "#ffc100", "#ffc300", "#ffc500", "#ffc700", "#ffc900", "#ffcc00", "#ffce00", "#ffd000", "#ffd200", "#ffd400", "#ffd600", "#ffd800", "#ffdb00", "#ffdd00", "#ffdf00", "#ffe100", "#ffe300", "#ffe500", "#ffe700", "#ffea00", "#ffec00", "#ffee00", "#fff000", "#fff200", "#fff400", "#fff600", "#fff900", "#fffb00", "#fffd00", "#ffff00"];
+          style = styles.sequential;
+          length = "3:29";
+          barcolor = 6;
+          break;
+        case "Chronos":
+        case "Corrupted":
+        case "Glitch":
+        case "Legacy":
+        case "Logic Gatekeeper":
+        case "Parallel Processing":
+        case "Rhapsody":
+        case "The Lunar Whale":
+          colors = ["#113344"];
+          style = styles.single;
+          if (song == "Chronos") {length = "4:29";} else if (song == "Corrupted") {length = "6:16";} else if (song == "Glitch") {length = "5:47";} else if (song == "Legacy") {length = "5:17";} else if (song == "Logic Gatekeeper") {length = "4:58";} else if (song == "Parallel Processing") {length = "8:29";} else if (song == "The Lunar Whale") {length = "4:35";} else if (song == "Rhapsody") {length = "6:13";}
+          barcolor = 7;
+          break;
+        case "Be Gone Mr. Gawne":
+        case "Commando Steve":
+        case "Flirt Flirt Oh It Hurts":
+        case "Jack Russel":
+        case "Milky Ways":
+        case "Partyt Ar Igang":
+        case "Pirate Manners":
+        case "The Cave, The Treasure":
+        case "The Maze of Mayonnaise":
+          colors = ["#ff9999", "#ffffff"];
+          style = styles.alternating;
+          if (song == "Be Gone Mr. Gawne") {length = "4:17";} else if (song == "Commando Steve") {length = "3:26";} else if (song == "Flirt Flirt Oh It Hurts") {length = "3:31";} else if (song == "Jack Russel") {length = "3:21";} else if (song == "Milky Ways") {length = "3:07";} else if (song == "Partyt Ar Igang") {length = "2:57";} else if (song == "Pirate Manners") {length = "3:02";} else if (song == "The Cave, The Treasure") {length = "3:27";} else if (song == "The Maze of Mayonnaise") {length = "3:11";}
+          barcolor = 8;
+          break;
+        case "Cool Friends":
+          colors = ["#4643d2", "#c38ef8"];
+          style = styles.alternating;
+          length = "3:59";
+          barcolor = 9;
+          break;
+        case "Core":
+        case "Cruise Control":
+        case "Livewire":
+        case "Tension":
+          colors = ["#ff8000"];
+          style = styles.single;
+          if (song == "Core") {length = "4:33";} else if (song == "Cruise Control") {length = "4:01";} else if (song == "Livewire") {length = "5:42";} else if (song == "Tension") {length = "4:58";}
+          barcolor = 10;
+          break;
+        case "Courtesy":
+        case "Focus":
+        case "Otis":
+          colors = ["#0432ea"];
+          style = styles.single;
+          if (song == "Courtesy") {length = "3:11";} else if (song == "Focus") {length = "2:42";} else if (song == "Otis") {length = "2:36";}
+          barcolor = 11;
+          break;
+        case "Buzz Kill":
+          colors = ["#999999", "#ffff00"];
+          style = styles.alternating;
+          length = "5:55";
+          barcolor = 12;
+          break;
+        case "Crystal Tokyo":
+          colors = ["#0000ff", "#ffffff"];
+          style = styles.alternating;
+          length = "5:28";
+          barcolor = 13;
+          break;
+        case "Dance of the Incognizant":
+          colors = ["#cf0200", "#190c0b", "#a00000", "#871514", "#9f3134"];
+          style = styles.random;
+          length = "7:10";
+          barcolor = 14;
+          break;
+        case "Destroid 8 - Annihilate":
+        case "Destroid 10 - Funk Hole":
+          colors = ["linear-gradient(to top, #ff0000, #ffff00)"];
+          style = styles.single;
+          if (song == "Destroid 8 - Annihilate") {length = "5:10"; document.getElementById("songTag").src = "Song-Tags/Destroid 8 Annihilate";} else if (song == "Destroid 10 - Funk Hole") {length = "4:30"; document.getElementById("songTag").src = "Song-Tags/Destroid 10 Funk Hole";}
+          barcolor = 15;
+          break;
+        case "Final Boss":
+          colors = ["#8b008b"];
+          style = styles.single;
+          length = "5:16";
+          barcolor = 16;
+          break;
+        case "FOX":
+        case "On The Run":
+          colors = ["#008fdd", "#fc00eb", "#6624f8"];
+          style = styles.random;
+          if (song == "FOX") {length = "5:17";} else if (song == "On The Run") {length = "4:28";}
+          barcolor = 17;
+          break;
+        case "Houston":
+          colors = ["#99ff00"];
+          style = styles.single;
+          length = "5:23";
+          barcolor = 18;
+          break;
+        case "HYPE":
+          colors = ["#58f639", "#bae967", "#89e952", "#38fa03", "#8ee050"];
+          style = styles.random;
+          length = "3:02";
+          barcolor = 19;
+          break;
+        case "Into The Zone":
+          colors = ["#c00039", "#fe0b41", "#4300bd", "#462784"];
+          style = styles.random;
+          length = "2:41";
+          barcolor = 20;
+          break;
+        case "Long Live The New Fresh":
+          colors = ["#801b55", "#483872"];
+          style = styles.alternating;
+          length = "4:27";
+          barcolor = 21;
+          break;
+        case "New Game":
+          colors = ["#00bf00", "#00c300", "#00c700", "#00ca00", "#00cf00", "#00d300", "#00d700", "#00da00", "#00df00", "#00e300", "#00e700", "#00ea00", "#00ef00", "#00f300", "#00f700", "#00fa00", "#00ff00"];
+          style = styles.random;
+          length = "4:19";
+          barcolor = 22;
+          break;
+        case "Paper Dolls":
+          colors = ["#ffffff"];
+          style = styles.single;
+          length = "2:55";
+          barcolor = 23;
+          break;
+        case "Peer Gynt":
+          colors = ["#78a050", "#f5a915"];
+          style = styles.alternating;
+          length = "2:21";
+          barcolor = 24;
+          break;
+        case "Rainbow Road":
+        case "Spectra":
+        case "The Art of War":
+        case "Tokyo Skies":
+          colors = ["#ff0000", "#ff2000", "#ff4000", "#ff6000", "#ff8000", "#ff9f00", "#ffbf00", "#ffdf00", "#ffff00", "#dfff00", "#bfff00", "#9fff00", "#80ff00", "#60ff00", "#40ff00", "#20ff00", "#00ff00", "#00ff20", "#00ff40", "#00ff60", "#00ff80", "#00ff9f", "#00ffbf", "#00ffdf", "#00ffff", "#00dfff", "#00bfff", "#009fff", "#0080ff", "#0060ff", "#0040ff", "#0020ff", "#0000ff", "#2000ff", "#4000ff", "#6000ff", "#8000ff", "#9f00ff", "#bf00ff", "#df00ff", "#ff00ff", "#ff00df", "#ff00bf", "#ff009f", "#ff0080", "#ff0060", "#ff0040", "#ff0020"];
+          style = styles.sequential;
+          if (song == "Rainbow Road") {length = "2:53";} else if (song == "Spectra") {length = "4:00";} else if (song == "The Art of War") {length = "3:13";} else if (song == "Tokyo Skies") {length = "3:52";}
+          barcolor = 25;
+          break;
+        case "Rocktronik":
+          colors = ["#707070", "#747474", "#787878", "#7c7c7c", "#808080", "#848484", "#888888", "#8c8c8c"];
+          style = styles.random;
+          length = "5:08";
+          barcolor = 26;
+          break;
+        case "Dubwoofer Substep":
+        case "No Party Like a Mojang Party":
+        case "Sevcon":
+        case "Wicked":
+          colors = ["#ff0000"];
+          style = styles.single;
+          if (song == "No Party Like a Mojang Party") {length = "5:52";} else if (song == "Sevcon") {length = "4:34";} else if (song == "Wicked") {length = "3:41";} else if (song == "Dubwoofer Substep") {length = "4:44";}
+          barcolor = 27;
+          break;
+        case "So Far Away":
+          colors = ["#ff9900", "#ffaa00"];
+          style = styles.alternating;
+          length = "3:39";
+          barcolor = 28;
+          break;
+        case "Sugar Rush":
+          colors = ["#7fffd4"];
+          style = styles.single;
+          length = "4:44";
+          barcolor = 29;
+          break;
+        case "Termination Shock":
+          colors = ["#0000ff", "#0010ff", "#0020ff", "#0030ff", "#0040ff", "#0050ff", "#0060ff", "#0070ff", "#0080ff", "#008fff", "#009fff", "#00afff", "#00bfff", "#00cfff", "#00dfff", "#00efff", "#00ffff", "#00efff", "#00dfff", "#00cfff", "#00bfff", "#00afff", "#009fff", "#008fff", "#0080ff", "#0070ff", "#0060ff", "#0050ff", "#0040ff", "#0030ff", "#0020ff", "#0010ff"];
+          style = styles.sequential;
+          length = "4:50";
+          barcolor = 30;
+          break;
+        case "Try This":
+        case "Halcyon":
+          colors = ["#ff0080"];
+          style = styles.single;
+          if (song == "Try This") {length = "3:49";} else if (song == "Halcyon") {length = "6:10";}
+          barcolor = 31;
+          break;
+        case "Unlocked":
+          colors = ["#eeeeee"];
+          style = styles.single;
+          length = "3:47";
+          barcolor = 32;
+          break;
+        case "Vindicate Me":
+          colors = ["#00ff80"];
+          style = styles.single;
+          length = "3:26";
+          barcolor = 33;
+          break;
+        case "Yo! Ho! And a Bottle of Bass!":
+          colors = ["#7070ff", "#8080ff", "#8f8fff"];
+          style = styles.random;
+          length = "6:24";
+          barcolor = 34;
+          break;
+        case "Quake":
+          colors = ["#00af30"];
+          style = styles.single;
+          length = "5:41";
+          barcolor = 35;
+          break;
+        case "Faster Than Light":
+          colors = ["#ffffee"];
+          style = styles.single;
+          length = "5:02";
+          barcolor = 36;
+          break;
+        case "FIGHT":
+          colors = ["#ffd700"];
+          style = styles.single;
+          length = "3:35";
+          barcolor = 37;
+          break;
+        case "SAIKOU":
+          colors = ["#ff0040"];
+          style = styles.single;
+          length = "2:55";
+          barcolor = 38;
+          break;
+      }
+      for (var i = 1; i <= 37; i++) {
+        progress.classList.remove("c" + i);
+      }
+      progress.classList.add("c" + barcolor);
+      var l_m = parseInt(length[0]);
+      var l_s = parseInt(length[2] + length[3]);
+      l_m *= 60;
+      progress.max = l_m + l_s;
+      var y = 0;
+      for (var i = 0; i < 250; i++) {
+        setTimeout(function() {
+          switch (style) {
+            case "alternating":
+            case "sequential":
+              document.getElementsByTagName("div")[y].style.background = colors[y % colors.length];
+              break;
+            case "random":
+              document.getElementsByTagName("div")[y].style.background = colors[Math.floor(Math.random() * colors.length)];
+              break;
+            case "single":
+              document.getElementsByTagName("div")[y].style.background = colors[0];
+              break;
+          }
+          y++;
+        }, 5*i);
+      }
+      setTimeout(function() {
+        audio.load();
+        audio.play();
+        animationLooper();
+        audio.oncanplaythrough = function() {
+          positions = setInterval(function() {
+            var curpos = Math.floor(audio.currentTime);
+            var m = Math.floor(curpos / 60);
+            var s = Math.floor(curpos % 60);
+            var l_m = parseInt(length[0]);
+            var l_s = parseInt(length[2] + length[3]);
+            var pos = (m * 60) + s;
+            var len = (l_m * 60) + l_s;
+            var timeLeft = len - pos;
+            var t_m = Math.floor(timeLeft / 60);
+            var t_s = Math.floor(timeLeft % 60);
+            document.getElementById("pos").innerHTML = m + ":" + ("0" + s).slice(-2);
+            document.getElementById("timeLeft").innerHTML = "-" + t_m + ":" + ("0" + t_s).slice(-2);
+            progress.value = pos;
+          }, 0);
+        };
+      }, 1000);
+    }
+    function animationLooper(){
+      analyser.getFloatFrequencyData(frequency_array);
+      for(var i = 0; i < parseInt(document.getElementById("bars").value); i++){
+        bar_height = Math.pow(frequency_array[i] / 255 * Math.pow(window.innerHeight - 24, 1/curvepower), curvepower) * maxheight;
+        setH(i, bar_height);
+      }
+      window.requestAnimationFrame(animationLooper);
+    }
+    function setH(barID, height) {
+      document.getElementsByTagName("div")[barID].style.height = (height + 1) + "px";
+    }
+  </script>
+</html>
