@@ -86,6 +86,8 @@
       .c34::-webkit-progress-value {background: linear-gradient(to bottom, #7070ff, #8f8fff);}
       .c35::-webkit-progress-value {background: #00af30;}
       .c36::-webkit-progress-value {background: #ffffee;}
+      .c37::-webkit-progress-value {background: #ffd700;}
+      .c38::-webkit-progress-value {background: #ff0040;}
     </style>
   </head>
   <body>
@@ -113,7 +115,9 @@
         <option value="Dance of the Incognizant">FantomenK - Dance of the Incognizant</option>
         <option value="Destroid 8 - Annihilate">Excision &amp; Far Too Loud - Destroid 8 Annihilate</option>
         <option value="Destroid 10 - Funk Hole">Excision &amp; Space Laces - Destroid 10 Funk Hole</option>
+        <option value="Dubwoofer Substep">Omnitica - Dubwoofer Substep</option>
         <option value="Faster Than Light">Far Too Loud - Faster Than Light</option>
+        <option value="FIGHT">Tokyo Machine - FIGHT</option>
         <option value="Final Boss">Nitro Fun - Final Boss</option>
         <option value="Flirt Flirt Oh It Hurts">Bossfight - Flirt Flirt Oh It Hurts</option>
         <option value="Focus">Chipzel - Focus</option>
@@ -142,9 +146,12 @@
         <option value="Partyt Ar Igang">Bossfight - Partyt A&#776;r Iga&#778;ng!</option>
         <option value="Peer Gynt">cYsmix - Peer Gynt</option>
         <option value="Pirate Manners">Bossfight - Pirate Manners</option>
+        <option value="PLAY">Tokyo Machine - PLAY</option>
         <option value="Quake">Stereotronique - Quake</option>
         <option value="Rainbow Road">nanobii - Rainbow Road</option>
+        <option value="Rhapsody">Danimal Cannon & Zef - Rhapsody</option>
         <option value="Rocktronik">Pegboard Nerds - Rocktronik</option>
+        <option value="SAIKOU">Tokyo Machine - SAIKOU</option>
         <option value="Sevcon">Big Giant Circles - Sevcon</option>
         <option value="So Far Away">Nitro Fun - So Far Away</option>
         <option value="Spectra">Chipzel - Spectra</option>
@@ -350,7 +357,7 @@
           artist = "Nitro Fun";
           break;
         case "Checkpoint":
-          artist = "Nitro Fun and Hyper Potions";
+          artist = "Nitro Fun & Hyper Potions";
           break;
         case "Chip Zeal":
         case "Houston":
@@ -365,8 +372,9 @@
         case "Legacy":
         case "Logic Gatekeeper":
         case "Parallel Processing":
+        case "Rhapsody":
         case "The Lunar Whale":
-          artist = "Danimal Cannon and Zef";
+          artist = "Danimal Cannon & Zef";
           break;
         case "Core":
         case "Cruise Control":
@@ -383,16 +391,16 @@
           artist = "Chipzel";
           break;
         case "Crystal Tokyo":
-          artist = "FantomenK and meganeko";
+          artist = "FantomenK & meganeko";
           break;
         case "Dance of the Incognizant":
           artist = "FantomenK";
           break;
         case "Destroid 8 - Annihilate":
-          artist = "Excision and Far Too Loud";
+          artist = "Excision & Far Too Loud";
           break;
         case "Destroid 10 - Funk Hole":
-          artist = "Excision and Space Laces";
+          artist = "Excision & Space Laces";
           break;
         case "FOX":
         case "Into The Zone":
@@ -407,14 +415,17 @@
         case "Stock & Pull":
           artist = "Stereotronique";
           break;
+        case "FIGHT":
         case "HYPE":
+        case "PLAY":
+        case "SAIKOU":
           artist = "Tokyo Machine";
           break;
         case "Long Live The New Fresh":
           artist = "Danimal Cannon";
           break;
         case "MOSHI":
-          artist = "Pegboard Nerds and Tokyo Machine";
+          artist = "Pegboard Nerds & Tokyo Machine";
           break;
         case "Once Again":
         case "Till It\'s Over":
@@ -442,6 +453,7 @@
         case "Wicked":
           artist = "Avenza";
           break;
+        case "Dubwoofer Substep":
         case "Yo! Ho! And a Bottle of Bass!":
           artist = "Omnitica";
           break;
@@ -456,6 +468,10 @@
         document.title = "Playing Cool Friends (Murtagh & Veschell Remix) by Silva Hound on Visimusic";
       } else if (song == "Partyt Ar Igang") {
         document.title = "Playing Partyt A\u0308r Iga\u030Ang! by Bossfight on Visimusic";
+      } else if (song == "Destroid 8 - Annihilate") {
+        document.title = "Playing Destroid 8 Annihilate by Excision & Far Too Loud on Visimusic";
+      } else if (song == "Destroid 10 - Funk Hole") {
+        document.title = "Plyaing Destroid 10 Funk Hole by Excision & Space Laces on Visimusic";
       } else {
         document.title = "Playing " + song + " by " + artist + " on Visimusic";
       }
@@ -479,11 +495,12 @@
         case "FTW":
         case "MOSHI":
         case "Once Again":
+        case "PLAY":
         case "Stock & Pull":
         case "Till It\'s Over":
           colors = ["#ffff00"];
           style = styles.single;
-          if (song == "Astrocat") {length = "5:21";} else if (song == "Cheat Codes") {length = "3:32";} else if (song == "FTW") {length = "4:17";} else if (song == "Grind") {length = "5:15";} else if (song == "MOSHI") {length = "3:35";} else if (song == "Once Again") {length = "3:46";} else if (song == "Stock & Pull") {length = "5:51";} else if (song == "Till It\'s Over") {length = "4:30";}
+          if (song == "Astrocat") {length = "5:21";} else if (song == "Cheat Codes") {length = "3:32";} else if (song == "FTW") {length = "4:17";} else if (song == "Grind") {length = "5:15";} else if (song == "MOSHI") {length = "3:35";} else if (song == "Once Again") {length = "3:46";} else if (song == "Stock & Pull") {length = "5:51";} else if (song == "Till It\'s Over") {length = "4:30";} else if (song == "PLAY") {length = "3:04";}
           barcolor = 3;
           break;
         case "Cheat Codes VIP":
@@ -510,10 +527,11 @@
         case "Legacy":
         case "Logic Gatekeeper":
         case "Parallel Processing":
+        case "Rhapsody":
         case "The Lunar Whale":
           colors = ["#113344"];
           style = styles.single;
-          if (song == "Chronos") {length = "4:29";} else if (song == "Corrupted") {length = "6:16";} else if (song == "Glitch") {length = "5:47";} else if (song == "Legacy") {length = "5:17";} else if (song == "Logic Gatekeeper") {length = "4:58";} else if (song == "Parallel Processing") {length = "8:29";} else if (song == "The Lunar Whale") {length = "4:35";}
+          if (song == "Chronos") {length = "4:29";} else if (song == "Corrupted") {length = "6:16";} else if (song == "Glitch") {length = "5:47";} else if (song == "Legacy") {length = "5:17";} else if (song == "Logic Gatekeeper") {length = "4:58";} else if (song == "Parallel Processing") {length = "8:29";} else if (song == "The Lunar Whale") {length = "4:35";} else if (song == "Rhapsody") {length = "6:13";}
           barcolor = 7;
           break;
         case "Be Gone Mr. Gawne":
@@ -648,12 +666,13 @@
           length = "5:08";
           barcolor = 26;
           break;
+        case "Dubwoofer Substep":
         case "No Party Like a Mojang Party":
         case "Sevcon":
         case "Wicked":
           colors = ["#ff0000"];
           style = styles.single;
-          if (song == "No Party Like a Mojang Party") {length = "5:52";} else if (song == "Sevcon") {length = "4:34";} else if (song == "Wicked") {length = "3:41";}
+          if (song == "No Party Like a Mojang Party") {length = "5:52";} else if (song == "Sevcon") {length = "4:34";} else if (song == "Wicked") {length = "3:41";} else if (song == "Dubwoofer Substep") {length = "4:44";}
           barcolor = 27;
           break;
         case "So Far Away":
@@ -710,8 +729,21 @@
           style = styles.single;
           length = "5:02";
           barcolor = 36;
+          break;
+        case "FIGHT":
+          colors = ["#ffd700"];
+          style = styles.single;
+          length = "3:35";
+          barcolor = 37;
+          break;
+        case "SAIKOU":
+          colors = ["#ff0040"];
+          style = styles.single;
+          length = "2:55";
+          barcolor = 38;
+          break;
       }
-      for (var i = 1; i <= 36; i++) {
+      for (var i = 1; i <= 37; i++) {
         progress.classList.remove("c" + i);
       }
       progress.classList.add("c" + barcolor);
