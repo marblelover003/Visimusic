@@ -207,28 +207,6 @@
         <option value=6>6x</option>
         <option value=8>8x</option>
       </select><br>
-      Max dB:
-      <select id="maxdb">
-        <option>0</option>
-        <option>-5</option>
-        <option value=-10 selected>-10 (Default)</option>
-        <option>-15</option>
-        <option>-20</option>
-      </select><br>
-      Min dB:
-      <select id="mindb">
-        <option>-100</option>
-        <option>-95</option>
-        <option value=-90 selected>-90 (Default)</option>
-        <option>-85</option>
-        <option>-80</option>
-        <option>-75</option>
-        <option>-70</option>
-        <option>-65</option>
-        <option>-60</option>
-        <option>-55</option>
-        <option>-50</option>
-      </select><br>
       <button onclick="selectSong()" id="button">START THE VISUALIZATION!</button><a href="index.html">Check out v1 here!</a>
     </span>
     <audio src="" id="audio"></audio>
@@ -311,8 +289,6 @@
         initPage();
       }
       analyser.smoothingTimeConstant = parseFloat(document.getElementById("smoothing").value);
-      analyser.minDecibels = parseInt(document.getElementById("mindb").value);
-      analyser.maxDecibels = parseInt(document.getElementById("maxdb").value);
       maxheight = parseFloat(document.getElementById("maxheight").value);
       curvepower = parseInt(document.getElementById("power").value);
       document.getElementById("songSelectMenu").style.visibility = "hidden";
