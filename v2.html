@@ -241,7 +241,7 @@
       source.connect(analyser);
       analyser.connect(context.destination);
       frequency_array = new Float32Array(analyser.frequencyBinCount);
-      analyser.fftSize = 2048;
+      analyser.fftSize = 8192;
       analyser.smoothingTimeConstant = 0;
       analyser.getFloatFrequencyData(frequency_array);
       pageInitiated = true;
