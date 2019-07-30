@@ -839,7 +839,6 @@
       }
       setTimeout(function() {
         audio.load();
-        audio.play();
         var x = setInterval(function() {
           var min = parseInt(length[0]);
           var sec = parseInt(length[2] + length[3]);
@@ -849,6 +848,7 @@
           document.getElementById("pos").innerHTML = bufferProgress + "%";
           audio.oncanplaythrough = function() {
             clearInterval(x);
+            audio.play();
           }
         }, 0);
         animationLooper();
