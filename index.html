@@ -81,13 +81,20 @@
       .c29::-webkit-progress-value {background: #7fffd4;}
       .c30::-webkit-progress-value {background: linear-gradient(to right, #0000ff, #ffffff);}
       .c31::-webkit-progress-value {background: #ff0080;}
-      .c32::-webkit-progress-value {background: #eeeeee;}
+      .c32::-webkit-progress-value {background: #bf0070;}
       .c33::-webkit-progress-value {background: #00ff80;}
       .c34::-webkit-progress-value {background: linear-gradient(to bottom, #7070ff, #8f8fff);}
       .c35::-webkit-progress-value {background: #00af30;}
       .c36::-webkit-progress-value {background: #ffffee;}
       .c37::-webkit-progress-value {background: #ffd700;}
       .c38::-webkit-progress-value {background: #ff0040;}
+      .c39::-webkit-progress-value {background: #00ffff;}
+      .c40::-webkit-progress-value {background: #ffffff;}
+      .c41::-webkit-progress-value {background: #ff6090;}
+      .c42::-webkit-progress-value {background: linear-gradient(to bottom, #ff0000 49.99999999%, #0000ff 50%);}
+      .c43::-webkit-progress-value {background: #00008b;}
+      .c44::-webkit-progress-value {background: #eeeeee;}
+      .c45::-webkit-progress-value {background: #c2b280;}
     </style>
   </head>
   <body>
@@ -126,6 +133,7 @@
         <option value="Glitch">Danimal Cannon &amp; Zef - Glitch</option>
         <option value="Grind">Stereotronique - Grind</option>
         <option value="Halcyon">Au5 &amp; Fractal - Halcyon</option>
+        <option value="Highscore">Panda Eyes - Highscore (feat. Teminite)</option>
         <option value="Houston">Big Giant Circles - Houston</option>
         <option value="HYPE">Tokyo Machine - HYPE</option>
         <option value="Into The Zone">Shirobon - Into the Zone</option>
@@ -143,18 +151,22 @@
         <option value="Otis">Chipzel - Otis</option>
         <option value="Paper Dolls">Shawn Daley - Paper Dolls</option>
         <option value="Parallel Processing">Danimal Cannon &amp; Zef - Parallel Processing</option>
+        <option value="PARTY">Tokyo Machine - PARTY</option>
         <option value="Partyt Ar Igang">Bossfight - Partyt A&#776;r Iga&#778;ng!</option>
         <option value="Peer Gynt">cYsmix - Peer Gynt</option>
         <option value="Pirate Manners">Bossfight - Pirate Manners</option>
         <option value="PLAY">Tokyo Machine - PLAY</option>
         <option value="Quake">Stereotronique - Quake</option>
         <option value="Rainbow Road">nanobii - Rainbow Road</option>
-        <option value="Rhapsody">Danimal Cannon & Zef - Rhapsody</option>
+        <option value="Razor Sharp">Pegboard Nerds &amp; Tristam - Razor Sharp</option>
+        <option value="Renegade">Noisestorm - Renegade</option>
+        <option value="Rhapsody">Danimal Cannon &amp; Zef - Rhapsody</option>
         <option value="Rocktronik">Pegboard Nerds - Rocktronik</option>
         <option value="SAIKOU">Tokyo Machine - SAIKOU</option>
         <option value="Sevcon">Big Giant Circles - Sevcon</option>
         <option value="So Far Away">Nitro Fun - So Far Away</option>
         <option value="Spectra">Chipzel - Spectra</option>
+        <option value="SPOOKY">Tokyo Machine - SPOOKY</option>
         <option value="Stock & Pull">Stereotronique - Stock &amp; Pull</option>
         <option value="Sugar Rush">PIXL - Sugar Rush</option>
         <option value="Tension">Zef - Tension</option>
@@ -164,6 +176,8 @@
         <option value="The Lunar Whale">Danimal Cannon &amp; Zef - The Lunar Whale</option>
         <option value="The Maze of Mayonnaise">Bossfight - The Maze of Mayonnaise</option>
         <option value="Till It's Over">Tristam - Till It's Over</option>
+        <option value="Time Goes By">Nitro Fun - Time Goes By</option>
+        <option value="Time Lapse">TheFatRat - Time Lapse</option>
         <option value="Tokyo Skies">Chipzel - Tokyo Skies</option>
         <option value="Try This">Pegboard Nerds - Try This</option>
         <option value="Unlocked">Plesco - Unlocked</option>
@@ -334,6 +348,7 @@
           artist = "PIXL";
           break;
         case "Barracuda":
+        case "Renegade":
           artist = "Noisestorm";
           break;
         case "Be Gone Mr. Gawne":
@@ -354,6 +369,7 @@
         case "Final Boss":
         case "New Game":
         case "So Far Away":
+        case "Time Goes By":
           artist = "Nitro Fun";
           break;
         case "Checkpoint":
@@ -417,8 +433,10 @@
           break;
         case "FIGHT":
         case "HYPE":
+        case "PARTY":
         case "PLAY":
         case "SAIKOU":
+        case "SPOOKY":
           artist = "Tokyo Machine";
           break;
         case "Long Live The New Fresh":
@@ -440,12 +458,18 @@
         case "Rainbow Road":
           artist = "nanobii";
           break;
+        case "Razor Sharp:
+          artist = "Pegboard Nerds & Tristam";
+          break;
         case "Rocktronik":
         case "Try This":
           artist = "Pegboard Nerds";
           break;
         case "Termination Shock":
           artist = "Sabrepulse";
+          break;
+        case "Time Lapse":
+          artist = "TheFatRat";
           break;
         case "Unlocked":
           artist = "Plesco";
@@ -472,6 +496,8 @@
         document.title = "Playing Destroid 8 Annihilate by Excision & Far Too Loud on Visimusic";
       } else if (song == "Destroid 10 - Funk Hole") {
         document.title = "Plyaing Destroid 10 Funk Hole by Excision & Space Laces on Visimusic";
+      } else if (song == "Highscore") {
+        document.title = "Playing Highscore (feat. Teminite) by Panda Eyes on Visimusic";
       } else {
         document.title = "Playing " + song + " by " + artist + " on Visimusic";
       }
@@ -701,7 +727,7 @@
           barcolor = 31;
           break;
         case "Unlocked":
-          colors = ["#eeeeee"];
+          colors = ["#bf0070"];
           style = styles.single;
           length = "3:47";
           barcolor = 32;
@@ -742,8 +768,50 @@
           length = "2:55";
           barcolor = 38;
           break;
+        case "Highscore":
+          colors = ["#00ffff"];
+          style = styles.single;
+          length = "4:20";
+          barcolor = 39;
+          break;
+        case "PARTY":
+          colors = ["#ff0000", "#ffff00", "#00df00", "#00ffff", "#0000ff", "#ff00ff", "#ff0080"];
+          style = styles.random;
+          length = "3:39";
+          barcolor = 40;
+          break;
+        case "Razor Sharp":
+          colors = ["#ff6090"];
+          style = styles.single;
+          length = "4:41";
+          barcolor = 41;
+          break;
+        case "Renegade":
+          colors = ["#ff0000", "#0000ff"];
+          style = styles.alternating;
+          length = "6:10";
+          barcolor = 42;
+          break;
+        case "SPOOKY":
+          colors = ["#00008b", "#00008b", "#00008b", "#00008b", "#00008b", "#ffffff"];
+          style = styles.random;
+          length = "3:49";
+          barcolor = 43;
+          break;
+        case "Time Goes By":
+          colors = ["#eeeeee"];
+          style = styles.single;
+          length = "3:26";
+          barcolor = 44;
+          break;
+        case "Time Lapse":
+          colors = ["#c2b280"];
+          style = styles.single;
+          length = "3:05";
+          barcolor = 45;
+          break;
       }
-      for (var i = 1; i <= 37; i++) {
+      for (var i = 1; i <= 45; i++) {
         progress.classList.remove("c" + i);
       }
       progress.classList.add("c" + barcolor);
