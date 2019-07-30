@@ -793,8 +793,8 @@
           barcolor = 42;
           break;
         case "SPOOKY":
-          colors = ["#00008b", "#00008b", "#00008b", "#00008b", "#00008b", "#ffffff"];
-          style = styles.random;
+          colors = ["#00008b"];
+          style = styles.single;
           length = "3:49";
           barcolor = 43;
           break;
@@ -870,6 +870,13 @@
     }
     function setH(barID, height) {
       document.getElementsByTagName("div")[barID].style.height = (height + 1) + "px";
+      if (document.getElementById("song").value == "SPOOKY") {
+        if (frequency_array[barID] - 128 <= 0) {
+          document.getElementsByTagName("div")[barID].style.background = "rgb(" + 0 + "," + 0 + "," + 139 + ")";
+        } else {
+          document.getElementsByTagName("div")[barID].style.background = "rgb(" + (((frequency_array[barID] - 128) * 2) - 1) + "," + (((frequency_array[barID] - 128) * 2) - 1) + "," + 139 + ")";
+        }
+      }
     }
   </script>
 </html>
