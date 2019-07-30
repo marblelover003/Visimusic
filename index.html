@@ -46,7 +46,7 @@
       }
       #visualizer {
         position: absolute;
-        bottom: 24px;
+        bottom: 25px;
         left: 0;
         z-index: -99;
       }
@@ -863,7 +863,7 @@
     function animationLooper(){
       analyser.getByteFrequencyData(frequency_array);
       for(var i = 0; i < parseInt(document.getElementById("bars").value); i++){
-        bar_height = Math.pow(frequency_array[i] / 255 * Math.pow(window.innerHeight - 24, 1/curvepower), curvepower) * maxheight;
+        bar_height = Math.pow(frequency_array[i] / 255 * Math.pow(window.innerHeight - 25, 1/curvepower), curvepower) * maxheight;
         setH(i, bar_height);
       }
       window.requestAnimationFrame(animationLooper);
