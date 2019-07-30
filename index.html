@@ -839,9 +839,20 @@
       }
       setTimeout(function() {
         audio.load();
-        audio.play();
+        var x = setInterval(function() {
+          var l_m = parseInt(length[0]);
+          var l_s = parseInt(length[2] + length[3]);
+          l_m *= 60;
+          var total = l_m + l_s;
+          var bufferProgress = Math.floor(audio.buffered.end(0) / total);
+          document.getElementById("pos").innerHTML = bufferProgress + "%";
+          audio.oncanplaythrough = function() {
+            clearInterval(x);
+          }
+        }, 0);
         animationLooper();
         audio.oncanplaythrough = function() {
+          audio.play();
           positions = setInterval(function() {
             var curpos = Math.floor(audio.currentTime);
             var m = Math.floor(curpos / 60);
