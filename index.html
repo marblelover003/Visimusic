@@ -839,6 +839,7 @@
       }
       setTimeout(function() {
         audio.load();
+        audio.play();
         var x = setInterval(function() {
           var l_m = parseInt(length[0]);
           var l_s = parseInt(length[2] + length[3]);
@@ -852,7 +853,6 @@
         }, 0);
         animationLooper();
         audio.oncanplaythrough = function() {
-          audio.play();
           positions = setInterval(function() {
             var curpos = Math.floor(audio.currentTime);
             var m = Math.floor(curpos / 60);
