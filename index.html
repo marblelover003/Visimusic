@@ -299,7 +299,7 @@
           alert(document.getElementById("song").value + " has ended. If you wish, feel free to pick another song.");
         }
         audio.src = "";
-        document.getElementById("songTag").src = "https://marblelover003.github.io/Visimusic/Not playing.JPG";
+        document.getElementById("songTag").src = "https://marblelover003.github.io/Visimusic/Not playing.PNG";
         document.getElementById("song").selectedIndex = 0;
         var x = 0;
         for (var i = 0; i < 250; i++) {
@@ -329,7 +329,7 @@
       var song = document.getElementById("song").value;
       audio = document.getElementById("audio");
       audio.src = "https://marblelover003.github.io/Visimusic/" + song + ".mp3";
-      document.getElementById("songTag").src = "https://marblelover003.github.io/Visimusic/Song-Tags/" + song + ".JPG";
+      document.getElementById("songTag").src = "https://marblelover003.github.io/Visimusic/Song-Tags/" + song + ".PNG";
       if (pageInitiated == false) {
         initPage();
       }
@@ -619,7 +619,7 @@
         case "Destroid 10 - Funk Hole":
           colors = ["linear-gradient(to top, #ff0000, #ffff00)"];
           style = styles.single;
-          if (song == "Destroid 8 - Annihilate") {length = "5:10"; document.getElementById("songTag").src = "Song-Tags/Destroid 8 Annihilate";} else if (song == "Destroid 10 - Funk Hole") {length = "4:30"; document.getElementById("songTag").src = "Song-Tags/Destroid 10 Funk Hole";}
+          if (song == "Destroid 8 - Annihilate") {length = "5:10";} else if (song == "Destroid 10 - Funk Hole") {length = "4:30";}
           barcolor = 15;
           break;
         case "Final Boss":
@@ -837,37 +837,35 @@
           y++;
         }, 5*i);
       }
-      setTimeout(function() {
-        audio.load();
-        var x = setInterval(function() {
-          var min = parseInt(length[0]);
-          var sec = parseInt(length[2] + length[3]);
-          min *= 60;
-          var total = min + sec;
-          var bufferProgress = Math.floor(audio.buffered.end(0) / total * 100);
-          document.getElementById("pos").innerHTML = bufferProgress + "%";
+      audio.load();
+      var x = setInterval(function() {
+        var min = parseInt(length[0]);
+        var sec = parseInt(length[2] + length[3]);
+        min *= 60;
+        var total = min + sec;
+        var bufferProgress = Math.floor(audio.buffered.end(0) / total * 100);
+        document.getElementById("pos").innerHTML = bufferProgress + "%";
+      }, 0);
+      animationLooper();
+      audio.oncanplaythrough = function() {
+        clearInterval(x);
+        audio.play();
+        positions = setInterval(function() {
+          var curpos = Math.floor(audio.currentTime);
+          var m = Math.floor(curpos / 60);
+          var s = Math.floor(curpos % 60);
+          var l_m = parseInt(length[0]);
+          var l_s = parseInt(length[2] + length[3]);
+          var pos = (m * 60) + s;
+          var len = (l_m * 60) + l_s;
+          var timeLeft = len - pos;
+          var t_m = Math.floor(timeLeft / 60);
+          var t_s = Math.floor(timeLeft % 60);
+          document.getElementById("pos").innerHTML = m + ":" + ("0" + s).slice(-2);
+          document.getElementById("timeLeft").innerHTML = "-" + t_m + ":" + ("0" + t_s).slice(-2);
+          progress.value = pos;
         }, 0);
-        animationLooper();
-        audio.oncanplaythrough = function() {
-          clearInterval(x);
-          audio.play();
-          positions = setInterval(function() {
-            var curpos = Math.floor(audio.currentTime);
-            var m = Math.floor(curpos / 60);
-            var s = Math.floor(curpos % 60);
-            var l_m = parseInt(length[0]);
-            var l_s = parseInt(length[2] + length[3]);
-            var pos = (m * 60) + s;
-            var len = (l_m * 60) + l_s;
-            var timeLeft = len - pos;
-            var t_m = Math.floor(timeLeft / 60);
-            var t_s = Math.floor(timeLeft % 60);
-            document.getElementById("pos").innerHTML = m + ":" + ("0" + s).slice(-2);
-            document.getElementById("timeLeft").innerHTML = "-" + t_m + ":" + ("0" + t_s).slice(-2);
-            progress.value = pos;
-          }, 0);
-        }
-      }, 1000);
+      }
     }
     function animationLooper(){
       analyser.getByteFrequencyData(frequency_array);
@@ -880,10 +878,10 @@
     function setH(barID, height) {
       document.getElementsByTagName("div")[barID].style.height = (height + 1) + "px";
       if (document.getElementById("song").value == "SPOOKY") {
-        if (frequency_array[barID] - 128 <= 0) {
-          document.getElementsByTagName("div")[barID].style.background = "rgb(" + 0 + "," + 0 + "," + 139 + ")";
+        if (frequency_array[barID] - 192 <= 0) {
+          document.getElementsByTagName("div")[barID].style.background = "rgb(" + 0 + "," + 0 + "," + 100 + ")";
         } else {
-          document.getElementsByTagName("div")[barID].style.background = "rgb(" + (((frequency_array[barID] - 128) * 2) - 1) + "," + (((frequency_array[barID] - 128) * 2) - 1) + "," + 139 + ")";
+          document.getElementsByTagName("div")[barID].style.background = "rgb(" + (((frequency_array[barID] - 192) * 4) - 1) + "," + (((frequency_array[barID] - 192) * 4) - 1) + "," + 100 + ")";
         }
       }
     }
