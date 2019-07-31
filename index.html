@@ -870,13 +870,13 @@
     function animationLooper(){
       analyser.getByteFrequencyData(frequency_array);
       for(var i = 0; i < parseInt(document.getElementById("bars").value); i++){
-        bar_height = Math.pow(frequency_array[i] / 255 * Math.pow(window.innerHeight - 25, 1/curvepower), curvepower) * maxheight;
+        bar_height = Math.pow(frequency_array[i] / 255 * Math.pow(window.innerHeight - 27, 1/curvepower), curvepower) * maxheight;
         setH(i, bar_height);
       }
       window.requestAnimationFrame(animationLooper);
     }
     function setH(barID, height) {
-      document.getElementsByTagName("div")[barID].style.height = (height + 1) + "px";
+      document.getElementsByTagName("div")[barID].style.height = (height + 3) + "px";
       if (document.getElementById("song").value == "SPOOKY") {
         if (frequency_array[barID] - 192 <= 0) {
           document.getElementsByTagName("div")[barID].style.background = "rgb(" + 0 + "," + 0 + "," + 100 + ")";
