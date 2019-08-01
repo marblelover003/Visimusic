@@ -50,11 +50,11 @@
         left: 0;
         z-index: -99;
       }
-      .c1::-webkit-progress-value {background: linear-gradient(to bottom, #e7e7e7 0%, #f7f7f7 50%, #e7e7e7 100%);}
+      .c1::-webkit-progress-value {background: #c7c5c8;}
       .c2::-webkit-progress-value {background: linear-gradient(to bottom, #e5af71 0%, #d19d64 50%, #e8bc7d 100%);}
-      .c3::-webkit-progress-value {background: #ffff00;}
+      .c3::-webkit-progress-value {background: #e0d889;}
       .c4::-webkit-progress-value {background: #bfbfff;}
-      .c5::-webkit-progress-value {background: #ff4e5b;}
+      .c5::-webkit-progress-value {background: #820029;}
       .c6::-webkit-progress-value {background: linear-gradient(to right, #ff0000 0px, #ffff00 750px);}
       .c7::-webkit-progress-value {background: #113344;}
       .c8::-webkit-progress-value {background: linear-gradient(to bottom, #ff0000 49.99999999%, #ffffff 50%);}
@@ -65,36 +65,40 @@
       .c13::-webkit-progress-value {background: linear-gradient(to bottom, #0000ff 49.99999999%, #ffffff 50%);}
       .c14::-webkit-progress-value {background: #a00000;}
       .c15::-webkit-progress-value {background: linear-gradient(to right, #ff0000 0%, #ff8000 80%, #ffff00 100%);}
-      .c16::-webkit-progress-value {background: #8b008b;}
+      .c16::-webkit-progress-value {background: #f3f3f3;}
       .c17::-webkit-progress-value {background: linear-gradient(to bottom, #008fdd 49.99999999%, #6624f8 50%);}
       .c18::-webkit-progress-value {background: #99ff00;}
       .c19::-webkit-progress-value {background: #8ee050;}
       .c20::-webkit-progress-value {background: #c00039;}
       .c21::-webkit-progress-value {background: linear-gradient(to bottom, #801b55 49.99999999%, #483872 50%);}
-      .c22::-webkit-progress-value {background: linear-gradient(to right, #00bf00, #00ff00);}
+      .c22::-webkit-progress-value {background: #be0ffe;}
       .c23::-webkit-progress-value {background: #ffffff;}
       .c24::-webkit-progress-value {background: linear-gradient(to bottom, #78a050 49.99999999%, #f5a915 50%);}
       .c25::-webkit-progress-value {background: linear-gradient(to bottom, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);}
-      .c26::-webkit-progress-value {background: #808080;}
+      .c26::-webkit-progress-value {background: #1b2664;}
       .c27::-webkit-progress-value {background: #ff0000;}
       .c28::-webkit-progress-value {background: linear-gradient(to bottom, #ff9900 49.99999999%, #ffaa00 50%);}
       .c29::-webkit-progress-value {background: #7fffd4;}
       .c30::-webkit-progress-value {background: linear-gradient(to right, #0000ff, #ffffff);}
-      .c31::-webkit-progress-value {background: #ff0080;}
+      .c31::-webkit-progress-value {background: #db0a89;}
       .c32::-webkit-progress-value {background: #bf0070;}
       .c33::-webkit-progress-value {background: #00ff80;}
       .c34::-webkit-progress-value {background: linear-gradient(to bottom, #7070ff, #8f8fff);}
-      .c35::-webkit-progress-value {background: #00af30;}
+      .c35::-webkit-progress-value {background: #e08b04;}
       .c36::-webkit-progress-value {background: #ffffee;}
       .c37::-webkit-progress-value {background: #ffd700;}
       .c38::-webkit-progress-value {background: #ff0040;}
       .c39::-webkit-progress-value {background: #00ffff;}
       .c40::-webkit-progress-value {background: #ffffff;}
-      .c41::-webkit-progress-value {background: #ff6090;}
-      .c42::-webkit-progress-value {background: linear-gradient(to bottom, #ff0000 49.99999999%, #0000ff 50%);}
+      .c41::-webkit-progress-value {background: #c0c0c0;}
+      .c42::-webkit-progress-value {background: linear-gradient(to bottom, #b14147 49.99999999%, #c38dea 50%);}
       .c43::-webkit-progress-value {background: #00008b;}
       .c44::-webkit-progress-value {background: #eeeeee;}
       .c45::-webkit-progress-value {background: #c2b280;}
+      .c46::-webkit-progress-value {background: linear-gradient(to bottom, #333333 49.99999999%, #ffffff 50%);}
+      .c47::-webkit-progress-value {background: #fee4e0;}
+      .c48::-webkit-progress-value {background: #634020;}
+      .c49::-webkit-progress-value {background: #0344a8;}
     </style>
   </head>
   <body>
@@ -103,8 +107,10 @@
       <select id="song">
         <option></option>
         <option value="Astrocat">PIXL - Astrocat</option>
+        <option value="Backlash">Noisestorm - Backlash</option>
         <option value="Barracuda">Noisestorm - Barracuda</option>
         <option value="Be Gone Mr. Gawne">Bossfight - Be Gone Mr. Gawne</option>
+        <option value="BLAST">Tokyo Machine - BLAST</option>
         <option value="Buzz Kill">PIXL - Buzz Kill</option>
         <option value="Cascade">Kubbi - Cascade</option>
         <option value="Cheat Codes">Nitro Fun - Cheat Codes</option>
@@ -113,6 +119,7 @@
         <option value="Chip Zeal">Big Giant Circles - Chip Zeal</option>
         <option value="Chronos">Danimal Cannon &amp; Zef - Chronos</option>
         <option value="Commando Steve">Bossfight - Commando Steve</option>
+        <option value="COOKIES">Tokyo Machine - COOKIES</option>
         <option value="Cool Friends">Silva Hound - Cool Friends (Murtagh &amp; Veschell Remix)</option>
         <option value="Core">Zef - Core</option>
         <option value="Corrupted">Danimal Cannon &amp; Zef - Corrupted</option>
@@ -123,19 +130,24 @@
         <option value="Destroid 8 - Annihilate">Excision &amp; Far Too Loud - Destroid 8 Annihilate</option>
         <option value="Destroid 10 - Funk Hole">Excision &amp; Space Laces - Destroid 10 Funk Hole</option>
         <option value="Dubwoofer Substep">Omnitica - Dubwoofer Substep</option>
+        <option value="Eclipse">Noisestorm - Eclipse</option>
+        <option value="Evolution">Chipzel - Evolution</option>
         <option value="Faster Than Light">Far Too Loud - Faster Than Light</option>
         <option value="FIGHT">Tokyo Machine - FIGHT</option>
         <option value="Final Boss">Nitro Fun - Final Boss</option>
         <option value="Flirt Flirt Oh It Hurts">Bossfight - Flirt Flirt Oh It Hurts</option>
         <option value="Focus">Chipzel - Focus</option>
+        <option value="Forged in Stars">Chipzel - Forged in Stars</option>
         <option value="FOX">Shirobon - FOX</option>
         <option value="FTW">Lets Be Friends - FTW</option>
         <option value="Glitch">Danimal Cannon &amp; Zef - Glitch</option>
         <option value="Grind">Stereotronique - Grind</option>
         <option value="Halcyon">Au5 &amp; Fractal - Halcyon</option>
+        <option value="Heist">Noisestorm - Heist</option>
         <option value="Highscore">Panda Eyes - Highscore (feat. Teminite)</option>
         <option value="Houston">Big Giant Circles - Houston</option>
         <option value="HYPE">Tokyo Machine - HYPE</option>
+        <option value="I'm being Reelistic">Omnitica - I&apos;m being Reelistic</option>
         <option value="Into The Zone">Shirobon - Into the Zone</option>
         <option value="Jack Russel">Bossfight - Jack Russel</option>
         <option value="Legacy">Danimal Cannon &amp; Zef - Legacy</option>
@@ -146,6 +158,7 @@
         <option value="MOSHI">Pegboard Nerds &amp; Tokyo Machine - MOSHI</option>
         <option value="New Game">Nitro Fun - New Game</option>
         <option value="No Party Like a Mojang Party">Big Giant Circles - No Party Like a Mojang Party</option>
+        <option value="OKAY">Tokyo Machine - OKAY</option>
         <option value="On The Run">Shirobon - On the Run</option>
         <option value="Once Again">Tristam - Once Again</option>
         <option value="Otis">Chipzel - Otis</option>
@@ -155,31 +168,40 @@
         <option value="Partyt Ar Igang">Bossfight - Partyt A&#776;r Iga&#778;ng!</option>
         <option value="Peer Gynt">cYsmix - Peer Gynt</option>
         <option value="Pirate Manners">Bossfight - Pirate Manners</option>
+        <option value="PIXEL">Tokyo Machine - PIXEL</option>
         <option value="PLAY">Tokyo Machine - PLAY</option>
         <option value="Quake">Stereotronique - Quake</option>
         <option value="Rainbow Road">nanobii - Rainbow Road</option>
+        <option value="Rat Twist">PIXL - Rat Twist</option>
         <option value="Razor Sharp">Pegboard Nerds &amp; Tristam - Razor Sharp</option>
         <option value="Renegade">Noisestorm - Renegade</option>
         <option value="Rhapsody">Danimal Cannon &amp; Zef - Rhapsody</option>
+        <option value="ROCK IT">Tokyo Machine - ROCK IT</option>
         <option value="Rocktronik">Pegboard Nerds - Rocktronik</option>
         <option value="SAIKOU">Tokyo Machine - SAIKOU</option>
+        <option value="Sentinel">Noisestorm - Sentinel</option>
         <option value="Sevcon">Big Giant Circles - Sevcon</option>
+        <option value="Sidewinder">7 Minutes Dead - Sidewinder</option>
         <option value="So Far Away">Nitro Fun - So Far Away</option>
         <option value="Spectra">Chipzel - Spectra</option>
         <option value="SPOOKY">Tokyo Machine - SPOOKY</option>
         <option value="Stock & Pull">Stereotronique - Stock &amp; Pull</option>
         <option value="Sugar Rush">PIXL - Sugar Rush</option>
+        <option value="Surge">Noisestorm - Surge</option>
         <option value="Tension">Zef - Tension</option>
         <option value="Termination Shock">Sabrepulse - Termination Shock</option>
         <option value="The Art of War">Chipzel - The Art of War</option>
         <option value="The Cave, The Treasure">Bossfight - The Cave, The Treasure</option>
+        <option value="The Escape">PIXL - The Escape</option>
         <option value="The Lunar Whale">Danimal Cannon &amp; Zef - The Lunar Whale</option>
         <option value="The Maze of Mayonnaise">Bossfight - The Maze of Mayonnaise</option>
+        <option value="This Time">PIXL - This Time</option>
         <option value="Till It's Over">Tristam - Till It's Over</option>
         <option value="Time Goes By">Nitro Fun - Time Goes By</option>
         <option value="Time Lapse">TheFatRat - Time Lapse</option>
         <option value="Tokyo Skies">Chipzel - Tokyo Skies</option>
         <option value="Try This">Pegboard Nerds - Try This</option>
+        <option value="Turbo Penguin">Sound Remedy &amp; Nitro Fun - Turbo Penguin</option>
         <option value="Unlocked">Plesco - Unlocked</option>
         <option value="Vindicate Me">Big Giant Circles - Vindicate Me</option>
         <option value="Wicked">Avenza - Wicked</option>
@@ -328,7 +350,19 @@
       }
       var song = document.getElementById("song").value;
       audio = document.getElementById("audio");
-      audio.src = "https://marblelover003.github.io/Visimusic/" + song + ".mp3";
+      var helpers = ["BLAST", "Backlash", "COOKIES", "Eclipse", "Evolution", "Forged in Stars", "Heist", "I\'m being Reelistic", "OKAY", "PIXEL", "ROCK IT", "Rat Twist", "Sentinel", "Sidewinder", "Surge", "The Escape", "This Time", "Turbo Penguin"];
+      var isHelper = false;
+      for (var i = 0; i < helpers.length; i++) {
+        if (song == helpers[i]) {
+          isHelper = true;
+          break;
+        }
+      }
+      if (isHelper == true) {
+        audio.src = "https://marblelover003.github.io/VisimusicHelpers/" + song + ".mp3";
+      } else {
+        audio.src = "https://marblelover003.github.io/Visimusic/" + song + ".mp3";
+      }
       document.getElementById("songTag").src = "https://marblelover003.github.io/Visimusic/Song-Tags/" + song + ".PNG";
       if (pageInitiated == false) {
         initPage();
@@ -344,11 +378,19 @@
       switch (song) {
         case "Astrocat":
         case "Buzz Kill":
+        case "Rat Twist":
         case "Sugar Rush":
+        case "The Escape":
+        case "This Time":
           artist = "PIXL";
           break;
+        case "Backlash":
         case "Barracuda":
+        case "Eclipse":
+        case "Heist":
         case "Renegade":
+        case "Sentinel":
+        case "Surge":
           artist = "Noisestorm";
           break;
         case "Be Gone Mr. Gawne":
@@ -399,7 +441,9 @@
           artist = "Zef";
           break;
         case "Courtesy":
+        case "Evolution":
         case "Focus":
+        case "Forged in Stars":
         case "Otis":
         case "Spectra":
         case "The Art of War":
@@ -431,10 +475,15 @@
         case "Stock & Pull":
           artist = "Stereotronique";
           break;
+        case "BLAST":
+        case "COOKIES":
         case "FIGHT":
         case "HYPE":
+        case "OKAY":
         case "PARTY":
+        case "PIXEL":
         case "PLAY":
+        case "ROCK IT":
         case "SAIKOU":
         case "SPOOKY":
           artist = "Tokyo Machine";
@@ -465,11 +514,17 @@
         case "Try This":
           artist = "Pegboard Nerds";
           break;
+        case "Sidewinder":
+          artist = "7 Minutes Dead";
+          break;
         case "Termination Shock":
           artist = "Sabrepulse";
           break;
         case "Time Lapse":
           artist = "TheFatRat";
+          break;
+        case "Turbo Penguin":
+          artist = "Sound Remedy & Nitro Fun";
           break;
         case "Unlocked":
           artist = "Plesco";
@@ -478,6 +533,7 @@
           artist = "Avenza";
           break;
         case "Dubwoofer Substep":
+        case "I\'m being Reelistic":
         case "Yo! Ho! And a Bottle of Bass!":
           artist = "Omnitica";
           break;
@@ -504,9 +560,11 @@
       var barcolor;
       switch (song) {
         case "Barracuda":
-          colors = ["#e7e7e7", "#efefef", "#f7f7f7"];
-          style = styles.random;
-          length = "4:22";
+        case "Rat Twist":
+        case "Sentinel":
+          colors = ["#c7c5c8"];
+          style = styles.single;
+          if (song == "Barracuda") {length = "4:22";} else if (song == "Rat Twist") {length = "4:00";} else if (song == "Sentinel") {length = "5:28";}
           barcolor = 1;
           break;
         case "Cascade":
@@ -517,16 +575,23 @@
           break;
         case "Astrocat":
         case "Cheat Codes":
+        case "Checkpoint":
         case "Grind":
         case "FTW":
         case "MOSHI":
         case "Once Again":
         case "PLAY":
+        case "Rocktronik":
+        case "Sidewinder":
         case "Stock & Pull":
+        case "Surge":
+        case "The Escape":
+        case "This Time":
         case "Till It\'s Over":
-          colors = ["#ffff00"];
+        case "Turbo Penguin":
+          colors = ["#e0d889"];
           style = styles.single;
-          if (song == "Astrocat") {length = "5:21";} else if (song == "Cheat Codes") {length = "3:32";} else if (song == "FTW") {length = "4:17";} else if (song == "Grind") {length = "5:15";} else if (song == "MOSHI") {length = "3:35";} else if (song == "Once Again") {length = "3:46";} else if (song == "Stock & Pull") {length = "5:51";} else if (song == "Till It\'s Over") {length = "4:30";} else if (song == "PLAY") {length = "3:04";}
+          if (song == "Astrocat") {length = "5:21";} else if (song == "Cheat Codes") {length = "3:32";} else if (song == "FTW") {length = "4:17";} else if (song == "Grind") {length = "5:15";} else if (song == "MOSHI") {length = "3:35";} else if (song == "Once Again") {length = "3:46";} else if (song == "Stock & Pull") {length = "5:51";} else if (song == "Till It\'s Over") {length = "4:30";} else if (song == "PLAY") {length = "3:04";} else if (song == "Rocktronik") {length = "5:08";} else if (song == "Checkpoint") {length = "3:43";} else if (song == "Turbo Penguin") {length = "3:31";} else if (song == "The Escape") {length = "5:04";} else if (song == "This Time") {length = "4:32";} else if (song == "Sidewinder") {length = "6:46";} else if (song == "Surge") {length = "3:56";}
           barcolor = 3;
           break;
         case "Cheat Codes VIP":
@@ -535,10 +600,10 @@
           length = "3:24";
           barcolor = 4;
           break;
-        case "Checkpoint":
-          colors = ["#ff4e5b"];
+        case "Heist":
+          colors = ["#820029"];
           style = styles.single;
-          length = "3:43";
+          length = "3:02";
           barcolor = 5;
           break;
         case "Chip Zeal":
@@ -623,10 +688,10 @@
           barcolor = 15;
           break;
         case "Final Boss":
-          colors = ["#8b008b"];
+          colors = ["#e0d889"];
           style = styles.single;
           length = "5:16";
-          barcolor = 16;
+          barcolor = 3;
           break;
         case "FOX":
         case "On The Run":
@@ -660,10 +725,10 @@
           barcolor = 21;
           break;
         case "New Game":
-          colors = ["#00bf00", "#00c300", "#00c700", "#00ca00", "#00cf00", "#00d300", "#00d700", "#00da00", "#00df00", "#00e300", "#00e700", "#00ea00", "#00ef00", "#00f300", "#00f700", "#00fa00", "#00ff00"];
-          style = styles.random;
+          colors = ["#e0d889"];
+          style = styles.single;
           length = "4:19";
-          barcolor = 22;
+          barcolor = 3;
           break;
         case "Paper Dolls":
           colors = ["#ffffff"];
@@ -677,20 +742,16 @@
           length = "2:21";
           barcolor = 24;
           break;
+        case "Evolution":
+        case "Forged in Stars":
         case "Rainbow Road":
         case "Spectra":
         case "The Art of War":
         case "Tokyo Skies":
           colors = ["#ff0000", "#ff2000", "#ff4000", "#ff6000", "#ff8000", "#ff9f00", "#ffbf00", "#ffdf00", "#ffff00", "#dfff00", "#bfff00", "#9fff00", "#80ff00", "#60ff00", "#40ff00", "#20ff00", "#00ff00", "#00ff20", "#00ff40", "#00ff60", "#00ff80", "#00ff9f", "#00ffbf", "#00ffdf", "#00ffff", "#00dfff", "#00bfff", "#009fff", "#0080ff", "#0060ff", "#0040ff", "#0020ff", "#0000ff", "#2000ff", "#4000ff", "#6000ff", "#8000ff", "#9f00ff", "#bf00ff", "#df00ff", "#ff00ff", "#ff00df", "#ff00bf", "#ff009f", "#ff0080", "#ff0060", "#ff0040", "#ff0020"];
           style = styles.sequential;
-          if (song == "Rainbow Road") {length = "2:53";} else if (song == "Spectra") {length = "4:00";} else if (song == "The Art of War") {length = "3:13";} else if (song == "Tokyo Skies") {length = "3:52";}
+          if (song == "Rainbow Road") {length = "2:53";} else if (song == "Spectra") {length = "4:00";} else if (song == "The Art of War") {length = "3:13";} else if (song == "Tokyo Skies") {length = "3:52";} else if (song == "Evolution") {length = "5:37";} else if (song == "Forged in Stars") {length = "3:16";}
           barcolor = 25;
-          break;
-        case "Rocktronik":
-          colors = ["#707070", "#747474", "#787878", "#7c7c7c", "#808080", "#848484", "#888888", "#8c8c8c"];
-          style = styles.random;
-          length = "5:08";
-          barcolor = 26;
           break;
         case "Dubwoofer Substep":
         case "No Party Like a Mojang Party":
@@ -721,7 +782,7 @@
           break;
         case "Try This":
         case "Halcyon":
-          colors = ["#ff0080"];
+          colors = ["#db0a89"];
           style = styles.single;
           if (song == "Try This") {length = "3:49";} else if (song == "Halcyon") {length = "6:10";}
           barcolor = 31;
@@ -745,7 +806,7 @@
           barcolor = 34;
           break;
         case "Quake":
-          colors = ["#00af30"];
+          colors = ["#e08b04"];
           style = styles.single;
           length = "5:41";
           barcolor = 35;
@@ -781,15 +842,16 @@
           barcolor = 40;
           break;
         case "Razor Sharp":
-          colors = ["#ff6090"];
+          colors = ["#c0c0c0"];
           style = styles.single;
           length = "4:41";
           barcolor = 41;
           break;
+        case "Backlash":
         case "Renegade":
-          colors = ["#ff0000", "#0000ff"];
+          colors = ["#b14147", "#c38dea"];
           style = styles.alternating;
-          length = "6:10";
+          if (song == "Backlash") {length = "5:22";} else if (song == "Renegade") {length = "6:10";}
           barcolor = 42;
           break;
         case "SPOOKY":
@@ -810,8 +872,50 @@
           length = "3:05";
           barcolor = 45;
           break;
+        case "Eclipse":
+          colors = ["#666666", "#ffffff"];
+          style = styles.alternating;
+          length = "5:37";
+          barcolor = 46;
+          break;
+        case "BLAST":
+          colors = ["#fee4e0"];
+          style = styles.single;
+          length = "4:20";
+          barcolor = 47;
+          break;
+        case "COOKIES":
+          colors = ["#634020"];
+          style = styles.single;
+          length = "3:09";
+          barcolor = 48;
+          break;
+        case "I\'m being Reelistic":
+          colors = ["#f3f3f3"];
+          style = styles.single;
+          length = "3:50";
+          barcolor = 16;
+          break;
+        case "OKAY":
+          colors = ["#be0ffe"];
+          style = styles.single;
+          length = "3:07";
+          barcolor = 22;
+          break;
+        case "PIXEL":
+          colors = ["#1b2664"];
+          style = styles.single;
+          length = "3:18";
+          barcolor = 26;
+          break;
+        case "ROCK IT":
+          colors = ["#0344a8"];
+          style = styles.single;
+          length = "3:11";
+          barcolor = 49;
+          break;
       }
-      for (var i = 1; i <= 45; i++) {
+      for (var i = 1; i <= 49; i++) {
         progress.classList.remove("c" + i);
       }
       progress.classList.add("c" + barcolor);
@@ -835,7 +939,7 @@
               break;
           }
           y++;
-        }, 5*i);
+        }, 10*i);
       }
       audio.load();
       var x = setInterval(function() {
@@ -881,10 +985,10 @@
     function setH(barID, height) {
       document.getElementsByTagName("div")[barID].style.height = (height + 3) + "px";
       if (document.getElementById("song").value == "SPOOKY") {
-        if (frequency_array[barID] - 192 <= 0) {
+        if (frequency_array[barID] - 224 <= 0) {
           document.getElementsByTagName("div")[barID].style.background = "rgb(" + 0 + "," + 0 + "," + 100 + ")";
         } else {
-          document.getElementsByTagName("div")[barID].style.background = "rgb(" + (((frequency_array[barID] - 192) * 4) - 1) + "," + (((frequency_array[barID] - 192) * 4) - 1) + "," + 100 + ")";
+          document.getElementsByTagName("div")[barID].style.background = "rgb(" + (((frequency_array[barID] - 224) * 8) - 1) + "," + (((frequency_array[barID] - 224) * 8) - 1) + "," + 100 + ")";
         }
       }
     }
