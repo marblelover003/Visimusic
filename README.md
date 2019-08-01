@@ -2,11 +2,11 @@
 
 [Check it out!](http://marblelover003.github.io/Visimusic/)
 
-There are 82 songs to choose from.
+There are 100 songs to choose from.
 
 Select one from the dropdown under "Select a song" and watch it get visualized!
 
-It might take a second for the visualizer to gather the needed data, but it will definitely be worth it in the end.
+It might take a second for the visualizer to gather the needed data, especially on mobile devices, but it will definitely be worth it in the end.
 
 You can also customize how the visualization looks with different settings:
 
@@ -19,4 +19,4 @@ You can also customize how the visualization looks with different settings:
 
 Each song has a different color scheme based on what album it is from.
 
-But enough talk - you'll figure out more by trying it out yourself!
+But enough talk - you'll figure out more by [trying it out yourself](https://marblelover003.github.io/Visimusic/)!
