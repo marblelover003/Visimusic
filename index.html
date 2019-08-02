@@ -973,18 +973,13 @@
           if (song == "Faster Than Light" && audio.currentTime >= 186.9) {
             document.getElementById("songTag").src = "https://marblelover003.github.io/Visimusic/Song-Tags/Faster Than Light 2.PNG";
           }
-          if (audio.currentTime <= 2) {
-            heightlimit = audio.currentTime / 2;
-          } else {
-            heightlimit = 1;
-          }
         }, 0);
       }
     }
     function animationLooper(){
       analyser.getByteFrequencyData(frequency_array);
       for(var i = 0; i < parseInt(document.getElementById("bars").value); i++){
-        bar_height = Math.pow(frequency_array[i] / 255 * Math.pow(window.innerHeight - 27, 1/curvepower), curvepower) * maxheight * heightlimit;
+        bar_height = Math.pow(frequency_array[i] / 255 * Math.pow(window.innerHeight - 27, 1/curvepower), curvepower) * maxheight;
         setH(i, bar_height);
       }
       window.requestAnimationFrame(animationLooper);
