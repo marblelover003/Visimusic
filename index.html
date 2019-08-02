@@ -967,7 +967,7 @@
           var t_s = Math.floor(timeLeft % 60);
           document.getElementById("pos").innerHTML = m + ":" + ("0" + s).slice(-2);
           document.getElementById("timeLeft").innerHTML = "-" + t_m + ":" + ("0" + t_s).slice(-2);
-          progress.value = pos;
+          progress.value = audio.currentTime;
           if (document.getElementById("song").value == "Faster Than Light" && audio.currentTime >= 186.9) {
             document.getElementById("songTag").src = "https://marblelover003.github.io/Visimusic/Song-Tags/Faster Than Light 2.PNG";
           }
