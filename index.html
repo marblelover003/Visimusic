@@ -50,6 +50,15 @@
         left: 0;
         z-index: -99;
       }
+      #title {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        z-index: -99;
+        font-family: Montserrat;
+        width: 500px;
+        visibility: hidden;
+      }
       .c1::-webkit-progress-value {background: #c7c5c8;}
       .c2::-webkit-progress-value {background: linear-gradient(to bottom, #e5af71 0%, #d19d64 50%, #e8bc7d 100%);}
       .c3::-webkit-progress-value {background: #ffff00;}
@@ -276,6 +285,7 @@
       </select><br>
       <button onclick="selectSong()" id="button">START THE VISUALIZATION!</button>
     </span>
+    <span id="title"></span>
     <audio src="" id="audio"></audio>
     <img width="200" height="200" style="position: absolute; top: 8px; right: 8px;" id="songTag" src="Not playing.PNG">
     <span id="visualizer">
@@ -283,9 +293,6 @@
     </span>
     <span class="progressContainer">
       <progress id="progress" value="0" max="0"></progress><span id="timeLeft">--:--</span>
-    </span>
-    <span style="position: absolute; bottom: 8px; right: 8px; font: 50px Montserrat; width: 225px; text-align: right;">
-      <span id="pos">--:--</span><br>
     </span>
   </body>
   <script>
@@ -333,15 +340,17 @@
         }
         document.getElementById("songSelectMenu").style.visibility = "visible";
         clearInterval(positions);
-        document.getElementById("pos").innerHTML = "--:--";
         document.getElementById("timeLeft").innerHTML = "--:--";
         progress.value = 0;
         progress.max = 0;
         document.title = "Visimusic";
+        document.getElementById("title").innerHTML = "";
+        document.getElementById("title").style.visibility = "hidden";
         heightlimit = 0;
       });
     }
     function selectSong() {
+      document.getElementById("title").style.visibility = "visible";
       var barwidth, bars = parseInt(document.getElementById("bars").value);
       if (bars == 250) {barwidth = 3;} else if (bars == 200) {barwidth = 3.75;} else if (bars == 150) {barwidth = 5;} else if (bars == 125) {barwidth = 6;} else if (bars == 100) {barwidth = 7.5;} else if (bars == 80) {barwidth = 9.375;} else if (bars == 60) {barwidth = 12.5;}
       for (var i = 0; i < bars; i++) {
@@ -547,17 +556,17 @@
           break;
       }
       if (song == "Cool Friends") {
-        document.title = "Playing Cool Friends (Murtagh & Veschell Remix) by Silva Hound on Visimusic";
+        document.title = "Now playing Cool Friends (Murtagh & Veschell Remix) by Silva Hound on Visimusic";
       } else if (song == "Partyt Ar Igang") {
-        document.title = "Playing Partyt A\u0308r Iga\u030Ang! by Bossfight on Visimusic";
+        document.title = "Now playing Partyt A\u0308r Iga\u030Ang! by Bossfight on Visimusic";
       } else if (song == "Destroid 8 - Annihilate") {
-        document.title = "Playing Destroid 8 Annihilate by Excision & Far Too Loud on Visimusic";
+        document.title = "Now playing Destroid 8 Annihilate by Excision & Far Too Loud on Visimusic";
       } else if (song == "Destroid 10 - Funk Hole") {
-        document.title = "Playing Destroid 10 Funk Hole by Excision & Space Laces on Visimusic";
+        document.title = "Now playing Destroid 10 Funk Hole by Excision & Space Laces on Visimusic";
       } else if (song == "Highscore") {
-        document.title = "Playing Highscore (feat. Teminite) by Panda Eyes on Visimusic";
+        document.title = "Now playing Highscore (feat. Teminite) by Panda Eyes on Visimusic";
       } else {
-        document.title = "Playing " + song + " by " + artist + " on Visimusic";
+        document.title = "Now playing " + song + " by " + artist + " on Visimusic";
       }
       var barcolor;
       switch (song) {
@@ -950,7 +959,7 @@
         min *= 60;
         var total = min + sec;
         var bufferProgress = Math.floor(audio.buffered.end(0) / total * 100);
-        document.getElementById("pos").innerHTML = bufferProgress + "%";
+        document.getElementById("title").innerHTML = bufferProgress + "%<br>Loading...";
       }, 0);
       animationLooper();
       audio.oncanplaythrough = function() {
@@ -967,12 +976,15 @@
           var timeLeft = len - pos;
           var t_m = Math.floor(timeLeft / 60);
           var t_s = Math.floor(timeLeft % 60);
-          document.getElementById("pos").innerHTML = m + ":" + ("0" + s).slice(-2);
+          var pos_clock = m + ":" + ("0" + s).slice(-2);
+          var len_clock = l_m + ":" + ("0" + l_s).slice(-2);
           document.getElementById("timeLeft").innerHTML = "-" + t_m + ":" + ("0" + t_s).slice(-2);
           progress.value = audio.currentTime;
           if (song == "Faster Than Light" && audio.currentTime >= 186.9) {
             document.getElementById("songTag").src = "https://marblelover003.github.io/Visimusic/Song-Tags/Faster Than Light 2.PNG";
           }
+          var docTitle = document.title;
+          document.getElementById("title").innerHTML = pos_clock + " / " + len_clock + "<br>" + docTitle.slice(0, docTitle.length - 13);
         }, 0);
       }
     }
