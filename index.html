@@ -4,7 +4,7 @@
     <title>Visimusic</title>
     <link rel="icon" href="https://marblelover003.github.io/Visimusic/Visimusic.png">
     <style>
-      @import url("https://fonts.googleapis.com/css?family=Roboto|Montserrat");
+      @import url("https://fonts.googleapis.com/css?family=Roboto|Montserrat:200,400,700");
       body {
         background: black;
         overflow: hidden;
@@ -36,6 +36,7 @@
         bottom: 0;
         left: 0;
         font: 24px Montserrat;
+        font-weight: 200;
       }
       progress::-webkit-progress-bar {
         background: linear-gradient(to bottom, #ccc 0%, #ddd 50%, #bbb 50%, #ccc 100%);
@@ -929,7 +930,7 @@
           var l_ms = parseInt(length[5] + length[6] + length[7]);
           var pos = ((m * 60) + s) * 1000;
           var len = ((l_m * 60) + l_s + (l_ms / 1000)) * 1000;
-          var timeLeft = Math.floor((len - pos) / 1000);
+          var timeLeft = (len - pos) / 1000;
           var t_m = Math.floor(timeLeft / 60);
           var t_s = Math.floor(timeLeft % 60);
           var pos_clock = m + ":" + ("0" + s).slice(-2);
@@ -940,7 +941,7 @@
             document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicHelpers/SongTagsV4/Faster Than Light 2.png";
           }
           var docTitle = document.title;
-          document.getElementById("title").innerHTML = pos_clock + " / " + len_clock + "<br>" + docTitle.slice(0, docTitle.length - 13);
+          document.getElementById("title").innerHTML = "<b>" + pos_clock + "</b> / " + len_clock + "<br>" + docTitle.slice(0, docTitle.length - 13);
         }, 0);
       }
     }
