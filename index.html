@@ -288,7 +288,7 @@
     </span>
     <span id="title"></span>
     <audio src="" id="audio"></audio>
-    <img width="225" height="225" style="position: absolute; top: 8px; right: 8px;" id="songTag" src="Not playing.PNG">
+    <img width="225" height="225" style="position: absolute; top: 8px; right: 8px;" id="songTag" src="Not playing.png">
     <span id="visualizer">
       <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
     </span>
@@ -330,7 +330,7 @@
           alert(document.getElementById("song").value + " has ended. If you wish, feel free to pick another song.");
         }
         audio.src = "";
-        document.getElementById("songTag").src = "https://marblelover003.github.io/Visimusic/Not playing.PNG";
+        document.getElementById("songTag").src = "https://marblelover003.github.io/Visimusic/Not playing.png";
         document.getElementById("song").selectedIndex = 0;
         var x = 0;
         for (var i = 0; i < 250; i++) {
@@ -576,13 +576,11 @@
         case "Sentinel":
           colors = ["#c7c5c8"];
           style = styles.single;
-          if (song == "Barracuda") {length = "4:22";} else if (song == "Rat Twist") {length = "4:00";} else if (song == "Sentinel") {length = "5:28";}
           barcolor = 1;
           break;
         case "Cascade":
           colors = ["#e5af71", "#d19d64", "#e8bc7d"];
           style = styles.random;
-          length = "4:20";
           barcolor = 2;
           break;
         case "Astrocat":
@@ -603,25 +601,21 @@
         case "Turbo Penguin":
           colors = ["#ffff00"];
           style = styles.single;
-          if (song == "Astrocat") {length = "5:21";} else if (song == "Cheat Codes") {length = "3:32";} else if (song == "FTW") {length = "4:17";} else if (song == "Grind") {length = "5:15";} else if (song == "MOSHI") {length = "3:35";} else if (song == "Once Again") {length = "3:46";} else if (song == "Stock & Pull") {length = "5:51";} else if (song == "Till It\'s Over") {length = "4:30";} else if (song == "PLAY") {length = "3:04";} else if (song == "Rocktronik") {length = "5:08";} else if (song == "Checkpoint") {length = "3:43";} else if (song == "Turbo Penguin") {length = "3:31";} else if (song == "The Escape") {length = "5:04";} else if (song == "This Time") {length = "4:32";} else if (song == "Sidewinder") {length = "6:46";} else if (song == "Surge") {length = "3:56";}
           barcolor = 3;
           break;
         case "Cheat Codes VIP":
           colors = ["#bfbfff"];
           style = styles.single;
-          length = "3:24";
           barcolor = 4;
           break;
         case "Heist":
           colors = ["#820029"];
           style = styles.single;
-          length = "3:02";
           barcolor = 5;
           break;
         case "Chip Zeal":
           colors = ["#ff0000", "#ff0200", "#ff0400", "#ff0600", "#ff0900", "#ff0b00", "#ff0d00", "#ff0f00", "#ff1100", "#ff1300", "#ff1500", "#ff1800", "#ff1a00", "#ff1c00", "#ff1e00", "#ff2000", "#ff2200", "#ff2400", "#ff2700", "#ff2900", "#ff2b00", "#ff2d00", "#ff2f00", "#ff3100", "#ff3300", "#ff3600", "#ff3800", "#ff3a00", "#ff3c00", "#ff3e00", "#ff4000", "#ff4200", "#ff4500", "#ff4700", "#ff4900", "#ff4b00", "#ff4d00", "#ff4f00", "#ff5100", "#ff5400", "#ff5600", "#ff5800", "#ff5a00", "#ff5c00", "#ff5e00", "#ff6000", "#ff6300", "#ff6500", "#ff6700", "#ff6900", "#ff6b00", "#ff6d00", "#ff6f00", "#ff7200", "#ff7400", "#ff7600", "#ff7800", "#ff7a00", "#ff7c00", "#ff7e00", "#ff8100", "#ff8300", "#ff8500", "#ff8700", "#ff8900", "#ff8b00", "#ff8d00", "#ff9000", "#ff9200", "#ff9400", "#ff9600", "#ff9800", "#ff9a00", "#ff9c00", "#ff9f00", "#ffa100", "#ffa300", "#ffa500", "#ffa700", "#ffa900", "#ffab00", "#ffae00", "#ffb000", "#ffb200", "#ffb400", "#ffb600", "#ffb800", "#ffba00", "#ffbd00", "#ffbf00", "#ffc100", "#ffc300", "#ffc500", "#ffc700", "#ffc900", "#ffcc00", "#ffce00", "#ffd000", "#ffd200", "#ffd400", "#ffd600", "#ffd800", "#ffdb00", "#ffdd00", "#ffdf00", "#ffe100", "#ffe300", "#ffe500", "#ffe700", "#ffea00", "#ffec00", "#ffee00", "#fff000", "#fff200", "#fff400", "#fff600", "#fff900", "#fffb00", "#fffd00", "#ffff00"];
           style = styles.sequential;
-          length = "3:29";
           barcolor = 6;
           break;
         case "Chronos":
@@ -634,7 +628,6 @@
         case "The Lunar Whale":
           colors = ["#113344"];
           style = styles.single;
-          if (song == "Chronos") {length = "4:29";} else if (song == "Corrupted") {length = "6:16";} else if (song == "Glitch") {length = "5:47";} else if (song == "Legacy") {length = "5:17";} else if (song == "Logic Gatekeeper") {length = "4:58";} else if (song == "Parallel Processing") {length = "8:29";} else if (song == "The Lunar Whale") {length = "4:35";} else if (song == "Rhapsody") {length = "6:13";}
           barcolor = 7;
           break;
         case "Be Gone Mr. Gawne":
@@ -648,13 +641,11 @@
         case "The Maze of Mayonnaise":
           colors = ["#ff0000", "#ffffff"];
           style = styles.alternating;
-          if (song == "Be Gone Mr. Gawne") {length = "4:17";} else if (song == "Commando Steve") {length = "3:26";} else if (song == "Flirt Flirt Oh It Hurts") {length = "3:31";} else if (song == "Jack Russel") {length = "3:21";} else if (song == "Milky Ways") {length = "3:07";} else if (song == "Partyt Ar Igang") {length = "2:57";} else if (song == "Pirate Manners") {length = "3:02";} else if (song == "The Cave, The Treasure") {length = "3:27";} else if (song == "The Maze of Mayonnaise") {length = "3:11";}
           barcolor = 8;
           break;
         case "Cool Friends":
           colors = ["#4643d2", "#c38ef8"];
           style = styles.alternating;
-          length = "3:59";
           barcolor = 9;
           break;
         case "Core":
@@ -663,7 +654,6 @@
         case "Tension":
           colors = ["#ff8000"];
           style = styles.single;
-          if (song == "Core") {length = "4:33";} else if (song == "Cruise Control") {length = "4:01";} else if (song == "Livewire") {length = "5:42";} else if (song == "Tension") {length = "4:58";}
           barcolor = 10;
           break;
         case "Courtesy":
@@ -671,87 +661,73 @@
         case "Otis":
           colors = ["#0432ea"];
           style = styles.single;
-          if (song == "Courtesy") {length = "3:11";} else if (song == "Focus") {length = "2:42";} else if (song == "Otis") {length = "2:36";}
           barcolor = 11;
           break;
         case "Buzz Kill":
           colors = ["#999999", "#ffff00"];
           style = styles.alternating;
-          length = "5:55";
           barcolor = 12;
           break;
         case "Crystal Tokyo":
           colors = ["#0000ff", "#ffffff"];
           style = styles.alternating;
-          length = "5:28";
           barcolor = 13;
           break;
         case "Dance of the Incognizant":
           colors = ["#cf0200", "#190c0b", "#a00000", "#871514", "#9f3134"];
           style = styles.random;
-          length = "7:10";
           barcolor = 14;
           break;
         case "Destroid 8 - Annihilate":
         case "Destroid 10 - Funk Hole":
           colors = ["linear-gradient(to top, #ff0000, #ffff00)"];
           style = styles.single;
-          if (song == "Destroid 8 - Annihilate") {length = "5:10";} else if (song == "Destroid 10 - Funk Hole") {length = "4:40";}
           barcolor = 15;
           break;
         case "Final Boss":
           colors = ["#e0d889"];
           style = styles.single;
-          length = "5:16";
           barcolor = 3;
           break;
         case "FOX":
         case "On The Run":
           colors = ["#008fdd", "#fc00eb", "#6624f8"];
           style = styles.random;
-          if (song == "FOX") {length = "5:17";} else if (song == "On The Run") {length = "4:28";}
           barcolor = 17;
           break;
         case "Houston":
           colors = ["#99ff00"];
           style = styles.single;
-          length = "5:23";
           barcolor = 18;
           break;
         case "HYPE":
           colors = ["#58f639", "#bae967", "#89e952", "#38fa03", "#8ee050"];
           style = styles.random;
-          length = "3:02";
           barcolor = 19;
           break;
         case "Into The Zone":
           colors = ["#c00039", "#fe0b41", "#4300bd", "#462784"];
           style = styles.random;
-          length = "2:41";
           barcolor = 20;
           break;
         case "Long Live The New Fresh":
           colors = ["#801b55", "#483872"];
           style = styles.alternating;
-          length = "4:27";
           barcolor = 21;
           break;
         case "New Game":
           colors = ["#e0d889"];
           style = styles.single;
-          length = "4:19";
           barcolor = 3;
           break;
         case "Paper Dolls":
           colors = ["#ffffff"];
           style = styles.single;
-          length = "2:55";
           barcolor = 23;
           break;
         case "Peer Gynt":
           colors = ["#78a050", "#f5a915"];
           style = styles.alternating;
-          length = "2:21";
           barcolor = 24;
           break;
         case "Evolution":
@@ -762,7 +738,6 @@
         case "Tokyo Skies":
           colors = ["#ff0000", "#ff2000", "#ff4000", "#ff6000", "#ff8000", "#ff9f00", "#ffbf00", "#ffdf00", "#ffff00", "#dfff00", "#bfff00", "#9fff00", "#80ff00", "#60ff00", "#40ff00", "#20ff00", "#00ff00", "#00ff20", "#00ff40", "#00ff60", "#00ff80", "#00ff9f", "#00ffbf", "#00ffdf", "#00ffff", "#00dfff", "#00bfff", "#009fff", "#0080ff", "#0060ff", "#0040ff", "#0020ff", "#0000ff", "#2000ff", "#4000ff", "#6000ff", "#8000ff", "#9f00ff", "#bf00ff", "#df00ff", "#ff00ff", "#ff00df", "#ff00bf", "#ff009f", "#ff0080", "#ff0060", "#ff0040", "#ff0020"];
           style = styles.sequential;
-          if (song == "Rainbow Road") {length = "2:53";} else if (song == "Spectra") {length = "4:00";} else if (song == "The Art of War") {length = "3:13";} else if (song == "Tokyo Skies") {length = "3:52";} else if (song == "Evolution") {length = "5:37";} else if (song == "Forged in Stars") {length = "3:16";}
           barcolor = 25;
           break;
         case "Dubwoofer Substep":
@@ -771,161 +746,138 @@
         case "Wicked":
           colors = ["#ff0000"];
           style = styles.single;
-          if (song == "No Party Like a Mojang Party") {length = "5:52";} else if (song == "Sevcon") {length = "4:34";} else if (song == "Wicked") {length = "3:41";} else if (song == "Dubwoofer Substep") {length = "4:44";}
           barcolor = 27;
           break;
         case "So Far Away":
           colors = ["#ff9900", "#ffaa00"];
           style = styles.alternating;
-          length = "3:39";
           barcolor = 28;
           break;
         case "Sugar Rush":
           colors = ["#7fffd4"];
           style = styles.single;
-          length = "4:44";
           barcolor = 29;
           break;
         case "Termination Shock":
           colors = ["#0000ff", "#0010ff", "#0020ff", "#0030ff", "#0040ff", "#0050ff", "#0060ff", "#0070ff", "#0080ff", "#008fff", "#009fff", "#00afff", "#00bfff", "#00cfff", "#00dfff", "#00efff", "#00ffff", "#00efff", "#00dfff", "#00cfff", "#00bfff", "#00afff", "#009fff", "#008fff", "#0080ff", "#0070ff", "#0060ff", "#0050ff", "#0040ff", "#0030ff", "#0020ff", "#0010ff"];
           style = styles.sequential;
-          length = "4:50";
           barcolor = 30;
           break;
         case "Try This":
         case "Halcyon":
           colors = ["#db0a89"];
           style = styles.single;
-          if (song == "Try This") {length = "3:49";} else if (song == "Halcyon") {length = "6:10";}
           barcolor = 31;
           break;
         case "Unlocked":
           colors = ["#bf0070"];
           style = styles.single;
-          length = "3:47";
           barcolor = 32;
           break;
         case "Vindicate Me":
           colors = ["#00ff80"];
           style = styles.single;
-          length = "3:26";
           barcolor = 33;
           break;
         case "Yo! Ho! And a Bottle of Bass!":
           colors = ["#7070ff", "#8080ff", "#8f8fff"];
           style = styles.random;
-          length = "6:24";
           barcolor = 34;
           break;
         case "Quake":
           colors = ["#e08b04"];
           style = styles.single;
-          length = "5:41";
           barcolor = 35;
           break;
         case "Faster Than Light":
           colors = ["#ffffee"];
           style = styles.single;
-          length = "5:02";
           barcolor = 36;
           break;
         case "FIGHT":
           colors = ["#ffd700"];
           style = styles.single;
-          length = "3:35";
           barcolor = 37;
           break;
         case "SAIKOU":
           colors = ["#ff0040"];
           style = styles.single;
-          length = "2:55";
           barcolor = 38;
           break;
         case "Highscore":
           colors = ["#00ffff"];
           style = styles.single;
-          length = "4:20";
           barcolor = 39;
           break;
         case "PARTY":
           colors = ["#ff0000", "#ffff00", "#00df00", "#00ffff", "#0000ff", "#ff00ff", "#ff0080"];
           style = styles.random;
-          length = "3:39";
           barcolor = 40;
           break;
         case "Razor Sharp":
           colors = ["#c0c0c0"];
           style = styles.single;
-          length = "4:41";
           barcolor = 41;
           break;
         case "Backlash":
         case "Renegade":
           colors = ["#b14147", "#c38dea"];
           style = styles.alternating;
-          if (song == "Backlash") {length = "5:22";} else if (song == "Renegade") {length = "6:10";}
           barcolor = 42;
           break;
         case "SPOOKY":
           colors = ["#00008b"];
           style = styles.single;
-          length = "3:49";
           barcolor = 43;
           break;
         case "Time Goes By":
           colors = ["#eeeeee"];
           style = styles.single;
-          length = "3:26";
           barcolor = 44;
           break;
         case "Time Lapse":
           colors = ["#c2b280"];
           style = styles.single;
-          length = "3:05";
           barcolor = 45;
           break;
         case "Eclipse":
           colors = ["#666666", "#ffffff"];
           style = styles.alternating;
-          length = "5:37";
           barcolor = 46;
           break;
         case "BLAST":
           colors = ["#fee4e0"];
           style = styles.single;
-          length = "4:20";
           barcolor = 47;
           break;
         case "COOKIES":
           colors = ["#634020"];
           style = styles.single;
-          length = "3:09";
           barcolor = 48;
           break;
         case "I\'m being Reelistic":
           colors = ["#f3f3f3"];
           style = styles.single;
-          length = "3:50";
           barcolor = 16;
           break;
         case "OKAY":
           colors = ["#be0ffe"];
           style = styles.single;
-          length = "3:07";
           barcolor = 22;
           break;
         case "PIXEL":
           colors = ["#1b2664"];
           style = styles.single;
-          length = "3:18";
           barcolor = 26;
           break;
         case "ROCK IT":
           colors = ["#0344a8"];
           style = styles.single;
-          length = "3:11";
           barcolor = 49;
           break;
+      }
+      switch (song) {
+        case "Backlash": length = "5:22.115"; break; case "BLAST": length = "4:20.937"; break;case "COOKIES": length = "3:09.361"; break; case "Eclipse": length = "5:37.606"; break; case "Evolution": length = "5:37.893"; break; case "Forged in Stars": length = "3:16.257"; break; case "Heist": length = "3:02.204"; break; case "I\'m being Reelistic": length = "3:50.687"; break; case "OKAY": length = "3:07.141"; break; case "PIXEL": length = "3:18.373"; break; case "Rat Twist": length = "4:00.117"; break; case "ROCK IT": length = "3:11.242"; break; case "Sentinel": length = "5:28.437"; break; case "Sidewinder": length = "6:46.491"; break; case "Surge": length = "3:56.930"; break; case "The Escape": length = "5:03.673"; break; case "This Time": length = "4:32.378"; break; case "Turbo Penguin": length = "3:31.356"; break; case "Astrocat": length = "5:21.619"; break; case "Barracuda": length = "4:22.661"; break; case "Be Gone Mr. Gawne": length = "4:17.906"; break; case "Buzz Kill": length = "5:55.813"; break; case "Cascade": length = "4:20.048"; break; case "Cheat Codes": length = "3:32.349"; break; case "Cheat Codes VIP": length = "3:24.486"; break; case "Checkpoint": length = "3:43.895"; break; case "Chip Zeal": length = "3:29.920"; break; case "Chronos": length = "4:29.740"; break; case "Commando Steve": length = "3:26.942"; break; case "Cool Friends": length = "3:59.072"; break; case "Core": length = "4:33.371"; break; case "Corrupted": length = "6:16.737"; break; case "Courtesy": length = "3:11.164"; break; case "Cruise Control": length = "4:01.606"; break; case "Crystal Tokyo": length = "5:28.124"; break; case "Dance of the Incognizant": length = "7:10.158"; break; case "Destroid 8 - Annihilate": length = "5:10.177"; break; case "Destroid 10 - Funk Hole": length = "4:40.084"; break; case "Dubwoofer Substep": length = "4:44.865"; break; case "Faster Than Light": length = "5:02.785"; break; case "FIGHT": length = "3:35.719"; break; case "Final Boss": length = "5:16.813"; break; case "Flirt Flirt Oh It Hurts": length = "3:31.513"; break; case "Focus": length = "2:42.847"; break; case "FOX": length = "5:17.178"; break; case "FTW": length = "4:17.671"; break; case "Glitch": length = "5:47.480"; break; case "Grind": length = "5:15.376"; break; case "Halcyon": length = "6:10.834"; break; case "Highscore": length = "4:20.832"; break; case "Houston": length = "5:23.500"; break; case "HYPE": length = "3:02.909"; break; case "Into The Zone": length = "2:41.462"; break; case "Jack Russel": length = "3:21.691"; break; case "Legacy": length = "5:17.074"; break; case "Livewire": length = "5:42.413"; break; case "Logic Gatekeeper": length = "4:58.736"; break; case "Long Live The New Fresh": length = "4:27.049"; break; case "Milky Ways": length = "3:07.611"; break; case "MOSHI": length = "3:35.170"; break; case "New Game": length = "4:19.317"; break; case "No Party Like a Mojang Party": length = "5:51.529"; break; case "On The Run": length = "4:28.564"; break; case "Once Again": length = "3:46.351"; break; case "Otis": length = "2:36.081"; break; case "Paper Dolls": length = "2:55.777"; break; case "Parallel Processing": length = "8:29.022"; break; case "PARTY": length = "3:39.480"; break; case "Partyt Ar Igang": length = "2:57.136"; break; case "Peer Gynt": length = "2:21.557"; break; case "Pirate Manners": length = "3:02.151"; break; case "PLAY": length = "3:04.111"; break; case "Quake": length = "5:41.498"; break; case "Rainbow Road": length = "2:53.061"; break; case "Razor Sharp": length = "4:41.808"; break; case "Renegade": length = "6:10.546"; break; case "Rhapsody": length = "6:13.054"; break; case "Rocktronik": length = "5:08.166"; break; case "SAIKOU": length = "2:55.412"; break; case "Sevcon": length = "4:34.755"; break; case "So Far Away": length = "3:39.297"; break; case "Spectra": length = "4:00.117"; break; case "SPOOKY": length = "3:49.799"; break; case "Stock & Pull": length = "5:51.007"; break; case "Sugar Rush": length = "4:44.865"; break; case "Tension": length = "4:58.109"; break; case "Termination Shock": length = "4:50.272"; break; case "The Art of War": length = "3:13.280"; break; case "The Cave, The Treasure": length = "3:27.307"; break; case "The Lunar Whale": length = "4:35.826"; break; case "The Maze of Mayonnaise": length = "3:11.190"; break; case "Till It\'s Over": length = "4:30.863"; break; case "Time Goes By": length = "3:26.315"; break; case "Time Lapse": length = "3:05.391"; break; case "Tokyo Skies": length = "3:52.463"; break; case "Try This": length = "3:49.694"; break; case "Unlocked": length = "3:47.683"; break; case "Vindicate Me": length = "3:26.471"; break; case "Wicked": length = "3:41.126"; break; case "Yo! Ho! And a Bottle of Bass!": length = "6:24.130"; break;
       }
       for (var i = 1; i <= 49; i++) {
         progress.classList.remove("c" + i);
@@ -933,8 +885,10 @@
       progress.classList.add("c" + barcolor);
       var l_m = parseInt(length[0]);
       var l_s = parseInt(length[2] + length[3]);
+      var l_ms = parseInt(length[5] + length[6] + length[7]);
       l_m *= 60;
-      progress.max = l_m + l_s;
+      l_ms /= 1000;
+      progress.max = (l_m + l_s + l_ms) * 1000;
       var y = 0;
       for (var i = 0; i < 250; i++) {
         setTimeout(function() {
@@ -972,17 +926,18 @@
           var s = Math.floor(curpos % 60);
           var l_m = parseInt(length[0]);
           var l_s = parseInt(length[2] + length[3]);
-          var pos = (m * 60) + s;
-          var len = (l_m * 60) + l_s;
-          var timeLeft = len - pos;
+          var l_ms = parseInt(length[5] + length[6] + length[7]);
+          var pos = ((m * 60) + s) * 1000;
+          var len = ((l_m * 60) + l_s + (l_ms / 1000)) * 1000;
+          var timeLeft = Math.floor((len - pos) / 1000);
           var t_m = Math.floor(timeLeft / 60);
           var t_s = Math.floor(timeLeft % 60);
           var pos_clock = m + ":" + ("0" + s).slice(-2);
           var len_clock = l_m + ":" + ("0" + l_s).slice(-2);
           document.getElementById("timeLeft").innerHTML = "-" + t_m + ":" + ("0" + t_s).slice(-2);
-          progress.value = audio.currentTime;
+          progress.value = audio.currentTime * 1000;
           if (song == "Faster Than Light" && audio.currentTime >= 186.9) {
-            document.getElementById("songTag").src = "https://marblelover003.github.io/Visimusic/Song-Tags/Faster Than Light 2.PNG";
+            document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicHelpers/SongTagsV4/Faster Than Light 2.png";
           }
           var docTitle = document.title;
           document.getElementById("title").innerHTML = pos_clock + " / " + len_clock + "<br>" + docTitle.slice(0, docTitle.length - 13);
