@@ -930,9 +930,9 @@
           var l_ms = parseInt(length[5] + length[6] + length[7]);
           var pos = ((m * 60) + s) * 1000;
           var len = ((l_m * 60) + l_s + (l_ms / 1000)) * 1000;
-          var timeLeft = (len - pos) / 1000;
-          var t_m = Math.floor(timeLeft / 60);
-          var t_s = Math.floor(timeLeft % 60);
+          var timeLeft = (len - pos);
+          var t_m = Math.floor(timeLeft / 60000);
+          var t_s = Math.floor(timeLeft % 60000 / 1000);
           var pos_clock = m + ":" + ("0" + s).slice(-2);
           var len_clock = l_m + ":" + ("0" + l_s).slice(-2);
           document.getElementById("timeLeft").innerHTML = "-" + t_m + ":" + ("0" + t_s).slice(-2);
