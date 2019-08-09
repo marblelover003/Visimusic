@@ -115,7 +115,7 @@
   <body>
     <span style="position: absolute; z-index: 99;" id="songSelectMenu">
       Select a song:
-      <select id="song">
+      <select id="song" onchange="checkSong()">
         <option></option>
         <option value="Astrocat">PIXL - Astrocat</option>
         <option value="Backlash">Noisestorm - Backlash</option>
@@ -310,6 +310,13 @@
         maxheight, curvepower,
         progress = document.getElementById("progress"),
         heightlimit = 0;
+    function checkSong() {
+      var song = document.getElementById("song").value;
+      if (song == "") {
+        document.getElementById("button").disabled = true;
+      } else {
+        document.getElementById("button").disabled = false;
+      }
     function initPage() {
       audio = document.getElementById("audio");
       context = new (window.AudioContext || window.webkitAudioContext)();
