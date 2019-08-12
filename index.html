@@ -160,6 +160,7 @@
         <option value="HYPE">Tokyo Machine - HYPE</option>
         <option value="I'm being Reelistic">Omnitica - I&apos;m being Reelistic</option>
         <option value="Into The Zone">Shirobon - Into the Zone</option>
+        <option value="It's Pronounced Omnitica">Omnitica - It&apos;s Pronounced Omnitica</option>
         <option value="Jack Russel">Bossfight - Jack Russel</option>
         <option value="Legacy">Danimal Cannon &amp; Zef - Legacy</option>
         <option value="Livewire">Zef - Livewire</option>
@@ -371,7 +372,7 @@
       }
       var song = document.getElementById("song").value;
       audio = document.getElementById("audio");
-      var helpers = ["BLAST", "Backlash", "COOKIES", "Eclipse", "Evolution", "Forged in Stars", "Heist", "I\'m being Reelistic", "OKAY", "PIXEL", "ROCK IT", "Rat Twist", "Sentinel", "Sidewinder", "Surge", "The Escape", "This Time", "Turbo Penguin"];
+      var helpers = ["BLAST", "Backlash", "COOKIES", "Eclipse", "Evolution", "Forged in Stars", "Heist", "I\'m being Reelistic", "OKAY", "PIXEL", "ROCK IT", "Rat Twist", "Sentinel", "Sidewinder", "Surge", "The Escape", "This Time", "Turbo Penguin", "It\'s Pronounced Omnitica"];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
         if (song == helpers[i]) {
@@ -555,6 +556,7 @@
           break;
         case "Dubwoofer Substep":
         case "I\'m being Reelistic":
+        case "It\'s Pronounced Omnitica":
         case "Yo! Ho! And a Bottle of Bass!":
           artist = "Omnitica";
           break;
@@ -788,6 +790,7 @@
           style = styles.single;
           barcolor = 33;
           break;
+        case "It\'s Pronounced Omnitica":
         case "Yo! Ho! And a Bottle of Bass!":
           colors = ["#7070ff", "#8080ff", "#8f8fff"];
           style = styles.random;
@@ -939,6 +942,7 @@
         case "Houston": length = "5:23.500"; break;
         case "HYPE": length = "3:02.909"; break;
         case "Into The Zone": length = "2:41.462"; break;
+        case "It\'s Pronounced Omnitica": length = "5:00.225"; break;
         case "Jack Russel": length = "3:21.691"; break;
         case "Legacy": length = "5:17.074"; break;
         case "Livewire": length = "5:42.413"; break;
@@ -1044,8 +1048,11 @@
           var len_clock = l_m + ":" + ("0" + l_s).slice(-2);
           document.getElementById("timeLeft").innerHTML = "-" + t_m + ":" + ("0" + t_s).slice(-2);
           progress.value = audio.currentTime * 1000;
-          if (song == "Faster Than Light" && audio.currentTime >= 186.9) {
+          if (song == "Faster Than Light" && audio.currentTime >= 186) {
             document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicHelpers/SongTagsV4/Faster Than Light 2.png";
+          }
+          if (song == "It\'s Pronounced Omnitica" && audio.currentTime >= 209) {
+            document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicHelpers/SongTagsV4/It\'s Pronounced Omnitica 2.png";
           }
           var docTitle = document.title;
           document.getElementById("title").innerHTML = "<b>" + pos_clock + "</b> / " + len_clock + "<br>" + docTitle.slice(0, docTitle.length - 13);
