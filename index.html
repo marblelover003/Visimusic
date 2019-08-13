@@ -1047,7 +1047,7 @@
           var l_m = parseInt(length[0]);
           var l_s = parseInt(length[2] + length[3]);
           var l_ms = parseInt(length[5] + length[6] + length[7]);
-          var pos = ((m * 60) + s) * 1000;
+          var pos = audio.currentTime * 1000;
           var len = ((l_m * 60) + l_s + (l_ms / 1000)) * 1000;
           var timeLeft = (len - pos);
           var t_m = Math.floor(timeLeft / 60000);
