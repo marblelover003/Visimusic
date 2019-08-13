@@ -2,7 +2,7 @@
 
 [Check it out!](http://marblelover003.github.io/Visimusic/)
 
-There are 100 songs to choose from.
+There are 101 songs to choose from.
 
 Select one from the dropdown under "Select a song" and watch it get visualized!
 
@@ -19,4 +19,4 @@ You can also customize how the visualization looks with different settings:
 
 Each song has a different color scheme based on what album it is from.
 
-But enough talk - you'll figure out more by [trying it out yourself](https://marblelover003.github.io/Visimusic/)!
+For example, the song "Commando Steve" by Bossfight would have a red/white color scheme, since the album art contains those colors, but the song "Spectra" by Chipzel would have a rainbow color scheme, since "Spectra", the name of the album, looks like the plural of "spectrum", which would be a rainbow in the context of colors!
