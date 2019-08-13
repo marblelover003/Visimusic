@@ -110,6 +110,13 @@
       .c47::-webkit-progress-value {background: #fee4e0;}
       .c48::-webkit-progress-value {background: #634020;}
       .c49::-webkit-progress-value {background: #0344a8;}
+      .min, .sec, .ms {
+        display: inline-block;
+        text-align: center;
+      }
+      .min {width: 17px;}
+      .sec {width: 34px;}
+      .ms {width: 50px;}
     </style>
   </head>
   <body>
@@ -295,7 +302,7 @@
       <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
     </span>
     <span class="progressContainer">
-      <progress id="progress" value="0" max="0"></progress><span id="timeLeft">-0:00.000</span>
+      <progress id="progress" value="0" max="0"></progress><span id="timeLeft">-<span class="min">0</span>:<span class="sec">00</span>.<span class="ms">000</span></span>
     </span>
   </body>
   <script>
@@ -1046,9 +1053,9 @@
           var t_m = Math.floor(timeLeft / 60000);
           var t_s = Math.floor(timeLeft % 60000 / 1000);
           var t_ms= Math.floor(timeLeft % 1000);
-          var pos_clock = m + ":" + ("0" + s).slice(-2) + ("00" + ms).slice(-3);
+          var pos_clock = "<span class=\"min\">" + m + "</span>:<span class=\"sec\">" + ("0" + s).slice(-2) + "</span>.<span class=\"ms\">" + ("00" + ms).slice(-3) + </span>;
           var len_clock = l_m + ":" + ("0" + l_s).slice(-2) + "." + ("00" + l_ms).slice(-3);
-          document.getElementById("timeLeft").innerHTML = "-" + t_m + ":" + ("0" + t_s).slice(-2) + "." + ("00" + t_ms).slice(-3);
+          document.getElementById("timeLeft").innerHTML = "-<span class=\"min\">" + t_m + "</span>:<span class=\"sec\">" + ("0" + t_s).slice(-2) + "</span>.<span class=\"ms\">" + ("00" + t_ms).slice(-3) + "</span>";
           progress.value = audio.currentTime * 1000;
           if (song == "Faster Than Light" && audio.currentTime >= 186) {
             document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicHelpers/SongTagsV4/Faster Than Light 2.png";
