@@ -159,6 +159,7 @@
         <option value="FOX">Shirobon - FOX</option>
         <option value="FTW">Lets Be Friends - FTW</option>
         <option value="Glitch">Danimal Cannon &amp; Zef - Glitch</option>
+        <option value="Gravity">Stereotronique - Gravity</option>
         <option value="Grind">Stereotronique - Grind</option>
         <option value="Halcyon">Au5 &amp; Fractal - Halcyon</option>
         <option value="Heist">Noisestorm - Heist</option>
@@ -358,7 +359,7 @@
         }
         document.getElementById("songSelectMenu").style.visibility = "visible";
         clearInterval(positions);
-        document.getElementById("timeLeft").innerHTML = "-0:00.000";
+        document.getElementById("timeLeft").innerHTML = "-<span class=\"min\">0</span>:<span class=\"sec\">00</span>.<span class=\"ms\">000</span>";
         progress.value = 0;
         progress.max = 0;
         document.title = "Visimusic";
@@ -379,7 +380,7 @@
       }
       var song = document.getElementById("song").value;
       audio = document.getElementById("audio");
-      var helpers = ["BLAST", "Backlash", "COOKIES", "Eclipse", "Evolution", "Forged in Stars", "Heist", "I\'m being Reelistic", "OKAY", "PIXEL", "ROCK IT", "Rat Twist", "Sentinel", "Sidewinder", "Surge", "The Escape", "This Time", "Turbo Penguin", "It\'s Pronounced Omnitica"];
+      var helpers = ["BLAST", "Backlash", "COOKIES", "Eclipse", "Evolution", "Forged in Stars", "Heist", "I\'m being Reelistic", "OKAY", "PIXEL", "ROCK IT", "Rat Twist", "Sentinel", "Sidewinder", "Surge", "The Escape", "This Time", "Turbo Penguin", "It\'s Pronounced Omnitica", "Gravity"];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
         if (song == helpers[i]) {
@@ -499,6 +500,7 @@
         case "FTW":
           artist = "Lets Be Friends";
           break;
+        case "Gravity":
         case "Grind":
         case "Quake":
         case "Stock & Pull":
@@ -604,6 +606,7 @@
         case "Astrocat":
         case "Cheat Codes":
         case "Checkpoint":
+        case "Gravity":
         case "Grind":
         case "FTW":
         case "MOSHI":
@@ -902,6 +905,7 @@
         case "Eclipse": length = "5:37.606"; break;
         case "Evolution": length = "5:37.893"; break;
         case "Forged in Stars": length = "3:16.257"; break;
+        case "Gravity": length = "5:54.115"; break;
         case "Heist": length = "3:02.204"; break;
         case "I\'m being Reelistic": length = "3:50.687"; break;
         case "OKAY": length = "3:07.141"; break;
