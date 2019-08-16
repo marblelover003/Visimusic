@@ -1080,12 +1080,12 @@
             document.getElementById("title").innerHTML = "<b>" + pos_clock + "</b> / " + len_clock + "<br>" + docTitle.slice(0, docTitle.length - 13);
           }, 0);
         }
-      }
+      }, 2500);
     }
     function animationLooper(){
       analyser.getByteFrequencyData(frequency_array);
       for(var i = 0; i < parseInt(document.getElementById("bars").value); i++){
-        bar_height = Math.pow(frequency_array[i] / 255 * Math.pow(window.innerHeight, 1/curvepower), curvepower) * maxheight;
+        bar_height = Math.pow(frequency_array[i] / 255 * Math.pow(window.innerHeight - 24, 1/curvepower), curvepower) * maxheight;
         setH(i, bar_height);
       }
       window.requestAnimationFrame(animationLooper);
