@@ -150,6 +150,7 @@
         <option value="Dubwoofer Substep">Omnitica - Dubwoofer Substep</option>
         <option value="Eclipse">Noisestorm - Eclipse</option>
         <option value="Evolution">Chipzel - Evolution</option>
+        <option value="Exoskelephone">Stereotronique - Exoskelephone</option>
         <option value="Faster Than Light">Far Too Loud - Faster Than Light</option>
         <option value="FIGHT">Tokyo Machine - FIGHT</option>
         <option value="Final Boss">Nitro Fun - Final Boss</option>
@@ -201,6 +202,7 @@
         <option value="SAIKOU">Tokyo Machine - SAIKOU</option>
         <option value="Sentinel">Noisestorm - Sentinel</option>
         <option value="Sevcon">Big Giant Circles - Sevcon</option>
+        <option value="Sexy Beast">Stereotronique - Sexy Beast</option>
         <option value="Sidewinder">7 Minutes Dead - Sidewinder</option>
         <option value="So Far Away">Nitro Fun - So Far Away</option>
         <option value="Spectra">Chipzel - Spectra</option>
@@ -380,7 +382,7 @@
       }
       var song = document.getElementById("song").value;
       audio = document.getElementById("audio");
-      var helpers = ["BLAST", "Backlash", "COOKIES", "Eclipse", "Evolution", "Forged in Stars", "Heist", "I\'m being Reelistic", "OKAY", "PIXEL", "ROCK IT", "Rat Twist", "Sentinel", "Sidewinder", "Surge", "The Escape", "This Time", "Turbo Penguin", "It\'s Pronounced Omnitica", "Gravity"];
+      var helpers = ["BLAST", "Backlash", "COOKIES", "Eclipse", "Evolution", "Forged in Stars", "Heist", "I\'m being Reelistic", "OKAY", "PIXEL", "ROCK IT", "Rat Twist", "Sentinel", "Sidewinder", "Surge", "The Escape", "This Time", "Turbo Penguin", "It\'s Pronounced Omnitica", "Gravity", "Exoskelephone", "Sexy Beast"];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
         if (song == helpers[i]) {
@@ -500,9 +502,11 @@
         case "FTW":
           artist = "Lets Be Friends";
           break;
+        case "Exoskelephone":
         case "Gravity":
         case "Grind":
         case "Quake":
+        case "Sexy Beast":
         case "Stock & Pull":
           artist = "Stereotronique";
           break;
@@ -606,6 +610,7 @@
         case "Astrocat":
         case "Cheat Codes":
         case "Checkpoint":
+        case "Exoskelephone":
         case "Gravity":
         case "Grind":
         case "FTW":
@@ -613,6 +618,7 @@
         case "Once Again":
         case "PLAY":
         case "Rocktronik":
+        case "Sexy Beast":
         case "Sidewinder":
         case "Stock & Pull":
         case "Surge":
@@ -939,6 +945,7 @@
         case "Destroid 8 - Annihilate": length = "5:10.177"; break;
         case "Destroid 10 - Funk Hole": length = "4:40.084"; break;
         case "Dubwoofer Substep": length = "4:44.865"; break;
+        case "Exoskelephone": length = "5:53.123"; break;
         case "Faster Than Light": length = "5:02.785"; break;
         case "FIGHT": length = "3:35.719"; break;
         case "Final Boss": length = "5:16.813"; break;
@@ -981,6 +988,7 @@
         case "Rocktronik": length = "5:08.166"; break;
         case "SAIKOU": length = "2:55.412"; break;
         case "Sevcon": length = "4:34.755"; break;
+        case "Sexy Beast": length = "5:15.350"; break;
         case "So Far Away": length = "3:39.297"; break;
         case "Spectra": length = "4:00.117"; break;
         case "SPOOKY": length = "3:49.799"; break;
