@@ -1038,16 +1038,16 @@
           y++;
         }, 10*i);
       }
-      audio.load();
-      var x = setInterval(function() {
-        var min = parseInt(length[0]);
-        var sec = parseInt(length[2] + length[3]);
-        min *= 60;
-        var total = min + sec;
-        var bufferProgress = Math.floor(audio.buffered.end(0) / total * 100);
-        document.getElementById("title").innerHTML = "<b>" + bufferProgress + "</b>%<br>Loading...";
-      }, 0);
       setTimeout(function() {
+        audio.load();
+        var x = setInterval(function() {
+          var min = parseInt(length[0]);
+          var sec = parseInt(length[2] + length[3]);
+          min *= 60;
+          var total = min + sec;
+          var bufferProgress = Math.floor(audio.buffered.end(0) / total * 100);
+          document.getElementById("title").innerHTML = "<b>" + bufferProgress + "</b>%<br>Loading...";
+        }, 0);
         animationLooper();
         audio.oncanplaythrough = function() {
           clearInterval(x);
