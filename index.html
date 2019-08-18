@@ -147,6 +147,7 @@
         <option value="Dance of the Incognizant">FantomenK - Dance of the Incognizant</option>
         <option value="Destroid 8 - Annihilate">Excision &amp; Far Too Loud - Destroid 8 Annihilate</option>
         <option value="Destroid 10 - Funk Hole">Excision &amp; Space Laces - Destroid 10 Funk Hole</option>
+        <option value="Duality" disabled>Fractal - Duality</option>
         <option value="Dubwoofer Substep">Omnitica - Dubwoofer Substep</option>
         <option value="Eclipse">Noisestorm - Eclipse</option>
         <option value="Evolution">Chipzel - Evolution</option>
@@ -190,7 +191,7 @@
         <option value="Peer Gynt">cYsmix - Peer Gynt</option>
         <option value="Pirate Manners">Bossfight - Pirate Manners</option>
         <option value="PIXEL">Tokyo Machine - PIXEL</option>
-        <option value="PLAY">Tokyo Machine - PLAY</option>
+        <option value="PLAY" disabled>Tokyo Machine - PLAY</option>
         <option value="Quake">Stereotronique - Quake</option>
         <option value="Rainbow Road">nanobii - Rainbow Road</option>
         <option value="Rat Twist">PIXL - Rat Twist</option>
@@ -199,12 +200,13 @@
         <option value="Rhapsody">Danimal Cannon &amp; Zef - Rhapsody</option>
         <option value="ROCK IT">Tokyo Machine - ROCK IT</option>
         <option value="Rocktronik">Pegboard Nerds - Rocktronik</option>
-        <option value="SAIKOU">Tokyo Machine - SAIKOU</option>
+        <option value="SAIKOU" disabled>Tokyo Machine - SAIKOU</option>
         <option value="Sentinel">Noisestorm - Sentinel</option>
         <option value="Sevcon">Big Giant Circles - Sevcon</option>
         <option value="Sexy Beast">Stereotronique - Sexy Beast</option>
         <option value="Sidewinder">7 Minutes Dead - Sidewinder</option>
         <option value="So Far Away">Nitro Fun - So Far Away</option>
+        <option value="Spection" disabled>Fractal - Spection</option>
         <option value="Spectra">Chipzel - Spectra</option>
         <option value="SPOOKY">Tokyo Machine - SPOOKY</option>
         <option value="Stock & Pull">Stereotronique - Stock &amp; Pull</option>
@@ -579,6 +581,10 @@
         case "Halcyon":
           artist = "Au5 & Fractal";
           break;
+        case "Duality":
+        case "Spection":
+          artist = "Fractal";
+          break;
       }
       if (song == "Cool Friends") {
         document.title = "Now playing Cool Friends (Murtagh & Veschell Remix) by Silva Hound on Visimusic";
@@ -784,6 +790,8 @@
           break;
         case "Try This":
         case "Halcyon":
+        case "Spection":
+        case "Duality":
           colors = ["#db0a89"];
           style = styles.single;
           barcolor = 31;
@@ -936,6 +944,7 @@
         case "Dance of the Incognizant": length = "7:10.158"; break;
         case "Destroid 8 - Annihilate": length = "5:10.177"; break;
         case "Destroid 10 - Funk Hole": length = "4:40.084"; break;
+        case "Duality": length = "6:00.000"; break;
         case "Dubwoofer Substep": length = "4:44.865"; break;
         case "Exoskelephone": length = "5:53.123"; break;
         case "Faster Than Light": length = "5:02.785"; break;
@@ -982,6 +991,7 @@
         case "Sevcon": length = "4:34.755"; break;
         case "Sexy Beast": length = "5:15.350"; break;
         case "So Far Away": length = "3:39.297"; break;
+        case "Spection": length = "4:52.000"; break;
         case "Spectra": length = "4:00.117"; break;
         case "SPOOKY": length = "3:49.799"; break;
         case "Stock & Pull": length = "5:51.007"; break;
