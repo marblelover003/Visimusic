@@ -1047,7 +1047,7 @@
           var sec = parseInt(length[2] + length[3]);
           min *= 60;
           var total = min + sec;
-          var bufferProgress = Math.floor(audio.buffered.end(0) / total * 100);
+          var bufferProgress = Math.floor(audio.buffered.end(0) / total * 1000) / 10;
           document.getElementById("title").innerHTML = "<b>" + bufferProgress + "</b>%<br>Loading...";
         }, 0);
         animationLooper();
