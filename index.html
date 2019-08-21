@@ -4,7 +4,7 @@
     <title>Visimusic</title>
     <link rel="icon" href="https://marblelover003.github.io/Visimusic/VisimusicFavicons/Visimusic.png">
     <style>
-      @import url("https://fonts.googleapis.com/css?family=Roboto|Montserrat:300,400,700");
+      @import url("https://fonts.googleapis.com/css?family=Roboto|Montserrat:300,400,700|Orbitron");
       body {
         background: black;
         overflow: hidden;
@@ -24,7 +24,39 @@
         font-size: 16px;
       }
       button, select, #songSelectMenu {
-        font: 16px Roboto;
+        font: 16px Orbitron;
+      }
+      select, button {
+        height: 24px;
+        padding: 3px;
+        border-radius: 15px;
+        transition-duration: 500ms;
+        background: black;
+        color: white;
+        border: 3px solid white;
+      }
+      select:hover {
+        background: blue;
+      }
+      select:focus {
+        background: white;
+        color: black;
+      }
+      :focus {
+        outline: none;
+      }
+      button {
+        background: white;
+        color: black;
+      }
+      button:hover {
+        background: #00bf00;
+        color: black;
+      }
+      button[disabled] {
+        background: black;
+        color: #333333;
+        border: 3px solid #333333;
       }
       progress {
         width: 750px;
@@ -118,6 +150,10 @@
       .min {width: 25px;}
       .sec {width: 50px;}
       .ms {width: 75px;}
+      #songSelectMenu, #title {
+        transition-duration: 2000s;
+        transition-timing-function: linear;
+      }
     </style>
   </head>
   <body>
@@ -302,7 +338,7 @@
       </select><br>
       <button onclick="selectSong()" id="button" disabled="true">START THE VISUALIZATION!</button>
     </span>
-    <span id="title"></span>
+    <span id="title"><b>0</b>%<br>Loading...</span>
     <audio src="" id="audio"></audio>
     <img width="225" height="225" style="position: absolute; top: 8px; right: 8px;" id="songTag" src="Not playing.png">
     <span id="visualizer">
@@ -369,13 +405,18 @@
         progress.value = 0;
         progress.max = 0;
         document.title = "Visimusic";
-        document.getElementById("title").innerHTML = "";
-        document.getElementById("title").style.visibility = "hidden";
+        document.getElementById("title").innerHTML = "<b>0</b>%<br>Loading...";
+        document.getElementById("title").style.opacity = 0;
+        document.getElementById("songSelectMenu").style.opacity = 1;
+        setTimeout(function() {
+          document.getElementById("title").style.visibility = "hidden";
+        }, 2000);
         heightlimit = 0;
       });
     }
     function selectSong() {
       document.getElementById("title").style.visibility = "visible";
+      document.getElementById("title").style.opacity = 1;
       var barwidth, bars = parseInt(document.getElementById("bars").value);
       if (bars == 250) {barwidth = 3;} else if (bars == 200) {barwidth = 3.75;} else if (bars == 150) {barwidth = 5;} else if (bars == 125) {barwidth = 6;} else if (bars == 100) {barwidth = 7.5;} else if (bars == 80) {barwidth = 9.375;} else if (bars == 60) {barwidth = 12.5;}
       for (var i = 0; i < bars; i++) {
@@ -409,7 +450,10 @@
       analyser.maxDecibels = parseInt(document.getElementById("maxdb").value);
       maxheight = parseFloat(document.getElementById("maxheight").value);
       curvepower = parseInt(document.getElementById("power").value);
-      document.getElementById("songSelectMenu").style.visibility = "hidden";
+      document.getElementById("songSelectMenu").style.opacity = 0;
+      setTimeout(function() {
+        document.getElementById("songSelectMenu").style.visibility = "hidden";
+      }, 2000);
       var colors, style, artist;
       switch (song) {
         case "Astrocat":
