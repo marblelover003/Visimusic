@@ -110,6 +110,7 @@
       .c47::-webkit-progress-value {background: #fee4e0;}
       .c48::-webkit-progress-value {background: #634020;}
       .c49::-webkit-progress-value {background: #0344a8;}
+      .c50::-webkit-progress-value {background: linear-gradient(to bottom, #ffff00, #ff0000);}
       .min, .sec, .ms {
         display: inline-block;
         text-align: center;
@@ -192,6 +193,7 @@
         <option value="Pirate Manners">Bossfight - Pirate Manners</option>
         <option value="PIXEL">Tokyo Machine - PIXEL</option>
         <option value="PLAY">Tokyo Machine - PLAY</option>
+        <option value="Pyro">Dread Pitt - Pyro</option>
         <option value="Quake">Stereotronique - Quake</option>
         <option value="Rainbow Road">nanobii - Rainbow Road</option>
         <option value="Rat Twist">PIXL - Rat Twist</option>
@@ -384,7 +386,7 @@
       }
       var song = document.getElementById("song").value;
       audio = document.getElementById("audio");
-      var helpers = ["BLAST", "Backlash", "COOKIES", "Eclipse", "Evolution", "Forged in Stars", "Heist", "I\'m being Reelistic", "OKAY", "PIXEL", "ROCK IT", "Rat Twist", "Sentinel", "Sidewinder", "Surge", "The Escape", "This Time", "Turbo Penguin", "It\'s Pronounced Omnitica", "Gravity", "Exoskelephone", "Sexy Beast", "Duality", "Spection"];
+      var helpers = ["BLAST", "Backlash", "COOKIES", "Eclipse", "Evolution", "Forged in Stars", "Heist", "I\'m being Reelistic", "OKAY", "PIXEL", "ROCK IT", "Rat Twist", "Sentinel", "Sidewinder", "Surge", "The Escape", "This Time", "Turbo Penguin", "It\'s Pronounced Omnitica", "Gravity", "Exoskelephone", "Sexy Beast", "Duality", "Spection", "Pyro"];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
         if (song == helpers[i]) {
@@ -584,6 +586,9 @@
         case "Duality":
         case "Spection":
           artist = "Fractal";
+          break;
+        case "Pyro":
+          artist = "Dread Pitt";
           break;
       }
       if (song == "Cool Friends") {
@@ -903,6 +908,11 @@
           style = styles.single;
           barcolor = 49;
           break;
+        case "Pyro":
+          colors = ["#ff0000", "#ff2000", "#ff4000", "#ff6000", "#ff8000", "#ff9f00", "#ffbf00", "#ffdf00", "#ffff00"];
+          style = styles.random;
+          barcolor = 50;
+          break;
       }
       switch (song) {
         case "Backlash": length = "5:22.115"; break;
@@ -981,6 +991,7 @@
         case "Peer Gynt": length = "2:21.557"; break;
         case "Pirate Manners": length = "3:02.151"; break;
         case "PLAY": length = "3:04.111"; break;
+        case "Pyro": length = "3:36.058"; break;
         case "Quake": length = "5:41.498"; break;
         case "Rainbow Road": length = "2:53.061"; break;
         case "Razor Sharp": length = "4:41.808"; break;
@@ -1012,7 +1023,7 @@
         case "Wicked": length = "3:41.126"; break;
         case "Yo! Ho! And a Bottle of Bass!": length = "6:24.130"; break;
       }
-      for (var i = 1; i <= 49; i++) {
+      for (var i = 1; i <= 50; i++) {
         progress.classList.remove("c" + i);
       }
       progress.classList.add("c" + barcolor);
@@ -1040,49 +1051,47 @@
           y++;
         }, 10*i);
       }
-      setTimeout(function() {
-        audio.load();
-        var x = setInterval(function() {
-          var min = parseInt(length[0]);
-          var sec = parseInt(length[2] + length[3]);
-          min *= 60;
-          var total = min + sec;
-          var bufferProgress = Math.floor(audio.buffered.end(0) / total * 1000) / 10;
-          document.getElementById("title").innerHTML = "<b>" + bufferProgress + "</b>%<br>Loading...";
+      audio.load();
+      var x = setInterval(function() {
+        var min = parseInt(length[0]);
+        var sec = parseInt(length[2] + length[3]);
+        min *= 60;
+        var total = min + sec;
+        var bufferProgress = Math.floor(audio.buffered.end(0) / total * 1000) / 10;
+        document.getElementById("title").innerHTML = "<b>" + bufferProgress + "</b>%<br>Loading...";
+      }, 0);
+      animationLooper();
+      audio.oncanplaythrough = function() {
+        clearInterval(x);
+        audio.play();
+        positions = setInterval(function() {
+          var curpos = Math.floor(audio.currentTime);
+          var m = Math.floor(curpos / 60);
+          var s = Math.floor(curpos % 60);
+          var ms = Math.floor(audio.currentTime * 1000) % 1000;
+          var l_m = parseInt(length[0]);
+          var l_s = parseInt(length[2] + length[3]);
+          var l_ms = parseInt(length[5] + length[6] + length[7]);
+          var pos = audio.currentTime * 1000;
+          var len = ((l_m * 60) + l_s + (l_ms / 1000)) * 1000;
+          var timeLeft = (len - pos);
+          var t_m = Math.floor(timeLeft / 60000);
+          var t_s = Math.floor(timeLeft % 60000 / 1000);
+          var t_ms= Math.floor(timeLeft % 1000);
+          var pos_clock = "<span class=\"min\">" + m + "</span>:<span class=\"sec\">" + ("0" + s).slice(-2) + "</span>.<span class=\"ms\">" + ("00" + ms).slice(-3) + "</span>";
+          var len_clock = l_m + ":" + ("0" + l_s).slice(-2) + "." + ("00" + l_ms).slice(-3);
+          document.getElementById("timeLeft").innerHTML = "-<span class=\"min\">" + t_m + "</span>:<span class=\"sec\">" + ("0" + t_s).slice(-2) + "</span>.<span class=\"ms\">" + ("00" + t_ms).slice(-3) + "</span>";
+          progress.value = audio.currentTime * 1000;
+          if (song == "Faster Than Light" && audio.currentTime >= 186.5) {
+            document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicHelpers/SongTagsV4/Faster Than Light 2.png";
+          }
+          if (song == "It\'s Pronounced Omnitica" && audio.currentTime >= 209) {
+            document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicHelpers/SongTagsV4/It\'s Pronounced Omnitica 2.png";
+          }
+          var docTitle = document.title;
+          document.getElementById("title").innerHTML = "<b>" + pos_clock + "</b> / " + len_clock + "<br>" + docTitle.slice(0, docTitle.length - 13);
         }, 0);
-        animationLooper();
-        audio.oncanplaythrough = function() {
-          clearInterval(x);
-          audio.play();
-          positions = setInterval(function() {
-            var curpos = Math.floor(audio.currentTime);
-            var m = Math.floor(curpos / 60);
-            var s = Math.floor(curpos % 60);
-            var ms = Math.floor(audio.currentTime * 1000) % 1000;
-            var l_m = parseInt(length[0]);
-            var l_s = parseInt(length[2] + length[3]);
-            var l_ms = parseInt(length[5] + length[6] + length[7]);
-            var pos = audio.currentTime * 1000;
-            var len = ((l_m * 60) + l_s + (l_ms / 1000)) * 1000;
-            var timeLeft = (len - pos);
-            var t_m = Math.floor(timeLeft / 60000);
-            var t_s = Math.floor(timeLeft % 60000 / 1000);
-            var t_ms= Math.floor(timeLeft % 1000);
-            var pos_clock = "<span class=\"min\">" + m + "</span>:<span class=\"sec\">" + ("0" + s).slice(-2) + "</span>.<span class=\"ms\">" + ("00" + ms).slice(-3) + "</span>";
-            var len_clock = l_m + ":" + ("0" + l_s).slice(-2) + "." + ("00" + l_ms).slice(-3);
-            document.getElementById("timeLeft").innerHTML = "-<span class=\"min\">" + t_m + "</span>:<span class=\"sec\">" + ("0" + t_s).slice(-2) + "</span>.<span class=\"ms\">" + ("00" + t_ms).slice(-3) + "</span>";
-            progress.value = audio.currentTime * 1000;
-            if (song == "Faster Than Light" && audio.currentTime >= 186.5) {
-              document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicHelpers/SongTagsV4/Faster Than Light 2.png";
-            }
-            if (song == "It\'s Pronounced Omnitica" && audio.currentTime >= 209) {
-              document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicHelpers/SongTagsV4/It\'s Pronounced Omnitica 2.png";
-            }
-            var docTitle = document.title;
-            document.getElementById("title").innerHTML = "<b>" + pos_clock + "</b> / " + len_clock + "<br>" + docTitle.slice(0, docTitle.length - 13);
-          }, 0);
-        }
-      }, 2500);
+      }
     }
     function animationLooper(){
       analyser.getByteFrequencyData(frequency_array);
