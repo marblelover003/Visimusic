@@ -27,7 +27,7 @@
         font: 16px Orbitron;
       }
       select, button {
-        height: 36px;
+        height: 24px;
         padding: 3px;
         border-radius: 15px;
         transition-duration: 500ms;
@@ -151,7 +151,7 @@
       .sec {width: 50px;}
       .ms {width: 75px;}
       #songSelectMenu, #title {
-        transition-duration: 2000s;
+        transition-duration: 2000ms;
         transition-timing-function: linear;
       }
     </style>
@@ -406,12 +406,17 @@
         progress.max = 0;
         document.title = "Visimusic";
         document.getElementById("title").innerHTML = "<b>0</b>%<br>Loading...";
-        document.getElementById("title").style.visibility = "hidden";
+        document.getElementById("title").style.opacity = 0;
+        document.getElementById("songSelectMenu").style.opacity = 1;
+        setTimeout(function() {
+          document.getElementById("title").style.visibility = "hidden";
+        }, 2000);
         heightlimit = 0;
       });
     }
     function selectSong() {
       document.getElementById("title").style.visibility = "visible";
+      document.getElementById("title").style.opacity = 1;
       var barwidth, bars = parseInt(document.getElementById("bars").value);
       if (bars == 250) {barwidth = 3;} else if (bars == 200) {barwidth = 3.75;} else if (bars == 150) {barwidth = 5;} else if (bars == 125) {barwidth = 6;} else if (bars == 100) {barwidth = 7.5;} else if (bars == 80) {barwidth = 9.375;} else if (bars == 60) {barwidth = 12.5;}
       for (var i = 0; i < bars; i++) {
@@ -445,7 +450,10 @@
       analyser.maxDecibels = parseInt(document.getElementById("maxdb").value);
       maxheight = parseFloat(document.getElementById("maxheight").value);
       curvepower = parseInt(document.getElementById("power").value);
-      document.getElementById("songSelectMenu").style.visibility = "hidden";
+      document.getElementById("songSelectMenu").style.opacity = 0;
+      setTimeout(function() {
+        document.getElementById("songSelectMenu").style.visibility = "hidden";
+      }, 2000);
       var colors, style, artist;
       switch (song) {
         case "Astrocat":
