@@ -250,6 +250,7 @@
         <option value="Spection">Fractal - Spection</option>
         <option value="Spectra">Chipzel - Spectra</option>
         <option value="SPOOKY">Tokyo Machine - SPOOKY</option>
+        <option value="Starship Showdown">Bossfight - Starship Showdown</option>
         <option value="Stock & Pull">Stereotronique - Stock &amp; Pull</option>
         <option value="Sugar Rush">PIXL - Sugar Rush</option>
         <option value="Surge">Noisestorm - Surge</option>
@@ -426,7 +427,7 @@
       }
       var song = document.getElementById("song").value;
       audio = document.getElementById("audio");
-      var helpers = ["BLAST", "Backlash", "COOKIES", "Eclipse", "Evolution", "Forged in Stars", "Heist", "I\'m being Reelistic", "OKAY", "PIXEL", "ROCK IT", "Rat Twist", "Sentinel", "Sidewinder", "Surge", "The Escape", "This Time", "Turbo Penguin", "It\'s Pronounced Omnitica", "Gravity", "Exoskelephone", "Sexy Beast", "Duality", "Spection", "Pyro", "Timewarp", "Delayed Friend Request"];
+      var helpers = ["BLAST", "Backlash", "COOKIES", "Eclipse", "Evolution", "Forged in Stars", "Heist", "I\'m being Reelistic", "OKAY", "PIXEL", "ROCK IT", "Rat Twist", "Sentinel", "Sidewinder", "Surge", "The Escape", "This Time", "Turbo Penguin", "It\'s Pronounced Omnitica", "Gravity", "Exoskelephone", "Sexy Beast", "Duality", "Spection", "Pyro", "Timewarp", "Delayed Friend Request", "Starship Showdown"];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
         if (song == helpers[i]) {
@@ -476,6 +477,7 @@
         case "Jack Russel":
         case "Milky Ways":
         case "Pirate Manners":
+        case "Starship Showdown":
         case "The Cave, The Treasure":
         case "The Maze of Mayonnaise":
           artist = "Bossfight";
@@ -721,6 +723,7 @@
         case "Milky Ways":
         case "Partyt Ar Igang":
         case "Pirate Manners":
+        case "Starship Showdown":
         case "The Cave, The Treasure":
         case "The Maze of Mayonnaise":
           colors = ["#ff0000", "#ffffff"];
@@ -1050,6 +1053,7 @@
         case "Spection": length = "4:52.362"; break;
         case "Spectra": length = "4:00.117"; break;
         case "SPOOKY": length = "3:49.799"; break;
+        case "Starship Showdown": length = "4:08.293"; break;
         case "Stock & Pull": length = "5:51.007"; break;
         case "Sugar Rush": length = "4:44.865"; break;
         case "Tension": length = "4:58.109"; break;
