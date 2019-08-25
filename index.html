@@ -185,6 +185,7 @@
         <option value="Crystal Tokyo">FantomenK &amp; meganeko - Crystal Tokyo</option>
         <option value="Dance of the Incognizant">FantomenK - Dance of the Incognizant</option>
         <option value="Delayed Friend Request">7 Minutes Dead - Delayed Friend Request</option>
+        <option value="Destroid 1 - Raise Your Fist">Excision, Downlink &amp; Space Laces - Destroid 1 Raise Your Fist</option>
         <option value="Destroid 8 - Annihilate">Excision &amp; Far Too Loud - Destroid 8 Annihilate</option>
         <option value="Destroid 10 - Funk Hole">Excision &amp; Space Laces - Destroid 10 Funk Hole</option>
         <option value="Duality">Fractal - Duality</option>
@@ -427,7 +428,7 @@
       }
       var song = document.getElementById("song").value;
       audio = document.getElementById("audio");
-      var helpers = ["BLAST", "Backlash", "COOKIES", "Eclipse", "Evolution", "Forged in Stars", "Heist", "I\'m being Reelistic", "OKAY", "PIXEL", "ROCK IT", "Rat Twist", "Sentinel", "Sidewinder", "Surge", "The Escape", "This Time", "Turbo Penguin", "It\'s Pronounced Omnitica", "Gravity", "Exoskelephone", "Sexy Beast", "Duality", "Spection", "Pyro", "Timewarp", "Delayed Friend Request", "Starship Showdown"];
+      var helpers = ["BLAST", "Backlash", "COOKIES", "Eclipse", "Evolution", "Forged in Stars", "Heist", "I\'m being Reelistic", "OKAY", "PIXEL", "ROCK IT", "Rat Twist", "Sentinel", "Sidewinder", "Surge", "The Escape", "This Time", "Turbo Penguin", "It\'s Pronounced Omnitica", "Gravity", "Exoskelephone", "Sexy Beast", "Duality", "Spection", "Pyro", "Timewarp", "Delayed Friend Request", "Starship Showdown", "Destroid 1 - Raise Your Fist"];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
         if (song == helpers[i]) {
@@ -535,12 +536,6 @@
         case "Dance of the Incognizant":
           artist = "FantomenK";
           break;
-        case "Destroid 8 - Annihilate":
-          artist = "Excision & Far Too Loud";
-          break;
-        case "Destroid 10 - Funk Hole":
-          artist = "Excision & Space Laces";
-          break;
         case "FOX":
         case "Into The Zone":
         case "On The Run":
@@ -639,6 +634,8 @@
         document.title = "Now playing Cool Friends (Murtagh & Veschell Remix) by Silva Hound on Visimusic";
       } else if (song == "Partyt Ar Igang") {
         document.title = "Now playing Partyt A\u0308r Iga\u030Ang! by Bossfight on Visimusic";
+      } else if (song == "Destroid 1 - Raise Your Fist") {
+        document.title = "Now playing Destroid 1 Raise Your Fist by Excision, Downlink & Space Laces on Visimusic";
       } else if (song == "Destroid 8 - Annihilate") {
         document.title = "Now playing Destroid 8 Annihilate by Excision & Far Too Loud on Visimusic";
       } else if (song == "Destroid 10 - Funk Hole") {
@@ -765,9 +762,10 @@
           style = styles.random;
           barcolor = 14;
           break;
+        case "Destroid 1 - Raise Your Fist":
         case "Destroid 8 - Annihilate":
         case "Destroid 10 - Funk Hole":
-          colors = ["linear-gradient(to top, #ff0000, #ffff00)"];
+          colors = ["#ff0000"];
           style = styles.single;
           barcolor = 15;
           break;
@@ -1000,6 +998,7 @@
         case "Crystal Tokyo": length = "5:28.124"; break;
         case "Dance of the Incognizant": length = "7:10.158"; break;
         case "Delayed Friend Request": length = "6:05.897"; break;
+        case "Destroid 1 - Raise Your Fist": length = "4:42.775"; break;
         case "Destroid 8 - Annihilate": length = "5:10.177"; break;
         case "Destroid 10 - Funk Hole": length = "4:40.084"; break;
         case "Duality": length = "5:58.870"; break;
