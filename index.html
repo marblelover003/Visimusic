@@ -18,6 +18,7 @@
         width: 3px;
         height: 1px;
         display: inline-block;
+        transition: background 1s linear;
       }
       a, a:visited {
         color: white;
@@ -251,7 +252,7 @@
         <option value="Spection">Fractal - Spection</option>
         <option value="Spectra">Chipzel - Spectra</option>
         <option value="SPOOKY">Tokyo Machine - SPOOKY</option>
-        <option value="Starship Showdown">Bossfight - Starship Showdown</option>
+        <option value="Starship Showdown">Bossfight - Starship Showdown (feat. Christian Carlsson)</option>
         <option value="Stock & Pull">Stereotronique - Stock &amp; Pull</option>
         <option value="Sugar Rush">PIXL - Sugar Rush</option>
         <option value="Surge">Noisestorm - Surge</option>
@@ -392,6 +393,12 @@
       audio.addEventListener("ended", function() {
         if (document.getElementById("song").value == "Partyt Ar Igang") {
           alert("Partyt A\u0308r Iga\u030Ang! has ended. If you wish, feel free to pick another song.");
+        } if (document.getElementById("song").value == "Destroid 1 - Raise Your Fist") {
+          alert("Destroid 1 Raise Your Fist has ended. If you wish, feel free to pick another song.");
+        } if (document.getElementById("song").value == "Destroid 8 - Annihilate") {
+          alert("Destroid 8 Annihilate has ended. If you wish, feel free to pick another song.");
+        } if (document.getElementById("song").value == "Destroid 10 - Funk Hole") {
+          alert("Destroid 10 Funk Hole has ended. If you wish, feel free to pick another song.");
         } else {
           alert(document.getElementById("song").value + " has ended. If you wish, feel free to pick another song.");
         }
@@ -400,10 +407,8 @@
         document.getElementById("song").selectedIndex = 0;
         var x = 0;
         for (var i = 0; i < 250; i++) {
-          setTimeout(function() {
-            document.getElementsByTagName("div")[x].style.background = "#000000";
-            x++;
-          }, 5*i);
+          document.getElementsByTagName("div")[x].style.background = "#000000";
+          x++;
         }
         document.getElementById("songSelectMenu").style.visibility = "visible";
         clearInterval(positions);
@@ -414,6 +419,7 @@
         document.getElementById("title").innerHTML = "<b>0</b>%<br>Loading...";
         document.getElementById("title").style.visibility = "hidden";
         heightlimit = 0;
+        checkSong();
       });
     }
     function selectSong() {
@@ -640,6 +646,8 @@
         document.title = "Now playing Destroid 8 Annihilate by Excision & Far Too Loud on Visimusic";
       } else if (song == "Destroid 10 - Funk Hole") {
         document.title = "Now playing Destroid 10 Funk Hole by Excision & Space Laces on Visimusic";
+      } else if (song == "Starship Showdown") {
+        document.title = "Now playing Starship Showdown (feat. Christian Carlsson) by Bossfight on Visimusic";
       } else if (song == "Highscore") {
         document.title = "Now playing Highscore (feat. Teminite) by Panda Eyes on Visimusic";
       } else {
@@ -1084,21 +1092,19 @@
       progress.max = (l_m + l_s + l_ms) * 1000;
       var y = 0;
       for (var i = 0; i < 250; i++) {
-        setTimeout(function() {
-          switch (style) {
-            case "alternating":
-            case "sequential":
-              document.getElementsByTagName("div")[y].style.background = colors[y % colors.length];
-              break;
-            case "random":
-              document.getElementsByTagName("div")[y].style.background = colors[Math.floor(Math.random() * colors.length)];
-              break;
-            case "single":
-              document.getElementsByTagName("div")[y].style.background = colors[0];
-              break;
-          }
-          y++;
-        }, 10*i);
+        switch (style) {
+          case "alternating":
+          case "sequential":
+            document.getElementsByTagName("div")[y].style.background = colors[y % colors.length];
+            break;
+          case "random":
+            document.getElementsByTagName("div")[y].style.background = colors[Math.floor(Math.random() * colors.length)];
+            break;
+          case "single":
+            document.getElementsByTagName("div")[y].style.background = colors[0];
+            break;
+        }
+        y++;
       }
       audio.load();
       var x = setInterval(function() {
@@ -1153,15 +1159,6 @@
       }
       window.requestAnimationFrame(animationLooper);
     }
-    function setH(barID, height) {
-      document.getElementsByTagName("div")[barID].style.height = (height + 3) + "px";
-      if (document.getElementById("song").value == "SPOOKY") {
-        if (frequency_array[barID] - 224 <= 0) {
-          document.getElementsByTagName("div")[barID].style.background = "rgb(" + 0 + "," + 0 + "," + 100 + ")";
-        } else {
-          document.getElementsByTagName("div")[barID].style.background = "rgb(" + (((frequency_array[barID] - 224) * 8) - 1) + "," + (((frequency_array[barID] - 224) * 8) - 1) + "," + 100 + ")";
-        }
-      }
-    }
+    function setH(barID, height) {document.getElementsByTagName("div")[barID].style.height = (height + 3) + "px";}
   </script>
 </html>
