@@ -409,7 +409,7 @@
         document.getElementById("songTag").src = "https://marblelover003.github.io/Visimusic/Not playing.png";
         document.getElementById("song").selectedIndex = 0;
         var x = 0;
-        for (var i = 0; i < 250; i++) {
+        for (var i = 0; i < 300; i++) {
           document.getElementsByTagName("div")[x].style.background = "#000000";
           x++;
         }
@@ -432,7 +432,7 @@
       for (var i = 0; i < bars; i++) {
         document.getElementsByTagName("div")[i].style.width = barwidth + "px";
       }
-      for (var i = bars; i < 250; i++) {
+      for (var i = bars; i < 300; i++) {
         document.getElementsByTagName("div")[i].style.width = "0px";
       }
       var song = document.getElementById("song").value;
@@ -1100,7 +1100,7 @@
       l_ms /= 1000;
       progress.max = (l_m + l_s + l_ms) * 1000;
       var y = 0;
-      for (var i = 0; i < 250; i++) {
+      for (var i = 0; i < 300; i++) {
         switch (style) {
           case "alternating":
           case "sequential":
