@@ -4,7 +4,7 @@
     <title>Visimusic</title>
     <link rel="icon" href="https://marblelover003.github.io/Visimusic/VisimusicFavicons/Visimusic.png">
     <style>
-      @import url("https://fonts.googleapis.com/css?family=Roboto|Montserrat:300,400,700|Orbitron");
+      @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700|Montserrat:300,400,700|Orbitron");
       body {
         background: black;
         overflow: hidden;
@@ -72,7 +72,7 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        font: 24px Montserrat;
+        font: 24px Roboto;
         font-weight: 300;
       }
       progress::-webkit-progress-bar {
@@ -92,8 +92,8 @@
         position: absolute;
         top: 8px;
         left: 8px;
-        z-index: -99;
-        font: 24px Montserrat;
+        z-index: 999;
+        font: 24px Roboto;
         width: 500px;
         height: 80px;
         visibility: hidden;
@@ -148,15 +148,8 @@
       .c48::-webkit-progress-value {background: #634020;}
       .c49::-webkit-progress-value {background: #0344a8;}
       .c50::-webkit-progress-value {background: linear-gradient(to bottom, #ffff00, #ff0000);}
-      .min, .sec, .ms {
-        display: inline-block;
-        text-align: center;
-      }
-      .min {width: 25px;}
-      .sec {width: 50px;}
-      .ms {width: 75px;}
       #songSelectMenu, #title {
-        transition: 2000ms linear, visibility 0s;
+        transition: opacity 1s linear;
       }
     </style>
   </head>
@@ -1148,9 +1141,9 @@
           var t_m = Math.floor(timeLeft / 60000);
           var t_s = Math.floor(timeLeft % 60000 / 1000);
           var t_ms= Math.floor(timeLeft % 1000);
-          var pos_clock = "<span class=\"min\">" + m + "</span>:<span class=\"sec\">" + ("0" + s).slice(-2) + "</span>.<span class=\"ms\">" + ("00" + ms).slice(-3) + "</span>";
+          var pos_clock = m + ":" + ("0" + s).slice(-2) + "." + ("00" + ms).slice(-3);
           var len_clock = l_m + ":" + ("0" + l_s).slice(-2) + "." + ("00" + l_ms).slice(-3);
-          document.getElementById("timeLeft").innerHTML = "-<span class=\"min\">" + t_m + "</span>:<span class=\"sec\">" + ("0" + t_s).slice(-2) + "</span>.<span class=\"ms\">" + ("00" + t_ms).slice(-3) + "</span>";
+          document.getElementById("timeLeft").innerHTML = "-" + t_m + ":" + ("0" + t_s).slice(-2) + "." + ("00" + t_ms).slice(-3);
           progress.value = audio.currentTime * 1000;
           if (song == "Faster Than Light" && audio.currentTime >= 186.5) {
             document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicHelpers/SongTagsV4/Faster Than Light 2.png";
