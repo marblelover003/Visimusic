@@ -148,6 +148,8 @@
       .c48::-webkit-progress-value {background: #634020;}
       .c49::-webkit-progress-value {background: #0344a8;}
       .c50::-webkit-progress-value {background: linear-gradient(to bottom, #ffff00, #ff0000);}
+      .c51::-webkit-progress-value {background: #0000ff;}
+      .c52::-webkit-progress-value {background: #ff0080;}
       #songSelectMenu, #title {
         transition: opacity 1s linear;
       }
@@ -170,6 +172,7 @@
         <option value="Checkpoint">Nitro Fun &amp; Hyper Potions - Checkpoint</option>
         <option value="Chip Zeal">Big Giant Circles - Chip Zeal</option>
         <option value="Chronos">Danimal Cannon &amp; Zef - Chronos</option>
+        <option value="Clash">Trip40 - Clash</option>
         <option value="Commando Steve">Bossfight - Commando Steve</option>
         <option value="COOKIES">Tokyo Machine - COOKIES</option>
         <option value="Cool Friends">Silva Hound - Cool Friends (Murtagh &amp; Veschell Remix)</option>
@@ -202,6 +205,7 @@
         <option value="Grind">Stereotronique - Grind</option>
         <option value="Halcyon">Au5 &amp; Fractal - Halcyon</option>
         <option value="Heist">Noisestorm - Heist</option>
+        <option value="Here It Comes">Pegboard Nerds - Here It Comes</option>
         <option value="Highscore">Panda Eyes - Highscore (feat. Teminite)</option>
         <option value="Houston">Big Giant Circles - Houston</option>
         <option value="HYPE">Tokyo Machine - HYPE</option>
@@ -433,7 +437,7 @@
       }
       var song = document.getElementById("song").value;
       audio = document.getElementById("audio");
-      var helpers = ["BLAST", "Backlash", "COOKIES", "Eclipse", "Evolution", "Forged in Stars", "Heist", "I\'m being Reelistic", "OKAY", "PIXEL", "ROCK IT", "Rat Twist", "Sentinel", "Sidewinder", "Surge", "The Escape", "This Time", "Turbo Penguin", "It\'s Pronounced Omnitica", "Gravity", "Exoskelephone", "Sexy Beast", "Duality", "Spection", "Pyro", "Timewarp", "Delayed Friend Request", "Starship Showdown", "Destroid 1 - Raise Your Fist", "Farbror Melker Fixar Fiskdamm (Fastbom Cover)", "Steampunk Warlord", "Rocket"];
+      var helpers = ["BLAST", "Backlash", "COOKIES", "Eclipse", "Evolution", "Forged in Stars", "Heist", "I\'m being Reelistic", "OKAY", "PIXEL", "ROCK IT", "Rat Twist", "Sentinel", "Sidewinder", "Surge", "The Escape", "This Time", "Turbo Penguin", "It\'s Pronounced Omnitica", "Gravity", "Exoskelephone", "Sexy Beast", "Duality", "Spection", "Pyro", "Timewarp", "Delayed Friend Request", "Starship Showdown", "Destroid 1 - Raise Your Fist", "Farbror Melker Fixar Fiskdamm (Fastbom Cover)", "Steampunk Warlord", "Rocket", "Here It Comes", "Clash"];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
         if (song == helpers[i]) {
@@ -597,6 +601,7 @@
           break;
         case "Rocktronik":
         case "Try This":
+        case "Here It Comes":
           artist = "Pegboard Nerds";
           break;
         case "Delayed Friend Request":
@@ -636,6 +641,9 @@
           break;
         case "Pyro":
           artist = "Dread Pitt";
+          break;
+        case "Clash":
+          artist = "Trip40";
           break;
       }
       if (song == "Cool Friends") {
@@ -971,6 +979,16 @@
           style = styles.random;
           barcolor = 50;
           break;
+        case "Here It Comes":
+          colors = ["#0000ff"];
+          style = styles.single;
+          barcolor = 51;
+          break;
+        case "Clash":
+          colors = ["#ff0080"];
+          style = styles.single;
+          barcolor = 52;
+          break;
       }
       switch (song) {
         case "Backlash": length = "5:22.115"; break;
@@ -1002,6 +1020,7 @@
         case "Checkpoint": length = "3:43.895"; break;
         case "Chip Zeal": length = "3:29.920"; break;
         case "Chronos": length = "4:29.740"; break;
+        case "Clash": length = "3:40.447"; break;
         case "Commando Steve": length = "3:26.942"; break;
         case "Cool Friends": length = "3:59.072"; break;
         case "Core": length = "4:33.371"; break;
@@ -1028,6 +1047,7 @@
         case "Glitch": length = "5:47.480"; break;
         case "Grind": length = "5:15.376"; break;
         case "Halcyon": length = "6:10.834"; break;
+        case "Here It Comes": length = "3:32.088"; break;
         case "Highscore": length = "4:20.832"; break;
         case "Houston": length = "5:23.500"; break;
         case "HYPE": length = "3:02.909"; break;
