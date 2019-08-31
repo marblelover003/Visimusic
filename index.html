@@ -150,6 +150,10 @@
       .c50::-webkit-progress-value {background: linear-gradient(to bottom, #ffff00, #ff0000);}
       .c51::-webkit-progress-value {background: #0000ff;}
       .c52::-webkit-progress-value {background: #ff0080;}
+      .c53::-webkit-progress-value {background: #5d51ba;}
+      .c54::-webkit-progress-value {background: #f7629a;}
+      .c55::-webkit-progress-value {background: #aaf1ad;}
+      .c56::-webkit-progress-value {background: #e9e8e6;}
       #songSelectMenu, #title {
         transition: opacity 1s linear;
       }
@@ -171,6 +175,7 @@
         <option value="Cheat Codes VIP">Nitro Fun - Cheat Codes VIP</option>
         <option value="Checkpoint">Nitro Fun &amp; Hyper Potions - Checkpoint</option>
         <option value="Chip Zeal">Big Giant Circles - Chip Zeal</option>
+        <option value="Chipland">nanobii - Chipland</option>
         <option value="Chronos">Danimal Cannon &amp; Zef - Chronos</option>
         <option value="Clash">Trip40 - Clash</option>
         <option value="Commando Steve">Bossfight - Commando Steve</option>
@@ -179,6 +184,8 @@
         <option value="Core">Zef - Core</option>
         <option value="Corrupted">Danimal Cannon &amp; Zef - Corrupted</option>
         <option value="Courtesy">Chipzel - Courtesy</option>
+        <option value="Crab Rave">Noisestorm - Crab Rave</option>
+        <option value="CRAZY">Tokyo Machine - CRAZY</option>
         <option value="Cruise Control">Zef - Cruise Control</option>
         <option value="Crystal Tokyo">FantomenK &amp; meganeko - Crystal Tokyo</option>
         <option value="Dance of the Incognizant">FantomenK - Dance of the Incognizant</option>
@@ -209,6 +216,7 @@
         <option value="Highscore">Panda Eyes - Highscore (feat. Teminite)</option>
         <option value="Houston">Big Giant Circles - Houston</option>
         <option value="HYPE">Tokyo Machine - HYPE</option>
+        <option value="I Call It Progstep">Omnitica - I Call It Progstep</option>
         <option value="I'm being Reelistic">Omnitica - I&apos;m being Reelistic</option>
         <option value="Into The Zone">Shirobon - Into the Zone</option>
         <option value="It's Pronounced Omnitica">Omnitica - It&apos;s Pronounced Omnitica</option>
@@ -222,8 +230,10 @@
         <option value="New Game">Nitro Fun - New Game</option>
         <option value="No Party Like a Mojang Party">Big Giant Circles - No Party Like a Mojang Party</option>
         <option value="OKAY">Tokyo Machine - OKAY</option>
+        <option value="Omniverse">Omnitica - Omniverse</option>
         <option value="On The Run">Shirobon - On the Run</option>
         <option value="Once Again">Tristam - Once Again</option>
+        <option value="Opia">Shirobon - Opia</option>
         <option value="Otis">Chipzel - Otis</option>
         <option value="Paper Dolls">Shawn Daley - Paper Dolls</option>
         <option value="Parallel Processing">Danimal Cannon &amp; Zef - Parallel Processing</option>
@@ -275,6 +285,7 @@
         <option value="Unlocked">Plesco - Unlocked</option>
         <option value="Vindicate Me">Big Giant Circles - Vindicate Me</option>
         <option value="Wicked">Avenza - Wicked</option>
+        <option value="Wormhole">Far Too Loud - Wormhole</option>
         <option value="Yo! Ho! And a Bottle of Bass!">Omnitica - Yo! Ho! And a Bottle of Bass!</option>
       </select><br>
       FFT Size:
@@ -437,7 +448,7 @@
       }
       var song = document.getElementById("song").value;
       audio = document.getElementById("audio");
-      var helpers = ["BLAST", "Backlash", "COOKIES", "Eclipse", "Evolution", "Forged in Stars", "Heist", "I\'m being Reelistic", "OKAY", "PIXEL", "ROCK IT", "Rat Twist", "Sentinel", "Sidewinder", "Surge", "The Escape", "This Time", "Turbo Penguin", "It\'s Pronounced Omnitica", "Gravity", "Exoskelephone", "Sexy Beast", "Duality", "Spection", "Pyro", "Timewarp", "Delayed Friend Request", "Starship Showdown", "Destroid 1 - Raise Your Fist", "Farbror Melker Fixar Fiskdamm (Fastbom Cover)", "Steampunk Warlord", "Rocket", "Here It Comes", "Clash"];
+      var helpers = ["BLAST", "Backlash", "COOKIES", "Eclipse", "Evolution", "Forged in Stars", "Heist", "I\'m being Reelistic", "OKAY", "PIXEL", "ROCK IT", "Rat Twist", "Sentinel", "Sidewinder", "Surge", "The Escape", "This Time", "Turbo Penguin", "It\'s Pronounced Omnitica", "Gravity", "Exoskelephone", "Sexy Beast", "Duality", "Spection", "Pyro", "Timewarp", "Delayed Friend Request", "Starship Showdown", "Destroid 1 - Raise Your Fist", "Farbror Melker Fixar Fiskdamm (Fastbom Cover)", "Steampunk Warlord", "Rocket", "Here It Comes", "Clash", "Chipland", "Crab Rave", "CRAZY", "I Call It Progstep", "Omniverse", "Opia", "Wormhole"];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
         if (song == helpers[i]) {
@@ -473,6 +484,7 @@
           break;
         case "Backlash":
         case "Barracuda":
+        case "Crab Rave":
         case "Eclipse":
         case "Heist":
         case "Renegade":
@@ -550,6 +562,7 @@
         case "FOX":
         case "Into The Zone":
         case "On The Run":
+        case "Opia":
           artist = "Shirobon";
           break;
         case "FTW":
@@ -566,6 +579,7 @@
           break;
         case "BLAST":
         case "COOKIES":
+        case "CRAZY":
         case "FIGHT":
         case "HYPE":
         case "OKAY":
@@ -593,6 +607,7 @@
         case "Peer Gynt":
           artist = "cYsmix";
           break;
+        case "Chipland":
         case "Rainbow Road":
           artist = "nanobii";
           break;
@@ -626,10 +641,13 @@
         case "Dubwoofer Substep":
         case "I\'m being Reelistic":
         case "It\'s Pronounced Omnitica":
+        case "I Call It Progstep":
+        case "Omniverse":
         case "Yo! Ho! And a Bottle of Bass!":
           artist = "Omnitica";
           break;
         case "Faster Than Light":
+        case "Wormhole":
           artist = "Far Too Loud";
           break;
         case "Halcyon":
@@ -878,6 +896,7 @@
           barcolor = 33;
           break;
         case "It\'s Pronounced Omnitica":
+        case "I Call It Progstep":
         case "Yo! Ho! And a Bottle of Bass!":
           colors = ["#7070ff", "#8080ff", "#8f8fff"];
           style = styles.random;
@@ -935,6 +954,7 @@
           barcolor = 44;
           break;
         case "Time Lapse":
+        case "Crab Rave":
           colors = ["#c2b280"];
           style = styles.single;
           barcolor = 45;
@@ -955,6 +975,7 @@
           barcolor = 48;
           break;
         case "I\'m being Reelistic":
+        case "Omniverse":
           colors = ["#f3f3f3"];
           style = styles.single;
           barcolor = 16;
@@ -988,6 +1009,26 @@
           colors = ["#ff0080"];
           style = styles.single;
           barcolor = 52;
+          break;
+        case "Chipland":
+          colors = ["#5d51ba"];
+          style = styles.single;
+          barcolor = 53;
+          break;
+        case "CRAZY":
+          colors = ["#f7629a"];
+          style = styles.single;
+          barcolor = 54;
+          break;
+        case "Opia":
+          colors = ["#aaf1ad"];
+          style = styles.single;
+          barcolor = 55;
+          break;
+        case "Wormhole":
+          colors = ["#e9e8e6"];
+          style = styles.single;
+          barcolor = 56;
           break;
       }
       switch (song) {
@@ -1107,6 +1148,13 @@
         case "Vindicate Me": length = "3:26.471"; break;
         case "Wicked": length = "3:41.126"; break;
         case "Yo! Ho! And a Bottle of Bass!": length = "6:24.130"; break;
+        case "Chipland": length = "3:10.458"; break;
+        case "Crab Rave": length = "2:41.776"; break;
+        case "CRAZY": length = "3:16.963"; break;
+        case "I Call It Progstep": length = "3:55.624"; break;
+        case "Omniverse": length = "3:28.718"; break;
+        case "Opia": length = "3:09.335"; break;
+        case "Wormhole": length = "3:40.395"; break;
       }
       for (var i = 1; i <= 50; i++) {
         progress.classList.remove("c" + i);
@@ -1173,6 +1221,9 @@
           }
           if (song == "It\'s Pronounced Omnitica" && audio.currentTime >= 209) {
             document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicHelpers/SongTagsV4/It\'s Pronounced Omnitica 2.png";
+          }
+          if (song == "Wormhole" && audio.currentTime >= 155.5) {
+            document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicHelpers/SongTagsV4/Wormhole 2.png";
           }
           var docTitle = document.title;
           document.getElementById("title").innerHTML = "<b>" + pos_clock + "</b> / " + len_clock + "<br>" + docTitle.slice(0, docTitle.length - 13);
