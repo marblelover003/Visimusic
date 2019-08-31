@@ -1225,6 +1225,13 @@
           if (song == "Wormhole" && audio.currentTime >= 155.5) {
             document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicHelpers/SongTagsV4/Wormhole 2.png";
           }
+          if (song == "I Call It Progstep") {
+            if (audio.currentTime >= 24 && audio.currentTime < 175.5) {
+              document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicHelpers/SongTagsV4/I Call It Progstep 2.png";
+            } else if (audio.currentTime >= 175.5) {
+              document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicHelpers/SongTagsV4/I Call It Progstep 3.png";
+            }
+          }
           var docTitle = document.title;
           document.getElementById("title").innerHTML = "<b>" + pos_clock + "</b> / " + len_clock + "<br>" + docTitle.slice(0, docTitle.length - 13);
         }, 0);
