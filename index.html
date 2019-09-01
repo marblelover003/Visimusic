@@ -195,6 +195,7 @@
         <option value="Destroid 1 - Raise Your Fist">Excision, Downlink &amp; Space Laces - Destroid 1 Raise Your Fist</option>
         <option value="Destroid 8 - Annihilate">Excision &amp; Far Too Loud - Destroid 8 Annihilate</option>
         <option value="Destroid 10 - Funk Hole">Excision &amp; Space Laces - Destroid 10 Funk Hole</option>
+        <option value="Deviance">Excision &amp; Datsik - Deviance (Dirtyphonics Remix)</option>
         <option value="Duality">Fractal - Duality</option>
         <option value="Dubwoofer Substep">Omnitica - Dubwoofer Substep</option>
         <option value="Eclipse">Noisestorm - Eclipse</option>
@@ -397,7 +398,7 @@
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/Not playing.PNG";
       } else {
         document.getElementById("button").disabled = false;
-        document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/" + (document.getElementById("song").value == "I Call It Progstep" ? "I Call It Progstep 2" : document.getElementById("song").value) + ".PNG";
+        document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/" + (document.getElementById("song").value == "I Call It Progstep" ? "I Call It Progstep 2" : (document.getElementById("song").value == "Deviance" ? "Deviance 3" : document.getElementById("song").value)) + ".PNG";
       }
     }
     function initPage() {
@@ -458,7 +459,7 @@
       }
       var song = document.getElementById("song").value;
       audio = document.getElementById("audio");
-      var helpers = ["BLAST", "Backlash", "COOKIES", "Eclipse", "Evolution", "Forged in Stars", "Heist", "I\'m being Reelistic", "OKAY", "PIXEL", "ROCK IT", "Rat Twist", "Sentinel", "Sidewinder", "Surge", "The Escape", "This Time", "Turbo Penguin", "It\'s Pronounced Omnitica", "Gravity", "Exoskelephone", "Sexy Beast", "Duality", "Spection", "Pyro", "Timewarp", "Delayed Friend Request", "Starship Showdown", "Destroid 1 - Raise Your Fist", "Farbror Melker Fixar Fiskdamm (Fastbom Cover)", "Steampunk Warlord", "Rocket", "Here It Comes", "Clash", "Chipland", "Crab Rave", "CRAZY", "I Call It Progstep", "Omniverse", "Opia", "Wormhole", "Caps On, Hats Off"];
+      var helpers = ["BLAST", "Backlash", "COOKIES", "Eclipse", "Evolution", "Forged in Stars", "Heist", "I\'m being Reelistic", "OKAY", "PIXEL", "ROCK IT", "Rat Twist", "Sentinel", "Sidewinder", "Surge", "The Escape", "This Time", "Turbo Penguin", "It\'s Pronounced Omnitica", "Gravity", "Exoskelephone", "Sexy Beast", "Duality", "Spection", "Pyro", "Timewarp", "Delayed Friend Request", "Starship Showdown", "Destroid 1 - Raise Your Fist", "Farbror Melker Fixar Fiskdamm (Fastbom Cover)", "Steampunk Warlord", "Rocket", "Here It Comes", "Clash", "Chipland", "Crab Rave", "CRAZY", "I Call It Progstep", "Omniverse", "Opia", "Wormhole", "Caps On, Hats Off", "Deviance"];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
         if (song == helpers[i]) {
@@ -685,6 +686,8 @@
         document.title = "Now playing Destroid 8 Annihilate by Excision & Far Too Loud on Visimusic";
       } else if (song == "Destroid 10 - Funk Hole") {
         document.title = "Now playing Destroid 10 Funk Hole by Excision & Space Laces on Visimusic";
+      } else if (song == "Deviance") {
+        document.title = "Now playing Deviance (Dirtyphonics Remix) by Excision & Datsik on Visimusic";
       } else if (song == "Starship Showdown") {
         document.title = "Now playing Starship Showdown (feat. Christian Carlsson) by Bossfight on Visimusic";
       } else if (song == "Highscore") {
@@ -820,6 +823,7 @@
         case "Destroid 1 - Raise Your Fist":
         case "Destroid 8 - Annihilate":
         case "Destroid 10 - Funk Hole":
+        case "Deviance":
           colors = ["#ff0000"];
           style = styles.single;
           barcolor = 15;
@@ -1091,6 +1095,7 @@
         case "Destroid 1 - Raise Your Fist": length = "4:42.775"; break;
         case "Destroid 8 - Annihilate": length = "5:10.177"; break;
         case "Destroid 10 - Funk Hole": length = "4:40.084"; break;
+        case "Deviance": length = "5:04.091"; break;
         case "Duality": length = "5:58.870"; break;
         case "Dubwoofer Substep": length = "4:44.865"; break;
         case "Exoskelephone": length = "5:53.123"; break;
@@ -1250,6 +1255,15 @@
               document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/I Call It Progstep 2.PNG";
             } else if (audio.currentTime >= 175.5) {
               document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/I Call It Progstep 3.PNG";
+            }
+          }
+          if (song == "Deviance") {
+            if (audio.currentTime >= 52 && audio.currentTime < 154) {
+              document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Deviance 2.PNG";
+            } else if (audio.currentTime >= 154 && audio.currentTime < 253.5) {
+              document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Deviance 3.PNG";
+            } else if (audio.currentTime >= 253.5) {
+              document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Deviance 4.PNG";
             }
           }
           var docTitle = document.title;
