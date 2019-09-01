@@ -1,8 +1,8 @@
 # Visimusic
 
-[Check it out!](http://marblelover003.github.io/Visimusic/)
+[Check it out!](https://marblelover003.github.io/Visimusic/)
 
-There are 109 songs to choose from.
+There are 122 songs to choose from.
 
 Select one from the dropdown under "Select a song" and watch it get visualized!
 
@@ -16,6 +16,7 @@ You can also customize how the visualization looks with different settings:
 - Curve Power: Defaults to 5x, but you can also choose 3x, 4x, 6x, and 8x. This is how sharp the curve from minimum dB to maximum dB should be.
 - Max dB: This is used by the `AnalyserNode` itself, and defaults to -10. You can also choose 0, -5, -15, and -20.
 - Min dB: This is used by the `AnalyserNode` itself, and defaults to -90. You can also choose -100, -95, -85, -80, -75, -70, -65, -60, -55, and -50.
+- Tag Version: This cannot be changed yet, but as soon as the 5th version of Song Tags are up, you'll be able to choose between 4th and 5th version song tags!
 
 Each song has a different color scheme based on what album it is from.
 
