@@ -171,6 +171,7 @@
         <option value="Be Gone Mr. Gawne">Bossfight - Be Gone Mr. Gawne</option>
         <option value="BLAST">Tokyo Machine - BLAST</option>
         <option value="Buzz Kill">PIXL - Buzz Kill</option>
+        <option value="Caps On, Hats Off">Bossfight - Caps On, Hats Off</option>
         <option value="Cascade">Kubbi - Cascade</option>
         <option value="Cheat Codes">Nitro Fun - Cheat Codes</option>
         <option value="Cheat Codes VIP">Nitro Fun - Cheat Codes VIP</option>
@@ -358,11 +359,14 @@
         <option>-55</option>
         <option>-50</option>
       </select><br>
-      <button onclick="selectSong()" id="button" disabled="true">START THE VISUALIZATION!</button>
+      Use version <select id="songTagVer" onchange="checkSong()">
+        <option>4</option>
+        <option disabled>5</option>
+      </select> song tags. <button onclick="selectSong()" id="button" disabled="true">Let me see it!</button>
     </span>
     <span id="title"><b>0</b>%<br>Loading...</span>
     <audio src="" id="audio"></audio>
-    <img width="216" height="216" style="position: absolute; top: 8px; right: 8px;" id="songTag" src="https://marblelover003.github.io/VisimusicSongTags/Not playing.PNG">
+    <img width="216" height="216" style="position: absolute; top: 8px; right: 8px;" id="songTag" src="https://marblelover003.github.io/VisimusicSongTags/v4/Not playing.PNG">
     <span id="visualizer">
       <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
     </span>
@@ -382,13 +386,18 @@
         length, positions,
         maxheight, curvepower,
         progress = document.getElementById("progress"),
-        heightlimit = 0;
+        heightlimit = 0,
+        songTagVer = document.getElementById("songTagVer");
     function checkSong() {
       var song = document.getElementById("song").value;
+      document.getElementById("songTag").width = document.getElementById("songTagVer").value == 4 ? 216 : 240;
+      document.getElementById("songTag").height = document.getElementById("songTagVer").value == 4 ? 216 : 135;
       if (song == "") {
         document.getElementById("button").disabled = true;
+        document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/Not playing.PNG";
       } else {
         document.getElementById("button").disabled = false;
+        document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/" + (document.getElementById("song").value == "I Call It Progstep" ? "I Call It Progstep 2" : document.getElementById("song").value) ".PNG";
       }
     }
     function initPage() {
@@ -418,7 +427,7 @@
           alert(document.getElementById("song").value + " has ended. If you wish, feel free to pick another song.");
         }
         audio.src = "";
-        document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/Not playing.PNG";
+        document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/Not playing.PNG";
         document.getElementById("song").selectedIndex = 0;
         var x = 0;
         for (var i = 0; i < 300; i++) {
@@ -449,7 +458,7 @@
       }
       var song = document.getElementById("song").value;
       audio = document.getElementById("audio");
-      var helpers = ["BLAST", "Backlash", "COOKIES", "Eclipse", "Evolution", "Forged in Stars", "Heist", "I\'m being Reelistic", "OKAY", "PIXEL", "ROCK IT", "Rat Twist", "Sentinel", "Sidewinder", "Surge", "The Escape", "This Time", "Turbo Penguin", "It\'s Pronounced Omnitica", "Gravity", "Exoskelephone", "Sexy Beast", "Duality", "Spection", "Pyro", "Timewarp", "Delayed Friend Request", "Starship Showdown", "Destroid 1 - Raise Your Fist", "Farbror Melker Fixar Fiskdamm (Fastbom Cover)", "Steampunk Warlord", "Rocket", "Here It Comes", "Clash", "Chipland", "Crab Rave", "CRAZY", "I Call It Progstep", "Omniverse", "Opia", "Wormhole"];
+      var helpers = ["BLAST", "Backlash", "COOKIES", "Eclipse", "Evolution", "Forged in Stars", "Heist", "I\'m being Reelistic", "OKAY", "PIXEL", "ROCK IT", "Rat Twist", "Sentinel", "Sidewinder", "Surge", "The Escape", "This Time", "Turbo Penguin", "It\'s Pronounced Omnitica", "Gravity", "Exoskelephone", "Sexy Beast", "Duality", "Spection", "Pyro", "Timewarp", "Delayed Friend Request", "Starship Showdown", "Destroid 1 - Raise Your Fist", "Farbror Melker Fixar Fiskdamm (Fastbom Cover)", "Steampunk Warlord", "Rocket", "Here It Comes", "Clash", "Chipland", "Crab Rave", "CRAZY", "I Call It Progstep", "Omniverse", "Opia", "Wormhole", "Caps On, Hats Off"];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
         if (song == helpers[i]) {
@@ -462,7 +471,7 @@
       } else {
         audio.src = "https://marblelover003.github.io/Visimusic/" + song + ".mp3";
       }
-      document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/" + song + ".PNG";
+      document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/" + song + ".PNG";
       if (pageInitiated == false) {
         initPage();
       }
@@ -495,6 +504,7 @@
           artist = "Noisestorm";
           break;
         case "Be Gone Mr. Gawne":
+        case "Caps On, Hats Off":
         case "Commando Steve":
         case "Farbror Melker Fixar Fiskdamm (Fastbom Cover)":
         case "Flirt Flirt Oh It Hurts":
@@ -756,6 +766,7 @@
           barcolor = 7;
           break;
         case "Be Gone Mr. Gawne":
+        case "Caps On, Hats Off":
         case "Commando Steve":
         case "Farbror Melker Fixar Fiskdamm (Fastbom Cover)":
         case "Flirt Flirt Oh It Hurts":
@@ -1060,6 +1071,7 @@
         case "Barracuda": length = "4:22.661"; break;
         case "Be Gone Mr. Gawne": length = "4:17.906"; break;
         case "Buzz Kill": length = "5:55.813"; break;
+        case "Caps On, Hats Off": length = "2:36.760"; break;
         case "Cascade": length = "4:20.048"; break;
         case "Cheat Codes": length = "3:32.349"; break;
         case "Cheat Codes VIP": length = "3:24.486"; break;
@@ -1219,22 +1231,22 @@
           document.getElementById("timeLeft").innerHTML = "-" + t_m + ":" + ("0" + t_s).slice(-2) + "." + ("00" + t_ms).slice(-3);
           progress.value = audio.currentTime * 1000;
           if (song == "Faster Than Light" && audio.currentTime >= 186.5) {
-            document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/Faster Than Light 2.PNG";
+            document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Faster Than Light 2.PNG";
           }
           if (song == "Destroid 1 - Raise Your Fist" && audio.currentTime >= 183) {
-            document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/Destroid 1 - Raise Your Fist 2.PNG";
+            document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Destroid 1 - Raise Your Fist 2.PNG";
           }
           if (song == "It\'s Pronounced Omnitica" && audio.currentTime >= 209) {
-            document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/It\'s Pronounced Omnitica 2.PNG";
+            document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/It\'s Pronounced Omnitica 2.PNG";
           }
           if (song == "Wormhole" && audio.currentTime >= 155.5) {
-            document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/Wormhole 2.PNG";
+            document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Wormhole 2.PNG";
           }
           if (song == "I Call It Progstep") {
             if (audio.currentTime >= 24 && audio.currentTime < 175.5) {
-              document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/I Call It Progstep 2.PNG";
+              document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/I Call It Progstep 2.PNG";
             } else if (audio.currentTime >= 175.5) {
-              document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/I Call It Progstep 3.PNG";
+              document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/I Call It Progstep 3.PNG";
             }
           }
           var docTitle = document.title;
