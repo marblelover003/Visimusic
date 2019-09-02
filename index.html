@@ -372,7 +372,7 @@
       </select><br>
       Use version <select id="songTagVer" onchange="checkSong()">
         <option>4</option>
-        <option disabled>5</option>
+        <option>5</option>
       </select> song tags. <button onclick="selectSong()" id="button" disabled="true">Let me see it!</button>
     </span>
     <span id="title"><b>0</b>%<br>Loading...</span>
@@ -1290,6 +1290,13 @@
               document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Deviance 3.PNG";
             } else if (audio.currentTime >= 253.5) {
               document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Deviance 4.PNG";
+            }
+          }
+          if (song == "Wicked") {
+            if ((audio.currentTime >= 47.5 && audio.currentTime < 76.5) || (audio.currentTime >= 162.7 && audio.currentTime < 191.7)) {
+              document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Wicked 2.PNG";
+            } else {
+              document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Wicked.PNG";
             }
           }
           var docTitle = document.title;
