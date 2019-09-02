@@ -155,6 +155,7 @@
       .c55::-webkit-progress-value {background: #aaf1ad;}
       .c56::-webkit-progress-value {background: #e9e8e6;}
       .c57::-webkit-progress-value {background: #a61d25;}
+      .c58::-webkit-progress-value {background: #11a858;}
       #songSelectMenu, #title {
         transition: opacity 1s linear;
       }
@@ -730,7 +731,6 @@
         case "Grind":
         case "MOSHI":
         case "New Game":
-        case "Once Again":
         case "PLAY":
         case "Rocket":
         case "Rocktronik":
@@ -740,12 +740,17 @@
         case "Surge":
         case "The Escape":
         case "This Time":
-        case "Till It\'s Over":
         case "Timewarp":
         case "Turbo Penguin":
           colors = ["#ffff00"];
           style = styles.single;
           barcolor = 3;
+          break;
+        case "Once Again":
+        case "Till It\'s Over":
+          colors = ["#11a858"];
+          style = styles.single;
+          barcolor = 58;
           break;
         case "Cheat Codes VIP":
           colors = ["#bfbfff"];
