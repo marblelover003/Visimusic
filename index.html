@@ -135,7 +135,7 @@
       .c35::-webkit-progress-value {background: #e08b04;}
       .c36::-webkit-progress-value {background: #ffffee;}
       .c37::-webkit-progress-value {background: #ffd700;}
-      .c38::-webkit-progress-value {background: #ff0040;}
+      .c38::-webkit-progress-value {background: #e91f69;}
       .c39::-webkit-progress-value {background: #00ffff;}
       .c40::-webkit-progress-value {background: #ffffff;}
       .c41::-webkit-progress-value {background: #c0c0c0;}
@@ -156,6 +156,9 @@
       .c56::-webkit-progress-value {background: #e9e8e6;}
       .c57::-webkit-progress-value {background: #a61d25;}
       .c58::-webkit-progress-value {background: #11a858;}
+      .c59::-webkit-progress-value {background: #eae241;}
+      .c60::-webkit-progress-value {background: #6a7b82;}
+      .c61::-webkit-progress-value {background: #f5c85a;}
       #songSelectMenu, #title {
         transition: opacity 1s linear;
       }
@@ -731,8 +734,6 @@
         case "Grind":
         case "MOSHI":
         case "New Game":
-        case "PLAY":
-        case "Rocket":
         case "Rocktronik":
         case "Sexy Beast":
         case "Sidewinder":
@@ -745,6 +746,16 @@
           colors = ["#ffff00"];
           style = styles.single;
           barcolor = 3;
+          break;
+        case "Rocket":
+          colors = ["#6a7b82"];
+          style = styles.single;
+          barcolor = 60;
+          break;
+        case "PLAY":
+          colors = ["#eae241"];
+          style = styles.single;
+          barcolor = 59;
           break;
         case "Once Again":
         case "Till It\'s Over":
@@ -949,7 +960,7 @@
           barcolor = 37;
           break;
         case "SAIKOU":
-          colors = ["#ff0040"];
+          colors = ["#e91f69"];
           style = styles.single;
           barcolor = 38;
           break;
@@ -985,6 +996,10 @@
           barcolor = 44;
           break;
         case "Time Lapse":
+          colors = ["#f5c85a"];
+          style = styles.single;
+          barcolor = 61;
+          break;
         case "Crab Rave":
           colors = ["#c2b280"];
           style = styles.single;
