@@ -5,7 +5,7 @@
     <link rel="icon" href="https://marblelover003.github.io/Visimusic/VisimusicFavicons/Visimusic.png">
     <link rel="apple-touch-icon" href="https://marblelover003.github.io/Visimusic/apple-touch-icon.png">
     <style>
-      @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700|Montserrat:300,400,700|Orbitron");
+      @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700|Montserrat:300,400,700|Orbitron:400,700");
       body {
         background: black;
         overflow: hidden;
@@ -13,6 +13,9 @@
         width: 768px;
         color: white;
         font-family: Roboto;
+      }
+      small {
+        font-size: 10px;
       }
       div {
         background: black;
@@ -170,134 +173,135 @@
       Select a song:
       <select id="song" onchange="checkSong()">
         <option></option>
-        <option value="Astrocat">PIXL - Astrocat</option>
-        <option value="Backlash">Noisestorm - Backlash</option>
-        <option value="Barracuda">Noisestorm - Barracuda</option>
-        <option value="Be Gone Mr. Gawne">Bossfight - Be Gone Mr. Gawne</option>
-        <option value="BLAST">Tokyo Machine - BLAST</option>
-        <option value="Buzz Kill">PIXL - Buzz Kill</option>
-        <option value="Caps On, Hats Off">Bossfight - Caps On, Hats Off</option>
-        <option value="Cascade">Kubbi - Cascade</option>
-        <option value="Cheat Codes">Nitro Fun - Cheat Codes</option>
-        <option value="Cheat Codes VIP">Nitro Fun - Cheat Codes VIP</option>
-        <option value="Checkpoint">Nitro Fun &amp; Hyper Potions - Checkpoint</option>
-        <option value="Chip Zeal">Big Giant Circles - Chip Zeal</option>
-        <option value="Chipland">nanobii - Chipland</option>
-        <option value="Chronos">Danimal Cannon &amp; Zef - Chronos</option>
-        <option value="Clash">Trip40 - Clash</option>
-        <option value="Commando Steve">Bossfight - Commando Steve</option>
-        <option value="COOKIES">Tokyo Machine - COOKIES</option>
-        <option value="Cool Friends">Silva Hound - Cool Friends (Murtagh &amp; Veschell Remix)</option>
-        <option value="Core">Zef - Core</option>
-        <option value="Corrupted">Danimal Cannon &amp; Zef - Corrupted</option>
-        <option value="Courtesy">Chipzel - Courtesy</option>
-        <option value="Crab Rave">Noisestorm - Crab Rave</option>
-        <option value="CRAZY">Tokyo Machine - CRAZY</option>
-        <option value="Cruise Control">Zef - Cruise Control</option>
-        <option value="Crystal Tokyo">FantomenK &amp; meganeko - Crystal Tokyo</option>
-        <option value="Dance of the Incognizant">FantomenK - Dance of the Incognizant</option>
-        <option value="Delayed Friend Request">7 Minutes Dead - Delayed Friend Request</option>
-        <option value="Destroid 1 - Raise Your Fist">Excision, Downlink &amp; Space Laces - Destroid 1 Raise Your Fist</option>
-        <option value="Destroid 2 - Wasteland">Excision, Downlink &amp; Space Laces - Destroid 2 Wasteland</option>
-        <option value="Destroid 6 - Put It Down">Excision &amp; Bassnectar - Destroid 6 Put It Down</option>
-        <option value="Destroid 8 - Annihilate">Excision &amp; Far Too Loud - Destroid 8 Annihilate</option>
-        <option value="Destroid 10 - Funk Hole">Excision &amp; Space Laces - Destroid 10 Funk Hole</option>
-        <option value="Deviance">Excision &amp; Datsik - Deviance (Dirtyphonics Remix)</option>
-        <option value="Duality">Fractal - Duality</option>
-        <option value="Dubwoofer Substep">Omnitica - Dubwoofer Substep</option>
-        <option value="Eclipse">Noisestorm - Eclipse</option>
-        <option value="Evolution">Chipzel - Evolution</option>
-        <option value="Exoskelephone">Stereotronique - Exoskelephone</option>
-        <option value="Farbror Melker Fixar Fiskdamm (Fastbom Cover)">Bossfight - Farbror Melker Fixar Fiskdamm (Fastbom Cover)</option>
-        <option value="Faster Than Light">Far Too Loud - Faster Than Light</option>
-        <option value="FIGHT">Tokyo Machine - FIGHT</option>
-        <option value="Final Boss">Nitro Fun - Final Boss</option>
-        <option value="Flirt Flirt Oh It Hurts">Bossfight - Flirt Flirt Oh It Hurts</option>
-        <option value="Focus">Chipzel - Focus</option>
-        <option value="Forged in Stars">Chipzel - Forged in Stars</option>
-        <option value="FOX">Shirobon - FOX</option>
-        <option value="FTW">Lets Be Friends - FTW</option>
-        <option value="Glitch">Danimal Cannon &amp; Zef - Glitch</option>
-        <option value="Gravity">Stereotronique - Gravity</option>
-        <option value="Grind">Stereotronique - Grind</option>
-        <option value="Halcyon">Au5 &amp; Fractal - Halcyon</option>
-        <option value="Heist">Noisestorm - Heist</option>
-        <option value="Here It Comes">Pegboard Nerds - Here It Comes</option>
-        <option value="Highscore">Panda Eyes - Highscore (feat. Teminite)</option>
-        <option value="Houston">Big Giant Circles - Houston</option>
-        <option value="HYPE">Tokyo Machine - HYPE</option>
-        <option value="I Call It Progstep">Omnitica - I Call It Progstep</option>
-        <option value="I'm being Reelistic">Omnitica - I&apos;m being Reelistic</option>
-        <option value="Into The Zone">Shirobon - Into the Zone</option>
-        <option value="It's Pronounced Omnitica">Omnitica - It&apos;s Pronounced Omnitica</option>
-        <option value="Jack Russel">Bossfight - Jack Russel</option>
-        <option value="Legacy">Danimal Cannon &amp; Zef - Legacy</option>
-        <option value="Livewire">Zef - Livewire</option>
-        <option value="Logic Gatekeeper">Danimal Cannon &amp; Zef - Logic Gatekeeper</option>
-        <option value="Long Live The New Fresh">Danimal Cannon - Long Live the New Fresh</option>
-        <option value="Milky Ways">Bossfight - Milky Ways</option>
-        <option value="MOSHI">Pegboard Nerds &amp; Tokyo Machine - MOSHI</option>
-        <option value="New Game">Nitro Fun - New Game</option>
-        <option value="No Party Like a Mojang Party">Big Giant Circles - No Party Like a Mojang Party</option>
-        <option value="OKAY">Tokyo Machine - OKAY</option>
-        <option value="Omniverse">Omnitica - Omniverse</option>
-        <option value="On The Run">Shirobon - On the Run</option>
-        <option value="Once Again">Tristam - Once Again</option>
-        <option value="Opia">Shirobon - Opia</option>
-        <option value="Otis">Chipzel - Otis</option>
-        <option value="Paper Dolls">Shawn Daley - Paper Dolls</option>
-        <option value="Parallel Processing">Danimal Cannon &amp; Zef - Parallel Processing</option>
-        <option value="PARTY">Tokyo Machine - PARTY</option>
-        <option value="Partyt Ar Igang">Bossfight - Partyt A&#776;r Iga&#778;ng!</option>
-        <option value="Peer Gynt">cYsmix - Peer Gynt</option>
-        <option value="Pirate Manners">Bossfight - Pirate Manners</option>
-        <option value="PIXEL">Tokyo Machine - PIXEL</option>
-        <option value="PLAY">Tokyo Machine - PLAY</option>
-        <option value="Pyro">Dread Pitt - Pyro</option>
-        <option value="Quake">Stereotronique - Quake</option>
-        <option value="Rainbow Road">nanobii - Rainbow Road</option>
-        <option value="Rat Twist">PIXL - Rat Twist</option>
-        <option value="Razor Sharp">Pegboard Nerds &amp; Tristam - Razor Sharp</option>
-        <option value="Renegade">Noisestorm - Renegade</option>
-        <option value="Rhapsody">Danimal Cannon &amp; Zef - Rhapsody</option>
-        <option value="ROCK IT">Tokyo Machine - ROCK IT</option>
-        <option value="Rocket">Stereotronique - Rocket</option>
-        <option value="Rocktronik">Pegboard Nerds - Rocktronik</option>
-        <option value="SAIKOU">Tokyo Machine - SAIKOU</option>
-        <option value="Sentinel">Noisestorm - Sentinel</option>
-        <option value="Sevcon">Big Giant Circles - Sevcon</option>
-        <option value="Sexy Beast">Stereotronique - Sexy Beast</option>
-        <option value="Sidewinder">7 Minutes Dead - Sidewinder</option>
-        <option value="So Far Away">Nitro Fun - So Far Away</option>
-        <option value="Spection">Fractal - Spection</option>
-        <option value="Spectra">Chipzel - Spectra</option>
-        <option value="SPOOKY">Tokyo Machine - SPOOKY</option>
-        <option value="Starship Showdown">Bossfight - Starship Showdown (feat. Christian Carlsson)</option>
-        <option value="Steampunk Warlord">Bossfight - Steampunk Warlord</option>
-        <option value="Stock & Pull">Stereotronique - Stock &amp; Pull</option>
-        <option value="Sugar Rush">PIXL - Sugar Rush</option>
-        <option value="Surge">Noisestorm - Surge</option>
-        <option value="Tension">Zef - Tension</option>
-        <option value="Termination Shock">Sabrepulse - Termination Shock</option>
-        <option value="The Art of War">Chipzel - The Art of War</option>
-        <option value="The Cave, The Treasure">Bossfight - The Cave, The Treasure</option>
-        <option value="The Escape">PIXL - The Escape</option>
-        <option value="The Lunar Whale">Danimal Cannon &amp; Zef - The Lunar Whale</option>
-        <option value="The Maze of Mayonnaise">Bossfight - The Maze of Mayonnaise</option>
-        <option value="This Time">PIXL - This Time</option>
-        <option value="Till It's Over">Tristam - Till It's Over</option>
-        <option value="Time Goes By">Nitro Fun - Time Goes By</option>
-        <option value="Time Lapse">TheFatRat - Time Lapse</option>
-        <option value="Timewarp">Noisestorm - Timewarp</option>
-        <option value="Tokyo Skies">Chipzel - Tokyo Skies</option>
-        <option value="Try This">Pegboard Nerds - Try This</option>
-        <option value="Turbo Penguin">Sound Remedy &amp; Nitro Fun - Turbo Penguin</option>
-        <option value="Unlocked">Plesco - Unlocked</option>
-        <option value="Vindicate Me">Big Giant Circles - Vindicate Me</option>
-        <option value="Wicked">Avenza - Wicked</option>
-        <option value="Wormhole">Far Too Loud - Wormhole</option>
-        <option value="Yo! Ho! And a Bottle of Bass!">Omnitica - Yo! Ho! And a Bottle of Bass!</option>
+        <option value="Astrocat">Astrocat</option>
+        <option value="Backlash">Backlash</option>
+        <option value="Barracuda">Barracuda</option>
+        <option value="Be Gone Mr. Gawne">Be Gone Mr. Gawne</option>
+        <option value="BLAST">BLAST</option>
+        <option value="Buzz Kill">Buzz Kill</option>
+        <option value="Caps On, Hats Off">Caps On, Hats Off</option>
+        <option value="Cascade">Cascade</option>
+        <option value="Cheat Codes">Cheat Codes</option>
+        <option value="Cheat Codes VIP">Cheat Codes VIP</option>
+        <option value="Checkpoint">Checkpoint</option>
+        <option value="Chip Zeal">Chip Zeal</option>
+        <option value="Chipland">Chipland</option>
+        <option value="Chronos">Chronos</option>
+        <option value="Clash">Clash</option>
+        <option value="Commando Steve">Commando Steve</option>
+        <option value="COOKIES">COOKIES</option>
+        <option value="Cool Friends">Cool Friends (Murtagh &amp; Veschell Remix)</option>
+        <option value="Core">Core</option>
+        <option value="Corrupted">Corrupted</option>
+        <option value="Courtesy">Courtesy</option>
+        <option value="Crab Rave">Crab Rave</option>
+        <option value="CRAZY">CRAZY</option>
+        <option value="Cruise Control">Cruise Control</option>
+        <option value="Crystal Tokyo">Crystal Tokyo</option>
+        <option value="Dance of the Incognizant">Dance of the Incognizant</option>
+        <option value="Delayed Friend Request">Delayed Friend Request</option>
+        <option value="Destroid 1 - Raise Your Fist">Destroid 1 Raise Your Fist</option>
+        <option value="Destroid 2 - Wasteland">Destroid 2 Wasteland</option>
+        <option value="Destroid 6 - Put It Down">Destroid 6 Put It Down</option>
+        <option value="Destroid 8 - Annihilate">Destroid 8 Annihilate</option>
+        <option value="Destroid 10 - Funk Hole">Destroid 10 Funk Hole</option>
+        <option value="Deviance">Deviance (Dirtyphonics Remix)</option>
+        <option value="Duality">Duality</option>
+        <option value="Dubwoofer Substep">Dubwoofer Substep</option>
+        <option value="Eclipse">Eclipse</option>
+        <option value="Evolution">Evolution</option>
+        <option value="Exoskelephone">Exoskelephone</option>
+        <option value="Farbror Melker Fixar Fiskdamm (Fastbom Cover)">Farbror Melker Fixar Fiskdamm (Fastbom Cover)</option>
+        <option value="Faster Than Light">Faster Than Light</option>
+        <option value="FIGHT">FIGHT</option>
+        <option value="Final Boss">Final Boss</option>
+        <option value="Flirt Flirt Oh It Hurts">Flirt Flirt Oh It Hurts</option>
+        <option value="Focus">Focus</option>
+        <option value="Forged in Stars">Forged in Stars</option>
+        <option value="FOX">FOX</option>
+        <option value="FTW">FTW</option>
+        <option value="Glitch">Glitch</option>
+        <option value="Gravity">Gravity</option>
+        <option value="Grind">Grind</option>
+        <option value="Halcyon">Halcyon</option>
+        <option value="Heist">Heist</option>
+        <option value="Here It Comes">Here It Comes</option>
+        <option value="Highscore">Highscore (feat. Teminite)</option>
+        <option value="Houston">Houston</option>
+        <option value="HYPE">HYPE</option>
+        <option value="I Call It Progstep">I Call It Progstep</option>
+        <option value="I'm being Reelistic">I&apos;m being Reelistic</option>
+        <option value="Into The Zone">Into the Zone</option>
+        <option value="It's Pronounced Omnitica">It&apos;s Pronounced Omnitica</option>
+        <option value="Jack Russel">Jack Russel</option>
+        <option value="Legacy">Legacy</option>
+        <option value="Livewire">Livewire</option>
+        <option value="Logic Gatekeeper">Logic Gatekeeper</option>
+        <option value="Long Live The New Fresh">Long Live the New Fresh</option>
+        <option value="Milky Ways">Milky Ways</option>
+        <option value="MOSHI">MOSHI</option>
+        <option value="New Game">New Game</option>
+        <option value="No Party Like a Mojang Party">No Party Like a Mojang Party</option>
+        <option value="OKAY">OKAY</option>
+        <option value="Omniverse">Omniverse</option>
+        <option value="On The Run">On the Run</option>
+        <option value="Once Again">Once Again</option>
+        <option value="Opia">Opia</option>
+        <option value="Otis">Otis</option>
+        <option value="Paper Dolls">Paper Dolls</option>
+        <option value="Parallel Processing">Parallel Processing</option>
+        <option value="PARTY">PARTY</option>
+        <option value="Partyt Ar Igang">Partyt A&#776;r Iga&#778;ng!</option>
+        <option value="Peer Gynt">Peer Gynt</option>
+        <option value="Pirate Manners">Pirate Manners</option>
+        <option value="PIXEL">PIXEL</option>
+        <option value="PLAY">PLAY</option>
+        <option value="Pyro">Pyro</option>
+        <option value="Quake">Quake</option>
+        <option value="Rainbow Road">Rainbow Road</option>
+        <option value="Rat Twist">Rat Twist</option>
+        <option value="Razor Sharp">Razor Sharp</option>
+        <option value="Renegade">Renegade</option>
+        <option value="Rhapsody">Rhapsody</option>
+        <option value="ROCK IT">ROCK IT</option>
+        <option value="Rocket">Rocket</option>
+        <option value="Rocktronik">Rocktronik</option>
+        <option value="SAIKOU">SAIKOU</option>
+        <option value="Sentinel">Sentinel</option>
+        <option value="Sevcon">Sevcon</option>
+        <option value="Sexy Beast">Sexy Beast</option>
+        <option value="Sidewinder">Sidewinder</option>
+        <option value="So Far Away">So Far Away</option>
+        <option value="Spection">Spection</option>
+        <option value="Spectra">Spectra</option>
+        <option value="SPOOKY">SPOOKY</option>
+        <option value="Starship Showdown">Starship Showdown (feat. Christian Carlsson)</option>
+        <option value="Steampunk Warlord">Steampunk Warlord</option>
+        <option value="Stock & Pull">Stock &amp; Pull</option>
+        <option value="Sugar Rush">Sugar Rush</option>
+        <option value="Surge">Surge</option>
+        <option value="Tension">Tension</option>
+        <option value="Termination Shock">Termination Shock</option>
+        <option value="The Art of War">The Art of War</option>
+        <option value="The Cave, The Treasure">The Cave, The Treasure</option>
+        <option value="The Escape">The Escape</option>
+        <option value="The Lunar Whale">The Lunar Whale</option>
+        <option value="The Maze of Mayonnaise">The Maze of Mayonnaise</option>
+        <option value="This Time">This Time</option>
+        <option value="Till It's Over">Till It's Over</option>
+        <option value="Time Goes By">Time Goes By</option>
+        <option value="Time Lapse">Time Lapse</option>
+        <option value="Timewarp">Timewarp</option>
+        <option value="Tokyo Skies">Tokyo Skies</option>
+        <option value="Try This">Try This</option>
+        <option value="Turbo Penguin">Turbo Penguin</option>
+        <option value="Unlocked">Unlocked</option>
+        <option value="Vindicate Me">Vindicate Me</option>
+        <option value="Wicked">Wicked</option>
+        <option value="Wormhole">Wormhole</option>
+        <option value="Yo! Ho! And a Bottle of Bass!">Yo! Ho! And a Bottle of Bass!</option>
       </select><br>
+      <small>You have selected a song by <b id="artist">???</b></small><br>
       FFT Size:
       <select id="fftsize">
         <option value=2048>2048</option>
@@ -332,8 +336,8 @@
         <option value=0.5>0.5</option>
         <option value=0.75>0.75</option>
       </select><br>
-      Maximum bar height (relative to window height):
-      <select id="maxheight">
+      Maximum bar height:
+      <select id="maxheight" title="This value is relative to your browser window height.">
         <option value=1 selected>1x (Default)</option>
         <option value=0.9>0.9x</option>
         <option value=0.8>0.8x</option>
@@ -409,6 +413,7 @@
       if (song == "") {
         document.getElementById("button").disabled = true;
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/Not playing.PNG";
+        document.getElementById("artist").innerHTML = "???";
       } else {
         if (song == "Destroid 2 - Wasteland" || song == "Destroid 6 - Put It Down") {
           document.getElementById("button").disabled = true;
@@ -416,6 +421,221 @@
           document.getElementById("button").disabled = false;
         }
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/" + (document.getElementById("song").value == "I Call It Progstep" ? "I Call It Progstep 2" : (document.getElementById("song").value == "Deviance" ? "Deviance 3" : document.getElementById("song").value)) + ".PNG";
+        switch (song) {
+          case "Astrocat":
+          case "Buzz Kill":
+          case "Rat Twist":
+          case "Sugar Rush":
+          case "The Escape":
+          case "This Time":
+            artist = "PIXL";
+            break;
+          case "Backlash":
+          case "Barracuda":
+          case "Crab Rave":
+          case "Eclipse":
+          case "Heist":
+          case "Renegade":
+          case "Sentinel":
+          case "Surge":
+          case "Timewarp":
+            artist = "Noisestorm";
+            break;
+          case "Be Gone Mr. Gawne":
+          case "Caps On, Hats Off":
+          case "Commando Steve":
+          case "Farbror Melker Fixar Fiskdamm (Fastbom Cover)":
+          case "Flirt Flirt Oh It Hurts":
+          case "Jack Russel":
+          case "Milky Ways":
+          case "Partyt Ar Igang":
+          case "Pirate Manners":
+          case "Starship Showdown":
+          case "Steampunk Warlord":
+          case "The Cave, The Treasure":
+          case "The Maze of Mayonnaise":
+            artist = "Bossfight";
+            break;
+          case "Cascade":
+            artist = "Kubbi";
+            break;
+          case "Cheat Codes":
+          case "Cheat Codes VIP":
+          case "Final Boss":
+          case "New Game":
+          case "So Far Away":
+          case "Time Goes By":
+            artist = "Nitro Fun";
+            break;
+          case "Checkpoint":
+            artist = "Nitro Fun & Hyper Potions";
+            break;
+          case "Chip Zeal":
+          case "Houston":
+          case "No Party Like a Mojang Party":
+          case "Sevcon":
+          case "Vindicate Me":
+            artist = "Big Giant Circles";
+            break;
+          case "Chronos":
+          case "Corrupted":
+          case "Glitch":
+          case "Legacy":
+          case "Logic Gatekeeper":
+          case "Parallel Processing":
+          case "Rhapsody":
+          case "The Lunar Whale":
+            artist = "Danimal Cannon & Zef";
+            break;
+          case "Core":
+          case "Cruise Control":
+          case "Livewire":
+          case "Tension":
+            artist = "Zef";
+            break;
+          case "Courtesy":
+          case "Evolution":
+          case "Focus":
+          case "Forged in Stars":
+          case "Otis":
+          case "Spectra":
+          case "The Art of War":
+          case "Tokyo Skies":
+            artist = "Chipzel";
+            break;
+          case "Crystal Tokyo":
+            artist = "FantomenK & meganeko";
+            break;
+          case "Dance of the Incognizant":
+            artist = "FantomenK";
+            break;
+          case "FOX":
+          case "Into The Zone":
+          case "On The Run":
+          case "Opia":
+            artist = "Shirobon";
+            break;
+          case "FTW":
+            artist = "Lets Be Friends";
+            break;
+          case "Exoskelephone":
+          case "Gravity":
+          case "Grind":
+          case "Quake":
+          case "Rocket":
+          case "Sexy Beast":
+          case "Stock & Pull":
+            artist = "Stereotronique";
+            break;
+          case "BLAST":
+          case "COOKIES":
+          case "CRAZY":
+          case "FIGHT":
+          case "HYPE":
+          case "OKAY":
+          case "PARTY":
+          case "PIXEL":
+          case "PLAY":
+          case "ROCK IT":
+          case "SAIKOU":
+          case "SPOOKY":
+            artist = "Tokyo Machine";
+            break;
+          case "Long Live The New Fresh":
+            artist = "Danimal Cannon";
+            break;
+          case "MOSHI":
+            artist = "Pegboard Nerds & Tokyo Machine";
+            break;
+          case "Once Again":
+          case "Till It\'s Over":
+            artist = "Tristam";
+            break;
+          case "Paper Dolls":
+            artist = "Shawn Daley";
+            break;
+          case "Peer Gynt":
+            artist = "cYsmix";
+            break;
+          case "Chipland":
+          case "Rainbow Road":
+            artist = "nanobii";
+            break;
+          case "Razor Sharp":
+            artist = "Pegboard Nerds & Tristam";
+            break;
+          case "Rocktronik":
+          case "Try This":
+          case "Here It Comes":
+            artist = "Pegboard Nerds";
+            break;
+          case "Delayed Friend Request":
+          case "Sidewinder":
+            artist = "7 Minutes Dead";
+            break;
+          case "Termination Shock":
+            artist = "Sabrepulse";
+            break;
+          case "Time Lapse":
+            artist = "TheFatRat";
+            break;
+          case "Turbo Penguin":
+            artist = "Sound Remedy & Nitro Fun";
+            break;
+          case "Unlocked":
+            artist = "Plesco";
+            break;
+          case "Wicked":
+            artist = "Avenza";
+            break;
+          case "Dubwoofer Substep":
+          case "I\'m being Reelistic":
+          case "It\'s Pronounced Omnitica":
+          case "I Call It Progstep":
+          case "Omniverse":
+          case "Yo! Ho! And a Bottle of Bass!":
+            artist = "Omnitica";
+            break;
+          case "Faster Than Light":
+          case "Wormhole":
+            artist = "Far Too Loud";
+            break;
+          case "Halcyon":
+            artist = "Au5 & Fractal";
+            break;
+          case "Duality":
+          case "Spection":
+            artist = "Fractal";
+            break;
+          case "Pyro":
+            artist = "Dread Pitt";
+            break;
+          case "Clash":
+            artist = "Trip40";
+            break;
+          case "Cool Friends":
+            artist = "Silva Hound";
+            break;
+          case "Destroid 1 - Raise Your Fist":
+          case "Destroid 2 - Wasteland":
+            artist = "Excision, Downlink & Space Laces";
+            break;
+          case "Destroid 6 - Put It Down":
+            artist = "Excision & Bassnectar";
+            break;
+          case "Destroid 8 - Annihilate":
+            artist = "Excision & Far Too Loud";
+            break;
+          case "Destroid 10 - Funk Hole":
+            artist = "Excision & Space Laces";
+            break;
+          case "Deviance":
+            artist = "Excision & Datsik";
+            break;
+          case "Highscore":
+            artist = "Panda Eyes";
+            break;
+        }
       }
     }
     function initPage() {
