@@ -198,6 +198,8 @@
         <option value="Dance of the Incognizant">FantomenK - Dance of the Incognizant</option>
         <option value="Delayed Friend Request">7 Minutes Dead - Delayed Friend Request</option>
         <option value="Destroid 1 - Raise Your Fist">Excision, Downlink &amp; Space Laces - Destroid 1 Raise Your Fist</option>
+        <option value="Destroid 2 - Wasteland">Excision, Downlink &amp; Space Laces - Destroid 2 Wasteland</option>
+        <option value="Destroid 6 - Put It Down">Excision &amp; Bassnectar - Destroid 6 Put It Down</option>
         <option value="Destroid 8 - Annihilate">Excision &amp; Far Too Loud - Destroid 8 Annihilate</option>
         <option value="Destroid 10 - Funk Hole">Excision &amp; Space Laces - Destroid 10 Funk Hole</option>
         <option value="Deviance">Excision &amp; Datsik - Deviance (Dirtyphonics Remix)</option>
@@ -402,13 +404,17 @@
         songTagVer = document.getElementById("songTagVer");
     function checkSong() {
       var song = document.getElementById("song").value;
-      document.getElementById("songTag").width = document.getElementById("songTagVer").value == 4 ? 216 : 240;
-      document.getElementById("songTag").height = document.getElementById("songTagVer").value == 4 ? 216 : 135;
+      document.getElementById("songTag").width = document.getElementById("songTagVer").value == 4 ? 216 : 320;
+      document.getElementById("songTag").height = document.getElementById("songTagVer").value == 4 ? 216 : 180;
       if (song == "") {
         document.getElementById("button").disabled = true;
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/Not playing.PNG";
       } else {
-        document.getElementById("button").disabled = false;
+        if (song == "Destroid 2 - Wasteland" || song == "Destroid 6 - Put It Down") {
+          document.getElementById("button").disabled = true;
+        } else {
+          document.getElementById("button").disabled = false;
+        }
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/" + (document.getElementById("song").value == "I Call It Progstep" ? "I Call It Progstep 2" : (document.getElementById("song").value == "Deviance" ? "Deviance 3" : document.getElementById("song").value)) + ".PNG";
       }
     }
@@ -435,6 +441,10 @@
           alert("Destroid 8 Annihilate has ended. If you wish, feel free to pick another song.");
         } else if (document.getElementById("song").value == "Destroid 10 - Funk Hole") {
           alert("Destroid 10 Funk Hole has ended. If you wish, feel free to pick another song.");
+        } else if (document.getElementById("song").value == "Destroid 2 - Wasteland") {
+          alert("Destroid 2 Wasteland has ended. If you wish, feel free to pick another song.");
+        } else if (document.getElementById("song").value == "Destroid 6 - Put It Down") {
+          alert("Destroid 6 Put It Down has ended. If you wish, feel free to pick another song.");
         } else {
           alert(document.getElementById("song").value + " has ended. If you wish, feel free to pick another song.");
         }
@@ -470,7 +480,7 @@
       }
       var song = document.getElementById("song").value;
       audio = document.getElementById("audio");
-      var helpers = ["BLAST", "Backlash", "COOKIES", "Eclipse", "Evolution", "Forged in Stars", "Heist", "I\'m being Reelistic", "OKAY", "PIXEL", "ROCK IT", "Rat Twist", "Sentinel", "Sidewinder", "Surge", "The Escape", "This Time", "Turbo Penguin", "It\'s Pronounced Omnitica", "Gravity", "Exoskelephone", "Sexy Beast", "Duality", "Spection", "Pyro", "Timewarp", "Delayed Friend Request", "Starship Showdown", "Destroid 1 - Raise Your Fist", "Farbror Melker Fixar Fiskdamm (Fastbom Cover)", "Steampunk Warlord", "Rocket", "Here It Comes", "Clash", "Chipland", "Crab Rave", "CRAZY", "I Call It Progstep", "Omniverse", "Opia", "Wormhole", "Caps On, Hats Off", "Deviance"];
+      var helpers = ["BLAST", "Backlash", "COOKIES", "Eclipse", "Evolution", "Forged in Stars", "Heist", "I\'m being Reelistic", "OKAY", "PIXEL", "ROCK IT", "Rat Twist", "Sentinel", "Sidewinder", "Surge", "The Escape", "This Time", "Turbo Penguin", "It\'s Pronounced Omnitica", "Gravity", "Exoskelephone", "Sexy Beast", "Duality", "Spection", "Pyro", "Timewarp", "Delayed Friend Request", "Starship Showdown", "Destroid 1 - Raise Your Fist", "Farbror Melker Fixar Fiskdamm (Fastbom Cover)", "Steampunk Warlord", "Rocket", "Here It Comes", "Clash", "Chipland", "Crab Rave", "CRAZY", "I Call It Progstep", "Omniverse", "Opia", "Wormhole", "Caps On, Hats Off", "Deviance", "Destroid 2 - Wasteland", "Destroid 6 - Put It Down"];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
         if (song == helpers[i]) {
@@ -697,6 +707,10 @@
         document.title = "Now playing Destroid 8 Annihilate by Excision & Far Too Loud on Visimusic";
       } else if (song == "Destroid 10 - Funk Hole") {
         document.title = "Now playing Destroid 10 Funk Hole by Excision & Space Laces on Visimusic";
+      } else if (song == "Destroid 2 - Wasteland") {
+        document.title = "Now playing Destroid 2 Wasteland by Excision, Downlink & Space Laces on Visimusic";
+      } else if (song == "Destroid 6 - Put It Down") {
+        document.title = "Now playing Destroid 6 Put It Down by Excision & Bassnectar on Visimusic";
       } else if (song == "Deviance") {
         document.title = "Now playing Deviance (Dirtyphonics Remix) by Excision & Datsik on Visimusic";
       } else if (song == "Starship Showdown") {
@@ -844,6 +858,8 @@
           barcolor = 14;
           break;
         case "Destroid 1 - Raise Your Fist":
+        case "Destroid 2 - Wasteland":
+        case "Destroid 6 - Put It Down":
         case "Destroid 8 - Annihilate":
         case "Destroid 10 - Funk Hole":
         case "Deviance":
@@ -1120,6 +1136,8 @@
         case "Dance of the Incognizant": length = "7:10.158"; break;
         case "Delayed Friend Request": length = "6:05.897"; break;
         case "Destroid 1 - Raise Your Fist": length = "4:42.775"; break;
+        case "Destroid 2 - Wasteland": length = "4:38.000"; break;
+        case "Destroid 6 - Put It Down": length = "3:27.000"; break;
         case "Destroid 8 - Annihilate": length = "5:10.177"; break;
         case "Destroid 10 - Funk Hole": length = "4:40.084"; break;
         case "Deviance": length = "5:04.091"; break;
