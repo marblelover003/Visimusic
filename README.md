@@ -2,7 +2,7 @@
 
 [Check it out!](https://marblelover003.github.io/Visimusic/)
 
-There are 125 songs to choose from.
+There are 130 songs to choose from.
 
 Select one from the dropdown under "Select a song" and watch it get visualized!
 
