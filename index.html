@@ -1498,7 +1498,7 @@
         }
         y++;
       }
-      document.getElementById("timeLeft").innerHTML = "-" + l_m + ":" + ("0" + l_s).slice(-2);
+      document.getElementById("timeLeft").innerHTML = "-" + Math.floor(l_m / 60) + ":" + ("0" + l_s).slice(-2);
       audio.load();
       var x = setInterval(function() {
         var min = parseInt(length[0]);
