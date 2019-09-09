@@ -36,6 +36,7 @@
         bottom: 0;
         right: 0;
         font-size: 10px;
+        z-index: -999;
       }
       #queue, #queueBtn {
         font-size: 10px;
@@ -847,6 +848,7 @@
       audio.addEventListener("ended", function() {
         document.getElementById("queue").disabled = false;
         document.getElementById("queueBtn").disabled = false;
+        clearInterval(positions);
         if (queue[0] != "") {
           document.getElementById("song").options.selectedIndex = queue[0][1];
           checkSong();
@@ -881,7 +883,6 @@
             x++;
           }
           document.getElementById("songSelectMenu").style.visibility = "visible";
-          clearInterval(positions);
           document.getElementById("timeLeft").innerHTML = "-0:00";
           progress.value = 0;
           progress.max = 0;
@@ -1523,77 +1524,78 @@
       audio.oncanplaythrough = function() {
         clearInterval(x);
         audio.play();
-        positions = setInterval(function() {
-          var curpos = Math.floor(audio.currentTime);
-          var m = Math.floor(curpos / 60);
-          var s = Math.floor(curpos % 60);
-          var ms = Math.floor(audio.currentTime * 1000) % 1000;
-          var l_m = parseInt(length[0]);
-          var l_s = parseInt(length[2] + length[3]);
-          var l_ms = parseInt(length[5] + length[6] + length[7]);
-          var pos = audio.currentTime * 1000;
-          var len = ((l_m * 60) + l_s + (l_ms / 1000)) * 1000;
-          var timeLeft = (len - pos);
-          var t_m = Math.floor(timeLeft / 60000);
-          var t_s = Math.floor(timeLeft % 60000 / 1000);
-          var t_ms= Math.floor(timeLeft % 1000);
-          var pos_clock = m + ":" + ("0" + s).slice(-2);
-          var len_clock = l_m + ":" + ("0" + l_s).slice(-2);
-          document.getElementById("timeLeft").innerHTML = "-" + t_m + ":" + ("0" + t_s).slice(-2);
-          var songProgress = Math.floor(pos / len * 1000) / 10;
-          progress.value = audio.currentTime * 1000;
-          if (song == "Faster Than Light" && audio.currentTime >= 186.5) {
-            document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Faster Than Light 2.PNG";
-          }
-          if (song == "Destroid 1 - Raise Your Fist" && audio.currentTime >= 183) {
-            document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Destroid 1 - Raise Your Fist 2.PNG";
-          }
-          if (song == "It\'s Pronounced Omnitica" && audio.currentTime >= 209) {
-            document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/It\'s Pronounced Omnitica 2.PNG";
-          }
-          if (song == "Wormhole" && audio.currentTime >= 155.5) {
-            document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Wormhole 2.PNG";
-          }
-          if (song == "Caps On, Hats Off" && audio.currentTime >= 115.5) {
-            document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Caps On, Hats Off 2.PNG";
-          }
-          if (song == "I Call It Progstep") {
-            if (audio.currentTime >= 24 && audio.currentTime < 175.5) {
-              document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/I Call It Progstep 2.PNG";
-            } else if (audio.currentTime >= 175.5) {
-              document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/I Call It Progstep 3.PNG";
-            }
-          }
-          if (song == "Deviance") {
-            if (audio.currentTime >= 52 && audio.currentTime < 154) {
-              document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Deviance 2.PNG";
-            } else if (audio.currentTime >= 154 && audio.currentTime < 253.5) {
-              document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Deviance 3.PNG";
-            } else if (audio.currentTime >= 253.5) {
-              document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Deviance 4.PNG";
-            }
-          }
-          if (song == "Wicked") {
-            if ((audio.currentTime >= 47.5 && audio.currentTime < 76.5) || (audio.currentTime >= 162.7 && audio.currentTime < 191.7)) {
-              document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Wicked 2.PNG";
-            } else {
-              document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Wicked.PNG";
-            }
-          }
-          var docTitle = document.title;
-          document.getElementById("title").innerHTML = "<b>" + pos_clock + "</b> / " + len_clock + "<br><span style=\"font-family: Montserrat; font-weight: 300;\">Now playing <b>" + (
-            song == "Cool Friends" ? "Cool Friends (Murtagh & Veschell Remix)" : (
-              song == "Partyt Ar Igang" ? "Partyt A\u0308r Iga\u030Ang!" : (
-                song == "Destroid 1 - Raise Your Fist" ? "Destroid 1 Raise Your Fist" : (
-                  song == "Destroid 2 - Wasteland" ? "Destroid 2 Wasteland" : (
-                    song == "Destroid 6 - Put It Down" ? "Destroid 6 Put It Down" : (
-                      song == "Destroid 8 - Annihilate" ? "Destroid 8 Annihilate" : (
-                        song == "Destroid 10 - Funk Hole" ? "Destroid 10 Funk Hole" : (
-                          song == "Deviance" ? "Deviance (Dirtyphonics Remix)" : (
-                            song == "Starship Showdown" ? "Starship Showdown (feat. Christian Carlsson)" : (
-                              song == "Highscore" ? "Highscore (feat. Teminite)" : song
-                            )
-                          )
+        positions = setInterval(playing, 0);
+      }
+    }
+    function playing() {
+      var curpos = Math.floor(audio.currentTime);
+      var m = Math.floor(curpos / 60);
+      var s = Math.floor(curpos % 60);
+      var ms = Math.floor(audio.currentTime * 1000) % 1000;
+      var l_m = parseInt(length[0]);
+      var l_s = parseInt(length[2] + length[3]);
+      var l_ms = parseInt(length[5] + length[6] + length[7]);
+      var pos = audio.currentTime * 1000;
+      var len = ((l_m * 60) + l_s + (l_ms / 1000)) * 1000;
+      var timeLeft = (len - pos);
+      var t_m = Math.floor(timeLeft / 60000);
+      var t_s = Math.floor(timeLeft % 60000 / 1000);
+      var t_ms= Math.floor(timeLeft % 1000);
+      var pos_clock = m + ":" + ("0" + s).slice(-2);
+      var len_clock = l_m + ":" + ("0" + l_s).slice(-2);
+      document.getElementById("timeLeft").innerHTML = "-" + t_m + ":" + ("0" + t_s).slice(-2);
+      var songProgress = Math.floor(pos / len * 1000) / 10;
+      progress.value = audio.currentTime * 1000;
+      if (song == "Faster Than Light" && audio.currentTime >= 186.5) {
+        document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Faster Than Light 2.PNG";
+      }
+      if (song == "Destroid 1 - Raise Your Fist" && audio.currentTime >= 183) {
+        document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Destroid 1 - Raise Your Fist 2.PNG";
+      }
+      if (song == "It\'s Pronounced Omnitica" && audio.currentTime >= 209) {
+        document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/It\'s Pronounced Omnitica 2.PNG";
+      }
+      if (song == "Wormhole" && audio.currentTime >= 155.5) {
+        document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Wormhole 2.PNG";
+      }
+      if (song == "Caps On, Hats Off" && audio.currentTime >= 115.5) {
+        document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Caps On, Hats Off 2.PNG";
+      }
+      if (song == "I Call It Progstep") {
+        if (audio.currentTime >= 24 && audio.currentTime < 175.5) {
+          document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/I Call It Progstep 2.PNG";
+        } else if (audio.currentTime >= 175.5) {
+          document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/I Call It Progstep 3.PNG";
+        }
+      }
+      if (song == "Deviance") {
+        if (audio.currentTime >= 52 && audio.currentTime < 154) {
+          document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Deviance 2.PNG";
+        } else if (audio.currentTime >= 154 && audio.currentTime < 253.5) {
+          document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Deviance 3.PNG";
+        } else if (audio.currentTime >= 253.5) {
+          document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Deviance 4.PNG";
+        }
+      }
+      if (song == "Wicked") {
+        if ((audio.currentTime >= 47.5 && audio.currentTime < 76.5) || (audio.currentTime >= 162.7 && audio.currentTime < 191.7)) {
+          document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Wicked 2.PNG";
+        } else {
+          document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Wicked.PNG";
+        }
+      }
+      var docTitle = document.title;
+      document.getElementById("title").innerHTML = "<b>" + pos_clock + "</b> / " + len_clock + "<br><span style=\"font-family: Montserrat; font-weight: 300;\">Now playing <b>" + (
+        song == "Cool Friends" ? "Cool Friends (Murtagh & Veschell Remix)" : (
+          song == "Partyt Ar Igang" ? "Partyt A\u0308r Iga\u030Ang!" : (
+            song == "Destroid 1 - Raise Your Fist" ? "Destroid 1 Raise Your Fist" : (
+              song == "Destroid 2 - Wasteland" ? "Destroid 2 Wasteland" : (
+                song == "Destroid 6 - Put It Down" ? "Destroid 6 Put It Down" : (
+                  song == "Destroid 8 - Annihilate" ? "Destroid 8 Annihilate" : (
+                    song == "Destroid 10 - Funk Hole" ? "Destroid 10 Funk Hole" : (
+                      song == "Deviance" ? "Deviance (Dirtyphonics Remix)" : (
+                        song == "Starship Showdown" ? "Starship Showdown (feat. Christian Carlsson)" : (
+                          song == "Highscore" ? "Highscore (feat. Teminite)" : song
                         )
                       )
                     )
@@ -1601,9 +1603,9 @@
                 )
               )
             )
-          ) + "</b> by <b>" + artist + "</b></span>";
-        }, 0);
-      }
+          )
+        )
+      ) + "</b> by <b>" + artist + "</b></span>";
     }
     function animationLooper(){
       analyser.getByteFrequencyData(frequency_array);
