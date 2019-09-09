@@ -845,21 +845,6 @@
       analyser.getByteFrequencyData(frequency_array);
       pageInitiated = true;
       audio.addEventListener("ended", function() {
-        if (document.getElementById("song").value == "Partyt Ar Igang") {
-          alert("Partyt A\u0308r Iga\u030Ang! by Bossfight has ended. Next up: " + (queue[0][0] == "" ? "you pick which song" : queue[0][0]) + ".");
-        } else if (document.getElementById("song").value == "Destroid 1 - Raise Your Fist") {
-          alert("Destroid 1 Raise Your Fist by Excision, Downlink & Space Laces has ended. Next up: " + (queue[0][0] == "" ? "you pick which song" : queue[0][0]) + ".");
-        } else if (document.getElementById("song").value == "Destroid 8 - Annihilate") {
-          alert("Destroid 8 Annihilate by Excision & Far Too Loud has ended. Next up: " + (queue[0][0] == "" ? "you pick which song" : queue[0][0]) + ".");
-        } else if (document.getElementById("song").value == "Destroid 10 - Funk Hole") {
-          alert("Destroid 10 Funk Hole by Excision & Space Laces has ended. Next up: " + (queue[0][0] == "" ? "you pick which song" : queue[0][0]) + ".");
-        } else if (document.getElementById("song").value == "Destroid 2 - Wasteland") {
-          alert("Destroid 2 Wasteland by Excision, Downlink & Space Laces has ended. Next up: " + (queue[0][0] == "" ? "you pick which song" : queue[0][0]) + ".");
-        } else if (document.getElementById("song").value == "Destroid 6 - Put It Down") {
-          alert("Destroid 6 Put It Down by Excision & Bassnectar has ended. Next up: " + (queue[0][0] == "" ? "you pick which song" : queue[0][0]) + ".");
-        } else {
-          alert(document.getElementById("song").value + " by " + artist + " has ended. Next up: " + (queue[0][0] == "" ? "you pick which song" : queue[0][0]) + ".");
-        }
         document.getElementById("queue").disabled = false;
         document.getElementById("queueBtn").disabled = false;
         if (queue[0] != "") {
@@ -872,6 +857,21 @@
           document.getElementById("button").click();
           itemsQueued--;
         } else {
+          if (document.getElementById("song").value == "Partyt Ar Igang") {
+            alert("Partyt A\u0308r Iga\u030Ang! by Bossfight has ended.");
+          } else if (document.getElementById("song").value == "Destroid 1 - Raise Your Fist") {
+            alert("Destroid 1 Raise Your Fist by Excision, Downlink & Space Laces has ended.");
+          } else if (document.getElementById("song").value == "Destroid 8 - Annihilate") {
+            alert("Destroid 8 Annihilate by Excision & Far Too Loud has ended.");
+          } else if (document.getElementById("song").value == "Destroid 10 - Funk Hole") {
+            alert("Destroid 10 Funk Hole by Excision & Space Laces has ended.");
+          } else if (document.getElementById("song").value == "Destroid 2 - Wasteland") {
+            alert("Destroid 2 Wasteland by Excision, Downlink & Space Laces has ended.");
+          } else if (document.getElementById("song").value == "Destroid 6 - Put It Down") {
+            alert("Destroid 6 Put It Down by Excision & Bassnectar has ended.");
+          } else {
+            alert(document.getElementById("song").value + " by " + artist + " has ended.");
+          }
           audio.src = "";
           document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/Not playing.PNG";
           document.getElementById("song").selectedIndex = 0;
