@@ -565,7 +565,7 @@
         progress = document.getElementById("progress"),
         heightlimit = 0,
         songTagVer = document.getElementById("songTagVer"),
-        artist, queue = [["", 0], ["", 0], ["", 0]], itemsQueued = 0;
+        artist, queue = [["", 0], ["", 0], ["", 0]], itemsQueued = 0, song;
     document.getElementById("queue").disabled = true;
     document.getElementById("queueBtn").disabled = true;
     function check() {
@@ -596,7 +596,7 @@
       document.getElementById("queue").options.selectedIndex = 0;
     }
     function checkSong() {
-      var song = document.getElementById("song").value;
+      song = document.getElementById("song").value;
       document.getElementById("songTag").width = document.getElementById("songTagVer").value == 4 ? 216 : 384;
       document.getElementById("songTag").height = 216;
       if (song == "") {
@@ -906,7 +906,7 @@
       for (var i = bars; i < document.getElementsByTagName("div").length; i++) {
         document.getElementsByTagName("div")[i].style.width = "0px";
       }
-      var song = document.getElementById("song").value;
+      song = document.getElementById("song").value;
       audio = document.getElementById("audio");
       var helpers = [
         "BLAST", "Backlash", "COOKIES", "Eclipse", "Evolution", "Forged in Stars",
