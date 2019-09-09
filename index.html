@@ -583,6 +583,7 @@
       if (itemsQueued < 3) {
         queue[itemsQueued][0] = document.getElementById("queue").value;
         queue[itemsQueued][1] = document.getElementById("queue").options.selectedIndex;
+        itemsQueued++;
         for (var i = 0; i < 3; i++) {
           document.getElementById("queue" + (i + 1)).innerHTML = queue[i][0];
         }
@@ -869,6 +870,7 @@
           queue[2] = ["", 0];
           checkQueue();
           document.getElementById("button").click();
+          itemsQueued--;
         } else {
           audio.src = "";
           document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/Not playing.PNG";
