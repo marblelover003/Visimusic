@@ -403,7 +403,7 @@
       Queue up to 3 more songs here!<br>
       <select id="queue" onchange="check()">
         <option></option>
-        <option value="Airwaves" disabled>Airwaves (coming soon!)</option>
+        <option value="Airwaves">Airwaves</option>
         <option value="Astrocat">Astrocat</option>
         <option value="Backlash">Backlash</option>
         <option value="Barracuda">Barracuda</option>
@@ -606,7 +606,7 @@
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/Not playing.PNG";
         document.getElementById("artist").innerHTML = "???";
       } else {
-        if (song == "Airwaves") {
+        if (song == "") {
           document.getElementById("button").disabled = true;
         } else {
           document.getElementById("button").disabled = false;
@@ -1379,7 +1379,7 @@
         case "The Escape": length = "5:03.673"; break;
         case "This Time": length = "4:32.378"; break;
         case "Turbo Penguin": length = "3:31.356"; break;
-        case "Airwaves": length = "4:41.000"; break;
+        case "Airwaves": length = "4:42.148"; break;
         case "Astrocat": length = "5:21.619"; break;
         case "Barracuda": length = "4:22.661"; break;
         case "Be Gone Mr. Gawne": length = "4:17.906"; break;
