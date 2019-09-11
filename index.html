@@ -184,6 +184,7 @@
       Select a song:
       <select id="song" onchange="checkSong()">
         <option></option>
+        <option value="Airwaves">Airwaves</option>
         <option value="Astrocat">Astrocat</option>
         <option value="Backlash">Backlash</option>
         <option value="Barracuda">Barracuda</option>
@@ -402,6 +403,7 @@
       Queue up to 3 more songs here!<br>
       <select id="queue" onchange="check()">
         <option></option>
+        <option value="Airwaves" disabled>Airwaves (coming soon!)</option>
         <option value="Astrocat">Astrocat</option>
         <option value="Backlash">Backlash</option>
         <option value="Barracuda">Barracuda</option>
@@ -604,7 +606,11 @@
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/Not playing.PNG";
         document.getElementById("artist").innerHTML = "???";
       } else {
-        document.getElementById("button").disabled = false;
+        if (song == "Airwaves") {
+          document.getElementById("button").disabled = true;
+        } else {
+          document.getElementById("button").disabled = false;
+        }
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/" + (document.getElementById("song").value == "I Call It Progstep" ? "I Call It Progstep 2" : (document.getElementById("song").value == "Deviance" ? "Deviance 3" : document.getElementById("song").value)) + ".PNG";
         switch (song) {
           case "Astrocat":
@@ -615,6 +621,7 @@
           case "This Time":
             artist = "PIXL";
             break;
+          case "Airwaves":
           case "Backlash":
           case "Barracuda":
           case "Crab Rave":
@@ -849,15 +856,15 @@
         document.getElementById("queue").disabled = false;
         document.getElementById("queueBtn").disabled = false;
         clearInterval(positions);
-        if (queue[0] != "") {
+        if (queue[0][0] != "") {
           document.getElementById("song").options.selectedIndex = queue[0][1];
           checkSong();
           queue[0] = queue[1];
           queue[1] = queue[2];
           queue[2] = ["", 0];
           checkQueue();
-          document.getElementById("button").click();
           itemsQueued--;
+          document.getElementById("button").click();
         } else {
           if (document.getElementById("song").value == "Partyt Ar Igang") {
             alert("Partyt A\u0308r Iga\u030Ang! by Bossfight has ended.");
@@ -918,7 +925,7 @@
         "Steampunk Warlord", "Rocket", "Here It Comes", "Clash", "Chipland", "Crab Rave",
         "CRAZY", "I Call It Progstep", "Omniverse", "Opia", "Wormhole", "Caps On, Hats Off",
         "Deviance", "Destroid 2 - Wasteland", "Destroid 6 - Put It Down", "Captain Cool",
-        "Leaving Leafwood Forest", "Cybertron", "Let It Roar", "To the Stars"
+        "Leaving Leafwood Forest", "Cybertron", "Let It Roar", "To the Stars", "Airwaves"
       ];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
@@ -986,6 +993,7 @@
           style = styles.single;
           barcolor = 57;
           break;
+        case "Airwaves":
         case "Cheat Codes":
         case "Checkpoint":
         case "Delayed Friend Request":
@@ -1370,6 +1378,7 @@
         case "The Escape": length = "5:03.673"; break;
         case "This Time": length = "4:32.378"; break;
         case "Turbo Penguin": length = "3:31.356"; break;
+        case "Airwaves": length = "4:41.000"; break;
         case "Astrocat": length = "5:21.619"; break;
         case "Barracuda": length = "4:22.661"; break;
         case "Be Gone Mr. Gawne": length = "4:17.906"; break;
