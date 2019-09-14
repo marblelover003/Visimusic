@@ -190,6 +190,8 @@
         <option value="Barracuda">Barracuda</option>
         <option value="Be Gone Mr. Gawne">Be Gone Mr. Gawne</option>
         <option value="BLAST">BLAST</option>
+        <option value="Breakdown">Breakdown</option>
+        <option value="Breakdown VIP">Breakdown VIP</option>
         <option value="Buzz Kill">Buzz Kill</option>
         <option value="Caps On, Hats Off">Caps On, Hats Off</option>
         <option value="Captain Cool">Captain Cool</option>
@@ -220,6 +222,7 @@
         <option value="Destroid 8 - Annihilate">Destroid 8 Annihilate</option>
         <option value="Destroid 10 - Funk Hole">Destroid 10 Funk Hole</option>
         <option value="Deviance">Deviance (Dirtyphonics Remix)</option>
+        <option value="Disconnected">Disconnected</option>
         <option value="Duality">Duality</option>
         <option value="Dubwoofer Substep">Dubwoofer Substep</option>
         <option value="Eclipse">Eclipse</option>
@@ -229,6 +232,7 @@
         <option value="Faster Than Light">Faster Than Light</option>
         <option value="FIGHT">FIGHT</option>
         <option value="Final Boss">Final Boss</option>
+        <option value="Fire in the Hole">Fire in the Hole</option>
         <option value="Flirt Flirt Oh It Hurts">Flirt Flirt Oh It Hurts</option>
         <option value="Focus">Focus</option>
         <option value="Forged in Stars">Forged in Stars</option>
@@ -410,6 +414,8 @@
         <option value="Barracuda">Barracuda</option>
         <option value="Be Gone Mr. Gawne">Be Gone Mr. Gawne</option>
         <option value="BLAST">BLAST</option>
+        <option value="Breakdown">Breakdown</option>
+        <option value="Breakdown VIP">Breakdown VIP</option>
         <option value="Buzz Kill">Buzz Kill</option>
         <option value="Caps On, Hats Off">Caps On, Hats Off</option>
         <option value="Captain Cool">Captain Cool</option>
@@ -440,6 +446,7 @@
         <option value="Destroid 8 Annihilate">Destroid 8 Annihilate</option>
         <option value="Destroid 10 Funk Hole">Destroid 10 Funk Hole</option>
         <option value="Deviance (Dirtyphonics Remix)">Deviance (Dirtyphonics Remix)</option>
+        <option value="Disconnected">Disconnected</option>
         <option value="Duality">Duality</option>
         <option value="Dubwoofer Substep">Dubwoofer Substep</option>
         <option value="Eclipse">Eclipse</option>
@@ -449,6 +456,7 @@
         <option value="Faster Than Light">Faster Than Light</option>
         <option value="FIGHT">FIGHT</option>
         <option value="Final Boss">Final Boss</option>
+        <option value="Fire in the Hole">Fire in the Hole</option>
         <option value="Flirt Flirt Oh It Hurts">Flirt Flirt Oh It Hurts</option>
         <option value="Focus">Focus</option>
         <option value="Forged in Stars">Forged in Stars</option>
@@ -626,6 +634,8 @@
           case "Airwaves":
           case "Backlash":
           case "Barracuda":
+          case "Breakdown":
+          case "Breakdown VIP":
           case "Crab Rave":
           case "Eclipse":
           case "Heist":
@@ -764,6 +774,8 @@
           case "Rocktronik":
           case "Try This":
           case "Here It Comes":
+          case "Disconnected":
+          case "Fire in the Hole":
             artist = "Pegboard Nerds";
             break;
           case "Delayed Friend Request":
@@ -930,7 +942,7 @@
         "CRAZY", "I Call It Progstep", "Omniverse", "Opia", "Wormhole", "Caps On, Hats Off",
         "Deviance", "Destroid 2 - Wasteland", "Destroid 6 - Put It Down", "Captain Cool",
         "Leaving Leafwood Forest", "Cybertron", "Let It Roar", "To the Stars", "Airwaves",
-        "Play It Loud"
+        "Play It Loud", "Breakdown", "Breakdown VIP", "Disconnected", "Fire in the Hole"
       ];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
@@ -1002,6 +1014,7 @@
         case "Cheat Codes":
         case "Checkpoint":
         case "Delayed Friend Request":
+        case "Disconnected":
         case "Exoskelephone":
         case "Final Boss":
         case "FTW":
@@ -1039,6 +1052,7 @@
           break;
         case "Once Again":
         case "Till It\'s Over":
+        case "Fire in the Hole":
           colors = ["#11a858"];
           style = styles.single;
           barcolor = 58;
@@ -1208,6 +1222,7 @@
         case "Spection":
         case "Duality":
         case "To the Stars":
+        case "Breakdown VIP":
           colors = ["#db0a89"];
           style = styles.single;
           barcolor = 31;
@@ -1334,6 +1349,7 @@
           barcolor = 50;
           break;
         case "Here It Comes":
+        case "Breakdown":
           colors = ["#0000ff"];
           style = styles.single;
           barcolor = 51;
@@ -1365,6 +1381,10 @@
           break;
       }
       switch (song) {
+        case "Breakdown": length = "4:49.097"; break;
+        case "Breakdown VIP": length = "3:54.448"; break;
+        case "Disconnected": length = "4:02.050"; break;
+        case "Fire in the Hole": length = "3:47.160"; break;
         case "Backlash": length = "5:22.115"; break;
         case "BLAST": length = "4:20.937"; break;
         case "COOKIES": length = "3:09.361"; break;
