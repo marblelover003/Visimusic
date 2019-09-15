@@ -174,6 +174,7 @@
       .c60::-webkit-progress-value {background: #6a7b82;}
       .c61::-webkit-progress-value {background: #f5c85a;}
       .c62::-webkit-progress-value {background: #34004b;}
+      .c63::-webkit-progress-value {background: #d56b84;}
       #songSelectMenu, #title {
         transition: opacity 1s linear;
       }
@@ -226,6 +227,7 @@
         <option value="Duality">Duality</option>
         <option value="Dubwoofer Substep">Dubwoofer Substep</option>
         <option value="Eclipse">Eclipse</option>
+        <option value="End is Near">End is Near (Fire in the Hole VIP)</option>
         <option value="Evolution">Evolution</option>
         <option value="Exoskelephone">Exoskelephone</option>
         <option value="Farbror Melker Fixar Fiskdamm (Fastbom Cover)">Farbror Melker Fixar Fiskdamm (Fastbom Cover)</option>
@@ -450,6 +452,7 @@
         <option value="Duality">Duality</option>
         <option value="Dubwoofer Substep">Dubwoofer Substep</option>
         <option value="Eclipse">Eclipse</option>
+        <option value="End is Near (Fire in the Hole VIP)">End is Near (Fire in the Hole VIP)</option>
         <option value="Evolution">Evolution</option>
         <option value="Exoskelephone">Exoskelephone</option>
         <option value="Farbror Melker Fixar Fiskdamm (Fastbom Cover)">Farbror Melker Fixar Fiskdamm (Fastbom Cover)</option>
@@ -776,6 +779,7 @@
           case "Here It Comes":
           case "Disconnected":
           case "Fire in the Hole":
+          case "End is Near":
             artist = "Pegboard Nerds";
             break;
           case "Delayed Friend Request":
@@ -894,6 +898,8 @@
             alert("Destroid 2 Wasteland by Excision, Downlink & Space Laces has ended.");
           } else if (document.getElementById("song").value == "Destroid 6 - Put It Down") {
             alert("Destroid 6 Put It Down by Excision & Bassnectar has ended.");
+          } else if (document.getElementById("song").value == "End is Near") {
+            alert("End is Near (Fire in the Hole VIP) by Pegboard Nerds has ended.");
           } else {
             alert(document.getElementById("song").value + " by " + artist + " has ended.");
           }
@@ -942,7 +948,8 @@
         "CRAZY", "I Call It Progstep", "Omniverse", "Opia", "Wormhole", "Caps On, Hats Off",
         "Deviance", "Destroid 2 - Wasteland", "Destroid 6 - Put It Down", "Captain Cool",
         "Leaving Leafwood Forest", "Cybertron", "Let It Roar", "To the Stars", "Airwaves",
-        "Play It Loud", "Breakdown", "Breakdown VIP", "Disconnected", "Fire in the Hole"
+        "Play It Loud", "Breakdown", "Breakdown VIP", "Disconnected", "Fire in the Hole",
+        "End is Near"
       ];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
@@ -988,6 +995,8 @@
         document.title = "Now playing Starship Showdown (feat. Christian Carlsson) by Bossfight on Visimusic";
       } else if (song == "Highscore") {
         document.title = "Now playing Highscore (feat. Teminite) by Panda Eyes on Visimusic";
+      } else if (song == "End is Near") {
+        document.title = "Now playing End is Near (Fire in the Hole VIP) by Pegboard Nerds on Visimusic";
       } else {
         document.title = "Now playing " + song + " by " + artist + " on Visimusic";
       }
@@ -1379,6 +1388,11 @@
           style = styles.single;
           barcolor = 56;
           break;
+        case "End is Near":
+          colors = ["#d56b84"];
+          style = styles.single;
+          barcolor = 63;
+          break;
       }
       switch (song) {
         case "Breakdown": length = "4:49.097"; break;
@@ -1437,6 +1451,7 @@
         case "Deviance": length = "5:04.091"; break;
         case "Duality": length = "5:58.870"; break;
         case "Dubwoofer Substep": length = "4:44.865"; break;
+        case "End is Near": length = "4:03.382"; break;
         case "Exoskelephone": length = "5:53.123"; break;
         case "Farbror Melker Fixar Fiskdamm (Fastbom Cover)": length = "3:23.389"; break;
         case "Faster Than Light": length = "5:02.785"; break;
