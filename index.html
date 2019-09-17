@@ -38,6 +38,11 @@
         font-size: 10px;
         z-index: -999;
       }
+      @media screen and (max-width: 720px) {
+        #queueMenu {
+          bottom: 60px;
+        }
+      }
       #queue, #queueBtn {
         font-size: 10px;
       }
@@ -1646,7 +1651,9 @@
                     song == "Destroid 10 - Funk Hole" ? "Destroid 10 Funk Hole" : (
                       song == "Deviance" ? "Deviance (Dirtyphonics Remix)" : (
                         song == "Starship Showdown" ? "Starship Showdown (feat. Christian Carlsson)" : (
-                          song == "Highscore" ? "Highscore (feat. Teminite)" : song
+                          song == "Highscore" ? "Highscore (feat. Teminite)" : (
+                            song == "End is Near" ? "End is Near (Fire in the Hole VIP)" : song
+                          )
                         )
                       )
                     )
