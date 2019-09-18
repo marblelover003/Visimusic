@@ -33,15 +33,10 @@
       }
       #queueMenu {
         position: absolute;
-        bottom: 0;
+        top: 224px;
         right: 0;
         font-size: 10px;
         z-index: -999;
-      }
-      @media screen and (max-width: 720px) {
-        #queueMenu {
-          bottom: 60px;
-        }
       }
       #queue, #queueBtn {
         font-size: 10px;
@@ -412,7 +407,7 @@
       </select> song tags. <button onclick="selectSong()" id="button" disabled="true">Play! &#9656;</button>
     </span>
     <span id="queueMenu">
-      Queue up to 3 more songs here!<br>
+      Queue up to 5 more songs here!<br>
       <select id="queue" onchange="check()">
         <option></option>
         <option value="Airwaves">Airwaves</option>
@@ -559,7 +554,9 @@
       Up next:<br>
       1. <span id="queue1"></span><br>
       2. <span id="queue2"></span><br>
-      3. <span id="queue3"></span>
+      3. <span id="queue3"></span><br>
+      4. <span id="queue4"></span><br>
+      5. <span id="queue5"></span>
     </span>
     <span id="title"><b>0</b>%<br>Loading...</span>
     <audio src="" id="audio"></audio>
@@ -585,7 +582,7 @@
         progress = document.getElementById("progress"),
         heightlimit = 0,
         songTagVer = document.getElementById("songTagVer"),
-        artist, queue = [["", 0], ["", 0], ["", 0]], itemsQueued = 0, song;
+        artist, queue = [["", 0], ["", 0], ["", 0], ["", 0], ["", 0]], itemsQueued = 0, song;
     document.getElementById("queue").disabled = true;
     document.getElementById("queueBtn").disabled = true;
     function check() {
@@ -596,20 +593,20 @@
       }
     }
     function checkQueue() {
-      for (var i = 0; i < 3; i++) {
+      for (var i = 0; i < queue.length; i++) {
         document.getElementById("queue" + (i + 1)).innerHTML = queue[i][0];
       }
     }
     function queueSong() {
-      if (itemsQueued < 3) {
+      if (itemsQueued < queue.length) {
         queue[itemsQueued][0] = document.getElementById("queue").value;
         queue[itemsQueued][1] = document.getElementById("queue").options.selectedIndex;
         itemsQueued++;
-        for (var i = 0; i < 3; i++) {
+        for (var i = 0; i < queue.length; i++) {
           document.getElementById("queue" + (i + 1)).innerHTML = queue[i][0];
         }
       }
-      if (itemsQueued == 3) {
+      if (itemsQueued == queue.length) {
         document.getElementById("queue").disabled = true;
         document.getElementById("queueBtn").disabled = true;
       }
@@ -885,12 +882,15 @@
           checkSong();
           queue[0] = queue[1];
           queue[1] = queue[2];
-          queue[2] = ["", 0];
+          queue[2] = queue[3];
+          queue[3] = queue[4];
+          queue[4] = ["", 0];
           checkQueue();
           itemsQueued--;
           document.getElementById("button").click();
           progress.value = 0;
         } else {
+          document.getElementById("timeLeft").innerHTML = "-0:00";
           if (document.getElementById("song").value == "Partyt Ar Igang") {
             alert("Partyt A\u0308r Iga\u030Ang! by Bossfight has ended.");
           } else if (document.getElementById("song").value == "Destroid 1 - Raise Your Fist") {
@@ -917,7 +917,6 @@
             x++;
           }
           document.getElementById("songSelectMenu").style.visibility = "visible";
-          document.getElementById("timeLeft").innerHTML = "-0:00";
           progress.value = 0;
           progress.max = 0;
           document.title = "Visimusic";
@@ -1593,7 +1592,7 @@
       var l_ms = parseInt(length[5] + length[6] + length[7]);
       var pos = audio.currentTime * 1000;
       var len = ((l_m * 60) + l_s + (l_ms / 1000)) * 1000;
-      var timeLeft = (len - pos);
+      var timeLeft = (len - pos) < 0 ? 0 : (len - pos);
       var t_m = Math.floor(timeLeft / 60000);
       var t_s = Math.floor(timeLeft % 60000 / 1000);
       var t_ms= Math.floor(timeLeft % 1000);
