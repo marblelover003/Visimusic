@@ -46,7 +46,7 @@
         padding-right: 6px;
         padding-left: 6px;
         border-radius: 15px;
-        transition-duration: 500ms;
+        transition: background 500ms, color 500ms;
         background: black;
         color: white;
         border: 3px solid white;
@@ -70,8 +70,14 @@
       }
       button:hover {
         background: #00bf00;
-        color: black;
         cursor: pointer;
+      }
+      #clearBtn {
+        color: red;
+      }
+      #clearBtn:hover {
+        background: red;
+        color: white;
       }
       select[disabled], button[disabled] {
         background: black;
@@ -560,7 +566,8 @@
       2. <span id="queue2"></span><br>
       3. <span id="queue3"></span><br>
       4. <span id="queue4"></span><br>
-      5. <span id="queue5"></span>
+      5. <span id="queue5"></span><br>
+      <button onclick="clearQueue()" id="clearBtn">Clear Queue</button>
     </span>
     <span id="title"><b>0</b>%<br>Loading...</span>
     <audio src="" id="audio"></audio>
@@ -600,6 +607,10 @@
       for (var i = 0; i < queue.length; i++) {
         document.getElementById("queue" + (i + 1)).innerHTML = queue[i][0];
       }
+    }
+    function clearQueue() {
+      queue = [["", 0], ["", 0], ["", 0], ["", 0], ["", 0]];
+      checkQueue();
     }
     function queueSong() {
       if (itemsQueued < queue.length) {
