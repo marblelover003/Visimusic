@@ -644,7 +644,7 @@
     function queueRandomSong() {
       if (itemsQueued < queue.length) {
         var elem = document.getElementById("queue");
-        elem.options.selectedIndex = Math.floor(Math.random() * (elem.options.length - 1)) + 1);
+        elem.options.selectedIndex = Math.floor(Math.random() * (elem.options.length - 1)) + 1;
         if (!elem.options[elem.options.selectedIndex].disabled) queueSong();
       }
     }
