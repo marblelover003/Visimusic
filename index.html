@@ -477,7 +477,7 @@
         <option value="Faster Than Light">Faster Than Light</option>
         <option value="FIGHT">FIGHT</option>
         <option value="Final Boss">Final Boss</option>
-        <option value="Fingerbang" disabled>Fingerbang</option>
+        <option value="Fingerbang">Fingerbang</option>
         <option value="Fire in the Hole">Fire in the Hole</option>
         <option value="Flirt Flirt Oh It Hurts">Flirt Flirt Oh It Hurts</option>
         <option value="Focus">Focus</option>
@@ -681,7 +681,7 @@
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/Not playing.PNG";
         document.getElementById("artist").innerHTML = "???";
       } else {
-        if (song == "Fingerbang") {
+        if (song == "") {
           document.getElementById("button").disabled = true;
         } else {
           document.getElementById("button").disabled = false;
@@ -1017,7 +1017,7 @@
         "Deviance", "Destroid 2 - Wasteland", "Destroid 6 - Put It Down", "Captain Cool",
         "Leaving Leafwood Forest", "Cybertron", "Let It Roar", "To the Stars", "Airwaves",
         "Play It Loud", "Breakdown", "Breakdown VIP", "Disconnected", "Fire in the Hole",
-        "End is Near", "Light Sticks"
+        "End is Near", "Light Sticks", "Fingerbang"
       ];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
@@ -1469,7 +1469,7 @@
           break;
       }
       switch (song) {
-        case "Fingerbang": length = "4:29.000"; break;
+        case "Fingerbang": length = "4:28.852"; break;
         case "Breakdown": length = "4:49.097"; break;
         case "Breakdown VIP": length = "3:54.448"; break;
         case "Disconnected": length = "4:02.050"; break;
