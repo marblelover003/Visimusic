@@ -26,7 +26,13 @@
       }
       a, a:visited {
         color: white;
-        font-size: 16px;
+        transition-duration: 500ms;
+      }
+      a:hover {
+        color: red;
+      }
+      .random:hover {
+        color: yellow;
       }
       button, select, #songSelectMenu, #queueMenu {
         font: 16px Orbitron;
@@ -334,6 +340,7 @@
         <option value="Wormhole">Wormhole</option>
         <option value="Yo! Ho! And a Bottle of Bass!">Yo! Ho! And a Bottle of Bass!</option>
       </select><br>
+      or <a class="random" href="javascript:randomSong();">select a song to play at random</a><br>
       <small>You have selected a song by <b id="artist">???</b></small><br>
       FFT Size:
       <select id="fftsize">
@@ -357,7 +364,7 @@
         <option value=100>100</option>
         <option value=80>80</option>
         <option value=60>60</option>
-        <option value=50>50</option>
+        <option value=50>50 (Best for slower computers)</option>
       </select><br>
       Smoothing:
       <select id="smoothing">
@@ -561,6 +568,7 @@
         <option value="Yo! Ho! And a Bottle of Bass!">Yo! Ho! And a Bottle of Bass!</option>
       </select>
       <button onclick="queueSong()" id="queueBtn">Queue it! &#9656;</button><br>
+      or <a class="random" href="javascript:queueRandomSong();">queue a random song</a>!
       Up next:<br>
       1. <span id="queue1"></span><br>
       2. <span id="queue2"></span><br>
@@ -593,9 +601,16 @@
         progress = document.getElementById("progress"),
         heightlimit = 0,
         songTagVer = document.getElementById("songTagVer"),
-        artist, queue = [["", 0], ["", 0], ["", 0], ["", 0], ["", 0]], itemsQueued = 0, song;
+        artist, queue = [["", 0], ["", 0], ["", 0], ["", 0], ["", 0]], itemsQueued = 0, song,
+        emptyQueue = ["", 0];
     document.getElementById("queue").disabled = true;
     document.getElementById("queueBtn").disabled = true;
+    function randomSong() {
+      var elem = document.getElementById("song");
+      elem.options.selectedIndex = Math.floor(Math.random() * (elem.options.length - 1)) + 1);
+      checkSong();
+      selectSong();
+    }
     function check() {
       if (document.getElementById("queue").value == "") {
         document.getElementById("queueBtn").disabled = true;
@@ -603,9 +618,36 @@
         document.getElementById("queueBtn").disabled = false;
       }
     }
+    function removeQueuedSong(id) {
+      switch (id) {
+        case 0:
+          queue = [queue[1], queue[2], queue[3], queue[4], emptyQueue];
+          break;
+        case 1:
+          queue = [queue[0], queue[2], queue[3], queue[4], emptyQueue];
+          break;
+        case 2:
+          queue = [queue[0], queue[1], queue[3], queue[4], emptyQueue];
+          break;
+        case 3:
+          queue = [queue[0], queue[1], queue[2], queue[4], emptyQueue];
+          break;
+        case 4:
+          queue[4] = emptyQueue;
+          break;
+      }
+      checkQueue();
+    }
+    function queueRandomSong() {
+      if (itemsQueued < queue.length) {
+        var elem = document.getElementById("queue");
+        elem.options.selectedIndex = Math.floor(Math.random() * (elem.options.length - 1)) + 1);
+        queueSong();
+      }
+    }
     function checkQueue() {
       for (var i = 0; i < queue.length; i++) {
-        document.getElementById("queue" + (i + 1)).innerHTML = queue[i][0];
+        document.getElementById("queue" + (i + 1)).innerHTML = queue[i][0] + "(<a href=\"javascript:removeQueuedSong(" + i + ");\">remove</a>)";
       }
     }
     function clearQueue() {
@@ -617,9 +659,7 @@
         queue[itemsQueued][0] = document.getElementById("queue").value;
         queue[itemsQueued][1] = document.getElementById("queue").options.selectedIndex;
         itemsQueued++;
-        for (var i = 0; i < queue.length; i++) {
-          document.getElementById("queue" + (i + 1)).innerHTML = queue[i][0];
-        }
+        checkQueue();
       }
       if (itemsQueued == queue.length) {
         document.getElementById("queue").disabled = true;
