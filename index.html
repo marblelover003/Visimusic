@@ -189,6 +189,7 @@
       .c61::-webkit-progress-value {background: #f5c85a;}
       .c62::-webkit-progress-value {background: #34004b;}
       .c63::-webkit-progress-value {background: #d56b84;}
+      .c64::-webkit-progress-value {background: #dac711;}
       #songSelectMenu, #title {
         transition: opacity 1s linear;
       }
@@ -248,6 +249,7 @@
         <option value="Faster Than Light">Faster Than Light</option>
         <option value="FIGHT">FIGHT</option>
         <option value="Final Boss">Final Boss</option>
+        <option value="Fingerbang">Fingerbang</option>
         <option value="Fire in the Hole">Fire in the Hole</option>
         <option value="Flirt Flirt Oh It Hurts">Flirt Flirt Oh It Hurts</option>
         <option value="Focus">Focus</option>
@@ -475,6 +477,7 @@
         <option value="Faster Than Light">Faster Than Light</option>
         <option value="FIGHT">FIGHT</option>
         <option value="Final Boss">Final Boss</option>
+        <option value="Fingerbang" disabled>Fingerbang</option>
         <option value="Fire in the Hole">Fire in the Hole</option>
         <option value="Flirt Flirt Oh It Hurts">Flirt Flirt Oh It Hurts</option>
         <option value="Focus">Focus</option>
@@ -642,7 +645,7 @@
       if (itemsQueued < queue.length) {
         var elem = document.getElementById("queue");
         elem.options.selectedIndex = Math.floor(Math.random() * (elem.options.length - 1)) + 1);
-        queueSong();
+        if (!elem.options[elem.options.selectedIndex].disabled) queueSong();
       }
     }
     function checkQueue() {
@@ -676,13 +679,16 @@
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/Not playing.PNG";
         document.getElementById("artist").innerHTML = "???";
       } else {
-        if (song == "") {
+        if (song == "Fingerbang") {
           document.getElementById("button").disabled = true;
         } else {
           document.getElementById("button").disabled = false;
         }
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/" + (document.getElementById("song").value == "I Call It Progstep" ? "I Call It Progstep 2" : (document.getElementById("song").value == "Deviance" ? "Deviance 3" : document.getElementById("song").value)) + ".PNG";
         switch (song) {
+          case "Fingerbang":
+            artist = "MDK";
+            break;
           case "Astrocat":
           case "Buzz Kill":
           case "Rat Twist":
@@ -1104,6 +1110,11 @@
           style = styles.single;
           barcolor = 3;
           break;
+        case "Fingerbang":
+          colors = ["#dac711"];
+          style = styles.single;
+          barcolor = 64;
+          break;
         case "Captain Cool":
           colors = ["#34004b"];
           style = styles.single;
@@ -1456,6 +1467,7 @@
           break;
       }
       switch (song) {
+        case "Fingerbang": length = "4:29.000"; break;
         case "Breakdown": length = "4:49.097"; break;
         case "Breakdown VIP": length = "3:54.448"; break;
         case "Disconnected": length = "4:02.050"; break;
