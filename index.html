@@ -610,7 +610,7 @@
     document.getElementById("queueBtn").disabled = true;
     function randomSong() {
       var elem = document.getElementById("song");
-      elem.options.selectedIndex = Math.floor(Math.random() * (elem.options.length - 1)) + 1);
+      elem.options.selectedIndex = Math.floor(Math.random() * (elem.options.length - 1)) + 1;
       checkSong();
       selectSong();
     }
