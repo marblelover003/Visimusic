@@ -640,6 +640,7 @@
           break;
       }
       checkQueue();
+      itemsQueued--;
     }
     function queueRandomSong() {
       if (itemsQueued < queue.length) {
@@ -650,12 +651,13 @@
     }
     function checkQueue() {
       for (var i = 0; i < queue.length; i++) {
-        document.getElementById("queue" + (i + 1)).innerHTML = queue[i][0] + "(<a href=\"javascript:removeQueuedSong(" + i + ");\">remove</a>)";
+        document.getElementById("queue" + (i + 1)).innerHTML = queue[i][0] + (queue[i] == emptyQueue ? "" : " (<a href=\"javascript:removeQueuedSong(" + i + ");\">remove</a>)");
       }
     }
     function clearQueue() {
       queue = [["", 0], ["", 0], ["", 0], ["", 0], ["", 0]];
       checkQueue();
+      itemsQueued = 0;
     }
     function queueSong() {
       if (itemsQueued < queue.length) {
