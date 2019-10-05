@@ -419,9 +419,10 @@
         <option>-55</option>
         <option>-50</option>
       </select><br>
-      Use version <select id="songTagVer" onchange="checkSong()">
-        <option>4</option>
-        <option>5</option>
+      Use <select id="songTagVer" onchange="checkSong()">
+        <option value=4>v4</option>
+        <option value=5>v5</option>
+        <option value=0>no</option>
       </select> song tags. <button onclick="selectSong()" id="button" disabled="true">Play! &#9656;</button>
     </span>
     <span id="queueMenu">
@@ -578,10 +579,14 @@
       3. <span id="queue3"></span><br>
       4. <span id="queue4"></span><br>
       5. <span id="queue5"></span><br>
-      <button onclick="clearQueue()" id="clearBtn">Clear Queue</button>
+      <div style="text-align: right;"><button onclick="clearQueue()" id="clearBtn">Clear Queue</button></div>
     </span>
     <span id="title"><b>0</b>%<br>Loading...</span>
     <audio src="" id="audio"></audio>
+    <span style="position: absolute; top: 8px; right: 8px; width: 200px; font: 16px Montserrat; text-align: center;">
+      bpm<br>
+      <b id="bpm" style="font-size: 50px;">0</b>
+    </span>
     <img width="216" height="216" style="position: absolute; top: 8px; right: 8px;" id="songTag" src="https://marblelover003.github.io/VisimusicSongTags/v4/Not playing.PNG">
     <span id="visualizer">
       <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
@@ -605,7 +610,8 @@
         heightlimit = 0,
         songTagVer = document.getElementById("songTagVer"),
         artist, emptyQueue = ["", 0],
-        queue = [emptyQueue, emptyQueue, emptyQueue, emptyQueue, emptyQueue], itemsQueued = 0, song;
+        queue = [emptyQueue, emptyQueue, emptyQueue, emptyQueue, emptyQueue], itemsQueued = 0, song,
+        bpm;
     document.getElementById("queue").disabled = true;
     document.getElementById("queueBtn").disabled = true;
     function randomSong() {
@@ -674,6 +680,11 @@
     }
     function checkSong() {
       song = document.getElementById("song").value;
+      if (document.getElementById("songTagVer").value == 0) {
+        document.getElementById("songTag").style.visibility = "hidden";
+      } else {
+        document.getElementById("songTag").style.visibility = "visible";
+      }
       document.getElementById("songTag").width = document.getElementById("songTagVer").value == 4 ? 216 : 384;
       document.getElementById("songTag").height = 216;
       if (song == "") {
@@ -1463,147 +1474,147 @@
           break;
       }
       switch (song) {
-        case "Fingerbang": length = "4:28.852"; break;
-        case "Breakdown": length = "4:49.097"; break;
-        case "Breakdown VIP": length = "3:54.448"; break;
-        case "Disconnected": length = "4:02.050"; break;
-        case "Fire in the Hole": length = "3:47.160"; break;
-        case "Backlash": length = "5:22.115"; break;
-        case "BLAST": length = "4:20.937"; break;
-        case "COOKIES": length = "3:09.361"; break;
-        case "Eclipse": length = "5:37.606"; break;
-        case "Evolution": length = "5:37.893"; break;
-        case "Forged in Stars": length = "3:16.257"; break;
-        case "Gravity": length = "5:54.115"; break;
-        case "Heist": length = "3:02.204"; break;
-        case "I\'m being Reelistic": length = "3:50.687"; break;
-        case "OKAY": length = "3:07.141"; break;
-        case "PIXEL": length = "3:18.373"; break;
-        case "Rat Twist": length = "4:00.117"; break;
-        case "ROCK IT": length = "3:11.242"; break;
-        case "Sentinel": length = "5:28.437"; break;
-        case "Sidewinder": length = "6:46.491"; break;
-        case "Surge": length = "3:56.930"; break;
-        case "The Escape": length = "5:03.673"; break;
-        case "This Time": length = "4:32.378"; break;
-        case "Turbo Penguin": length = "3:31.356"; break;
-        case "Airwaves": length = "4:42.148"; break;
-        case "Astrocat": length = "5:21.619"; break;
-        case "Barracuda": length = "4:22.661"; break;
-        case "Be Gone Mr. Gawne": length = "4:17.906"; break;
-        case "Buzz Kill": length = "5:55.813"; break;
-        case "Caps On, Hats Off": length = "2:36.760"; break;
-        case "Captain Cool": length = "3:19.026"; break;
-        case "Leaving Leafwood Forest": length = "3:24.591"; break;
-        case "Cascade": length = "4:20.048"; break;
-        case "Cheat Codes": length = "3:32.349"; break;
-        case "Cheat Codes VIP": length = "3:24.486"; break;
-        case "Checkpoint": length = "3:43.895"; break;
-        case "Chip Zeal": length = "3:29.920"; break;
-        case "Chronos": length = "4:29.740"; break;
-        case "Clash": length = "3:40.447"; break;
-        case "Commando Steve": length = "3:26.942"; break;
-        case "Cool Friends": length = "3:59.072"; break;
-        case "Core": length = "4:33.371"; break;
-        case "Corrupted": length = "6:16.737"; break;
-        case "Courtesy": length = "3:11.164"; break;
-        case "Cruise Control": length = "4:01.606"; break;
-        case "Crystal Tokyo": length = "5:28.124"; break;
-        case "Cybertron": length = "6:09.475"; break;
-        case "Dance of the Incognizant": length = "7:10.158"; break;
-        case "Delayed Friend Request": length = "6:05.897"; break;
-        case "Destroid 1 - Raise Your Fist": length = "4:42.775"; break;
-        case "Destroid 2 - Wasteland": length = "4:38.857"; break;
-        case "Destroid 6 - Put It Down": length = "3:27.647"; break;
-        case "Destroid 8 - Annihilate": length = "5:10.177"; break;
-        case "Destroid 10 - Funk Hole": length = "4:40.084"; break;
-        case "Deviance": length = "5:04.091"; break;
-        case "Duality": length = "5:58.870"; break;
-        case "Dubwoofer Substep": length = "4:44.865"; break;
-        case "End is Near": length = "4:03.382"; break;
-        case "Exoskelephone": length = "5:53.123"; break;
-        case "Farbror Melker Fixar Fiskdamm (Fastbom Cover)": length = "3:23.389"; break;
-        case "Faster Than Light": length = "5:02.785"; break;
-        case "FIGHT": length = "3:35.719"; break;
-        case "Final Boss": length = "5:16.813"; break;
-        case "Flirt Flirt Oh It Hurts": length = "3:31.513"; break;
-        case "Focus": length = "2:42.847"; break;
-        case "FOX": length = "5:17.178"; break;
-        case "FTW": length = "4:17.671"; break;
-        case "Glitch": length = "5:47.480"; break;
-        case "Grind": length = "5:15.376"; break;
-        case "Halcyon": length = "6:10.834"; break;
-        case "Here It Comes": length = "3:32.088"; break;
-        case "Highscore": length = "4:20.832"; break;
-        case "Houston": length = "5:23.500"; break;
-        case "HYPE": length = "3:02.909"; break;
-        case "Into The Zone": length = "2:41.462"; break;
-        case "It\'s Pronounced Omnitica": length = "5:00.225"; break;
-        case "Jack Russel": length = "3:21.691"; break;
-        case "Legacy": length = "5:17.074"; break;
-        case "Let It Roar": length = "5:46.409"; break;
-        case "Light Sticks": length = "5:19.843"; break;
-        case "Livewire": length = "5:42.413"; break;
-        case "Logic Gatekeeper": length = "4:58.736"; break;
-        case "Long Live The New Fresh": length = "4:27.049"; break;
-        case "Milky Ways": length = "3:07.611"; break;
-        case "MOSHI": length = "3:35.170"; break;
-        case "New Game": length = "4:19.317"; break;
-        case "No Party Like a Mojang Party": length = "5:51.529"; break;
-        case "On The Run": length = "4:28.564"; break;
-        case "Once Again": length = "3:46.351"; break;
-        case "Otis": length = "2:36.081"; break;
-        case "Paper Dolls": length = "2:55.777"; break;
-        case "Parallel Processing": length = "8:29.022"; break;
-        case "PARTY": length = "3:39.480"; break;
-        case "Partyt Ar Igang": length = "2:57.136"; break;
-        case "Peer Gynt": length = "2:21.557"; break;
-        case "Pirate Manners": length = "3:02.151"; break;
-        case "PLAY": length = "3:04.111"; break;
-        case "Play It Loud": length = "7:07.154"; break;
-        case "Pyro": length = "3:36.058"; break;
-        case "Quake": length = "5:41.498"; break;
-        case "Rainbow Road": length = "2:53.061"; break;
-        case "Razor Sharp": length = "4:41.808"; break;
-        case "Renegade": length = "6:10.546"; break;
-        case "Rhapsody": length = "6:13.054"; break;
-        case "Rocket": length = "6:28.257"; break;
-        case "Rocktronik": length = "5:08.166"; break;
-        case "SAIKOU": length = "2:55.412"; break;
-        case "Sevcon": length = "4:34.755"; break;
-        case "Sexy Beast": length = "5:15.350"; break;
-        case "So Far Away": length = "3:39.297"; break;
-        case "Spection": length = "4:52.362"; break;
-        case "Spectra": length = "4:00.117"; break;
-        case "SPOOKY": length = "3:49.799"; break;
-        case "Starship Showdown": length = "4:08.293"; break;
-        case "Steampunk Warlord": length = "3:34.099"; break;
-        case "Stock & Pull": length = "5:51.007"; break;
-        case "Sugar Rush": length = "4:44.865"; break;
-        case "Tension": length = "4:58.109"; break;
-        case "Termination Shock": length = "4:50.272"; break;
-        case "The Art of War": length = "3:13.280"; break;
-        case "The Cave, The Treasure": length = "3:27.307"; break;
-        case "The Lunar Whale": length = "4:35.826"; break;
-        case "The Maze of Mayonnaise": length = "3:11.190"; break;
-        case "Till It\'s Over": length = "4:30.863"; break;
-        case "Time Goes By": length = "3:26.315"; break;
-        case "Time Lapse": length = "3:05.391"; break;
-        case "Timewarp": length = "5:02.419"; break;
-        case "To the Stars": length = "3:22.396"; break;
-        case "Tokyo Skies": length = "3:52.463"; break;
-        case "Try This": length = "3:49.694"; break;
-        case "Unlocked": length = "3:47.683"; break;
-        case "Vindicate Me": length = "3:26.471"; break;
-        case "Wicked": length = "3:41.126"; break;
-        case "Yo! Ho! And a Bottle of Bass!": length = "6:24.130"; break;
-        case "Chipland": length = "3:10.458"; break;
-        case "Crab Rave": length = "2:41.776"; break;
-        case "CRAZY": length = "3:16.963"; break;
-        case "I Call It Progstep": length = "3:55.624"; break;
-        case "Omniverse": length = "3:28.718"; break;
-        case "Opia": length = "3:09.335"; break;
-        case "Wormhole": length = "3:40.395"; break;
+        case "Fingerbang": length = "4:28.852"; bpm = 112; break;
+        case "Breakdown": length = "4:49.097"; bpm = 140; break;
+        case "Breakdown VIP": length = "3:54.448"; bpm = 174; break;
+        case "Disconnected": length = "4:02.050"; bpm = 128; break;
+        case "Fire in the Hole": length = "3:47.160"; bpm = 108; break;
+        case "Backlash": length = "5:22.115"; bpm = 140; break;
+        case "BLAST": length = "4:20.937"; bpm = 128; break;
+        case "COOKIES": length = "3:09.361"; bpm = 128; break;
+        case "Eclipse": length = "5:37.606"; bpm = 128; break;
+        case "Evolution": length = "5:37.893"; bpm = 146; break;
+        case "Forged in Stars": length = "3:16.257"; bpm = 143; break;
+        case "Gravity": length = "5:54.115"; bpm = 128; break;
+        case "Heist": length = "3:02.204"; bpm = 170; break;
+        case "I\'m being Reelistic": length = "3:50.687"; bpm = 115; break;
+        case "OKAY": length = "3:07.141"; bpm = 128; break;
+        case "PIXEL": length = "3:18.373"; bpm = 128; break;
+        case "Rat Twist": length = "4:00.117"; bpm = 128; break;
+        case "ROCK IT": length = "3:11.242"; bpm = 128; break;
+        case "Sentinel": length = "5:28.437"; bpm = 130; break;
+        case "Sidewinder": length = "6:46.491"; bpm = 130; break;
+        case "Surge": length = "3:56.930"; bpm = 128; break;
+        case "The Escape": length = "5:03.673"; bpm = 128; break;
+        case "This Time": length = "4:32.378"; bpm = 128; break;
+        case "Turbo Penguin": length = "3:31.356"; bpm = 128; break;
+        case "Airwaves": length = "4:42.148"; bpm = 128; break;
+        case "Astrocat": length = "5:21.619"; bpm = 130; break;
+        case "Barracuda": length = "4:22.661"; bpm = 130; break;
+        case "Be Gone Mr. Gawne": length = "4:17.906"; bpm = 167; break;
+        case "Buzz Kill": length = "5:55.813"; bpm = 128; break;
+        case "Caps On, Hats Off": length = "2:36.760"; bpm = 95; break;
+        case "Captain Cool": length = "3:19.026"; bpm = 145; break;
+        case "Leaving Leafwood Forest": length = "3:24.591"; bpm = 125; break;
+        case "Cascade": length = "4:20.048"; bpm = 129; break;
+        case "Cheat Codes": length = "3:32.349"; bpm = 128; break;
+        case "Cheat Codes VIP": length = "3:24.486"; bpm = 128; break;
+        case "Checkpoint": length = "3:43.895"; bpm = 140; break;
+        case "Chip Zeal": length = "3:29.920"; bpm = 170; break;
+        case "Chronos": length = "4:29.740"; bpm = 134; break;
+        case "Clash": length = "3:40.447"; bpm = 128; break;
+        case "Commando Steve": length = "3:26.942"; bpm = 145; break;
+        case "Cool Friends": length = "3:59.072"; bpm = 115; break;
+        case "Core": length = "4:33.371"; bpm = 145; break;
+        case "Corrupted": length = "6:16.737"; bpm = 139; break;
+        case "Courtesy": length = "3:11.164"; bpm = 130; break;
+        case "Cruise Control": length = "4:01.606"; bpm = 140; break;
+        case "Crystal Tokyo": length = "5:28.124"; bpm = 174; break;
+        case "Cybertron": length = "6:09.475"; bpm = 128; break;
+        case "Dance of the Incognizant": length = "7:10.158"; bpm = 135; break;
+        case "Delayed Friend Request": length = "6:05.897"; bpm = 130; break;
+        case "Destroid 1 - Raise Your Fist": length = "4:42.775"; bpm = 174; break;
+        case "Destroid 2 - Wasteland": length = "4:38.857"; bpm = 140; break;
+        case "Destroid 6 - Put It Down": length = "3:27.647"; bpm = 176; break;
+        case "Destroid 8 - Annihilate": length = "5:10.177"; bpm = 128; break;
+        case "Destroid 10 - Funk Hole": length = "4:40.084"; bpm = 110; break;
+        case "Deviance": length = "5:04.091"; bpm = 55; break;
+        case "Duality": length = "5:58.870"; bpm = 160; break;
+        case "Dubwoofer Substep": length = "4:44.865"; bpm = 109; break;
+        case "End is Near": length = "4:03.382"; bpm = 174; break;
+        case "Exoskelephone": length = "5:53.123"; bpm = 128; break;
+        case "Farbror Melker Fixar Fiskdamm (Fastbom Cover)": length = "3:23.389"; bpm = 169; break;
+        case "Faster Than Light": length = "5:02.785"; bpm = 128; break;
+        case "FIGHT": length = "3:35.719"; bpm = 128; break;
+        case "Final Boss": length = "5:16.813"; bpm = 130; break;
+        case "Flirt Flirt Oh It Hurts": length = "3:31.513"; bpm = 168; break;
+        case "Focus": length = "2:42.847"; bpm = 174; break;
+        case "FOX": length = "5:17.178"; bpm = 138; break;
+        case "FTW": length = "4:17.671"; bpm = 130; break;
+        case "Glitch": length = "5:47.480"; bpm = 158; break;
+        case "Grind": length = "5:15.376"; bpm = 128; break;
+        case "Halcyon": length = "6:10.834"; bpm = 92; break;
+        case "Here It Comes": length = "3:32.088"; bpm = 150; break;
+        case "Highscore": length = "4:20.832"; bpm = 110; break;
+        case "Houston": length = "5:23.500"; bpm = 130; break;
+        case "HYPE": length = "3:02.909"; bpm = 128; break;
+        case "Into The Zone": length = "2:41.462"; bpm = 122; break;
+        case "It\'s Pronounced Omnitica": length = "5:00.225"; bpm = 128; break;
+        case "Jack Russel": length = "3:21.691"; bpm = 134; break;
+        case "Legacy": length = "5:17.074"; bpm = 114; break;
+        case "Let It Roar": length = "5:46.409"; bpm = 140; break;
+        case "Light Sticks": length = "5:19.843"; bpm = 128; break;
+        case "Livewire": length = "5:42.413"; bpm = 130; break;
+        case "Logic Gatekeeper": length = "4:58.736"; bpm = 163; break;
+        case "Long Live The New Fresh": length = "4:27.049"; bpm = 127; break;
+        case "Milky Ways": length = "3:07.611"; bpm = 182; break;
+        case "MOSHI": length = "3:35.170"; bpm = 128; break;
+        case "New Game": length = "4:19.317"; bpm = 128; break;
+        case "No Party Like a Mojang Party": length = "5:51.529"; bpm = 125; break;
+        case "On The Run": length = "4:28.564"; bpm = 160; break;
+        case "Once Again": length = "3:46.351"; bpm = 110; break;
+        case "Otis": length = "2:36.081"; bpm = 135; break;
+        case "Paper Dolls": length = "2:55.777"; bpm = 200; break;
+        case "Parallel Processing": length = "8:29.022"; bpm = 109; break;
+        case "PARTY": length = "3:39.480"; bpm = 128; break;
+        case "Partyt Ar Igang": length = "2:57.136"; bpm = 127; break;
+        case "Peer Gynt": length = "2:21.557"; bpm = 142; break;
+        case "Pirate Manners": length = "3:02.151"; bpm = 115; break;
+        case "PLAY": length = "3:04.111"; bpm = 128; break;
+        case "Play It Loud": length = "7:07.154"; bpm = 130; break;
+        case "Pyro": length = "3:36.058"; bpm = 145; break;
+        case "Quake": length = "5:41.498"; bpm = 128; break;
+        case "Rainbow Road": length = "2:53.061"; bpm = 170; break;
+        case "Razor Sharp": length = "4:41.808"; bpm = 110; break;
+        case "Renegade": length = "6:10.546"; bpm = 127; break;
+        case "Rhapsody": length = "6:13.054"; bpm = 104; break;
+        case "Rocket": length = "6:28.257"; bpm = 128; break;
+        case "Rocktronik": length = "5:08.166"; bpm = 130; break;
+        case "SAIKOU": length = "2:55.412"; bpm = 128; break;
+        case "Sevcon": length = "4:34.755"; bpm = 133; break;
+        case "Sexy Beast": length = "5:15.350"; bpm = 128; break;
+        case "So Far Away": length = "3:39.297"; bpm = 125; break;
+        case "Spection": length = "4:52.362"; bpm = 170; break;
+        case "Spectra": length = "4:00.117"; bpm = 130; break;
+        case "SPOOKY": length = "3:49.799"; bpm = 128; break;
+        case "Starship Showdown": length = "4:08.293"; bpm = 147; break;
+        case "Steampunk Warlord": length = "3:34.099"; bpm = 157; break;
+        case "Stock & Pull": length = "5:51.007"; bpm = 128; break;
+        case "Sugar Rush": length = "4:44.865"; bpm = 128; break;
+        case "Tension": length = "4:58.109"; bpm = 143; break;
+        case "Termination Shock": length = "4:50.272"; bpm = 126; break;
+        case "The Art of War": length = "3:13.280"; bpm = 174; break;
+        case "The Cave, The Treasure": length = "3:27.307"; bpm = 181; break;
+        case "The Lunar Whale": length = "4:35.826"; bpm = 109; break;
+        case "The Maze of Mayonnaise": length = "3:11.190"; bpm = 135; break;
+        case "Till It\'s Over": length = "4:30.863"; bpm = 110; break;
+        case "Time Goes By": length = "3:26.315"; bpm = 128; break;
+        case "Time Lapse": length = "3:05.391"; bpm = 127; break;
+        case "Timewarp": length = "5:02.419"; bpm = 128; break;
+        case "To the Stars": length = "3:22.396"; bpm = 175; break;
+        case "Tokyo Skies": length = "3:52.463"; bpm = 126; break;
+        case "Try This": length = "3:49.694"; bpm = 174; break;
+        case "Unlocked": length = "3:47.683"; bpm = 128; break;
+        case "Vindicate Me": length = "3:26.471"; bpm = 100; break;
+        case "Wicked": length = "3:41.126"; bpm = 100; break;
+        case "Yo! Ho! And a Bottle of Bass!": length = "6:24.130"; bpm = 145; break;
+        case "Chipland": length = "3:10.458"; bpm = 174; break;
+        case "Crab Rave": length = "2:41.776"; bpm = 125; break;
+        case "CRAZY": length = "3:16.963"; bpm = 128; break;
+        case "I Call It Progstep": length = "3:55.624"; bpm = 72; break;
+        case "Omniverse": length = "3:28.718"; bpm = 174; break;
+        case "Opia": length = "3:09.335"; bpm = 170; break;
+        case "Wormhole": length = "3:40.395"; bpm = 128; break;
       }
       for (var i = 1; i <= 100; i++) {
         progress.classList.remove("c" + i);
@@ -1669,40 +1680,52 @@
       progress.value = audio.currentTime * 1000;
       if (song == "Faster Than Light" && audio.currentTime >= 187) {
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Faster Than Light 2.PNG";
+        bpm = 170;
       }
       if (song == "Destroid 1 - Raise Your Fist" && audio.currentTime >= 183.5) {
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Destroid 1 - Raise Your Fist 2.PNG";
+        bpm = 212;
       }
       if (song == "It\'s Pronounced Omnitica" && audio.currentTime >= 209.5) {
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/It\'s Pronounced Omnitica 2.PNG";
+        bpm = 170;
       }
       if (song == "Wormhole" && audio.currentTime >= 156) {
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Wormhole 2.PNG";
+        bpm = 150;
       }
       if (song == "Caps On, Hats Off" && audio.currentTime >= 116) {
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Caps On, Hats Off 2.PNG";
+        bpm = 190;
       }
       if (song == "I Call It Progstep") {
         if (audio.currentTime >= 24.5 && audio.currentTime < 176) {
           document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/I Call It Progstep 2.PNG";
+          bpm = 100;
         } else if (audio.currentTime >= 176) {
           document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/I Call It Progstep 3.PNG";
+          bpm = 144;
         }
       }
       if (song == "Deviance") {
         if (audio.currentTime >= 52.5 && audio.currentTime < 154.5) {
           document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Deviance 2.PNG";
+          bpm = 110;
         } else if (audio.currentTime >= 154.5 && audio.currentTime < 254) {
           document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Deviance 3.PNG";
+          bpm = 175;
         } else if (audio.currentTime >= 254) {
           document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Deviance 4.PNG";
+          bpm = 88;
         }
       }
       if (song == "Wicked") {
         if ((audio.currentTime >= 48 && audio.currentTime < 77) || (audio.currentTime >= 163.2 && audio.currentTime < 192.2)) {
           document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Wicked 2.PNG";
+          bpm = 200;
         } else {
           document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Wicked.PNG";
+          bpm = 100;
         }
       }
       var docTitle = document.title;
@@ -1729,6 +1752,7 @@
           )
         )
       ) + "</b> by <b>" + artist + "</b></span>";
+      document.getElementById("bpm").innerHTML = bpm;
     }
     function animationLooper(){
       analyser.getByteFrequencyData(frequency_array);
