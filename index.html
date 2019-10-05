@@ -604,8 +604,8 @@
         progress = document.getElementById("progress"),
         heightlimit = 0,
         songTagVer = document.getElementById("songTagVer"),
-        artist, queue = [["", 0], ["", 0], ["", 0], ["", 0], ["", 0]], itemsQueued = 0, song,
-        emptyQueue = ["", 0];
+        artist, emptyQueue = ["", 0],
+        queue = [emptyQueue, emptyQueue, emptyQueue, emptyQueue, emptyQueue], itemsQueued = 0, song;
     document.getElementById("queue").disabled = true;
     document.getElementById("queueBtn").disabled = true;
     function randomSong() {
@@ -651,7 +651,7 @@
     }
     function checkQueue() {
       for (var i = 0; i < queue.length; i++) {
-        document.getElementById("queue" + (i + 1)).innerHTML = queue[i][0] + (queue[i] == emptyQueue ? "" : " (<a href=\"javascript:removeQueuedSong(" + i + ");\">remove</a>)");
+        document.getElementById("queue" + (i + 1)).innerHTML = queue[i][0] + (queue[i] == ["", 0] ? "" : " (<a href=\"javascript:removeQueuedSong(" + i + ");\">remove</a>)");
       }
     }
     function clearQueue() {
@@ -944,13 +944,7 @@
         if (queue[0][0] != "") {
           document.getElementById("song").options.selectedIndex = queue[0][1];
           checkSong();
-          queue[0] = queue[1];
-          queue[1] = queue[2];
-          queue[2] = queue[3];
-          queue[3] = queue[4];
-          queue[4] = ["", 0];
-          checkQueue();
-          itemsQueued--;
+          removeQueuedSong(0);
           document.getElementById("button").click();
           progress.value = 0;
         } else {
