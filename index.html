@@ -1681,6 +1681,7 @@
       progress.value = audio.currentTime * 1000;
       if (song == "Faster Than Light" && audio.currentTime >= 185.5 && audio.currentTime < 187) {
         bpm = Math.floor(128 + ((187 - audio.currentTime) / 1.5 * 42));
+      }
       if (song == "Faster Than Light" && audio.currentTime >= 187) {
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Faster Than Light 2.PNG";
         bpm = 170;
