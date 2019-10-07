@@ -951,7 +951,6 @@
       audio.addEventListener("ended", function() {
         document.getElementById("queue").disabled = false;
         document.getElementById("queueBtn").disabled = false;
-        bpm = 0;
         clearInterval(positions);
         if (queue[0][0] != "") {
           document.getElementById("song").options.selectedIndex = queue[0][1];
@@ -978,6 +977,7 @@
           } else {
             alert(document.getElementById("song").value + " by " + artist + " has ended.");
           }
+          document.getElementById("bpm").innerHTML = 0;
           audio.src = "";
           document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/Not playing.PNG";
           document.getElementById("song").selectedIndex = 0;
@@ -1717,7 +1717,9 @@
         }
         if (audio.currentTime >= 24.5 && audio.currentTime < 176) {
           document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/I Call It Progstep 2.PNG";
-          bpm = 100;
+          if (audio.currentTime < 168) {
+            bpm = 100;
+          }
         } else if (audio.currentTime >= 176) {
           document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/I Call It Progstep 3.PNG";
           bpm = 144;
