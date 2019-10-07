@@ -1731,7 +1731,9 @@
         }
         if (audio.currentTime >= 52.5 && audio.currentTime < 166.5) {
           document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Deviance 2.PNG";
-          bpm = 110;
+          if (audio.currentTime < 139) {
+            bpm = 110;
+          }
         } else if (audio.currentTime >= 154.5 && audio.currentTime < 254) {
           document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Deviance 3.PNG";
           bpm = 175;
