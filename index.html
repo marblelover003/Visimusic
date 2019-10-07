@@ -579,7 +579,7 @@
       3. <span id="queue3"></span><br>
       4. <span id="queue4"></span><br>
       5. <span id="queue5"></span><br>
-      <div style="text-align: right;"><button onclick="clearQueue()" id="clearBtn">Clear Queue</button></div>
+      <span style="display: inline-block; width: 100%; text-align: right;"><button onclick="clearQueue()" id="clearBtn">Clear Queue</button></span>
     </span>
     <span id="title"><b>0</b>%<br>Loading...</span>
     <audio src="" id="audio"></audio>
@@ -951,6 +951,7 @@
       audio.addEventListener("ended", function() {
         document.getElementById("queue").disabled = false;
         document.getElementById("queueBtn").disabled = false;
+        bpm = 0;
         clearInterval(positions);
         if (queue[0][0] != "") {
           document.getElementById("song").options.selectedIndex = queue[0][1];
@@ -1678,6 +1679,8 @@
       document.getElementById("timeLeft").innerHTML = "-" + t_m + ":" + ("0" + t_s).slice(-2);
       var songProgress = Math.floor(pos / len * 1000) / 10;
       progress.value = audio.currentTime * 1000;
+      if (song == "Faster Than Light" && audio.currentTime >= 185.5 && audio.currentTime < 187) {
+        bpm = Math.floor(128 + ((187 - audio.currentTime) / 1.5 * 42));
       if (song == "Faster Than Light" && audio.currentTime >= 187) {
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Faster Than Light 2.PNG";
         bpm = 170;
@@ -1686,11 +1689,17 @@
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Destroid 1 - Raise Your Fist 2.PNG";
         bpm = 212;
       }
+      if (song == "It\'s Pronounced Omnitica" && audio.currentTime >= 199.2 && audio.currentTime < 209.5) {
+        bpm = Math.floor(128 + ((209.5 - audio.currentTime) / 10.3 * 42));
+      }
       if (song == "It\'s Pronounced Omnitica" && audio.currentTime >= 209.5) {
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/It\'s Pronounced Omnitica 2.PNG";
         bpm = 170;
       }
-      if (song == "Wormhole" && audio.currentTime >= 156) {
+      if (song == "Wormhole" && audio.currentTime >= 135.1 && audio.currentTime < 162.7) {
+        bpm = Math.floor(128 + ((162.7 - audio.currentTime) / 27.6 * 22));
+      }
+      if (song == "Wormhole" && audio.currentTime >= 162.7) {
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Wormhole 2.PNG";
         bpm = 150;
       }
@@ -1699,6 +1708,12 @@
         bpm = 190;
       }
       if (song == "I Call It Progstep") {
+        if (audio.currentTime >= 13.7 && audio.currentTime < 24.5) {
+          bpm = Math.floor(72 + ((24.5 - audio.currentTime) / 10.8 * 28));
+        }
+        if (audio.currentTime >= 168.5 && audio.currentTime < 176) {
+          bpm = Math.floor(100 + ((176 - audio.currentTime) / 7.5 * 44));
+        }
         if (audio.currentTime >= 24.5 && audio.currentTime < 176) {
           document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/I Call It Progstep 2.PNG";
           bpm = 100;
@@ -1708,7 +1723,10 @@
         }
       }
       if (song == "Deviance") {
-        if (audio.currentTime >= 52.5 && audio.currentTime < 154.5) {
+        if (audio.currentTime >= 139.9 && audio.currentTime < 166.5) {
+          bpm = Math.floor(110 + ((166.5 - audio.currentTime) / 26.6 * 65));
+        }
+        if (audio.currentTime >= 52.5 && audio.currentTime < 166.5) {
           document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Deviance 2.PNG";
           bpm = 110;
         } else if (audio.currentTime >= 154.5 && audio.currentTime < 254) {
