@@ -1680,7 +1680,7 @@
       var songProgress = Math.floor(pos / len * 1000) / 10;
       progress.value = audio.currentTime * 1000;
       if (song == "Faster Than Light" && audio.currentTime >= 185.5 && audio.currentTime < 187) {
-        bpm = Math.floor(128 + ((187 - audio.currentTime) / 1.5 * 42));
+        bpm = Math.floor(170 - ((187 - audio.currentTime) / 1.5 * 42));
       }
       if (song == "Faster Than Light" && audio.currentTime >= 187) {
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Faster Than Light 2.PNG";
@@ -1691,14 +1691,14 @@
         bpm = 212;
       }
       if (song == "It\'s Pronounced Omnitica" && audio.currentTime >= 199.2 && audio.currentTime < 209.5) {
-        bpm = Math.floor(128 + ((209.5 - audio.currentTime) / 10.3 * 42));
+        bpm = Math.floor(170 - ((209.5 - audio.currentTime) / 10.3 * 42));
       }
       if (song == "It\'s Pronounced Omnitica" && audio.currentTime >= 209.5) {
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/It\'s Pronounced Omnitica 2.PNG";
         bpm = 170;
       }
       if (song == "Wormhole" && audio.currentTime >= 135.1 && audio.currentTime < 162.7) {
-        bpm = Math.floor(128 + ((162.7 - audio.currentTime) / 27.6 * 22));
+        bpm = Math.floor(150 - ((162.7 - audio.currentTime) / 27.6 * 22));
       }
       if (song == "Wormhole" && audio.currentTime >= 162.7) {
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Wormhole 2.PNG";
@@ -1710,10 +1710,10 @@
       }
       if (song == "I Call It Progstep") {
         if (audio.currentTime >= 13.7 && audio.currentTime < 24.5) {
-          bpm = Math.floor(72 + ((24.5 - audio.currentTime) / 10.8 * 28));
+          bpm = Math.floor(100 - ((24.5 - audio.currentTime) / 10.8 * 28));
         }
         if (audio.currentTime >= 168.5 && audio.currentTime < 176) {
-          bpm = Math.floor(100 + ((176 - audio.currentTime) / 7.5 * 44));
+          bpm = Math.floor(144 - ((176 - audio.currentTime) / 7.5 * 44));
         }
         if (audio.currentTime >= 24.5 && audio.currentTime < 176) {
           document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/I Call It Progstep 2.PNG";
@@ -1725,7 +1725,7 @@
       }
       if (song == "Deviance") {
         if (audio.currentTime >= 139.9 && audio.currentTime < 166.5) {
-          bpm = Math.floor(110 + ((166.5 - audio.currentTime) / 26.6 * 65));
+          bpm = Math.floor(175 - ((166.5 - audio.currentTime) / 26.6 * 65));
         }
         if (audio.currentTime >= 52.5 && audio.currentTime < 166.5) {
           document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Deviance 2.PNG";
