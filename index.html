@@ -190,6 +190,7 @@
       .c62::-webkit-progress-value {background: #34004b;}
       .c63::-webkit-progress-value {background: #d56b84;}
       .c64::-webkit-progress-value {background: #dac711;}
+      .c65::-webkit-progress-value {background: #41b1f3;}
       #songSelectMenu, #title {
         transition: opacity 1s linear;
       }
@@ -243,6 +244,7 @@
         <option value="Dubwoofer Substep">Dubwoofer Substep</option>
         <option value="Eclipse">Eclipse</option>
         <option value="End is Near">End is Near (Fire in the Hole VIP)</option>
+        <option value="EPIC">EPIC</option>
         <option value="Evolution">Evolution</option>
         <option value="Exoskelephone">Exoskelephone</option>
         <option value="Farbror Melker Fixar Fiskdamm (Fastbom Cover)">Farbror Melker Fixar Fiskdamm (Fastbom Cover)</option>
@@ -472,6 +474,7 @@
         <option value="Dubwoofer Substep">Dubwoofer Substep</option>
         <option value="Eclipse">Eclipse</option>
         <option value="End is Near (Fire in the Hole VIP)">End is Near (Fire in the Hole VIP)</option>
+        <option value="EPIC">EPIC</option>
         <option value="Evolution">Evolution</option>
         <option value="Exoskelephone">Exoskelephone</option>
         <option value="Farbror Melker Fixar Fiskdamm (Fastbom Cover)">Farbror Melker Fixar Fiskdamm (Fastbom Cover)</option>
@@ -825,6 +828,7 @@
           case "ROCK IT":
           case "SAIKOU":
           case "SPOOKY":
+          case "EPIC":
             artist = "Tokyo Machine";
             break;
           case "Long Live The New Fresh":
@@ -1023,7 +1027,7 @@
         "Deviance", "Destroid 2 - Wasteland", "Destroid 6 - Put It Down", "Captain Cool",
         "Leaving Leafwood Forest", "Cybertron", "Let It Roar", "To the Stars", "Airwaves",
         "Play It Loud", "Breakdown", "Breakdown VIP", "Disconnected", "Fire in the Hole",
-        "End is Near", "Light Sticks", "Fingerbang"
+        "End is Near", "Light Sticks", "Fingerbang", "EPIC"
       ];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
@@ -1037,7 +1041,7 @@
       } else {
         audio.src = "https://marblelover003.github.io/Visimusic/" + song + ".mp3";
       }
-      document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/" + song + ".PNG";
+      document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/" + (song == "Deviance" ? "Deviance 2" : song) + ".PNG";
       if (pageInitiated == false) {
         initPage();
       }
@@ -1473,6 +1477,11 @@
           style = styles.single;
           barcolor = 63;
           break;
+        case "EPIC":
+          colors = ["#41b1f3"];
+          style = styles.single;
+          barcolor = 65;
+          break;
       }
       switch (song) {
         case "Fingerbang": length = "4:28.852"; bpm = 112; break;
@@ -1529,7 +1538,7 @@
         case "Destroid 6 - Put It Down": length = "3:27.647"; bpm = 176; break;
         case "Destroid 8 - Annihilate": length = "5:10.177"; bpm = 128; break;
         case "Destroid 10 - Funk Hole": length = "4:40.084"; bpm = 110; break;
-        case "Deviance": length = "5:04.091"; bpm = 55; break;
+        case "Deviance": length = "5:04.091"; bpm = 110; break;
         case "Duality": length = "5:58.870"; bpm = 160; break;
         case "Dubwoofer Substep": length = "4:44.865"; bpm = 109; break;
         case "End is Near": length = "4:03.382"; bpm = 174; break;
@@ -1616,6 +1625,7 @@
         case "Omniverse": length = "3:28.718"; bpm = 174; break;
         case "Opia": length = "3:09.335"; bpm = 170; break;
         case "Wormhole": length = "3:40.395"; bpm = 128; break;
+        case "EPIC": length = "3:38.618"; bpm = 128; break;
       }
       for (var i = 1; i <= 100; i++) {
         progress.classList.remove("c" + i);
@@ -1679,10 +1689,10 @@
       document.getElementById("timeLeft").innerHTML = "-" + t_m + ":" + ("0" + t_s).slice(-2);
       var songProgress = Math.floor(pos / len * 1000) / 10;
       progress.value = audio.currentTime * 1000;
-      if (song == "Faster Than Light" && audio.currentTime >= 185.5 && audio.currentTime < 187) {
-        bpm = Math.floor(170 - ((187 - audio.currentTime) / 1.5 * 42));
+      if (song == "Faster Than Light" && audio.currentTime >= 185.3 && audio.currentTime < 186.9) {
+        bpm = Math.floor(170 - ((186.9 - audio.currentTime) / 1.6 * 42));
       }
-      if (song == "Faster Than Light" && audio.currentTime >= 187) {
+      if (song == "Faster Than Light" && audio.currentTime >= 186.9) {
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Faster Than Light 2.PNG";
         bpm = 170;
       }
@@ -1690,17 +1700,17 @@
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Destroid 1 - Raise Your Fist 2.PNG";
         bpm = 212;
       }
-      if (song == "It\'s Pronounced Omnitica" && audio.currentTime >= 199.2 && audio.currentTime < 209.5) {
-        bpm = Math.floor(170 - ((209.5 - audio.currentTime) / 10.3 * 42));
+      if (song == "It\'s Pronounced Omnitica" && audio.currentTime >= 199.1 && audio.currentTime < 209.7) {
+        bpm = Math.floor(170 - ((209.7 - audio.currentTime) / 10.6 * 42));
       }
-      if (song == "It\'s Pronounced Omnitica" && audio.currentTime >= 209.5) {
+      if (song == "It\'s Pronounced Omnitica" && audio.currentTime >= 209.7) {
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/It\'s Pronounced Omnitica 2.PNG";
         bpm = 170;
       }
-      if (song == "Wormhole" && audio.currentTime >= 135.1 && audio.currentTime < 162.7) {
-        bpm = Math.floor(150 - ((162.7 - audio.currentTime) / 27.6 * 22));
+      if (song == "Wormhole" && audio.currentTime >= 135 && audio.currentTime < 162.5) {
+        bpm = Math.floor(150 - ((162.5 - audio.currentTime) / 27.5 * 22));
       }
-      if (song == "Wormhole" && audio.currentTime >= 162.7) {
+      if (song == "Wormhole" && audio.currentTime >= 162.5) {
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Wormhole 2.PNG";
         bpm = 150;
       }
@@ -1709,13 +1719,13 @@
         bpm = 190;
       }
       if (song == "I Call It Progstep") {
-        if (audio.currentTime >= 13.7 && audio.currentTime < 24.5) {
-          bpm = Math.floor(100 - ((24.5 - audio.currentTime) / 10.8 * 28));
+        if (audio.currentTime >= 13.6 && audio.currentTime < 24.4) {
+          bpm = Math.floor(100 - ((24.4 - audio.currentTime) / 10.8 * 28));
         }
-        if (audio.currentTime >= 168.5 && audio.currentTime < 176) {
-          bpm = Math.floor(144 - ((176 - audio.currentTime) / 7.5 * 44));
+        if (audio.currentTime >= 168.3 && audio.currentTime < 175.7) {
+          bpm = Math.floor(144 - ((176 - audio.currentTime) / 7.4 * 44));
         }
-        if (audio.currentTime >= 24.5 && audio.currentTime < 176) {
+        if (audio.currentTime >= 24.4 && audio.currentTime < 175.7) {
           document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/I Call It Progstep 2.PNG";
           if (audio.currentTime < 168) {
             bpm = 100;
@@ -1726,20 +1736,20 @@
         }
       }
       if (song == "Deviance") {
-        if (audio.currentTime >= 139.9 && audio.currentTime < 166.5) {
-          bpm = Math.floor(175 - ((166.5 - audio.currentTime) / 26.6 * 65));
+        if (audio.currentTime >= 139.7 && audio.currentTime < 166.35) {
+          bpm = Math.floor(175 - ((166.35 - audio.currentTime) / 26.65 * 65));
         }
-        if (audio.currentTime >= 52.5 && audio.currentTime < 166.5) {
+        if (audio.currentTime >= 298) {
+          bpm = Math.floor((303 - audio.currentTime) / 5 * 175);
+        }
+        if (audio.currentTime < 166.5) {
           document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Deviance 2.PNG";
           if (audio.currentTime < 139) {
             bpm = 110;
           }
-        } else if (audio.currentTime >= 154.5 && audio.currentTime < 254) {
+        } else if (audio.currentTime >= 154.5 && audio.currentTime < 297) {
           document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Deviance 3.PNG";
           bpm = 175;
-        } else if (audio.currentTime >= 254) {
-          document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Deviance 4.PNG";
-          bpm = 88;
         }
       }
       if (song == "Wicked") {
