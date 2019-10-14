@@ -191,6 +191,7 @@
       .c63::-webkit-progress-value {background: #d56b84;}
       .c64::-webkit-progress-value {background: #dac711;}
       .c65::-webkit-progress-value {background: #41b1f3;}
+      .c66::-webkit-progress-value {background: #e7ba83;}
       #songSelectMenu, #title {
         transition: opacity 1s linear;
       }
@@ -1293,10 +1294,14 @@
         case "Dubwoofer Substep":
         case "No Party Like a Mojang Party":
         case "Sevcon":
-        case "Wicked":
           colors = ["#ff0000"];
           style = styles.single;
           barcolor = 27;
+          break;
+        case "Wicked":
+          colors = ["#e7ba83"];
+          style = styles.single;
+          barcolor = 66;
           break;
         case "So Far Away":
           colors = ["#ff9900", "#ffaa00"];
