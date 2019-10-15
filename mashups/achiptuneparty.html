@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Visimusic</title>
+    <link rel="icon" href="https://marblelover003.github.io/Visimusic/VisimusicFavicons/Visimusic.png">
+    <link rel="apple-touch-icon" href="https://marblelover003.github.io/Visimusic/apple-touch-icon.png">
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700|Montserrat:300,400,700|Orbitron:400,700");
+      body {
+        background: black;
+        overflow: hidden;
+        font-size: 0;
+        width: 768px;
+        color: white;
+        font-family: Roboto;
+      }
+      small {
+        font-size: 12px;
+      }
+      div {
+        background: black;
+        width: 2.5px;
+        height: 1px;
+        display: inline-block;
+        transition: background 1s linear;
+      }
+      a, a:visited {
+        color: white;
+        transition-duration: 500ms;
+      }
+      a:hover {
+        color: blue;
+      }
+      button, select, #songSelectMenu, #queueMenu {
+        font: 16px Orbitron;
+      }
+      #queueMenu {
+        position: absolute;
+        top: 224px;
+        right: 0;
+        font-size: 10px;
+        z-index: -999;
+      }
+      #queue, #queueBtn {
+        font-size: 10px;
+      }
+      select, button {
+        height: 36px;
+        padding-right: 6px;
+        padding-left: 6px;
+        border-radius: 15px;
+        transition: background 500ms, color 500ms;
+        background: black;
+        color: white;
+        border: 3px solid white;
+      }
+      select {
+        -webkit-appearance: none;
+      }
+      select:hover {
+        background: blue;
+      }
+      select:focus {
+        background: white;
+        color: black;
+      }
+      :focus {
+        outline: none;
+      }
+      button {
+        background: white;
+        color: black;
+      }
+      button:hover {
+        background: #00bf00;
+        cursor: pointer;
+      }
+      #clearBtn {
+        color: red;
+      }
+      #clearBtn:hover {
+        background: red;
+        color: white;
+      }
+      select[disabled], button[disabled] {
+        background: black;
+        color: #333333;
+        border: 3px solid #333333;
+        cursor: auto;
+      }
+      progress {
+        width: 750px;
+        height: 24px;
+        -webkit-appearance: none;
+      }
+      .progressContainer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font: 24px Roboto;
+        font-weight: 300;
+      }
+      progress::-webkit-progress-bar {
+        background: linear-gradient(to bottom, #ccc 0%, #ddd 50%, #bbb 50%, #ccc 100%);
+        box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.2) inset;
+      }
+      progress::-webkit-progress-value {
+        box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.5) inset;
+        background: #ff0080;
+      }
+      #visualizer {
+        position: absolute;
+        bottom: 25px;
+        left: 0;
+        z-index: -99;
+      }
+      #title {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        z-index: 999;
+        font: 24px Roboto;
+        width: 500px;
+        height: 80px;
+        visibility: hidden;
+      }
+      #songSelectMenu, #title {
+        transition: opacity 1s linear;
+      }
+    </style>
+  </head>
+  <body>
+      Change these settings as you so desire, and then click Play!<br>
+      Or <a href="https://marblelover003.github.io/Visimusic">return to the main page</a>.
+      FFT Size:
+      <select id="fftsize">
+        <option value=2048>2048</option>
+        <option value=4096 selected>4096 (Default)</option>
+        <option value=8192>8192</option>
+        <option value=16384>16384</option>
+        <option value=32768>32768</option>
+      </select><br>
+      Number of Bars:
+      <select id="bars">
+        <option value=500>500 (Not recommended)</option>
+        <option value=450>450</option>
+        <option value=400>400</option>
+        <option value=350>350</option>
+        <option value=300 selected>300 (Default)</option>
+        <option value=250>250</option>
+        <option value=200>200</option>
+        <option value=150>150</option>
+        <option value=125>125</option>
+        <option value=100>100</option>
+        <option value=80>80</option>
+        <option value=60>60</option>
+        <option value=50>50 (Best for slower computers)</option>
+      </select><br>
+      Smoothing:
+      <select id="smoothing">
+        <option value=0 selected>0 (Default)</option>
+        <option value=0.05>0.05</option>
+        <option value=0.1>0.1</option>
+        <option value=0.2>0.2</option>
+        <option value=0.35>0.35</option>
+        <option value=0.5>0.5</option>
+        <option value=0.75>0.75</option>
+      </select><br>
+      Maximum bar height:
+      <select id="maxheight" title="This value is relative to your browser window height.">
+        <option value=1 selected>1x (Default)</option>
+        <option value=0.9>0.9x</option>
+        <option value=0.8>0.8x</option>
+        <option value=0.7>0.7x</option>
+        <option value=0.6>0.6x</option>
+        <option value=0.5>0.5x</option>
+      </select><br>
+      Curve power:
+      <select id="power">
+        <option value=3>3x</option>
+        <option value=4>4x</option>
+        <option value=5 selected>5x (Default)</option>
+        <option value=6>6x</option>
+        <option value=8>8x</option>
+      </select><br>
+      Max dB:
+      <select id="maxdb">
+        <option>0</option>
+        <option>-5</option>
+        <option value=-10 selected>-10 (Default)</option>
+        <option>-15</option>
+        <option>-20</option>
+        <option>-25</option>
+        <option>-30</option>
+      </select><br>
+      Min dB:
+      <select id="mindb">
+        <option>-100</option>
+        <option>-95</option>
+        <option value=-90 selected>-90 (Default)</option>
+        <option>-85</option>
+        <option>-80</option>
+        <option>-75</option>
+        <option>-70</option>
+        <option>-65</option>
+        <option>-60</option>
+        <option>-55</option>
+        <option>-50</option>
+      </select><br>
+      <button onclick="selectSong()" id="button" disabled="true">Play! &#9656;</button>
+    </span>
+    <span id="title"><b>0</b>%<br>Loading...</span>
+    <audio src="" id="audio"></audio>
+    <span id="visualizer">
+      <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    </span>
+    <span class="progressContainer">
+      <progress id="progress" value="0" max="0"></progress><span id="timeLeft">-0:00</span>
+    </span>
+  </body>
+  <script>
+    var bar_height, frequency_array,
+        styles = {
+          alternating: "alternating",
+          sequential: "sequential",
+          random: "random",
+          single: "single"
+        },
+        pageInitiated = false,
+        length, positions,
+        maxheight, curvepower,
+        progress = document.getElementById("progress"),
+        heightlimit = 0,
+        songTagVer = document.getElementById("songTagVer"),
+        artist, emptyQueue = ["", 0],
+        queue = [emptyQueue, emptyQueue, emptyQueue, emptyQueue, emptyQueue], itemsQueued = 0, song, bpm;
+    function initPage() {
+      audio = document.getElementById("audio");
+      context = new (window.AudioContext || window.webkitAudioContext)();
+      analyser = context.createAnalyser();
+      source = context.createMediaElementSource(audio);
+      source.connect(analyser);
+      analyser.connect(context.destination);
+      frequency_array = new Uint8Array(analyser.frequencyBinCount);
+      analyser.fftSize = 8192;
+      analyser.smoothingTimeConstant = 0;
+      analyser.minDecibels = -90;
+      analyser.maxDecibels = -10;
+      analyser.getByteFrequencyData(frequency_array);
+      pageInitiated = true;
+      audio.addEventListener("ended", function() {
+        clearInterval(positions);
+        document.getElementById("timeLeft").innerHTML = "-0:00";
+        alert("A Chiptune Party has ended.");
+        audio.src = "";
+        var x = 0;
+        for (var i = 0; i < document.getElementsByTagName("div").length; i++) {
+          document.getElementsByTagName("div")[x].style.background = "#000000";
+          x++;
+        }
+        progress.value = 0;
+        progress.max = 0;
+        document.title = "Visimusic";
+        document.getElementById("title").innerHTML = "<b>0</b>%<br>Loading...";
+          document.getElementById("title").style.visibility = "hidden";
+          document.getElementById("songSelectMenu").style.visibility = "visible";
+          heightlimit = 0;
+        }
+      });
+    }
+    function selectSong() {
+      document.getElementById("title").style.visibility = "visible";
+      var barwidth, bars = parseInt(document.getElementById("bars").value);
+      barwidth = 750 / bars;
+      for (var i = 0; i < bars; i++) {
+        document.getElementsByTagName("div")[i].style.width = barwidth + "px";
+      }
+      for (var i = bars; i < document.getElementsByTagName("div").length; i++) {
+        document.getElementsByTagName("div")[i].style.width = "0px";
+      }
+      audio = document.getElementById("audio");
+      audio.src = "https://marblelover003.github.io/Visimusic/mashups/A Chiptune Party.mp3";
+      if (pageInitiated == false) {
+        initPage();
+      }
+      analyser.fftSize = parseInt(document.getElementById("fftsize").value);
+      analyser.smoothingTimeConstant = parseFloat(document.getElementById("smoothing").value);
+      analyser.minDecibels = parseInt(document.getElementById("mindb").value);
+      analyser.maxDecibels = parseInt(document.getElementById("maxdb").value);
+      maxheight = parseFloat(document.getElementById("maxheight").value);
+      curvepower = parseInt(document.getElementById("power").value);
+      document.getElementById("songSelectMenu").style.visibility = "hidden";
+      var colors, style;
+      document.title = "Now playing A Chiptune Party, a mashup of the album \"The Glory Days\" by Big Giant Circles";
+      }
+      colors = ["#ff0080"];
+      style = styles.single;
+      length = "17:02.000";
+      for (var i = 1; i <= 100; i++) {
+        progress.classList.remove("c" + i);
+      }
+      progress.classList.add("c" + barcolor);
+      var l_m = parseInt(length[0] + length[1]);
+      var l_s = parseInt(length[3] + length[4]);
+      var l_ms = parseInt(length[6] + length[7] + length[8]);
+      l_m *= 60;
+      l_ms /= 1000;
+      progress.max = (l_m + l_s + l_ms) * 1000;
+      var y = 0;
+      for (var i = 0; i < document.getElementsByTagName("div").length; i++) {
+        switch (style) {
+          case "alternating":
+          case "sequential":
+            document.getElementsByTagName("div")[y].style.background = colors[y % colors.length];
+            break;
+          case "random":
+            document.getElementsByTagName("div")[y].style.background = colors[Math.floor(Math.random() * colors.length)];
+            break;
+          case "single":
+            document.getElementsByTagName("div")[y].style.background = colors[0];
+            break;
+        }
+        y++;
+      }
+      document.getElementById("timeLeft").innerHTML = "-" + Math.floor(l_m / 60) + ":" + ("0" + l_s).slice(-2);
+      audio.load();
+      var x = setInterval(function() {
+        var min = parseInt(length[0]);
+        var sec = parseInt(length[2] + length[3]);
+        min *= 60;
+        var total = min + sec;
+        var bufferProgress = Math.floor(audio.buffered.end(0) / total * 1000) / 10;
+        document.getElementById("title").innerHTML = "<b>" + bufferProgress + "</b>%<br>Loading...";
+      }, 0);
+      animationLooper();
+      audio.oncanplaythrough = function() {
+        clearInterval(x);
+        audio.play();
+        positions = setInterval(playing, 0);
+      }
+    }
+    function playing() {
+      var curpos = Math.floor(audio.currentTime);
+      var m = Math.floor(curpos / 60);
+      var s = Math.floor(curpos % 60);
+      var ms = Math.floor(audio.currentTime * 1000) % 1000;
+      var l_m = parseInt(length[0]);
+      var l_s = parseInt(length[2] + length[3]);
+      var l_ms = parseInt(length[5] + length[6] + length[7]);
+      var pos = audio.currentTime * 1000;
+      var len = ((l_m * 60) + l_s + (l_ms / 1000)) * 1000;
+      var timeLeft = (len - pos) < 0 ? 0 : (len - pos);
+      var t_m = Math.floor(timeLeft / 60000);
+      var t_s = Math.floor(timeLeft % 60000 / 1000);
+      var t_ms= Math.floor(timeLeft % 1000);
+      var pos_clock = m + ":" + ("0" + s).slice(-2);
+      var len_clock = l_m + ":" + ("0" + l_s).slice(-2);
+      document.getElementById("timeLeft").innerHTML = "-" + t_m + ":" + ("0" + t_s).slice(-2);
+      var songProgress = Math.floor(pos / len * 1000) / 10;
+      progress.value = audio.currentTime * 1000;
+      document.getElementById("title").innerHTML = "<b>" + pos_clock + "</b> / " + len_clock + "<br><span style=\"font-family: Montserrat; font-weight: 300;\">Now playing <b>A Chiptune Party</b>, a mashup of the album \"The Glory Days\" by Big Giant Circles";
+    }
+    function animationLooper(){
+      analyser.getByteFrequencyData(frequency_array);
+      for(var i = 0; i < parseInt(document.getElementById("bars").value); i++){
+        bar_height = Math.pow(frequency_array[i] / 255 * Math.pow(window.innerHeight - 24, 1/curvepower), curvepower) * maxheight;
+        setH(i, bar_height);
+      }
+      window.requestAnimationFrame(animationLooper);
+    }
+    function setH(barID, height) {document.getElementsByTagName("div")[barID].style.height = (height + 3) + "px";}
+  </script>
+</html>
