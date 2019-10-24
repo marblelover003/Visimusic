@@ -195,6 +195,38 @@
       #songSelectMenu, #title {
         transition: opacity 1s linear;
       }
+      .modal {
+        display: none;
+        opacity: 0;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
+        transition: opacity 500ms linear;
+      }
+      .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+      }
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      .close:hover, .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
@@ -429,166 +461,171 @@
         <option value=0>no</option>
       </select> song tags.<br>
       <button onclick="selectSong()" id="button" disabled="true">Play! &#9656;</button><br>
-      A mashup has arrived... <a href="mashups/achiptuneparty.html">check it out</a> if you dare! <small style="font-size: 7px">It&apos;s 17 minutes long, though...</small>
     </span>
-    <span id="queueMenu">
-      Queue up to 5 more songs here!<br>
-      <select id="queue" onchange="check()">
-        <option></option>
-        <option value="Airwaves">Airwaves</option>
-        <option value="Astrocat">Astrocat</option>
-        <option value="Backlash">Backlash</option>
-        <option value="Barracuda">Barracuda</option>
-        <option value="Be Gone Mr. Gawne">Be Gone Mr. Gawne</option>
-        <option value="BLAST">BLAST</option>
-        <option value="Breakdown">Breakdown</option>
-        <option value="Breakdown VIP">Breakdown VIP</option>
-        <option value="Buzz Kill">Buzz Kill</option>
-        <option value="Caps On, Hats Off">Caps On, Hats Off</option>
-        <option value="Captain Cool">Captain Cool</option>
-        <option value="Cascade">Cascade</option>
-        <option value="Cheat Codes">Cheat Codes</option>
-        <option value="Cheat Codes VIP">Cheat Codes VIP</option>
-        <option value="Checkpoint">Checkpoint</option>
-        <option value="Chip Zeal">Chip Zeal</option>
-        <option value="Chipland">Chipland</option>
-        <option value="Chronos">Chronos</option>
-        <option value="Clash">Clash</option>
-        <option value="Commando Steve">Commando Steve</option>
-        <option value="COOKIES">COOKIES</option>
-        <option value="Cool Friends (Murtagh & Veschell Remix)">Cool Friends (Murtagh &amp; Veschell Remix)</option>
-        <option value="Core">Core</option>
-        <option value="Corrupted">Corrupted</option>
-        <option value="Courtesy">Courtesy</option>
-        <option value="Crab Rave">Crab Rave</option>
-        <option value="CRAZY">CRAZY</option>
-        <option value="Cruise Control">Cruise Control</option>
-        <option value="Crystal Tokyo">Crystal Tokyo</option>
-        <option value="Cybertron">Cybertron</option>
-        <option value="Dance of the Incognizant">Dance of the Incognizant</option>
-        <option value="Delayed Friend Request">Delayed Friend Request</option>
-        <option value="Destroid 1 Raise Your Fist">Destroid 1 Raise Your Fist</option>
-        <option value="Destroid 2 Wasteland">Destroid 2 Wasteland</option>
-        <option value="Destroid 6 Put It Down">Destroid 6 Put It Down</option>
-        <option value="Destroid 8 Annihilate">Destroid 8 Annihilate</option>
-        <option value="Destroid 10 Funk Hole">Destroid 10 Funk Hole</option>
-        <option value="Deviance (Dirtyphonics Remix)">Deviance (Dirtyphonics Remix)</option>
-        <option value="Disconnected">Disconnected</option>
-        <option value="Duality">Duality</option>
-        <option value="Dubwoofer Substep">Dubwoofer Substep</option>
-        <option value="Eclipse">Eclipse</option>
-        <option value="End is Near (Fire in the Hole VIP)">End is Near (Fire in the Hole VIP)</option>
-        <option value="EPIC">EPIC</option>
-        <option value="Evolution">Evolution</option>
-        <option value="Exoskelephone">Exoskelephone</option>
-        <option value="Farbror Melker Fixar Fiskdamm (Fastbom Cover)">Farbror Melker Fixar Fiskdamm (Fastbom Cover)</option>
-        <option value="Faster Than Light">Faster Than Light</option>
-        <option value="FIGHT">FIGHT</option>
-        <option value="Final Boss">Final Boss</option>
-        <option value="Fingerbang">Fingerbang</option>
-        <option value="Fire in the Hole">Fire in the Hole</option>
-        <option value="Flirt Flirt Oh It Hurts">Flirt Flirt Oh It Hurts</option>
-        <option value="Focus">Focus</option>
-        <option value="Forged in Stars">Forged in Stars</option>
-        <option value="FOX">FOX</option>
-        <option value="FTW">FTW</option>
-        <option value="Glitch">Glitch</option>
-        <option value="Gravity">Gravity</option>
-        <option value="Grind">Grind</option>
-        <option value="Halcyon">Halcyon</option>
-        <option value="Heist">Heist</option>
-        <option value="Here It Comes">Here It Comes</option>
-        <option value="Highscore">Highscore (feat. Teminite)</option>
-        <option value="Houston">Houston</option>
-        <option value="HYPE">HYPE</option>
-        <option value="I Call It Progstep">I Call It Progstep</option>
-        <option value="I'm being Reelistic">I&apos;m being Reelistic</option>
-        <option value="Into the Zone">Into the Zone</option>
-        <option value="It's Pronounced Omnitica">It&apos;s Pronounced Omnitica</option>
-        <option value="Jack Russel">Jack Russel</option>
-        <option value="Leaving Leafwood Forest">Leaving Leafwood Forest</option>
-        <option value="Legacy">Legacy</option>
-        <option value="Let It Roar">Let It Roar</option>
-        <option value="Light Sticks">Light Sticks</option>
-        <option value="Livewire">Livewire</option>
-        <option value="Logic Gatekeeper">Logic Gatekeeper</option>
-        <option value="Long Live The New Fresh">Long Live the New Fresh</option>
-        <option value="Milky Ways">Milky Ways</option>
-        <option value="MOSHI">MOSHI</option>
-        <option value="New Game">New Game</option>
-        <option value="No Party Like a Mojang Party">No Party Like a Mojang Party</option>
-        <option value="OKAY">OKAY</option>
-        <option value="Omniverse">Omniverse</option>
-        <option value="On the Run">On the Run</option>
-        <option value="Once Again">Once Again</option>
-        <option value="Opia">Opia</option>
-        <option value="Otis">Otis</option>
-        <option value="Paper Dolls">Paper Dolls</option>
-        <option value="Parallel Processing">Parallel Processing</option>
-        <option value="PARTY">PARTY</option>
-        <option value="Partyt A\u0308r Iga\u030Ang!">Partyt A&#776;r Iga&#778;ng!</option>
-        <option value="Peer Gynt">Peer Gynt</option>
-        <option value="Pirate Manners">Pirate Manners</option>
-        <option value="PIXEL">PIXEL</option>
-        <option value="PLAY">PLAY</option>
-        <option value="Play It Loud">Play It Loud</option>
-        <option value="Play It Loud (Broken Robot Mix)">Play It Loud (Broken Robot Mix)</option>
-        <option value="Pyro">Pyro</option>
-        <option value="Quake">Quake</option>
-        <option value="Rainbow Road">Rainbow Road</option>
-        <option value="Rat Twist">Rat Twist</option>
-        <option value="Razor Sharp">Razor Sharp</option>
-        <option value="Renegade">Renegade</option>
-        <option value="Rhapsody">Rhapsody</option>
-        <option value="ROCK IT">ROCK IT</option>
-        <option value="Rocket">Rocket</option>
-        <option value="Rocktronik">Rocktronik</option>
-        <option value="SAIKOU">SAIKOU</option>
-        <option value="Sentinel">Sentinel</option>
-        <option value="Sevcon">Sevcon</option>
-        <option value="Sexy Beast">Sexy Beast</option>
-        <option value="Sidewinder">Sidewinder</option>
-        <option value="So Far Away">So Far Away</option>
-        <option value="Spection">Spection</option>
-        <option value="Spectra">Spectra</option>
-        <option value="SPOOKY">SPOOKY</option>
-        <option value="Starship Showdown (feat. Christian Carlsson)">Starship Showdown (feat. Christian Carlsson)</option>
-        <option value="Steampunk Warlord">Steampunk Warlord</option>
-        <option value="Stock & Pull">Stock &amp; Pull</option>
-        <option value="Sugar Rush">Sugar Rush</option>
-        <option value="Surge">Surge</option>
-        <option value="Tension">Tension</option>
-        <option value="Termination Shock">Termination Shock</option>
-        <option value="The Art of War">The Art of War</option>
-        <option value="The Cave, The Treasure">The Cave, The Treasure</option>
-        <option value="The Escape">The Escape</option>
-        <option value="The Lunar Whale">The Lunar Whale</option>
-        <option value="The Maze of Mayonnaise">The Maze of Mayonnaise</option>
-        <option value="This Time">This Time</option>
-        <option value="Till It's Over">Till It's Over</option>
-        <option value="Time Goes By">Time Goes By</option>
-        <option value="Time Lapse">Time Lapse</option>
-        <option value="Timewarp">Timewarp</option>
-        <option value="To the Stars">To the Stars</option>
-        <option value="Tokyo Skies">Tokyo Skies</option>
-        <option value="Try This">Try This</option>
-        <option value="Turbo Penguin">Turbo Penguin</option>
-        <option value="Unlocked">Unlocked</option>
-        <option value="Vindicate Me">Vindicate Me</option>
-        <option value="Wicked">Wicked</option>
-        <option value="Wormhole">Wormhole</option>
-        <option value="Yo! Ho! And a Bottle of Bass!">Yo! Ho! And a Bottle of Bass!</option>
-      </select>
-      <button onclick="queueSong()" id="queueBtn">Queue it! &#9656;</button><br>
-      or <a class="random" href="javascript:queueRandomSong();">queue a random song</a>!
-      Up next:<br>
-      1. <span id="queue1"></span><br>
-      2. <span id="queue2"></span><br>
-      3. <span id="queue3"></span><br>
-      4. <span id="queue4"></span><br>
-      5. <span id="queue5"></span><br>
-      <span style="display: inline-block; width: 100%; text-align: right;"><button onclick="clearQueue()" id="clearBtn">Clear Queue</button></span>
-    </span>
+    <button id="queueOpen">Queue Settings</button>
+    <div id="queueModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&#9587;</span>
+        <span id="queueMenu">
+          Queue up to 5 more songs here!<br>
+          <select id="queue" onchange="check()">
+            <option></option>
+            <option value="Airwaves">Airwaves</option>
+            <option value="Astrocat">Astrocat</option>
+            <option value="Backlash">Backlash</option>
+            <option value="Barracuda">Barracuda</option>
+            <option value="Be Gone Mr. Gawne">Be Gone Mr. Gawne</option>
+            <option value="BLAST">BLAST</option>
+            <option value="Breakdown">Breakdown</option>
+            <option value="Breakdown VIP">Breakdown VIP</option>
+            <option value="Buzz Kill">Buzz Kill</option>
+            <option value="Caps On, Hats Off">Caps On, Hats Off</option>
+            <option value="Captain Cool">Captain Cool</option>
+            <option value="Cascade">Cascade</option>
+            <option value="Cheat Codes">Cheat Codes</option>
+            <option value="Cheat Codes VIP">Cheat Codes VIP</option>
+            <option value="Checkpoint">Checkpoint</option>
+            <option value="Chip Zeal">Chip Zeal</option>
+            <option value="Chipland">Chipland</option>
+            <option value="Chronos">Chronos</option>
+            <option value="Clash">Clash</option>
+            <option value="Commando Steve">Commando Steve</option>
+            <option value="COOKIES">COOKIES</option>
+            <option value="Cool Friends (Murtagh & Veschell Remix)">Cool Friends (Murtagh &amp; Veschell Remix)</option>
+            <option value="Core">Core</option>
+            <option value="Corrupted">Corrupted</option>
+            <option value="Courtesy">Courtesy</option>
+            <option value="Crab Rave">Crab Rave</option>
+            <option value="CRAZY">CRAZY</option>
+            <option value="Cruise Control">Cruise Control</option>
+            <option value="Crystal Tokyo">Crystal Tokyo</option>
+            <option value="Cybertron">Cybertron</option>
+            <option value="Dance of the Incognizant">Dance of the Incognizant</option>
+            <option value="Delayed Friend Request">Delayed Friend Request</option>
+            <option value="Destroid 1 Raise Your Fist">Destroid 1 Raise Your Fist</option>
+            <option value="Destroid 2 Wasteland">Destroid 2 Wasteland</option>
+            <option value="Destroid 6 Put It Down">Destroid 6 Put It Down</option>
+            <option value="Destroid 8 Annihilate">Destroid 8 Annihilate</option>
+            <option value="Destroid 10 Funk Hole">Destroid 10 Funk Hole</option>
+            <option value="Deviance (Dirtyphonics Remix)">Deviance (Dirtyphonics Remix)</option>
+            <option value="Disconnected">Disconnected</option>
+            <option value="Duality">Duality</option>
+            <option value="Dubwoofer Substep">Dubwoofer Substep</option>
+            <option value="Eclipse">Eclipse</option>
+            <option value="End is Near (Fire in the Hole VIP)">End is Near (Fire in the Hole VIP)</option>
+            <option value="EPIC">EPIC</option>
+            <option value="Evolution">Evolution</option>
+            <option value="Exoskelephone">Exoskelephone</option>
+            <option value="Farbror Melker Fixar Fiskdamm (Fastbom Cover)">Farbror Melker Fixar Fiskdamm (Fastbom Cover)</option>
+            <option value="Faster Than Light">Faster Than Light</option>
+            <option value="FIGHT">FIGHT</option>
+            <option value="Final Boss">Final Boss</option>
+            <option value="Fingerbang">Fingerbang</option>
+            <option value="Fire in the Hole">Fire in the Hole</option>
+            <option value="Flirt Flirt Oh It Hurts">Flirt Flirt Oh It Hurts</option>
+            <option value="Focus">Focus</option>
+            <option value="Forged in Stars">Forged in Stars</option>
+            <option value="FOX">FOX</option>
+            <option value="FTW">FTW</option>
+            <option value="Glitch">Glitch</option>
+            <option value="Gravity">Gravity</option>
+            <option value="Grind">Grind</option>
+            <option value="Halcyon">Halcyon</option>
+            <option value="Heist">Heist</option>
+            <option value="Here It Comes">Here It Comes</option>
+            <option value="Highscore">Highscore (feat. Teminite)</option>
+            <option value="Houston">Houston</option>
+            <option value="HYPE">HYPE</option>
+            <option value="I Call It Progstep">I Call It Progstep</option>
+            <option value="I'm being Reelistic">I&apos;m being Reelistic</option>
+            <option value="Into the Zone">Into the Zone</option>
+            <option value="It's Pronounced Omnitica">It&apos;s Pronounced Omnitica</option>
+            <option value="Jack Russel">Jack Russel</option>
+            <option value="Leaving Leafwood Forest">Leaving Leafwood Forest</option>
+            <option value="Legacy">Legacy</option>
+            <option value="Let It Roar">Let It Roar</option>
+            <option value="Light Sticks">Light Sticks</option>
+            <option value="Livewire">Livewire</option>
+            <option value="Logic Gatekeeper">Logic Gatekeeper</option>
+            <option value="Long Live The New Fresh">Long Live the New Fresh</option>
+            <option value="Milky Ways">Milky Ways</option>
+            <option value="MOSHI">MOSHI</option>
+            <option value="New Game">New Game</option>
+            <option value="No Party Like a Mojang Party">No Party Like a Mojang Party</option>
+            <option value="OKAY">OKAY</option>
+            <option value="Omniverse">Omniverse</option>
+            <option value="On the Run">On the Run</option>
+            <option value="Once Again">Once Again</option>
+            <option value="Opia">Opia</option>
+            <option value="Otis">Otis</option>
+            <option value="Paper Dolls">Paper Dolls</option>
+            <option value="Parallel Processing">Parallel Processing</option>
+            <option value="PARTY">PARTY</option>
+            <option value="Partyt A\u0308r Iga\u030Ang!">Partyt A&#776;r Iga&#778;ng!</option>
+            <option value="Peer Gynt">Peer Gynt</option>
+            <option value="Pirate Manners">Pirate Manners</option>
+            <option value="PIXEL">PIXEL</option>
+            <option value="PLAY">PLAY</option>
+            <option value="Play It Loud">Play It Loud</option>
+            <option value="Play It Loud (Broken Robot Mix)">Play It Loud (Broken Robot Mix)</option>
+            <option value="Pyro">Pyro</option>
+            <option value="Quake">Quake</option>
+            <option value="Rainbow Road">Rainbow Road</option>
+            <option value="Rat Twist">Rat Twist</option>
+            <option value="Razor Sharp">Razor Sharp</option>
+            <option value="Renegade">Renegade</option>
+            <option value="Rhapsody">Rhapsody</option>
+            <option value="ROCK IT">ROCK IT</option>
+            <option value="Rocket">Rocket</option>
+            <option value="Rocktronik">Rocktronik</option>
+            <option value="SAIKOU">SAIKOU</option>
+            <option value="Sentinel">Sentinel</option>
+            <option value="Sevcon">Sevcon</option>
+            <option value="Sexy Beast">Sexy Beast</option>
+            <option value="Sidewinder">Sidewinder</option>
+            <option value="So Far Away">So Far Away</option>
+            <option value="Spection">Spection</option>
+            <option value="Spectra">Spectra</option>
+            <option value="SPOOKY">SPOOKY</option>
+            <option value="Starship Showdown (feat. Christian Carlsson)">Starship Showdown (feat. Christian Carlsson)</option>
+            <option value="Steampunk Warlord">Steampunk Warlord</option>
+            <option value="Stock & Pull">Stock &amp; Pull</option>
+            <option value="Sugar Rush">Sugar Rush</option>
+            <option value="Surge">Surge</option>
+            <option value="Tension">Tension</option>
+            <option value="Termination Shock">Termination Shock</option>
+            <option value="The Art of War">The Art of War</option>
+            <option value="The Cave, The Treasure">The Cave, The Treasure</option>
+            <option value="The Escape">The Escape</option>
+            <option value="The Lunar Whale">The Lunar Whale</option>
+            <option value="The Maze of Mayonnaise">The Maze of Mayonnaise</option>
+            <option value="This Time">This Time</option>
+            <option value="Till It's Over">Till It's Over</option>
+            <option value="Time Goes By">Time Goes By</option>
+            <option value="Time Lapse">Time Lapse</option>
+            <option value="Timewarp">Timewarp</option>
+            <option value="To the Stars">To the Stars</option>
+            <option value="Tokyo Skies">Tokyo Skies</option>
+            <option value="Try This">Try This</option>
+            <option value="Turbo Penguin">Turbo Penguin</option>
+            <option value="Unlocked">Unlocked</option>
+            <option value="Vindicate Me">Vindicate Me</option>
+            <option value="Wicked">Wicked</option>
+            <option value="Wormhole">Wormhole</option>
+            <option value="Yo! Ho! And a Bottle of Bass!">Yo! Ho! And a Bottle of Bass!</option>
+          </select>
+          <button onclick="queueSong()" id="queueBtn">Queue it! &#9656;</button><br>
+          or <a class="random" href="javascript:queueRandomSong();">queue a random song</a>!
+          Up next:<br>
+          1. <span id="queue1"></span><br>
+          2. <span id="queue2"></span><br>
+          3. <span id="queue3"></span><br>
+          4. <span id="queue4"></span><br>
+          5. <span id="queue5"></span><br>
+          <span style="display: inline-block; width: 100%; text-align: right;"><button onclick="clearQueue()" id="clearBtn">Clear Queue</button></span>
+        </span>
+      </div>
+    </div>
     <span id="title"><b>0</b>%<br>Loading...</span>
     <audio src="" id="audio"></audio>
     <span style="position: absolute; top: 8px; right: 8px; width: 200px; font: 16px Montserrat; text-align: center;">
@@ -622,6 +659,23 @@
         bpm;
     document.getElementById("queue").disabled = true;
     document.getElementById("queueBtn").disabled = true;
+    var modal = document.getElementById("queueModal");
+    var btn = document.getElementById("queueOpen");
+    var span = document.getElementsByClassName("close")[0];
+    btn.onclick = function() {
+      modal.style.display = "block";
+      modal.style.opacity = 1;
+    }
+    span.onclick = function() {
+      modal.style.display = "none";
+      modal.style.opacity = 0;
+    }
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+        modal.style.opacity = 0;
+      }
+    }
     function randomSong() {
       var elem = document.getElementById("song");
       elem.options.selectedIndex = Math.floor(Math.random() * (elem.options.length - 1)) + 1;
