@@ -1071,7 +1071,7 @@
       for (var i = 0; i < bars; i++) {
         document.getElementById("visualizer").getElementsByTagName("div")[i].style.width = barwidth + "px";
       }
-      for (var i = bars; i < document.getElementsByTagName("div").length; i++) {
+      for (var i = bars; i < document.getElementById("visualizer").getElementsByTagName("div").length; i++) {
         document.getElementById("visualizer").getElementsByTagName("div")[i].style.width = "0px";
       }
       song = document.getElementById("song").value;
