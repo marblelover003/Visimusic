@@ -340,6 +340,7 @@
         <option value="Razor Sharp">Razor Sharp</option>
         <option value="Renegade">Renegade</option>
         <option value="Rhapsody">Rhapsody</option>
+        <option value="Rinse Out">Rinse Out</option>
         <option value="ROCK IT">ROCK IT</option>
         <option value="Rocket">Rocket</option>
         <option value="Rocktronik">Rocktronik</option>
@@ -576,6 +577,7 @@
             <option value="Razor Sharp">Razor Sharp</option>
             <option value="Renegade">Renegade</option>
             <option value="Rhapsody">Rhapsody</option>
+            <option value="Rinse Out">Rinse Out</option>
             <option value="ROCK IT">ROCK IT</option>
             <option value="Rocket">Rocket</option>
             <option value="Rocktronik">Rocktronik</option>
@@ -871,6 +873,7 @@
           case "Gravity":
           case "Grind":
           case "Quake":
+          case "Rinse Out":
           case "Rocket":
           case "Sexy Beast":
           case "Stock & Pull":
@@ -1017,6 +1020,7 @@
         document.getElementById("queue").disabled = false;
         document.getElementById("queueBtn").disabled = false;
         clearInterval(positions);
+        document.getElementById("bpm").innerHTML = 0;
         if (queue[0][0] != "") {
           document.getElementById("song").options.selectedIndex = queue[0][1];
           checkSong();
@@ -1039,10 +1043,11 @@
             alert("Destroid 6 Put It Down by Excision & Bassnectar has ended.");
           } else if (document.getElementById("song").value == "End is Near") {
             alert("End is Near (Fire in the Hole VIP) by Pegboard Nerds has ended.");
+          } else if (document.getElementById("song").value == "Cool Friends") {
+            alert("Cool Friends (Murtagh & Veschell RemiX) by Silva Hound has ended.");
           } else {
             alert(document.getElementById("song").value + " by " + artist + " has ended.");
           }
-          document.getElementById("bpm").innerHTML = 0;
           audio.src = "";
           document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/Not playing.PNG";
           document.getElementById("song").selectedIndex = 0;
@@ -1088,7 +1093,8 @@
         "Deviance", "Destroid 2 - Wasteland", "Destroid 6 - Put It Down", "Captain Cool",
         "Leaving Leafwood Forest", "Cybertron", "Let It Roar", "To the Stars", "Airwaves",
         "Play It Loud", "Breakdown", "Breakdown VIP", "Disconnected", "Fire in the Hole",
-        "End is Near", "Light Sticks", "Fingerbang", "EPIC", "Play It Loud (Broken Robot Mix)"
+        "End is Near", "Light Sticks", "Fingerbang", "EPIC", "Play It Loud (Broken Robot Mix)",
+        "Rinse Out"
       ];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
@@ -1179,6 +1185,7 @@
         case "This Time":
         case "Timewarp":
         case "Turbo Penguin":
+        case "Rinse Out":
           colors = ["#ffff00"];
           style = styles.single;
           barcolor = 3;
@@ -1550,6 +1557,7 @@
           break;
       }
       switch (song) {
+        case "Rinse Out": length = "5:43.353"; bpm = 128; break;
         case "Fingerbang": length = "4:28.852"; bpm = 112; break;
         case "Breakdown": length = "4:49.097"; bpm = 140; break;
         case "Breakdown VIP": length = "3:54.448"; bpm = 174; break;
