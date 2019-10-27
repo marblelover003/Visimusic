@@ -211,10 +211,11 @@
       }
       .modal-content {
         background-color: #444444;
-        margin: 15% auto;
+        margin: 15%;
         padding: 20px;
         border: 1px solid #888;
-        width: 80%;
+        width: 70%;
+        height: 70%;
       }
       .close {
         color: #aaa;
@@ -1051,7 +1052,7 @@
           document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/Not playing.PNG";
           document.getElementById("song").selectedIndex = 0;
           var x = 0;
-          for (var i = 0; i < document.getElementsByTagName("div").length; i++) {
+          for (var i = 0; i < document.getElementById("visualizer").getElementsByTagName("div").length; i++) {
             document.getElementById("visualizer").getElementsByTagName("div")[x].style.background = "#000000";
             x++;
           }
