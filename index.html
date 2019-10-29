@@ -269,6 +269,7 @@
         <option value="Destroid 1 - Raise Your Fist">Destroid 1 Raise Your Fist</option>
         <option value="Destroid 2 - Wasteland">Destroid 2 Wasteland</option>
         <option value="Destroid 6 - Put It Down">Destroid 6 Put It Down</option>
+        <option value="Destroid 7 - Bounce">Destroid 7 Bounce</option>
         <option value="Destroid 8 - Annihilate">Destroid 8 Annihilate</option>
         <option value="Destroid 10 - Funk Hole">Destroid 10 Funk Hole</option>
         <option value="Deviance">Deviance (Dirtyphonics Remix)</option>
@@ -506,6 +507,7 @@
             <option value="Destroid 1 Raise Your Fist">Destroid 1 Raise Your Fist</option>
             <option value="Destroid 2 Wasteland">Destroid 2 Wasteland</option>
             <option value="Destroid 6 Put It Down">Destroid 6 Put It Down</option>
+            <option value="Destroid 7 - Bounce">Destroid 7 Bounce</option>
             <option value="Destroid 8 Annihilate">Destroid 8 Annihilate</option>
             <option value="Destroid 10 Funk Hole">Destroid 10 Funk Hole</option>
             <option value="Deviance (Dirtyphonics Remix)">Deviance (Dirtyphonics Remix)</option>
@@ -985,6 +987,7 @@
           case "Destroid 8 - Annihilate":
             artist = "Excision & Far Too Loud";
             break;
+          case "Destroid 7 - Bounce":
           case "Destroid 10 - Funk Hole":
             artist = "Excision & Space Laces";
             break;
@@ -1043,7 +1046,9 @@
           } else if (document.getElementById("song").value == "End is Near") {
             alert("End is Near (Fire in the Hole VIP) by Pegboard Nerds has ended.");
           } else if (document.getElementById("song").value == "Cool Friends") {
-            alert("Cool Friends (Murtagh & Veschell RemiX) by Silva Hound has ended.");
+            alert("Cool Friends (Murtagh & Veschell Remix) by Silva Hound has ended.");
+          } else if (document.getElementById("song").value == "Destroid 7 - Bounce") {
+            alert("Destroid 7 Bounce by Excision & Space Laces has ended.");
           } else {
             alert(document.getElementById("song").value + " by " + artist + " has ended.");
           }
@@ -1093,7 +1098,7 @@
         "Leaving Leafwood Forest", "Cybertron", "Let It Roar", "To the Stars", "Airwaves",
         "Play It Loud", "Breakdown", "Breakdown VIP", "Disconnected", "Fire in the Hole",
         "End is Near", "Light Sticks", "Fingerbang", "EPIC", "Play It Loud (Broken Robot Mix)",
-        "Rinse Out"
+        "Rinse Out", "Destroid 7 - Bounce"
       ];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
@@ -1129,6 +1134,8 @@
         document.title = "Now playing Destroid 8 Annihilate by Excision & Far Too Loud on Visimusic";
       } else if (song == "Destroid 10 - Funk Hole") {
         document.title = "Now playing Destroid 10 Funk Hole by Excision & Space Laces on Visimusic";
+      } else if (song == "Destroid 7 - Bounce") {
+        document.title = "Now playing Destroid 7 Bounce by Excision & Space Laces on Visimusic";
       } else if (song == "Destroid 2 - Wasteland") {
         document.title = "Now playing Destroid 2 Wasteland by Excision, Downlink & Space Laces on Visimusic";
       } else if (song == "Destroid 6 - Put It Down") {
@@ -1299,6 +1306,7 @@
         case "Destroid 1 - Raise Your Fist":
         case "Destroid 2 - Wasteland":
         case "Destroid 6 - Put It Down":
+        case "Destroid 7 - Bounce":
         case "Destroid 8 - Annihilate":
         case "Destroid 10 - Funk Hole":
         case "Deviance":
@@ -1556,6 +1564,7 @@
           break;
       }
       switch (song) {
+        case "Destroid 7 - Bounce": length = "4:21.250"; bpm = 140; break;
         case "Rinse Out": length = "5:43.353"; bpm = 128; break;
         case "Fingerbang": length = "4:28.852"; bpm = 112; break;
         case "Breakdown": length = "4:49.097"; bpm = 140; break;
@@ -1847,7 +1856,9 @@
                       song == "Deviance" ? "Deviance (Dirtyphonics Remix)" : (
                         song == "Starship Showdown" ? "Starship Showdown (feat. Christian Carlsson)" : (
                           song == "Highscore" ? "Highscore (feat. Teminite)" : (
-                            song == "End is Near" ? "End is Near (Fire in the Hole VIP)" : song
+                            song == "End is Near" ? "End is Near (Fire in the Hole VIP)" : (
+                              song == "Destroid 7 - Bounce" ? "Destroid 7 Bounce" : song
+                            )
                           )
                         )
                       )
