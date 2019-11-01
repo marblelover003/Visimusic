@@ -192,6 +192,7 @@
       .c64::-webkit-progress-value {background: #dac711;}
       .c65::-webkit-progress-value {background: #41b1f3;}
       .c66::-webkit-progress-value {background: #e7ba83;}
+      .c67::-webkit-progress-value {background: #f8a811;}
       #songSelectMenu, #title {
         transition: opacity 1s linear;
       }
@@ -373,6 +374,7 @@
         <option value="To the Stars">To the Stars</option>
         <option value="Tokyo Skies">Tokyo Skies</option>
         <option value="Try This">Try This</option>
+        <option value="TURBO">TURBO</option>
         <option value="Turbo Penguin">Turbo Penguin</option>
         <option value="Unlocked">Unlocked</option>
         <option value="Vindicate Me">Vindicate Me</option>
@@ -611,6 +613,7 @@
             <option value="To the Stars">To the Stars</option>
             <option value="Tokyo Skies">Tokyo Skies</option>
             <option value="Try This">Try This</option>
+            <option value="TURBO">TURBO</option>
             <option value="Turbo Penguin">Turbo Penguin</option>
             <option value="Unlocked">Unlocked</option>
             <option value="Vindicate Me">Vindicate Me</option>
@@ -893,6 +896,7 @@
           case "SAIKOU":
           case "SPOOKY":
           case "EPIC":
+          case "TURBO":
             artist = "Tokyo Machine";
             break;
           case "Long Live The New Fresh":
@@ -1098,7 +1102,7 @@
         "Leaving Leafwood Forest", "Cybertron", "Let It Roar", "To the Stars", "Airwaves",
         "Play It Loud", "Breakdown", "Breakdown VIP", "Disconnected", "Fire in the Hole",
         "End is Near", "Light Sticks", "Fingerbang", "EPIC", "Play It Loud (Broken Robot Mix)",
-        "Rinse Out", "Destroid 7 - Bounce"
+        "Rinse Out", "Destroid 7 - Bounce", "TURBO"
       ];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
@@ -1562,8 +1566,14 @@
           style = styles.single;
           barcolor = 65;
           break;
+        case "TURBO":
+          colors = ["#f8a811"];
+          style = styles.single;
+          barcolor = 67;
+          break;
       }
       switch (song) {
+        case "TURBO": length = "2:50.997"; bpm = 128; break;
         case "Destroid 7 - Bounce": length = "4:21.250"; bpm = 140; break;
         case "Rinse Out": length = "5:43.353"; bpm = 128; break;
         case "Fingerbang": length = "4:28.852"; bpm = 112; break;
