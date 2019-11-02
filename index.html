@@ -228,6 +228,12 @@
         text-decoration: none;
         cursor: pointer;
       }
+      canvas {
+        position: absolute;
+        bottom: 8px;
+        right: 8px;
+        z-index: -999;
+      }
     </style>
   </head>
   <body>
@@ -646,6 +652,7 @@
     <span class="progressContainer">
       <progress id="progress" value="0" max="0"></progress><span id="timeLeft">-0:00</span>
     </span>
+    <canvas id="canvas" width="60" height="60"></canvas>
   </body>
   <script>
     var bar_height, frequency_array,
@@ -662,8 +669,16 @@
         heightlimit = 0,
         songTagVer = document.getElementById("songTagVer"),
         artist, emptyQueue = ["", 0],
-        queue = [emptyQueue, emptyQueue, emptyQueue, emptyQueue, emptyQueue], itemsQueued = 0, song,
-        bpm;
+        queue = [["", 0], ["", 0], ["", 0], ["", 0], ["", 0]], itemsQueued = 0, song,
+        bpm, c = document.getElementById("canvas").getContext("2d");
+    c.translate(30, 30);
+    c.rotate(-0.5 * Math.PI);
+    c.clearRect(-30, -30, 60, 60);
+    c.fillStyle = "#333333";
+    c.beginPath();
+    c.moveTo(0, 0);
+    c.arc(0, 0, 25, 0, 2 * Math.PI);
+    c.fill();
     document.getElementById("queue").disabled = true;
     document.getElementById("queueBtn").disabled = true;
     var modal = document.getElementById("queueModal");
@@ -1023,12 +1038,20 @@
       analyser.getByteFrequencyData(frequency_array);
       pageInitiated = true;
       audio.addEventListener("ended", function() {
-        document.getElementById("queue").disabled = false;
-        document.getElementById("queueBtn").disabled = false;
+        c.clearRect(-30, -30, 60, 60);
+        c.fillStyle = "#333333";
+        c.beginPath();
+        c.moveTo(0, 0);
+        c.arc(0, 0, 25, 0, 2 * Math.PI);
+        c.fill();
+        document.getElementById("queue").disabled = true;
+        document.getElementById("queueBtn").disabled = true;
         clearInterval(positions);
         document.getElementById("bpm").innerHTML = 0;
         if (queue[0][0] != "") {
           document.getElementById("song").options.selectedIndex = queue[0][1];
+          document.getElementById("queue").disabled = false;
+          document.getElementById("queueBtn").disabled = false;
           checkSong();
           removeQueuedSong(0);
           document.getElementById("button").click();
@@ -1782,6 +1805,17 @@
       document.getElementById("timeLeft").innerHTML = "-" + t_m + ":" + ("0" + t_s).slice(-2);
       var songProgress = Math.floor(pos / len * 1000) / 10;
       progress.value = audio.currentTime * 1000;
+      c.clearRect(-30, -30, 60, 60);
+      c.fillStyle = "#333333";
+      c.beginPath();
+      c.moveTo(0, 0);
+      c.arc(0, 0, 25, 0, 2 * Math.PI);
+      c.fill();
+      c.fillStyle = "white";
+      c.beginPath();
+      c.moveTo(0, 0);
+      c.arc(0, 0, 25, 0, 2 * Math.PI * (pos / len));
+      c.fill();
       if (song == "Faster Than Light" && audio.currentTime >= 185.3 && audio.currentTime < 186.9) {
         bpm = Math.floor(170 - ((186.9 - audio.currentTime) / 1.6 * 42));
       }
