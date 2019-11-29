@@ -193,9 +193,7 @@
       .c65::-webkit-progress-value {background: #41b1f3;}
       .c66::-webkit-progress-value {background: #e7ba83;}
       .c67::-webkit-progress-value {background: #f8a811;}
-      #songSelectMenu, #title {
-        transition: opacity 1s linear;
-      }
+      .c68::-webkit-progress-value {background: #423b2f;}
       .modal {
         display: none;
         opacity: 0;
@@ -208,6 +206,11 @@
         overflow: hidden;
         background-color: rgb(0,0,0);
         background-color: rgba(0,0,0,0.4);
+        transition-duration: 1s;
+      }
+      .blurred { 
+        -webkit-filter: blur(4px);
+        filter: blur(4px);
       }
       .modal-content {
         background-color: #444444;
@@ -215,7 +218,7 @@
         padding: 20px;
         border: 1px solid #888;
         width: 70%;
-        height: 190px;
+        height: 210px;
       }
       .close {
         color: #aaa;
@@ -244,6 +247,7 @@
         <option value="Airwaves">Airwaves</option>
         <option value="Astrocat">Astrocat</option>
         <option value="Backlash">Backlash</option>
+        <option value="BAD BOY">BAD BOY</option>
         <option value="Barracuda">Barracuda</option>
         <option value="Be Gone Mr. Gawne">Be Gone Mr. Gawne</option>
         <option value="BLAST">BLAST</option>
@@ -323,6 +327,7 @@
         <option value="Milky Ways">Milky Ways</option>
         <option value="MOSHI">MOSHI</option>
         <option value="New Game">New Game</option>
+        <option value="No Holding On">No Holding On (feat. Holly Drummond)</option>
         <option value="No Party Like a Mojang Party">No Party Like a Mojang Party</option>
         <option value="OKAY">OKAY</option>
         <option value="Omniverse">Omniverse</option>
@@ -379,6 +384,7 @@
         <option value="Timewarp">Timewarp</option>
         <option value="To the Stars">To the Stars</option>
         <option value="Tokyo Skies">Tokyo Skies</option>
+        <option value="Tonight">Tonight (feat. Danyka Nadeau)</option>
         <option value="Try This">Try This</option>
         <option value="TURBO">TURBO</option>
         <option value="Turbo Penguin">Turbo Penguin</option>
@@ -472,6 +478,12 @@
       </select> song tags.<br>
       <button onclick="selectSong()" id="button" disabled="true">Play! &#9656;</button><br>
     </span>
+    <div id="endModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&#9587;</span>
+        <span id="endMessage"></span>
+      </div>
+    </div>
     <button id="queueOpen">Queue Settings</button>
     <div id="queueModal" class="modal">
       <div class="modal-content">
@@ -483,6 +495,7 @@
             <option value="Airwaves">Airwaves</option>
             <option value="Astrocat">Astrocat</option>
             <option value="Backlash">Backlash</option>
+            <option value="BAD BOY">BAD BOY</option>
             <option value="Barracuda">Barracuda</option>
             <option value="Be Gone Mr. Gawne">Be Gone Mr. Gawne</option>
             <option value="BLAST">BLAST</option>
@@ -562,6 +575,7 @@
             <option value="Milky Ways">Milky Ways</option>
             <option value="MOSHI">MOSHI</option>
             <option value="New Game">New Game</option>
+            <option value="No Holding On">No Holding On (feat. Holly Drummond)</option>
             <option value="No Party Like a Mojang Party">No Party Like a Mojang Party</option>
             <option value="OKAY">OKAY</option>
             <option value="Omniverse">Omniverse</option>
@@ -618,6 +632,7 @@
             <option value="Timewarp">Timewarp</option>
             <option value="To the Stars">To the Stars</option>
             <option value="Tokyo Skies">Tokyo Skies</option>
+            <option value="Tonight">Tonight (feat. Danyka Nadeau)</option>
             <option value="Try This">Try This</option>
             <option value="TURBO">TURBO</option>
             <option value="Turbo Penguin">Turbo Penguin</option>
@@ -684,18 +699,41 @@
     var modal = document.getElementById("queueModal");
     var btn = document.getElementById("queueOpen");
     var span = document.getElementsByClassName("close")[0];
+    var end_modal = document.getElementById("endModal");
+    var end_span = document.getElementsByClassName("close")[1];
+    function endMessage(message) {
+      document.getElementById("endMessage").innerHTML = message;
+      end_modal.style.display = "block";
+      end_modal.style.opacity = 1;
+      document.body.classList.add("blurred");
+    }
     btn.onclick = function() {
       modal.style.display = "block";
       modal.style.opacity = 1;
+      document.body.classList.add("blurred");
     }
     span.onclick = function() {
       modal.style.display = "none";
       modal.style.opacity = 0;
+      document.body.classList.remove("blurred");
     }
     window.onclick = function(event) {
       if (event.target == modal) {
         modal.style.display = "none";
         modal.style.opacity = 0;
+        document.body.classList.remove("blurred");
+      }
+    }
+    end_span.onclick = function() {
+      end_modal.style.display = "none";
+      end_modal.style.opacity = 0;
+      document.body.classList.remove("blurred");
+    }
+    window.onclick = function(event) {
+      if (event.target == end_modal) {
+        end_modal.style.display = "none";
+        end_modal.style.opacity = 0;
+        document.body.classList.remove("blurred");
       }
     }
     function randomSong() {
@@ -778,7 +816,11 @@
       } else {
         if (song == "") {
           document.getElementById("button").disabled = true;
+        } else if (song == "BAD BOY" || song == "No Holding On" || song == "Tonight") {
+          document.getElementById("songTagVer").options.selectedIndex = 2;
+          document.getElementById("songTagVer").disabled = true;
         } else {
+          document.getElementById("songTagVer").disabled = false;
           document.getElementById("button").disabled = false;
         }
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/" + (document.getElementById("song").value == "I Call It Progstep" ? "I Call It Progstep 2" : (document.getElementById("song").value == "Deviance" ? "Deviance 3" : document.getElementById("song").value)) + ".PNG";
@@ -891,12 +933,16 @@
           case "Exoskelephone":
           case "Gravity":
           case "Grind":
+          case "No Holding On":
           case "Quake":
           case "Rinse Out":
           case "Rocket":
           case "Sexy Beast":
           case "Stock & Pull":
             artist = "Stereotronique";
+            break;
+          case "Tonight":
+            artist = "Stereotronique & Sebastian Ivarsson";
             break;
           case "BLAST":
           case "COOKIES":
@@ -913,6 +959,9 @@
           case "EPIC":
           case "TURBO":
             artist = "Tokyo Machine";
+            break;
+          case "BAD BOY":
+            artist = "Tokyo Machine & YAKO";
             break;
           case "Long Live The New Fresh":
             artist = "Danimal Cannon";
@@ -1059,25 +1108,29 @@
         } else {
           document.getElementById("timeLeft").innerHTML = "-0:00";
           if (document.getElementById("song").value == "Partyt Ar Igang") {
-            alert("Partyt A\u0308r Iga\u030Ang! by Bossfight has ended.");
+            endMessage("Partyt A\u0308r Iga\u030Ang! by Bossfight has ended.");
           } else if (document.getElementById("song").value == "Destroid 1 - Raise Your Fist") {
-            alert("Destroid 1 Raise Your Fist by Excision, Downlink & Space Laces has ended.");
+            endMessage("Destroid 1 Raise Your Fist by Excision, Downlink & Space Laces has ended.");
           } else if (document.getElementById("song").value == "Destroid 8 - Annihilate") {
-            alert("Destroid 8 Annihilate by Excision & Far Too Loud has ended.");
+            endMessage("Destroid 8 Annihilate by Excision & Far Too Loud has ended.");
           } else if (document.getElementById("song").value == "Destroid 10 - Funk Hole") {
-            alert("Destroid 10 Funk Hole by Excision & Space Laces has ended.");
+            endMessage("Destroid 10 Funk Hole by Excision & Space Laces has ended.");
           } else if (document.getElementById("song").value == "Destroid 2 - Wasteland") {
-            alert("Destroid 2 Wasteland by Excision, Downlink & Space Laces has ended.");
+            endMessage("Destroid 2 Wasteland by Excision, Downlink & Space Laces has ended.");
           } else if (document.getElementById("song").value == "Destroid 6 - Put It Down") {
-            alert("Destroid 6 Put It Down by Excision & Bassnectar has ended.");
+            endMessage("Destroid 6 Put It Down by Excision & Bassnectar has ended.");
           } else if (document.getElementById("song").value == "End is Near") {
-            alert("End is Near (Fire in the Hole VIP) by Pegboard Nerds has ended.");
+            endMessage("End is Near (Fire in the Hole VIP) by Pegboard Nerds has ended.");
           } else if (document.getElementById("song").value == "Cool Friends") {
-            alert("Cool Friends (Murtagh & Veschell Remix) by Silva Hound has ended.");
+            endMessage("Cool Friends (Murtagh & Veschell Remix) by Silva Hound has ended.");
           } else if (document.getElementById("song").value == "Destroid 7 - Bounce") {
-            alert("Destroid 7 Bounce by Excision & Space Laces has ended.");
+            endMessage("Destroid 7 Bounce by Excision & Space Laces has ended.");
+          } else if (document.getElementById("song").value == "No Holding On") {
+            endMessage("No Holding On (feat. Holly Drummond) by Stereotronique has ended.");
+          } else if (document.getElementById("song").value == "Tonight") {
+            endMessage("Tonight (feat. Danyka Nadeau) by Stereotronique & Sebastian Ivarsson has ended.");
           } else {
-            alert(document.getElementById("song").value + " by " + artist + " has ended.");
+            endMessage(document.getElementById("song").value + " by " + artist + " has ended.");
           }
           audio.src = "";
           document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/Not playing.PNG";
@@ -1125,7 +1178,7 @@
         "Leaving Leafwood Forest", "Cybertron", "Let It Roar", "To the Stars", "Airwaves",
         "Play It Loud", "Breakdown", "Breakdown VIP", "Disconnected", "Fire in the Hole",
         "End is Near", "Light Sticks", "Fingerbang", "EPIC", "Play It Loud (Broken Robot Mix)",
-        "Rinse Out", "Destroid 7 - Bounce", "TURBO"
+        "Rinse Out", "Destroid 7 - Bounce", "TURBO", "BAD BOY", "No Holding On", "Tonight"
       ];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
@@ -1175,6 +1228,10 @@
         document.title = "Now playing Highscore (feat. Teminite) by Panda Eyes on Visimusic";
       } else if (song == "End is Near") {
         document.title = "Now playing End is Near (Fire in the Hole VIP) by Pegboard Nerds on Visimusic";
+      } else if (song == "Tonight") {
+        document.title = "Now playing Tonight (feat. Danyka Nadeau) by Stereotronique & Sebastian Ivarsson) on Visimusic";
+      } else if (song == "No Holding On") {
+        document.title = "Now playing No Holding On (feat. Holly Drummond) by Stereotronique on Visimusic";
       } else {
         document.title = "Now playing " + song + " by " + artist + " on Visimusic";
       }
@@ -1219,6 +1276,7 @@
         case "Timewarp":
         case "Turbo Penguin":
         case "Rinse Out":
+        case "No Holding On":
           colors = ["#ffff00"];
           style = styles.single;
           barcolor = 3;
@@ -1444,6 +1502,7 @@
           barcolor = 34;
           break;
         case "Quake":
+        case "Tonight":
           colors = ["#e08b04"];
           style = styles.single;
           barcolor = 35;
@@ -1594,6 +1653,11 @@
           style = styles.single;
           barcolor = 67;
           break;
+        case "BAD BOY":
+          colors = ["#423b2f"];
+          style = styles.single;
+          barcolor = 68;
+          break;
       }
       switch (song) {
         case "TURBO": length = "2:50.997"; bpm = 128; break;
@@ -1742,6 +1806,9 @@
         case "Opia": length = "3:09.335"; bpm = 170; break;
         case "Wormhole": length = "3:40.395"; bpm = 128; break;
         case "EPIC": length = "3:38.618"; bpm = 128; break;
+        case "BAD BOY": length = "3:32.767"; bpm = 128; break;
+        case "No Holding On": length = "7:28.104"; bpm = 128; break;
+        case "Tonight": length = "6:45.446"; bpm = 128; break;
       }
       for (var i = 1; i <= 100; i++) {
         progress.classList.remove("c" + i);
@@ -1901,7 +1968,13 @@
                         song == "Starship Showdown" ? "Starship Showdown (feat. Christian Carlsson)" : (
                           song == "Highscore" ? "Highscore (feat. Teminite)" : (
                             song == "End is Near" ? "End is Near (Fire in the Hole VIP)" : (
-                              song == "Destroid 7 - Bounce" ? "Destroid 7 Bounce" : song
+                              song == "Destroid 7 - Bounce" ? "Destroid 7 Bounce" : (
+                                song == "No Holding On" ? "No Holding On (feat. Holly Drummond)" : (
+                                  song == "Tonight" ? "Tonight (feat. Danyka Nadeau)" : (
+                                    song
+                                  )
+                                )
+                              )
                             )
                           )
                         )
