@@ -705,35 +705,29 @@
       document.getElementById("endMessage").innerHTML = message;
       end_modal.style.display = "block";
       end_modal.style.opacity = 1;
-      document.body.classList.add("blurred");
     }
     btn.onclick = function() {
       modal.style.display = "block";
       modal.style.opacity = 1;
-      document.body.classList.add("blurred");
     }
     span.onclick = function() {
       modal.style.display = "none";
       modal.style.opacity = 0;
-      document.body.classList.remove("blurred");
     }
     window.onclick = function(event) {
       if (event.target == modal) {
         modal.style.display = "none";
         modal.style.opacity = 0;
-        document.body.classList.remove("blurred");
       }
     }
     end_span.onclick = function() {
       end_modal.style.display = "none";
       end_modal.style.opacity = 0;
-      document.body.classList.remove("blurred");
     }
     window.onclick = function(event) {
       if (event.target == end_modal) {
         end_modal.style.display = "none";
         end_modal.style.opacity = 0;
-        document.body.classList.remove("blurred");
       }
     }
     function randomSong() {
