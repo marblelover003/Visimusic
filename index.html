@@ -810,11 +810,13 @@
       } else {
         if (song == "") {
           document.getElementById("button").disabled = true;
-        } else if (song == "BAD BOY" || song == "No Holding On" || song == "Tonight") {
-          document.getElementById("songTagVer").options.selectedIndex = 2;
-          document.getElementById("songTagVer").disabled = true;
         } else {
-          document.getElementById("songTagVer").disabled = false;
+          if (song == "BAD BOY" || song == "No Holding On" || song == "Tonight") {
+            document.getElementById("songTagVer").options.selectedIndex = 2;
+            document.getElementById("songTagVer").disabled = true;
+          } else {
+            document.getElementById("songTagVer").disabled = false;
+          }
           document.getElementById("button").disabled = false;
         }
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/" + (document.getElementById("song").value == "I Call It Progstep" ? "I Call It Progstep 2" : (document.getElementById("song").value == "Deviance" ? "Deviance 3" : document.getElementById("song").value)) + ".PNG";
