@@ -78,11 +78,18 @@
         background: #00bf00;
         cursor: pointer;
       }
-      #clearBtn {
+      .red {
         color: red;
       }
-      #clearBtn:hover {
+      .red:hover {
         background: red;
+        color: white;
+      }
+      #button {
+        color: #00bf00;
+      }
+      #button:hover {
+        background: #00bf00;
         color: white;
       }
       select[disabled], button[disabled] {
@@ -469,11 +476,14 @@
         <option>-55</option>
         <option>-50</option>
       </select><br>
-      Use <select id="songTagVer" onchange="checkSong()">
+      Use
+      <select id="songTagVer" onchange="checkSong()">
         <option value=4>v4</option>
         <option value=5>v5</option>
+        <option value=6>v6 *NEW*</option>
         <option value=0>no</option>
       </select> song tags.<br>
+      <button onclick="setDefaults()">Set Defaults</button> <button onclick="resetDefaults()" class="red">Reset Defaults</button>
       <button onclick="selectSong()" id="button" disabled="true">Play! &#9656;</button><br>
     </span>
     <div id="endModal" class="modal">
@@ -648,7 +658,7 @@
           3. <span id="queue3"></span><br>
           4. <span id="queue4"></span><br>
           5. <span id="queue5"></span><br>
-          <span style="display: inline-block; width: 100%; text-align: right;"><button onclick="clearQueue()" id="clearBtn">Clear Queue</button></span>
+          <span style="display: inline-block; width: 100%; text-align: right;"><button onclick="clearQueue()" id="clearBtn" class="red">Clear Queue</button></span>
         </span>
       </div>
     </div>
@@ -668,6 +678,30 @@
     <canvas id="canvas" width="60" height="60"></canvas>
   </body>
   <script>
+    if (localStorage.getItem("fftSize") != null) {
+      document.getElementById("fftSize").options.selectedIndex = localStorage.getItem("fftSize");
+    }
+    if (localStorage.getItem("bars") != null) {
+      document.getElementById("bars").options.selectedIndex = localStorage.getItem("bars");
+    }
+    if (localStorage.getItem("smoothing") != null) {
+      document.getElementById("smoothing").options.selectedIndex = localStorage.getItem("smoothing");
+    }
+    if (localStorage.getItem("maxheight") != null) {
+      document.getElementById("maxheight").options.selectedIndex = localStorage.getItem("maxheight");
+    }
+    if (localStorage.getItem("power") != null) {
+      document.getElementById("power").options.selectedIndex = localStorage.getItem("power");
+    }
+    if (localStorage.getItem("maxdb") != null) {
+      document.getElementById("maxdb").options.selectedIndex = localStorage.getItem("maxdb");
+    }
+    if (localStorage.getItem("mindb") != null) {
+      document.getElementById("mindb").options.selectedIndex = localStorage.getItem("mindb");
+    }
+    if (localStorage.getItem("songTagVer") != null) {
+      document.getElementById("songTagVer").options.selectedIndex = localStorage.getItem("songTagVer");
+    }
     var bar_height, frequency_array,
         styles = {
           alternating: "alternating",
@@ -696,9 +730,9 @@
     document.getElementById("queueBtn").disabled = true;
     var modal = document.getElementById("queueModal");
     var btn = document.getElementById("queueOpen");
-    var span = document.getElementsByClassName("close")[0];
+    var span = document.getElementsByClassName("close")[1];
     var end_modal = document.getElementById("endModal");
-    var end_span = document.getElementsByClassName("close")[1];
+    var end_span = document.getElementsByClassName("close")[0];
     function endMessage(message) {
       document.getElementById("endMessage").innerHTML = message;
       end_modal.style.display = "block";
@@ -724,6 +758,26 @@
     end_span.onclick = function() {
       end_modal.style.display = "none";
       end_modal.style.opacity = 0;
+    }
+    function setDefaults() {
+      localStorage.setItem("fftSize", document.getElementById("fftSize").options.selectedIndex);
+      localStorage.setItem("bars", document.getElementById("bars").options.selectedIndex);
+      localStorage.setItem("smoothing", document.getElementById("smoothing").options.selectedIndex);
+      localStorage.setItem("maxheight", document.getElementById("maxheight").options.selectedIndex);
+      localStorage.setItem("power", document.getElementById("power").options.selectedIndex);
+      localStorage.setItem("maxdb", document.getElementById("maxdb").options.selectedIndex);
+      localStorage.setItem("mindb", document.getElementById("mindb").options.selectedIndex);
+      localStorage.setItem("songTagVer", document.getElementById("songTagVer").options.selectedIndex);
+    }
+    function resetDefaults() {
+      localStorage.setItem("fftSize", 1);
+      localStorage.setItem("bars", 4);
+      localStorage.setItem("smoothing", 0);
+      localStorage.setItem("maxheight", 0);
+      localStorage.setItem("power", 2);
+      localStorage.setItem("maxdb", 2);
+      localStorage.setItem("mindb", 2);
+      localStorage.setItem("songTagVer", 0);
     }
     function randomSong() {
       var elem = document.getElementById("song");
@@ -791,7 +845,7 @@
     }
     function checkSong() {
       song = document.getElementById("song").value;
-      document.getElementById("songTag").width = document.getElementById("songTagVer").value == 4 ? 216 : 384;
+      document.getElementById("songTag").width = document.getElementById("songTagVer").value == 5 ? 384 : 216;
       document.getElementById("songTag").height = 216;
       if (song == "") {
         document.getElementById("button").disabled = true;
@@ -802,7 +856,7 @@
           document.getElementById("button").disabled = true;
         } else {
           if (song == "") {
-            document.getElementById("songTagVer").options.selectedIndex = 2;
+            document.getElementById("songTagVer").options.selectedIndex = 3;
             document.getElementById("songTagVer").disabled = true;
           } else {
             document.getElementById("songTagVer").disabled = false;
