@@ -665,7 +665,7 @@
         </span>
       </div>
     </div>
-    <span id="title"><b>0</b>%<br>Loading...</span>
+    <span id="title">Loading...</span>
     <audio src="" id="audio"></audio>
     <span style="position: absolute; top: 8px; right: 8px; width: 200px; font: 16px Montserrat; text-align: center;">
       bpm<br>
@@ -1195,7 +1195,7 @@
           progress.value = 0;
           progress.max = 0;
           document.title = "Visimusic";
-          document.getElementById("title").innerHTML = "<b>0</b>%<br>Loading...";
+          document.getElementById("title").innerHTML = "Loading...";
           document.getElementById("title").style.visibility = "hidden";
           heightlimit = 0;
           checkSong();
@@ -1895,17 +1895,8 @@
       }
       document.getElementById("timeLeft").innerHTML = "-" + Math.floor(l_m / 60) + ":" + ("0" + l_s).slice(-2);
       audio.load();
-      var x = setInterval(function() {
-        var min = parseInt(length[0]);
-        var sec = parseInt(length[2] + length[3]);
-        min *= 60;
-        var total = min + sec;
-        var bufferProgress = Math.floor(audio.buffered.end(0) / total * 1000) / 10;
-        document.getElementById("title").innerHTML = "<b>" + bufferProgress + "</b>%<br>Loading...";
-      }, 0);
       animationLooper();
       audio.oncanplaythrough = function() {
-        clearInterval(x);
         audio.play();
         positions = setInterval(playing, 0);
       }
