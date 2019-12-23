@@ -201,6 +201,7 @@
       .c66::-webkit-progress-value {background: #e7ba83;}
       .c67::-webkit-progress-value {background: #f8a811;}
       .c68::-webkit-progress-value {background: #d33831;}
+      .c69::-webkit-progress-value {background: linear-gradient(to bottom, #6b7d87 49.99999999%, #4f5e66 50%);}
       .modal {
         display: none;
         opacity: 0;
@@ -322,7 +323,7 @@
         <option value="Into The Zone">Into the Zone</option>
         <option value="It's Pronounced Omnitica">It&apos;s Pronounced Omnitica</option>
         <option value="Jack Russel">Jack Russel</option>
-        <option value="Junction Seven" disabled>Junction Seven - coming soon...</option>
+        <option value="Junction Seven">Junction Seven</option>
         <option value="Leaving Leafwood Forest">Leaving Leafwood Forest</option>
         <option value="Legacy">Legacy</option>
         <option value="Let It Roar">Let It Roar</option>
@@ -574,7 +575,7 @@
             <option value="Into the Zone">Into the Zone</option>
             <option value="It's Pronounced Omnitica">It&apos;s Pronounced Omnitica</option>
             <option value="Jack Russel">Jack Russel</option>
-            <option value="Junction Seven" disabled>Junction Seven - coming soon</option>
+            <option value="Junction Seven">Junction Seven</option>
             <option value="Leaving Leafwood Forest">Leaving Leafwood Forest</option>
             <option value="Legacy">Legacy</option>
             <option value="Let It Roar">Let It Roar</option>
@@ -857,7 +858,7 @@
         if (song == "") {
           document.getElementById("button").disabled = true;
         } else {
-          if (song == "") {
+          if (song == "Junction Seven") {
             document.getElementById("songTagVer").options.selectedIndex = 3;
             document.getElementById("songTagVer").disabled = true;
           } else {
@@ -1708,6 +1709,11 @@
           style = styles.single;
           barcolor = 68;
           break;
+        case "Junction Seven":
+          colors = ["#6b7d87", "#4f5e66"];
+          style = styles.alternating;
+          barcolor = 69;
+          break;
       }
       switch (song) {
         case "TURBO": length = "2:50.997"; bpm = 128; break;
@@ -1859,6 +1865,7 @@
         case "BAD BOY": length = "3:32.767"; bpm = 128; break;
         case "No Holding On": length = "7:28.104"; bpm = 128; break;
         case "Tonight": length = "6:45.446"; bpm = 128; break;
+        case "Junction Seven": length = "5:05.240"; bpm = 175; break;
       }
       for (var i = 1; i <= 100; i++) {
         progress.classList.remove("c" + i);
