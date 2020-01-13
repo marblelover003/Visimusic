@@ -252,6 +252,7 @@
         <option></option>
         <option value="Airwaves">Airwaves</option>
         <option value="Astrocat">Astrocat</option>
+        <option value="Atlantic">Atlantic</option>
         <option value="Backlash">Backlash</option>
         <option value="BAD BOY">BAD BOY</option>
         <option value="Barracuda">Barracuda</option>
@@ -294,6 +295,7 @@
         <option value="Duality">Duality</option>
         <option value="Dubwoofer Substep">Dubwoofer Substep</option>
         <option value="Eclipse">Eclipse</option>
+        <option value="Emergency">Emergency</option>
         <option value="End is Near">End is Near (Fire in the Hole VIP)</option>
         <option value="EPIC">EPIC</option>
         <option value="Evolution">Evolution</option>
@@ -384,6 +386,7 @@
         <option value="The Escape">The Escape</option>
         <option value="The Lunar Whale">The Lunar Whale</option>
         <option value="The Maze of Mayonnaise">The Maze of Mayonnaise</option>
+        <option value="This Is It">This Is It</option>
         <option value="This Time">This Time</option>
         <option value="Till It's Over">Till It's Over</option>
         <option value="Time Goes By">Time Goes By</option>
@@ -504,6 +507,7 @@
             <option></option>
             <option value="Airwaves">Airwaves</option>
             <option value="Astrocat">Astrocat</option>
+            <option value="Atlantic">Atlantic</option>
             <option value="Backlash">Backlash</option>
             <option value="BAD BOY">BAD BOY</option>
             <option value="Barracuda">Barracuda</option>
@@ -546,6 +550,7 @@
             <option value="Duality">Duality</option>
             <option value="Dubwoofer Substep">Dubwoofer Substep</option>
             <option value="Eclipse">Eclipse</option>
+            <option value="Emergency">Emergency</option>
             <option value="End is Near (Fire in the Hole VIP)">End is Near (Fire in the Hole VIP)</option>
             <option value="EPIC">EPIC</option>
             <option value="Evolution">Evolution</option>
@@ -636,6 +641,7 @@
             <option value="The Escape">The Escape</option>
             <option value="The Lunar Whale">The Lunar Whale</option>
             <option value="The Maze of Mayonnaise">The Maze of Mayonnaise</option>
+            <option value="This Is It">This Is It</option>
             <option value="This Time">This Time</option>
             <option value="Till It's Over">Till It's Over</option>
             <option value="Time Goes By">Time Goes By</option>
@@ -871,6 +877,10 @@
           case "Fingerbang":
             artist = "MDK";
             break;
+          case "Atlantic":
+          case "This Is It":
+            artist = "Rogue";
+            break;
           case "Astrocat":
           case "Buzz Kill":
           case "Rat Twist":
@@ -1035,6 +1045,7 @@
           case "Disconnected":
           case "Fire in the Hole":
           case "End is Near":
+          case "Emergency":
             artist = "Pegboard Nerds";
             break;
           case "Delayed Friend Request":
@@ -1230,7 +1241,7 @@
         "Play It Loud", "Breakdown", "Breakdown VIP", "Disconnected", "Fire in the Hole",
         "End is Near", "Light Sticks", "Fingerbang", "EPIC", "Play It Loud (Broken Robot Mix)",
         "Rinse Out", "Destroid 7 - Bounce", "TURBO", "BAD BOY", "No Holding On", "Tonight",
-        "Junction Seven"
+        "Junction Seven", "Emergency", "Atlantic", "This Is It"
       ];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
@@ -1307,10 +1318,12 @@
           barcolor = 57;
           break;
         case "Airwaves":
+        case "Atlantic":
         case "Cheat Codes":
         case "Checkpoint":
         case "Delayed Friend Request":
         case "Disconnected":
+        case "Emergency":
         case "Exoskelephone":
         case "Final Boss":
         case "FTW":
@@ -1356,6 +1369,7 @@
         case "Once Again":
         case "Till It\'s Over":
         case "Fire in the Hole":
+        case "This Is It":
           colors = ["#11a858"];
           style = styles.single;
           barcolor = 58;
@@ -1717,6 +1731,9 @@
           break;
       }
       switch (song) {
+        case "Emergency": length = "4:13.204"; bpm = 128; break;
+        case "Atlantic": length = "4:23.471"; bpm = 130; break;
+        case "This Is It": length = "5:33.792"; bpm = 108; break;
         case "TURBO": length = "2:50.997"; bpm = 128; break;
         case "Destroid 7 - Bounce": length = "4:21.250"; bpm = 140; break;
         case "Rinse Out": length = "5:43.353"; bpm = 128; break;
