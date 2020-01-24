@@ -361,6 +361,7 @@
         <option value="Razor Sharp">Razor Sharp</option>
         <option value="Renegade">Renegade</option>
         <option value="Rhapsody">Rhapsody</option>
+        <option value="Rhusma">Rhusma</option>
         <option value="Rinse Out">Rinse Out</option>
         <option value="ROCK IT">ROCK IT</option>
         <option value="Rocket">Rocket</option>
@@ -616,6 +617,7 @@
             <option value="Razor Sharp">Razor Sharp</option>
             <option value="Renegade">Renegade</option>
             <option value="Rhapsody">Rhapsody</option>
+            <option value="Rhusma" disabled>Rhusma</option>
             <option value="Rinse Out">Rinse Out</option>
             <option value="ROCK IT">ROCK IT</option>
             <option value="Rocket">Rocket</option>
@@ -861,10 +863,10 @@
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/Not playing.PNG";
         document.getElementById("artist").innerHTML = "???";
       } else {
-        if (song == "") {
+        if (song == "Rhusma") {
           document.getElementById("button").disabled = true;
         } else {
-          if (song == "Junction Seven") {
+          if (song == "Junction Seven" || song == "Rhusma") {
             document.getElementById("songTagVer").options.selectedIndex = 3;
             document.getElementById("songTagVer").disabled = true;
           } else {
@@ -874,6 +876,9 @@
         }
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/" + (document.getElementById("song").value == "I Call It Progstep" ? "I Call It Progstep 2" : (document.getElementById("song").value == "Deviance" ? "Deviance 3" : document.getElementById("song").value)) + ".PNG";
         switch (song) {
+          case "Rhusma":
+            artist = "Stereotronique & Northend";
+            break;
           case "Fingerbang":
             artist = "MDK";
             break;
@@ -1241,7 +1246,7 @@
         "Play It Loud", "Breakdown", "Breakdown VIP", "Disconnected", "Fire in the Hole",
         "End is Near", "Light Sticks", "Fingerbang", "EPIC", "Play It Loud (Broken Robot Mix)",
         "Rinse Out", "Destroid 7 - Bounce", "TURBO", "BAD BOY", "No Holding On", "Tonight",
-        "Junction Seven", "Emergency", "Atlantic", "This Is It"
+        "Junction Seven", "Emergency", "Atlantic", "This Is It", "Rhusma"
       ];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
@@ -1569,6 +1574,7 @@
           break;
         case "Quake":
         case "Tonight":
+        case "Rhusma":
           colors = ["#e08b04"];
           style = styles.single;
           barcolor = 35;
@@ -1884,6 +1890,7 @@
         case "No Holding On": length = "7:28.104"; bpm = 128; break;
         case "Tonight": length = "6:45.446"; bpm = 128; break;
         case "Junction Seven": length = "5:05.240"; bpm = 175; break;
+        case "Rhusma": length = "5:53.000"; bpm = 128; break;
       }
       for (var i = 1; i <= 100; i++) {
         progress.classList.remove("c" + i);
@@ -1914,6 +1921,7 @@
       document.getElementById("timeLeft").innerHTML = "-" + Math.floor(l_m / 60) + ":" + ("0" + l_s).slice(-2);
       audio.load();
       animationLooper();
+      document.getElementById("title").innerHTML = "Loading&hellip;";
       audio.oncanplaythrough = function() {
         audio.play();
         positions = setInterval(playing, 0);
