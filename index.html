@@ -256,6 +256,7 @@
         <option value="Backlash">Backlash</option>
         <option value="BAD BOY">BAD BOY</option>
         <option value="Barracuda">Barracuda</option>
+        <option value="Bass Head">Bass Head</option>
         <option value="Be Gone Mr. Gawne">Be Gone Mr. Gawne</option>
         <option value="BLAST">BLAST</option>
         <option value="Breakdown">Breakdown</option>
@@ -512,6 +513,7 @@
             <option value="Backlash">Backlash</option>
             <option value="BAD BOY">BAD BOY</option>
             <option value="Barracuda">Barracuda</option>
+            <option value="Bass Head">Bass Head</option>
             <option value="Be Gone Mr. Gawne">Be Gone Mr. Gawne</option>
             <option value="BLAST">BLAST</option>
             <option value="Breakdown">Breakdown</option>
@@ -863,10 +865,10 @@
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/Not playing.PNG";
         document.getElementById("artist").innerHTML = "???";
       } else {
-        if (song == "Rhusma") {
+        if (song == "") {
           document.getElementById("button").disabled = true;
         } else {
-          if (song == "Junction Seven" || song == "Rhusma") {
+          if (song == "Junction Seven" || song == "Rhusma" || song == "Bass Head") {
             document.getElementById("songTagVer").options.selectedIndex = 3;
             document.getElementById("songTagVer").disabled = true;
           } else {
@@ -876,6 +878,9 @@
         }
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/" + (document.getElementById("song").value == "I Call It Progstep" ? "I Call It Progstep 2" : (document.getElementById("song").value == "Deviance" ? "Deviance 3" : document.getElementById("song").value)) + ".PNG";
         switch (song) {
+          case "Bass Head":
+            artist = "Bassnectar";
+            break;
           case "Rhusma":
             artist = "Stereotronique & Northend";
             break;
@@ -1246,7 +1251,7 @@
         "Play It Loud", "Breakdown", "Breakdown VIP", "Disconnected", "Fire in the Hole",
         "End is Near", "Light Sticks", "Fingerbang", "EPIC", "Play It Loud (Broken Robot Mix)",
         "Rinse Out", "Destroid 7 - Bounce", "TURBO", "BAD BOY", "No Holding On", "Tonight",
-        "Junction Seven", "Emergency", "Atlantic", "This Is It", "Rhusma"
+        "Junction Seven", "Emergency", "Atlantic", "This Is It", "Rhusma", "Bass Head"
       ];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
@@ -1459,6 +1464,7 @@
           style = styles.random;
           barcolor = 14;
           break;
+        case "Bass Head":
         case "Destroid 1 - Raise Your Fist":
         case "Destroid 2 - Wasteland":
         case "Destroid 6 - Put It Down":
@@ -1890,7 +1896,8 @@
         case "No Holding On": length = "7:28.104"; bpm = 128; break;
         case "Tonight": length = "6:45.446"; bpm = 128; break;
         case "Junction Seven": length = "5:05.240"; bpm = 175; break;
-        case "Rhusma": length = "5:53.000"; bpm = 128; break;
+        case "Rhusma": length = "5:52.835"; bpm = 128; break;
+        case "Bass Head": length = "6:37.714"; bpm = 85; break;
       }
       for (var i = 1; i <= 100; i++) {
         progress.classList.remove("c" + i);
