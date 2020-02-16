@@ -324,6 +324,7 @@
         <option value="I Call It Progstep">I Call It Progstep</option>
         <option value="I'm being Reelistic">I&apos;m being Reelistic</option>
         <option value="Into The Zone">Into the Zone</option>
+        <option value="Ism">Ism</option>
         <option value="It's Pronounced Omnitica">It&apos;s Pronounced Omnitica</option>
         <option value="Jack Russel">Jack Russel</option>
         <option value="Junction Seven">Junction Seven</option>
@@ -336,6 +337,7 @@
         <option value="Long Live The New Fresh">Long Live the New Fresh</option>
         <option value="Milky Ways">Milky Ways</option>
         <option value="MOSHI">MOSHI</option>
+        <option value="Nemesis">Nemesis</option>
         <option value="New Game">New Game</option>
         <option value="No Holding On">No Holding On (feat. Holly Drummond)</option>
         <option value="No Party Like a Mojang Party">No Party Like a Mojang Party</option>
@@ -376,6 +378,7 @@
         <option value="Spection">Spection</option>
         <option value="Spectra">Spectra</option>
         <option value="SPOOKY">SPOOKY</option>
+        <option value="Starfish">Starfish</option>
         <option value="Starship Showdown">Starship Showdown (feat. Christian Carlsson)</option>
         <option value="Steampunk Warlord">Steampunk Warlord</option>
         <option value="Stock & Pull">Stock &amp; Pull</option>
@@ -581,6 +584,7 @@
             <option value="I Call It Progstep">I Call It Progstep</option>
             <option value="I'm being Reelistic">I&apos;m being Reelistic</option>
             <option value="Into the Zone">Into the Zone</option>
+            <option value="Ism">Ism</option>
             <option value="It's Pronounced Omnitica">It&apos;s Pronounced Omnitica</option>
             <option value="Jack Russel">Jack Russel</option>
             <option value="Junction Seven">Junction Seven</option>
@@ -593,6 +597,7 @@
             <option value="Long Live The New Fresh">Long Live the New Fresh</option>
             <option value="Milky Ways">Milky Ways</option>
             <option value="MOSHI">MOSHI</option>
+            <option value="Nemesis">Nemesis</option>
             <option value="New Game">New Game</option>
             <option value="No Holding On">No Holding On (feat. Holly Drummond)</option>
             <option value="No Party Like a Mojang Party">No Party Like a Mojang Party</option>
@@ -633,6 +638,7 @@
             <option value="Spection">Spection</option>
             <option value="Spectra">Spectra</option>
             <option value="SPOOKY">SPOOKY</option>
+            <option value="Starfish">Starfish</option>
             <option value="Starship Showdown (feat. Christian Carlsson)">Starship Showdown (feat. Christian Carlsson)</option>
             <option value="Steampunk Warlord">Steampunk Warlord</option>
             <option value="Stock & Pull">Stock &amp; Pull</option>
@@ -868,7 +874,7 @@
         if (song == "") {
           document.getElementById("button").disabled = true;
         } else {
-          if (song == "Junction Seven" || song == "Rhusma" || song == "Bass Head") {
+          if (song == "") {
             document.getElementById("songTagVer").options.selectedIndex = 3;
             document.getElementById("songTagVer").disabled = true;
           } else {
@@ -878,6 +884,10 @@
         }
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/" + (document.getElementById("song").value == "I Call It Progstep" ? "I Call It Progstep 2" : (document.getElementById("song").value == "Deviance" ? "Deviance 3" : document.getElementById("song").value)) + ".PNG";
         switch (song) {
+          case "Ism":
+          case "Starfish":
+            artist = "Savant";
+            break;
           case "Bass Head":
             artist = "Bassnectar";
             break;
@@ -888,6 +898,7 @@
             artist = "MDK";
             break;
           case "Atlantic":
+          case "Nemesis":
           case "This Is It":
             artist = "Rogue";
             break;
@@ -1251,7 +1262,8 @@
         "Play It Loud", "Breakdown", "Breakdown VIP", "Disconnected", "Fire in the Hole",
         "End is Near", "Light Sticks", "Fingerbang", "EPIC", "Play It Loud (Broken Robot Mix)",
         "Rinse Out", "Destroid 7 - Bounce", "TURBO", "BAD BOY", "No Holding On", "Tonight",
-        "Junction Seven", "Emergency", "Atlantic", "This Is It", "Rhusma", "Bass Head"
+        "Junction Seven", "Emergency", "Atlantic", "This Is It", "Rhusma", "Bass Head",
+        "Ism", "Nemesis", "Starfish"
       ];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
@@ -1340,6 +1352,7 @@
         case "Gravity":
         case "Grind":
         case "MOSHI":
+        case "Nemesis":
         case "New Game":
         case "Rocktronik":
         case "Sexy Beast":
@@ -1687,6 +1700,8 @@
           break;
         case "Here It Comes":
         case "Breakdown":
+        case "Ism":
+        case "Starfish":
           colors = ["#0000ff"];
           style = styles.single;
           barcolor = 51;
@@ -1898,6 +1913,9 @@
         case "Junction Seven": length = "5:05.240"; bpm = 175; break;
         case "Rhusma": length = "5:52.835"; bpm = 128; break;
         case "Bass Head": length = "6:37.714"; bpm = 85; break;
+        case "Ism": length = "5:23.631"; bpm = 151; break;
+        case "Nemesis": length = "4:20.284"; bpm = 107; break;
+        case "Starfish": length = "5:01.923"; bpm = 101; break;
       }
       for (var i = 1; i <= 100; i++) {
         progress.classList.remove("c" + i);
