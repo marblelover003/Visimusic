@@ -202,6 +202,7 @@
       .c67::-webkit-progress-value {background: #f8a811;}
       .c68::-webkit-progress-value {background: #d33831;}
       .c69::-webkit-progress-value {background: linear-gradient(to bottom, #6b7d87 49.99999999%, #4f5e66 50%);}
+      .c70::-webkit-progress-value {background: linear-gradient(to bottom, #9494a0 49.99999999%, #94040d 50%);}
       .modal {
         display: none;
         opacity: 0;
@@ -388,6 +389,7 @@
         <option value="Termination Shock">Termination Shock</option>
         <option value="The Art of War">The Art of War</option>
         <option value="The Cave, The Treasure">The Cave, The Treasure</option>
+        <option value="The Devil's Den">The Devil's Den</option>
         <option value="The Escape">The Escape</option>
         <option value="The Lunar Whale">The Lunar Whale</option>
         <option value="The Maze of Mayonnaise">The Maze of Mayonnaise</option>
@@ -648,6 +650,7 @@
             <option value="Termination Shock">Termination Shock</option>
             <option value="The Art of War">The Art of War</option>
             <option value="The Cave, The Treasure">The Cave, The Treasure</option>
+            <option value="The Devil's Den">The Devil's Den</option>
             <option value="The Escape">The Escape</option>
             <option value="The Lunar Whale">The Lunar Whale</option>
             <option value="The Maze of Mayonnaise">The Maze of Mayonnaise</option>
@@ -874,7 +877,7 @@
         if (song == "") {
           document.getElementById("button").disabled = true;
         } else {
-          if (song == "") {
+          if (song == "The Devil's Den") {
             document.getElementById("songTagVer").options.selectedIndex = 3;
             document.getElementById("songTagVer").disabled = true;
           } else {
@@ -884,6 +887,9 @@
         }
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/" + (document.getElementById("song").value == "I Call It Progstep" ? "I Call It Progstep 2" : (document.getElementById("song").value == "Deviance" ? "Deviance 3" : document.getElementById("song").value)) + ".PNG";
         switch (song) {
+          case "The Devil's Den":
+            artist = "Skrillex & Wolfgang Gartner";
+            break;
           case "Ism":
           case "Starfish":
             artist = "Savant";
@@ -1263,7 +1269,7 @@
         "End is Near", "Light Sticks", "Fingerbang", "EPIC", "Play It Loud (Broken Robot Mix)",
         "Rinse Out", "Destroid 7 - Bounce", "TURBO", "BAD BOY", "No Holding On", "Tonight",
         "Junction Seven", "Emergency", "Atlantic", "This Is It", "Rhusma", "Bass Head",
-        "Ism", "Nemesis", "Starfish"
+        "Ism", "Nemesis", "Starfish", "The Devil's Den"
       ];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
@@ -1322,6 +1328,11 @@
       }
       var barcolor;
       switch (song) {
+        case "The Devil's Den":
+          colors = ["#9494a0", "#94040d"];
+          style = styles.alternating;
+          barcolor = 70;
+          break;
         case "Barracuda":
         case "Rat Twist":
         case "Sentinel":
@@ -1916,6 +1927,7 @@
         case "Ism": length = "5:23.631"; bpm = 151; break;
         case "Nemesis": length = "4:20.284"; bpm = 107; break;
         case "Starfish": length = "5:01.923"; bpm = 101; break;
+        case "The Devil's Den": length = "4:53.093"; bpm = 128; break;
       }
       for (var i = 1; i <= 100; i++) {
         progress.classList.remove("c" + i);
