@@ -2044,21 +2044,8 @@
         elapsed = now - start;
         if (elapsed >= 60000 / 136) {
           start = new Date().getTime();
-          var y = 0;
           for (var i = 0; i < document.getElementById("visualizer").getElementsByTagName("div").length; i++) {
-            switch (style) {
-              case "alternating":
-              case "sequential":
-                document.getElementById("visualizer").getElementsByTagName("div")[y].style.background = colors[y % colors.length];
-                break;
-              case "random":
-                document.getElementById("visualizer").getElementsByTagName("div")[y].style.background = colors[Math.floor(Math.random() * colors.length)];
-                break;
-              case "single":
-                document.getElementById("visualizer").getElementsByTagName("div")[y].style.background = colors[0];
-                break;
-            }
-            y++;
+            document.getElementById("visualizer").getElementsByTagName("div")[i].style.background = colors[Math.floor(Math.random() * colors.length)];
           }
         }
       }
