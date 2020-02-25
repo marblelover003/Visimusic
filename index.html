@@ -22,7 +22,7 @@
         width: 2.5px;
         height: 1px;
         display: inline-block;
-        transition: background 1s linear;
+        transition: background 200ms linear;
       }
       a, a:visited {
         color: white;
@@ -203,6 +203,7 @@
       .c68::-webkit-progress-value {background: #d33831;}
       .c69::-webkit-progress-value {background: linear-gradient(to bottom, #6b7d87 49.99999999%, #4f5e66 50%);}
       .c70::-webkit-progress-value {background: linear-gradient(to bottom, #9494a0 49.99999999%, #94040d 50%);}
+      .c71::-webkit-progress-value {background: linear-gradient(to bottom, #ff0000 24.99999999%, #ff3300 25%, #ff3300 49.99999999%, #ff5500 50%, #ff5500 74.99999999%, #ff6600 75%);}
       .modal {
         display: none;
         opacity: 0;
@@ -292,6 +293,7 @@
         <option value="Destroid 7 - Bounce">Destroid 7 Bounce</option>
         <option value="Destroid 8 - Annihilate">Destroid 8 Annihilate</option>
         <option value="Destroid 10 - Funk Hole">Destroid 10 Funk Hole</option>
+        <option value="Deviance (Original)">Deviance (Original Mix)</option>
         <option value="Deviance">Deviance (Dirtyphonics Remix)</option>
         <option value="Disconnected">Disconnected</option>
         <option value="Duality">Duality</option>
@@ -308,6 +310,7 @@
         <option value="Final Boss">Final Boss</option>
         <option value="Fingerbang">Fingerbang</option>
         <option value="Fire in the Hole">Fire in the Hole</option>
+        <option value="Fire Vortex">Fire Vortex</option>
         <option value="Flirt Flirt Oh It Hurts">Flirt Flirt Oh It Hurts</option>
         <option value="Focus">Focus</option>
         <option value="Forged in Stars">Forged in Stars</option>
@@ -319,6 +322,7 @@
         <option value="Halcyon">Halcyon</option>
         <option value="Heist">Heist</option>
         <option value="Here It Comes">Here It Comes</option>
+        <option value="Here We Go">Here We Go</option>
         <option value="Highscore">Highscore</option>
         <option value="Houston">Houston</option>
         <option value="HYPE">HYPE</option>
@@ -550,9 +554,10 @@
             <option value="Destroid 1 Raise Your Fist">Destroid 1 Raise Your Fist</option>
             <option value="Destroid 2 Wasteland">Destroid 2 Wasteland</option>
             <option value="Destroid 6 Put It Down">Destroid 6 Put It Down</option>
-            <option value="Destroid 7 - Bounce">Destroid 7 Bounce</option>
+            <option value="Destroid 7 Bounce">Destroid 7 Bounce</option>
             <option value="Destroid 8 Annihilate">Destroid 8 Annihilate</option>
             <option value="Destroid 10 Funk Hole">Destroid 10 Funk Hole</option>
+            <option value="Deviance (Original Mix)">Deviance (Original Mix)</option>
             <option value="Deviance (Dirtyphonics Remix)">Deviance (Dirtyphonics Remix)</option>
             <option value="Disconnected">Disconnected</option>
             <option value="Duality">Duality</option>
@@ -569,6 +574,7 @@
             <option value="Final Boss">Final Boss</option>
             <option value="Fingerbang">Fingerbang</option>
             <option value="Fire in the Hole">Fire in the Hole</option>
+            <option value="Fire Vortex">Fire Vortex</option>
             <option value="Flirt Flirt Oh It Hurts">Flirt Flirt Oh It Hurts</option>
             <option value="Focus">Focus</option>
             <option value="Forged in Stars">Forged in Stars</option>
@@ -580,6 +586,7 @@
             <option value="Halcyon">Halcyon</option>
             <option value="Heist">Heist</option>
             <option value="Here It Comes">Here It Comes</option>
+            <option value="Here We Go">Here We Go</option>
             <option value="Highscore">Highscore</option>
             <option value="Houston">Houston</option>
             <option value="HYPE">HYPE</option>
@@ -877,7 +884,7 @@
         if (song == "") {
           document.getElementById("button").disabled = true;
         } else {
-          if (song == "The Devil's Den") {
+          if (song == "The Devil's Den" || song == "Fire Vortex" || song == "Deviance (Original)" || song == "Here We Go") {
             document.getElementById("songTagVer").options.selectedIndex = 3;
             document.getElementById("songTagVer").disabled = true;
           } else {
@@ -887,6 +894,9 @@
         }
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/" + (document.getElementById("song").value == "I Call It Progstep" ? "I Call It Progstep 2" : (document.getElementById("song").value == "Deviance" ? "Deviance 3" : document.getElementById("song").value)) + ".PNG";
         switch (song) {
+          case "Fire Vortex":
+            artist = "Mitchell Claxton";
+            break;
           case "The Devil's Den":
             artist = "Skrillex & Wolfgang Gartner";
             break;
@@ -895,6 +905,7 @@
             artist = "Savant";
             break;
           case "Bass Head":
+          case "Here We Go":
             artist = "Bassnectar";
             break;
           case "Rhusma":
@@ -1141,6 +1152,7 @@
             artist = "Excision & Space Laces";
             break;
           case "Deviance":
+          case "Deviance (Original)":
             artist = "Excision & Datsik";
             break;
           case "Highscore":
@@ -1218,6 +1230,8 @@
             endMessage("No Holding On (feat. Holly Drummond) by Stereotronique has ended.");
           } else if (document.getElementById("song").value == "Tonight") {
             endMessage("Tonight (feat. Danyka Nadeau) by Stereotronique & Sebastian Ivarsson has ended.");
+          } else if (document.getElementById("song").value == "Deviance (Original)") {
+            endMessage("Deviance (Original Mix) by Excision & Datsik has ended.");
           } else {
             endMessage(document.getElementById("song").value + " by " + artist + " has ended.");
           }
@@ -1255,9 +1269,9 @@
       song = document.getElementById("song").value;
       audio = document.getElementById("audio");
       var helpers = [
-        "BLAST", "Backlash", "COOKIES", "Eclipse", "Evolution", "Forged in Stars",
-        "Heist", "I\'m being Reelistic", "OKAY", "PIXEL", "ROCK IT", "Rat Twist",
-        "Sentinel", "Sidewinder", "Surge", "The Escape", "This Time", "Turbo Penguin",
+        "BLAST", "Backlash", "COOKIES", "Eclipse", "Evolution", "Forged in Stars", "Heist",
+        "I\'m being Reelistic", "OKAY", "PIXEL", "ROCK IT", "Rat Twist", "Sentinel",
+        "Sidewinder", "Surge", "The Escape", "This Time", "Turbo Penguin",
         "It\'s Pronounced Omnitica", "Gravity", "Exoskelephone", "Sexy Beast", "Duality",
         "Spection", "Pyro", "Timewarp", "Delayed Friend Request", "Starship Showdown",
         "Destroid 1 - Raise Your Fist", "Farbror Melker Fixar Fiskdamm (Fastbom Cover)",
@@ -1268,8 +1282,9 @@
         "Play It Loud", "Breakdown", "Breakdown VIP", "Disconnected", "Fire in the Hole",
         "End is Near", "Light Sticks", "Fingerbang", "EPIC", "Play It Loud (Broken Robot Mix)",
         "Rinse Out", "Destroid 7 - Bounce", "TURBO", "BAD BOY", "No Holding On", "Tonight",
-        "Junction Seven", "Emergency", "Atlantic", "This Is It", "Rhusma", "Bass Head",
-        "Ism", "Nemesis", "Starfish", "The Devil's Den"
+        "Junction Seven", "Emergency", "Atlantic", "This Is It", "Rhusma", "Bass Head", "Ism",
+        "Nemesis", "Starfish", "The Devil's Den", "Deviance (Original)", "Fire Vortex",
+        "Here We Go"
       ];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
@@ -1313,6 +1328,8 @@
         document.title = "Now playing Destroid 6 Put It Down by Excision & Bassnectar on Visimusic";
       } else if (song == "Deviance") {
         document.title = "Now playing Deviance (Dirtyphonics Remix) by Excision & Datsik on Visimusic";
+      } else if (song == "Deviance (Original)") {
+        document.title = "Now playing Deviance (Original Mix) by Excision & Datsik on Visimusic";
       } else if (song == "Starship Showdown") {
         document.title = "Now playing Starship Showdown (feat. Christian Carlsson) by Bossfight on Visimusic";
       } else if (song == "Highscore") {
@@ -1328,6 +1345,11 @@
       }
       var barcolor;
       switch (song) {
+        case "Fire Vortex":
+          colors = ["#ff0000", "#ff3300", "#ff5500", "#ff6600"];
+          style = styles.random;
+          barcolor = 71;
+          break;
         case "The Devil's Den":
           colors = ["#9494a0", "#94040d"];
           style = styles.alternating;
@@ -1496,6 +1518,8 @@
         case "Destroid 8 - Annihilate":
         case "Destroid 10 - Funk Hole":
         case "Deviance":
+        case "Deviance (Original)":
+        case "Here We Go":
           colors = ["#ff0000"];
           style = styles.single;
           barcolor = 15;
@@ -1928,6 +1952,9 @@
         case "Nemesis": length = "4:20.284"; bpm = 107; break;
         case "Starfish": length = "5:01.923"; bpm = 101; break;
         case "The Devil's Den": length = "4:53.093"; bpm = 128; break;
+        case "Deviance (Original)": length = "4:32.169"; bpm = 140; break;
+        case "Fire Vortex": length = "7:27.320"; bpm = 136; break;
+        case "Here We Go": length = "6:46.961"; bpm = 176; break;
       }
       for (var i = 1; i <= 100; i++) {
         progress.classList.remove("c" + i);
@@ -1939,6 +1966,20 @@
       l_m *= 60;
       l_ms /= 1000;
       progress.max = (l_m + l_s + l_ms) * 1000;
+      changeColors();
+      document.getElementById("timeLeft").innerHTML = "-" + Math.floor(l_m / 60) + ":" + ("0" + l_s).slice(-2);
+      audio.load();
+      animationLooper();
+      document.getElementById("title").innerHTML = "Loading&hellip;";
+      audio.oncanplaythrough = function() {
+        audio.play();
+        positions = setInterval(playing, 0);
+        if (song == "Fire Vortex") {
+          var start = new Date().getTime(), now, elapsed;
+        }
+      }
+    }
+    function changeColors() {
       var y = 0;
       for (var i = 0; i < document.getElementById("visualizer").getElementsByTagName("div").length; i++) {
         switch (style) {
@@ -1954,14 +1995,6 @@
             break;
         }
         y++;
-      }
-      document.getElementById("timeLeft").innerHTML = "-" + Math.floor(l_m / 60) + ":" + ("0" + l_s).slice(-2);
-      audio.load();
-      animationLooper();
-      document.getElementById("title").innerHTML = "Loading&hellip;";
-      audio.oncanplaythrough = function() {
-        audio.play();
-        positions = setInterval(playing, 0);
       }
     }
     function playing() {
@@ -1994,6 +2027,14 @@
       c.moveTo(0, 0);
       c.arc(0, 0, 25, 0, 2 * Math.PI * (pos / len));
       c.fill();
+      if (song == "Fire Vortex") {
+        now = new Date().getTime();
+        elapsed = now - start;
+        if (elapsed >= 60000 / 136) {
+          start = new Date().getTime();
+          changeColors();
+        }
+      }
       if (song == "Faster Than Light" && audio.currentTime >= 185.3 && audio.currentTime < 186.9) {
         bpm = Math.floor(170 - ((186.9 - audio.currentTime) / 1.6 * 42));
       }
@@ -2082,7 +2123,9 @@
                               song == "Destroid 7 - Bounce" ? "Destroid 7 Bounce" : (
                                 song == "No Holding On" ? "No Holding On (feat. Holly Drummond)" : (
                                   song == "Tonight" ? "Tonight (feat. Danyka Nadeau)" : (
-                                    song
+                                    song == "Deviance (Original)" ? "Deviance (Original Mix)" : (
+                                      song
+                                    )
                                   )
                                 )
                               )
