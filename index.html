@@ -1963,7 +1963,22 @@
       l_m *= 60;
       l_ms /= 1000;
       progress.max = (l_m + l_s + l_ms) * 1000;
-      changeColors();
+      var y = 0;
+      for (var i = 0; i < document.getElementById("visualizer").getElementsByTagName("div").length; i++) {
+        switch (style) {
+          case "alternating":
+          case "sequential":
+            document.getElementById("visualizer").getElementsByTagName("div")[y].style.background = colors[y % colors.length];
+            break;
+          case "random":
+            document.getElementById("visualizer").getElementsByTagName("div")[y].style.background = colors[Math.floor(Math.random() * colors.length)];
+            break;
+          case "single":
+            document.getElementById("visualizer").getElementsByTagName("div")[y].style.background = colors[0];
+            break;
+        }
+        y++;
+      }
       document.getElementById("timeLeft").innerHTML = "-" + Math.floor(l_m / 60) + ":" + ("0" + l_s).slice(-2);
       audio.load();
       animationLooper();
