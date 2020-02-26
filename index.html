@@ -2100,7 +2100,7 @@
           bpm = Math.floor(175 - ((166.35 - audio.currentTime) / 26.65 * 65));
         }
         if (audio.currentTime >= 298.2 && audio.currentTime < 303.2) {
-          bpm = Math.floor((303.2 - audio.currentTime) / 5 * 175);
+          bpm = Math.floor(Math.pow(Math.pow((303.2 - audio.currentTime) / 5, 1/5), 5) * 175);
         }
         if (audio.currentTime < 166.5) {
           document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Deviance 2.PNG";
