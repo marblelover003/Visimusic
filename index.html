@@ -201,6 +201,7 @@
       .c69::-webkit-progress-value {background: linear-gradient(to bottom, #6b7d87 49.99999999%, #4f5e66 50%);}
       .c70::-webkit-progress-value {background: linear-gradient(to bottom, #9494a0 49.99999999%, #94040d 50%);}
       .c71::-webkit-progress-value {background: linear-gradient(to bottom, #ff0000 24.99999999%, #ff3300 25%, #ff3300 49.99999999%, #ff5500 50%, #ff5500 74.99999999%, #ff6600 75%);}
+      .c72::-webkit-progress-value {background: linear-gradient(to top, #2a55fc, #39e7ff);}
       .modal {
         display: none;
         opacity: 0;
@@ -292,6 +293,7 @@
         <option value="Destroid 10 - Funk Hole">Destroid 10 Funk Hole</option>
         <option value="Deviance (Original)">Deviance (Original Mix)</option>
         <option value="Deviance">Deviance (Dirtyphonics Remix)</option>
+        <option value="Dimensions">Dimensions</option>
         <option value="Disconnected">Disconnected</option>
         <option value="Duality">Duality</option>
         <option value="Dubwoofer Substep">Dubwoofer Substep</option>
@@ -302,17 +304,20 @@
         <option value="Evolution">Evolution</option>
         <option value="Exoskelephone">Exoskelephone</option>
         <option value="Farbror Melker Fixar Fiskdamm (Fastbom Cover)">Farbror Melker Fixar Fiskdamm (Fastbom Cover)</option>
+        <option value="Farewell">Farewell</option>
         <option value="Faster Than Light">Faster Than Light</option>
         <option value="FIGHT">FIGHT</option>
         <option value="Final Boss">Final Boss</option>
         <option value="Fingerbang">Fingerbang</option>
         <option value="Fire in the Hole">Fire in the Hole</option>
         <option value="Fire Vortex">Fire Vortex</option>
+        <option value="FLAMES">FLAMES</option>
         <option value="Flirt Flirt Oh It Hurts">Flirt Flirt Oh It Hurts</option>
         <option value="Focus">Focus</option>
         <option value="Forged in Stars">Forged in Stars</option>
         <option value="FOX">FOX</option>
         <option value="FTW">FTW</option>
+        <option value="Get Up">Get Up</option>
         <option value="Glitch">Glitch</option>
         <option value="Gravity">Gravity</option>
         <option value="Grind">Grind</option>
@@ -556,6 +561,7 @@
             <option value="Destroid 10 Funk Hole">Destroid 10 Funk Hole</option>
             <option value="Deviance (Original Mix)">Deviance (Original Mix)</option>
             <option value="Deviance (Dirtyphonics Remix)">Deviance (Dirtyphonics Remix)</option>
+            <option value="Dimensions">Dimensions</option>
             <option value="Disconnected">Disconnected</option>
             <option value="Duality">Duality</option>
             <option value="Dubwoofer Substep">Dubwoofer Substep</option>
@@ -566,17 +572,20 @@
             <option value="Evolution">Evolution</option>
             <option value="Exoskelephone">Exoskelephone</option>
             <option value="Farbror Melker Fixar Fiskdamm (Fastbom Cover)">Farbror Melker Fixar Fiskdamm (Fastbom Cover)</option>
+            <option value="Farewell">Farewell</option>
             <option value="Faster Than Light">Faster Than Light</option>
             <option value="FIGHT">FIGHT</option>
             <option value="Final Boss">Final Boss</option>
             <option value="Fingerbang">Fingerbang</option>
             <option value="Fire in the Hole">Fire in the Hole</option>
             <option value="Fire Vortex">Fire Vortex</option>
+            <option value="FLAMES">FLAMES</option>
             <option value="Flirt Flirt Oh It Hurts">Flirt Flirt Oh It Hurts</option>
             <option value="Focus">Focus</option>
             <option value="Forged in Stars">Forged in Stars</option>
             <option value="FOX">FOX</option>
             <option value="FTW">FTW</option>
+            <option value="Get Up">Get Up</option>
             <option value="Glitch">Glitch</option>
             <option value="Gravity">Gravity</option>
             <option value="Grind">Grind</option>
@@ -881,7 +890,7 @@
         if (song == "") {
           document.getElementById("button").disabled = true;
         } else {
-          if (song == "The Devil's Den" || song == "Fire Vortex" || song == "Deviance (Original)" || song == "Here We Go") {
+          if (song == "The Devil's Den" || song == "Fire Vortex" || song == "Deviance (Original)" || song == "Here We Go" || song == "Get Up" || song == "Dimensions" || song == "Farewell" || song == "FLAMES") {
             document.getElementById("songTagVer").options.selectedIndex = 3;
             document.getElementById("songTagVer").disabled = true;
           } else {
@@ -891,6 +900,13 @@
         }
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/" + (document.getElementById("song").value == "I Call It Progstep" ? "I Call It Progstep 2" : (document.getElementById("song").value == "Deviance" ? "Deviance 3" : document.getElementById("song").value)) + ".PNG";
         switch (song) {
+          case "Dimensions":
+          case "Get Up":
+            artist = "Hellberg";
+            break;
+          case "Farewell":
+            artist = "Hellberg & TwoThirds";
+            break;
           case "Fire Vortex":
             artist = "Mitchell Claxton";
             break;
@@ -1036,6 +1052,7 @@
           case "COOKIES":
           case "CRAZY":
           case "FIGHT":
+          case "FLAMES":
           case "HYPE":
           case "OKAY":
           case "PARTY":
@@ -1281,7 +1298,7 @@
         "Rinse Out", "Destroid 7 - Bounce", "TURBO", "BAD BOY", "No Holding On", "Tonight",
         "Junction Seven", "Emergency", "Atlantic", "This Is It", "Rhusma", "Bass Head", "Ism",
         "Nemesis", "Starfish", "The Devil's Den", "Deviance (Original)", "Fire Vortex",
-        "Here We Go"
+        "Here We Go", "Dimensions", "Farewell", "FLAMES", "Get Up"
       ];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
@@ -1626,6 +1643,9 @@
         case "Quake":
         case "Tonight":
         case "Rhusma":
+        case "Farewell":
+        case "Get Up":
+        case "Dimensions":
           colors = ["#e08b04"];
           style = styles.single;
           barcolor = 35;
@@ -1788,8 +1808,17 @@
           style = styles.alternating;
           barcolor = 69;
           break;
+        case "FLAMES":
+          colors = ["#2a55fc", "#013991", "#2dd6ff", "#001e54", "#2fcef8", "#39e7ff", "#2bb1fd", "#2b96fe"];
+          style = styles.random;
+          barcolor = 72;
+          break;
       }
       switch (song) {
+        case "Get Up": length = "6:41.188"; bpm = 128; break;
+        case "Dimensions": length = "7:54.122"; bpm = 128; break;
+        case "Farewell": length = "7:54.409"; bpm = 128; break;
+        case "FLAMES": length = "3:00.350"; bpm = 128; break;
         case "Emergency": length = "4:13.204"; bpm = 128; break;
         case "Atlantic": length = "4:23.471"; bpm = 130; break;
         case "This Is It": length = "5:33.792"; bpm = 108; break;
