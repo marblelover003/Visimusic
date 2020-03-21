@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Visimusic</title>
-    <link rel="icon" href="https://marblelover003.github.io/Visimusic/VisimusicFavicons/Visimusic.png">
+    <link rel="icon" href="https://marblelover003.github.io/Visimusic/VisimusicFavicons/Visimusic.png" id="dynamic-favicon">
     <link rel="apple-touch-icon" href="https://marblelover003.github.io/Visimusic/apple-touch-icon.png">
     <style>
       @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700|Montserrat:300,400,700|Orbitron:400,700|Chakra+Petch:400,700");
@@ -794,6 +794,17 @@
       end_modal.style.display = "none";
       end_modal.style.opacity = 0;
     }
+    function changeFavicon(src) {
+      var link = document.createElement("link"),
+          oldLink = document.getElementById("dynamic-favicon");
+      link.id = "dynamic-favicon";
+      link.rel = "icon";
+      link.href = src;
+      if (oldLink) {
+        document.head.removeChild(oldLink);
+      }
+      document.head.appendChild(link);
+    }
     function setDefaults() {
       localStorage.setItem("fftSize", document.getElementById("fftSize").options.selectedIndex);
       localStorage.setItem("bars", document.getElementById("bars").options.selectedIndex);
@@ -1252,6 +1263,7 @@
           audio.src = "";
           document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/Not playing.PNG";
           document.getElementById("song").selectedIndex = 0;
+          changeFavicon("https://marblelover003.github.io/Visimusic/VisimusicFavicons/Visimusic.png");
           var x = 0;
           for (var i = 0; i < document.getElementById("visualizer").getElementsByTagName("div").length; i++) {
             document.getElementById("visualizer").getElementsByTagName("div")[x].style.background = "#000000";
@@ -1814,6 +1826,7 @@
           barcolor = 72;
           break;
       }
+      changeFavicon("https://marblelover003.github.io/Visimusic/VisimusicFavicons/f" + barcolor + ".png");
       switch (song) {
         case "Get Up": length = "6:41.188"; bpm = 128; break;
         case "Dimensions": length = "7:54.122"; bpm = 128; break;
