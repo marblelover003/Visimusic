@@ -287,6 +287,7 @@
         <option value="Delayed Friend Request">Delayed Friend Request</option>
         <option value="Destroid 1 - Raise Your Fist">Destroid 1 Raise Your Fist</option>
         <option value="Destroid 2 - Wasteland">Destroid 2 Wasteland</option>
+        <option value="Destroid 3 Crusaders">Destroid 3 Crusaders</option>
         <option value="Destroid 6 - Put It Down">Destroid 6 Put It Down</option>
         <option value="Destroid 7 - Bounce">Destroid 7 Bounce</option>
         <option value="Destroid 8 - Annihilate">Destroid 8 Annihilate</option>
@@ -498,7 +499,7 @@
       <select id="songTagVer" onchange="checkSong()">
         <option value=4>v4</option>
         <option value=5>v5</option>
-        <option value=6>v6 *NEW*</option>
+        <option value=6>v6</option>
         <option value=0>no</option>
       </select> song tags.<br>
       <button onclick="setDefaults()">Set Defaults</button> <button onclick="resetDefaults()" class="red">Reset Defaults</button>
@@ -555,6 +556,7 @@
             <option value="Delayed Friend Request">Delayed Friend Request</option>
             <option value="Destroid 1 Raise Your Fist">Destroid 1 Raise Your Fist</option>
             <option value="Destroid 2 Wasteland">Destroid 2 Wasteland</option>
+            <option value="Destroid 3 Crusaders">Destroid 3 Crusaders</option>
             <option value="Destroid 6 Put It Down">Destroid 6 Put It Down</option>
             <option value="Destroid 7 Bounce">Destroid 7 Bounce</option>
             <option value="Destroid 8 Annihilate">Destroid 8 Annihilate</option>
@@ -1164,6 +1166,7 @@
             break;
           case "Destroid 1 - Raise Your Fist":
           case "Destroid 2 - Wasteland":
+          case "Destroid 3 Crusaders":
             artist = "Excision, Downlink & Space Laces";
             break;
           case "Destroid 6 - Put It Down":
@@ -1310,7 +1313,7 @@
         "Rinse Out", "Destroid 7 - Bounce", "TURBO", "BAD BOY", "No Holding On", "Tonight",
         "Junction Seven", "Emergency", "Atlantic", "This Is It", "Rhusma", "Bass Head", "Ism",
         "Nemesis", "Starfish", "The Devil's Den", "Deviance (Original)", "Fire Vortex",
-        "Here We Go", "Dimensions", "Farewell", "FLAMES", "Get Up"
+        "Here We Go", "Dimensions", "Farewell", "FLAMES", "Get Up", "Destroid 3 Crusaders"
       ];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
@@ -1539,6 +1542,7 @@
         case "Bass Head":
         case "Destroid 1 - Raise Your Fist":
         case "Destroid 2 - Wasteland":
+        case "Destroid 3 Crusaders":
         case "Destroid 6 - Put It Down":
         case "Destroid 7 - Bounce":
         case "Destroid 8 - Annihilate":
@@ -1828,6 +1832,7 @@
       }
       changeFavicon("https://marblelover003.github.io/Visimusic/VisimusicFavicons/f" + ("0" + barcolor).slice(-2) + ".png");
       switch (song) {
+        case "Destroid 3 Crusaders": length = "5:29.168"; bpm = 140; break;
         case "Get Up": length = "6:41.188"; bpm = 128; break;
         case "Dimensions": length = "7:54.122"; bpm = 128; break;
         case "Farewell": length = "7:54.409"; bpm = 128; break;
