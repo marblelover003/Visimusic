@@ -202,6 +202,7 @@
       .c70::-webkit-progress-value {background: linear-gradient(to bottom, #9494a0 49.99999999%, #94040d 50%);}
       .c71::-webkit-progress-value {background: linear-gradient(to bottom, #ff0000 24.99999999%, #ff3300 25%, #ff3300 49.99999999%, #ff5500 50%, #ff5500 74.99999999%, #ff6600 75%);}
       .c72::-webkit-progress-value {background: linear-gradient(to top, #2a55fc, #39e7ff);}
+      .c73::-webkit-progress-value {background: linear-gradient(to top, #ca1319 0%, #7a0e13 49.99999999%, #f6931c 50%, #fcf00b 100%);}
       .modal {
         display: none;
         opacity: 0;
@@ -258,6 +259,7 @@
         <option value="Barracuda">Barracuda</option>
         <option value="Bass Head">Bass Head</option>
         <option value="Be Gone Mr. Gawne">Be Gone Mr. Gawne</option>
+        <option value="BEWM">BEWM</option>
         <option value="BLAST">BLAST</option>
         <option value="Breakdown">Breakdown</option>
         <option value="Breakdown VIP">Breakdown VIP</option>
@@ -527,6 +529,7 @@
             <option value="Barracuda">Barracuda</option>
             <option value="Bass Head">Bass Head</option>
             <option value="Be Gone Mr. Gawne">Be Gone Mr. Gawne</option>
+            <option value="BEWM">BEWM</option>
             <option value="BLAST">BLAST</option>
             <option value="Breakdown">Breakdown</option>
             <option value="Breakdown VIP">Breakdown VIP</option>
@@ -903,7 +906,7 @@
         if (song == "") {
           document.getElementById("button").disabled = true;
         } else {
-          if (song == "") {
+          if (song == "BEWM") {
             document.getElementById("songTagVer").options.selectedIndex = 3;
             document.getElementById("songTagVer").disabled = true;
           } else {
@@ -913,6 +916,9 @@
         }
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/" + (document.getElementById("song").value == "I Call It Progstep" ? "I Call It Progstep 2" : (document.getElementById("song").value == "Deviance" ? "Deviance 3" : document.getElementById("song").value)) + (song == "Destroid 3 Crusaders" ? ".png" : ".PNG");
         switch (song) {
+          case "BEWM":
+            artist = "Slushii & Tokyo Machine";
+            break;
           case "Dimensions":
           case "Get Up":
             artist = "Hellberg";
@@ -1313,7 +1319,8 @@
         "Rinse Out", "Destroid 7 - Bounce", "TURBO", "BAD BOY", "No Holding On", "Tonight",
         "Junction Seven", "Emergency", "Atlantic", "This Is It", "Rhusma", "Bass Head", "Ism",
         "Nemesis", "Starfish", "The Devil's Den", "Deviance (Original)", "Fire Vortex",
-        "Here We Go", "Dimensions", "Farewell", "FLAMES", "Get Up", "Destroid 3 Crusaders"
+        "Here We Go", "Dimensions", "Farewell", "FLAMES", "Get Up", "Destroid 3 Crusaders",
+        "BEWM"
       ];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
@@ -1374,6 +1381,11 @@
       }
       var barcolor;
       switch (song) {
+        case "BEWM":
+          colors = ["#f6941c", "#fcd00b", "#feee02", "#f9ef04", "#e17e17", "#fbac1b", "#fbd11d", "#f6d816", "#ffef32", "#fcf070"];
+          style = styles.random;
+          barcolor = 73;
+          break;
         case "Fire Vortex":
           colors = ["#ff0000", "#ff3300", "#ff5500", "#ff6600"];
           style = styles.random;
@@ -1832,6 +1844,7 @@
       }
       changeFavicon("https://marblelover003.github.io/Visimusic/VisimusicFavicons/f" + ("0" + barcolor).slice(-2) + ".png");
       switch (song) {
+        case "BEWM": length = "3:30.534"; bpm = 128; break;
         case "Destroid 3 Crusaders": length = "5:29.168"; bpm = 140; break;
         case "Get Up": length = "6:41.188"; bpm = 128; break;
         case "Dimensions": length = "7:54.122"; bpm = 128; break;
