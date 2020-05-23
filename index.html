@@ -506,7 +506,7 @@
         <option value=5>v5</option>
         <option value=6>v6</option>
         <option value=0 selected>no</option>
-      </select> song tags. <a href="javascript:noSongTag()">?<br>
+      </select> song tags. <a href="javascript:noSongTag()">?</a><br>
       <button onclick="setDefaults()">Set Defaults</button> <button onclick="resetDefaults()" class="red">Reset Defaults</button>
       <button onclick="selectSong()" id="button" disabled="true">Play! &#9656;</button><br>
     </span>
@@ -2243,5 +2243,8 @@
       window.requestAnimationFrame(animationLooper);
     }
     function setH(barID, height) {document.getElementById("visualizer").getElementsByTagName("div")[barID].style.height = (height + 3) + "px";}
+    function noSongTag() {
+      alert("Due to the fact that I am working on new song tags, the song tag version select menu has been disabled for now. Fear not, though - they will return soon!");
+    }
   </script>
 </html>
