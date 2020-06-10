@@ -522,7 +522,7 @@
       <div class="modal-content">
         <span class="close">&#9587;</span>
         <span id="queueMenu">
-          Queue up to 5 more songs here!<br>
+          Queue up to <span style="text-decoration: strikethrough;">5</span> <span style="color: yellow; font-size: 30px;">10</span> more songs here!<br>
           <select id="queue" onchange="check()">
             <option></option>
             <option value="Airwaves">Airwaves</option>
@@ -706,6 +706,11 @@
           3. <span id="queue3"></span><br>
           4. <span id="queue4"></span><br>
           5. <span id="queue5"></span><br>
+          6. <span id="queue6"></span><br>
+          7. <span id="queue7"></span><br>
+          8. <span id="queue8"></span><br>
+          9. <span id="queue9"></span><br>
+          10. <span id="queue10"></span><br>
           <span style="display: inline-block; width: 100%; text-align: right;"><button onclick="clearQueue()" id="clearBtn" class="red">Clear Queue</button></span>
         </span>
       </div>
@@ -764,7 +769,7 @@
         heightlimit = 0,
         songTagVer = document.getElementById("songTagVer"),
         artist, emptyQueue = ["", 0],
-        queue = [["", 0], ["", 0], ["", 0], ["", 0], ["", 0]], itemsQueued = 0, song,
+        queue = [["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0]], itemsQueued = 0, song,
         bpm, c = document.getElementById("canvas").getContext("2d");
     c.translate(30, 30);
     c.rotate(-0.5 * Math.PI);
@@ -851,27 +856,6 @@
         document.getElementById("queueBtn").disabled = false;
       }
     }
-    function removeQueuedSong(id) {
-      switch (id) {
-        case 0:
-          queue = [queue[1], queue[2], queue[3], queue[4], emptyQueue];
-          break;
-        case 1:
-          queue = [queue[0], queue[2], queue[3], queue[4], emptyQueue];
-          break;
-        case 2:
-          queue = [queue[0], queue[1], queue[3], queue[4], emptyQueue];
-          break;
-        case 3:
-          queue = [queue[0], queue[1], queue[2], queue[4], emptyQueue];
-          break;
-        case 4:
-          queue[4] = emptyQueue;
-          break;
-      }
-      checkQueue();
-      itemsQueued--;
-    }
     function queueRandomSong() {
       if (itemsQueued < queue.length) {
         var elem = document.getElementById("queue");
@@ -881,11 +865,11 @@
     }
     function checkQueue() {
       for (var i = 0; i < queue.length; i++) {
-        document.getElementById("queue" + (i + 1)).innerHTML = queue[i][0] + (queue[i] == ["", 0] ? "" : " (<a href=\"javascript:removeQueuedSong(" + i + ");\">remove</a>)");
+        document.getElementById("queue" + (i + 1)).innerHTML = queue[i][0];
       }
     }
     function clearQueue() {
-      queue = [["", 0], ["", 0], ["", 0], ["", 0], ["", 0]];
+      queue = [["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0]];
       checkQueue();
       itemsQueued = 0;
     }
