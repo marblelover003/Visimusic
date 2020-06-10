@@ -522,7 +522,7 @@
       <div class="modal-content">
         <span class="close">&#9587;</span>
         <span id="queueMenu">
-          Queue up to <span style="text-decoration: strikethrough;">5</span> <span style="color: yellow; font-size: 30px;">10</span> more songs here!<br>
+          Queue up to <del>five</del> <ins style="color: yellow; font-size: 30px;">10</ins> more songs here!<br>
           <select id="queue" onchange="check()">
             <option></option>
             <option value="Airwaves">Airwaves</option>
@@ -867,6 +867,11 @@
       for (var i = 0; i < queue.length; i++) {
         document.getElementById("queue" + (i + 1)).innerHTML = queue[i][0];
       }
+    }
+    function removeQueuedSong(id) {
+      queue = [queue[1], queue[2], queue[3], queue[4], queue[5], queue[6], queue[7], queue[8], queue[9], emptyQueue];
+      checkQueue();
+      itemsQueued -= 1;
     }
     function clearQueue() {
       queue = [["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0]];
