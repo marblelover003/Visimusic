@@ -425,7 +425,10 @@
         <option value="Yo! Ho! And a Bottle of Bass!">Yo! Ho! And a Bottle of Bass!</option>
       </select><br>
       or <a class="random" href="javascript:randomSong();">select a song to play at random</a><br>
-      <small>You have selected a song by <b id="artist">???</b></small><br>
+      <small>
+        You have selected a song by <b id="artist">???</b><br>
+        This song <span id="hasLyrics">does not have</span> lyrics.
+      </small><br>
       FFT Size:
       <select id="fftsize">
         <option value=2048>2048</option>
@@ -651,7 +654,7 @@
             <option value="Razor Sharp">Razor Sharp</option>
             <option value="Renegade">Renegade</option>
             <option value="Rhapsody">Rhapsody</option>
-            <option value="Rhusma" disabled>Rhusma</option>
+            <option value="Rhusma">Rhusma</option>
             <option value="Rinse Out">Rinse Out</option>
             <option value="ROCK IT">ROCK IT</option>
             <option value="Rocket">Rocket</option>
@@ -699,7 +702,7 @@
             <option value="Yo! Ho! And a Bottle of Bass!">Yo! Ho! And a Bottle of Bass!</option>
           </select>
           <button onclick="queueSong()" id="queueBtn">Queue it! &#9656;</button><br>
-          or <a class="random" href="javascript:queueRandomSong();">queue a random song</a>!
+          or <a class="random" href="javascript:queueRandomSong();">queue a random song</a>!<br>
           Up next:<br>
           1. <span id="queue1"></span><br>
           2. <span id="queue2"></span><br>
@@ -770,7 +773,7 @@
         songTagVer = document.getElementById("songTagVer"),
         artist, emptyQueue = ["", 0],
         queue = [["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0]], itemsQueued = 0, song,
-        bpm, c = document.getElementById("canvas").getContext("2d");
+        bpm, c = document.getElementById("canvas").getContext("2d"), hasLyrics = false;
     c.translate(30, 30);
     c.rotate(-0.5 * Math.PI);
     c.clearRect(-30, -30, 60, 60);
@@ -1205,6 +1208,185 @@
             break;
         }
         document.getElementById("artist").innerHTML = artist;
+        switch (song) {
+          case "BEWM": hasLyrics = true; break;
+          case "GET UP": hasLyrics = true; break;
+          case "Dimensions": hasLyrics = false; break;
+          case "Get Up": hasLyrics = false; break;
+          case "Farewell": hasLyrics = false; break;
+          case "Fire Vortex": hasLyrics = true; break;
+          case "The Devil's Den": hasLyrics = true; break;
+          case "Ism": hasLyrics = false; break;
+          case "Starfish": hasLyrics = false; break;
+          case "Bass Head": hasLyrics = false; break;
+          case "Here We Go": hasLyrics = false; break;
+          case "Rhusma": hasLyrics = false; break;
+          case "Fingerbang": hasLyrics = false; break;
+          case "Atlantic": hasLyrics = false; break;
+          case "Nemesis": hasLyrics = false; break;
+          case "This Is It": hasLyrics = false; break;
+          case "Astrocat": hasLyrics = false; break;
+          case "Buzz Kill": hasLyrics = true; break;
+          case "Rat Twist": hasLyrics = false; break;
+          case "Sugar Rush": hasLyrics = false; break;
+          case "The Escape": hasLyrics = false; break;
+          case "This Time": hasLyrics = false; break;
+          case "Galactic Voyage": hasLyrics = false; break;
+          case "Airwaves": hasLyrics = false; break;
+          case "Backlash": hasLyrics = false; break;
+          case "Barracuda": hasLyrics = false; break;
+          case "Breakdown": hasLyrics = false; break;
+          case "Breakdown VIP": hasLyrics = false; break;
+          case "Crab Rave": hasLyrics = false; break;
+          case "Eclipse": hasLyrics = false; break;
+          case "Heist": hasLyrics = false; break;
+          case "Let It Roar": hasLyrics = false; break;
+          case "Renegade": hasLyrics = false; break;
+          case "Sentinel": hasLyrics = false; break;
+          case "Surge": hasLyrics = false; break;
+          case "Timewarp": hasLyrics = false; break;
+          case "Be Gone Mr. Gawne": hasLyrics = false; break;
+          case "Caps On, Hats Off": hasLyrics = false; break;
+          case "Captain Cool": hasLyrics = false; break;
+          case "Leaving Leafwood Forest": hasLyrics = false; break;
+          case "Commando Steve": hasLyrics = false; break;
+          case "Farbror Melker Fixar Fiskdamm (Fastbom Cover)": hasLyrics = false; break;
+          case "Flirt Flirt Oh It Hurts": hasLyrics = false; break;
+          case "Jack Russel": hasLyrics = false; break;
+          case "Milky Ways": hasLyrics = false; break;
+          case "Partyt Ar Igang": hasLyrics = false; break;
+          case "Pirate Manners": hasLyrics = false; break;
+          case "Starship Showdown": hasLyrics = false; break;
+          case "Steampunk Warlord": hasLyrics = false; break;
+          case "The Cave, The Treasure": hasLyrics = false; break;
+          case "The Maze of Mayonnaise": hasLyrics = false; break;
+          case "Cascade": hasLyrics = false; break;
+          case "Cheat Codes": hasLyrics = false; break;
+          case "Cheat Codes VIP": hasLyrics = false; break;
+          case "Final Boss": hasLyrics = true; break;
+          case "New Game": hasLyrics = false; break;
+          case "So Far Away": hasLyrics = false; break;
+          case "Time Goes By": hasLyrics = false; break;
+          case "Checkpoint": hasLyrics = false; break;
+          case "Chip Zeal": hasLyrics = false; break;
+          case "Houston": hasLyrics = false; break;
+          case "No Party Like a Mojang Party": hasLyrics = false; break;
+          case "Sevcon": hasLyrics = false; break;
+          case "Vindicate Me": hasLyrics = false; break;
+          case "Chronos": hasLyrics = false; break;
+          case "Corrupted": hasLyrics = false; break;
+          case "Glitch": hasLyrics = false; break;
+          case "Legacy": hasLyrics = false; break;
+          case "Logic Gatekeeper": hasLyrics = false; break;
+          case "Parallel Processing": hasLyrics = false; break;
+          case "Rhapsody": hasLyrics = false; break;
+          case "The Lunar Whale": hasLyrics = false; break;
+          case "Core": hasLyrics = false; break;
+          case "Cruise Control": hasLyrics = false; break;
+          case "Livewire": hasLyrics = false; break;
+          case "Tension": hasLyrics = false; break;
+          case "Courtesy": hasLyrics = false; break;
+          case "Evolution": hasLyrics = false; break;
+          case "Focus": hasLyrics = false; break;
+          case "Forged in Stars": hasLyrics = false; break;
+          case "Otis": hasLyrics = false; break;
+          case "Spectra": hasLyrics = false; break;
+          case "The Art of War": hasLyrics = false; break;
+          case "Tokyo Skies": hasLyrics = false; break;
+          case "Crystal Tokyo": hasLyrics = false; break;
+          case "Dance of the Incognizant": hasLyrics = false; break;
+          case "FOX": hasLyrics = false; break;
+          case "Into The Zone": hasLyrics = false; break;
+          case "On The Run": hasLyrics = false; break;
+          case "Opia": hasLyrics = false; break;
+          case "FTW": hasLyrics = false; break;
+          case "Exoskelephone": hasLyrics = false; break;
+          case "Gravity": hasLyrics = false; break;
+          case "Grind": hasLyrics = false; break;
+          case "No Holding On": hasLyrics = true; break;
+          case "Quake": hasLyrics = false; break;
+          case "Rinse Out": hasLyrics = false; break;
+          case "Rocket": hasLyrics = false; break;
+          case "Sexy Beast": hasLyrics = false; break;
+          case "Stock & Pull": hasLyrics = false; break;
+          case "Tonight": hasLyrics = true; break;
+          case "BLAST": hasLyrics = false; break;
+          case "COOKIES": hasLyrics = false; break;
+          case "CRAZY": hasLyrics = true; break;
+          case "FIGHT": hasLyrics = false; break;
+          case "FLAMES": hasLyrics = true; break;
+          case "HYPE": hasLyrics = false; break;
+          case "OKAY": hasLyrics = false; break;
+          case "PARTY": hasLyrics = false; break;
+          case "PIXEL": hasLyrics = false; break;
+          case "PLAY": hasLyrics = true; break;
+          case "ROCK IT": hasLyrics = false; break;
+          case "SAIKOU": hasLyrics = true; break;
+          case "SPOOKY": hasLyrics = true; break;
+          case "EPIC": hasLyrics = false; break;
+          case "TURBO": hasLyrics = true; break;
+          case "JOURNEY": hasLyrics = false; break;
+          case "BAD BOY": hasLyrics = true; break;
+          case "Long Live The New Fresh": hasLyrics = false; break;
+          case "MOSHI": hasLyrics = true; break;
+          case "Once Again": hasLyrics = true; break;
+          case "Till It\'s Over": hasLyrics = true; break;
+          case "Paper Dolls": hasLyrics = false; break;
+          case "Peer Gynt": hasLyrics = false; break;
+          case "Chipland": hasLyrics = false; break;
+          case "Rainbow Road": hasLyrics = false; break;
+          case "Razor Sharp": hasLyrics = false; break;
+          case "Rocktronik": hasLyrics = false; break;
+          case "Try This": hasLyrics = true; break;
+          case "Here It Comes": hasLyrics = false; break;
+          case "Disconnected": hasLyrics = false; break;
+          case "Fire in the Hole": hasLyrics = true; break;
+          case "End is Near": hasLyrics = true; break;
+          case "Emergency": hasLyrics = true; break;
+          case "Delayed Friend Request": hasLyrics = false; break;
+          case "Sidewinder": hasLyrics = false; break;
+          case "Termination Shock": hasLyrics = false; break;
+          case "Time Lapse": hasLyrics = false; break;
+          case "Turbo Penguin": hasLyrics = false; break;
+          case "Unlocked": hasLyrics = false; break;
+          case "Wicked": hasLyrics = false; break;
+          case "Dubwoofer Substep": hasLyrics = true; break;
+          case "I\'m being Reelistic": hasLyrics = false; break;
+          case "It\'s Pronounced Omnitica": hasLyrics = false; break;
+          case "I Call It Progstep": hasLyrics = false; break;
+          case "Omniverse": hasLyrics = true; break;
+          case "Yo! Ho! And a Bottle of Bass!": hasLyrics = false; break;
+          case "Cybertron": hasLyrics = false; break;
+          case "Faster Than Light": hasLyrics = true; break;
+          case "Wormhole": hasLyrics = false; break;
+          case "Play It Loud": hasLyrics = false; break;
+          case "Play It Loud (Broken Robot Mix)": hasLyrics = false; break;
+          case "Light Sticks": hasLyrics = false; break;
+          case "Halcyon": hasLyrics = false; break;
+          case "Duality": hasLyrics = false; break;
+          case "Spection": hasLyrics = false; break;
+          case "Pyro": hasLyrics = false; break;
+          case "Clash": hasLyrics = false; break;
+          case "Cool Friends": hasLyrics = false; break;
+          case "Destroid 1 - Raise Your Fist": hasLyrics = true; break;
+          case "Destroid 2 - Wasteland": hasLyrics = true; break;
+          case "Destroid 3 Crusaders": hasLyrics = false; break;
+          case "Destroid 6 - Put It Down": hasLyrics = false; break;
+          case "Destroid 8 - Annihilate": hasLyrics = true; break;
+          case "Destroid 7 - Bounce": hasLyrics = false; break;
+          case "Destroid 10 - Funk Hole": hasLyrics = false; break;
+          case "Deviance": hasLyrics = true; break;
+          case "Deviance (Original)": hasLyrics = false; break;
+          case "Virus": hasLyrics = true; break;
+          case "Highscore": hasLyrics = false; break;
+          case "To the Stars": hasLyrics = false; break;
+          case "Junction Seven": hasLyrics = false; break;
+        }
+        if (hasLyrics) {
+          document.getElementById("hasLyrics").innerHTML = "has";
+        } else if (!hasLyrics) {
+          document.getElementById("hasLyrics").innerHTML = "does not have";
+        }
       }
       if (document.getElementById("songTagVer").value == 0) {
         document.getElementById("songTag").style.visibility = "hidden";
