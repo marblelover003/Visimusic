@@ -773,7 +773,7 @@
         songTagVer = document.getElementById("songTagVer"),
         artist, emptyQueue = ["", 0],
         queue = [["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0]], itemsQueued = 0, song,
-        bpm, c = document.getElementById("canvas").getContext("2d"), hasLyrics = false;
+        bpm, c = document.getElementById("canvas").getContext("2d"), hasLyrics = false, currentLyrics = "";
     c.translate(30, 30);
     c.rotate(-0.5 * Math.PI);
     c.clearRect(-30, -30, 60, 60);
@@ -2273,6 +2273,7 @@
       var l_s = parseInt(length[2] + length[3]);
       var l_ms = parseInt(length[5] + length[6] + length[7]);
       var pos = audio.currentTime * 1000;
+      var t = audio.currentTime;
       var len = ((l_m * 60) + l_s + (l_ms / 1000)) * 1000;
       var timeLeft = (len - pos) < 0 ? 0 : (len - pos);
       var t_m = Math.floor(timeLeft / 60000);
@@ -2294,14 +2295,16 @@
       c.moveTo(0, 0);
       c.arc(0, 0, 25, 0, 2 * Math.PI * (pos / len));
       c.fill();
-      if (song == "Fire Vortex") {
-        now = new Date().getTime();
-        elapsed = now - start;
-        if (elapsed >= 60000 / 136) {
-          start = new Date().getTime();
-          for (var i = 0; i < document.getElementById("visualizer").getElementsByTagName("div").length; i++) {
-            document.getElementById("visualizer").getElementsByTagName("div")[i].style.background = colors[Math.floor(Math.random() * colors.length)];
-          }
+      currentLyrics = "";
+      if (song == "The Devil's Den") {
+        if ((t >= 45.2 && t <= 49.2) || (t >= 53.2 && t <= 55.8) || (t >= 135.5 && t <= 139) || (t >= 143 && t <= 147) || (t >= 150 && t <= 153) || (t >= 157 && t <= 161) || (t >= 210 && t <= 214) || (t >= 217.5 && t <= 222)) {
+          currentLyrics = "The devil's den, the devil's den";
+        } else if ((t >= 49.2 && t <= 53.2) || (t >= 139 && t <= 143) || (t >= 147 && t <= 150) || (t >= 153 && t <= 157) || (t >= 161 && t <= 163) || (t >= 214 && t <= 217.5)) {
+          currentLyrics = "We all live in the devil's den";
+        } else if ((t >= 60 && t <= 60.6) || (t >= 74.7 && t <= 75.3) || (t >= 89.9 && t <= 90.5) || (t >= 105 && t <= 105.6) || (t >= 164 && t <= 165.5) || (t >= 179.3 && t <= 180) || (t >= 225 && t <= 225.7) || (t >= 240 && t <= 240.7) || (t >= 255 && t <= 255.7)) {
+          currentLyrics = "Devil";
+        } else if (t >= 196.5 && t <= 207) {
+          currentLyrics = "(The devil's den) (x7)";
         }
       }
       if (song == "Faster Than Light" && audio.currentTime >= 185.3 && audio.currentTime < 186.9) {
@@ -2418,7 +2421,7 @@
             )
           )
         )
-      ) + "</b> by <b>" + artist + "</b></span>";
+      ) + "</b> by <b>" + artist + "</b><br><br>" + currentLyrics + "</span>";
       document.getElementById("bpm").innerHTML = bpm;
     }
     function animationLooper(){
