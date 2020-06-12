@@ -2306,6 +2306,75 @@
         } else if (t >= 196.5 && t <= 207) {
           currentLyrics = "(The devil's den) (x7)";
         }
+      } else if (song == "Virus") {
+        var lyrics = [
+          [0, 3, "&bull;"],
+          [3, 6, "&bull;&bull;"],
+          [6, 9, "&bull;&bull;&bull;"],
+          [9, 13, "Widespread reports of the infectious X Virus are pouring in"],
+          [13, 17, "As people around the world are beginning to panic."],
+          [17, 22, "Medical experts have informed us that alteration of human DNA"],
+          [22, 26, "Has led to the creation of an entirely new type of virus."],
+          [26, 31, "This X Virus is somehow able to spread through sound waves,"],
+          [31, 35, "Rearranging and permanently modifying humans on a cellular level."],
+          [35, 38, "By creating auditory and visual hallucinations,"],
+          [38, 41, "It starts with seemingly random changes in subjects,"],
+          [41, 47, "Until slowly, the infected begin to lose the ability to understand language."],
+          [47, 49, "You may begin to feel disoriented"],
+          [49, 51, "As cells become more distorted"],
+          [51, 53, "And volume increases."],
+          [53, 56, "Your body begins to vibrate."],
+          [56, 56.6667, "&bull;"],
+          [56.6667, 57.3333, "&bull;&bull;"],
+          [57.3333, 58, "&bull;&bull;&bull;"],
+          [58, 66, "Time slows down as reality disappears."],
+          [66, 73, "&bull;"],
+          [73, 80, "&bull;&bull;"],
+          [80, 87, "&bull;&bull;&bull;"],
+          [87, 89, "Vi-Vi-Vi-Vi-Vi-Vi-Vi-Vi-Virus"],
+          [89, 99, "Virus (x23)"],
+          [99, 110, "&bull;"],
+          [110, 121, "&bull;&bull;"],
+          [121, 132, "&bull;&bull;&bull;"],
+          [132, 138, "Virus (x8)"],
+          [138, 143.3333, "&bull;"],
+          [143.3333, 148.6667, "&bull;&bull;"],
+          [148.6667, 154, "&bull;&bull;&bull;"],
+          [154, 154.7, "(Me right now)"],
+          [154.7, 158.1333, "&bull;"],
+          [158.1333, 161.5667, "&bull;&bull;"],
+          [161.5667, 165, "&bull;&bull;&bull;"],
+          [165, 172.5, "Virus (x10)"],
+          [172.5, 185, "&bull;"],
+          [185, 197.5, "&bull;&bull;"],
+          [197.5, 210, "&bull;&bull;&bull;"],
+          [210, 216, "Virus (x8)"],
+          [216, 217.6667, "&bull;"],
+          [217.6667, 219.3333, "&bull;&bull;"],
+          [219.3333, 221, "&bull;&bull;&bull;"],
+          [221, 224, "Look at how I drop it now!"],
+          [224, 232.3333, "&bull;"],
+          [232.33333, 240.6667, "&bull;&bull;"],
+          [240.6667, 249, "&bull;&bull;&bull;"],
+          [249, 255, "Virus (x8)"],
+          [255, 261.1667, "&bull;"],
+          [261, 267.3333, "&bull;&bull;"],
+          [267.3333, 273.5, "&bull;&bull;&bull;"],
+          [273.5, 274.3, "(Me right now)"],
+          [274.3, 278.2, "&bull;"],
+          [278.2, 282.1, "&bull;&bull;"],
+          [282.1, 286, "&bull;&bull;&bull;"],
+          [286, 286.8, "(Me right now)"],
+          [286.8, 290.8667, "&bull;"],
+          [290.8667, 294.9333, "&bull;&bull;"],
+          [294.9333, 299, "&bull;&bull;&bull;"],
+          [299, 299.8, "(Me right now)"]
+        ];
+        for (var i = 0; i < lyrics.length; i++) {
+          if (t >= lyrics[i][0] && t <= lyrics[i][1]) {
+            currentLyrics = lyrics[i][2];
+          }
+        }
       }
       if (song == "Faster Than Light" && audio.currentTime >= 185.3 && audio.currentTime < 186.9) {
         bpm = Math.floor(170 - ((186.9 - audio.currentTime) / 1.6 * 42));
