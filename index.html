@@ -6,13 +6,16 @@
     <link rel="apple-touch-icon" href="https://marblelover003.github.io/Visimusic/apple-touch-icon.png">
     <style>
       @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700|Montserrat:300,400,700|Orbitron:400,700|Chakra+Petch:400,700|Inconsolata");
-      pre {
+      #lyricsProgress {
+        width: 400px;
+      }
+      .pre {
         font-family: Inconsolata;
+        display: inline-block;
       }
       body {
         background: black;
         overflow: hidden;
-        font-size: 0;
         width: 768px;
         color: white;
         font-family: Roboto;
@@ -129,6 +132,7 @@
         bottom: 25px;
         left: 0;
         z-index: -99;
+        font-size: 0;
       }
       #title {
         position: absolute;
@@ -229,37 +233,45 @@
       }
       .modal-content {
         background-color: #444444;
-        margin: 15% auto;
+        margin: 10%;
+        margin-bottom: 0;
         padding: 20px;
         border: 1px solid #888;
-        width: 80%;
+        width: 70%;
         font-family: Roboto;
         font-size: 18px;
+        height: 200px;
+        overflow: auto;
       }
       .modal-content select, .modal-content button {
         font-family: Roboto;
       }
-      .modal-content::-webkit-scrollbar {
+      /*::-webkit-scrollbar {
         display: none;
-      }
+      }*/
       @keyframes movein {
         0% {opacity: 0; transform: translate(0, -100px);}
         100% {opacity: 1; transform: translate(0, 0);}
+      }
+      @keyframes moveout {
+        0% {opacity: 1; transform: translate(0, 0);}
+        100% {opacity: 0; transform: translate(0, -100px);}
       }
       .movein {
         animation: movein 500ms ease-in-out;
         animation-fill-mode: forwards;
       }
       .moveout {
-        animation: movein 500ms ease-in-out;
+        animation: moveout 500ms ease-in-out;
         animation-fill-mode: forwards;
-        animation-direction: reverse;
       }
       .close {
         color: #aaa;
         float: right;
         font-size: 28px;
         font-weight: bold;
+        position: sticky;
+        top: 0px;
       }
       .close:hover, .close:focus {
         color: black;
@@ -556,7 +568,7 @@
       <div class="modal-content">
         <span class="close">&times;</span>
         <span id="queueMenu">
-          Queue up to <del>five</del> <ins style="color: yellow; font-size: 30px;">10</ins> more songs here!<br>
+          Queue up to 10 more songs here!<br>
           <select id="queue" onchange="check()">
             <option></option>
             <option value="Airwaves">Airwaves</option>
@@ -754,14 +766,14 @@
       <div class="modal-content">
         <span class="close">&times;</span>
         <h1>Supported Browsers</h1>
-        <p>Visimusic supports all browsers that support the <pre>&lt;audio&gt;</pre> tag.</p>
+        <p>Visimusic supports all browsers that support the <span class="pre">&lt;audio&gt;</span> tag.</p>
         <hr>
         <h1>Special Thanks</h1>
         <h2>Monstercat, Wolf Beats Media, Ninety9lives, and NoCopyrightSounds</h2>
         <p>For providing most of the songs on Visimusic. If none of these labels existed, Visimusic probably wouldn't exist either!</p>
         <hr>
         <h1>News</h1>
-        <p>I am still working on the timed lyrics for every song that has lyrics.<br><progress class="c3" max="29" value="3"></progress> 10.34%</p>
+        <p>I am still working on the timed lyrics for every song that has lyrics.<br><progress class="c3" max="29" value="3" id="lyricsProgress"></progress> 10.34%</p>
         <p>I also plan on creating a &quot;total play count&quot; page where you'll be able to track how many times you've played each song!</p>
         <p>Stay tuned for future updates! Keep calm and keep the beat going!</p>
       </div>
