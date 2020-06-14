@@ -2375,6 +2375,83 @@
             currentLyrics = lyrics[i][2];
           }
         }
+      } else if (song == "FLAMES") {
+        var lyrics = [
+          [0.1, 0.575, "One!"],
+          [0.575, 1.05, "Two!"],
+          [1.05, 1.525, "Three!"],
+          [1.525, 2.1, "Tokyo..."],
+          [2.1, 3.8, "&bull;"],
+          [3.8, 5.5, "&bull;&bull;"],
+          [5.5, 7.2, "&bull;&bull;&bull;"],
+          [7.2, 9.6, "My flames grow hotter"],
+          [10, 20.7, "(Gotta keep the flame on max) (x6)"],
+          [20.7, 22.1333, "&bull;"],
+          [22.1333, 23.5667, "&bull;&bull;"],
+          [23.5667, 25, "&bull;&bull;&bull;"],
+          [25, 30.1, "Gotta keep the flame on max (x3)"],
+          [30.1, 31.9, "I'ma keep it going till there ain't nothin' left"],
+          [32.6, 37.6, "Gotta keep the flame on max (x3)"],
+          [37.6, 39.6, "I'ma keep it going till there ain't nothin' left"],
+          [39.6, 43.9667, "&bull;"],
+          [43.9667, 48.3333, "&bull;&bull;"],
+          [48.3333, 52.7, "&bull;&bull;&bull;"],
+          [52.7, 54.6, "Droppin' flames on these fools like I'm fireproof"],
+          [54.6, 59.2667, "&bull;"],
+          [59.2667, 63.9333, "&bull;&bull;"],
+          [63.9333, 68.6, "&bull;&bull;&bull;"],
+          [68.6, 69.6, "(Gotta keep the flame on...)"],
+          [69.6, 74.2667, "&bull;"],
+          [74.2667, 78.9333, "&bull;&bull;"],
+          [78.9333, 83.6, "&bull;&bull;&bull;"],
+          [83.6, 86, "(Gotta keep the flame on max)"],
+          [86, 88.2, "&bull;"],
+          [88.2, 90.4, "&bull;&bull;"],
+          [90.4, 92.6, "&bull;&bull;&bull;"],
+          [92.6, 95.8, "Gotta keep the flame on max (x2)"],
+          [95.8, 97.2, "&bull;"],
+          [97.2, 98.6, "&bull;&bull;"],
+          [98.6, 100, "&bull;&bull;&bull;"],
+          [100, 101.35, "Gotta keep the flame on max"],
+          [101.35, 103.2, "I'ma keep it going till there ain't nothin' left"],
+          [103.2, 104.6167, "&bull;"],
+          [104.6167, 106.0333, "&bull;&bull;"],
+          [106.0333, 107.45, "&bull;&bull;&bull;"],
+          [107.45, 110.4, "Gotta keep the flame on max (x2)"],
+          [110.4, 111.9167, "&bull;"],
+          [111.9167, 113.4333, "&bull;&bull;"],
+          [113.4333, 114.95, "&bull;&bull;&bull;"],
+          [114.95, 118.4, "Gotta keep the flame on max (x2)"],
+          [118.4, 122.7667, "&bull;"],
+          [122.7667, 127.1333, "&bull;&bull;"],
+          [127.1333, 131.5, "&bull;&bull;&bull;"],
+          [131.5, 133.5, "Droppin' flames on these fools like I'm fireproof"],
+          [133.5, 138.0667, "&bull;"],
+          [138.0667, 142.6333, "&bull;&bull;"],
+          [142.6333, 147.2, "&bull;&bull;&bull;"],
+          [147.2, 148.2, "(Gotta keep the flame on...)"],
+          [148.2, 152.1333, "&bull;"],
+          [152.1333, 156.0667, "&bull;&bull;"],
+          [156.0667, 160, "&bull;&bull;&bull;"],
+          [160, 163.2, "(G-G-G-G-Gotta keep the flame on max)"],
+          [163.2, 164.3, "&bull;"],
+          [164.3, 165.4, "&bull;&bull;"],
+          [165.4, 166.5, "&bull;&bull;&bull;"],
+          [166.5, 167, "(Droppin' flames)"],
+          [167, 168.0333, "&bull;"],
+          [168.0333, 169.0667, "&bull;&bull;"],
+          [169.0667, 170.1, "&bull;&bull;&bull;"],
+          [170.1, 170.7, "(Fireproof)"],
+          [170.7, 171.8, "&bull;"],
+          [171.8, 172.9, "&bull;&bull;"],
+          [172.9, 174, "&bull;&bull;&bull;"],
+          [174, 174.6, "(Droppin' flames)"]
+        ];
+        for (var i = 0; i < lyrics.length; i++) {
+          if (t >= lyrics[i][0] && t <= lyrics[i][1]) {
+            currentLyrics = lyrics[i][2];
+          }
+        }
       }
       if (song == "Faster Than Light" && audio.currentTime >= 185.3 && audio.currentTime < 186.9) {
         bpm = Math.floor(170 - ((186.9 - audio.currentTime) / 1.6 * 42));
