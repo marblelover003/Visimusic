@@ -5,7 +5,10 @@
     <link rel="icon" href="https://marblelover003.github.io/Visimusic/VisimusicFavicons/Visimusic.png" id="dynamic-favicon">
     <link rel="apple-touch-icon" href="https://marblelover003.github.io/Visimusic/apple-touch-icon.png">
     <style>
-      @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700|Montserrat:300,400,700|Orbitron:400,700|Chakra+Petch:400,700");
+      @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700|Montserrat:300,400,700|Orbitron:400,700|Chakra+Petch:400,700|Inconsolata");
+      pre {
+        font-family: Inconsolata;
+      }
       body {
         background: black;
         overflow: hidden;
@@ -40,6 +43,13 @@
       #queueOpen {
         position: absolute;
         top: 224px;
+        right: 0;
+        font-size: 10px;
+        z-index: -999;
+      }
+      #infoBtn {
+        position: absolute;
+        top: 264px;
         right: 0;
         font-size: 10px;
         z-index: -999;
@@ -215,9 +225,7 @@
         overflow: hidden;
         background-color: rgb(0,0,0);
         background-color: rgba(0,0,0,0.4);
-      }
-      #endModal {
-        z-index: 10000;
+        transition: opacity 500ms;
       }
       .modal-content {
         background-color: #444444;
@@ -225,7 +233,26 @@
         padding: 20px;
         border: 1px solid #888;
         width: 70%;
-        height: 210px;
+        font-family: Roboto;
+      }
+      .modal-content select, .modal-content button {
+        font-family: Roboto;
+      }
+      .modal-content::-webkit-scrollbar {
+        display: none;
+      }
+      @keyframes movein {
+        0% {opacity: 0; transform: translate(0, -100px);}
+        100% {opacity: 1; transform: translate(0, 0);}
+      }
+      .movein {
+        animation: movein 500ms ease-in-out;
+        animation-fill-mode: forwards;
+      }
+      .moveout {
+        animation: movein 500ms ease-in-out;
+        animation-fill-mode: forwards;
+        animation-direction: reverse;
       }
       .close {
         color: #aaa;
@@ -243,6 +270,9 @@
         bottom: 8px;
         right: 8px;
         z-index: -999;
+      }
+      h1 {
+        text-align: center;
       }
     </style>
   </head>
@@ -516,14 +546,14 @@
     </span>
     <div id="endModal" class="modal">
       <div class="modal-content">
-        <span class="close">&#9587;</span>
+        <span class="close">&times;</span>
         <span id="endMessage"></span>
       </div>
     </div>
     <button id="queueOpen">Queue Settings</button>
     <div id="queueModal" class="modal">
       <div class="modal-content">
-        <span class="close">&#9587;</span>
+        <span class="close">&times;</span>
         <span id="queueMenu">
           Queue up to <del>five</del> <ins style="color: yellow; font-size: 30px;">10</ins> more songs here!<br>
           <select id="queue" onchange="check()">
@@ -718,6 +748,23 @@
         </span>
       </div>
     </div>
+    <button id="infoBtn">Info &sol; News</button>
+    <div id="infoModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h1>Supported Browsers</h1>
+        <p>Visimusic supports all browsers that support the <pre>&lt;audio&gt;</pre> tag.</p>
+        <hr>
+        <h1>Special Thanks</h1>
+        <h2>Monstercat, Wolf Beats Media, Ninety9lives, and NoCopyrightSounds</h2>
+        <p>For providing most of the songs on Visimusic. If none of these labels existed, Visimusic probably wouldn't exist either!</p>
+        <hr>
+        <h1>News</h1>
+        <p>I am still working on the timed lyrics for every song that has lyrics.<br><progress class="c3" max="29" value="3"></progress> 10.34%</p>
+        <p>I also plan on creating a &quot;total play count&quot; page where you'll be able to track how many times you've played each song!</p>
+        <p>Stay tuned for future updates! Keep calm and keep the beat going!</p>
+      </div>
+    </div>
     <span id="title">Loading...</span>
     <audio src="" id="audio"></audio>
     <span style="position: absolute; top: 8px; right: 8px; width: 200px; font: 16px Montserrat; text-align: center;">
@@ -787,33 +834,80 @@
     var modal = document.getElementById("queueModal");
     var btn = document.getElementById("queueOpen");
     var span = document.getElementsByClassName("close")[1];
+    var modal2 = document.getElementById("infoModal");
+    var btn2 = document.getElementById("infoBtn");
+    var span2 = document.getElementsByClassName("close")[2];
     var end_modal = document.getElementById("endModal");
     var end_span = document.getElementsByClassName("close")[0];
     function endMessage(message) {
       document.getElementById("endMessage").innerHTML = message;
       end_modal.style.display = "block";
       end_modal.style.opacity = 1;
+      end_modal.getElementsByClassName("modal-content")[0].classList.add("movein");
     }
     btn.onclick = function() {
       modal.style.display = "block";
       modal.style.opacity = 1;
+      modal.getElementsByClassName("modal-content")[0].classList.add("movein");
     }
     span.onclick = function() {
-      modal.style.display = "none";
       modal.style.opacity = 0;
+      modal.getElementsByClassName("modal-content")[0].classList.remove("movein");
+      modal.getElementsByClassName("modal-content")[0].classList.add("moveout");
+      setTimeout(function() {
+        modal.style.display = "none";
+        modal.getElementsByClassName("modal-content")[0].classList.remove("moveout");
+      }, 500);
+    }
+    btn2.onclick = function() {
+      modal2.style.display = "block";
+      modal2.style.opacity = 1;
+      modal2.getElementsByClassName("modal-content")[0].classList.add("movein");
+    }
+    span2.onclick = function() {
+      modal2.style.opacity = 0;
+      modal2.getElementsByClassName("modal-content")[0].classList.remove("movein");
+      modal2.getElementsByClassName("modal-content")[0].classList.add("moveout");
+      setTimeout(function() {
+        modal2.style.display = "none";
+        modal2.getElementsByClassName("modal-content")[0].classList.remove("moveout");
+      }, 500);
     }
     window.onclick = function(event) {
       if (event.target == modal) {
-        modal.style.display = "none";
         modal.style.opacity = 0;
+        modal.getElementsByClassName("modal-content")[0].classList.remove("movein");
+        modal.getElementsByClassName("modal-content")[0].classList.add("moveout");
+        setTimeout(function() {
+          modal.style.display = "none";
+          modal.getElementsByClassName("modal-content")[0].classList.remove("moveout");
+        }, 500);
       } else if (event.target == end_modal) {
-        end_modal.style.display = "none";
         end_modal.style.opacity = 0;
+        end_modal.getElementsByClassName("modal-content")[0].classList.remove("movein");
+        end_modal.getElementsByClassName("modal-content")[0].classList.add("moveout");
+        setTimeout(function() {
+          end_modal.style.display = "none";
+          end_modal.getElementsByClassName("modal-content")[0].classList.remove("moveout");
+        }, 500);
+      } else if (event.target == modal2) {
+        modal2.style.opacity = 0;
+        modal2.getElementsByClassName("modal-content")[0].classList.remove("movein");
+        modal2.getElementsByClassName("modal-content")[0].classList.add("moveout");
+        setTimeout(function() {
+          modal2.style.display = "none";
+          modal2.getElementsByClassName("modal-content")[0].classList.remove("moveout");
+        }, 500);
       }
     }
     end_span.onclick = function() {
-      end_modal.style.display = "none";
       end_modal.style.opacity = 0;
+      end_modal.getElementsByClassName("modal-content")[0].classList.remove("movein");
+      end_modal.getElementsByClassName("modal-content")[0].classList.add("moveout");
+      setTimeout(function() {
+        end_modal.style.display = "none";
+        end_modal.getElementsByClassName("modal-content")[0].classList.remove("moveout");
+      }, 500);
     }
     function changeFavicon(src) {
       var link = document.createElement("link"),
