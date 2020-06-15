@@ -246,9 +246,6 @@
       .modal-content select, .modal-content button {
         font-family: Roboto;
       }
-      /*::-webkit-scrollbar {
-        display: none;
-      }*/
       @keyframes movein {
         0% {opacity: 0; transform: translate(0, -100px);}
         100% {opacity: 1; transform: translate(0, 0);}
@@ -287,6 +284,15 @@
       h1 {
         text-align: center;
       }
+      .notification .badge {
+        position: absolute;
+        top: -7px;
+        right: -7px;
+        padding: 2px 7px;
+        border-radius: 50%;
+        background: red;
+        color: white;
+      }
     </style>
   </head>
   <body>
@@ -299,6 +305,7 @@
         <option value="Atlantic">Atlantic</option>
         <option value="Backlash">Backlash</option>
         <option value="BAD BOY">BAD BOY</option>
+        <option value="Bananonymous">Bananonymous</option>
         <option value="Barracuda">Barracuda</option>
         <option value="Bass Head">Bass Head</option>
         <option value="Be Gone Mr. Gawne">Be Gone Mr. Gawne</option>
@@ -329,6 +336,7 @@
         <option value="Crystal Tokyo">Crystal Tokyo</option>
         <option value="Cybertron">Cybertron</option>
         <option value="Dance of the Incognizant">Dance of the Incognizant</option>
+        <option value="Deadlocked">Deadlocked</option>
         <option value="Delayed Friend Request">Delayed Friend Request</option>
         <option value="Destroid 1 - Raise Your Fist">Destroid 1 Raise Your Fist</option>
         <option value="Destroid 2 - Wasteland">Destroid 2 Wasteland</option>
@@ -606,6 +614,7 @@
             <option value="Crystal Tokyo">Crystal Tokyo</option>
             <option value="Cybertron">Cybertron</option>
             <option value="Dance of the Incognizant">Dance of the Incognizant</option>
+            <option value="Deadlocked">Deadlocked</option>
             <option value="Delayed Friend Request">Delayed Friend Request</option>
             <option value="Destroid 1 Raise Your Fist">Destroid 1 Raise Your Fist</option>
             <option value="Destroid 2 Wasteland">Destroid 2 Wasteland</option>
@@ -761,7 +770,10 @@
         </span>
       </div>
     </div>
-    <button id="infoBtn">Info &sol; News</button>
+    <button id="infoBtn" class="notification">
+      Info &sol; News
+      <span class="badge">1</span>
+    </button>
     <div id="infoModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
@@ -772,7 +784,11 @@
         <h2>Monstercat, Wolf Beats Media, Ninety9lives, and NoCopyrightSounds</h2>
         <p>For providing most of the songs on Visimusic. If none of these labels existed, Visimusic probably wouldn't exist either!</p>
         <hr>
-        <h1>News</h1>
+        <h1>What's new?</h1>
+        <p>Two new songs have arrived!</p>
+        <p><b>Bananonymous</b> by Savant, as well as <b>Deadlocked</b> by F-777 have arrived at last!</p>
+        <hr>
+        <h1>What's coming?</h1>
         <p>I am still working on the timed lyrics for every song that has lyrics.<br><progress class="c3" max="29" value="3" id="lyricsProgress"></progress> 10.34%</p>
         <p>I also plan on creating a &quot;total play count&quot; page where you'll be able to track how many times you've played each song!</p>
         <p>Stay tuned for future updates! Keep calm and keep the beat going!</p>
@@ -1023,6 +1039,9 @@
         }
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/" + (document.getElementById("song").value == "I Call It Progstep" ? "I Call It Progstep 2" : (document.getElementById("song").value == "Deviance" ? "Deviance 3" : document.getElementById("song").value)) + (song == "Destroid 3 Crusaders" ? ".png" : ".PNG");
         switch (song) {
+          case "Deadlocked":
+            artist = "F-777";
+            break;
           case "BEWM":
             artist = "Slushii & Tokyo Machine";
             break;
@@ -1042,6 +1061,7 @@
           case "The Devil's Den":
             artist = "Skrillex & Wolfgang Gartner";
             break;
+          case "Bananonymous":
           case "Ism":
           case "Starfish":
             artist = "Savant";
@@ -1316,6 +1336,9 @@
         }
         document.getElementById("artist").innerHTML = artist;
         switch (song) {
+          case "": hasLyrics = false; break;
+          case "Bananonymous": hasLyrics = false; break;
+          case "Deadlocked": hasLyrics = false; break;
           case "BEWM": hasLyrics = true; break;
           case "GET UP": hasLyrics = true; break;
           case "Dimensions": hasLyrics = false; break;
@@ -1614,7 +1637,7 @@
         "Junction Seven", "Emergency", "Atlantic", "This Is It", "Rhusma", "Bass Head", "Ism",
         "Nemesis", "Starfish", "The Devil's Den", "Deviance (Original)", "Fire Vortex",
         "Here We Go", "Dimensions", "Farewell", "FLAMES", "Get Up", "Destroid 3 Crusaders",
-        "BEWM", "JOURNEY", "GET UP", "Galactic Voyage", "Virus"
+        "BEWM", "JOURNEY", "GET UP", "Galactic Voyage", "Virus", "Bananonymous", "Deadlocked"
       ];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
@@ -1734,6 +1757,7 @@
         case "Rinse Out":
         case "No Holding On":
         case "Galactic Voyage":
+        case "Bananonymous":
           colors = ["#ffff00"];
           style = styles.single;
           barcolor = 3;
@@ -1893,6 +1917,7 @@
         case "JOURNEY":
         case "GET UP":
         case "Virus":
+        case "Deadlocked":
           colors = ["#ffffff"];
           style = styles.single;
           barcolor = 23;
@@ -2314,6 +2339,8 @@
         case "Fire Vortex": length = "7:27.320"; bpm = 136; break;
         case "Here We Go": length = "6:46.961"; bpm = 176; break;
         case "Virus": length = "5:31.885"; bpm = 174; break;
+        case "Bananonymous": length = "6:11.983"; bpm = 128; break;
+        case "Deadlocked": length = "3:26.132"; bpm = 135; break;
       }
       for (var i = 1; i <= 100; i++) {
         progress.classList.remove("c" + i);
