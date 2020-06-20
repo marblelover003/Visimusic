@@ -284,6 +284,20 @@
       h1 {
         text-align: center;
       }
+      .right {
+        float: right;
+      }
+      ul li {
+        border-top: 1px solid white;
+      }
+      #container {
+        overflow-y: scroll;
+        height: 50%;
+        outline: 1px solid white;
+      }
+      ul li:hover {
+        background: #666;
+      }
       .notification .badge {
         position: absolute;
         top: -7px;
@@ -772,7 +786,7 @@
     </div>
     <button id="infoBtn" class="notification">
       Info &sol; News
-      <span class="badge">1</span>
+      <span class="badge">0</span>
     </button>
     <div id="infoModal" class="modal">
       <div class="modal-content">
@@ -785,13 +799,198 @@
         <p>For providing most of the songs on Visimusic. If none of these labels existed, Visimusic probably wouldn't exist either!</p>
         <hr>
         <h1>What's new?</h1>
-        <p>Two new songs have arrived!</p>
-        <p><b>Bananonymous</b> by Savant, as well as <b>Deadlocked</b> by F-777 have arrived at last!</p>
+        <p>I have created a &quot;Total Play Counts&quot; page where you can track how many times you&apos;ve played each song to the end. However, I still need to work on the back end of this.</p>
+        <p>Also, <b>Till It&apos;s Over</b> by Tristam now has timed lyrics!</p>
         <hr>
         <h1>What's coming?</h1>
-        <p>I am still working on the timed lyrics for every song that has lyrics.<br><progress class="c3" max="29" value="3" id="lyricsProgress"></progress> 10.34%</p>
+        <p>I am still working on the timed lyrics for every song that has lyrics.<br><progress class="c3" max="29" value="4" id="lyricsProgress"></progress> 13.79%</p>
         <p>I also plan on creating a &quot;total play count&quot; page where you'll be able to track how many times you've played each song!</p>
         <p>Stay tuned for future updates! Keep calm and keep the beat going!</p>
+      </div>
+    </div>
+    <button id="playCountsBtn">Total Play Counts</button>
+    <div id="playCountsModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h1>Total Play Counts</h1>
+        <p>Here you can see how many times you've played each song!</p>
+        <div id="container">
+          <ul style="list-style-type: none; margin: 0; padding: 0; width: 100%" id="playCounts">
+            <li>Airwaves<span class="right">0</span></li>
+            <li>Astrocat<span class="right">0</span></li>
+            <li>Atlantic<span class="right">0</span></li>
+            <li>Backlash<span class="right">0</span></li>
+            <li>BAD BOY<span class="right">0</span></li>
+            <li>Barracuda<span class="right">0</span></li>
+            <li>Bass Head<span class="right">0</span></li>
+            <li>Be Gone Mr. Gawne<span class="right">0</span></li>
+            <li>BEWM<span class="right">0</span></li>
+            <li>BLAST<span class="right">0</span></li>
+            <li>Breakdown<span class="right">0</span></li>
+            <li>Breakdown VIP<span class="right">0</span></li>
+            <li>Buzz Kill<span class="right">0</span></li>
+            <li>Caps On, Hats Off<span class="right">0</span></li>
+            <li>Captain Cool<span class="right">0</span></li>
+            <li>Cascade<span class="right">0</span></li>
+            <li>Cheat Codes<span class="right">0</span></li>
+            <li>Cheat Codes VIP<span class="right">0</span></li>
+            <li>Checkpoint<span class="right">0</span></li>
+            <li>Chip Zeal<span class="right">0</span></li>
+            <li>Chipland<span class="right">0</span></li>
+            <li>Chronos<span class="right">0</span></li>
+            <li>Clash<span class="right">0</span></li>
+            <li>Commando Steve<span class="right">0</span></li>
+            <li>COOKIES<span class="right">0</span></li>
+            <li>Cool Friends (Murtagh &amp; Veschell Remix)<span class="right">0</span></li>
+            <li>Core<span class="right">0</span></li>
+            <li>Corrupted<span class="right">0</span></li>
+            <li>Courtesy<span class="right">0</span></li>
+            <li>Crab Rave<span class="right">0</span></li>
+            <li>CRAZY<span class="right">0</span></li>
+            <li>Cruise Control<span class="right">0</span></li>
+            <li>Crystal Tokyo<span class="right">0</span></li>
+            <li>Cybertron<span class="right">0</span></li>
+            <li>Dance of the Incognizant<span class="right">0</span></li>
+            <li>Deadlocked<span class="right">0</span></li>
+            <li>Delayed Friend Request<span class="right">0</span></li>
+            <li>Destroid 1 Raise Your Fist<span class="right">0</span></li>
+            <li>Destroid 2 Wasteland<span class="right">0</span></li>
+            <li>Destroid 3 Crusaders<span class="right">0</span></li>
+            <li>Destroid 6 Put It Down<span class="right">0</span></li>
+            <li>Destroid 7 Bounce<span class="right">0</span></li>
+            <li>Destroid 8 Annihilate<span class="right">0</span></li>
+            <li>Destroid 10 Funk Hole<span class="right">0</span></li>
+            <li>Deviance (Original Mix)<span class="right">0</span></li>
+            <li>Deviance (Dirtyphonics Remix)<span class="right">0</span></li>
+            <li>Dimensions<span class="right">0</span></li>
+            <li>Disconnected<span class="right">0</span></li>
+            <li>Duality<span class="right">0</span></li>
+            <li>Dubwoofer Substep<span class="right">0</span></li>
+            <li>Eclipse<span class="right">0</span></li>
+            <li>Emergency<span class="right">0</span></li>
+            <li>End is Near (Fire in the Hole VIP)<span class="right">0</span></li>
+            <li>EPIC<span class="right">0</span></li>
+            <li>Evolution<span class="right">0</span></li>
+            <li>Exoskelephone<span class="right">0</span></li>
+            <li>Farbror Melker Fixar Fiskdamm (Fastbom Cover)<span class="right">0</span></li>
+            <li>Farewell<span class="right">0</span></li>
+            <li>Faster Than Light<span class="right">0</span></li>
+            <li>FIGHT<span class="right">0</span></li>
+            <li>Final Boss<span class="right">0</span></li>
+            <li>Fingerbang<span class="right">0</span></li>
+            <li>Fire in the Hole<span class="right">0</span></li>
+            <li>Fire Vortex<span class="right">0</span></li>
+            <li>FLAMES<span class="right">0</span></li>
+            <li>Flirt Flirt Oh It Hurts<span class="right">0</span></li>
+            <li>Focus<span class="right">0</span></li>
+            <li>Forged in Stars<span class="right">0</span></li>
+            <li>FOX<span class="right">0</span></li>
+            <li>FTW<span class="right">0</span></li>
+            <li>Galactic Voyage<span class="right">0</span></li>
+            <li>Get Up<span class="right">0</span></li>
+            <li>GET UP<span class="right">0</span></li>
+            <li>Glitch<span class="right">0</span></li>
+            <li>Gravity<span class="right">0</span></li>
+            <li>Grind<span class="right">0</span></li>
+            <li>Halcyon<span class="right">0</span></li>
+            <li>Heist<span class="right">0</span></li>
+            <li>Here It Comes<span class="right">0</span></li>
+            <li>Here We Go<span class="right">0</span></li>
+            <li>Highscore<span class="right">0</span></li>
+            <li>Houston<span class="right">0</span></li>
+            <li>HYPE<span class="right">0</span></li>
+            <li>I Call It Progstep<span class="right">0</span></li>
+            <li>I&apos;m being Reelistic<span class="right">0</span></li>
+            <li>Into the Zone<span class="right">0</span></li>
+            <li>Ism<span class="right">0</span></li>
+            <li>It&apos;s Pronounced Omnitica<span class="right">0</span></li>
+            <li>Jack Russel<span class="right">0</span></li>
+            <li>JOURNEY<span class="right">0</span></li>
+            <li>Junction Seven<span class="right">0</span></li>
+            <li>Leaving Leafwood Forest<span class="right">0</span></li>
+            <li>Legacy<span class="right">0</span></li>
+            <li>Let It Roar<span class="right">0</span></li>
+            <li>Light Sticks<span class="right">0</span></li>
+            <li>Livewire<span class="right">0</span></li>
+            <li>Logic Gatekeeper<span class="right">0</span></li>
+            <li>Long Live the New Fresh<span class="right">0</span></li>
+            <li>Milky Ways<span class="right">0</span></li>
+            <li>MOSHI<span class="right">0</span></li>
+            <li>Nemesis<span class="right">0</span></li>
+            <li>New Game<span class="right">0</span></li>
+            <li>No Holding On (feat. Holly Drummond)<span class="right">0</span></li>
+            <li>No Party Like a Mojang Party<span class="right">0</span></li>
+            <li>OKAY<span class="right">0</span></li>
+            <li>Omniverse<span class="right">0</span></li>
+            <li>On the Run<span class="right">0</span></li>
+            <li>Once Again<span class="right">0</span></li>
+            <li>Opia<span class="right">0</span></li>
+            <li>Otis<span class="right">0</span></li>
+            <li>Paper Dolls<span class="right">0</span></li>
+            <li>Parallel Processing<span class="right">0</span></li>
+            <li>PARTY<span class="right">0</span></li>
+            <li>Partyt A&#776;r Iga&#778;ng!<span class="right">0</span></li>
+            <li>Peer Gynt<span class="right">0</span></li>
+            <li>Pirate Manners<span class="right">0</span></li>
+            <li>PIXEL<span class="right">0</span></li>
+            <li>PLAY<span class="right">0</span></li>
+            <li>Play It Loud<span class="right">0</span></li>
+            <li>Play It Loud (Broken Robot Mix)<span class="right">0</span></li>
+            <li>Pyro<span class="right">0</span></li>
+            <li>Quake<span class="right">0</span></li>
+            <li>Rainbow Road<span class="right">0</span></li>
+            <li>Rat Twist<span class="right">0</span></li>
+            <li>Razor Sharp<span class="right">0</span></li>
+            <li>Renegade<span class="right">0</span></li>
+            <li>Rhapsody<span class="right">0</span></li>
+            <li>Rhusma<span class="right">0</span></li>
+            <li>Rinse Out<span class="right">0</span></li>
+            <li>ROCK IT<span class="right">0</span></li>
+            <li>Rocket<span class="right">0</span></li>
+            <li>Rocktronik<span class="right">0</span></li>
+            <li>SAIKOU<span class="right">0</span></li>
+            <li>Sentinel<span class="right">0</span></li>
+            <li>Sevcon<span class="right">0</span></li>
+            <li>Sexy Beast<span class="right">0</span></li>
+            <li>Sidewinder<span class="right">0</span></li>
+            <li>So Far Away<span class="right">0</span></li>
+            <li>Spection<span class="right">0</span></li>
+            <li>Spectra<span class="right">0</span></li>
+            <li>SPOOKY<span class="right">0</span></li>
+            <li>Starfish<span class="right">0</span></li>
+            <li>Starship Showdown (feat. Christian Carlsson)<span class="right">0</span></li>
+            <li>Steampunk Warlord<span class="right">0</span></li>
+            <li>Stock &amp; Pull<span class="right">0</span></li>
+            <li>Sugar Rush<span class="right">0</span></li>
+            <li>Surge<span class="right">0</span></li>
+            <li>Tension<span class="right">0</span></li>
+            <li>Termination Shock<span class="right">0</span></li>
+            <li>The Art of War<span class="right">0</span></li>
+            <li>The Cave, The Treasure<span class="right">0</span></li>
+            <li>The Devil&apos;s Den<span class="right">0</span></li>
+            <li>The Escape<span class="right">0</span></li>
+            <li>The Lunar Whale<span class="right">0</span></li>
+            <li>The Maze of Mayonnaise<span class="right">0</span></li>
+            <li>This Is It<span class="right">0</span></li>
+            <li>This Time<span class="right">0</span></li>
+            <li>Till It&apos;s Over<span class="right">0</span></li>
+            <li>Time Goes By<span class="right">0</span></li>
+            <li>Time Lapse<span class="right">0</span></li>
+            <li>Timewarp<span class="right">0</span></li>
+            <li>To the Stars<span class="right">0</span></li>
+            <li>Tokyo Skies<span class="right">0</span></li>
+            <li>Tonight (feat. Danyka Nadeau)<span class="right">0</span></li>
+            <li>Try This<span class="right">0</span></li>
+            <li>TURBO<span class="right">0</span></li>
+            <li>Turbo Penguin<span class="right">0</span></li>
+            <li>Unlocked<span class="right">0</span></li>
+            <li>Vindicate Me<span class="right">0</span></li>
+            <li>Virus<span class="right">0</span></li>
+            <li>Wicked<span class="right">0</span></li>
+            <li>Wormhole<span class="right">0</span></li>
+            <li>Yo! Ho! And a Bottle of Bass!<span class="right">0</span></li>
+          </ul>
+        </div>
       </div>
     </div>
     <span id="title">Loading...</span>
@@ -866,6 +1065,9 @@
     var modal2 = document.getElementById("infoModal");
     var btn2 = document.getElementById("infoBtn");
     var span2 = document.getElementsByClassName("close")[2];
+    var modal3 = document.getElementById("playCountsModal");
+    var btn3 = document.getElementById("playCountsBtn");
+    var span3 = document.getElementsByClassName("close")[3];
     var end_modal = document.getElementById("endModal");
     var end_span = document.getElementsByClassName("close")[0];
     function endMessage(message) {
@@ -902,6 +1104,20 @@
         modal2.getElementsByClassName("modal-content")[0].classList.remove("moveout");
       }, 500);
     }
+    btn3.onclick = function() {
+      modal3.style.display = "block";
+      modal3.style.opacity = 1;
+      modal3.getElementsByClassName("modal-content")[0].classList.add("movein");
+    }
+    span3.onclick = function() {
+      modal3.style.opacity = 0;
+      modal3.getElementsByClassName("modal-content")[0].classList.remove("movein");
+      modal3.getElementsByClassName("modal-content")[0].classList.add("moveout");
+      setTimeout(function() {
+        modal3.style.display = "none";
+        modal3.getElementsByClassName("modal-content")[0].classList.remove("moveout");
+      }, 500);
+    }
     window.onclick = function(event) {
       if (event.target == modal) {
         modal.style.opacity = 0;
@@ -926,6 +1142,14 @@
         setTimeout(function() {
           modal2.style.display = "none";
           modal2.getElementsByClassName("modal-content")[0].classList.remove("moveout");
+        }, 500);
+      } else if (event.target == modal3) {
+        modal3.style.opacity = 0;
+        modal3.getElementsByClassName("modal-content")[0].classList.remove("movein");
+        modal3.getElementsByClassName("modal-content")[0].classList.add("moveout");
+        setTimeout(function() {
+          modal3.style.display = "none";
+          modal3.getElementsByClassName("modal-content")[0].classList.remove("moveout");
         }, 500);
       }
     }
@@ -2580,6 +2804,56 @@
           [171.8, 172.9, "&bull;&bull;"],
           [172.9, 174, "&bull;&bull;&bull;"],
           [174, 174.6, "(Droppin' flames)"]
+        ];
+        for (var i = 0; i < lyrics.length; i++) {
+          if (t >= lyrics[i][0] && t <= lyrics[i][1]) {
+            currentLyrics = lyrics[i][2];
+          }
+        }
+      } else if (song == "Till It's Over") {
+        var lyrics = [
+          [0, 17.3333, "&bull;"],
+          [17.3333, 34.6667, "&bull;&bull;"],
+          [34.6667, 52, "&bull;&bull;&bull;"],
+          [52, 55, "We don't care what they say"],
+          [55, 57.5, "We will be here all day"],
+          [57.5, 61, "We'll stay here till it's over"],
+          [61, 63.8, "Till the world's out of sight"],
+          [63.8, 65, "We will stand"],
+          [65, 66, "And we'll fight"],
+          [66, 70, "It's not over till it's over"],
+          [70, 93.3333, "&bull;"],
+          [93.3333, 116.6667, "&bull;&bull;"],
+          [116.6667, 140, "&bull;&bull;&bull;"],
+          [140, 142, "As I fell to the ocean floor"],
+          [142, 144, "Fading light through an open door"],
+          [144, 147, "I saw myself rise with the water"],
+          [147, 147.4667, "&bull;"],
+          [147.4667, 147.9333, "&bull;&bull;"],
+          [147.9333, 148.4, "&bull;&bull;&bull;"],
+          [148.4, 151, "They thought they could keep me down"],
+          [151, 153, "Hold their breath and watch me drown"],
+          [153, 156, "But all they did has pushed me higher"],
+          [156, 156.3333, "&bull;"],
+          [156.3333, 156.6667, "&bull;&bull;"],
+          [156.6667, 157, "&bull;&bull;&bull;"],
+          [157, 160, "We don't care what they say"],
+          [160, 162, "We will be here all day"],
+          [162, 165.8, "We'll stay here till it's over"],
+          [165.8, 168.5, "Till the world's out of sight"],
+          [168.5, 169.8, "We will stand"],
+          [169.8, 170.8, "And we'll fight"],
+          [170.8, 174, "It's not over till it's over"],
+          [174.5, 177.2, "Through the nights and the rain"],
+          [177.2, 178.5, "Through the time"],
+          [178.5, 179.8, "And the pain"],
+          [179.8, 180.8, "We'll stand"],
+          [180.8, 183.1, "We'll never fall"],
+          [183.1, 185.1, "And then at the end"],
+          [185.1, 186.1, "Of it all"],
+          [186.1, 187.1, "We will win"],
+          [187.1, 188.1, "And we'll chant"],
+          [188.1, 192.1, "It's not over till it's over"]
         ];
         for (var i = 0; i < lyrics.length; i++) {
           if (t >= lyrics[i][0] && t <= lyrics[i][1]) {
