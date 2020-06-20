@@ -57,6 +57,13 @@
         font-size: 10px;
         z-index: -999;
       }
+      #playCountsBtn {
+        position: absolute;
+        top: 264px;
+        right: 0;
+        font-size: 10px;
+        z-index: -999;
+      }
       #queue, #queueBtn {
         font-size: 10px;
       }
@@ -786,7 +793,7 @@
     </div>
     <button id="infoBtn" class="notification">
       Info &sol; News
-      <span class="badge">0</span>
+      <span class="badge">3</span>
     </button>
     <div id="infoModal" class="modal">
       <div class="modal-content">
@@ -801,10 +808,10 @@
         <h1>What's new?</h1>
         <p>I have created a &quot;Total Play Counts&quot; page where you can track how many times you&apos;ve played each song to the end. However, I still need to work on the back end of this.</p>
         <p>Also, <b>Till It&apos;s Over</b> by Tristam now has timed lyrics!</p>
+        <p>On top of that, I have discovered that the Play Counts button was not in the correct spot initially, so I moved it to where it should be. Everyone loves having to fix bugs like that&hellip;</p>
         <hr>
         <h1>What's coming?</h1>
         <p>I am still working on the timed lyrics for every song that has lyrics.<br><progress class="c3" max="29" value="4" id="lyricsProgress"></progress> 13.79%</p>
-        <p>I also plan on creating a &quot;total play count&quot; page where you'll be able to track how many times you've played each song!</p>
         <p>Stay tuned for future updates! Keep calm and keep the beat going!</p>
       </div>
     </div>
@@ -1006,7 +1013,6 @@
     <span class="progressContainer">
       <progress id="progress" value="0" max="0"></progress><span id="timeLeft">-0:00</span>
     </span>
-    <canvas id="canvas" width="60" height="60"></canvas>
   </body>
   <script>
     if (localStorage.getItem("fftSize") != null) {
@@ -1048,15 +1054,7 @@
         songTagVer = document.getElementById("songTagVer"),
         artist, emptyQueue = ["", 0],
         queue = [["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0]], itemsQueued = 0, song,
-        bpm, c = document.getElementById("canvas").getContext("2d"), hasLyrics = false, currentLyrics = "";
-    c.translate(30, 30);
-    c.rotate(-0.5 * Math.PI);
-    c.clearRect(-30, -30, 60, 60);
-    c.fillStyle = "#333333";
-    c.beginPath();
-    c.moveTo(0, 0);
-    c.arc(0, 0, 25, 0, 2 * Math.PI);
-    c.fill();
+        bpm, hasLyrics = false, currentLyrics = "";
     document.getElementById("queue").disabled = true;
     document.getElementById("queueBtn").disabled = true;
     var modal = document.getElementById("queueModal");
@@ -1763,12 +1761,6 @@
       analyser.getByteFrequencyData(frequency_array);
       pageInitiated = true;
       audio.addEventListener("ended", function() {
-        c.clearRect(-30, -30, 60, 60);
-        c.fillStyle = "#333333";
-        c.beginPath();
-        c.moveTo(0, 0);
-        c.arc(0, 0, 25, 0, 2 * Math.PI);
-        c.fill();
         document.getElementById("queue").disabled = true;
         document.getElementById("queueBtn").disabled = true;
         clearInterval(positions);
@@ -2642,17 +2634,6 @@
       document.getElementById("timeLeft").innerHTML = "-" + t_m + ":" + ("0" + t_s).slice(-2);
       var songProgress = Math.floor(pos / len * 1000) / 10;
       progress.value = audio.currentTime * 1000;
-      c.clearRect(-30, -30, 60, 60);
-      c.fillStyle = "#333333";
-      c.beginPath();
-      c.moveTo(0, 0);
-      c.arc(0, 0, 25, 0, 2 * Math.PI);
-      c.fill();
-      c.fillStyle = "white";
-      c.beginPath();
-      c.moveTo(0, 0);
-      c.arc(0, 0, 25, 0, 2 * Math.PI * (pos / len));
-      c.fill();
       currentLyrics = "";
       if (song == "The Devil's Den") {
         if ((t >= 45.2 && t <= 49.2) || (t >= 53.2 && t <= 55.8) || (t >= 135.5 && t <= 139) || (t >= 143 && t <= 147) || (t >= 150 && t <= 153) || (t >= 157 && t <= 161) || (t >= 210 && t <= 214) || (t >= 217.5 && t <= 222)) {
