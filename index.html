@@ -793,7 +793,7 @@
     </div>
     <button id="infoBtn" class="notification">
       Info &sol; News
-      <span class="badge">3</span>
+      <span class="badge">1</span>
     </button>
     <div id="infoModal" class="modal">
       <div class="modal-content">
@@ -806,12 +806,10 @@
         <p>For providing most of the songs on Visimusic. If none of these labels existed, Visimusic probably wouldn't exist either!</p>
         <hr>
         <h1>What's new?</h1>
-        <p>I have created a &quot;Total Play Counts&quot; page where you can track how many times you&apos;ve played each song to the end. However, I still need to work on the back end of this.</p>
-        <p>Also, <b>Till It&apos;s Over</b> by Tristam now has timed lyrics!</p>
-        <p>On top of that, I have discovered that the Play Counts button was not in the correct spot initially, so I moved it to where it should be. Everyone loves having to fix bugs like that&hellip;</p>
+        <p><b>Once Again</b> by Tristam now has timed lyrics!
         <hr>
         <h1>What's coming?</h1>
-        <p>I am still working on the timed lyrics for every song that has lyrics.<br><progress class="c3" max="29" value="4" id="lyricsProgress"></progress> 13.79%</p>
+        <p>I am still working on the timed lyrics for every song that has lyrics.<br><progress class="c3" max="29" value="5" id="lyricsProgress"></progress> 17.24%</p>
         <p>Stay tuned for future updates! Keep calm and keep the beat going!</p>
       </div>
     </div>
@@ -2835,6 +2833,58 @@
           [186.1, 187.1, "We will win"],
           [187.1, 188.1, "And we'll chant"],
           [188.1, 192.1, "It's not over till it's over"]
+        ];
+        for (var i = 0; i < lyrics.length; i++) {
+          if (t >= lyrics[i][0] && t <= lyrics[i][1]) {
+            currentLyrics = lyrics[i][2];
+          }
+        }
+      } else if (song == "Once Again") {
+        var lyrics = [
+          [0, 13.1, "&bull;"],
+          [13.1, 26.2, "&bull;&bull;"],
+          [26.2, 39.3, "&bull;&bull;&bull;"],
+          [39.3, 41.9, "As the sun steps down"],
+          [41.9, 44.5, "And escapes the day"],
+          [44.5, 46.3, "We'll calmly walk away"],
+          [46.3, 48.4, "Walk away from the fray"],
+          [48.4, 51, "When the structure falls"],
+          [51, 53.5, "And all else fails"],
+          [53.5, 56.8, "We will build it once again"],
+          [56.8, 74.2333, "&bull;"],
+          [74.2333, 91.6667, "&bull;&bull;"],
+          [91.6667, 109.1, "&bull;&bull;&bull;"],
+          [109.1, 111.9, "When the colors fade"],
+          [111.9, 114.3, "And it turns to gray"],
+          [114.3, 116.1, "We'll calmly walk away"],
+          [116.1, 118.6, "Walk away from the fray"],
+          [118.6, 120.9, "When structure falls"],
+          [120.9, 123.2, "And all else fails"],
+          [123.2, 125.8, "We will build it once again"],
+          [125.8, 128.2, "We can climb high"],
+          [128.2, 130.1, "Higher than before"],
+          [130.1, 132.5, "Or we can stand by"],
+          [132.5, 134.5, "While it burns to the floor"],
+          [134.5, 136.9, "Though we cannot fly"],
+          [136.9, 140.8, "We will build and the wounds will mend"],
+          [140.8, 144.1, "As we build it once again"],
+          [144.1, 155.4667, "&bull;"],
+          [155.4667, 166.8333, "&bull;&bull;"],
+          [166.8333, 178.2, "&bull;&bull;&bull;"],
+          [178.2, 180.6, "And we can climb high"],
+          [180.6, 182.6, "Higher than before"],
+          [182.6, 184.9, "Or we can stand by"],
+          [184.9, 187, "While it burns to the floor"],
+          [187, 189.3, "Though we cannot fly"],
+          [189.3, 193.1, "We will build and the wounds will mend"],
+          [193.1, 195.7, "As we build it once again"],
+          [195.7, 198, "And we can climb high"],
+          [198, 200, "Higher than before"],
+          [200, 202.3, "Or we can stand by"],
+          [202.3, 204.3, "While it burns to the floor"],
+          [204.3, 206.7, "Though we cannot fly"],
+          [206.7, 210.5, "We will build and the wounds will mend"],
+          [210.5, 213.8, "As we build it once again"]
         ];
         for (var i = 0; i < lyrics.length; i++) {
           if (t >= lyrics[i][0] && t <= lyrics[i][1]) {
