@@ -1779,8 +1779,8 @@
       analyser.getByteFrequencyData(frequency_array);
       pageInitiated = true;
       audio.addEventListener("ended", function() {
-        var newPlayCount = Number(localStorage.getItem("playCounts " + document.getElementById("song").options[document.getElementById("song").options.selectedIndex].innerHTML)) + 1;
-        localStorage.setItem("playCounts " + document.getElementById("song").options[document.getElementById("song").options.selectedIndex].innerHTML, newPlayCount);
+        var newPlayCount = Number(localStorage.getItem("playCounts " + songs[document.getElementById("song").options.selectedIndex - 1])) + 1;
+        localStorage.setItem("playCounts " + songs[document.getElementById("song").options.selectedIndex - 1], newPlayCount);
         updatePlayCounts();
         document.getElementById("queue").disabled = true;
         document.getElementById("queueBtn").disabled = true;
