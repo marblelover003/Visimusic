@@ -1091,9 +1091,6 @@
       end_modal.style.display = "block";
       end_modal.style.opacity = 1;
       end_modal.getElementsByClassName("modal-content")[0].classList.add("movein");
-      var newPlayCount = Number(localStorage.getItem("playCounts " + document.getElementById("song").options[document.getElementById("song").options.selectedIndex].innerHTML)) + 1;
-      localStorage.setItem("playCounts " + document.getElementById("song").options[document.getElementById("song").options.selectedIndex].innerHTML, newPlayCount);
-      updatePlayCounts();
     }
     btn.onclick = function() {
       modal.style.display = "block";
@@ -1782,6 +1779,9 @@
       analyser.getByteFrequencyData(frequency_array);
       pageInitiated = true;
       audio.addEventListener("ended", function() {
+        var newPlayCount = Number(localStorage.getItem("playCounts " + document.getElementById("song").options[document.getElementById("song").options.selectedIndex].innerHTML)) + 1;
+        localStorage.setItem("playCounts " + document.getElementById("song").options[document.getElementById("song").options.selectedIndex].innerHTML, newPlayCount);
+        updatePlayCounts();
         document.getElementById("queue").disabled = true;
         document.getElementById("queueBtn").disabled = true;
         clearInterval(positions);
