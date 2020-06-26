@@ -17,7 +17,7 @@ You can also customize how the visualization looks with different settings:
 - Curve Power: Defaults to 5x, but you can also choose 3x, 4x, 6x, and 8x. This is how sharp the curve from minimum dB to maximum dB should be.
 - Max dB: This is used by the `AnalyserNode` itself, and defaults to -10. You can also choose 0, -5, -15, -20, -25, and -30.
 - Min dB: This is used by the `AnalyserNode` itself, and defaults to -90. You can also choose -100, -95, -85, -80, -75, -70, -65, -60, -55, and -50.
-- Tag Version: You can choose 4th or 5th version Song Tags here, or even choose no song tags at all. Default tag version is 4.
+- Tag Version: Currently disabled.
 -----
 Each song has a different color scheme.
 
