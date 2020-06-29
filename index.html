@@ -796,7 +796,7 @@
     </div>
     <button id="infoBtn" class="notification">
       Info &sol; News
-      <span class="badge">2</span>
+      <span class="badge">3</span>
     </button>
     <div id="infoModal" class="modal">
       <div class="modal-content">
@@ -810,7 +810,7 @@
         <hr>
         <h1>What's new?</h1>
         <p>Play Counts is now live, up and running! You can now track how many times you've played each song to the end!</p>
-        <p><b>Surface Tension</b> by Teminite &amp; PsoGnar has arrived out of the blue!</p>
+        <p>Also, <b>Surface Tension</b> by Teminite &amp; PsoGnar has arrived out of the blue! And it has timed lyrics!</p>
         <hr>
         <h1>What's coming?</h1>
         <p>I am still working on the timed lyrics for every song that has lyrics.<br><progress class="c3" max="29" value="5" id="lyricsProgress"></progress> 17.24%</p>
@@ -2919,6 +2919,112 @@
           [204.3, 206.7, "Though we cannot fly"],
           [206.7, 210.5, "We will build and the wounds will mend"],
           [210.5, 213.8, "As we build it once again"]
+        ];
+        for (var i = 0; i < lyrics.length; i++) {
+          if (t >= lyrics[i][0] && t <= lyrics[i][1]) {
+            currentLyrics = lyrics[i][2];
+          }
+        }
+      } else if (song == "Once Again") {
+        var lyrics = [
+          [0, 7.6333, "&bull;"],
+          [7.6333, 15.2667, "&bull;&bull;"],
+          [15.2667, 22.9, "&bull;&bull;&bull;"],
+          [22.9, 25.3, "Liquid lover"],
+          [25.3, 29.1, "Froze this water into stone"],
+          [29.1, 30.2, "Froze this water into stone (into stone)"],
+          [30.2, 32.7, "In many tones"],
+          [32.7, 33.0667, "&bull;"],
+          [33.0667, 33.4333, "&bull;&bull;"],
+          [33.4333, 33.8, "&bull;&bull;&bull;"],
+          [33.8, 36.5, "Fear uncovered"],
+          [36.5, 40.2, "Melts this molten ray of gold"],
+          [40.2, 41.4, "Melts this molten ray of gold (ray of gold)"],
+          [41.4, 43.2, "Let it roll"],
+          [43.2, 45, "I feel us sinking"],
+          [45, 47.8, "Low"],
+          [47.8, 50.5, "Like surface tension in you"],
+          [50.5, 53.8, "Whoa"],
+          [53.8, 56.4, "It feels much better down be"],
+          [56.4, 58.9, "It feels much better down below"],
+          [58.9, 62, "Like surface tension in you"],
+          [62, 64.6, "Whoa"],
+          [64.6, 70, "It feels much better here, you know"],
+          [70, 71.8, "&bull;"],
+          [71.8, 73.6, "&bull;&bull;"],
+          [73.6, 75.4, "&bull;&bull;&bull;"],
+          [75.4, 79.5, "Like surface tension"],
+          [79.5, 82.4667, "&bull;"],
+          [82.4667, 85.4333, "&bull;&bull;"],
+          [85.4333, 88.4, "&bull;&bull;&bull;"],
+          [88.4, 88.6, "HERE"],
+          [88.6, 88.8, "HERE WE"],
+          [88.8, 90, "HERE WE GO"],
+          [90, 95.9, "&bull;"],
+          [95.9, 101.8, "&bull;&bull;"],
+          [101.8, 107.7, "&bull;&bull;&bull;"],
+          [107.7, 109.4, "Let it roll"],
+          [109.4, 112, "I feel us sinking"],
+          [112, 118.2, "&bull;"],
+          [118.2, 124.4, "&bull;&bull;"],
+          [124.4, 130.6, "&bull;&bull;&bull;"],
+          [130.6, 132.3, "Like surface tension,"],
+          [132.3, 132.7, "Like surface tension, IT'S"],
+          [132.7, 132.9, "Like surface tension, IT'S TE"],
+          [132.9, 133.1, "Like surface tension, IT'S TEMI"],
+          [133.1, 134, "Like surface tension, IT'S TEMINITE"],
+          [134, 148.4333, "&bull;"],
+          [148.4333, 162.8667, "&bull;&bull;"],
+          [162.8667, 177.3, "&bull;&bull;&bull;"],
+          [177.3, 180.1, "Liquid lover"],
+          [180.1, 183.7, "Froze this water into stone"],
+          [183.7, 184.7, "Froze this water into stone (into stone)"],
+          [184.7, 187.1, "In many tones"],
+          [187.1, 187.5, "&bull;"],
+          [187.5, 187.9, "&bull;&bull;"],
+          [187.9, 188.3, "&bull;&bull;&bull;"],
+          [188.3, 191.1, "Fear uncovered"],
+          [191.1, 194.7, "Melts this molten ray of gold"],
+          [194.7, 195.9, "Melts this molten ray of gold (ray of gold)"],
+          [195.9, 197.7, "Let it roll"],
+          [197.7, 199.5, "I feel us sinking"],
+          [199.5, 199.6667, "&bull;"],
+          [199.6667, 199.8333, "&bull;&bull;"],
+          [199.8333, 200, "&bull;&bull;&bull;"],
+          [200, 202.2, "Low"],
+          [202.2, 205.2, "Like surface tension in you"],
+          [205.2, 207.8, "Whoa"],
+          [207.8, 211, "It feels much better down be"],
+          [211, 213.3, "It feels much better down below"],
+          [213.3, 216.1, "Like surface tension in you"],
+          [216.1, 219, "Whoa"],
+          [219, 224.3, "It feels much better here, you know"],
+          [224.3, 226.1667, "&bull;"],
+          [226.1667, 228.0333, "&bull;&bull;"],
+          [228.0333, 229.9, "&bull;&bull;&bull;"],
+          [229.9, 235.3, "Like surface tension"],
+          [235.3, 237.8667, "&bull;"],
+          [237.8667, 240.4333, "&bull;&bull;"],
+          [240.4333, 243, "&bull;&bull;&bull;"],
+          [243, 243.2, "HERE"],
+          [243.2, 243.4, "HERE WE"],
+          [243.4, 244.3, "HERE WE GO"],
+          [244.3, 257.6333, "&bull;"],
+          [257.6333, 270.9667, "&bull;&bull;"],
+          [270.9667, 284.3, "&bull;&bull;&bull;"],
+          [284.3, 285.9, "Let it roll"],
+          [285.9, 287.8, "I feel us sinking"],
+          [287.8, 287.9667, "&bull;"],
+          [287.9667, 288.1333, "&bull;&bull;"],
+          [288.1333, 288.3, "&bull;&bull;&bull;"],
+          [288.3, 290.5, "Low"],
+          [290.5, 293.3, "Like surface tension in you"],
+          [293.3, 296.6, "Whoa"],
+          [296.6, 299.3, "It feels much better down be"],
+          [299.3, 301.8, "It feels much better down below"],
+          [301.8, 304.9, "Like surface tension in you"],
+          [304.9, 307.3, "Whoa"],
+          [307.3, 311.2, "It feels much better here, you know"]
         ];
         for (var i = 0; i < lyrics.length; i++) {
           if (t >= lyrics[i][0] && t <= lyrics[i][1]) {
