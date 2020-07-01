@@ -796,10 +796,17 @@
     </div>
     <button id="infoBtn" class="notification">
       Info &sol; News
-      <span class="badge">3</span>
+      <span class="badge">1</span>
     </button>
     <div id="infoModal" class="modal">
       <div class="modal-content">
+        <h1>What's new?</h1>
+        <p><b>End is Near (Fire in the Hole VIP)</b> by Pegboard Nerds now has explosive timed lyrics! An explosive song like this deserves explosive timed lyrics...</p>
+        <hr>
+        <h1>What's coming?</h1>
+        <p>I am still working on the timed lyrics for every song that has lyrics.<br><progress class="c3" max="31" value="7" id="lyricsProgress"></progress> 22.58%</p>
+        <p>Stay tuned for future updates! Keep calm and keep the beat going!</p>
+        <hr>
         <span class="close">&times;</span>
         <h1>Supported Browsers</h1>
         <p>Visimusic supports all browsers that support the <span class="pre">&lt;audio&gt;</span> tag.</p>
@@ -807,14 +814,6 @@
         <h1>Special Thanks</h1>
         <h2>Monstercat, Wolf Beats Media, Ninety9lives, and NoCopyrightSounds</h2>
         <p>For providing most of the songs on Visimusic. If none of these labels existed, Visimusic probably wouldn't exist either!</p>
-        <hr>
-        <h1>What's new?</h1>
-        <p>Play Counts is now live, up and running! You can now track how many times you've played each song to the end!</p>
-        <p>Also, <b>Surface Tension</b> by Teminite &amp; PsoGnar has arrived out of the blue! And it has timed lyrics!</p>
-        <hr>
-        <h1>What's coming?</h1>
-        <p>I am still working on the timed lyrics for every song that has lyrics.<br><progress class="c3" max="30" value="6" id="lyricsProgress"></progress> 20%</p>
-        <p>Stay tuned for future updates! Keep calm and keep the beat going!</p>
       </div>
     </div>
     <button id="playCountsBtn">Total Play Counts</button>
@@ -1758,7 +1757,7 @@
           case "Virus": hasLyrics = true; break;
           case "Highscore": hasLyrics = false; break;
           case "To the Stars": hasLyrics = false; break;
-          case "Junction Seven": hasLyrics = false; break;
+          case "Junction Seven": hasLyrics = true; break;
         }
         if (hasLyrics) {
           document.getElementById("hasLyrics").innerHTML = "has";
@@ -3025,6 +3024,125 @@
           [301.8, 304.9, "Like surface tension in you"],
           [304.9, 307.3, "Whoa"],
           [307.3, 311.2, "It feels much better here, you know"]
+        ];
+        for (var i = 0; i < lyrics.length; i++) {
+          if (t >= lyrics[i][0] && t <= lyrics[i][1]) {
+            currentLyrics = lyrics[i][2];
+          }
+        }
+      } else if (song == "End is Near") {
+        var lyrics = [
+          [0.0, 1.0, "&bull;"],
+          [1.0, 2.0, "&bull;&bull;"],
+          [2.0, 3.0, "&bull;&bull;&bull;"],
+          [3.0, 4.0, "You"],
+          [4.0, 5.3, "You and me"],
+          [5.3, 8.0, "You and me are running out of time"],
+          [8.0, 10.5, "There's nothing left to do"],
+          [10.5, 13.1, "The countdown has begun,"],
+          [13.1, 13.3, "The countdown has begun, the"],
+          [13.3, 13.6, "The countdown has begun, the end"],
+          [13.6, 13.8, "The countdown has begun, the end is"],
+          [13.8, 15.1, "The countdown has begun, the end is near"],
+          [15.1, 18.0, "We're in the line of fire"],
+          [18.0, 20.6, "It's coming up on us"],
+          [20.6, 23.1, "It's time for us to get out of here"],
+          [23.1, 25.8, "There's a fire in the hole"],
+          [25.8, 28.6333, "&bull;"],
+          [28.6333, 31.4667, "&bull;&bull;"],
+          [31.4667, 34.3, "&bull;&bull;&bull;"],
+          [34.3, 37.1, "There's a fire in the hole"],
+          [37.1, 39.9, "We're in the line of fire"],
+          [39.9, 42.6, "It's coming up on us"],
+          [42.6, 45.3, "It's time for us to get out of here"],
+          [45.3, 47.9, "There's a fire in the hole"],
+          [47.9, 54.4, "&bull;"],
+          [54.4, 60.9, "&bull;&bull;"],
+          [60.9, 67.4, "&bull;&bull;&bull;"],
+          [67.4, 68.8, "There's a fire in the..."],
+          [68.8, 69.1, "<span style=\"color: #ff0000\">There's a fire in the...</span>"],
+          [74.6, 75.3, "Fire"],
+          [78.1, 78.8, "Fire!"],
+          [78.8, 80.2, "Fire in..."],
+          [91.2, 91.8, "Fire"],
+          [95.3, 97.4, "Fire in the hole"],
+          [98.8, 100.2, "There's a fire"],
+          [100.2, 102.3, "There's a fire in the hole"],
+          [106.4, 108.5, "Fire in the hole"],
+          [109.8, 111.1, "There's a fire,"],
+          [111.1, 112.6, "There's a fire, there's a fire"],
+          [112.6, 112.9, "There's a fire, there's a fire in"],
+          [112.9, 113.3, "There's a fire, there's a fire in the"],
+          [113.3, 114.8, "There's a fire, there's a fire in the hole"],
+          [117.175, 119.55, "&bull;"],
+          [119.55, 121.925, "&bull;&bull;"],
+          [121.925, 124.3, "&bull;&bull;&bull;"],
+          [124.3, 125.3, "You"],
+          [125.3, 126.7, "You and me"],
+          [126.7, 129.4, "You and me are running out of time"],
+          [129.4, 132.1, "There's nothing left to do"],
+          [132.1, 134.4, "The countdown has begun,"],
+          [134.4, 134.6, "The countdown has begun, the"],
+          [134.6, 134.9, "The countdown has begun, the end"],
+          [134.9, 135.1, "The countdown has begun, the end is"],
+          [135.1, 136.6, "The countdown has begun, the end is near"],
+          [136.6, 139.3, "We're in the line of fire"],
+          [139.3, 142.1, "It's coming up on us"],
+          [142.1, 144.6, "It's time for us to get out of here"],
+          [144.6, 147.1, "There's a fire in the hole"],
+          [147.1, 149.9667, "&bull;"],
+          [149.9667, 152.8333, "&bull;&bull;"],
+          [152.8333, 155.7, "&bull;&bull;&bull;"],
+          [155.7, 158.6, "There's a fire in the hole"],
+          [158.6, 161.3, "We're in the line of fire"],
+          [161.3, 164.0, "It's coming up on us"],
+          [164.0, 166.6, "It's time for us to get out of here"],
+          [166.6, 166.9, "There's"],
+          [166.9, 167.1, "There's a"],
+          [167.1, 167.5, "There's a fire"],
+          [167.5, 167.8, "There's a fire in"],
+          [167.8, 168.2, "There's a fire in the"],
+          [168.2, 169.2, "There's a fire in the hole"],
+          [171.2, 174.0, "&bull;"],
+          [174.0, 176.8, "&bull;&bull;"],
+          [176.8, 179.5, "&bull;&bull;&bull;"],
+          [179.5, 180.2, "<span style=\"color: #ffff80\">&bull;</span><span style=\"color: #ffffff\">&bull;</span><span style=\"color: #ffffff\">&bull;</span>"],
+          [180.2, 180.8, "<span style=\"color: #ffff00\">&bull;</span><span style=\"color: #ffffff\">&bull;</span><span style=\"color: #ffffff\">&bull;</span>"],
+          [180.8, 181.6, "<span style=\"color: #ffbf00\">&bull;</span><span style=\"color: #ffffff\">&bull;</span><span style=\"color: #ffffff\">&bull;</span>"],
+          [181.6, 182.2, "<span style=\"color: #ff8000\">&bull;</span><span style=\"color: #ffffff\">&bull;</span><span style=\"color: #ffffff\">&bull;</span>"],
+          [182.2, 183.0, "<span style=\"color: #ff8000\">&bull;</span><span style=\"color: #ffff80\">&bull;</span><span style=\"color: #ffffff\">&bull;</span>"],
+          [183.0, 183.6, "<span style=\"color: #ff8000\">&bull;</span><span style=\"color: #ffff00\">&bull;</span><span style=\"color: #ffffff\">&bull;</span>"],
+          [183.6, 184.4, "<span style=\"color: #ff8000\">&bull;</span><span style=\"color: #ffbf00\">&bull;</span><span style=\"color: #ffffff\">&bull;</span>"],
+          [184.4, 185.0, "<span style=\"color: #ff8000\">&bull;</span><span style=\"color: #ff8000\">&bull;</span><span style=\"color: #ffffff\">&bull;</span>"],
+          [185.0, 185.7, "<span style=\"color: #ff8000\">&bull;</span><span style=\"color: #ff8000\">&bull;</span><span style=\"color: #ffff80\">&bull;</span>"],
+          [185.7, 186.4, "<span style=\"color: #ff8000\">&bull;</span><span style=\"color: #ff8000\">&bull;</span><span style=\"color: #ffff00\">&bull;</span>"],
+          [186.4, 187.1, "<span style=\"color: #ff8000\">&bull;</span><span style=\"color: #ff8000\">&bull;</span><span style=\"color: #ffbf00\">&bull;</span>"],
+          [187.1, 187.8, "<span style=\"color: #ff8000\">&bull;</span><span style=\"color: #ff8000\">&bull;</span><span style=\"color: #ff8000\">&bull;</span>"],
+          [187.8, 188.1, "<span style=\"color: #ff0000\">&bull;</span><span style=\"color: #ff8000\">&bull;</span><span style=\"color: #ff8000\">&bull;</span>"],
+          [188.1, 188.5, "<span style=\"color: #ff0000\">&bull;</span><span style=\"color: #ff0000\">&bull;</span><span style=\"color: #ff8000\">&bull;</span>"],
+          [188.5, 188.7, "<span style=\"color: #ff0000\">&bull;</span><span style=\"color: #ff0000\">&bull;</span><span style=\"color: #ff0000\">&bull;</span>"],
+          [188.7, 188.9, "There's"],
+          [188.9, 189.0, "There's a"],
+          [189.0, 189.6, "There's a fire"],
+          [189.6, 189.9, "There's a fire in"],
+          [189.9, 189.975, "There's a fire in the"],
+          [189.975, 190.05, "There's a fire in the."],
+          [190.05, 190.125, "There's a fire in the.."],
+          [190.125, 190.2, "There's a fire in the..."],
+          [190.2, 192.0, "<span style=\"color: #ff0000\">There's a fire in the...</span>"],
+          [196.0, 196.7, "Fire"],
+          [199.5, 200.2, "Fire!"],
+          [200.2, 201.6, "Fire in..."],
+          [212.7, 213.3, "Fire"],
+          [216.7, 218.8, "Fire in the hole"],
+          [220.2, 221.5, "There's a fire"],
+          [221.5, 223.6, "There's a fire in the hole"],
+          [227.8, 229.9, "Fire in the hole"],
+          [231.2, 232.5, "There's a fire,"],
+          [232.5, 233.9, "There's a fire, there's a fire"],
+          [233.9, 234.3, "There's a fire, there's a fire in"],
+          [234.3, 234.6, "There's a fire, there's a fire in the"],
+          [234.6, 238.6, "<span style=\"color: rgb(" + Math.round((238.6 - t) / 4 * 255) + ", 0, 0)\">There's a fire, there's a fire in the hole</span>"]
         ];
         for (var i = 0; i < lyrics.length; i++) {
           if (t >= lyrics[i][0] && t <= lyrics[i][1]) {
