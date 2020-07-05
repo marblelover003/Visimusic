@@ -399,6 +399,7 @@
         <option value="Gravity">Gravity</option>
         <option value="Grind">Grind</option>
         <option value="Halcyon">Halcyon</option>
+        <option value="Harmony">Harmony</option>
         <option value="Heist">Heist</option>
         <option value="Here It Comes">Here It Comes</option>
         <option value="Here We Go">Here We Go</option>
@@ -679,6 +680,7 @@
             <option value="Gravity">Gravity</option>
             <option value="Grind">Grind</option>
             <option value="Halcyon">Halcyon</option>
+            <option value="Harmony">Harmony</option>
             <option value="Heist">Heist</option>
             <option value="Here It Comes">Here It Comes</option>
             <option value="Here We Go">Here We Go</option>
@@ -796,12 +798,13 @@
     </div>
     <button id="infoBtn" class="notification">
       Info &sol; News
-      <span class="badge">1</span>
+      <span class="badge">2</span>
     </button>
     <div id="infoModal" class="modal">
       <div class="modal-content">
         <h1>What's new?</h1>
         <p><b>End is Near (Fire in the Hole VIP)</b> by Pegboard Nerds now has explosive timed lyrics! An explosive song like this deserves explosive timed lyrics...</p>
+        <p>Also, <b>Harmony</b> by Vicetone has arrived out of nowhere! This is the first time seeing him in the mix!</p>
         <hr>
         <h1>What's coming?</h1>
         <p>I am still working on the timed lyrics for every song that has lyrics.<br><progress class="c3" max="31" value="7" id="lyricsProgress"></progress> 22.58%</p>
@@ -902,6 +905,7 @@
             <li><span class="songName">Gravity</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Grind</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Halcyon</span><span class="right">&hellip;</span></li>
+            <li><span class="songName">Harmony</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Heist</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Here It Comes</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Here We Go</span><span class="right">&hellip;</span></li>
@@ -1282,6 +1286,9 @@
         }
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/" + (document.getElementById("song").value == "I Call It Progstep" ? "I Call It Progstep 2" : (document.getElementById("song").value == "Deviance" ? "Deviance 3" : document.getElementById("song").value)) + (song == "Destroid 3 Crusaders" ? ".png" : ".PNG");
         switch (song) {
+          case "Harmony":
+            artist = "Vicetone";
+            break;
           case "Surface Tension":
             artist = "Teminite & PsoGnar";
             break;
@@ -1583,6 +1590,7 @@
         document.getElementById("artist").innerHTML = artist;
         switch (song) {
           case "": hasLyrics = false; break;
+          case "Harmony": hasLyrics = false; break;
           case "Surface Tension": hasLyrics = true; break;
           case "Bananonymous": hasLyrics = false; break;
           case "Deadlocked": hasLyrics = false; break;
@@ -1882,7 +1890,7 @@
         "Nemesis", "Starfish", "The Devil's Den", "Deviance (Original)", "Fire Vortex",
         "Here We Go", "Dimensions", "Farewell", "FLAMES", "Get Up", "Destroid 3 Crusaders",
         "BEWM", "JOURNEY", "GET UP", "Galactic Voyage", "Virus", "Bananonymous", "Deadlocked",
-        "Surface Tension"
+        "Surface Tension", "Harmony"
       ];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
@@ -2243,6 +2251,7 @@
         case "Farewell":
         case "Get Up":
         case "Dimensions":
+        case "Harmony":
           colors = ["#e08b04"];
           style = styles.single;
           barcolor = 35;
@@ -2588,6 +2597,7 @@
         case "Virus": length = "5:31.885"; bpm = 174; break;
         case "Bananonymous": length = "6:11.983"; bpm = 128; break;
         case "Deadlocked": length = "3:26.132"; bpm = 135; break;
+        case "Harmony": length = "6:17.104"; bpm = 128; break;
       }
       for (var i = 1; i <= 100; i++) {
         progress.classList.remove("c" + i);
