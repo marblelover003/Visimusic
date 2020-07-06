@@ -3160,6 +3160,12 @@
           }
         }
       }
+      if (song == "Cruise Control" && audio.currentTime < 17.85) {
+        bpm = Math.floor(140 - ((17.85 - audio.currentTime) / 17.85 * 60));
+      }
+      if (song == "Cruise Control" && audio.currentTime >= 17.85) {
+        bpm = 140;
+      }
       if (song == "Faster Than Light" && audio.currentTime >= 185.3 && audio.currentTime < 186.9) {
         bpm = Math.floor(170 - ((186.9 - audio.currentTime) / 1.6 * 42));
       }
