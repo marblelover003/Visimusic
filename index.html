@@ -798,14 +798,13 @@
     </div>
     <button id="infoBtn" class="notification">
       Info &sol; News
-      <span class="badge">2</span>
+      <!--<span class="badge">0</span>-->
     </button>
     <div id="infoModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
         <h1>What's new?</h1>
-        <p><b>End is Near (Fire in the Hole VIP)</b> by Pegboard Nerds now has explosive timed lyrics! An explosive song like this deserves explosive timed lyrics...</p>
-        <p>Also, <b>Harmony</b> by Vicetone has arrived out of nowhere! This is the first time seeing him in the mix!</p>
+        <p>There's nothing new at the moment. Keep the beat going!</p>
         <hr>
         <h1>What's coming?</h1>
         <p>I am still working on the timed lyrics for every song that has lyrics.<br><progress class="c3" max="31" value="7" id="lyricsProgress"></progress> 22.58%</p>
@@ -1737,7 +1736,7 @@
           case "Wicked": hasLyrics = false; break;
           case "Dubwoofer Substep": hasLyrics = true; break;
           case "I\'m being Reelistic": hasLyrics = false; break;
-          case "It\'s Pronounced Omnitica": hasLyrics = false; break;
+          case "It\'s Pronounced Omnitica": hasLyrics = true; break;
           case "I Call It Progstep": hasLyrics = false; break;
           case "Omniverse": hasLyrics = true; break;
           case "Yo! Ho! And a Bottle of Bass!": hasLyrics = false; break;
@@ -3153,6 +3152,31 @@
           [233.9, 234.3, "There's a fire, there's a fire in"],
           [234.3, 234.6, "There's a fire, there's a fire in the"],
           [234.6, 238.6, "<span style=\"color: rgb(" + Math.round((238.6 - t) / 4 * 255) + ", 0, 0)\">There's a fire, there's a fire in the hole</span>"]
+        ];
+        for (var i = 0; i < lyrics.length; i++) {
+          if (t >= lyrics[i][0] && t <= lyrics[i][1]) {
+            currentLyrics = lyrics[i][2];
+          }
+        }
+      } else if (song == "It\'s Pronounced Omnitica") {
+        var lyrics = [
+          [239.1, 239.5, "OM"],
+          [239.5, 239.6, "OMNI"],
+          [239.6, 239.7, "OMNITI"],
+          [239.7, 240.0, "OMNITICA."],
+          [240.0, 240.2, "OMNITICA. Like"],
+          [240.2, 240.4, "OMNITICA. Like two"],
+          [240.4, 240.9, "OMNITICA. Like two T\'s."],
+          [240.9, 241.1, "OMNITICA. Like two T\'s. So"],
+          [241.1, 241.3, "OMNITICA. Like two T\'s. So if"],
+          [241.3, 241.4, "OMNITICA. Like two T\'s. So if you"],
+          [241.4, 241.5, "OMNITICA. Like two T\'s. So if you want"],
+          [241.5, 241.6, "OMNITICA. Like two T\'s. So if you want the"],
+          [241.6, 241.9, "OMNITICA. Like two T\'s. So if you want the drop,"],
+          [241.9, 242.1, "OMNITICA. Like two T\'s. So if you want the drop, say"],
+          [242.1, 242.5, "OMNITICA. Like two T\'s. So if you want the drop, say please."],
+          [242.5, 242.9, "OMNITICA. Like two T\'s. So if you want the drop, say please. <span style=\"color: #333333;\">&quot;Please?&quot;</span>"],
+          [242.9, 247.1, "<span style=\"color: #" + ("00000" + Math.floor(Math.random() * 16777216).toString(16)).slice(-6) + ";\">You asked for it!</span>"]
         ];
         for (var i = 0; i < lyrics.length; i++) {
           if (t >= lyrics[i][0] && t <= lyrics[i][1]) {
