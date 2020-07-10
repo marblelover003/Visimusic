@@ -461,6 +461,7 @@
         <option value="Sexy Beast">Sexy Beast</option>
         <option value="Sidewinder">Sidewinder</option>
         <option value="So Far Away">So Far Away</option>
+        <option value="Space Invaders">Space Invaders</option>
         <option value="Spection">Spection</option>
         <option value="Spectra">Spectra</option>
         <option value="SPOOKY">SPOOKY</option>
@@ -742,6 +743,7 @@
             <option value="Sexy Beast">Sexy Beast</option>
             <option value="Sidewinder">Sidewinder</option>
             <option value="So Far Away">So Far Away</option>
+            <option value="Space Invaders">Space Invaders</option>
             <option value="Spection">Spection</option>
             <option value="Spectra">Spectra</option>
             <option value="SPOOKY">SPOOKY</option>
@@ -798,16 +800,17 @@
     </div>
     <button id="infoBtn" class="notification">
       Info &sol; News
-      <span class="badge">1</span>
+      <span class="badge">2</span>
     </button>
     <div id="infoModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
         <h1>What's new?</h1>
-        <p>The BPM for <b>Dubwoofer Substep</b> by Omnitica has been updated to 145. Other than that, nothing new.</p>
+        <p>The BPM for <b>Dubwoofer Substep</b> by Omnitica has been updated to 145.</p>
+        <p><span style="color: red;">WARNING!</span> Teminite and MDK are preparing for an all-out attack! Listen now - the duo's song "Space Invaders" has arrived with timed lyrics!
         <hr>
         <h1>What's coming?</h1>
-        <p>I am still working on the timed lyrics for every song that has lyrics.<br><progress class="c3" max="31" value="7" id="lyricsProgress"></progress> 22.58%</p>
+        <p>I am still working on the timed lyrics for every song that has lyrics.<br><progress class="c3" max="32" value="8" id="lyricsProgress"></progress> 25%</p>
         <p>Stay tuned for future updates! Keep calm and keep the beat going!</p>
         <hr>
         <h1>Supported Browsers</h1>
@@ -966,6 +969,7 @@
             <li><span class="songName">Sexy Beast</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Sidewinder</span><span class="right">&hellip;</span></li>
             <li><span class="songName">So Far Away</span><span class="right">&hellip;</span></li>
+            <li><span class="songName">Space Invaders</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Spection</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Spectra</span><span class="right">&hellip;</span></li>
             <li><span class="songName">SPOOKY</span><span class="right">&hellip;</span></li>
@@ -1285,6 +1289,8 @@
         }
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/" + (document.getElementById("song").value == "I Call It Progstep" ? "I Call It Progstep 2" : (document.getElementById("song").value == "Deviance" ? "Deviance 3" : document.getElementById("song").value)) + (song == "Destroid 3 Crusaders" ? ".png" : ".PNG");
         switch (song) {
+          case "Space Invaders":
+            artist = "Teminite & MDK";
           case "Harmony":
             artist = "Vicetone";
             break;
@@ -1589,6 +1595,7 @@
         document.getElementById("artist").innerHTML = artist;
         switch (song) {
           case "": hasLyrics = false; break;
+          case "Space Invaders": hasLyrics = true; break;
           case "Harmony": hasLyrics = false; break;
           case "Surface Tension": hasLyrics = true; break;
           case "Bananonymous": hasLyrics = false; break;
@@ -1889,7 +1896,7 @@
         "Nemesis", "Starfish", "The Devil's Den", "Deviance (Original)", "Fire Vortex",
         "Here We Go", "Dimensions", "Farewell", "FLAMES", "Get Up", "Destroid 3 Crusaders",
         "BEWM", "JOURNEY", "GET UP", "Galactic Voyage", "Virus", "Bananonymous", "Deadlocked",
-        "Surface Tension", "Harmony"
+        "Surface Tension", "Harmony", "Space Invaders"
       ];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
@@ -2171,6 +2178,7 @@
         case "Virus":
         case "Deadlocked":
         case "Surface Tension":
+        case "Space Invaders":
           colors = ["#ffffff"];
           style = styles.single;
           barcolor = 23;
@@ -2597,6 +2605,7 @@
         case "Bananonymous": length = "6:11.983"; bpm = 128; break;
         case "Deadlocked": length = "3:26.132"; bpm = 135; break;
         case "Harmony": length = "6:17.104"; bpm = 128; break;
+        case "Space Invaders": length = "5:48.108"; bpm = 128; break;
       }
       for (var i = 1; i <= 100; i++) {
         progress.classList.remove("c" + i);
@@ -3177,6 +3186,38 @@
           [242.1, 242.5, "OMNITICA. Like two T\'s. So if you want the drop, say please."],
           [242.5, 242.9, "OMNITICA. Like two T\'s. So if you want the drop, say please. <span style=\"color: #333333;\">&quot;Please?&quot;</span>"],
           [242.9, 247.1, "<span style=\"color: #" + ("00000" + Math.floor(Math.random() * 16777216).toString(16)).slice(-6) + ";\">You asked for it!</span>"]
+        ];
+        for (var i = 0; i < lyrics.length; i++) {
+          if (t >= lyrics[i][0] && t <= lyrics[i][1]) {
+            currentLyrics = lyrics[i][2];
+          }
+        }
+      } else if (song == "Space Invaders") {
+        var lyrics = [
+          [48.2, 51.4, "Ships from an alien source are approaching from the sky!"],
+          [51.4, 53.0, "Radio contact has been attempted"],
+          [53.0, 55.3, "Radio contact has been attempted, but cannot be established!"],
+          [55.3, 57.6, "Instructions are to prepare for an attack"],
+          [57.6, 59.6, "Instructions are to prepare for an attack by an unknown enemy!"],
+          [76.1, 76.3, "SPACE"],
+          [76.3, 76.6, "SPACE IN"],
+          [76.6, 76.8, "SPACE INVAD"],
+          [76.8, 77.5, "SPACE INVADERS"],
+          [103.3, 104.3, "Light speed in"],
+          [104.3, 104.3, "Light speed in 3"],
+          [105.2, 104.3, "Light speed in 2"],
+          [106.2, 107.5, "Light speed in 1"],
+          [212.0, 213.1, "Ravenous beasts"],
+          [213.1, 215.8, "Ravenous beasts as far as the eye can see."],
+          [215.8, 217.1, "A plague on the surface"],
+          [217.1, 220.1, "A plague on the surface, a disgusting swarm in the skies."],
+          [220.1, 221.3, "With a crash of thunder"],
+          [221.3, 223.3, "With a crash of thunder, a new demon appears."],
+          [223.3, 224.9, "Unfurling its rotten wings"],
+          [224.9, 226.9, "Unfurling its rotten wings, it lets out a petrifying scream."],
+          [241.1, 241.6, "FINAL"],
+          [241.6, 242.6, "FINAL BOSS"],
+          [269.0, 272.5, "It's time to fight back!"]
         ];
         for (var i = 0; i < lyrics.length; i++) {
           if (t >= lyrics[i][0] && t <= lyrics[i][1]) {
