@@ -224,6 +224,11 @@
       .c71::-webkit-progress-value {background: linear-gradient(to bottom, #ff0000 24.99999999%, #ff3300 25%, #ff3300 49.99999999%, #ff5500 50%, #ff5500 74.99999999%, #ff6600 75%);}
       .c72::-webkit-progress-value {background: linear-gradient(to top, #2a55fc, #39e7ff);}
       .c73::-webkit-progress-value {background: linear-gradient(to top, #ca1319 0%, #7a0e13 49.99999999%, #f6931c 50%, #fcf00b 100%);}
+      .c74::-webkit-progress-value {background: linear-gradient(to bottom, #27776d 49.99999999%, #3ab886 50%);}
+      .c75::-webkit-progress-value {background: linear-gradient(to bottom, #4d5b61 49.99999999%, #282f35 50%);}
+      .c76::-webkit-progress-value {background: linear-gradient(to bottom, #23637b 49.99999999%, #1e5c71 50%);}
+      .c77::-webkit-progress-value {background: linear-gradient(to bottom, #2a2d7c 49.99999999%, #162660 50%);}
+      .c78::-webkit-progress-value {background: linear-gradient(to bottom, #ffb988 24.99999999%, #fef086 25%, #fef086 49.99999999%, #eb90b3 50%, #eb90b3 74.99999999%, #ffd157 75%);}
       .modal {
         display: none;
         opacity: 0;
@@ -326,6 +331,7 @@
         <option value="Atlantic">Atlantic</option>
         <option value="Backlash">Backlash</option>
         <option value="BAD BOY">BAD BOY</option>
+        <option value="Bad Intentions">Bad Intentions</option>
         <option value="Bananonymous">Bananonymous</option>
         <option value="Barracuda">Barracuda</option>
         <option value="Bass Head">Bass Head</option>
@@ -609,6 +615,7 @@
             <option value="Atlantic">Atlantic</option>
             <option value="Backlash">Backlash</option>
             <option value="BAD BOY">BAD BOY</option>
+            <option value="Bad Intentions">Bad Intentions</option>
             <option value="Bananonymous">Bananonymous</option>
             <option value="Barracuda">Barracuda</option>
             <option value="Bass Head">Bass Head</option>
@@ -802,13 +809,24 @@
     </div>
     <button id="infoBtn" class="notification">
       Info &sol; News
-      <span class="badge">1</span>
+      <span class="badge">2</span>
     </button>
     <div id="infoModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
         <h1>What's new?</h1>
-        <p><b>Heat</b> by Vicetone has arrived!</p>
+        <p>Zomboy makes his debut on Visimusic with <b>Bad Intentions</b>! (no pun intended)</p>
+        <p>
+          Also, the following songs have received colors to their schemes:
+          <ul>
+            <li><b>JOURNEY</b> by Tokyo Machine</li>
+            <li><b>GET UP</b> by Tokyo Machine &amp; Guy Arthur</li>
+            <li><b>Virus</b> by Excision</li>
+            <li><b>Deadlocked</b> by F-777</li>
+            <li><b>Surface Tension</b> by Teminite &amp; PsoGnar</li>
+            <li><b>Space Invaders</b> by Teminite &amp; MDK</li>
+          </ul>
+        </p>
         <hr>
         <h1>What's coming?</h1>
         <p>I am still working on the timed lyrics for every song that has lyrics.<br><progress class="c3" max="32" value="8" id="lyricsProgress"></progress> 25%</p>
@@ -835,6 +853,7 @@
             <li><span class="songName">Atlantic</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Backlash</span><span class="right">&hellip;</span></li>
             <li><span class="songName">BAD BOY</span><span class="right">&hellip;</span></li>
+            <li><span class="songName">Bad Intentions</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Bananonymous</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Barracuda</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Bass Head</span><span class="right">&hellip;</span></li>
@@ -1291,6 +1310,9 @@
         }
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/" + (document.getElementById("song").value == "I Call It Progstep" ? "I Call It Progstep 2" : (document.getElementById("song").value == "Deviance" ? "Deviance 3" : document.getElementById("song").value)) + (song == "Destroid 3 Crusaders" ? ".png" : ".PNG");
         switch (song) {
+          case "Bad Intentions":
+            artist = "Zomboy";
+            break;
           case "Space Invaders":
             artist = "Teminite & MDK";
             break;
@@ -1599,6 +1621,7 @@
         document.getElementById("artist").innerHTML = artist;
         switch (song) {
           case "": hasLyrics = false; break;
+          case "Bad Intentions": hasLyrics = false; break;
           case "Space Invaders": hasLyrics = true; break;
           case "Harmony": hasLyrics = false; break;
           case "Heat": hasLyrics = false; break;
@@ -1901,7 +1924,7 @@
         "Nemesis", "Starfish", "The Devil's Den", "Deviance (Original)", "Fire Vortex",
         "Here We Go", "Dimensions", "Farewell", "FLAMES", "Get Up", "Destroid 3 Crusaders",
         "BEWM", "JOURNEY", "GET UP", "Galactic Voyage", "Virus", "Bananonymous", "Deadlocked",
-        "Surface Tension", "Harmony", "Space Invaders", "Heat"
+        "Surface Tension", "Harmony", "Space Invaders", "Heat", "Bad Intentions"
       ];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
@@ -1962,6 +1985,31 @@
       }
       var barcolor;
       switch (song) {
+        case "JOURNEY":
+          colors = ["#27776d", "#3ab886"];
+          style = styles.alternating;
+          barcolor = 74;
+          break;
+        case "GET UP":
+          colors = ["#4d5b61", "#282f35"];
+          style = styles.alternating;
+          barcolor = 75;
+          break;
+        case "Deadlocked":
+          colors = ["#23637b", "#1e5c71"];
+          style = styles.alternating;
+          barcolor = 76;
+          break;
+        case "Surface Tension":
+          colors = ["#2a2d7c", "#162660"];
+          style = styles.alternating;
+          barcolor = 77;
+          break;
+        case "Space Invaders":
+          colors = ["#ffb988", "#fef086", "#eb90b3", "#ffd157"];
+          style = styles.random;
+          barcolor = 78;
+          break;
         case "BEWM":
           colors = ["#f6941c", "#fcd00b", "#feee02", "#f9ef04", "#e17e17", "#fbac1b", "#fbd11d", "#f6d816", "#ffef32", "#fcf070"];
           style = styles.random;
@@ -2145,6 +2193,7 @@
         case "Deviance":
         case "Deviance (Original)":
         case "Here We Go":
+        case "Virus":
           colors = ["#ff0000"];
           style = styles.single;
           barcolor = 15;
@@ -2206,6 +2255,7 @@
         case "Dubwoofer Substep":
         case "No Party Like a Mojang Party":
         case "Sevcon":
+        case "Bad Intentions":
           colors = ["#ff0000"];
           style = styles.single;
           barcolor = 27;
@@ -2436,6 +2486,7 @@
       changeFavicon("https://marblelover003.github.io/Visimusic/VisimusicFavicons/f" + ("0" + barcolor).slice(-2) + ".png");
       switch (song) {
         case "Heat": length = "5:50.041"; bpm = 128; break;
+        case "Bad Intentions": length = "4:52.598"; bpm = 128; break;
         case "Surface Tension": length = "5:41.080"; bpm = 174; break;
         case "JOURNEY": length = "3:59.631"; bpm = 128; break;
         case "GET UP": length = "3:10.406"; bpm = 128; break;
