@@ -499,6 +499,7 @@
         <option value="Try This">Try This</option>
         <option value="TURBO">TURBO</option>
         <option value="Turbo Penguin">Turbo Penguin</option>
+        <option value="Ultimatum">Ultimatum</option>
         <option value="Unlocked">Unlocked</option>
         <option value="Vindicate Me">Vindicate Me</option>
         <option value="Virus">Virus</option>
@@ -783,6 +784,7 @@
             <option value="Try This">Try This</option>
             <option value="TURBO">TURBO</option>
             <option value="Turbo Penguin">Turbo Penguin</option>
+            <option value="Ultimatum">Ultimatum</option>
             <option value="Unlocked">Unlocked</option>
             <option value="Vindicate Me">Vindicate Me</option>
             <option value="Virus">Virus</option>
@@ -809,24 +811,13 @@
     </div>
     <button id="infoBtn" class="notification">
       Info &sol; News
-      <span class="badge">2</span>
+      <span class="badge">1</span>
     </button>
     <div id="infoModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
         <h1>What's new?</h1>
-        <p>Zomboy makes his debut on Visimusic with <b>Bad Intentions</b>! (no pun intended)</p>
-        <p>
-          Also, the following songs have received colors to their schemes:
-          <ul>
-            <li><b>JOURNEY</b> by Tokyo Machine</li>
-            <li><b>GET UP</b> by Tokyo Machine &amp; Guy Arthur</li>
-            <li><b>Virus</b> by Excision</li>
-            <li><b>Deadlocked</b> by F-777</li>
-            <li><b>Surface Tension</b> by Teminite &amp; PsoGnar</li>
-            <li><b>Space Invaders</b> by Teminite &amp; MDK</li>
-          </ul>
-        </p>
+        <p><b>Ultimatum</b> by Rogue has arrived to the mix!</p>
         <hr>
         <h1>What's coming?</h1>
         <p>I am still working on the timed lyrics for every song that has lyrics.<br><progress class="c3" max="32" value="8" id="lyricsProgress"></progress> 25%</p>
@@ -1021,6 +1012,7 @@
             <li><span class="songName">Try This</span><span class="right">&hellip;</span></li>
             <li><span class="songName">TURBO</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Turbo Penguin</span><span class="right">&hellip;</span></li>
+            <li><span class="songName">Ultimatum</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Unlocked</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Vindicate Me</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Virus</span><span class="right">&hellip;</span></li>
@@ -1363,6 +1355,7 @@
           case "Atlantic":
           case "Nemesis":
           case "This Is It":
+          case "Ultimatum":
             artist = "Rogue";
             break;
           case "Astrocat":
@@ -1621,6 +1614,7 @@
         document.getElementById("artist").innerHTML = artist;
         switch (song) {
           case "": hasLyrics = false; break;
+          case "Ultimatum": hasLyrics = false; break;
           case "Bad Intentions": hasLyrics = false; break;
           case "Space Invaders": hasLyrics = true; break;
           case "Harmony": hasLyrics = false; break;
@@ -1924,7 +1918,7 @@
         "Nemesis", "Starfish", "The Devil's Den", "Deviance (Original)", "Fire Vortex",
         "Here We Go", "Dimensions", "Farewell", "FLAMES", "Get Up", "Destroid 3 Crusaders",
         "BEWM", "JOURNEY", "GET UP", "Galactic Voyage", "Virus", "Bananonymous", "Deadlocked",
-        "Surface Tension", "Harmony", "Space Invaders", "Heat", "Bad Intentions"
+        "Surface Tension", "Harmony", "Space Invaders", "Heat", "Bad Intentions", "Ultimatum"
       ];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
@@ -2108,6 +2102,7 @@
           barcolor = 4;
           break;
         case "Heist":
+        case "Ultimatum":
           colors = ["#820029"];
           style = styles.single;
           barcolor = 5;
@@ -2664,6 +2659,7 @@
         case "Deadlocked": length = "3:26.132"; bpm = 135; break;
         case "Harmony": length = "6:17.104"; bpm = 128; break;
         case "Space Invaders": length = "5:48.108"; bpm = 128; break;
+        case "Ultimatum": length = "4:15.216"; bpm = 173; break;
       }
       for (var i = 1; i <= 100; i++) {
         progress.classList.remove("c" + i);
