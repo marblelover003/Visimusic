@@ -402,6 +402,7 @@
         <option value="Get Up">Get Up</option>
         <option value="GET UP">GET UP</option>
         <option value="Glitch">Glitch</option>
+        <option value="Granite">Granite</option>
         <option value="Gravity">Gravity</option>
         <option value="Grind">Grind</option>
         <option value="Halcyon">Halcyon</option>
@@ -687,6 +688,7 @@
             <option value="Get Up">Get Up</option>
             <option value="GET UP">GET UP</option>
             <option value="Glitch">Glitch</option>
+            <option value="Granite">Granite</option>
             <option value="Gravity">Gravity</option>
             <option value="Grind">Grind</option>
             <option value="Halcyon">Halcyon</option>
@@ -817,7 +819,7 @@
       <div class="modal-content">
         <span class="close">&times;</span>
         <h1>What's new?</h1>
-        <p><b>Ultimatum</b> by Rogue has arrived to the mix!</p>
+        <p><b>Granite</b> by Shirobon has arrived to the mix!</p>
         <hr>
         <h1>What's coming?</h1>
         <p>I am still working on the timed lyrics for every song that has lyrics.<br><progress class="c3" max="32" value="8" id="lyricsProgress"></progress> 25%</p>
@@ -915,6 +917,7 @@
             <li><span class="songName">Get Up</span><span class="right">&hellip;</span></li>
             <li><span class="songName">GET UP</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Glitch</span><span class="right">&hellip;</span></li>
+            <li><span class="songName">Granite</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Gravity</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Grind</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Halcyon</span><span class="right">&hellip;</span></li>
@@ -1456,6 +1459,7 @@
           case "Into The Zone":
           case "On The Run":
           case "Opia":
+          case "Granite":
             artist = "Shirobon";
             break;
           case "FTW":
@@ -1614,6 +1618,7 @@
         document.getElementById("artist").innerHTML = artist;
         switch (song) {
           case "": hasLyrics = false; break;
+          case "Granite": hasLyrics = false; break;
           case "Ultimatum": hasLyrics = false; break;
           case "Bad Intentions": hasLyrics = false; break;
           case "Space Invaders": hasLyrics = true; break;
@@ -1918,7 +1923,8 @@
         "Nemesis", "Starfish", "The Devil's Den", "Deviance (Original)", "Fire Vortex",
         "Here We Go", "Dimensions", "Farewell", "FLAMES", "Get Up", "Destroid 3 Crusaders",
         "BEWM", "JOURNEY", "GET UP", "Galactic Voyage", "Virus", "Bananonymous", "Deadlocked",
-        "Surface Tension", "Harmony", "Space Invaders", "Heat", "Bad Intentions", "Ultimatum"
+        "Surface Tension", "Harmony", "Space Invaders", "Heat", "Bad Intentions", "Ultimatum",
+        "Granite"
       ];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
@@ -2222,12 +2228,7 @@
         case "Paper Dolls":
         case "Play It Loud":
         case "Play It Loud (Broken Robot Mix)":
-        case "JOURNEY":
-        case "GET UP":
-        case "Virus":
-        case "Deadlocked":
-        case "Surface Tension":
-        case "Space Invaders":
+        case "Granite":
           colors = ["#ffffff"];
           style = styles.single;
           barcolor = 23;
@@ -2660,6 +2661,7 @@
         case "Harmony": length = "6:17.104"; bpm = 128; break;
         case "Space Invaders": length = "5:48.108"; bpm = 128; break;
         case "Ultimatum": length = "4:15.216"; bpm = 173; break;
+        case "Granite": length = "2:31.954"; bpm = 128; break;
       }
       for (var i = 1; i <= 100; i++) {
         progress.classList.remove("c" + i);
