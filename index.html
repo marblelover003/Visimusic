@@ -819,10 +819,10 @@
       <div class="modal-content">
         <span class="close">&times;</span>
         <h1>What's new?</h1>
-        <p><b>Granite</b> by Shirobon has arrived to the mix!</p>
+        <p><b>Faster Than Light</b> by Far Too Loud now has timed lyrics!</p>
         <hr>
         <h1>What's coming?</h1>
-        <p>I am still working on the timed lyrics for every song that has lyrics.<br><progress class="c3" max="32" value="8" id="lyricsProgress"></progress> 25%</p>
+        <p>I am still working on the timed lyrics for every song that has lyrics.<br><progress class="c3" max="32" value="9" id="lyricsProgress"></progress> 28.13%</p>
         <p>Stay tuned for future updates! Keep calm and keep the beat going!</p>
         <hr>
         <h1>Supported Browsers</h1>
@@ -3240,8 +3240,7 @@
           [241.6, 241.9, "OMNITICA. Like two T\'s. So if you want the drop,"],
           [241.9, 242.1, "OMNITICA. Like two T\'s. So if you want the drop, say"],
           [242.1, 242.5, "OMNITICA. Like two T\'s. So if you want the drop, say please."],
-          [242.5, 242.9, "OMNITICA. Like two T\'s. So if you want the drop, say please. <span style=\"color: #333333;\">&quot;Please?&quot;</span>"],
-          [242.9, 247.1, "<span style=\"color: #" + ("00000" + Math.floor(Math.random() * 16777216).toString(16)).slice(-6) + ";\">You asked for it!</span>"]
+          [242.5, 242.9, "OMNITICA. Like two T\'s. So if you want the drop, say please. <span style=\"color: #333333;\">&quot;Please?&quot;</span>"]
         ];
         for (var i = 0; i < lyrics.length; i++) {
           if (t >= lyrics[i][0] && t <= lyrics[i][1]) {
@@ -3274,6 +3273,62 @@
           [241.1, 241.6, "FINAL"],
           [241.6, 242.6, "FINAL BOSS"],
           [269.0, 272.5, "It's time to fight back!"]
+        ];
+        for (var i = 0; i < lyrics.length; i++) {
+          if (t >= lyrics[i][0] && t <= lyrics[i][1]) {
+            currentLyrics = lyrics[i][2];
+          }
+        }
+      } else if (song == "Faster Than Light") {
+        var lyrics = [
+          [31.0, 34.4, "To become true citizens of the cosmos,"],
+          [34.4, 36.9, "To become true citizens of the cosmos, we have to do something that physics says"],
+          [36.9, 40.0, "To become true citizens of the cosmos, we have to do something that physics says is impossible."],
+          [40.0, 41.7, "We have to travel"],
+          [41.7, 42.4, "We have to travel faster"],
+          [42.4, 42.6, "We have to travel faster than"],
+          [42.6, 42.8, "We have to travel faster than a"],
+          [42.8, 43.1, "We have to travel faster than a beam"],
+          [43.1, 43.3, "We have to travel faster than a beam of"],
+          [43.3, 45.0, "We have to travel faster than a beam of light."],
+          [58.1, 60.0, "Faster than a beam of light."],
+          [73.1, 75.0, "Faster than a beam of light."],
+          [118.1, 120.0, "Faster than a beam of light."],
+          [157.6, 160.1, "We have to do something that physics says"],
+          [160.1, 161.8, "We have to do something that physics says is impossible."],
+          [161.8, 163.2, "We have to travel"],
+          [163.2, 163.9, "We have to travel faster"],
+          [163.9, 164.4, "We have to travel faster than a beam"],
+          [164.4, 166.9, "We have to travel faster than a beam of light."],
+          [178.1, 180.0, "Faster than a beam of light."],
+          [185.4, 187.1, "Please prepare for a &quot;Faster Than Light&quot; jump..."],
+          [203.2, 203.5, "F"],
+          [203.5, 203.6, "FT"],
+          [203.6, 203.7, "FTL"],
+          [203.7, 203.8, "FTL."],
+          [203.8, 203.9, "FTL.."],
+          [203.9, 204.4, "FTL..."],
+          [204.4, 204.7, "Go!"],
+          [293.0, 298.3, "Stick out nose out just far enough to get a good FTL fix, then jump..."],
+          [298.3, 302.7, "<span style=\"color: rgb(" + Math.round((302.7 - t) / 4.4 * 255) + ", " + Math.round((302.7 - t) / 4.4 * 255) + ", " + Math.round((302.7 - t) / 4.4 * 255) + ")\">Stick out nose out just far enough to get a good FTL fix, then jump...</span>"]
+        ];
+        for (var i = 0; i < lyrics.length; i++) {
+          if (t >= lyrics[i][0] && t <= lyrics[i][1]) {
+            currentLyrics = lyrics[i][2];
+          }
+        }
+      } else if (song == "Destroid 2 - Wasteland") {
+        var lyrics = [
+          [00000, 00000, "lyrics"]
+        ];
+        for (var i = 0; i < lyrics.length; i++) {
+          if (t >= lyrics[i][0] && t <= lyrics[i][1]) {
+            currentLyrics = lyrics[i][2];
+          }
+        }
+      } else if (song == "Destroid 8 - Annihilate") {
+        var lyrics = [
+          [00000, 00000, "lyrics"]
         ];
         for (var i = 0; i < lyrics.length; i++) {
           if (t >= lyrics[i][0] && t <= lyrics[i][1]) {
