@@ -457,6 +457,7 @@
         <option value="Rat Twist">Rat Twist</option>
         <option value="Razor Sharp">Razor Sharp</option>
         <option value="Renegade">Renegade</option>
+        <option value="Renzokuken">Renzokuken</option>
         <option value="Rhapsody">Rhapsody</option>
         <option value="Rhusma">Rhusma</option>
         <option value="Rinse Out">Rinse Out</option>
@@ -609,7 +610,7 @@
       <div class="modal-content">
         <span class="close">&times;</span>
         <span id="queueMenu">
-          Queue up to 10 more songs here!<br>
+          Queue up to <s>10</s><span style="font-size: 20px; color: yellow;">20</span> more songs here!<br>
           <select id="queue" onchange="check()">
             <option></option>
             <option value="Airwaves">Airwaves</option>
@@ -743,6 +744,7 @@
             <option value="Rat Twist">Rat Twist</option>
             <option value="Razor Sharp">Razor Sharp</option>
             <option value="Renegade">Renegade</option>
+            <option value="Renzokuken">Renzokuken</option>
             <option value="Rhapsody">Rhapsody</option>
             <option value="Rhusma">Rhusma</option>
             <option value="Rinse Out">Rinse Out</option>
@@ -807,19 +809,32 @@
           8. <span id="queue8"></span><br>
           9. <span id="queue9"></span><br>
           10. <span id="queue10"></span><br>
-          <span style="display: inline-block; width: 100%; text-align: right;"><button onclick="clearQueue()" id="clearBtn" class="red">Clear Queue</button></span>
+          11. <span id="queue11"></span><br>
+          12. <span id="queue12"></span><br>
+          13. <span id="queue13"></span><br>
+          14. <span id="queue14"></span><br>
+          15. <span id="queue15"></span><br>
+          16. <span id="queue16"></span><br>
+          17. <span id="queue17"></span><br>
+          18. <span id="queue18"></span><br>
+          19. <span id="queue19"></span><br>
+          20. <span id="queue20"></span><br>
+          <span style="position: fixed; bottom: 20px; right: 20px;"><button onclick="clearQueue()" id="clearBtn" class="red">Clear Queue</button></span>
         </span>
       </div>
     </div>
     <button id="infoBtn" class="notification">
       Info &sol; News
-      <span class="badge">1</span>
+      <span class="badge">4</span>
     </button>
     <div id="infoModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
         <h1>What's new?</h1>
         <p><b>Faster Than Light</b> by Far Too Loud now has timed lyrics!</p>
+        <p>Also, Razihel makes his debut on Visimusic with <b>Renzokuken</b>!</p>
+        <p>Not only that, but you can now queue not just ten, but <b style="color: yellow;">TWENTY</b> songs! Amazing, right?</p>
+        <p>AND, your queue will now be saved when you close Visimusic! This means you can resume the same song you left off listening to!</p>
         <hr>
         <h1>What's coming?</h1>
         <p>I am still working on the timed lyrics for every song that has lyrics.<br><progress class="c3" max="32" value="9" id="lyricsProgress"></progress> 28.13%</p>
@@ -972,6 +987,7 @@
             <li><span class="songName">Rat Twist</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Razor Sharp</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Renegade</span><span class="right">&hellip;</span></li>
+            <li><span class="songName">Renzokuken</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Rhapsody</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Rhusma</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Rinse Out</span><span class="right">&hellip;</span></li>
@@ -1097,8 +1113,18 @@
         heightlimit = 0,
         songTagVer = document.getElementById("songTagVer"),
         artist, emptyQueue = ["", 0],
-        queue = [["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0]], itemsQueued = 0, song,
+        queue = [["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0]],
+        itemsQueued = 0, song,
         bpm, hasLyrics = false, currentLyrics = "";
+    if (localStorage.getItem("currentQueue") == null) {
+      localStorage.setItem("currentQueue", queue);
+    }
+    if (localStorage.getItem("songsQueued") == null) {
+      localStorage.setItem("songsQueued"), 0);
+    }
+    if (localStorage.getItem("currentSong") == null) {
+      localStorage.setItem("currentSong", "nothing");
+    }
     document.getElementById("queue").disabled = true;
     document.getElementById("queueBtn").disabled = true;
     var modal = document.getElementById("queueModal");
@@ -1117,6 +1143,386 @@
       end_modal.style.display = "block";
       end_modal.style.opacity = 1;
       end_modal.getElementsByClassName("modal-content")[0].classList.add("movein");
+    }
+    if (localStorage.getItem("currentSong") != "nothing") {
+      var cSong = localStorage.getItem("currentSong");
+      var artist2;
+      switch (cSong) {
+        case "Bad Intentions":
+          artist2 = "Zomboy";
+          break;
+        case "Space Invaders":
+          artist2 = "Teminite & MDK";
+          break;
+        case "Harmony":
+        case "Heat":
+          artist2 = "Vicetone";
+          break;
+        case "Surface Tension":
+          artist2 = "Teminite & PsoGnar";
+          break;
+        case "Deadlocked":
+          artist2 = "F-777";
+          break;
+        case "BEWM":
+          artist2 = "Slushii & Tokyo Machine";
+          break;
+        case "GET UP":
+          artist2 = "Tokyo Machine & Guy Arthur";
+          break;
+        case "Dimensions":
+        case "Get Up":
+          artist2 = "Hellberg";
+          break;
+        case "Farewell":
+          artist2 = "Hellberg & TwoThirds";
+          break;
+        case "Fire Vortex":
+          artist2 = "Mitchell Claxton";
+          break;
+        case "The Devil's Den":
+          artist2 = "Skrillex & Wolfgang Gartner";
+          break;
+        case "Bananonymous":
+        case "Ism":
+        case "Starfish":
+          artist2 = "Savant";
+          break;
+        case "Bass Head":
+        case "Here We Go":
+          artist2 = "Bassnectar";
+          break;
+        case "Rhusma":
+          artist2 = "Stereotronique & Northend";
+          break;
+        case "Fingerbang":
+          artist2 = "MDK";
+          break;
+        case "Atlantic":
+        case "Nemesis":
+        case "This Is It":
+        case "Ultimatum":
+          artist2 = "Rogue";
+          break;
+        case "Astrocat":
+        case "Buzz Kill":
+        case "Rat Twist":
+        case "Sugar Rush":
+        case "The Escape":
+        case "This Time":
+        case "Galactic Voyage":
+          artist2 = "PIXL";
+          break;
+        case "Airwaves":
+        case "Backlash":
+        case "Barracuda":
+        case "Breakdown":
+        case "Breakdown VIP":
+        case "Crab Rave":
+        case "Eclipse":
+        case "Heist":
+        case "Let It Roar":
+        case "Renegade":
+        case "Sentinel":
+        case "Surge":
+        case "Timewarp":
+          artist2 = "Noisestorm";
+          break;
+        case "Be Gone Mr. Gawne":
+        case "Caps On, Hats Off":
+        case "Captain Cool":
+        case "Leaving Leafwood Forest":
+        case "Commando Steve":
+        case "Farbror Melker Fixar Fiskdamm (Fastbom Cover)":
+        case "Flirt Flirt Oh It Hurts":
+        case "Jack Russel":
+        case "Milky Ways":
+        case "Partyt Ar Igang":
+        case "Pirate Manners":
+        case "Starship Showdown":
+        case "Steampunk Warlord":
+        case "The Cave, The Treasure":
+        case "The Maze of Mayonnaise":
+          artist2 = "Bossfight";
+          break;
+        case "Cascade":
+          artist2 = "Kubbi";
+          break;
+        case "Cheat Codes":
+        case "Cheat Codes VIP":
+        case "Final Boss":
+        case "New Game":
+        case "So Far Away":
+        case "Time Goes By":
+          artist2 = "Nitro Fun";
+          break;
+        case "Checkpoint":
+          artist2 = "Nitro Fun & Hyper Potions";
+          break;
+        case "Chip Zeal":
+        case "Houston":
+        case "No Party Like a Mojang Party":
+        case "Sevcon":
+        case "Vindicate Me":
+          artist2 = "Big Giant Circles";
+          break;
+        case "Chronos":
+        case "Corrupted":
+        case "Glitch":
+        case "Legacy":
+        case "Logic Gatekeeper":
+        case "Parallel Processing":
+        case "Rhapsody":
+        case "The Lunar Whale":
+          artist2 = "Danimal Cannon & Zef";
+          break;
+        case "Core":
+        case "Cruise Control":
+        case "Livewire":
+        case "Tension":
+          artist2 = "Zef";
+          break;
+        case "Courtesy":
+        case "Evolution":
+        case "Focus":
+        case "Forged in Stars":
+        case "Otis":
+        case "Spectra":
+        case "The Art of War":
+        case "Tokyo Skies":
+          artist2 = "Chipzel";
+          break;
+        case "Crystal Tokyo":
+          artist2 = "FantomenK & meganeko";
+          break;
+        case "Dance of the Incognizant":
+          artist2 = "FantomenK";
+          break;
+        case "FOX":
+        case "Into The Zone":
+        case "On The Run":
+        case "Opia":
+        case "Granite":
+          artist2 = "Shirobon";
+          break;
+        case "FTW":
+          artist2 = "Lets Be Friends";
+          break;
+        case "Exoskelephone":
+        case "Gravity":
+        case "Grind":
+        case "No Holding On":
+        case "Quake":
+        case "Rinse Out":
+        case "Rocket":
+        case "Sexy Beast":
+        case "Stock & Pull":
+          artist2 = "Stereotronique";
+          break;
+        case "Tonight":
+          artist2 = "Stereotronique & Sebastian Ivarsson";
+          break;
+        case "BLAST":
+        case "COOKIES":
+        case "CRAZY":
+        case "FIGHT":
+        case "FLAMES":
+        case "HYPE":
+        case "OKAY":
+        case "PARTY":
+        case "PIXEL":
+        case "PLAY":
+        case "ROCK IT":
+        case "SAIKOU":
+        case "SPOOKY":
+        case "EPIC":
+        case "TURBO":
+        case "JOURNEY":
+          artist2 = "Tokyo Machine";
+          break;
+        case "BAD BOY":
+          artist2 = "Tokyo Machine & YAKO";
+          break;
+        case "Long Live The New Fresh":
+          artist2 = "Danimal Cannon";
+          break;
+        case "MOSHI":
+          artist2 = "Pegboard Nerds & Tokyo Machine";
+          break;
+        case "Once Again":
+        case "Till It\'s Over":
+          artist2 = "Tristam";
+          break;
+        case "Paper Dolls":
+          artist2 = "Shawn Daley";
+          break;
+        case "Peer Gynt":
+          artist2 = "cYsmix";
+          break;
+        case "Chipland":
+        case "Rainbow Road":
+          artist2 = "nanobii";
+          break;
+        case "Razor Sharp":
+          artist2 = "Pegboard Nerds & Tristam";
+          break;
+        case "Rocktronik":
+        case "Try This":
+        case "Here It Comes":
+        case "Disconnected":
+        case "Fire in the Hole":
+        case "End is Near":
+        case "Emergency":
+          artist2 = "Pegboard Nerds";
+          break;
+        case "Delayed Friend Request":
+        case "Sidewinder":
+          artist2 = "7 Minutes Dead";
+          break;
+        case "Termination Shock":
+          artist2 = "Sabrepulse";
+          break;
+        case "Time Lapse":
+          artist2 = "TheFatRat";
+          break;
+        case "Turbo Penguin":
+          artist2 = "Sound Remedy & Nitro Fun";
+          break;
+        case "Unlocked":
+          artist2 = "Plesco";
+          break;
+        case "Wicked":
+          artist2 = "Avenza";
+          break;
+        case "Dubwoofer Substep":
+        case "I\'m being Reelistic":
+        case "It\'s Pronounced Omnitica":
+        case "I Call It Progstep":
+        case "Omniverse":
+        case "Yo! Ho! And a Bottle of Bass!":
+          artist2 = "Omnitica";
+          break;
+        case "Cybertron":
+        case "Faster Than Light":
+        case "Wormhole":
+        case "Play It Loud":
+        case "Play It Loud (Broken Robot Mix)":
+        case "Light Sticks":
+          artist2 = "Far Too Loud";
+          break;
+        case "Halcyon":
+          artist2 = "Au5 & Fractal";
+          break;
+        case "Duality":
+        case "Spection":
+          artist2 = "Fractal";
+          break;
+        case "Pyro":
+          artist2 = "Dread Pitt";
+          break;
+        case "Clash":
+          artist2 = "Trip40";
+          break;
+        case "Cool Friends":
+          artist2 = "Silva Hound";
+          break;
+        case "Destroid 1 - Raise Your Fist":
+        case "Destroid 2 - Wasteland":
+        case "Destroid 3 Crusaders":
+          artist2 = "Excision, Downlink & Space Laces";
+          break;
+        case "Destroid 6 - Put It Down":
+          artist2 = "Excision & Bassnectar";
+          break;
+        case "Destroid 8 - Annihilate":
+          artist2 = "Excision & Far Too Loud";
+          break;
+        case "Destroid 7 - Bounce":
+        case "Destroid 10 - Funk Hole":
+          artist2 = "Excision & Space Laces";
+          break;
+        case "Deviance":
+        case "Deviance (Original)":
+          artist2 = "Excision & Datsik";
+          break;
+        case "Virus":
+          artist2 = "Excision";
+          break;
+        case "Highscore":
+          artist2 = "Panda Eyes & Teminite";
+          break;
+        case "To the Stars":
+          artist2 = "Braken";
+          break;
+        case "Junction Seven":
+          artist2 = "Muzzy";
+          break;
+        case "Renzokuken":
+          artist2 = "Razihel";
+          break;
+      }
+      endMessage("You were listening to " + (
+        song == "Cool Friends" ? "Cool Friends (Murtagh & Veschell Remix)" : (
+          song == "Partyt Ar Igang" ? "Partyt A\u0308r Iga\u030Ang!" : (
+            song == "Destroid 1 - Raise Your Fist" ? "Destroid 1 Raise Your Fist" : (
+              song == "Destroid 2 - Wasteland" ? "Destroid 2 Wasteland" : (
+                song == "Destroid 6 - Put It Down" ? "Destroid 6 Put It Down" : (
+                  song == "Destroid 8 - Annihilate" ? "Destroid 8 Annihilate" : (
+                    song == "Destroid 10 - Funk Hole" ? "Destroid 10 Funk Hole" : (
+                      song == "Deviance" ? "Deviance (Dirtyphonics Remix)" : (
+                        song == "Starship Showdown" ? "Starship Showdown (feat. Christian Carlsson)" : (
+                          song == "Highscore" ? "Highscore" : (
+                            song == "End is Near" ? "End is Near (Fire in the Hole VIP)" : (
+                              song == "Destroid 7 - Bounce" ? "Destroid 7 Bounce" : (
+                                song == "No Holding On" ? "No Holding On (feat. Holly Drummond)" : (
+                                  song == "Tonight" ? "Tonight (feat. Danyka Nadeau)" : (
+                                    song == "Deviance (Original)" ? "Deviance (Original Mix)" : (
+                                      song
+                                    )
+                                  )
+                                )
+                              )
+                            )
+                          )
+                        )
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          )
+        )
+      ) + " by " + artist2 + " when you left." + (parseInt(localStorage.getItem("songsQueued")) > 0 ? (" You also had " + localStorage.getItem("songsQueued") + " songs in the queue.") : "") + " Do you wish to resume your queue from last time, or do you want to wipe it?<br><br>Please note: the song that was playing when you left will restart from the beginning.<br><br><button onclick=\"resume()\">Resume</button> <button onclick=\"wipeQueue()\" class=\"red\">Wipe it</button>");
+    }
+    function resume() {
+      endMessage("Resuming queue in 3...");
+      setTimeout(function() {
+        endMessage("Resuming queue in 2...");
+      }, 1000);
+      setTimeout(function() {
+        endMessage("Resuming queue in 1...");
+      }, 2000);
+      setTimeout(function() {
+        end_span.click();
+        queue = localStorage.getItem("currentQueue");
+        itemsQueued = parseInt(localStorage.getItem("songsQueued"));
+        checkQueue();
+        document.getElementById("song").value = localStorage.getItem("currentSong");
+        selectSong();
+      }, 2500);
+    }
+    function wipeQueue() {
+      var confirmation = confirm("Are you sure you wish to wipe your queue from last time?");
+      if (confirmation) {
+        confirmation = confirm("Your queue from last time will be lost forever! This action CANNOT be undone! Are you certain?");
+        if (confirmation) {
+          end_span.click();
+          localStorage.setItem("currentQueue", queue);
+          localStorage.setItem("songsQueued", 0);
+          localStorage.setItem("currentSong", "nothing");
+        }
+      }
     }
     btn.onclick = function() {
       modal.style.display = "block";
@@ -1259,22 +1665,24 @@
       for (var i = 0; i < queue.length; i++) {
         document.getElementById("queue" + (i + 1)).innerHTML = queue[i][0];
       }
+      localStorage.setItem("currentQueue", queue);
+      localStorage.setItem("songsQueued", itemsQueued);
     }
     function removeQueuedSong(id) {
-      queue = [queue[1], queue[2], queue[3], queue[4], queue[5], queue[6], queue[7], queue[8], queue[9], emptyQueue];
+      queue = [queue[1], queue[2], queue[3], queue[4], queue[5], queue[6], queue[7], queue[8], queue[9], queue[10], queue[11], queue[12], queue[13], queue[14], queue[15], queue[16], queue[17], queue[18], queue[19], emptyQueue];
       checkQueue();
       itemsQueued -= 1;
     }
     function clearQueue() {
-      queue = [["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0]];
-      checkQueue();
+      queue = [["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0], ["", 0]];
       itemsQueued = 0;
+      checkQueue();
     }
     function queueSong() {
       if (itemsQueued < queue.length) {
         queue[itemsQueued][0] = document.getElementById("queue").value;
         queue[itemsQueued][1] = document.getElementById("queue").options.selectedIndex;
-        itemsQueued++;
+        itemsQueued += 1;
         checkQueue();
       }
       if (itemsQueued == queue.length) {
@@ -1614,6 +2022,9 @@
           case "Junction Seven":
             artist = "Muzzy";
             break;
+          case "Renzokuken":
+            artist = "Razihel";
+            break;
         }
         document.getElementById("artist").innerHTML = artist;
         switch (song) {
@@ -1799,6 +2210,7 @@
           case "Highscore": hasLyrics = false; break;
           case "To the Stars": hasLyrics = false; break;
           case "Junction Seven": hasLyrics = true; break;
+          case "Renzokuken": hasLyrics = false; break;
         }
         if (hasLyrics) {
           document.getElementById("hasLyrics").innerHTML = "has";
@@ -1842,6 +2254,8 @@
           removeQueuedSong(0);
           document.getElementById("button").click();
           progress.value = 0;
+          localStorage.setItem("currentQueue", queue);
+          localStorage.setItem("songsQueued", itemsQueued);
         } else {
           document.getElementById("timeLeft").innerHTML = "-0:00";
           if (document.getElementById("song").value == "Partyt Ar Igang") {
@@ -1888,6 +2302,7 @@
           document.getElementById("title").style.visibility = "hidden";
           heightlimit = 0;
           checkSong();
+          localStorage.setItem("currentSong", "nothing");
         }
       });
     }
@@ -1904,6 +2319,7 @@
         document.getElementById("visualizer").getElementsByTagName("div")[i].style.width = "0px";
       }
       song = document.getElementById("song").value;
+      localStorage.setItem("currentSong", song);
       audio = document.getElementById("audio");
       var helpers = [
         "BLAST", "Backlash", "COOKIES", "Eclipse", "Evolution", "Forged in Stars", "Heist",
@@ -1924,7 +2340,7 @@
         "Here We Go", "Dimensions", "Farewell", "FLAMES", "Get Up", "Destroid 3 Crusaders",
         "BEWM", "JOURNEY", "GET UP", "Galactic Voyage", "Virus", "Bananonymous", "Deadlocked",
         "Surface Tension", "Harmony", "Space Invaders", "Heat", "Bad Intentions", "Ultimatum",
-        "Granite"
+        "Granite", "Renzokuken"
       ];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
@@ -2070,6 +2486,7 @@
         case "No Holding On":
         case "Galactic Voyage":
         case "Bananonymous":
+        case "Renzokuken":
           colors = ["#ffff00"];
           style = styles.single;
           barcolor = 3;
@@ -2662,6 +3079,7 @@
         case "Space Invaders": length = "5:48.108"; bpm = 128; break;
         case "Ultimatum": length = "4:15.216"; bpm = 173; break;
         case "Granite": length = "2:31.954"; bpm = 128; break;
+        case "Renzokuken": length = "7:11.491"; bpm = 128; break;
       }
       for (var i = 1; i <= 100; i++) {
         progress.classList.remove("c" + i);
@@ -3445,7 +3863,7 @@
                     song == "Destroid 10 - Funk Hole" ? "Destroid 10 Funk Hole" : (
                       song == "Deviance" ? "Deviance (Dirtyphonics Remix)" : (
                         song == "Starship Showdown" ? "Starship Showdown (feat. Christian Carlsson)" : (
-                          song == "Highscore" ? "Highscore (feat. Teminite)" : (
+                          song == "Highscore" ? "Highscore" : (
                             song == "End is Near" ? "End is Near (Fire in the Hole VIP)" : (
                               song == "Destroid 7 - Bounce" ? "Destroid 7 Bounce" : (
                                 song == "No Holding On" ? "No Holding On (feat. Holly Drummond)" : (
