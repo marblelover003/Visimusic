@@ -229,6 +229,7 @@
       .c76::-webkit-progress-value {background: linear-gradient(to bottom, #23637b 49.99999999%, #1e5c71 50%);}
       .c77::-webkit-progress-value {background: linear-gradient(to bottom, #2a2d7c 49.99999999%, #162660 50%);}
       .c78::-webkit-progress-value {background: linear-gradient(to bottom, #ffb988 24.99999999%, #fef086 25%, #fef086 49.99999999%, #eb90b3 50%, #eb90b3 74.99999999%, #ffd157 75%);}
+      .c79::-webkit-progress-value {background: #e10303;}
       .modal {
         display: none;
         opacity: 0;
@@ -381,6 +382,7 @@
         <option value="Eclipse">Eclipse</option>
         <option value="Emergency">Emergency</option>
         <option value="End is Near">End is Near (Fire in the Hole VIP)</option>
+        <option value="Endgame">Endgame</option>
         <option value="EPIC">EPIC</option>
         <option value="Evolution">Evolution</option>
         <option value="Exoskelephone">Exoskelephone</option>
@@ -668,6 +670,7 @@
             <option value="Eclipse">Eclipse</option>
             <option value="Emergency">Emergency</option>
             <option value="End is Near (Fire in the Hole VIP)">End is Near (Fire in the Hole VIP)</option>
+            <option value="Endgame">Endgame</option>
             <option value="EPIC">EPIC</option>
             <option value="Evolution">Evolution</option>
             <option value="Exoskelephone">Exoskelephone</option>
@@ -825,19 +828,20 @@
     </div>
     <button id="infoBtn" class="notification">
       Info &sol; News
-      <span class="badge">4</span>
+      <span class="badge">5</span>
     </button>
     <div id="infoModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
         <h1>What's new?</h1>
-        <p><b>Faster Than Light</b> by Far Too Loud now has timed lyrics!</p>
-        <p>Also, Razihel makes his debut on Visimusic with <b>Renzokuken</b>!</p>
+        <p>Razihel makes his debut on Visimusic with <b>Renzokuken</b>!</p>
         <p>Not only that, but you can now queue not just ten, but <b style="color: yellow;">TWENTY</b> songs! Amazing, right?</p>
         <p>AND, your queue will now be saved when you close Visimusic! This means you can resume the same song you left off listening to!</p>
+        <p><b>Endgame</b> by Muzzy has also arrived to the mix! Timed lyrics coming soon!</p>
+        <p>And finally, <b>Destroid 2 Wasteland</b> (Excision, Downlink &amp; Space Laces) and <b>Destroid 8 Annihilate</b> (Excision &amp; Far Too Loud) both have timed lyrics now!</p>
         <hr>
         <h1>What's coming?</h1>
-        <p>I am still working on the timed lyrics for every song that has lyrics.<br><progress class="c3" max="32" value="9" id="lyricsProgress"></progress> 28.13%</p>
+        <p>I am still working on the timed lyrics for every song that has lyrics.<br><progress class="c3" max="33" value="11" id="lyricsProgress"></progress> 33.33%</p>
         <p>Stay tuned for future updates! Keep calm and keep the beat going!</p>
         <hr>
         <h1>Supported Browsers</h1>
@@ -911,6 +915,7 @@
             <li><span class="songName">Eclipse</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Emergency</span><span class="right">&hellip;</span></li>
             <li><span class="songName">End is Near (Fire in the Hole VIP)</span><span class="right">&hellip;</span></li>
+            <li><span class="songName">Endgame</span><span class="right">&hellip;</span></li>
             <li><span class="songName">EPIC</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Evolution</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Exoskelephone</span><span class="right">&hellip;</span></li>
@@ -1117,7 +1122,7 @@
         itemsQueued = 0, song,
         bpm, hasLyrics = false, currentLyrics = "";
     if (localStorage.getItem("currentQueue") == null) {
-      localStorage.setItem("currentQueue", queue);
+      localStorage.setItem("currentQueue", JSON.stringify(queue));
     }
     if (localStorage.getItem("songsQueued") == null) {
       localStorage.setItem("songsQueued", 0);
@@ -1455,6 +1460,7 @@
           artist2 = "Braken";
           break;
         case "Junction Seven":
+        case "Endgame":
           artist2 = "Muzzy";
           break;
         case "Renzokuken":
@@ -1496,21 +1502,12 @@
       ) + " by " + artist2 + " when you left." + (parseInt(localStorage.getItem("songsQueued")) > 0 ? (" You also had " + localStorage.getItem("songsQueued") + " songs in the queue.") : "") + " Do you wish to resume your queue from last time, or do you want to wipe it?<br><br>Please note: the song that was playing when you left will restart from the beginning.<br><br><button onclick=\"resume()\">Resume</button> <button onclick=\"wipeQueue()\" class=\"red\">Wipe it</button>");
     }
     function resume() {
-      endMessage("Resuming queue in 3...");
-      setTimeout(function() {
-        endMessage("Resuming queue in 2...");
-      }, 1000);
-      setTimeout(function() {
-        endMessage("Resuming queue in 1...");
-      }, 2000);
-      setTimeout(function() {
-        end_span.click();
-        queue = localStorage.getItem("currentQueue");
-        itemsQueued = parseInt(localStorage.getItem("songsQueued"));
-        checkQueue();
-        document.getElementById("song").value = localStorage.getItem("currentSong");
-        selectSong();
-      }, 2500);
+      end_span.click();
+      queue = JSON.parse(localStorage.getItem("currentQueue"));
+      itemsQueued = parseInt(localStorage.getItem("songsQueued"));
+      checkQueue();
+      document.getElementById("song").value = localStorage.getItem("currentSong");
+      selectSong();
     }
     function wipeQueue() {
       var confirmation = confirm("Are you sure you wish to wipe your queue from last time?");
@@ -1518,7 +1515,7 @@
         confirmation = confirm("Your queue from last time will be lost forever! This action CANNOT be undone! Are you certain?");
         if (confirmation) {
           end_span.click();
-          localStorage.setItem("currentQueue", queue);
+          localStorage.setItem("currentQueue", JSON.stringify(queue));
           localStorage.setItem("songsQueued", 0);
           localStorage.setItem("currentSong", "nothing");
         }
@@ -1658,7 +1655,7 @@
       if (itemsQueued < queue.length) {
         var elem = document.getElementById("queue");
         elem.options.selectedIndex = Math.floor(Math.random() * (elem.options.length - 1)) + 1;
-        if (!elem.options[elem.options.selectedIndex].disabled) queueSong();
+        if (!elem.options[elem.options.selectedIndex].disabled) {queueSong();}
       }
     }
     function checkQueue() {
@@ -2020,6 +2017,7 @@
             artist = "Braken";
             break;
           case "Junction Seven":
+          case "Endgame":
             artist = "Muzzy";
             break;
           case "Renzokuken":
@@ -2029,6 +2027,7 @@
         document.getElementById("artist").innerHTML = artist;
         switch (song) {
           case "": hasLyrics = false; break;
+          case "Endgame": hasLyrics = true; break;
           case "Granite": hasLyrics = false; break;
           case "Ultimatum": hasLyrics = false; break;
           case "Bad Intentions": hasLyrics = false; break;
@@ -2401,6 +2400,11 @@
       }
       var barcolor;
       switch (song) {
+        case "Endgame":
+          colors = ["#e10303"];
+          style = styles.single;
+          barcolor = 79;
+          break;
         case "JOURNEY":
           colors = ["#27776d", "#3ab886"];
           style = styles.alternating;
@@ -3080,6 +3084,7 @@
         case "Ultimatum": length = "4:15.216"; bpm = 173; break;
         case "Granite": length = "2:31.954"; bpm = 128; break;
         case "Renzokuken": length = "7:11.491"; bpm = 128; break;
+        case "Endgame": length = "6:59.840"; bpm = 175; break;
       }
       for (var i = 1; i <= 100; i++) {
         progress.classList.remove("c" + i);
@@ -3737,7 +3742,43 @@
         }
       } else if (song == "Destroid 2 - Wasteland") {
         var lyrics = [
-          [00000, 00000, "lyrics"]
+          [0, 14.9, "An unknown force"],
+          [16.6, 20.1, "An unknown force has conquered the stars."],
+          [22.0, 22.8, "They search"],
+          [22.8, 24.0, "They search the endless"],
+          [24.0, 25.3, "They search the endless interstellar reaches"],
+          [25.3, 27.6, "They search the endless interstellar reaches of the universe..."],
+          [27.6, 30.4, "consuming unstable planets,"],
+          [30.4, 33.7, "consuming unstable planets, leaving behind a barren wasteland."],
+          [33.7, 35.2, "Those who stand in the way"],
+          [35.2, 37.0, "Those who stand in the way of this new breed of terror"],
+          [37.0, 38.5, "Those who stand in the way of this new breed of terror shall certainly be"],
+          [38.5, 38.55, "Those who stand in the way of this new breed of terror shall certainly be D"],
+          [38.55, 38.6, "Those who stand in the way of this new breed of terror shall certainly be DE"],
+          [38.6, 38.65, "Those who stand in the way of this new breed of terror shall certainly be DES"],
+          [38.65, 38.7, "Those who stand in the way of this new breed of terror shall certainly be DEST"],
+          [38.7, 38.75, "Those who stand in the way of this new breed of terror shall certainly be DESTR"],
+          [38.75, 38.8, "Those who stand in the way of this new breed of terror shall certainly be DESTRO"],
+          [38.8, 38.85, "Those who stand in the way of this new breed of terror shall certainly be DESTROI"],
+          [38.85, 40.0, "Those who stand in the way of this new breed of terror shall certainly be DESTROID"],
+          [65.8, 66.5, "DESTROID"],
+          [105.5, 106.2, "DESTROID"],
+          [147.3, 149.0, "An unknown force"],
+          [149.0, 152.5, "An unknown force has conquered the stars"],
+          [153.8, 154.8, "They search"],
+          [154.8, 155.9, "They search the endless"],
+          [155.9, 157.3, "They search the endless interstellar"],
+          [157.3, 159.2, "They search the endless interstellar reaches"],
+          [160.4, 162.3, "Consuming"],
+          [162.3, 162.6, "Consuming the"],
+          [162.6, 164.6, "Consuming the universe..."],
+          [165.8, 166.6, "Conquered"],
+          [166.6, 167.4, "Conquered planets"],
+          [167.4, 168.3, "Endless"],
+          [168.3, 169.0, "Endless terror"],
+          [169.9, 171.6, "Unknown force"],
+          [171.8, 172.4, "DESTROID"],
+          [198.2, 198.9, "DESTROID"]
         ];
         for (var i = 0; i < lyrics.length; i++) {
           if (t >= lyrics[i][0] && t <= lyrics[i][1]) {
@@ -3746,7 +3787,55 @@
         }
       } else if (song == "Destroid 8 - Annihilate") {
         var lyrics = [
-          [00000, 00000, "lyrics"]
+          [63.7, 64.6, "The towns"],
+          [64.6, 65.5, "The towns <span style=\"color: red;\">DESTROID</span>"],
+          [65.5, 66.5, "The cities"],
+          [66.5, 67.4, "The cities <span style=\"color: red;\">DESTROID</span>"],
+          [67.4, 68.3, "The farms"],
+          [68.3, 69.3, "The farms <span style=\"color: red;\">DESTROID</span>"],
+          [69.3, 70.2, "The villages"],
+          [70.2, 71.1, "The villages <span style=\"color: red;\">DESTROID</span>"],
+          [71.1, 72.1, "The governments"],
+          [72.1, 73.0, "The governments <span style=\"color: red;\">DESTROID</span>"],
+          [73.0, 74.0, "Communications"],
+          [74.0, 74.9, "Communications <span style=\"color: red;\">DESTROID</span>"],
+          [74.9, 75.8, "Society"],
+          [75.8, 77.0, "Society <span style=\"color: red;\">DESTROID</span>"],
+          [77.0, 77.3, "You"],
+          [77.3, 77.7, "You have"],
+          [77.7, 78.1, "You have been"],
+          [78.1, 79.8, "You have been <span style=\"color: red;\">DESTROID</span>"],
+          [92.0, 92.4, "YOU"],
+          [92.4, 92.7, "YOU HAVE"],
+          [92.7, 93.0, "YOU HAVE BEEN"],
+          [93.0, 93.9, "YOU HAVE BEEN DESTROID"],
+          [168.6, 169.6, "The towns"],
+          [169.6, 170.5, "The towns <span style=\"color: red;\">DESTROID</span>"],
+          [170.5, 171.4, "The cities"],
+          [171.4, 172.4, "The cities <span style=\"color: red;\">DESTROID</span>"],
+          [172.4, 173.3, "The farms"],
+          [173.3, 174.3, "The farms <span style=\"color: red;\">DESTROID</span>"],
+          [174.3, 175.2, "The villages"],
+          [175.2, 176.2, "The villages <span style=\"color: red;\">DESTROID</span>"],
+          [176.2, 177.1, "The governments"],
+          [177.1, 178.0, "The governments <span style=\"color: red;\">DESTROID</span>"],
+          [178.0, 179.0, "Communications"],
+          [179.0, 179.8, "Communications <span style=\"color: red;\">DESTROID</span>"],
+          [179.8, 180.9, "Society"],
+          [180.9, 182.0, "Society <span style=\"color: red;\">DESTROID</span>"],
+          [182.0, 182.4, "You"],
+          [182.4, 182.7, "You have"],
+          [182.7, 183.1, "You have been"],
+          [183.1, 186.0, "You have been <span style=\"color: red;\">DESTROID</span>"],
+          [197.0, 197.4, "YOU"],
+          [197.4, 197.7, "YOU HAVE"],
+          [197.7, 198.1, "YOU HAVE BEEN"],
+          [198.1, 198.9, "YOU HAVE BEEN DESTROID"],
+          [288.9, 292.7, "4"],
+          [292.7, 296.4, "3"],
+          [296.4, 300.1, "2"],
+          [300.1, 303.9, "1"],
+          [303.9, 307.9, "<span style=\"color: rgb(" + Math.round((307.9 - t) / 4 * 255) + ", 0, 0)\">DESTROID</span>"]
         ];
         for (var i = 0; i < lyrics.length; i++) {
           if (t >= lyrics[i][0] && t <= lyrics[i][1]) {
