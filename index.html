@@ -5,7 +5,7 @@
     <link rel="icon" href="https://marblelover003.github.io/Visimusic/VisimusicFavicons/Visimusic.png" id="dynamic-favicon">
     <link rel="apple-touch-icon" href="https://marblelover003.github.io/Visimusic/apple-touch-icon.png">
     <style>
-      @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700|Montserrat:300,400,700|Orbitron:400,700|Chakra+Petch:400,700|Inconsolata");
+      @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700,900|Montserrat:300,400,700|Orbitron:400,700|Chakra+Petch:400,700|Inconsolata");
       #lyricsProgress {
         width: 400px;
       }
@@ -456,6 +456,7 @@
         <option value="Pyro">Pyro</option>
         <option value="Quake">Quake</option>
         <option value="Rainbow Road">Rainbow Road</option>
+        <option value="Rally the Troops">Rally the Troops</option>
         <option value="Rat Twist">Rat Twist</option>
         <option value="Razor Sharp">Razor Sharp</option>
         <option value="Renegade">Renegade</option>
@@ -744,6 +745,7 @@
             <option value="Pyro">Pyro</option>
             <option value="Quake">Quake</option>
             <option value="Rainbow Road">Rainbow Road</option>
+            <option value="Rally the Troops">Rally the Troops</option>
             <option value="Rat Twist">Rat Twist</option>
             <option value="Razor Sharp">Razor Sharp</option>
             <option value="Renegade">Renegade</option>
@@ -828,20 +830,18 @@
     </div>
     <button id="infoBtn" class="notification">
       Info &sol; News
-      <span class="badge">5</span>
+      <span class="badge">3</span>
     </button>
     <div id="infoModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
         <h1>What's new?</h1>
-        <p>Razihel makes his debut on Visimusic with <b>Renzokuken</b>!</p>
-        <p>Not only that, but you can now queue not just ten, but <b style="color: yellow;">TWENTY</b> songs! Amazing, right?</p>
-        <p>AND, your queue will now be saved when you close Visimusic! This means you can resume the same song you left off listening to!</p>
-        <p><b>Endgame</b> by Muzzy has also arrived to the mix! Timed lyrics coming soon!</p>
-        <p>And finally, <b>Destroid 2 Wasteland</b> (Excision, Downlink &amp; Space Laces) and <b>Destroid 8 Annihilate</b> (Excision &amp; Far Too Loud) both have timed lyrics now!</p>
+        <p><b>Endgame</b> by Muzzy has also arrived to the mix, with timed lyrics!</p>
+        <p>Also, <b>Destroid 2 Wasteland</b> (Excision, Downlink &amp; Space Laces) and <b>Destroid 8 Annihilate</b> (Excision &amp; Far Too Loud) both have timed lyrics now!</p>
+        <p>Not only that, but Teminite and PsoGnar are back at it again with <b>Rally the Troops</b>! This song does have timed lyrics!</p>
         <hr>
         <h1>What's coming?</h1>
-        <p>I am still working on the timed lyrics for every song that has lyrics.<br><progress class="c3" max="33" value="11" id="lyricsProgress"></progress> 33.33%</p>
+        <p>I am still working on the timed lyrics for every song that has lyrics.<br><b style="font-weight: 900">17</b> songs remain</p>
         <p>Stay tuned for future updates! Keep calm and keep the beat going!</p>
         <hr>
         <h1>Supported Browsers</h1>
@@ -989,6 +989,7 @@
             <li><span class="songName">Pyro</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Quake</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Rainbow Road</span><span class="right">&hellip;</span></li>
+            <li><span class="songName">Rally the Troops</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Rat Twist</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Razor Sharp</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Renegade</span><span class="right">&hellip;</span></li>
@@ -1164,6 +1165,7 @@
           artist2 = "Vicetone";
           break;
         case "Surface Tension":
+        case "Rally the Troops":
           artist2 = "Teminite & PsoGnar";
           break;
         case "Deadlocked":
@@ -1721,6 +1723,7 @@
             artist = "Vicetone";
             break;
           case "Surface Tension":
+          case "Rally the Troops":
             artist = "Teminite & PsoGnar";
             break;
           case "Deadlocked":
@@ -2027,6 +2030,7 @@
         document.getElementById("artist").innerHTML = artist;
         switch (song) {
           case "": hasLyrics = false; break;
+          case "Rally the Troops": hasLyrics = true; break;
           case "Endgame": hasLyrics = true; break;
           case "Granite": hasLyrics = false; break;
           case "Ultimatum": hasLyrics = false; break;
@@ -2339,7 +2343,7 @@
         "Here We Go", "Dimensions", "Farewell", "FLAMES", "Get Up", "Destroid 3 Crusaders",
         "BEWM", "JOURNEY", "GET UP", "Galactic Voyage", "Virus", "Bananonymous", "Deadlocked",
         "Surface Tension", "Harmony", "Space Invaders", "Heat", "Bad Intentions", "Ultimatum",
-        "Granite", "Renzokuken", "Endgame"
+        "Granite", "Renzokuken", "Endgame", "Rally the Troops"
       ];
       var isHelper = false;
       for (var i = 0; i < helpers.length; i++) {
@@ -2421,6 +2425,7 @@
           barcolor = 76;
           break;
         case "Surface Tension":
+        case "Rally the Troops":
           colors = ["#2a2d7c", "#162660"];
           style = styles.alternating;
           barcolor = 77;
@@ -2902,6 +2907,7 @@
       }
       changeFavicon("https://marblelover003.github.io/Visimusic/VisimusicFavicons/f" + ("0" + barcolor).slice(-2) + ".png");
       switch (song) {
+        case "Rally the Troops": length = "6:07.935"; bpm = 150; break;
         case "Heat": length = "5:50.041"; bpm = 128; break;
         case "Bad Intentions": length = "4:52.598"; bpm = 128; break;
         case "Surface Tension": length = "5:41.080"; bpm = 174; break;
@@ -3836,6 +3842,103 @@
           [296.4, 300.1, "2"],
           [300.1, 303.9, "1"],
           [303.9, 307.9, "<span style=\"color: rgb(" + Math.round((307.9 - t) / 4 * 255) + ", 0, 0)\">DESTROID</span>"]
+        ];
+        for (var i = 0; i < lyrics.length; i++) {
+          if (t >= lyrics[i][0] && t <= lyrics[i][1]) {
+            currentLyrics = lyrics[i][2];
+          }
+        }
+      } else if (song == "Rally the Troops") {
+        var lyrics = [
+          [28.1, 34.2, "Behold, the exiled has rolled ashore"],
+          [34.8, 39.0, "Rise to meet with open arms"],
+          [41.1, 46.2, "The darkest night lit by a shooting star"],
+          [46.7, 51.7, "At least we wish it was..."],
+          [51.7, 55.5, "Out of the way and take cover!"],
+          [55.5, 56.5, "Alone now"],
+          [56.5, 57.2, "Alone now we"],
+          [57.2, 57.8, "Alone now we run"],
+          [57.8, 59.7, "Alone now we run through"],
+          [59.7, 62.3, "The fire"],
+          [62.3, 63.6, "The fire won't be the last"],
+          [63.6, 64.2, "The fire won't be the last to"],
+          [64.2, 65.9, "The fire won't be the last to lose"],
+          [65.9, 66.5, "And though"],
+          [66.5, 67.3, "And though we will"],
+          [67.3, 68.2, "And though we will rebuild"],
+          [68.2, 69.0, "And though we will rebuild again,"],
+          [69.0, 70.0, "And though we will rebuild again, the victim"],
+          [70.0, 70.4, "And though we will rebuild again, the victim we"],
+          [70.4, 72.1, "And though we will rebuild again, the victim we refuse."],
+          [72.1, 75.1, "Take cover!"],
+          [75.1, 77.8, "To talk us down is no use!"],
+          [77.8, 79.1, "Rally the troops!"],
+          [103.6, 104.6, "Rally the troops!"],
+          [116.4, 117.4, "Rally the troops!"],
+          [126.5, 128.6, "Take cover!"],
+          [128.6, 131.8, "Take cover! (Take care, fire, take care, fire!)"],
+          [151.1, 155.8, "Take cover!"],
+          [207.4, 213.4, "Behold, the exiled has rolled ashore"],
+          [214.0, 218.2, "Rise to meet with open arms"],
+          [220.3, 225.4, "The darkest night lit by a shooting star"],
+          [225.9, 230.9, "At least we wish it was..."],
+          [230.9, 234.7, "Out of the way and take cover!"],
+          [234.7, 235.7, "Alone now"],
+          [235.7, 236.4, "Alone now we"],
+          [236.4, 237.0, "Alone now we run"],
+          [237.0, 238.9, "Alone now we run through"],
+          [238.9, 241.5, "The fire"],
+          [241.5, 242.8, "The fire won't be the last"],
+          [242.8, 243.4, "The fire won't be the last to"],
+          [243.4, 245.2, "The fire won't be the last to lose"],
+          [245.2, 245.7, "And though"],
+          [245.7, 246.5, "And though we will"],
+          [246.5, 247.4, "And though we will rebuild"],
+          [247.4, 248.2, "And though we will rebuild again,"],
+          [248.2, 249.0, "And though we will rebuild again, the victim"],
+          [249.0, 249.5, "And though we will rebuild again, the victim we"],
+          [249.5, 251.3, "And though we will rebuild again, the victim we refuse."],
+          [251.3, 254.3, "Take cover!"],
+          [254.3, 257.0, "To talk us down is no use!"],
+          [257.0, 258.2, "Rally the troops!"],
+          [282.7, 283.7, "Rally the troops!"],
+          [305.8, 307.8, "Take cover!"],
+          [307.8, 311.0, "Take cover! (Take care, fire, take care, fire!)"],
+          [333.4, 337.1, "Out of the way and take cover!"],
+          [337.1, 338.1, "Alone now"],
+          [338.1, 338.8, "Alone now we"],
+          [338.8, 339.4, "Alone now we run"],
+          [339.4, 341.2, "Alone now we run through"],
+          [341.2, 343.9, "The fire"],
+          [343.9, 345.1, "The fire won't be the last"],
+          [345.1, 345.8, "The fire won't be the last to"],
+          [345.8, 347.5, "The fire won't be the last to lose"],
+          [347.5, 348.1, "And though"],
+          [348.1, 348.9, "And though we will"],
+          [348.9, 349.7, "And though we will rebuild"],
+          [349.7, 350.6, "And though we will rebuild again,"],
+          [350.6, 351.6, "And though we will rebuild again, the victim"],
+          [351.6, 351.9, "And though we will rebuild again, the victim we"],
+          [351.9, 353.7, "And though we will rebuild again, the victim we refuse."],
+          [353.7, 356.7, "Take cover!"],
+          [356.7, 359.5, "To talk us down is no use!"],
+          [359.5, 360.8, "Rally the troops!"]
+        ];
+        for (var i = 0; i < lyrics.length; i++) {
+          if (t >= lyrics[i][0] && t <= lyrics[i][1]) {
+            currentLyrics = lyrics[i][2];
+          }
+        }
+      } else if (song == "Endgame") {
+        var lyrics = [,
+          [34.3, 39.3, "Citizens of Earth,"],
+          [39.3, 42.9, "Citizens of Earth, we are here."],
+          [42.9, 46.8, "Prepare yourselves"],
+          [46.8, 49.3, "Prepare yourselves for when the evil"],
+          [49.3, 53.6, "Prepare yourselves for when the evil descends."],
+          [163.1, 167.1, "After they came and destroyed the land,"],
+          [167.1, 169.9, "After they came and destroyed the land, there was one spark of hope left"],
+          [169.9, 173.0, "After they came and destroyed the land, there was one spark of hope left for all of mankind."]
         ];
         for (var i = 0; i < lyrics.length; i++) {
           if (t >= lyrics[i][0] && t <= lyrics[i][1]) {
