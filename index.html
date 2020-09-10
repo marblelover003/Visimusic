@@ -326,7 +326,8 @@
     <span style="position: absolute; z-index: 99;" id="songSelectMenu">
       Select a song:
       <select id="song" onchange="checkSong()">
-        <option></option>        <option value="Airwaves">Airwaves</option>
+        <option></option>
+        <option value="Airwaves">Airwaves</option>
         <option value="Astrocat">Astrocat</option>
         <option value="Atlantic">Atlantic</option>
         <option value="Backlash">Backlash</option>
@@ -338,6 +339,7 @@
         <option value="Be Gone Mr. Gawne">Be Gone Mr. Gawne</option>
         <option value="BEWM">BEWM</option>
         <option value="BLAST">BLAST</option>
+        <option value="Blast from the Past">Blast from the Past</option>
         <option value="Breakdown">Breakdown</option>
         <option value="Breakdown VIP">Breakdown VIP</option>
         <option value="Buzz Kill">Buzz Kill</option>
@@ -347,6 +349,7 @@
         <option value="Cheat Codes">Cheat Codes</option>
         <option value="Cheat Codes VIP">Cheat Codes VIP</option>
         <option value="Checkpoint">Checkpoint</option>
+        <option value="Children of the Night">Children of the Night</option>
         <option value="Chipland">Chipland</option>
         <option value="Chip Zeal">Chip Zeal</option>
         <option value="Chronos">Chronos</option>
@@ -401,6 +404,7 @@
         <option value="Forged in Stars">Forged in Stars</option>
         <option value="FOX">FOX</option>
         <option value="FTW">FTW</option>
+        <option value="Fugitive">Fugitive</option>
         <option value="Galactic Voyage">Galactic Voyage</option>
         <option value="GET UP">GET UP</option>
         <option value="Get Up">Get Up</option>
@@ -470,6 +474,7 @@
         <option value="Rinse Out">Rinse Out</option>
         <option value="Rocket">Rocket</option>
         <option value="ROCK IT">ROCK IT</option>
+        <option value="ROCK IT (VIP)">ROCK IT (VIP)</option>
         <option value="Rocktronik">Rocktronik</option>
         <option value="SAIKOU">SAIKOU</option>
         <option value="Sentinel">Sentinel</option>
@@ -633,6 +638,7 @@
             <option value="Be Gone Mr. Gawne">Be Gone Mr. Gawne</option>
             <option value="BEWM">BEWM</option>
             <option value="BLAST">BLAST</option>
+            <option value="Blast from the Past">Blast from the Past</option>
             <option value="Breakdown">Breakdown</option>
             <option value="Breakdown VIP">Breakdown VIP</option>
             <option value="Buzz Kill">Buzz Kill</option>
@@ -642,6 +648,7 @@
             <option value="Cheat Codes">Cheat Codes</option>
             <option value="Cheat Codes VIP">Cheat Codes VIP</option>
             <option value="Checkpoint">Checkpoint</option>
+            <option value="Children of the Night">Children of the Night</option>
             <option value="Chipland">Chipland</option>
             <option value="Chip Zeal">Chip Zeal</option>
             <option value="Chronos">Chronos</option>
@@ -696,6 +703,7 @@
             <option value="Forged in Stars">Forged in Stars</option>
             <option value="FOX">FOX</option>
             <option value="FTW">FTW</option>
+            <option value="Fugitive">Fugitive</option>
             <option value="Galactic Voyage">Galactic Voyage</option>
             <option value="GET UP">GET UP</option>
             <option value="Get Up">Get Up</option>
@@ -765,6 +773,7 @@
             <option value="Rinse Out">Rinse Out</option>
             <option value="Rocket">Rocket</option>
             <option value="ROCK IT">ROCK IT</option>
+            <option value="ROCK IT (VIP)">ROCK IT (VIP)</option>
             <option value="Rocktronik">Rocktronik</option>
             <option value="SAIKOU">SAIKOU</option>
             <option value="Sentinel">Sentinel</option>
@@ -841,25 +850,21 @@
     </div>
     <button id="infoBtn" class="notification">
       Info &sol; News
-      <span class="badge">6</span>
+      <span class="badge">4</span>
     </button>
     <div id="infoModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
         <h1>What's new?</h1>
-        <p>Six new songs have arrived to the mix at once!</p>
+        <p>Four new songs have arrived to the mix at once! Stonebank and Case & Point both make their debut!</p>
         <table>
           <tr>
-            <td><b>Lycanthropy</b> by Cardi</td>
-            <td><b>Strike the Earth</b> by Danimal Cannon</td>
+            <td><b>Blast from the Past</b> by Stonebank</td>
+            <td><b>Children of the Night</b> by Razihel</td>
           </tr>
           <tr>
-            <td><b>Flowers of Antimony</b> by Rainbowdragoneyes</td>
-            <td><b>Creatures ov Deception</b> by Rainbowdragoneyes</td>
-          </tr>
-          <tr>
-            <td><b>La Danse Macabre</b> by Shirobon</td>
-            <td><b>In the Halls of the Usurper</b> by Kubbi</td>
+            <td><b>Fugitive</b> by Case &amp; Point</td>
+            <td><b>ROCK IT (VIP)</b> by Tokyo Machine (BRAND NEW RELEASE)</td>
           </tr>
         </table>
         <p>None of these songs have lyrics.</p>
@@ -1178,6 +1183,12 @@
       var cSong = localStorage.getItem("currentSong");
       var artist2;
       switch (cSong) {
+        case "Blast from the Past":
+          artist2 = "Stonebank";
+          break;
+        case "Fugitive":
+          artist2 = "Case & Point";
+          break;
         case "Bad Intentions":
           artist2 = "Zomboy";
           break;
@@ -1366,6 +1377,7 @@
         case "PIXEL":
         case "PLAY":
         case "ROCK IT":
+        case "ROCK IT (VIP)":
         case "SAIKOU":
         case "SPOOKY":
         case "EPIC":
@@ -1493,6 +1505,7 @@
           artist2 = "Muzzy";
           break;
         case "Renzokuken":
+        case "Children of the Night":
           artist2 = "Razihel";
           break;
         case "Lycanthropy":
@@ -1746,6 +1759,12 @@
         }
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/" + (document.getElementById("song").value == "I Call It Progstep" ? "I Call It Progstep 2" : (document.getElementById("song").value == "Deviance" ? "Deviance 3" : document.getElementById("song").value)) + (song == "Destroid 3 Crusaders" ? ".png" : ".PNG");
         switch (song) {
+          case "Blast from the Past":
+            artist = "Stonebank";
+            break;
+          case "Fugitive":
+            artist = "Case & Point";
+            break;
           case "Bad Intentions":
             artist = "Zomboy";
             break;
@@ -1934,6 +1953,7 @@
           case "PIXEL":
           case "PLAY":
           case "ROCK IT":
+          case "ROCK IT (VIP)":
           case "SAIKOU":
           case "SPOOKY":
           case "EPIC":
@@ -2061,6 +2081,7 @@
             artist = "Muzzy";
             break;
           case "Renzokuken":
+          case "Children of the Night":
             artist = "Razihel";
             break;
           case "Lycanthropy":
@@ -2074,6 +2095,10 @@
         document.getElementById("artist").innerHTML = artist;
         switch (song) {
           case "": hasLyrics = false; break;
+          case "Blast from the Past": hasLyrics = false; break;
+          case "Children of the Night": hasLyrics = false; break;
+          case "Fugitive": hasLyrics = false; break;
+          case "ROCK IT (VIP)": hasLyrics = false; break;
           case "Rally the Troops": hasLyrics = true; break;
           case "Endgame": hasLyrics = true; break;
           case "Granite": hasLyrics = false; break;
@@ -2397,15 +2422,24 @@
         "Flowers of Antimony", "Creatures ov Deception", "La Danse Macabre",
         "In the Halls of the Usurper"
       ];
+      var helpers2 = [
+        "Blast from the Past", "Children of the Night", "Fugitive", "ROCK IT (VIP)"
+      ];
       var isHelper = false;
+      var isHelper2 = false;
       for (var i = 0; i < helpers.length; i++) {
         if (song == helpers[i]) {
           isHelper = true;
+          break;
+        } else if (song == helpers2[i]) {
+          isHelper2 = true;
           break;
         }
       }
       if (isHelper == true) {
         audio.src = "https://marblelover003.github.io/VisimusicHelpers/" + song + ".mp3";
+      } else if (isHelper2 == true) {
+        audio.src = "https://marblelover003.github.io/VisimusicHelpers2/" + song + ".mp3";
       } else {
         audio.src = "https://marblelover003.github.io/Visimusic/" + song + ".mp3";
       }
@@ -2548,6 +2582,9 @@
         case "Galactic Voyage":
         case "Bananonymous":
         case "Renzokuken":
+        case "Blast from the Past":
+        case "Children of the Night":
+        case "Fugitive":
           colors = ["#ffff00"];
           style = styles.single;
           barcolor = 3;
@@ -2884,6 +2921,7 @@
           barcolor = 26;
           break;
         case "ROCK IT":
+        case "ROCK IT (VIP)":
           colors = ["#0344a8"];
           style = styles.single;
           barcolor = 49;
@@ -2965,6 +3003,10 @@
       }
       changeFavicon("https://marblelover003.github.io/Visimusic/VisimusicFavicons/f" + ("0" + barcolor).slice(-2) + ".png");
       switch (song) {
+        case "Blast from the Past": length = "5:52.575"; bpm = 128; break;
+        case "Children of the Night": length = "5:03.020"; bpm = 128; break;
+        case "Fugitive": length = "4:45.388"; bpm = 125; break;
+        case "ROCK IT (VIP)": length = "3:15.135"; bpm = 128; break;
         case "Rally the Troops": length = "6:07.935"; bpm = 150; break;
         case "Heat": length = "5:50.041"; bpm = 128; break;
         case "Lycanthropy": length = "4:55.262"; bpm = 150; break;
@@ -4033,6 +4075,12 @@
       if (song == "Faster Than Light" && audio.currentTime >= 186.9) {
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Faster Than Light 2.PNG";
         bpm = 170;
+      }
+      if (song == "ROCK IT (VIP)" && audio.currentTime >= 118.8 && audio.currentTime < 125.4) {
+        bpm = Math.floor(150 - ((125.4 - audio.currentTime) / 6.6 * 22));
+      }
+      if (song == "ROCK IT (VIP)" && audio.currentTime >= 125.4) {
+        bpm = 150;
       }
       if (song == "Destroid 1 - Raise Your Fist" && audio.currentTime >= 183.5) {
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Destroid 1 - Raise Your Fist 2.PNG";
