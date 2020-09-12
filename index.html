@@ -64,6 +64,13 @@
         font-size: 10px;
         z-index: -999;
       }
+      #musicInfoBtn {
+        position: absolute;
+        top: 344px;
+        right: 0;
+        font-size: 10px;
+        z-index: -999;
+      }
       #queue, #queueBtn {
         font-size: 10px;
       }
@@ -320,6 +327,22 @@
         background: red;
         color: white;
       }
+      #musicInfoModal small {
+        font-size: 0.5em;
+      }
+      #musicInfoModal table, #musicInfoModal th, #musicInfoModal td {
+        border: 1px solid white;
+        text-align: center;
+      }
+      #musicInfoModal th {
+        position: sticky;
+        top: -20px;
+        background: #444444;
+      }
+      .original47 {
+        background: #ffd700;
+        color: black;
+      }
     </style>
   </head>
   <body>
@@ -333,6 +356,7 @@
         <option value="Backlash">Backlash</option>
         <option value="BAD BOY">BAD BOY</option>
         <option value="Bad Intentions">Bad Intentions</option>
+        <option value="Badland">Badland</option>
         <option value="Bananonymous">Bananonymous</option>
         <option value="Barracuda">Barracuda</option>
         <option value="Bass Head">Bass Head</option>
@@ -434,6 +458,7 @@
         <option value="Leaving Leafwood Forest">Leaving Leafwood Forest</option>
         <option value="Legacy">Legacy</option>
         <option value="Let It Roar">Let It Roar</option>
+        <option value="Lightspeed">Lightspeed</option>
         <option value="Light Sticks">Light Sticks</option>
         <option value="Livewire">Livewire</option>
         <option value="Logic Gatekeeper">Logic Gatekeeper</option>
@@ -632,6 +657,7 @@
             <option value="Backlash">Backlash</option>
             <option value="BAD BOY">BAD BOY</option>
             <option value="Bad Intentions">Bad Intentions</option>
+            <option value="Badland">Badland</option>
             <option value="Bananonymous">Bananonymous</option>
             <option value="Barracuda">Barracuda</option>
             <option value="Bass Head">Bass Head</option>
@@ -733,6 +759,7 @@
             <option value="Leaving Leafwood Forest">Leaving Leafwood Forest</option>
             <option value="Legacy">Legacy</option>
             <option value="Let It Roar">Let It Roar</option>
+            <option value="Lightspeed">Lightspeed</option>
             <option value="Light Sticks">Light Sticks</option>
             <option value="Livewire">Livewire</option>
             <option value="Logic Gatekeeper">Logic Gatekeeper</option>
@@ -850,13 +877,13 @@
     </div>
     <button id="infoBtn" class="notification">
       Info &sol; News
-      <span class="badge">4</span>
+      <span class="badge">7</span>
     </button>
     <div id="infoModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
         <h1>What's new?</h1>
-        <p>Four new songs have arrived to the mix at once! Stonebank and Case & Point both make their debut!</p>
+        <p>Four new songs have arrived to the mix at once! Stonebank and Case &amp; Point both make their debut!</p>
         <table>
           <tr>
             <td><b>Blast from the Past</b> by Stonebank</td>
@@ -864,10 +891,18 @@
           </tr>
           <tr>
             <td><b>Fugitive</b> by Case &amp; Point</td>
-            <td><b>ROCK IT (VIP)</b> by Tokyo Machine (BRAND NEW RELEASE)</td>
+            <td><b>ROCK IT (VIP)</b> by Tokyo Machine</td>
           </tr>
         </table>
         <p>None of these songs have lyrics.</p>
+        <p>Also new: MUSIC INFO!!! Here you'll find details regarding every song on Visimusic.</p>
+        <p>Not only that, but two MORE new songs have arrived! Sterrezo and Boom Kitty both make their debut!</p>
+        <table>
+          <tr>
+            <td><b>Badland</b> by Boom Kitty</td>
+            <td><b>Lightspeed</b> by MDK &amp; Sterrezo</td>
+          </tr>
+        </table>
         <hr>
         <h1>What's coming?</h1>
         <p>I am still working on the timed lyrics for every song that has lyrics.<br><b style="font-weight: 900">17</b> songs remain</p>
@@ -1077,6 +1112,1594 @@
         </div>
       </div>
     </div>
+    <button id="musicInfoBtn">
+      Music Info
+    </button>
+    <div id="musicInfoModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h1>Music Info</h1>
+        <div style="text-align: center">A row highlighted in <span style="background: #ffd700; color: black;">gold</span> means that song was included with the initial release of Visimusic.</div>
+        <table style="width: calc(100% - 40px);">
+          <tr>
+            <th>track name</th>
+            <th>artist</th>
+            <th>album</th>
+            <th>length</th>
+            <th>bpm</th>
+            <th>date added</th>
+          </tr>
+          <tr>
+            <td>Airwaves</td>
+            <td>Noisestorm</td>
+            <td>Monstercat 002 - Early Stage</td>
+            <td>4:42<small>149</small></td>
+            <td>128</td>
+            <td>September 11, 2019</td>
+          </tr>
+          <tr>
+            <td>Astrocat</td>
+            <td>PIXL</td>
+            <td>Monstercat 013 - Awakening</td>
+            <td>5:21<small>620</small></td>
+            <td>130</td>
+            <td>July 12, 2019</td>
+          </tr>
+          <tr>
+            <td>Atlantic</td>
+            <td>Rogue</td>
+            <td>Monstercat 019 - Endeavour</td>
+            <td>4:23<small>471</small></td>
+            <td>130</td>
+            <td>January 12, 2020</td>
+          </tr>
+          <tr>
+            <td>Backlash</td>
+            <td>Noisestorm</td>
+            <td>Monstercat 005 - Evolution</td>
+            <td>5:22<small>116</small></td>
+            <td>140</td>
+            <td>August 1, 2019</td>
+          </tr>
+          <tr>
+            <td>BAD BOY</td>
+            <td>Tokyo Machine &amp; YAKO</td>
+            <td>Monstercat Uncaged Vol. 8</td>
+            <td>3:32<small>767</small></td>
+            <td>128</td>
+            <td>November 29, 2019</td>
+          </tr>
+          <tr>
+            <td>Bad Intentions</td>
+            <td>Zomboy</td>
+            <td>Reanimated EP</td>
+            <td>4:52<small>598</small></td>
+            <td>128</td>
+            <td>July 17, 2020</td>
+          </tr>
+          <tr>
+            <td>Badland</td>
+            <td>Boom Kitty</td>
+            <td>Single release</td>
+            <td>4:47<small>634</small></td>
+            <td>128</td>
+            <td>September 12, 2020</td>
+          </tr>
+          <tr>
+            <td>Bananonymous</td>
+            <td>Savant</td>
+            <td>Alchemist</td>
+            <td>6:11<small>983</small></td>
+            <td>128</td>
+            <td>June 15, 2020</td>
+          </tr>
+          <tr class="original47">
+            <td>Barracuda</td>
+            <td>Noisestorm</td>
+            <td>Monstercat 022 - Contact</td>
+            <td>4:22<small>661</small></td>
+            <td>130</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr>
+            <td>Bass Head</td>
+            <td>Bassnectar</td>
+            <td>Timestretch</td>
+            <td>6:37<small>714</small></td>
+            <td>85</td>
+            <td>February 1, 2020</td>
+          </tr>
+          <tr>
+            <td>Be Gone Mr. Gawne</td>
+            <td>Bossfight</td>
+            <td>Caps On, Hats Off</td>
+            <td>4:17<small>906</small></td>
+            <td>167</td>
+            <td>July 12, 2019</td>
+          </tr>
+          <tr>
+            <td>BEWM</td>
+            <td>Slushii &amp; Tokyo Machine</td>
+            <td>Single release</td>
+            <td>3:30<small>534</small></td>
+            <td>128</td>
+            <td>April 17, 2020</td>
+          </tr>
+          <tr>
+            <td>BLAST</td>
+            <td>Tokyo Machine</td>
+            <td>Monstercat Uncaged Vol. 1</td>
+            <td>4:20<small>937</small></td>
+            <td>128</td>
+            <td>August 1, 2019</td>
+          </tr>
+          <tr>
+            <td>Blast from the Past</td>
+            <td>Stonebank</td>
+            <td>Monstercat 024 - Vanguard</td>
+            <td>5:52<small>575</small></td>
+            <td>128</td>
+            <td>September 9, 2020</td>
+          </tr>
+          <tr>
+            <td>Breakdown</td>
+            <td>Noisestorm</td>
+            <td>Monstercat 007 - Solace</td>
+            <td>4:49<small>097</small></td>
+            <td>140</td>
+            <td>September 13, 2019</td>
+          </tr>
+          <tr>
+            <td>Breakdown VIP</td>
+            <td>Noisestorm</td>
+            <td>Monstercat 018 - Frontier</td>
+            <td>3:54<small>448</small></td>
+            <td>174</td>
+            <td>September 13, 2019</td>
+          </tr>
+          <tr>
+            <td>Buzz Kill</td>
+            <td>PIXL</td>
+            <td>Monstercat 016 - Expedition</td>
+            <td>5:55<small>813</small></td>
+            <td>128</td>
+            <td>July 31, 2019</td>
+          </tr>
+          <tr>
+            <td>Caps On, Hats Off</td>
+            <td>Bossfight</td>
+            <td>Caps On, Hats Off</td>
+            <td>2:36<small>760</small></td>
+            <td>95</td>
+            <td>September 1, 2019</td>
+          </tr>
+          <tr>
+            <td>Captain Cool</td>
+            <td>Bossfight</td>
+            <td>Nice Catch Biggy!</td>
+            <td>3:19<small>026</small></td>
+            <td>145</td>
+            <td>September 3, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>Cascade</td>
+            <td>Kubbi</td>
+            <td>Ember</td>
+            <td>4:20<small>048</small></td>
+            <td>129</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>Cheat Codes</td>
+            <td>Nitro Fun</td>
+            <td>Monstercat 017 - Ascension</td>
+            <td>3:32<small>349</small></td>
+            <td>128</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr>
+            <td>Cheat Codes VIP</td>
+            <td>Nitro Fun</td>
+            <td>Monstercat Uncaged Vol. 4</td>
+            <td>3:24<small>486</small></td>
+            <td>128</td>
+            <td>June 27, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>Checkpoint</td>
+            <td>Nitro Fun &amp; Hyper Potions</td>
+            <td>Monstercat 027 - Cataclysm</td>
+            <td>3:43<small>895</small></td>
+            <td>140</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr>
+            <td>Children of the Night</td>
+            <td>Razihel</td>
+            <td>Monstercat 021 - Perspective</td>
+            <td>5:03<small>020</small></td>
+            <td>128</td>
+            <td>September 9, 2020</td>
+          </tr>
+          <tr>
+            <td>Chipland</td>
+            <td>nanobii</td>
+            <td>Monstercat 030 - Finale</td>
+            <td>3:10<small>458</small></td>
+            <td>174</td>
+            <td>August 30, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>Chip Zeal</td>
+            <td>Big Giant Circles</td>
+            <td>The Glory Days</td>
+            <td>3:29<small>920</small></td>
+            <td>170</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>Chronos</td>
+            <td>Danimal Cannon &amp; Zef</td>
+            <td>Parallel Processing</td>
+            <td>4:29<small>740</small></td>
+            <td>134</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr>
+            <td>Clash</td>
+            <td>Trip40</td>
+            <td>Ninety9lives 99: Press Start</td>
+            <td>3:40<small>447</small></td>
+            <td>128</td>
+            <td>August 29, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>Commando Steve</td>
+            <td>Bossfight</td>
+            <td>Caps On, Hats Off</td>
+            <td>3:26<small>942</small></td>
+            <td>145</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr>
+            <td>COOKIES</td>
+            <td>Tokyo Machine</td>
+            <td>Monstercat Uncaged Vol. 5</td>
+            <td>3:09<small>361</small></td>
+            <td>128</td>
+            <td>August 1, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>Cool Friends (Murtagh &amp; Veschell Remix)</td>
+            <td>Silva Hound</td>
+            <td>Wolf Beats Media: Energize 2015</td>
+            <td>3:59<small>072</small></td>
+            <td>115</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>Core</td>
+            <td>Zef</td>
+            <td>Ground Zero</td>
+            <td>4:33<small>371</small></td>
+            <td>145</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>Corrupted</td>
+            <td>Danimal Cannon &amp; Zef</td>
+            <td>Parallel Processing</td>
+            <td>6:16<small>737</small></td>
+            <td>139</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>Courtesy</td>
+            <td>Chipzel</td>
+            <td>Super Hexagon EP</td>
+            <td>3:11<small>164</small></td>
+            <td>130</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr>
+            <td>Crab Rave</td>
+            <td>Noisestorm</td>
+            <td>Monstercat Instinct Vol. 1</td>
+            <td>2:41<small>776</small></td>
+            <td>125</td>
+            <td>August 30, 2019</td>
+          </tr>
+          <tr>
+            <td>CRAZY</td>
+            <td>Tokyo Machine</td>
+            <td>Monstercat Uncaged Vol. 1</td>
+            <td>3:16<small>963</small></td>
+            <td>128</td>
+            <td>August 30, 2019</td>
+          </tr>
+          <tr>
+            <td>Creatures ov Deception</td>
+            <td>Rainbowdragoneyes</td>
+            <td>Single release</td>
+            <td>2:00<small>398</small></td>
+            <td>190</td>
+            <td>September 6, 2020</td>
+          </tr>
+          <tr class="original47">
+            <td>Cruise Control</td>
+            <td>Zef</td>
+            <td>Ground Zero</td>
+            <td>4:01<small>606</small></td>
+            <td>140</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr>
+            <td>Crystal Tokyo</td>
+            <td>FantomenK &amp; meganeko</td>
+            <td>Single release</td>
+            <td>5:28<small>124</small></td>
+            <td>174</td>
+            <td>June 27, 2019</td>
+          </tr>
+          <tr>
+            <td>Cybertron</td>
+            <td>Far Too Loud</td>
+            <td>Faster Than Light EP</td>
+            <td>6:09<small>475</small></td>
+            <td>128</td>
+            <td>September 5, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>Dance of the Incognizant</td>
+            <td>FantomenK</td>
+            <td>The Massacre EP</td>
+            <td>7:10<small>158</small></td>
+            <td>135</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr>
+            <td>Deadlocked</td>
+            <td>F-777</td>
+            <td>Smash It Vol.2</td>
+            <td>3:26<small>132</small></td>
+            <td>135</td>
+            <td>June 15, 2020</td>
+          </tr>
+          <tr>
+            <td>Delayed Friend Request</td>
+            <td>7 Minutes Dead</td>
+            <td>Monstercat 014 - Discovery</td>
+            <td>6:05<small>897</small></td>
+            <td>130</td>
+            <td>August 22, 2019</td>
+          </tr>
+          <tr>
+            <td>Destroid 1 Raise Your Fist</td>
+            <td>Excision, Downlink &amp; Space Laces</td>
+            <td>Destroid - The Invasion</td>
+            <td>4:42<small>775</small></td>
+            <td>174</td>
+            <td>August 25, 2019</td>
+          </tr>
+          <tr>
+            <td>Destroid 2 Wasteland</td>
+            <td>Excision, Downlink &amp; Space Laces</td>
+            <td>Destroid - The Invasion</td>
+            <td>4:38<small>857</small></td>
+            <td>145</td>
+            <td>September 3, 2019</td>
+          </tr>
+          <tr>
+            <td>Destroid 3 Crusaders</td>
+            <td>Excision, Downlink &amp; Space Laces</td>
+            <td>Destroid - The Invasion</td>
+            <td>5:29<small>168</small></td>
+            <td>140</td>
+            <td>April 4, 2020</td>
+          </tr>
+          <tr>
+            <td>Destroid 6 Put It Down</td>
+            <td>Excision &amp; Bassnectar</td>
+            <td>Destroid - The Invasion</td>
+            <td>3:27<small>647</small></td>
+            <td>176</td>
+            <td>September 3, 2019</td>
+          </tr>
+          <tr>
+            <td>Destroid 7 Bounce</td>
+            <td>Excision &amp; Space Laces</td>
+            <td>Destroid - The Invasion</td>
+            <td>4:21<small>250</small></td>
+            <td>140</td>
+            <td>October 29, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>Destroid 8 Annihilate</td>
+            <td>Excision &amp; Far Too Loud</td>
+            <td>Destroid - The Invasion</td>
+            <td>5:10<small>177</small></td>
+            <td>128</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>Destroid 10 Funk Hole</td>
+            <td>Excision &amp; Space Laces</td>
+            <td>Destroid - The Invasion</td>
+            <td>4:40<small>084</small></td>
+            <td>110</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr>
+            <td>Deviance<div style="font-size: 0.5em">Original Mix</div></td>
+            <td>Excision &amp; Datsik</td>
+            <td>X Rated</td>
+            <td>4:32<small>169</small></td>
+            <td>140</td>
+            <td>February 24, 2020</td>
+          </tr>
+          <tr>
+            <td>Deviance<div style="font-size: 0.5em">Dirtyphonics Remix</div></td>
+            <td>Excision &amp; Datsik</td>
+            <td>X Rated (The Remixes)</td>
+            <td>5:04<small>091</small></td>
+            <td>110</td>
+            <td>September 1, 2019</td>
+          </tr>
+          <tr>
+            <td>Dimensions</td>
+            <td>Hellberg</td>
+            <td>Monstercat 009 - Reunion</td>
+            <td>7:54<small>122</small></td>
+            <td>128</td>
+            <td>March 18, 2020</td>
+          </tr>
+          <tr>
+            <td>Disconnected</td>
+            <td>Pegboard Nerds</td>
+            <td>Monstercat 007 - Solace</td>
+            <td>4:02<small>050</small></td>
+            <td>128</td>
+            <td>September 13, 2019</td>
+          </tr>
+          <tr>
+            <td>Duality</td>
+            <td>Fractal</td>
+            <td>Monstercat 015 - Outlook</td>
+            <td>5:58<small>870</small></td>
+            <td>160</td>
+            <td>August 18, 2019</td>
+          </tr>
+          <tr>
+            <td>Dubwoofer Substep</td>
+            <td>Omnitica</td>
+            <td>Xenosphere EP</td>
+            <td>4:44<small>865</small></td>
+            <td>145</td>
+            <td>July 29, 2019</td>
+          </tr>
+          <tr>
+            <td>Eclipse</td>
+            <td>Noisestorm</td>
+            <td>Monstercat 014 - Discovery</td>
+            <td>5:37<small>606</small></td>
+            <td>128</td>
+            <td>August 1, 2019</td>
+          </tr>
+          <tr>
+            <td>Emergency</td>
+            <td>Pegboard Nerds</td>
+            <td>Monstercat 019 - Endeavour</td>
+            <td>4:13<small>204</small></td>
+            <td>128</td>
+            <td>January 12, 2020</td>
+          </tr>
+          <tr>
+            <td>Endgame</td>
+            <td>Muzzy</td>
+            <td>Monstercat 016 - Expedition</td>
+            <td>6:59<small>840</small></td>
+            <td>175</td>
+            <td>August 20, 2020</td>
+          </tr>
+          <tr>
+            <td>End is Near (Fire in the Hole VIP)</td>
+            <td>Pegboard Nerds</td>
+            <td>Pink Cloud EP</td>
+            <td>4:03<small>382</small></td>
+            <td>174</td>
+            <td>September 14, 2019</td>
+          </tr>
+          <tr>
+            <td>EPIC</td>
+            <td>Tokyo Machine</td>
+            <td>Monstercat Uncaged Vol. 6</td>
+            <td>3:38<small>618</small></td>
+            <td>128</td>
+            <td>October 7, 2019</td>
+          </tr>
+          <tr>
+            <td>Evolution</td>
+            <td>Chipzel</td>
+            <td>Spectra</td>
+            <td>5:37<small>893</small></td>
+            <td>146</td>
+            <td>August 1, 2019</td>
+          </tr>
+          <tr>
+            <td>Exoskelephone</td>
+            <td>Stereotronique</td>
+            <td>Monstercat 008 - Anniversary</td>
+            <td>5:53<small>123</small></td>
+            <td>128</td>
+            <td>August 15, 2019</td>
+          </tr>
+          <tr>
+            <td>Farbror Melker Fixar Fiskdamm (Fastbom Cover)</td>
+            <td>Bossfight</td>
+            <td>Caps On, Hats Off</td>
+            <td>3:23<small>389</small></td>
+            <td>169</td>
+            <td>August 26, 2019</td>
+          </tr>
+          <tr>
+            <td>Farewell</td>
+            <td>Hellberg &amp; TwoThirds</td>
+            <td>Monstercat 012 - Aftermath</td>
+            <td>7:54<small>409</small></td>
+            <td>128</td>
+            <td>March 18, 2020</td>
+          </tr>
+          <tr>
+            <td>Faster Than Light</td>
+            <td>Far Too Loud</td>
+            <td>Faster Than Light EP</td>
+            <td>5:02<small>785</small></td>
+            <td>128</td>
+            <td>July 27, 2019</td>
+          </tr>
+          <tr>
+            <td>FIGHT</td>
+            <td>Tokyo Machine</td>
+            <td>Monstercat 029 - Havoc</td>
+            <td>3:35<small>719</small></td>
+            <td>128</td>
+            <td>July 29, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>Final Boss</td>
+            <td>Nitro Fun</td>
+            <td>Monstercat 023 - Voyage</td>
+            <td>5:16<small>813</small></td>
+            <td>130</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr>
+            <td>Fingerbang</td>
+            <td>MDK</td>
+            <td>Rise</td>
+            <td>4:28<small>852</small></td>
+            <td>112</td>
+            <td>October 2, 2019</td>
+          </tr>
+          <tr>
+            <td>Fire in the Hole</td>
+            <td>Pegboard Nerds</td>
+            <td>Monstercat 009 - Reunion</td>
+            <td>3:47<small>160</small></td>
+            <td>108</td>
+            <td>September 13, 2019</td>
+          </tr>
+          <tr>
+            <td>Fire Vortex</td>
+            <td>Mitchell Claxton</td>
+            <td>Monstercat 013 - Awakening</td>
+            <td>7:27<small>320</small></td>
+            <td>136</td>
+            <td>February 24, 2020</td>
+          </tr>
+          <tr>
+            <td>FLAMES</td>
+            <td>Tokyo Machine</td>
+            <td>Single release</td>
+            <td>3:00<small>350</small></td>
+            <td>128</td>
+            <td>March 18, 2020</td>
+          </tr>
+          <tr>
+            <td>Flirt Flirt Oh It Hurts</td>
+            <td>Bossfight</td>
+            <td>Caps On, Hats Off</td>
+            <td>3:31<small>513</small></td>
+            <td>168</td>
+            <td>July 12, 2019</td>
+          </tr>
+          <tr>
+            <td>Flowers of Antimony</td>
+            <td>Rainbowdragoneyes</td>
+            <td>Single release</td>
+            <td>1:46<small>945</small></td>
+            <td>171</td>
+            <td>September 6, 2020</td>
+          </tr>
+          <tr class="original47">
+            <td>Focus</td>
+            <td>Chipzel</td>
+            <td>Super Hexagon EP</td>
+            <td>2:42<small>847</small></td>
+            <td>174</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr>
+            <td>Forged in Stars</td>
+            <td>Chipzel</td>
+            <td>Spectra</td>
+            <td>3:16<small>257</small></td>
+            <td>143</td>
+            <td>August 1, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>FOX</td>
+            <td>Shirobon</td>
+            <td>Dimensions EP</td>
+            <td>5:17<small>178</small></td>
+            <td>138</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>FTW</td>
+            <td>Lets Be Friends</td>
+            <td>Monstercat 016 - Expedition</td>
+            <td>4:17<small>671</small></td>
+            <td>130</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr>
+            <td>Fugitive</td>
+            <td>Case &amp; Point</td>
+            <td>Monstercat 021 - Perspective</td>
+            <td>4:45<small>388</small></td>
+            <td>125</td>
+            <td>September 9, 2020</td>
+          </tr>
+          <tr>
+            <td>Galactic Voyage</td>
+            <td>PIXL</td>
+            <td>Astrocat EP</td>
+            <td>6:36<small>016</small></td>
+            <td>125</td>
+            <td>May 22, 2020</td>
+          </tr>
+          <tr>
+            <td>GET UP</td>
+            <td>Tokyo Machine &amp; Guy Arthur</td>
+            <td>Single release</td>
+            <td>3:10<small>406</small></td>
+            <td>128</td>
+            <td>May 22, 2020</td>
+          </tr>
+          <tr>
+            <td>Get Up</td>
+            <td>Hellberg</td>
+            <td>Monstercat 012 - Aftermath</td>
+            <td>6:41<small>188</small></td>
+            <td>128</td>
+            <td>March 18, 2020</td>
+          </tr>
+          <tr>
+            <td>Glitch</td>
+            <td>Danimal Cannon &amp; Zef</td>
+            <td>Parallel Processing</td>
+            <td>5:47<small>480</small></td>
+            <td>158</td>
+            <td>July 27, 2019</td>
+          </tr>
+          <tr>
+            <td>Granite</td>
+            <td>Shirobon</td>
+            <td>Reject EP</td>
+            <td>2:31<small>954</small></td>
+            <td>128</td>
+            <td>August 2, 2020</td>
+          </tr>
+          <tr>
+            <td>Gravity</td>
+            <td>Stereotronique</td>
+            <td>Monstercat 007 - Solace</td>
+            <td>5:54<small>115</small></td>
+            <td>128</td>
+            <td>August 15, 2019</td>
+          </tr>
+          <tr>
+            <td>Grind</td>
+            <td>Stereotronique</td>
+            <td>Monstercat 012 - Aftermath</td>
+            <td>5:15<small>376</small></td>
+            <td>128</td>
+            <td>July 16, 2019</td>
+          </tr>
+          <tr>
+            <td>Halcyon</td>
+            <td>Au5 &amp; Fractal</td>
+            <td>Monstercat 013 - Awakening</td>
+            <td>6:10<small>834</small></td>
+            <td>92</td>
+            <td>July 27, 2019</td>
+          </tr>
+          <tr>
+            <td>Harmony</td>
+            <td>Vicetone</td>
+            <td>Monstercat 011 - Revolution</td>
+            <td>6:17<small>104</small></td>
+            <td>128</td>
+            <td>July 5, 2020</td>
+          </tr>
+          <tr>
+            <td>Heat</td>
+            <td>Vicetone</td>
+            <td>Single release</td>
+            <td>5:50<small>041</small></td>
+            <td>128</td>
+            <td>July 16, 2020</td>
+          </tr>
+          <tr>
+            <td>Heist</td>
+            <td>Noisestorm</td>
+            <td>Monstercat 024 - Vanguard</td>
+            <td>3:02<small>204</small></td>
+            <td>170</td>
+            <td>August 1, 2019</td>
+          </tr>
+          <tr>
+            <td>Here It Comes</td>
+            <td>Pegboard Nerds</td>
+            <td>Monstercat 018 - Frontier</td>
+            <td>3:32<small>088</small></td>
+            <td>150</td>
+            <td>August 29, 2019</td>
+          </tr>
+          <tr>
+            <td>Here We Go</td>
+            <td>Bassnectar</td>
+            <td>Timestretch</td>
+            <td>6:46<small>961</small></td>
+            <td>176</td>
+            <td>February 24, 2020</td>
+          </tr>
+          <tr>
+            <td>Highscore</td>
+            <td>Panda Eyes &amp; Teminite</td>
+            <td>Kiko</td>
+            <td>4:20<small>832</small></td>
+            <td>110</td>
+            <td>July 30, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>Houston</td>
+            <td>Big Giant Circles</td>
+            <td>The Glory Days</td>
+            <td>5:23<small>500</small></td>
+            <td>130</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>HYPE</td>
+            <td>Tokyo Machine</td>
+            <td>Monstercat 030 - Finale</td>
+            <td>3:02<small>909</small></td>
+            <td>128</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr>
+            <td>I&apos;m being Reelistic</td>
+            <td>Omnitica</td>
+            <td>Omniverse EP</td>
+            <td>3:50<small>687</small></td>
+            <td>115</td>
+            <td>August 1, 2019</td>
+          </tr>
+          <tr>
+            <td>I Call It Progstep</td>
+            <td>Omnitica</td>
+            <td>Reupload</td>
+            <td>3:55<small>624</small></td>
+            <td>100</td>
+            <td>August 30, 2019</td>
+          </tr>
+          <tr>
+            <td>In the Halls of the Usurper</td>
+            <td>Kubbi</td>
+            <td>Single release</td>
+            <td>2:10<small>482</small></td>
+            <td>155</td>
+            <td>September 6, 2020</td>
+          </tr>
+          <tr class="original47">
+            <td>Into the Zone</td>
+            <td>Shirobon</td>
+            <td>The Arcade Dream</td>
+            <td>2:41<small>462</small></td>
+            <td>122</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr>
+            <td>Ism</td>
+            <td>Savant</td>
+            <td>ISM</td>
+            <td>5:23<small>631</small></td>
+            <td>151</td>
+            <td>February 16, 2020</td>
+          </tr>
+          <tr>
+            <td>It&apos;s Pronounced Omnitica</td>
+            <td>Omnitica</td>
+            <td>Reupload</td>
+            <td>5:00<small>225</small></td>
+            <td>128</td>
+            <td>August 12, 2019</td>
+          </tr>
+          <tr>
+            <td>Jack Russel</td>
+            <td>Bossfight</td>
+            <td>Caps On, Hats Off</td>
+            <td>3:21<small>691</small></td>
+            <td>134</td>
+            <td>July 12, 2019</td>
+          </tr>
+          <tr>
+            <td>JOURNEY</td>
+            <td>Tokyo Machine</td>
+            <td>Monstercat Uncaged Vol. 9</td>
+            <td>3:59<small>631</small></td>
+            <td>128</td>
+            <td>May 22, 2020</td>
+          </tr>
+          <tr>
+            <td>Junction Seven</td>
+            <td>Muzzy</td>
+            <td>F Minor Factory EP</td>
+            <td>5:05<small>240</small></td>
+            <td>175</td>
+            <td>December 23, 2019</td>
+          </tr>
+          <tr>
+            <td>La Danse Macabre</td>
+            <td>Shirobon</td>
+            <td>Single release</td>
+            <td>2:00<small>085</small></td>
+            <td>128</td>
+            <td>September 6, 2020</td>
+          </tr>
+          <tr>
+            <td>Leaving Leafwood Forest</td>
+            <td>Bossfight</td>
+            <td>Caps On, Hats Off</td>
+            <td>3:24<small>591</small></td>
+            <td>125</td>
+            <td>September 3, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>Legacy</td>
+            <td>Danimal Cannon &amp; Zef</td>
+            <td>Parallel Processing</td>
+            <td>5:17<small>074</small></td>
+            <td>114</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr>
+            <td>Let It Roar</td>
+            <td>Noisestorm</td>
+            <td>Monstercat 005 - Evolution</td>
+            <td>5:46<small>409</small></td>
+            <td>140</td>
+            <td>September 7, 2019</td>
+          </tr>
+          <tr>
+            <td>Lightspeed</td>
+            <td>MDK &amp; Sterrezo</td>
+            <td>Single release</td>
+            <td>4:08<small>895</small></td>
+            <td>158</td>
+            <td>September 12, 2020</td>
+          </tr>
+          <tr>
+            <td>Light Sticks</td>
+            <td>Far Too Loud</td>
+            <td>Faster Than Light EP</td>
+            <td>5:19<small>843</small></td>
+            <td>128</td>
+            <td>September 18, 2019</td>
+          </tr>
+          <tr>
+            <td>Livewire</td>
+            <td>Zef</td>
+            <td>Ground Zero</td>
+            <td>5:42<small>413</small></td>
+            <td>130</td>
+            <td>March 27, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>Logic Gatekeeper</td>
+            <td>Danimal Cannon &amp; Zef</td>
+            <td>Parallel Processing</td>
+            <td>4:58<small>736</small></td>
+            <td>163</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>Long Live the New Fresh</td>
+            <td>Danimal Cannon</td>
+            <td>Lunaria</td>
+            <td>4:27<small>049</small></td>
+            <td>127</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr>
+            <td>Lycanthropy</td>
+            <td>Cardi</td>
+            <td>Single release</td>
+            <td>4:55<small>262</small></td>
+            <td>150</td>
+            <td>September 6, 2020</td>
+          </tr>
+          <tr class="original47">
+            <td>Milky Ways</td>
+            <td>Bossfight</td>
+            <td>Caps On, Hats Off</td>
+            <td>3:07<small>611</small></td>
+            <td>182</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr>
+            <td>MOSHI</td>
+            <td>Pegboard Nerds &amp; Tokyo Machine</td>
+            <td>Monstercat 8-Year Anniversary</td>
+            <td>3:35<small>170</small></td>
+            <td>128</td>
+            <td>July 15, 2019</td>
+          </tr>
+          <tr>
+            <td>Nemesis</td>
+            <td>Rogue</td>
+            <td>Monstercat 029 - Havoc</td>
+            <td>4:20<small>284</small></td>
+            <td>107</td>
+            <td>February 14, 2020</td>
+          </tr>
+          <tr class="original47">
+            <td>New Game</td>
+            <td>Nitro Fun</td>
+            <td>Monstercat 016 - Expedition</td>
+            <td>4:19<small>317</small></td>
+            <td>128</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr>
+            <td>No Holding On<div style="font-size: 0.5em">feat. Holly Drummond</div></td>
+            <td>Stereotronique</td>
+            <td>Monstercat 014 - Discovery</td>
+            <td>7:28<small>104</small></td>
+            <td>128</td>
+            <td>November 29, 2019</td>
+          </tr>
+          <tr>
+            <td>No Party Like a Mojang Party</td>
+            <td>Big Giant Circles</td>
+            <td>The Glory Days</td>
+            <td>5:51<small>529</small></td>
+            <td>125</td>
+            <td>July 12, 2019</td>
+          </tr>
+          <tr>
+            <td>OKAY</td>
+            <td>Tokyo Machine</td>
+            <td>Monstercat 028 - Uproar</td>
+            <td>3:07<small>141</small></td>
+            <td>128</td>
+            <td>August 1, 2019</td>
+          </tr>
+          <tr>
+            <td>Omniverse</td>
+            <td>Omnitica</td>
+            <td>Omniverse EP</td>
+            <td>3:28<small>718</small></td>
+            <td>174</td>
+            <td>August 30, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>Once Again</td>
+            <td>Tristam</td>
+            <td>Monstercat 016 - Expedition</td>
+            <td>3:46<small>351</small></td>
+            <td>110</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>On the Run</td>
+            <td>Shirobon</td>
+            <td>Dimensions EP</td>
+            <td>4:28<small>564</small></td>
+            <td>160</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr>
+            <td>Opia</td>
+            <td>Shirobon</td>
+            <td>Single release</td>
+            <td>3:09<small>335</small></td>
+            <td>170</td>
+            <td>August 30, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>Otis</td>
+            <td>Chipzel</td>
+            <td>Super Hexagon EP</td>
+            <td>2:36<small>081</small></td>
+            <td>135</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>Paper Dolls</td>
+            <td>Shawn Daley</td>
+            <td>Single release</td>
+            <td>2:55<small>777</small></td>
+            <td>200</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>Parallel Processing</td>
+            <td>Danimal Cannon &amp; Zef</td>
+            <td>Parallel Processing</td>
+            <td>8:29<small>022</small></td>
+            <td>109</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr>
+            <td>PARTY</td>
+            <td>Tokyo Machine</td>
+            <td>Monstercat 028 - Uproar</td>
+            <td>3:39<small>480</small></td>
+            <td>128</td>
+            <td>July 30, 2019</td>
+          </tr>
+          <tr>
+            <td>Partyt A&#776;r Iga&#778;ng!</td>
+            <td>Bossfight</td>
+            <td>Caps On, Hats Off</td>
+            <td>2:57<small>136</small></td>
+            <td>127</td>
+            <td>July 12, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>Peer Gynt</td>
+            <td>cYsmix</td>
+            <td>Single release</td>
+            <td>2:21<small>557</small></td>
+            <td>142</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr>
+            <td>Pirate Manners</td>
+            <td>Bossfight</td>
+            <td>Caps On, Hats Off</td>
+            <td>3:02<small>151</small></td>
+            <td>115</td>
+            <td>July 12, 2019</td>
+          </tr>
+          <tr>
+            <td>PIXEL</td>
+            <td>Tokyo Machine</td>
+            <td>Monstercat 030 - Finale</td>
+            <td>3:18<small>373</small></td>
+            <td>128</td>
+            <td>August 1, 2019</td>
+          </tr>
+          <tr>
+            <td>PLAY</td>
+            <td>Tokyo Machine</td>
+            <td>Monstercat Uncaged Vol. 7</td>
+            <td>3:04<small>111</small></td>
+            <td>128</td>
+            <td>July 29, 2019</td>
+          </tr>
+          <tr>
+            <td>Play It Loud</td>
+            <td>Far Too Loud</td>
+            <td>Play It Loud EP</td>
+            <td>7:07<small>154</small></td>
+            <td>130</td>
+            <td>September 11, 2019</td>
+          </tr>
+          <tr>
+            <td>Play It Loud<div style="font-size: 0.5em">Broken Robot Mix</div></td>
+            <td>Far Too Loud</td>
+            <td>Play It Loud EP</td>
+            <td>6:53<small>204</small></td>
+            <td>136</td>
+            <td>October 10, 2019</td>
+          </tr>
+          <tr>
+            <td>Pyro</td>
+            <td>Dread Pitt</td>
+            <td>Single release</td>
+            <td>3:36<small>058</small></td>
+            <td>145</td>
+            <td>August 21, 2019</td>
+          </tr>
+          <tr>
+            <td>Quake</td>
+            <td>Stereotronique</td>
+            <td>Monstercat 013 - Awakening</td>
+            <td>5:41<small>498</small></td>
+            <td>128</td>
+            <td>July 12, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>Rainbow Road</td>
+            <td>nanobii</td>
+            <td>Monstercat 016 - Expedition</td>
+            <td>2:53<small>061</small></td>
+            <td>170</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr>
+            <td>Rally the Troops</td>
+            <td>Teminite &amp; PsoGnar</td>
+            <td>Rally the Troops EP</td>
+            <td>6:07<small>935</small></td>
+            <td>150</td>
+            <td>August 23, 2020</td>
+          </tr>
+          <tr>
+            <td>Rat Twist</td>
+            <td>PIXL</td>
+            <td>Monstercat 016 - Expedition</td>
+            <td>4:00<small>117</small></td>
+            <td>128</td>
+            <td>August 1, 2019</td>
+          </tr>
+          <tr>
+            <td>Razor Sharp</td>
+            <td>Pegboard Nerds &amp; Tristam</td>
+            <td>Monstercat 013 - Awakening</td>
+            <td>4:41<small>808</small></td>
+            <td>110</td>
+            <td>July 30, 2019</td>
+          </tr>
+          <tr>
+            <td>Renegade</td>
+            <td>Noisestorm</td>
+            <td>Monstercat 005 - Evolution</td>
+            <td>6:10<small>546</small></td>
+            <td>127</td>
+            <td>July 30, 2019</td>
+          </tr>
+          <tr>
+            <td>Renzokuken</td>
+            <td>Razihel</td>
+            <td>Monstercat 016 - Expedition</td>
+            <td>7:11<small>491</small></td>
+            <td>128</td>
+            <td>August 19, 2020</td>
+          </tr>
+          <tr>
+            <td>Rhapsody</td>
+            <td>Danimal Cannon &amp; Zef</td>
+            <td>Parallel Processing</td>
+            <td>6:13<small>054</small></td>
+            <td>104</td>
+            <td>July 29, 2019</td>
+          </tr>
+          <tr>
+            <td>Rhusma</td>
+            <td>Stereotronique &amp; Northend</td>
+            <td>Monstercat 013 - Awakening</td>
+            <td>5:52<small>835</small></td>
+            <td>128</td>
+            <td>February 1, 2020</td>
+          </tr>
+          <tr>
+            <td>Rinse Out</td>
+            <td>Stereotronique</td>
+            <td>Single release</td>
+            <td>5:43<small>353</small></td>
+            <td>128</td>
+            <td>October 26, 2019</td>
+          </tr>
+          <tr>
+            <td>Rocket</td>
+            <td>Stereotronique</td>
+            <td>Single release</td>
+            <td>6:28<small>257</small></td>
+            <td>128</td>
+            <td>September 2, 2019</td>
+          </tr>
+          <tr>
+            <td>ROCK IT</td>
+            <td>Tokyo Machine</td>
+            <td>Rocket League x Monstercat Vol. 1</td>
+            <td>3:11<small>242</small></td>
+            <td>128</td>
+            <td>August 1, 2019</td>
+          </tr>
+          <tr>
+            <td>ROCK IT (VIP)</td>
+            <td>Tokyo Machine</td>
+            <td>Single release</td>
+            <td>3:15<small>135</small></td>
+            <td>128</td>
+            <td>September 9, 2020</td>
+          </tr>
+          <tr>
+            <td>Rocktronik</td>
+            <td>Pegboard Nerds</td>
+            <td>Monstercat 008 - Anniversary</td>
+            <td>5:08<small>166</small></td>
+            <td>130</td>
+            <td>June 22, 2019</td>
+          </tr>
+          <tr>
+            <td>SAIKOU</td>
+            <td>Tokyo Machine</td>
+            <td>Monstercat Uncaged Vol. 7</td>
+            <td>2:55<small>412</small></td>
+            <td>128</td>
+            <td>July 29, 2019</td>
+          </tr>
+          <tr>
+            <td>Sentinel</td>
+            <td>Noisestorm</td>
+            <td>Monstercat 019 - Endeavour</td>
+            <td>5:28<small>437</small></td>
+            <td>130</td>
+            <td>August 1, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>Sevcon</td>
+            <td>Big Giant Circles</td>
+            <td>The Glory Days</td>
+            <td>4:34<small>755</small></td>
+            <td>133</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr>
+            <td>Sexy Beast</td>
+            <td>Stereotronique</td>
+            <td>Monstercat 010 - Conquest</td>
+            <td>5:15<small>350</small></td>
+            <td>128</td>
+            <td>August 15, 2019</td>
+          </tr>
+          <tr>
+            <td>Sidewinder</td>
+            <td>7 Minutes Dead</td>
+            <td>Monstercat 013 - Awakening</td>
+            <td>6:46<small>491</small></td>
+            <td>130</td>
+            <td>August 1, 2019</td>
+          </tr>
+          <tr>
+            <td>So Far Away</td>
+            <td>Nitro Fun</td>
+            <td>Monstercat Instinct Vol. 4</td>
+            <td>3:39<small>297</small></td>
+            <td>125</td>
+            <td>July 12, 2019</td>
+          </tr>
+          <tr>
+            <td>Space Invaders</td>
+            <td>Teminite &amp; MDK</td>
+            <td>Single release</td>
+            <td>5:48<small>108</small></td>
+            <td>128</td>
+            <td>July 10, 2020</td>
+          </tr>
+          <tr>
+            <td>Spection</td>
+            <td>Fractal</td>
+            <td>Monstercat 016 - Expedition</td>
+            <td>4:52<small>362</small></td>
+            <td>170</td>
+            <td>August 18, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>Spectra</td>
+            <td>Chipzel</td>
+            <td>Spectra</td>
+            <td>4:00<small>117</small></td>
+            <td>130</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr>
+            <td>SPOOKY</td>
+            <td>Tokyo Machine</td>
+            <td>Monstercat Uncaged Vol. 3</td>
+            <td>3:49<small>799</small></td>
+            <td>128</td>
+            <td>July 30, 2019</td>
+          </tr>
+          <tr>
+            <td>Starfish</td>
+            <td>Savant</td>
+            <td>ISM</td>
+            <td>5:01<small>923</small></td>
+            <td>101</td>
+            <td>February 16, 2020</td>
+          </tr>
+          <tr>
+            <td>Starship Showdown<div style="font-size: 0.5em">feat. Christian Carlsson</div></td>
+            <td>Bossfight</td>
+            <td>Caps On, Hats Off</td>
+            <td>4:08<small>293</small></td>
+            <td>147</td>
+            <td>August 23, 2019</td>
+          </tr>
+          <tr>
+            <td>Steampunk Warlord</td>
+            <td>Bossfight</td>
+            <td>Caps On, Hats Off</td>
+            <td>3:34<small>099</small></td>
+            <td>157</td>
+            <td>August 26, 2019</td>
+          </tr>
+          <tr>
+            <td>Stock &amp; Pull</td>
+            <td>Stereotronique</td>
+            <td>Monstercat 011 - Revolution</td>
+            <td>5:51<small>007</small></td>
+            <td>128</td>
+            <td>July 16, 2019</td>
+          </tr>
+          <tr>
+            <td>Strike the Earth</td>
+            <td>Danimal Cannon</td>
+            <td>Single release</td>
+            <td>3:36<small>111</small></td>
+            <td>174</td>
+            <td>September 6, 2020</td>
+          </tr>
+          <tr class="original47">
+            <td>Sugar Rush</td>
+            <td>PIXL</td>
+            <td>Monstercat 014 - Discovery</td>
+            <td>4:44<small>865</small></td>
+            <td>128</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr>
+            <td>Surface Tension</td>
+            <td>Teminite &amp; PsoGnar</td>
+            <td>Rally the Troops EP</td>
+            <td>5:41<small>080</small></td>
+            <td>174</td>
+            <td>June 28, 2020</td>
+          </tr>
+          <tr>
+            <td>Surge</td>
+            <td>Noisestorm</td>
+            <td>Monstercat 017 - Ascension</td>
+            <td>3:56<small>930</small></td>
+            <td>128</td>
+            <td>August 1, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>Tension</td>
+            <td>Zef</td>
+            <td>Ground Zero</td>
+            <td>4:58<small>109</small></td>
+            <td>143</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>Termination Shock</td>
+            <td>Sabrepulse</td>
+            <td>Digital Disconnect</td>
+            <td>4:50<small>272</small></td>
+            <td>126</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>The Art of War</td>
+            <td>Chipzel</td>
+            <td>Spectra</td>
+            <td>3:13<small>280</small></td>
+            <td>174</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr>
+            <td>The Cave, The Treasure</td>
+            <td>Bossfight</td>
+            <td>Caps On, Hats Off</td>
+            <td>3:27<small>307</small></td>
+            <td>181</td>
+            <td>July 12, 2019</td>
+          </tr>
+          <tr>
+            <td>The Devil&apos;s Den</td>
+            <td>Skrillex &amp; Wolfgang Gartner</td>
+            <td>Bangarang</td>
+            <td>4:53<small>093</small></td>
+            <td>128</td>
+            <td>February 18, 2020</td>
+          </tr>
+          <tr>
+            <td>The Escape</td>
+            <td>PIXL</td>
+            <td>Monstercat 020 - Altitude</td>
+            <td>5:03<small>673</small></td>
+            <td>128</td>
+            <td>August 1, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>The Lunar Whale</td>
+            <td>Danimal Cannon &amp; Zef</td>
+            <td>Parallel Processing</td>
+            <td>4:35<small>826</small></td>
+            <td>109</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr>
+            <td>The Maze of Mayonnaise</td>
+            <td>Bossfight</td>
+            <td>Caps On, Hats Off</td>
+            <td>3:11<small>190</small></td>
+            <td>135</td>
+            <td>July 12, 2019</td>
+          </tr>
+          <tr>
+            <td>This Is It</td>
+            <td>Rogue</td>
+            <td>Monstercat 006 - Embrace</td>
+            <td>5:33<small>792</small></td>
+            <td>108</td>
+            <td>January 12, 2020</td>
+          </tr>
+          <tr>
+            <td>This Time</td>
+            <td>PIXL</td>
+            <td>Monstercat 023 - Voyage</td>
+            <td>4:32<small>378</small></td>
+            <td>128</td>
+            <td>August 1, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>Till It&apos;s Over</td>
+            <td>Tristam</td>
+            <td>Monstercat 016 - Expedition</td>
+            <td>4:30<small>863</small></td>
+            <td>110</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr>
+            <td>Time Goes By</td>
+            <td>Nitro Fun</td>
+            <td>Monstercat Uncaged Vol. 5</td>
+            <td>3:26<small>315</small></td>
+            <td>128</td>
+            <td>July 30, 2019</td>
+          </tr>
+          <tr>
+            <td>Time Lapse</td>
+            <td>TheFatRat</td>
+            <td>Single release</td>
+            <td>3:05<small>391</small></td>
+            <td>127</td>
+            <td>July 30, 2019</td>
+          </tr>
+          <tr>
+            <td>Timewarp</td>
+            <td>Noisestorm</td>
+            <td>Monstercat 009 - Reunion</td>
+            <td>5:02<small>419</small></td>
+            <td>128</td>
+            <td>August 22, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>Tokyo Skies</td>
+            <td>Chipzel</td>
+            <td>Spectra</td>
+            <td>3:52<small>463</small></td>
+            <td>126</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr>
+            <td>Tonight<div style="font-size: 0.5em">feat. Danyka Nadeau</div></td>
+            <td>Stereotronique &amp; Sebastian Ivarsson</td>
+            <td>Monstercat 012 - Aftermath</td>
+            <td>6:45<small>446</small></td>
+            <td>128</td>
+            <td>November 29, 2019</td>
+          </tr>
+          <tr>
+            <td>To the Stars</td>
+            <td>Braken</td>
+            <td>Monstercat 015 - Outlook</td>
+            <td>3:22<small>396</small></td>
+            <td>175</td>
+            <td>September 8, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>Try This</td>
+            <td>Pegboard Nerds</td>
+            <td>Monstercat 022 - Contact</td>
+            <td>3:49<small>694</small></td>
+            <td>174</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr>
+            <td>TURBO</td>
+            <td>Tokyo Machine</td>
+            <td>Monstercat Uncaged Vol. 8</td>
+            <td>2:50<small>997</small></td>
+            <td>128</td>
+            <td>November 1, 2019</td>
+          </tr>
+          <tr>
+            <td>Turbo Penguin</td>
+            <td>Sound Remedy &amp; Nitro Fun</td>
+            <td>Monstercat 020 - Altitude</td>
+            <td>3:31<small>356</small></td>
+            <td>128</td>
+            <td>August 1, 2019</td>
+          </tr>
+          <tr>
+            <td>Ultimatum</td>
+            <td>Rogue</td>
+            <td>Monstercat 024 - Vanguard</td>
+            <td>4:15<small>216</small></td>
+            <td>173</td>
+            <td>July 22, 2020</td>
+          </tr>
+          <tr class="original47">
+            <td>Unlocked</td>
+            <td>Plesco</td>
+            <td>Wolf Beats Media: Activate 2015</td>
+            <td>3:47<small>683</small></td>
+            <td>128</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr class="original47">
+            <td>Vindicate Me</td>
+            <td>Big Giant Circles</td>
+            <td>The Glory Days</td>
+            <td>3:26<small>471</small></td>
+            <td>100</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr>
+            <td>Virus</td>
+            <td>Excision</td>
+            <td>Virus</td>
+            <td>5:31<small>885</small></td>
+            <td>174</td>
+            <td>May 25, 2020</td>
+          </tr>
+          <tr class="original47">
+            <td>Wicked</td>
+            <td>Avenza</td>
+            <td>Single release</td>
+            <td>3:41<small>126</small></td>
+            <td>100</td>
+            <td>March 17, 2019</td>
+          </tr>
+          <tr>
+            <td>Wormhole</td>
+            <td>Far Too Loud</td>
+            <td>Wormhole EP</td>
+            <td>3:40<small>395</small></td>
+            <td>128</td>
+            <td>August 30, 2019</td>
+          </tr>
+          <tr>
+            <td>Yo! Ho! And a Bottle of Bass!</td>
+            <td>Omnitica</td>
+            <td>Reupload</td>
+            <td>6:24<small>130</small></td>
+            <td>145</td>
+            <td>July 24, 2019</td>
+          </tr>
+        </table>
+      </div>
+    </div>
     <span id="title">Loading...</span>
     <audio src="" id="audio"></audio>
     <span style="position: absolute; top: 8px; right: 8px; width: 200px; font: 16px Roboto; text-align: center;">
@@ -1171,6 +2794,9 @@
     var modal3 = document.getElementById("playCountsModal");
     var btn3 = document.getElementById("playCountsBtn");
     var span3 = document.getElementsByClassName("close")[3];
+    var modal4 = document.getElementById("musicInfoModal");
+    var btn4 = document.getElementById("musicInfoBtn");
+    var span4 = document.getElementsByClassName("close")[4];
     var end_modal = document.getElementById("endModal");
     var end_span = document.getElementsByClassName("close")[0];
     function endMessage(message) {
@@ -1185,6 +2811,12 @@
       switch (cSong) {
         case "Blast from the Past":
           artist2 = "Stonebank";
+          break;
+        case "Badland":
+          artist2 = "Boom Kitty";
+          break;
+        case "Lightspeed":
+          artist2 = "MDK & Sterrezo";
           break;
         case "Fugitive":
           artist2 = "Case & Point";
@@ -1612,6 +3244,20 @@
         modal3.getElementsByClassName("modal-content")[0].classList.remove("moveout");
       }, 500);
     }
+    btn4.onclick = function() {
+      modal4.style.display = "block";
+      modal4.style.opacity = 1;
+      modal4.getElementsByClassName("modal-content")[0].classList.add("movein");
+    }
+    span4.onclick = function() {
+      modal4.style.opacity = 0;
+      modal4.getElementsByClassName("modal-content")[0].classList.remove("movein");
+      modal4.getElementsByClassName("modal-content")[0].classList.add("moveout");
+      setTimeout(function() {
+        modal4.style.display = "none";
+        modal4.getElementsByClassName("modal-content")[0].classList.remove("moveout");
+      }, 500);
+    }
     window.onclick = function(event) {
       if (event.target == modal) {
         modal.style.opacity = 0;
@@ -1644,6 +3290,14 @@
         setTimeout(function() {
           modal3.style.display = "none";
           modal3.getElementsByClassName("modal-content")[0].classList.remove("moveout");
+        }, 500);
+      } else if (event.target == modal4) {
+        modal4.style.opacity = 0;
+        modal4.getElementsByClassName("modal-content")[0].classList.remove("movein");
+        modal4.getElementsByClassName("modal-content")[0].classList.add("moveout");
+        setTimeout(function() {
+          modal4.style.display = "none";
+          modal4.getElementsByClassName("modal-content")[0].classList.remove("moveout");
         }, 500);
       }
     }
@@ -1761,6 +3415,12 @@
         switch (song) {
           case "Blast from the Past":
             artist = "Stonebank";
+            break;
+          case "Badland":
+            artist = "Boom Kitty";
+            break;
+          case "Lightspeed":
+            artist = "MDK & Sterrezo";
             break;
           case "Fugitive":
             artist = "Case & Point";
@@ -2096,6 +3756,8 @@
         switch (song) {
           case "": hasLyrics = false; break;
           case "Blast from the Past": hasLyrics = false; break;
+          case "Badland": hasLyrics = false; break;
+          case "Lightspeed": hasLyrics = false; break;
           case "Children of the Night": hasLyrics = false; break;
           case "Fugitive": hasLyrics = false; break;
           case "ROCK IT (VIP)": hasLyrics = false; break;
@@ -2423,7 +4085,8 @@
         "In the Halls of the Usurper"
       ];
       var helpers2 = [
-        "Blast from the Past", "Children of the Night", "Fugitive", "ROCK IT (VIP)"
+        "Blast from the Past", "Children of the Night", "Fugitive", "ROCK IT (VIP)",
+        "Badland", "Lightspeed"
       ];
       var isHelper = false;
       var isHelper2 = false;
@@ -2744,6 +4407,7 @@
         case "Play It Loud":
         case "Play It Loud (Broken Robot Mix)":
         case "Granite":
+        case "Lightspeed":
           colors = ["#ffffff"];
           style = styles.single;
           barcolor = 23;
@@ -2767,6 +4431,7 @@
         case "No Party Like a Mojang Party":
         case "Sevcon":
         case "Bad Intentions":
+        case "Badland":
           colors = ["#ff0000"];
           style = styles.single;
           barcolor = 27;
@@ -3003,124 +4668,131 @@
       }
       changeFavicon("https://marblelover003.github.io/Visimusic/VisimusicFavicons/f" + ("0" + barcolor).slice(-2) + ".png");
       switch (song) {
-        case "Blast from the Past": length = "5:52.575"; bpm = 128; break;
-        case "Children of the Night": length = "5:03.020"; bpm = 128; break;
-        case "Fugitive": length = "4:45.388"; bpm = 125; break;
-        case "ROCK IT (VIP)": length = "3:15.135"; bpm = 128; break;
-        case "Rally the Troops": length = "6:07.935"; bpm = 150; break;
-        case "Heat": length = "5:50.041"; bpm = 128; break;
-        case "Lycanthropy": length = "4:55.262"; bpm = 150; break;
-        case "Strike the Earth": length = "3:36.111"; bpm = 174; break;
-        case "Flowers of Antimony": length = "1:46.945"; bpm = 171; break;
-        case "Creatures ov Deception": length = "2:00.398"; bpm = 190; break;
-        case "La Danse Macabre": length = "2:00.085"; bpm = 128; break;
-        case "In the Halls of the Usurper": length = "2:10.482"; bpm = 155; break;
-        case "Bad Intentions": length = "4:52.598"; bpm = 128; break;
-        case "Surface Tension": length = "5:41.080"; bpm = 174; break;
-        case "JOURNEY": length = "3:59.631"; bpm = 128; break;
-        case "GET UP": length = "3:10.406"; bpm = 128; break;
-        case "Galactic Voyage": length = "6:36.016"; bpm = 125; break;
-        case "BEWM": length = "3:30.534"; bpm = 128; break;
-        case "Destroid 3 Crusaders": length = "5:29.168"; bpm = 140; break;
-        case "Get Up": length = "6:41.188"; bpm = 128; break;
-        case "Dimensions": length = "7:54.122"; bpm = 128; break;
-        case "Farewell": length = "7:54.409"; bpm = 128; break;
-        case "FLAMES": length = "3:00.350"; bpm = 128; break;
-        case "Emergency": length = "4:13.204"; bpm = 128; break;
-        case "Atlantic": length = "4:23.471"; bpm = 130; break;
-        case "This Is It": length = "5:33.792"; bpm = 108; break;
-        case "TURBO": length = "2:50.997"; bpm = 128; break;
-        case "Destroid 7 - Bounce": length = "4:21.250"; bpm = 140; break;
-        case "Rinse Out": length = "5:43.353"; bpm = 128; break;
-        case "Fingerbang": length = "4:28.852"; bpm = 112; break;
-        case "Breakdown": length = "4:49.097"; bpm = 140; break;
-        case "Breakdown VIP": length = "3:54.448"; bpm = 174; break;
-        case "Disconnected": length = "4:02.050"; bpm = 128; break;
-        case "Fire in the Hole": length = "3:47.160"; bpm = 108; break;
-        case "Backlash": length = "5:22.115"; bpm = 140; break;
-        case "BLAST": length = "4:20.937"; bpm = 128; break;
-        case "COOKIES": length = "3:09.361"; bpm = 128; break;
-        case "Eclipse": length = "5:37.606"; bpm = 128; break;
-        case "Evolution": length = "5:37.893"; bpm = 146; break;
-        case "Forged in Stars": length = "3:16.257"; bpm = 143; break;
-        case "Gravity": length = "5:54.115"; bpm = 128; break;
-        case "Heist": length = "3:02.204"; bpm = 170; break;
-        case "I\'m being Reelistic": length = "3:50.687"; bpm = 115; break;
-        case "OKAY": length = "3:07.141"; bpm = 128; break;
-        case "PIXEL": length = "3:18.373"; bpm = 128; break;
-        case "Rat Twist": length = "4:00.117"; bpm = 128; break;
-        case "ROCK IT": length = "3:11.242"; bpm = 128; break;
-        case "Sentinel": length = "5:28.437"; bpm = 130; break;
-        case "Sidewinder": length = "6:46.491"; bpm = 130; break;
-        case "Surge": length = "3:56.930"; bpm = 128; break;
-        case "The Escape": length = "5:03.673"; bpm = 128; break;
-        case "This Time": length = "4:32.378"; bpm = 128; break;
-        case "Turbo Penguin": length = "3:31.356"; bpm = 128; break;
         case "Airwaves": length = "4:42.148"; bpm = 128; break;
         case "Astrocat": length = "5:21.619"; bpm = 130; break;
+        case "Atlantic": length = "4:23.471"; bpm = 130; break;
+        case "Backlash": length = "5:22.115"; bpm = 140; break;
+        case "BAD BOY": length = "3:32.767"; bpm = 128; break;
+        case "Bad Intentions": length = "4:52.598"; bpm = 128; break;
+        case "Badland": length = "4:47.634"; bpm = 128; break;
+        case "Bananonymous": length = "6:11.983"; bpm = 128; break;
         case "Barracuda": length = "4:22.661"; bpm = 130; break;
+        case "Bass Head": length = "6:37.714"; bpm = 85; break;
         case "Be Gone Mr. Gawne": length = "4:17.906"; bpm = 167; break;
+        case "BEWM": length = "3:30.534"; bpm = 128; break;
+        case "BLAST": length = "4:20.937"; bpm = 128; break;
+        case "Blast from the Past": length = "5:52.575"; bpm = 128; break;
+        case "Breakdown": length = "4:49.097"; bpm = 140; break;
+        case "Breakdown VIP": length = "3:54.448"; bpm = 174; break;
         case "Buzz Kill": length = "5:55.813"; bpm = 128; break;
         case "Caps On, Hats Off": length = "2:36.760"; bpm = 95; break;
         case "Captain Cool": length = "3:19.026"; bpm = 145; break;
-        case "Leaving Leafwood Forest": length = "3:24.591"; bpm = 125; break;
         case "Cascade": length = "4:20.048"; bpm = 129; break;
         case "Cheat Codes": length = "3:32.349"; bpm = 128; break;
         case "Cheat Codes VIP": length = "3:24.486"; bpm = 128; break;
         case "Checkpoint": length = "3:43.895"; bpm = 140; break;
+        case "Children of the Night": length = "5:03.020"; bpm = 128; break;
+        case "Chipland": length = "3:10.458"; bpm = 174; break;
         case "Chip Zeal": length = "3:29.920"; bpm = 170; break;
         case "Chronos": length = "4:29.740"; bpm = 134; break;
         case "Clash": length = "3:40.447"; bpm = 128; break;
         case "Commando Steve": length = "3:26.942"; bpm = 145; break;
+        case "COOKIES": length = "3:09.361"; bpm = 128; break;
         case "Cool Friends": length = "3:59.072"; bpm = 115; break;
         case "Core": length = "4:33.371"; bpm = 145; break;
         case "Corrupted": length = "6:16.737"; bpm = 139; break;
         case "Courtesy": length = "3:11.164"; bpm = 130; break;
+        case "Crab Rave": length = "2:41.776"; bpm = 125; break;
+        case "CRAZY": length = "3:16.963"; bpm = 128; break;
+        case "Creatures ov Deception": length = "2:00.398"; bpm = 190; break;
         case "Cruise Control": length = "4:01.606"; bpm = 140; break;
         case "Crystal Tokyo": length = "5:28.124"; bpm = 174; break;
         case "Cybertron": length = "6:09.475"; bpm = 128; break;
         case "Dance of the Incognizant": length = "7:10.158"; bpm = 135; break;
+        case "Deadlocked": length = "3:26.132"; bpm = 135; break;
         case "Delayed Friend Request": length = "6:05.897"; bpm = 130; break;
         case "Destroid 1 - Raise Your Fist": length = "4:42.775"; bpm = 174; break;
-        case "Destroid 2 - Wasteland": length = "4:38.857"; bpm = 145; break;
+        case "Destroid 2 - Wasteland": length = "4:38.857"; bpm = 140; break;
+        case "Destroid 3 Crusaders": length = "5:29.168"; bpm = 140; break;
         case "Destroid 6 - Put It Down": length = "3:27.647"; bpm = 176; break;
+        case "Destroid 7 - Bounce": length = "4:21.250"; bpm = 140; break;
         case "Destroid 8 - Annihilate": length = "5:10.177"; bpm = 128; break;
         case "Destroid 10 - Funk Hole": length = "4:40.084"; bpm = 110; break;
         case "Deviance": length = "5:04.091"; bpm = 110; break;
+        case "Deviance (Original)": length = "4:32.169"; bpm = 140; break;
+        case "Dimensions": length = "7:54.122"; bpm = 128; break;
+        case "Disconnected": length = "4:02.050"; bpm = 128; break;
         case "Duality": length = "5:58.870"; bpm = 160; break;
         case "Dubwoofer Substep": length = "4:44.865"; bpm = 145; break;
+        case "Eclipse": length = "5:37.606"; bpm = 128; break;
+        case "Emergency": length = "4:13.204"; bpm = 128; break;
+        case "Endgame": length = "6:59.840"; bpm = 175; break;
         case "End is Near": length = "4:03.382"; bpm = 174; break;
+        case "EPIC": length = "3:38.618"; bpm = 128; break;
+        case "Evolution": length = "5:37.893"; bpm = 146; break;
         case "Exoskelephone": length = "5:53.123"; bpm = 128; break;
         case "Farbror Melker Fixar Fiskdamm (Fastbom Cover)": length = "3:23.389"; bpm = 169; break;
+        case "Farewell": length = "7:54.409"; bpm = 128; break;
         case "Faster Than Light": length = "5:02.785"; bpm = 128; break;
         case "FIGHT": length = "3:35.719"; bpm = 128; break;
         case "Final Boss": length = "5:16.813"; bpm = 130; break;
+        case "Fingerbang": length = "4:28.852"; bpm = 112; break;
+        case "Fire in the Hole": length = "3:47.160"; bpm = 108; break;
+        case "Fire Vortex": length = "7:27.320"; bpm = 136; break;
+        case "FLAMES": length = "3:00.350"; bpm = 128; break;
         case "Flirt Flirt Oh It Hurts": length = "3:31.513"; bpm = 168; break;
+        case "Flowers of Antimony": length = "1:46.945"; bpm = 171; break;
         case "Focus": length = "2:42.847"; bpm = 174; break;
+        case "Forged in Stars": length = "3:16.257"; bpm = 143; break;
         case "FOX": length = "5:17.178"; bpm = 138; break;
         case "FTW": length = "4:17.671"; bpm = 130; break;
+        case "Fugitive": length = "4:45.388"; bpm = 125; break;
+        case "Galactic Voyage": length = "6:36.016"; bpm = 125; break;
+        case "GET UP": length = "3:10.406"; bpm = 128; break;
+        case "Get Up": length = "6:41.188"; bpm = 128; break;
         case "Glitch": length = "5:47.480"; bpm = 158; break;
+        case "Granite": length = "2:31.954"; bpm = 128; break;
+        case "Gravity": length = "5:54.115"; bpm = 128; break;
         case "Grind": length = "5:15.376"; bpm = 128; break;
         case "Halcyon": length = "6:10.834"; bpm = 92; break;
+        case "Harmony": length = "6:17.104"; bpm = 128; break;
+        case "Heat": length = "5:50.041"; bpm = 128; break;
+        case "Heist": length = "3:02.204"; bpm = 170; break;
         case "Here It Comes": length = "3:32.088"; bpm = 150; break;
+        case "Here We Go": length = "6:46.961"; bpm = 176; break;
         case "Highscore": length = "4:20.832"; bpm = 110; break;
         case "Houston": length = "5:23.500"; bpm = 130; break;
         case "HYPE": length = "3:02.909"; bpm = 128; break;
+        case "I\'m being Reelistic": length = "3:50.687"; bpm = 115; break;
+        case "I Call It Progstep": length = "3:55.624"; bpm = 72; break;
+        case "In the Halls of the Usurper": length = "2:10.482"; bpm = 155; break;
         case "Into The Zone": length = "2:41.462"; bpm = 122; break;
+        case "Ism": length = "5:23.631"; bpm = 151; break;
         case "It\'s Pronounced Omnitica": length = "5:00.225"; bpm = 128; break;
         case "Jack Russel": length = "3:21.691"; bpm = 134; break;
+        case "JOURNEY": length = "3:59.631"; bpm = 128; break;
+        case "Junction Seven": length = "5:05.240"; bpm = 175; break;
+        case "La Danse Macabre": length = "2:00.085"; bpm = 128; break;
+        case "Leaving Leafwood Forest": length = "3:24.591"; bpm = 125; break;
         case "Legacy": length = "5:17.074"; bpm = 114; break;
         case "Let It Roar": length = "5:46.409"; bpm = 140; break;
+        case "Lightspeed": length = "4:08.895"; bpm = 158; break;
         case "Light Sticks": length = "5:19.843"; bpm = 128; break;
         case "Livewire": length = "5:42.413"; bpm = 130; break;
         case "Logic Gatekeeper": length = "4:58.736"; bpm = 163; break;
         case "Long Live The New Fresh": length = "4:27.049"; bpm = 127; break;
+        case "Lycanthropy": length = "4:55.262"; bpm = 150; break;
         case "Milky Ways": length = "3:07.611"; bpm = 182; break;
         case "MOSHI": length = "3:35.170"; bpm = 128; break;
+        case "Nemesis": length = "4:20.284"; bpm = 107; break;
         case "New Game": length = "4:19.317"; bpm = 128; break;
+        case "No Holding On": length = "7:28.104"; bpm = 128; break;
         case "No Party Like a Mojang Party": length = "5:51.529"; bpm = 125; break;
-        case "On The Run": length = "4:28.564"; bpm = 160; break;
+        case "OKAY": length = "3:07.141"; bpm = 128; break;
+        case "Omniverse": length = "3:28.718"; bpm = 174; break;
         case "Once Again": length = "3:46.351"; bpm = 110; break;
+        case "On The Run": length = "4:28.564"; bpm = 160; break;
+        case "Opia": length = "3:09.335"; bpm = 170; break;
         case "Otis": length = "2:36.081"; bpm = 135; break;
         case "Paper Dolls": length = "2:55.777"; bpm = 200; break;
         case "Parallel Processing": length = "8:29.022"; bpm = 109; break;
@@ -3128,75 +4800,70 @@
         case "Partyt Ar Igang": length = "2:57.136"; bpm = 127; break;
         case "Peer Gynt": length = "2:21.557"; bpm = 142; break;
         case "Pirate Manners": length = "3:02.151"; bpm = 115; break;
+        case "PIXEL": length = "3:18.373"; bpm = 128; break;
         case "PLAY": length = "3:04.111"; bpm = 128; break;
         case "Play It Loud": length = "7:07.154"; bpm = 130; break;
         case "Play It Loud (Broken Robot Mix)": length = "6:53.204"; bpm = 136; break;
         case "Pyro": length = "3:36.058"; bpm = 145; break;
         case "Quake": length = "5:41.498"; bpm = 128; break;
         case "Rainbow Road": length = "2:53.061"; bpm = 170; break;
+        case "Rally the Troops": length = "6:07.935"; bpm = 150; break;
+        case "Rat Twist": length = "4:00.117"; bpm = 128; break;
         case "Razor Sharp": length = "4:41.808"; bpm = 110; break;
         case "Renegade": length = "6:10.546"; bpm = 127; break;
+        case "Renzokuken": length = "7:11.491"; bpm = 128; break;
         case "Rhapsody": length = "6:13.054"; bpm = 104; break;
+        case "Rhusma": length = "5:52.835"; bpm = 128; break;
+        case "Rinse Out": length = "5:43.353"; bpm = 128; break;
         case "Rocket": length = "6:28.257"; bpm = 128; break;
+        case "ROCK IT": length = "3:11.242"; bpm = 128; break;
+        case "ROCK IT (VIP)": length = "3:15.135"; bpm = 128; break;
         case "Rocktronik": length = "5:08.166"; bpm = 130; break;
         case "SAIKOU": length = "2:55.412"; bpm = 128; break;
+        case "Sentinel": length = "5:28.437"; bpm = 130; break;
         case "Sevcon": length = "4:34.755"; bpm = 133; break;
         case "Sexy Beast": length = "5:15.350"; bpm = 128; break;
+        case "Sidewinder": length = "6:46.491"; bpm = 130; break;
         case "So Far Away": length = "3:39.297"; bpm = 125; break;
+        case "Space Invaders": length = "5:48.108"; bpm = 128; break;
         case "Spection": length = "4:52.362"; bpm = 170; break;
         case "Spectra": length = "4:00.117"; bpm = 130; break;
         case "SPOOKY": length = "3:49.799"; bpm = 128; break;
+        case "Starfish": length = "5:01.923"; bpm = 101; break;
         case "Starship Showdown": length = "4:08.293"; bpm = 147; break;
         case "Steampunk Warlord": length = "3:34.099"; bpm = 157; break;
         case "Stock & Pull": length = "5:51.007"; bpm = 128; break;
+        case "Strike the Earth": length = "3:36.111"; bpm = 174; break;
         case "Sugar Rush": length = "4:44.865"; bpm = 128; break;
+        case "Surface Tension": length = "5:41.080"; bpm = 174; break;
+        case "Surge": length = "3:56.930"; bpm = 128; break;
         case "Tension": length = "4:58.109"; bpm = 143; break;
         case "Termination Shock": length = "4:50.272"; bpm = 126; break;
         case "The Art of War": length = "3:13.280"; bpm = 174; break;
         case "The Cave, The Treasure": length = "3:27.307"; bpm = 181; break;
+        case "The Devil's Den": length = "4:53.093"; bpm = 128; break;
+        case "The Escape": length = "5:03.673"; bpm = 128; break;
         case "The Lunar Whale": length = "4:35.826"; bpm = 109; break;
         case "The Maze of Mayonnaise": length = "3:11.190"; bpm = 135; break;
+        case "This Is It": length = "5:33.792"; bpm = 108; break;
+        case "This Time": length = "4:32.378"; bpm = 128; break;
         case "Till It\'s Over": length = "4:30.863"; bpm = 110; break;
         case "Time Goes By": length = "3:26.315"; bpm = 128; break;
         case "Time Lapse": length = "3:05.391"; bpm = 127; break;
         case "Timewarp": length = "5:02.419"; bpm = 128; break;
-        case "To the Stars": length = "3:22.396"; bpm = 175; break;
         case "Tokyo Skies": length = "3:52.463"; bpm = 126; break;
+        case "Tonight": length = "6:45.446"; bpm = 128; break;
+        case "To the Stars": length = "3:22.396"; bpm = 175; break;
         case "Try This": length = "3:49.694"; bpm = 174; break;
+        case "TURBO": length = "2:50.997"; bpm = 128; break;
+        case "Turbo Penguin": length = "3:31.356"; bpm = 128; break;
+        case "Ultimatum": length = "4:15.216"; bpm = 173; break;
         case "Unlocked": length = "3:47.683"; bpm = 128; break;
         case "Vindicate Me": length = "3:26.471"; bpm = 100; break;
-        case "Wicked": length = "3:41.126"; bpm = 100; break;
-        case "Yo! Ho! And a Bottle of Bass!": length = "6:24.130"; bpm = 145; break;
-        case "Chipland": length = "3:10.458"; bpm = 174; break;
-        case "Crab Rave": length = "2:41.776"; bpm = 125; break;
-        case "CRAZY": length = "3:16.963"; bpm = 128; break;
-        case "I Call It Progstep": length = "3:55.624"; bpm = 72; break;
-        case "Omniverse": length = "3:28.718"; bpm = 174; break;
-        case "Opia": length = "3:09.335"; bpm = 170; break;
-        case "Wormhole": length = "3:40.395"; bpm = 128; break;
-        case "EPIC": length = "3:38.618"; bpm = 128; break;
-        case "BAD BOY": length = "3:32.767"; bpm = 128; break;
-        case "No Holding On": length = "7:28.104"; bpm = 128; break;
-        case "Tonight": length = "6:45.446"; bpm = 128; break;
-        case "Junction Seven": length = "5:05.240"; bpm = 175; break;
-        case "Rhusma": length = "5:52.835"; bpm = 128; break;
-        case "Bass Head": length = "6:37.714"; bpm = 85; break;
-        case "Ism": length = "5:23.631"; bpm = 151; break;
-        case "Nemesis": length = "4:20.284"; bpm = 107; break;
-        case "Starfish": length = "5:01.923"; bpm = 101; break;
-        case "The Devil's Den": length = "4:53.093"; bpm = 128; break;
-        case "Deviance (Original)": length = "4:32.169"; bpm = 140; break;
-        case "Fire Vortex": length = "7:27.320"; bpm = 136; break;
-        case "Here We Go": length = "6:46.961"; bpm = 176; break;
         case "Virus": length = "5:31.885"; bpm = 174; break;
-        case "Bananonymous": length = "6:11.983"; bpm = 128; break;
-        case "Deadlocked": length = "3:26.132"; bpm = 135; break;
-        case "Harmony": length = "6:17.104"; bpm = 128; break;
-        case "Space Invaders": length = "5:48.108"; bpm = 128; break;
-        case "Ultimatum": length = "4:15.216"; bpm = 173; break;
-        case "Granite": length = "2:31.954"; bpm = 128; break;
-        case "Renzokuken": length = "7:11.491"; bpm = 128; break;
-        case "Endgame": length = "6:59.840"; bpm = 175; break;
+        case "Wicked": length = "3:41.126"; bpm = 100; break;
+        case "Wormhole": length = "3:40.395"; bpm = 128; break;
+        case "Yo! Ho! And a Bottle of Bass!": length = "6:24.130"; bpm = 145; break;
       }
       for (var i = 1; i <= 100; i++) {
         progress.classList.remove("c" + i);
