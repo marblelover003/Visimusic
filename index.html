@@ -289,6 +289,7 @@
         font-weight: bold;
         position: sticky;
         top: 0px;
+        z-index: 999;
       }
       .close:hover, .close:focus {
         color: black;
@@ -336,7 +337,7 @@
       }
       #musicInfoModal th {
         position: sticky;
-        top: -20px;
+        top: 40px;
         background: #444444;
       }
       .original47 {
@@ -897,7 +898,7 @@
         <p>None of these songs have lyrics.</p>
         <p>Also new: MUSIC INFO!!! Here you'll find details regarding every song on Visimusic.</p>
         <p>Not only that, but two MORE new songs have arrived! Sterrezo and Boom Kitty both make their debut!</p>
-        <table>
+        <table style="width: 100%;">
           <tr>
             <td><b>Badland</b> by Boom Kitty</td>
             <td><b>Lightspeed</b> by MDK &amp; Sterrezo</td>
@@ -1119,8 +1120,12 @@
       <div class="modal-content">
         <span class="close">&times;</span>
         <h1>Music Info</h1>
-        <div style="text-align: center">A row highlighted in <span style="background: #ffd700; color: black;">gold</span> means that song was included with the initial release of Visimusic.</div>
-        <table style="width: calc(100% - 40px);">
+        <div style="text-align: center;">A row highlighted in <span style="background: #ffd700; color: black;">gold</span> means that song was included with the initial release of Visimusic.</div>
+        <div style="text-align: center; position: sticky; top: -20px; height: 60px; line-height: 30px; background: #444444;">
+          Total number of songs: <b id="numSongs">&hellip;</b><br>
+          Total length of all songs: <b id="totalSongLen">&hellip;</b>
+        </div>
+        <table style="width: calc(100% - 40px);" id="musicTable">
           <tr>
             <th>track name</th>
             <th>artist</th>
@@ -3244,10 +3249,43 @@
         modal3.getElementsByClassName("modal-content")[0].classList.remove("moveout");
       }, 500);
     }
+    var songlengths = ["8:29.022", "7:54.409", "7:54.122", "7:28.104", "7:27.320", "7:11.491", "7:10.158", "7:07.154", "6:59.840", "6:53.204", "6:46.961", "6:46.491", "6:45.446", "6:41.188", "6:37.714", "6:36.016", "6:28.257", "6:24.130", "6:17.104", "6:16.737", "6:13.054", "6:11.983", "6:10.834", "6:10.546", "6:09.475", "6:07.935", "6:05.897", "5:58.870", "5:55.813", "5:54.115", "5:53.123", "5:52.835", "5:52.575", "5:51.529", "5:51.007", "5:50.041", "5:48.108", "5:47.480", "5:46.409", "5:43.353", "5:42.413", "5:41.498", "5:41.080", "5:37.893", "5:37.606", "5:33.792", "5:31.885", "5:29.168", "5:28.437", "5:28.124", "5:23.631", "5:23.500", "5:22.115", "5:21.619", "5:19.843", "5:17.178", "5:17.074", "5:16.813", "5:15.376", "5:15.350", "5:10.177", "5:08.166", "5:05.240", "5:04.091", "5:03.673", "5:03.020", "5:02.785", "5:02.419", "5:01.923", "5:00.225", "4:58.736", "4:58.109", "4:55.262", "4:53.093", "4:52.598", "4:52.362", "4:50.272", "4:49.097", "4:47.634", "4:45.388", "4:44.865", "4:44.865", "4:42.775", "4:42.148", "4:41.808", "4:40.084", "4:38.857", "4:35.826", "4:34.755", "4:33.371", "4:32.378", "4:32.169", "4:30.863", "4:29.740", "4:28.852", "4:28.564", "4:27.049", "4:23.471", "4:22.661", "4:21.250", "4:20.937", "4:20.832", "4:20.284", "4:20.048", "4:19.317", "4:17.906", "4:17.671", "4:15.216", "4:13.204", "4:08.895", "4:08.293", "4:03.382", "4:02.050", "4:01.606", "4:00.117", "4:00.117", "3:59.631", "3:59.072", "3:56.930", "3:55.624", "3:54.448", "3:52.463", "3:50.687", "3:49.799", "3:49.694", "3:47.683", "3:47.160", "3:46.351", "3:43.895", "3:41.126", "3:40.447", "3:40.395", "3:39.480", "3:39.297", "3:38.618", "3:36.111", "3:36.058", "3:35.719", "3:35.170", "3:34.099", "3:32.767", "3:32.349", "3:32.088", "3:31.513", "3:31.356", "3:30.534", "3:29.920", "3:28.718", "3:27.647", "3:27.307", "3:26.942", "3:26.471", "3:26.315", "3:26.132", "3:24.591", "3:24.486", "3:23.389", "3:22.396", "3:21.691", "3:19.026", "3:18.373", "3:16.963", "3:16.257", "3:15.135", "3:13.280", "3:11.242", "3:11.190", "3:11.164", "3:10.458", "3:10.406", "3:09.361", "3:09.335", "3:07.611", "3:07.141", "3:05.391", "3:04.111", "3:02.909", "3:02.204", "3:02.151", "3:00.350", "2:57.136", "2:55.777", "2:55.412", "2:53.061", "2:50.997", "2:42.847", "2:41.776", "2:41.462", "2:36.760", "2:36.081", "2:31.954", "2:21.557", "2:10.482", "2:00.398", "2:00.085", "1:46.945"];
+    var tsl_h = 0, tsl_m = 0, tsl_s = 0, tsl_ms = 0;
+    var x = 0;
+    var timeInit = false;
     btn4.onclick = function() {
       modal4.style.display = "block";
       modal4.style.opacity = 1;
       modal4.getElementsByClassName("modal-content")[0].classList.add("movein");
+      if (!timeInit) {
+        setTimeout(function() {
+          timeInit = true;
+          var totallen = setInterval(function() {
+            var m = parseInt(songlengths[x][0]);
+            var s = parseInt(songlengths[x][2] + songlengths[x][3]);
+            var ms = parseInt(songlengths[x][5] + songlengths[x][6] + songlengths[x][7]);
+            tsl_m += m;
+            tsl_s += s;
+            tsl_ms += ms;
+            while (tsl_ms >= 1000) {
+              tsl_s += 1;
+              tsl_ms -= 1000;
+            }
+            while (tsl_s >= 60) {
+              tsl_m += 1;
+              tsl_s -= 60;
+            }
+            while (tsl_m >= 60) {
+              tsl_h += 1;
+              tsl_m -= 60;
+            }
+            document.getElementById("totalSongLen").innerHTML = (tsl_h > 0 ? (tsl_h + ":" + ("0" + tsl_m).slice(-2)) : tsl_m) + ":" + ("0" + tsl_s).slice(-2) + "<small>" + ("00" + tsl_ms).slice(-3) + "</small>";
+            document.getElementById("numSongs").innerHTML = x+1;
+            x++;
+            if (x >= songlengths.length) {clearInterval(totallen);}
+          }, 30);
+        }, 500);
+      }
     }
     span4.onclick = function() {
       modal4.style.opacity = 0;
