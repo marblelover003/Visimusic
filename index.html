@@ -889,29 +889,11 @@
       <div class="modal-content">
         <span class="close">&times;</span>
         <h1>What's new?</h1>
-        <p>A total of seven new songs have arrived! Stonebank, Case &amp; Point, Boom Kitty, and Sterrezo all make their debut!</p>
-        <table style="width: 100%;">
-          <tr>
-            <td><b>Blast from the Past</b> by Stonebank</td>
-            <td><b>Children of the Night</b> by Razihel</td>
-          </tr>
-          <tr>
-            <td><b>Fugitive</b> by Case &amp; Point</td>
-            <td><b>ROCK IT (VIP)</b> by Tokyo Machine</td>
-          </tr>
-          <tr>
-            <td><b>Badland</b> by Boom Kitty</td>
-            <td><b>Lightspeed</b> by MDK &amp; Sterrezo</td>
-          </tr>
-          <tr>
-            <td><b>Children of Hell</b> by Muzzy</td>
-          </tr>
-        </table>
-        <p>Also new: MUSIC INFO!!! Here you'll find details regarding every song on Visimusic.</p>
-        <p>Plus, you can now see exactly how many songs you have queued at a glance without having to open the Queue dialog!</p>
+        <p><b>Children of Hell</b> by Muzzy now has timed lyrics!</p>
+        <p>Also, you can now see exactly how many songs you have queued at a glance without having to open the Queue dialog!</p>
         <hr>
         <h1>What's coming?</h1>
-        <p>I am still working on the timed lyrics for every song that has lyrics.<br><b style="font-weight: 900">17</b> songs remain</p>
+        <p>I am still working on the timed lyrics for every song that has lyrics.<br><b style="font-weight: 900">14</b> songs remain</p>
         <p>Stay tuned for future updates! Keep calm and keep the beat going!</p>
         <hr>
         <h1>Supported Browsers</h1>
@@ -3833,12 +3815,12 @@
           case "Surface Tension": hasLyrics = true; break;
           case "Bananonymous": hasLyrics = false; break;
           case "Deadlocked": hasLyrics = false; break;
-          case "BEWM": hasLyrics = true; break;
+          case "BEWM": hasLyrics = false; break;
           case "GET UP": hasLyrics = true; break;
           case "Dimensions": hasLyrics = false; break;
           case "Get Up": hasLyrics = false; break;
           case "Farewell": hasLyrics = false; break;
-          case "Fire Vortex": hasLyrics = true; break;
+          case "Fire Vortex": hasLyrics = false; break;
           case "The Devil's Den": hasLyrics = true; break;
           case "Ism": hasLyrics = false; break;
           case "Starfish": hasLyrics = false; break;
@@ -3950,9 +3932,9 @@
           case "EPIC": hasLyrics = false; break;
           case "TURBO": hasLyrics = true; break;
           case "JOURNEY": hasLyrics = false; break;
-          case "BAD BOY": hasLyrics = true; break;
+          case "BAD BOY": hasLyrics = false; break;
           case "Long Live The New Fresh": hasLyrics = false; break;
-          case "MOSHI": hasLyrics = true; break;
+          case "MOSHI": hasLyrics = false; break;
           case "Once Again": hasLyrics = true; break;
           case "Till It\'s Over": hasLyrics = true; break;
           case "Paper Dolls": hasLyrics = false; break;
@@ -5769,6 +5751,23 @@
           [163.1, 167.1, "After they came and destroyed the land,"],
           [167.1, 169.9, "After they came and destroyed the land, there was one spark of hope left"],
           [169.9, 173.0, "After they came and destroyed the land, there was one spark of hope left for all of mankind."]
+        ];
+        for (var i = 0; i < lyrics.length; i++) {
+          if (t >= lyrics[i][0] && t <= lyrics[i][1]) {
+            currentLyrics = lyrics[i][2];
+          }
+        }
+      } else if (song == "Children of Hell") {
+        var lyrics = [
+          [112.0, 114.8, "They're working"],
+          [114.8, 117.6, "They're working in shackles again"],
+          [117.6, 120.3, "The age of a trend"],
+          [120.3, 122.4, "The world descends"],
+          [122.4, 125.4, "The world descends until there's nothing"],
+          [125.4, 128.5, "The world descends until there's nothing but the children of hell."],
+          [128.5, 131.3, "The angels have fell."],
+          [131.3, 137.2, "It's time to take back the fight!"],
+          [268.4, 274.3, "It's time to take back the fight!"]
         ];
         for (var i = 0; i < lyrics.length; i++) {
           if (t >= lyrics[i][0] && t <= lyrics[i][1]) {
