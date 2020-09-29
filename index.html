@@ -238,6 +238,7 @@
       .c77::-webkit-progress-value {background: linear-gradient(to bottom, #2a2d7c 49.99999999%, #162660 50%);}
       .c78::-webkit-progress-value {background: linear-gradient(to bottom, #ffb988 24.99999999%, #fef086 25%, #fef086 49.99999999%, #eb90b3 50%, #eb90b3 74.99999999%, #ffd157 75%);}
       .c79::-webkit-progress-value {background: #e10303;}
+      .c80::-webkit-progress-value {background: #969eff;}
       .b1 {background: #282728;}
       .b2 {background: linear-gradient(to bottom, #2e2317 0%, #2a1f14 50%, #2e2619 100%);}
       .b3 {background: #333300;}
@@ -317,6 +318,7 @@
       .b77 {background: linear-gradient(to bottom, #080919 49.99999999%, #040813 50%);}
       .b78 {background: linear-gradient(to bottom, #33251b 24.99999999%, #33301b 25%, #33301b 49.99999999%, #2f1d24 50%, #2f1d24 74.99999999%, #332a11 75%);}
       .b79 {background: #2d0101;}
+      .b80 {background: #1e2033;}
       .modal {
         display: none;
         opacity: 0;
@@ -622,6 +624,7 @@
         <option value="Tonight">Tonight (feat. Danyka Nadeau)</option>
         <option value="To the Stars">To the Stars</option>
         <option value="Try This">Try This</option>
+        <option value="Tunnel Vision">Tunnel Vision</option>
         <option value="TURBO">TURBO</option>
         <option value="Turbo Penguin">Turbo Penguin</option>
         <option value="Ultimatum">Ultimatum</option>
@@ -930,6 +933,7 @@
             <option value="Tonight">Tonight (feat. Danyka Nadeau)</option>
             <option value="To the Stars">To the Stars</option>
             <option value="Try This">Try This</option>
+            <option value="Tunnel Vision">Tunnel Vision</option>
             <option value="TURBO">TURBO</option>
             <option value="Turbo Penguin">Turbo Penguin</option>
             <option value="Ultimatum">Ultimatum</option>
@@ -969,20 +973,13 @@
     </div>
     <button id="infoBtn" class="notification">
       Info &sol; News
-      <span class="badge">5</span>
+      <span class="badge">1</span>
     </button>
     <div id="infoModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
         <h1>What's new?</h1>
-        <p>VISIMUSIC HAS REACHED A NEW MILESTONE: 200 SONGS!!!!!</p>
-        <p>Yes, you read that right - Visimusic now has 200 songs thanks to these three BRAND NEW ADDITIONS:</p>
-        <p>
-          &bull; <b>Close to Me</b> by Sabrepulse<br>
-          &bull; <b>Destroid 5 Activation</b> by Downlink<br>
-          &bull; <b>Katana Blaster</b> by Big Giant Circles
-        </p>
-        <p>To celebrate, Visimusic gains a new feature: Background Change! The background is no longer simply black - it now *correctly* mimics the style of the progress bar! The background takes 20% of the brightness of the progress bar.</p>
+        <p>Subtact makes his debut on Visimusic with <b>Tunnel Vision</b>!</p>
         <hr>
         <h1>What's coming?</h1>
         <p>I am still working on the timed lyrics for every song that has lyrics.<br><b style="font-weight: 900">14</b> songs remain</p>
@@ -2742,6 +2739,14 @@
             <td>March 17, 2019</td>
           </tr>
           <tr>
+            <td>Tunnel Vision</td>
+            <td>Subtact</td>
+            <td>Monstercat 029 - Havoc</td>
+            <td>4:25<small>142</small></td>
+            <td>163</td>
+            <td>September 29, 2020</td>
+          </tr>
+          <tr>
             <td>TURBO</td>
             <td>Tokyo Machine</td>
             <td>Monstercat Uncaged Vol. 8</td>
@@ -2925,6 +2930,9 @@
       var cSong = localStorage.getItem("currentSong");
       var artist2;
       switch (cSong) {
+        case "Tunnel Vision":
+          artist2 = "Subtact";
+          break;
         case "Blast from the Past":
           artist2 = "Stonebank";
           break;
@@ -3366,7 +3374,7 @@
         modal3.getElementsByClassName("modal-content")[0].classList.remove("moveout");
       }, 500);
     }
-    var songlengths = ["8:29.022", "7:54.409", "7:54.122", "7:28.104", "7:27.320", "7:11.491", "7:10.158", "7:07.154", "6:59.840", "6:53.204", "6:46.961", "6:46.491", "6:45.446", "6:44.976", "6:41.188", "6:37.714", "6:36.016", "6:28.257", "6:24.130", "6:17.104", "6:16.737", "6:13.054", "6:11.983", "6:10.834", "6:10.546", "6:09.475", "6:07.935", "6:05.897", "5:58.870", "5:55.813", "5:54.115", "5:53.123", "5:52.835", "5:52.575", "5:51.529", "5:51.007", "5:50.041", "5:48.108", "5:47.480", "5:46.409", "5:43.353", "5:42.413", "5:41.498", "5:41.080", "5:37.893", "5:37.606", "5:33.792", "5:31.885", "5:29.168", "5:28.437", "5:28.124", "5:23.631", "5:23.500", "5:22.115", "5:21.619", "5:19.843", "5:17.178", "5:17.074", "5:16.813", "5:15.376", "5:15.350", "5:10.177", "5:08.166", "5:05.240", "5:04.091", "5:03.673", "5:03.020", "5:02.785", "5:02.419", "5:01.923", "5:00.225", "4:58.736", "4:58.109", "4:55.262", "4:53.093", "4:52.598", "4:52.362", "4:50.272", "4:49.097", "4:47.634", "4:45.388", "4:44.865", "4:44.865", "4:42.775", "4:42.148", "4:41.808", "4:40.084", "4:38.857", "4:35.826", "4:34.755", "4:33.371", "4:32.378", "4:32.169", "4:30.863", "4:29.740", "4:28.852", "4:28.564", "4:27.049", "4:23.471", "4:22.661", "4:21.250", "4:20.937", "4:20.832", "4:20.466", "4:20.284", "4:20.048", "4:19.317", "4:17.906", "4:17.671", "4:15.216", "4:13.204", "4:08.895", "4:08.293", "4:03.382", "4:02.050", "4:01.606", "4:00.117", "4:00.117", "3:59.631", "3:59.072", "3:56.930", "3:55.624", "3:54.448", "3:52.463", "3:50.687", "3:49.799", "3:49.694", "3:47.683", "3:47.160", "3:46.351", "3:43.895", "3:41.126", "3:40.447", "3:40.395", "3:39.480", "3:39.297", "3:38.618", "3:36.111", "3:36.058", "3:35.719", "3:35.170", "3:34.099", "3:32.767", "3:32.349", "3:32.088", "3:31.513", "3:31.356", "3:30.534", "3:29.920", "3:28.718", "3:27.647", "3:27.307", "3:26.942", "3:26.471", "3:26.315", "3:26.132", "3:26.080", "3:24.591", "3:24.486", "3:23.389", "3:22.396", "3:21.691", "3:19.026", "3:18.373", "3:18.347", "3:16.963", "3:16.257", "3:15.135", "3:13.280", "3:11.242", "3:11.190", "3:11.164", "3:10.458", "3:10.406", "3:09.361", "3:09.335", "3:07.611", "3:07.141", "3:05.391", "3:04.111", "3:02.909", "3:02.204", "3:02.151", "3:00.350", "2:57.136", "2:55.777", "2:55.412", "2:53.061", "2:50.997", "2:42.847", "2:41.776", "2:41.462", "2:36.760", "2:36.081", "2:31.954", "2:21.557", "2:10.482", "2:00.398", "2:00.085", "1:46.945"];
+    var songlengths = ["8:29.022", "7:54.409", "7:54.122", "7:28.104", "7:27.320", "7:11.491", "7:10.158", "7:07.154", "6:59.840", "6:53.204", "6:46.961", "6:46.491", "6:45.446", "6:44.976", "6:41.188", "6:37.714", "6:36.016", "6:28.257", "6:24.130", "6:17.104", "6:16.737", "6:13.054", "6:11.983", "6:10.834", "6:10.546", "6:09.475", "6:07.935", "6:05.897", "5:58.870", "5:55.813", "5:54.115", "5:53.123", "5:52.835", "5:52.575", "5:51.529", "5:51.007", "5:50.041", "5:48.108", "5:47.480", "5:46.409", "5:43.353", "5:42.413", "5:41.498", "5:41.080", "5:37.893", "5:37.606", "5:33.792", "5:31.885", "5:29.168", "5:28.437", "5:28.124", "5:23.631", "5:23.500", "5:22.115", "5:21.619", "5:19.843", "5:17.178", "5:17.074", "5:16.813", "5:15.376", "5:15.350", "5:10.177", "5:08.166", "5:05.240", "5:04.091", "5:03.673", "5:03.020", "5:02.785", "5:02.419", "5:01.923", "5:00.225", "4:58.736", "4:58.109", "4:55.262", "4:53.093", "4:52.598", "4:52.362", "4:50.272", "4:49.097", "4:47.634", "4:45.388", "4:44.865", "4:44.865", "4:42.775", "4:42.148", "4:41.808", "4:40.084", "4:38.857", "4:35.826", "4:34.755", "4:33.371", "4:32.378", "4:32.169", "4:30.863", "4:29.740", "4:28.852", "4:28.564", "4:27.049", "4:25.142", "4:23.471", "4:22.661", "4:21.250", "4:20.937", "4:20.832", "4:20.466", "4:20.284", "4:20.048", "4:19.317", "4:17.906", "4:17.671", "4:15.216", "4:13.204", "4:08.895", "4:08.293", "4:03.382", "4:02.050", "4:01.606", "4:00.117", "4:00.117", "3:59.631", "3:59.072", "3:56.930", "3:55.624", "3:54.448", "3:52.463", "3:50.687", "3:49.799", "3:49.694", "3:47.683", "3:47.160", "3:46.351", "3:43.895", "3:41.126", "3:40.447", "3:40.395", "3:39.480", "3:39.297", "3:38.618", "3:36.111", "3:36.058", "3:35.719", "3:35.170", "3:34.099", "3:32.767", "3:32.349", "3:32.088", "3:31.513", "3:31.356", "3:30.534", "3:29.920", "3:28.718", "3:27.647", "3:27.307", "3:26.942", "3:26.471", "3:26.315", "3:26.132", "3:26.080", "3:24.591", "3:24.486", "3:23.389", "3:22.396", "3:21.691", "3:19.026", "3:18.373", "3:18.347", "3:16.963", "3:16.257", "3:15.135", "3:13.280", "3:11.242", "3:11.190", "3:11.164", "3:10.458", "3:10.406", "3:09.361", "3:09.335", "3:07.611", "3:07.141", "3:05.391", "3:04.111", "3:02.909", "3:02.204", "3:02.151", "3:00.350", "2:57.136", "2:55.777", "2:55.412", "2:53.061", "2:50.997", "2:42.847", "2:41.776", "2:41.462", "2:36.760", "2:36.081", "2:31.954", "2:21.557", "2:10.482", "2:00.398", "2:00.085", "1:46.945"];
     var tsl_h = 0, tsl_m = 0, tsl_s = 0, tsl_ms = 0;
     var x = 0;
     var timeInit = false;
@@ -3569,6 +3577,9 @@
         }
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/" + (document.getElementById("song").value == "I Call It Progstep" ? "I Call It Progstep 2" : (document.getElementById("song").value == "Deviance" ? "Deviance 3" : document.getElementById("song").value)) + (song == "Destroid 3 Crusaders" ? ".png" : ".PNG");
         switch (song) {
+          case "Tunnel Vision":
+            artist = "Subtact";
+            break;
           case "Blast from the Past":
             artist = "Stonebank";
             break;
@@ -3917,6 +3928,7 @@
         document.getElementById("artist").innerHTML = artist;
         switch (song) {
           case "": hasLyrics = false; break;
+          case "Tunnel Vision": hasLyrics = false; break;
           case "Close to Me": hasLyrics = false; break;
           case "Destroid 5 Activation": hasLyrics = false; break;
           case "Katana Blaster": hasLyrics = false; break;
@@ -4256,7 +4268,7 @@
       var helpers2 = [
         "Blast from the Past", "Children of the Night", "Fugitive", "ROCK IT (VIP)",
         "Badland", "Lightspeed", "Children of Hell", "Close to Me", "Destroid 5 Activation",
-        "Katana Blaster"
+        "Katana Blaster", "Tunnel Vision"
       ];
       var isHelper = false;
       var isHelper2 = false;
@@ -4323,6 +4335,11 @@
       }
       var barcolor;
       switch (song) {
+        case "Tunnel Vision":
+          colors = ["#969eff"];
+          style = styles.single;
+          barcolor = 80;
+          break;
         case "Endgame":
           colors = ["#e10303"];
           style = styles.single;
@@ -5042,6 +5059,7 @@
         case "Wicked": length = "3:41.126"; bpm = 100; break;
         case "Wormhole": length = "3:40.395"; bpm = 128; break;
         case "Yo! Ho! And a Bottle of Bass!": length = "6:24.130"; bpm = 145; break;
+        case "Tunnel Vision": length = "4:25.142"; bpm = 163; break;
       }
       for (var i = 1; i <= 100; i++) {
         progress.classList.remove("c" + i);
