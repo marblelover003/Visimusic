@@ -239,6 +239,10 @@
       .c78::-webkit-progress-value {background: linear-gradient(to bottom, #ffb988 24.99999999%, #fef086 25%, #fef086 49.99999999%, #eb90b3 50%, #eb90b3 74.99999999%, #ffd157 75%);}
       .c79::-webkit-progress-value {background: #e10303;}
       .c80::-webkit-progress-value {background: #969eff;}
+      .c81::-webkit-progress-value {background: linear-gradient(to bottom, #a880ea, #be9dee, #ceb3f1);}
+      .c82::-webkit-progress-value {background: linear-gradient(to bottom, #d93eef, #760a80);}
+      .c83::-webkit-progress-value {background: linear-gradient(to bottom, #fe0879, #fd0049);}
+      .c84::-webkit-progress-value {background: linear-gradient(to bottom, #5b1782 0%, #ff6d0d 49.99999999%, #feff00 50%, #410f59 100%);}
       .b1 {background: #282728;}
       .b2 {background: linear-gradient(to bottom, #2e2317 0%, #2a1f14 50%, #2e2619 100%);}
       .b3 {background: #333300;}
@@ -319,6 +323,10 @@
       .b78 {background: linear-gradient(to bottom, #33251b 24.99999999%, #33301b 25%, #33301b 49.99999999%, #2f1d24 50%, #2f1d24 74.99999999%, #332a11 75%);}
       .b79 {background: #2d0101;}
       .b80 {background: #1e2033;}
+      .b81::-webkit-progress-value {background: linear-gradient(to bottom, #221a2f, #261f30, #292430);}
+      .b82::-webkit-progress-value {background: linear-gradient(to bottom, #2b0c30, #18021a);}
+      .b83::-webkit-progress-value {background: linear-gradient(to bottom, #330218, #33000f);}
+      .b84::-webkit-progress-value {background: linear-gradient(to bottom, #12051a 0%, #331603 49.99999999%, #333300 50%, #0d0312 100%);}
       .modal {
         display: none;
         opacity: 0;
@@ -528,6 +536,7 @@
         <option value="Heist">Heist</option>
         <option value="Here It Comes">Here It Comes</option>
         <option value="Here We Go">Here We Go</option>
+        <option value="Hidden Level">Hidden Level</option>
         <option value="Highscore">Highscore</option>
         <option value="Houston">Houston</option>
         <option value="HYPE">HYPE</option>
@@ -606,6 +615,7 @@
         <option value="Sugar Rush">Sugar Rush</option>
         <option value="Surface Tension">Surface Tension</option>
         <option value="Surge">Surge</option>
+        <option value="System Failure">System Failure</option>
         <option value="Tension">Tension</option>
         <option value="Termination Shock">Termination Shock</option>
         <option value="The Art of War">The Art of War</option>
@@ -631,6 +641,7 @@
         <option value="Unlocked">Unlocked</option>
         <option value="Vindicate Me">Vindicate Me</option>
         <option value="Virus">Virus</option>
+        <option value="Warp Zone">Warp Zone</option>
         <option value="Wicked">Wicked</option>
         <option value="Wormhole">Wormhole</option>
         <option value="Yo! Ho! And a Bottle of Bass!">Yo! Ho! And a Bottle of Bass!</option>
@@ -837,6 +848,7 @@
             <option value="Heist">Heist</option>
             <option value="Here It Comes">Here It Comes</option>
             <option value="Here We Go">Here We Go</option>
+            <option value="Hidden Level">Hidden Level</option>
             <option value="Highscore">Highscore</option>
             <option value="Houston">Houston</option>
             <option value="HYPE">HYPE</option>
@@ -915,6 +927,7 @@
             <option value="Sugar Rush">Sugar Rush</option>
             <option value="Surface Tension">Surface Tension</option>
             <option value="Surge">Surge</option>
+            <option value="System Failure">System Failure</option>
             <option value="Tension">Tension</option>
             <option value="Termination Shock">Termination Shock</option>
             <option value="The Art of War">The Art of War</option>
@@ -940,6 +953,7 @@
             <option value="Unlocked">Unlocked</option>
             <option value="Vindicate Me">Vindicate Me</option>
             <option value="Virus">Virus</option>
+            <option value="Warp Zone">Warp Zone</option>
             <option value="Wicked">Wicked</option>
             <option value="Wormhole">Wormhole</option>
             <option value="Yo! Ho! And a Bottle of Bass!">Yo! Ho! And a Bottle of Bass!</option>
@@ -979,7 +993,12 @@
       <div class="modal-content">
         <span class="close">&times;</span>
         <h1>What's new?</h1>
-        <p>Subtact makes his debut on Visimusic with <b>Tunnel Vision</b>!</p>
+        <p>Nitro Fun is back at it again, with not one, but THREE new songs!</p>
+        <ol start="202">
+          <li>Hidden Level</li>
+          <li>System Failure</li>
+          <li>Warp Zone</li>
+        <p>
         <hr>
         <h1>What's coming?</h1>
         <p>I am still working on the timed lyrics for every song that has lyrics.<br><b style="font-weight: 900">14</b> songs remain</p>
@@ -1087,6 +1106,7 @@
             <li><span class="songName">Heist</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Here It Comes</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Here We Go</span><span class="right">&hellip;</span></li>
+            <li><span class="songName">Hidden Level</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Highscore</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Houston</span><span class="right">&hellip;</span></li>
             <li><span class="songName">HYPE</span><span class="right">&hellip;</span></li>
@@ -1158,6 +1178,7 @@
             <li><span class="songName">Sugar Rush</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Surface Tension</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Surge</span><span class="right">&hellip;</span></li>
+            <li><span class="songName">System Failure</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Tension</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Termination Shock</span><span class="right">&hellip;</span></li>
             <li><span class="songName">The Art of War</span><span class="right">&hellip;</span></li>
@@ -1182,6 +1203,7 @@
             <li><span class="songName">Unlocked</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Vindicate Me</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Virus</span><span class="right">&hellip;</span></li>
+            <li><span class="songName">Warp Zone</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Wicked</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Wormhole</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Yo! Ho! And a Bottle of Bass!</span><span class="right">&hellip;</span></li>
@@ -1971,6 +1993,14 @@
             <td>February 24, 2020</td>
           </tr>
           <tr>
+            <td>Hidden Level</td>
+            <td>Nitro Fun</td>
+            <td>Monstercat Uncaged Vol. 9</td>
+            <td>3:30<small>050</small></td>
+            <td>128</td>
+            <td>November 14, 2020</td>
+          </tr>
+          <tr>
             <td>Highscore</td>
             <td>Panda Eyes &amp; Teminite</td>
             <td>Kiko</td>
@@ -2437,7 +2467,7 @@
           <tr>
             <td>ROCK IT (VIP)</td>
             <td>Tokyo Machine</td>
-            <td>Single release</td>
+            <td>Rocket League x Monstercat - Legacy</td>
             <td>3:15<small>135</small></td>
             <td>128</td>
             <td>September 9, 2020</td>
@@ -2593,6 +2623,14 @@
             <td>3:56<small>930</small></td>
             <td>128</td>
             <td>August 1, 2019</td>
+          </tr>
+          <tr>
+            <td>System Failure</td>
+            <td>Nitro Fun</td>
+            <td>Monstercat Uncaged Vol. 10</td>
+            <td>3:48<small>858</small></td>
+            <td>150</td>
+            <td>November 14, 2020</td>
           </tr>
           <tr class="original47">
             <td>Tension</td>
@@ -2793,6 +2831,14 @@
             <td>5:31<small>885</small></td>
             <td>174</td>
             <td>May 25, 2020</td>
+          </tr>
+          <tr>
+            <td>Warp Zone</td>
+            <td>Nitro Fun</td>
+            <td>Monstercat Uncaged Vol. 10</td>
+            <td>3:06<small>932</small></td>
+            <td>128</td>
+            <td>November 14, 2020</td>
           </tr>
           <tr class="original47">
             <td>Wicked</td>
@@ -3053,6 +3099,9 @@
         case "New Game":
         case "So Far Away":
         case "Time Goes By":
+        case "Hidden Level":
+        case "System Failure":
+        case "Warp Zone":
           artist2 = "Nitro Fun";
           break;
         case "Checkpoint":
@@ -3374,7 +3423,7 @@
         modal3.getElementsByClassName("modal-content")[0].classList.remove("moveout");
       }, 500);
     }
-    var songlengths = ["8:29.022", "7:54.409", "7:54.122", "7:28.104", "7:27.320", "7:11.491", "7:10.158", "7:07.154", "6:59.840", "6:53.204", "6:46.961", "6:46.491", "6:45.446", "6:44.976", "6:41.188", "6:37.714", "6:36.016", "6:28.257", "6:24.130", "6:17.104", "6:16.737", "6:13.054", "6:11.983", "6:10.834", "6:10.546", "6:09.475", "6:07.935", "6:05.897", "5:58.870", "5:55.813", "5:54.115", "5:53.123", "5:52.835", "5:52.575", "5:51.529", "5:51.007", "5:50.041", "5:48.108", "5:47.480", "5:46.409", "5:43.353", "5:42.413", "5:41.498", "5:41.080", "5:37.893", "5:37.606", "5:33.792", "5:31.885", "5:29.168", "5:28.437", "5:28.124", "5:23.631", "5:23.500", "5:22.115", "5:21.619", "5:19.843", "5:17.178", "5:17.074", "5:16.813", "5:15.376", "5:15.350", "5:10.177", "5:08.166", "5:05.240", "5:04.091", "5:03.673", "5:03.020", "5:02.785", "5:02.419", "5:01.923", "5:00.225", "4:58.736", "4:58.109", "4:55.262", "4:53.093", "4:52.598", "4:52.362", "4:50.272", "4:49.097", "4:47.634", "4:45.388", "4:44.865", "4:44.865", "4:42.775", "4:42.148", "4:41.808", "4:40.084", "4:38.857", "4:35.826", "4:34.755", "4:33.371", "4:32.378", "4:32.169", "4:30.863", "4:29.740", "4:28.852", "4:28.564", "4:27.049", "4:25.142", "4:23.471", "4:22.661", "4:21.250", "4:20.937", "4:20.832", "4:20.466", "4:20.284", "4:20.048", "4:19.317", "4:17.906", "4:17.671", "4:15.216", "4:13.204", "4:08.895", "4:08.293", "4:03.382", "4:02.050", "4:01.606", "4:00.117", "4:00.117", "3:59.631", "3:59.072", "3:56.930", "3:55.624", "3:54.448", "3:52.463", "3:50.687", "3:49.799", "3:49.694", "3:47.683", "3:47.160", "3:46.351", "3:43.895", "3:41.126", "3:40.447", "3:40.395", "3:39.480", "3:39.297", "3:38.618", "3:36.111", "3:36.058", "3:35.719", "3:35.170", "3:34.099", "3:32.767", "3:32.349", "3:32.088", "3:31.513", "3:31.356", "3:30.534", "3:29.920", "3:28.718", "3:27.647", "3:27.307", "3:26.942", "3:26.471", "3:26.315", "3:26.132", "3:26.080", "3:24.591", "3:24.486", "3:23.389", "3:22.396", "3:21.691", "3:19.026", "3:18.373", "3:18.347", "3:16.963", "3:16.257", "3:15.135", "3:13.280", "3:11.242", "3:11.190", "3:11.164", "3:10.458", "3:10.406", "3:09.361", "3:09.335", "3:07.611", "3:07.141", "3:05.391", "3:04.111", "3:02.909", "3:02.204", "3:02.151", "3:00.350", "2:57.136", "2:55.777", "2:55.412", "2:53.061", "2:50.997", "2:42.847", "2:41.776", "2:41.462", "2:36.760", "2:36.081", "2:31.954", "2:21.557", "2:10.482", "2:00.398", "2:00.085", "1:46.945"];
+    var songlengths = ["8:29.022", "7:54.409", "7:54.122", "7:28.104", "7:27.320", "7:11.491", "7:10.158", "7:07.154", "6:59.840", "6:53.204", "6:46.961", "6:46.491", "6:45.446", "6:44.976", "6:41.188", "6:37.714", "6:36.016", "6:28.257", "6:24.130", "6:17.104", "6:16.737", "6:13.054", "6:11.983", "6:10.834", "6:10.546", "6:09.475", "6:07.935", "6:05.897", "5:58.870", "5:55.813", "5:54.115", "5:53.123", "5:52.835", "5:52.575", "5:51.529", "5:51.007", "5:50.041", "5:48.108", "5:47.480", "5:46.409", "5:43.353", "5:42.413", "5:41.498", "5:41.080", "5:37.893", "5:37.606", "5:33.792", "5:31.885", "5:29.168", "5:28.437", "5:28.124", "5:23.631", "5:23.500", "5:22.115", "5:21.619", "5:19.843", "5:17.178", "5:17.074", "5:16.813", "5:15.376", "5:15.350", "5:10.177", "5:08.166", "5:05.240", "5:04.091", "5:03.673", "5:03.020", "5:02.785", "5:02.419", "5:01.923", "5:00.225", "4:58.736", "4:58.109", "4:55.262", "4:53.093", "4:52.598", "4:52.362", "4:50.272", "4:49.097", "4:47.634", "4:45.388", "4:44.865", "4:44.865", "4:42.775", "4:42.148", "4:41.808", "4:40.084", "4:38.857", "4:35.826", "4:34.755", "4:33.371", "4:32.378", "4:32.169", "4:30.863", "4:29.740", "4:28.852", "4:28.564", "4:27.049", "4:25.142", "4:23.471", "4:22.661", "4:21.250", "4:20.937", "4:20.832", "4:20.466", "4:20.284", "4:20.048", "4:19.317", "4:17.906", "4:17.671", "4:15.216", "4:13.204", "4:08.895", "4:08.293", "4:03.382", "4:02.050", "4:01.606", "4:00.117", "4:00.117", "3:59.631", "3:59.072", "3:56.930", "3:55.624", "3:54.448", "3:52.463", "3:50.687", "3:49.799", "3:49.694", "3:47.683", "3:47.160", "3:46.351", "3:43.895", "3:41.126", "3:40.447", "3:40.395", "3:39.480", "3:39.297", "3:38.618", "3:36.111", "3:36.058", "3:35.719", "3:35.170", "3:34.099", "3:32.767", "3:32.349", "3:32.088", "3:31.513", "3:31.356", "3:30.534", "3:29.920", "3:28.718", "3:27.647", "3:27.307", "3:26.942", "3:26.471", "3:26.315", "3:26.132", "3:26.080", "3:24.591", "3:24.486", "3:23.389", "3:22.396", "3:21.691", "3:19.026", "3:18.373", "3:18.347", "3:16.963", "3:16.257", "3:15.135", "3:13.280", "3:11.242", "3:11.190", "3:11.164", "3:10.458", "3:10.406", "3:09.361", "3:09.335", "3:07.611", "3:07.141", "3:05.391", "3:04.111", "3:02.909", "3:02.204", "3:02.151", "3:00.350", "2:57.136", "2:55.777", "2:55.412", "2:53.061", "2:50.997", "2:42.847", "2:41.776", "2:41.462", "2:36.760", "2:36.081", "2:31.954", "2:21.557", "2:10.482", "2:00.398", "2:00.085", "1:46.945", "3:30.050", "3:48.858", "3:06.932"];
     var tsl_h = 0, tsl_m = 0, tsl_s = 0, tsl_ms = 0;
     var x = 0;
     var timeInit = false;
@@ -3700,6 +3749,9 @@
           case "New Game":
           case "So Far Away":
           case "Time Goes By":
+          case "Hidden Level":
+          case "System Failure":
+          case "Warp Zone":
             artist = "Nitro Fun";
             break;
           case "Checkpoint":
@@ -3928,6 +3980,9 @@
         document.getElementById("artist").innerHTML = artist;
         switch (song) {
           case "": hasLyrics = false; break;
+          case "Hidden Level": hasLyrics = false; break;
+          case "System Failure": hasLyrics = false; break;
+          case "Warp Zone": hasLyrics = false; break;
           case "Tunnel Vision": hasLyrics = false; break;
           case "Close to Me": hasLyrics = false; break;
           case "Destroid 5 Activation": hasLyrics = false; break;
@@ -4227,6 +4282,7 @@
         }
       });
     }
+    var colors, style, barcolor;
     function selectSong() {
       document.getElementById("queue").disabled = false;
       document.getElementById("queueBtn").disabled = false;
@@ -4268,7 +4324,7 @@
       var helpers2 = [
         "Blast from the Past", "Children of the Night", "Fugitive", "ROCK IT (VIP)",
         "Badland", "Lightspeed", "Children of Hell", "Close to Me", "Destroid 5 Activation",
-        "Katana Blaster", "Tunnel Vision"
+        "Katana Blaster", "Tunnel Vision", "Hidden Level", "System Failure", "Warp Zone"
       ];
       var isHelper = false;
       var isHelper2 = false;
@@ -4299,7 +4355,6 @@
       maxheight = parseFloat(document.getElementById("maxheight").value);
       curvepower = parseInt(document.getElementById("power").value);
       document.getElementById("songSelectMenu").style.visibility = "hidden";
-      var colors, style;
       if (song == "Cool Friends") {
         document.title = "Now playing Cool Friends (Murtagh & Veschell Remix) by Silva Hound on Visimusic";
       } else if (song == "Partyt Ar Igang") {
@@ -4333,8 +4388,22 @@
       } else {
         document.title = "Now playing " + song + " by " + artist + " on Visimusic";
       }
-      var barcolor;
       switch (song) {
+        case "Hidden Level":
+          colors = ["#a880ea", "#be9dee", "#ceb3f1"];
+          style = styles.random;
+          barcolor = 81;
+          break;
+        case "System Failure":
+          colors = ["#d93eef", "#760a80"];
+          style = styles.alternating;
+          barcolor = 82;
+          break;
+        case "Warp Zone":
+          colors = ["#5b1782", "#ff6d0d", "#410f59", "#feff00"];
+          style = styles.sequential;
+          barcolor = 84;
+          break;
         case "Tunnel Vision":
           colors = ["#969eff"];
           style = styles.single;
@@ -4954,6 +5023,7 @@
         case "Heist": length = "3:02.204"; bpm = 170; break;
         case "Here It Comes": length = "3:32.088"; bpm = 150; break;
         case "Here We Go": length = "6:46.961"; bpm = 176; break;
+        case "Hidden Level": length = "3:30.050"; bpm = 128; break;
         case "Highscore": length = "4:20.832"; bpm = 110; break;
         case "Houston": length = "5:23.500"; bpm = 130; break;
         case "HYPE": length = "3:02.909"; bpm = 128; break;
@@ -5032,6 +5102,7 @@
         case "Sugar Rush": length = "4:44.865"; bpm = 128; break;
         case "Surface Tension": length = "5:41.080"; bpm = 174; break;
         case "Surge": length = "3:56.930"; bpm = 128; break;
+        case "System Failure": length = "3:48.858"; bpm = 150; break;
         case "Tension": length = "4:58.109"; bpm = 143; break;
         case "Termination Shock": length = "4:50.272"; bpm = 126; break;
         case "The Art of War": length = "3:13.280"; bpm = 174; break;
@@ -5056,12 +5127,13 @@
         case "Unlocked": length = "3:47.683"; bpm = 128; break;
         case "Vindicate Me": length = "3:26.471"; bpm = 100; break;
         case "Virus": length = "5:31.885"; bpm = 174; break;
+        case "Warp Zone": length = "3:06.932"; bpm = 128; break;
         case "Wicked": length = "3:41.126"; bpm = 100; break;
         case "Wormhole": length = "3:40.395"; bpm = 128; break;
         case "Yo! Ho! And a Bottle of Bass!": length = "6:24.130"; bpm = 145; break;
         case "Tunnel Vision": length = "4:25.142"; bpm = 163; break;
       }
-      for (var i = 1; i <= 100; i++) {
+      for (var i = 1; i <= 150; i++) {
         progress.classList.remove("c" + i);
         document.body.classList.remove("b" + i);
       }
@@ -5073,22 +5145,7 @@
       l_m *= 60;
       l_ms /= 1000;
       progress.max = (l_m + l_s + l_ms) * 1000;
-      var y = 0;
-      for (var i = 0; i < document.getElementById("visualizer").getElementsByTagName("div").length; i++) {
-        switch (style) {
-          case "alternating":
-          case "sequential":
-            document.getElementById("visualizer").getElementsByTagName("div")[y].style.background = colors[y % colors.length];
-            break;
-          case "random":
-            document.getElementById("visualizer").getElementsByTagName("div")[y].style.background = colors[Math.floor(Math.random() * colors.length)];
-            break;
-          case "single":
-            document.getElementById("visualizer").getElementsByTagName("div")[y].style.background = colors[0];
-            break;
-        }
-        y++;
-      }
+      changeColors(colors, style);
       document.getElementById("timeLeft").innerHTML = "-" + Math.floor(l_m / 60) + ":" + ("0" + l_s).slice(-2);
       audio.load();
       animationLooper();
@@ -5096,12 +5153,9 @@
       audio.oncanplaythrough = function() {
         audio.play();
         positions = setInterval(playing, 0);
-        if (song == "Fire Vortex") {
-          var start = new Date().getTime(), now, elapsed;
-        }
       }
     }
-    function changeColors() {
+    function changeColors(colors, style) {
       var y = 0;
       for (var i = 0; i < document.getElementById("visualizer").getElementsByTagName("div").length; i++) {
         switch (style) {
@@ -5140,6 +5194,15 @@
       var songProgress = Math.floor(pos / len * 1000) / 10;
       progress.value = audio.currentTime * 1000;
       currentLyrics = "";
+      if (song == "System Failure") {
+        if ((t >= 64.1 && t <= 102.5) || (t >= 179.3 && t <= 217.8)) {
+          progress.classList.add("c" + barcolor);
+          document.body.classList.add("b" + barcolor);
+        } else {
+          progress.classList.add("c" + barcolor);
+          document.body.classList.add("b" + barcolor);
+        }
+      }
       if (song == "The Devil's Den") {
         if ((t >= 45.2 && t <= 49.2) || (t >= 53.2 && t <= 55.8) || (t >= 135.5 && t <= 139) || (t >= 143 && t <= 147) || (t >= 150 && t <= 153) || (t >= 157 && t <= 161) || (t >= 210 && t <= 214) || (t >= 217.5 && t <= 222)) {
           currentLyrics = "The devil's den, the devil's den";
