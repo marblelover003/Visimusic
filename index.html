@@ -618,6 +618,7 @@
         <option value="System Failure">System Failure</option>
         <option value="Tension">Tension</option>
         <option value="Termination Shock">Termination Shock</option>
+        <option value="Terminus">Terminus</option>
         <option value="The Art of War">The Art of War</option>
         <option value="The Bigger Bang">The Bigger Bang</option>
         <option value="The Cave, The Treasure">The Cave, The Treasure</option>
@@ -931,6 +932,7 @@
             <option value="System Failure">System Failure</option>
             <option value="Tension">Tension</option>
             <option value="Termination Shock">Termination Shock</option>
+            <option value="Terminus">Terminus</option>
             <option value="The Art of War">The Art of War</option>
             <option value="The Bigger Bang">The Bigger Bang</option>
             <option value="The Cave, The Treasure">The Cave, The Treasure</option>
@@ -1178,6 +1180,7 @@
             <li><span class="songName">System Failure</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Tension</span><span class="right">&hellip;</span></li>
             <li><span class="songName">Termination Shock</span><span class="right">&hellip;</span></li>
+            <li><span class="songName">Terminus</span><span class="right">&hellip;</span></li>
             <li><span class="songName">The Art of War</span><span class="right">&hellip;</span></li>
             <li><span class="songName">The Bigger Bang</span><span class="right">&hellip;</span></li>
             <li><span class="songName">The Cave, The Treasure</span><span class="right">&hellip;</span></li>
@@ -2646,6 +2649,14 @@
             <td>126</td>
             <td>March 17, 2019</td>
           </tr>
+          <tr>
+            <td>Terminus</td>
+            <td>meganeko</td>
+            <td>Single release</td>
+            <td>8:17<small>110</small></td>
+            <td>130</td>
+            <td>June 10, 2021</td>
+          </tr>
           <tr class="original47">
             <td>The Art of War</td>
             <td>Chipzel</td>
@@ -2982,6 +2993,9 @@
       var cSong = localStorage.getItem("currentSong");
       var artist2;
       switch (cSong) {
+        case "Terminus":
+          artist2 = "meganeko";
+          break;
         case "Tunnel Vision":
           artist2 = "Subtact";
           break;
@@ -3430,7 +3444,7 @@
         modal3.getElementsByClassName("modal-content")[0].classList.remove("moveout");
       }, 500);
     }
-    var songlengths = ["8:29.022", "7:54.409", "7:54.122", "7:28.104", "7:27.320", "7:11.491", "7:10.158", "7:07.154", "6:59.840", "6:53.204", "6:46.961", "6:46.491", "6:45.446", "6:44.976", "6:41.188", "6:37.714", "6:36.016", "6:28.257", "6:24.130", "6:17.104", "6:16.737", "6:13.054", "6:11.983", "6:10.834", "6:10.546", "6:09.475", "6:07.935", "6:05.897", "5:58.870", "5:55.813", "5:54.115", "5:53.123", "5:52.835", "5:52.575", "5:51.529", "5:51.007", "5:50.041", "5:48.108", "5:47.480", "5:46.409", "5:43.353", "5:42.413", "5:41.498", "5:41.080", "5:37.893", "5:37.606", "5:33.792", "5:31.885", "5:29.168", "5:28.437", "5:28.124", "5:23.631", "5:23.500", "5:22.115", "5:21.619", "5:19.843", "5:17.178", "5:17.074", "5:16.813", "5:15.376", "5:15.350", "5:10.177", "5:08.166", "5:05.240", "5:04.091", "5:03.673", "5:03.020", "5:02.785", "5:02.419", "5:01.923", "5:00.225", "4:58.736", "4:58.109", "4:55.262", "4:53.093", "4:52.598", "4:52.362", "4:50.272", "4:49.097", "4:47.634", "4:45.388", "4:44.865", "4:44.865", "4:42.775", "4:42.148", "4:41.808", "4:40.084", "4:38.857", "4:35.826", "4:34.755", "4:33.371", "4:32.378", "4:32.169", "4:30.863", "4:29.740", "4:28.852", "4:28.564", "4:27.049", "4:25.142", "4:23.471", "4:22.661", "4:21.250", "4:20.937", "4:20.832", "4:20.466", "4:20.284", "4:20.048", "4:19.317", "4:17.906", "4:17.671", "4:15.216", "4:13.204", "4:08.895", "4:08.293", "4:03.382", "4:02.050", "4:01.606", "4:00.117", "4:00.117", "3:59.631", "3:59.072", "3:56.930", "3:55.624", "3:54.448", "3:52.463", "3:50.687", "3:49.799", "3:49.694", "3:47.683", "3:47.160", "3:46.351", "3:43.895", "3:41.126", "3:40.447", "3:40.395", "3:39.480", "3:39.297", "3:38.618", "3:36.111", "3:36.058", "3:35.719", "3:35.170", "3:34.099", "3:32.767", "3:32.349", "3:32.088", "3:31.513", "3:31.356", "3:30.534", "3:29.920", "3:28.718", "3:27.647", "3:27.307", "3:26.942", "3:26.471", "3:26.315", "3:26.132", "3:26.080", "3:24.591", "3:24.486", "3:23.389", "3:22.396", "3:21.691", "3:19.026", "3:18.373", "3:18.347", "3:16.963", "3:16.257", "3:15.135", "3:13.280", "3:11.242", "3:11.190", "3:11.164", "3:10.458", "3:10.406", "3:09.361", "3:09.335", "3:07.611", "3:07.141", "3:05.391", "3:04.111", "3:02.909", "3:02.204", "3:02.151", "3:00.350", "2:57.136", "2:55.777", "2:55.412", "2:53.061", "2:50.997", "2:42.847", "2:41.776", "2:41.462", "2:36.760", "2:36.081", "2:31.954", "2:21.557", "2:10.482", "2:00.398", "2:00.085", "1:46.945", "3:30.050", "3:48.858", "3:06.932", "4:57.247"];
+    var songlengths = ["8:29.022", "8:17.110", "7:54.409", "7:54.122", "7:28.104", "7:27.320", "7:11.491", "7:10.158", "7:07.154", "6:59.840", "6:53.204", "6:46.961", "6:46.491", "6:45.446", "6:44.976", "6:41.188", "6:37.714", "6:36.016", "6:28.257", "6:24.130", "6:17.104", "6:16.737", "6:13.054", "6:11.983", "6:10.834", "6:10.546", "6:09.475", "6:07.935", "6:05.897", "5:58.870", "5:55.813", "5:54.115", "5:53.123", "5:52.835", "5:52.575", "5:51.529", "5:51.007", "5:50.041", "5:48.108", "5:47.480", "5:46.409", "5:43.353", "5:42.413", "5:41.498", "5:41.080", "5:37.893", "5:37.606", "5:33.792", "5:31.885", "5:29.168", "5:28.437", "5:28.124", "5:23.631", "5:23.500", "5:22.115", "5:21.619", "5:19.843", "5:17.178", "5:17.074", "5:16.813", "5:15.376", "5:15.350", "5:10.177", "5:08.166", "5:05.240", "5:04.091", "5:03.673", "5:03.020", "5:02.785", "5:02.419", "5:01.923", "5:00.225", "4:58.736", "4:58.109", "4:55.262", "4:53.093", "4:52.598", "4:52.362", "4:50.272", "4:49.097", "4:47.634", "4:45.388", "4:44.865", "4:44.865", "4:42.775", "4:42.148", "4:41.808", "4:40.084", "4:38.857", "4:35.826", "4:34.755", "4:33.371", "4:32.378", "4:32.169", "4:30.863", "4:29.740", "4:28.852", "4:28.564", "4:27.049", "4:25.142", "4:23.471", "4:22.661", "4:21.250", "4:20.937", "4:20.832", "4:20.466", "4:20.284", "4:20.048", "4:19.317", "4:17.906", "4:17.671", "4:15.216", "4:13.204", "4:08.895", "4:08.293", "4:03.382", "4:02.050", "4:01.606", "4:00.117", "4:00.117", "3:59.631", "3:59.072", "3:56.930", "3:55.624", "3:54.448", "3:52.463", "3:50.687", "3:49.799", "3:49.694", "3:47.683", "3:47.160", "3:46.351", "3:43.895", "3:41.126", "3:40.447", "3:40.395", "3:39.480", "3:39.297", "3:38.618", "3:36.111", "3:36.058", "3:35.719", "3:35.170", "3:34.099", "3:32.767", "3:32.349", "3:32.088", "3:31.513", "3:31.356", "3:30.534", "3:29.920", "3:28.718", "3:27.647", "3:27.307", "3:26.942", "3:26.471", "3:26.315", "3:26.132", "3:26.080", "3:24.591", "3:24.486", "3:23.389", "3:22.396", "3:21.691", "3:19.026", "3:18.373", "3:18.347", "3:16.963", "3:16.257", "3:15.135", "3:13.280", "3:11.242", "3:11.190", "3:11.164", "3:10.458", "3:10.406", "3:09.361", "3:09.335", "3:07.611", "3:07.141", "3:05.391", "3:04.111", "3:02.909", "3:02.204", "3:02.151", "3:00.350", "2:57.136", "2:55.777", "2:55.412", "2:53.061", "2:50.997", "2:42.847", "2:41.776", "2:41.462", "2:36.760", "2:36.081", "2:31.954", "2:21.557", "2:10.482", "2:00.398", "2:00.085", "1:46.945", "3:30.050", "3:48.858", "3:06.932", "4:57.247"];
     var tsl_h = 0, tsl_m = 0, tsl_s = 0, tsl_ms = 0;
     var x = 0;
     var timeInit = false;
@@ -3633,6 +3647,9 @@
         }
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/" + (document.getElementById("song").value == "I Call It Progstep" ? "I Call It Progstep 2" : (document.getElementById("song").value == "Deviance" ? "Deviance 3" : document.getElementById("song").value)) + (song == "Destroid 3 Crusaders" ? ".png" : ".PNG");
         switch (song) {
+          case "Terminus":
+            artist = "meganeko";
+            break;
           case "Tunnel Vision":
             artist = "Subtact";
             break;
@@ -3988,6 +4005,7 @@
         document.getElementById("artist").innerHTML = artist;
         switch (song) {
           case "": hasLyrics = false; break;
+          case "Terminus": hasLyrics = false; break;
           case "The Bigger Bang": hasLyrics = false; break;
           case "Hidden Level": hasLyrics = false; break;
           case "System Failure": hasLyrics = false; break;
@@ -4334,7 +4352,7 @@
         "Blast from the Past", "Children of the Night", "Fugitive", "ROCK IT (VIP)",
         "Badland", "Lightspeed", "Children of Hell", "Close to Me", "Destroid 5 Activation",
         "Katana Blaster", "Tunnel Vision", "Hidden Level", "System Failure", "Warp Zone",
-        "The Bigger Bang"
+        "The Bigger Bang", "Terminus"
       ];
       var isHelper = false;
       var isHelper2 = false;
@@ -4676,6 +4694,7 @@
         case "Play It Loud (Broken Robot Mix)":
         case "Granite":
         case "Lightspeed":
+        case "Terminus":
           colors = ["#ffffff"];
           style = styles.single;
           barcolor = 23;
@@ -4939,6 +4958,7 @@
       }
       changeFavicon("https://marblelover003.github.io/Visimusic/VisimusicFavicons/f" + ("0" + barcolor).slice(-2) + ".png");
       switch (song) {
+        case "Terminus": length = "8:17.110"; bpm = 130; break;
         case "Airwaves": length = "4:42.148"; bpm = 128; break;
         case "Astrocat": length = "5:21.619"; bpm = 130; break;
         case "Atlantic": length = "4:23.471"; bpm = 130; break;
@@ -6007,6 +6027,27 @@
           if (t >= lyrics[i][0] && t <= lyrics[i][1]) {
             currentLyrics = lyrics[i][2];
           }
+        }
+      }
+      if (song == "Terminus") {
+        if (audio.currentTime < 147) {
+          bpm = "???";
+        } else if (audio.currentTime < 163.75) {
+          bpm = Math.floor(100 + ((147 - audio.currentTime) / 16.75 * 30));
+        } else if (audio.currentTime < 450) {
+          bpm = 130;
+        } else if (audio.currentTime < 466) {
+          bpm = Math.floor(130 - ((450 - audio.currentTime) / 16 * 30));
+        } else if (audio.currentTime < 477) {
+          bpm = Math.floor(100 - ((466 - audio.currentTime) / 11 * 5));
+        } else if (audio.currentTime < 480) {
+          bpm = Math.floor(95 - ((477 - audio.currentTime) / 3 * 25));
+        } else if (audio.currentTime < 494.2) {
+          bpm = Math.floor(70 - ((480 - audio.currentTime) / 14.2 * 50));
+        } else if (audio.currentTime < 495.2) {
+          bpm = 20;
+        } else {
+          bpm = 0;
         }
       }
       if (song == "Cruise Control" && audio.currentTime < 17.85) {
