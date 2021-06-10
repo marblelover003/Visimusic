@@ -6033,17 +6033,17 @@
         if (audio.currentTime < 147) {
           bpm = "???";
         } else if (audio.currentTime < 163.75) {
-          bpm = Math.floor(100 + ((147 - audio.currentTime) / 16.75 * 30));
+          bpm = Math.floor(130 - ((147 - audio.currentTime) / 16.75 * 30));
         } else if (audio.currentTime < 450) {
           bpm = 130;
         } else if (audio.currentTime < 466) {
-          bpm = Math.floor(130 - ((450 - audio.currentTime) / 16 * 30));
+          bpm = Math.floor(100 + ((450 - audio.currentTime) / 16 * 30));
         } else if (audio.currentTime < 477) {
-          bpm = Math.floor(100 - ((466 - audio.currentTime) / 11 * 5));
+          bpm = Math.floor(95 + ((466 - audio.currentTime) / 11 * 5));
         } else if (audio.currentTime < 480) {
-          bpm = Math.floor(95 - ((477 - audio.currentTime) / 3 * 25));
+          bpm = Math.floor(70 + ((477 - audio.currentTime) / 3 * 25));
         } else if (audio.currentTime < 494.2) {
-          bpm = Math.floor(70 - ((480 - audio.currentTime) / 14.2 * 50));
+          bpm = Math.floor(20 + ((480 - audio.currentTime) / 14.2 * 50));
         } else if (audio.currentTime < 495.2) {
           bpm = 20;
         } else {
