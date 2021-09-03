@@ -1003,21 +1003,16 @@
     </div>
     <button id="infoBtn" class="notification">
       Info &sol; News
-      <span class="badge">3</span>
+      <span class="badge">1</span>
     </button>
     <div id="infoModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
         <h1>What's new?</h1>
-        <p>I added timed lyrics to the following three songs:</p>
-        <ul>
-          <li><b>Born Survivor</b> by Shirobon</li>
-          <li><b>On My Way (2020 Edit)</b> by Teminite &amp; PsoGnar</li>
-          <li><b>Senses Overload</b> by Teminite &amp; PsoGnar</li>
-        </ul>
+        <p>NEW FAVICONS! Now, when you play a song, its album artwork is displayed as the favicon!</p>
         <hr>
         <h1>What's coming?</h1>
-        <p>I am still working on the timed lyrics for every song that has lyrics.</p>
+        <p>I am still working on the timed lyrics for each song that has lyrics.</p>
         <p>Stay tuned for future updates! Keep calm and keep the beat going!</p>
         <hr>
         <h1>Supported Browsers</h1>
@@ -5067,220 +5062,434 @@
           break;
       }
       changeFavicon("https://marblelover003.github.io/Visimusic/VisimusicFavicons/f" + ("0" + barcolor).slice(-2) + ".png");
+      var iconImg;
       switch (song) {
-        case "Born Survivor": length = "5:03.168"; bpm = 122; break;
-        case "Last Tile": length = "3:34.656"; bpm = 145; break;
-        case "On My Way - 2020 Edit": length = "5:33.863"; bpm = 170; break;
-        case "Pursuit": length = "1:39.120"; bpm = 120; break;
-        case "Senses Overload": length = "4:43.055"; bpm = 174; break;
-        case "Spider Dance - Shirobon Remix": length = "1:49.343"; bpm = 115; break;
-        case "Terminus": length = "8:17.110"; bpm = 130; break;
-        case "Airwaves": length = "4:42.148"; bpm = 128; break;
-        case "Astrocat": length = "5:21.619"; bpm = 130; break;
-        case "Atlantic": length = "4:23.471"; bpm = 130; break;
-        case "Backlash": length = "5:22.115"; bpm = 140; break;
-        case "BAD BOY": length = "3:32.767"; bpm = 128; break;
-        case "Bad Intentions": length = "4:52.598"; bpm = 128; break;
-        case "Badland": length = "4:47.634"; bpm = 128; break;
-        case "Bananonymous": length = "6:11.983"; bpm = 128; break;
-        case "Barracuda": length = "4:22.661"; bpm = 130; break;
-        case "Bass Head": length = "6:37.714"; bpm = 85; break;
-        case "Be Gone Mr. Gawne": length = "4:17.906"; bpm = 167; break;
-        case "BEWM": length = "3:30.534"; bpm = 128; break;
-        case "BLAST": length = "4:20.937"; bpm = 128; break;
-        case "Blast from the Past": length = "5:52.575"; bpm = 128; break;
-        case "Breakdown": length = "4:49.097"; bpm = 140; break;
-        case "Breakdown VIP": length = "3:54.448"; bpm = 174; break;
-        case "Buzz Kill": length = "5:55.813"; bpm = 128; break;
-        case "Caps On, Hats Off": length = "2:36.760"; bpm = 95; break;
-        case "Captain Cool": length = "3:19.026"; bpm = 145; break;
-        case "Cascade": length = "4:20.048"; bpm = 129; break;
-        case "Cheat Codes": length = "3:32.349"; bpm = 128; break;
-        case "Cheat Codes VIP": length = "3:24.486"; bpm = 128; break;
-        case "Checkpoint": length = "3:43.895"; bpm = 140; break;
-        case "Children of Hell": length = "6:44.976"; bpm = 175; break;
-        case "Children of the Night": length = "5:03.020"; bpm = 128; break;
-        case "Chipland": length = "3:10.458"; bpm = 174; break;
-        case "Chip Zeal": length = "3:29.920"; bpm = 170; break;
-        case "Chronos": length = "4:29.740"; bpm = 134; break;
-        case "Clash": length = "3:40.447"; bpm = 128; break;
-        case "Close to Me": length = "4:20.466"; bpm = 124; break;
-        case "Commando Steve": length = "3:26.942"; bpm = 145; break;
-        case "COOKIES": length = "3:09.361"; bpm = 128; break;
-        case "Cool Friends": length = "3:59.072"; bpm = 115; break;
-        case "Core": length = "4:33.371"; bpm = 145; break;
-        case "Corrupted": length = "6:16.737"; bpm = 139; break;
-        case "Courtesy": length = "3:11.164"; bpm = 130; break;
-        case "Crab Rave": length = "2:41.776"; bpm = 125; break;
-        case "CRAZY": length = "3:16.963"; bpm = 128; break;
-        case "Creatures ov Deception": length = "2:00.398"; bpm = 190; break;
-        case "Cruise Control": length = "4:01.606"; bpm = 140; break;
-        case "Crystal Tokyo": length = "5:28.124"; bpm = 174; break;
-        case "Cybertron": length = "6:09.475"; bpm = 128; break;
-        case "Dance of the Incognizant": length = "7:10.158"; bpm = 135; break;
-        case "Deadlocked": length = "3:26.132"; bpm = 135; break;
-        case "Delayed Friend Request": length = "6:05.897"; bpm = 130; break;
-        case "Destroid 1 - Raise Your Fist": length = "4:42.775"; bpm = 174; break;
-        case "Destroid 2 - Wasteland": length = "4:38.857"; bpm = 145; break;
-        case "Destroid 3 Crusaders": length = "5:29.168"; bpm = 140; break;
-        case "Destroid 5 Activation": length = "3:26.080"; bpm = 140; break;
-        case "Destroid 6 - Put It Down": length = "3:27.647"; bpm = 176; break;
-        case "Destroid 7 - Bounce": length = "4:21.250"; bpm = 140; break;
-        case "Destroid 8 - Annihilate": length = "5:10.177"; bpm = 128; break;
-        case "Destroid 10 - Funk Hole": length = "4:40.084"; bpm = 110; break;
-        case "Deviance": length = "5:04.091"; bpm = 110; break;
-        case "Deviance (Original)": length = "4:32.169"; bpm = 140; break;
-        case "Dimensions": length = "7:54.122"; bpm = 128; break;
-        case "Disconnected": length = "4:02.050"; bpm = 128; break;
-        case "Duality": length = "5:58.870"; bpm = 160; break;
-        case "Dubwoofer Substep": length = "4:44.865"; bpm = 145; break;
-        case "Eclipse": length = "5:37.606"; bpm = 128; break;
-        case "Emergency": length = "4:13.204"; bpm = 128; break;
-        case "Endgame": length = "6:59.840"; bpm = 175; break;
-        case "End is Near": length = "4:03.382"; bpm = 174; break;
-        case "EPIC": length = "3:38.618"; bpm = 128; break;
-        case "Evolution": length = "5:37.893"; bpm = 146; break;
-        case "Exoskelephone": length = "5:53.123"; bpm = 128; break;
-        case "Farbror Melker Fixar Fiskdamm (Fastbom Cover)": length = "3:23.389"; bpm = 169; break;
-        case "Farewell": length = "7:54.409"; bpm = 128; break;
-        case "Faster Than Light": length = "5:02.785"; bpm = 128; break;
-        case "FIGHT": length = "3:35.719"; bpm = 128; break;
-        case "Final Boss": length = "5:16.813"; bpm = 130; break;
-        case "Fingerbang": length = "4:28.852"; bpm = 112; break;
-        case "Fire in the Hole": length = "3:47.160"; bpm = 108; break;
-        case "Fire Vortex": length = "7:27.320"; bpm = 136; break;
-        case "FLAMES": length = "3:00.350"; bpm = 128; break;
-        case "Flirt Flirt Oh It Hurts": length = "3:31.513"; bpm = 168; break;
-        case "Flowers of Antimony": length = "1:46.945"; bpm = 171; break;
-        case "Focus": length = "2:42.847"; bpm = 174; break;
-        case "Forged in Stars": length = "3:16.257"; bpm = 143; break;
-        case "FOX": length = "5:17.178"; bpm = 138; break;
-        case "FTW": length = "4:17.671"; bpm = 130; break;
-        case "Fugitive": length = "4:45.388"; bpm = 125; break;
-        case "Galactic Voyage": length = "6:36.016"; bpm = 125; break;
-        case "GET UP": length = "3:10.406"; bpm = 128; break;
-        case "Get Up": length = "6:41.188"; bpm = 128; break;
-        case "Glitch": length = "5:47.480"; bpm = 158; break;
-        case "Granite": length = "2:31.954"; bpm = 128; break;
-        case "Gravity": length = "5:54.115"; bpm = 128; break;
-        case "Grind": length = "5:15.376"; bpm = 128; break;
-        case "Halcyon": length = "6:10.834"; bpm = 92; break;
-        case "Harmony": length = "6:17.104"; bpm = 128; break;
-        case "Heat": length = "5:50.041"; bpm = 128; break;
-        case "Heist": length = "3:02.204"; bpm = 170; break;
-        case "Here It Comes": length = "3:32.088"; bpm = 150; break;
-        case "Here We Go": length = "6:46.961"; bpm = 176; break;
-        case "Hidden Level": length = "3:30.050"; bpm = 128; break;
-        case "Highscore": length = "4:20.832"; bpm = 110; break;
-        case "Houston": length = "5:23.500"; bpm = 130; break;
-        case "HYPE": length = "3:02.909"; bpm = 128; break;
-        case "I\'m being Reelistic": length = "3:50.687"; bpm = 115; break;
-        case "I Call It Progstep": length = "3:55.624"; bpm = 72; break;
-        case "In the Halls of the Usurper": length = "2:10.482"; bpm = 155; break;
-        case "Into The Zone": length = "2:41.462"; bpm = 122; break;
-        case "Ism": length = "5:23.631"; bpm = 151; break;
-        case "It\'s Pronounced Omnitica": length = "5:00.225"; bpm = 128; break;
-        case "Jack Russel": length = "3:21.691"; bpm = 134; break;
-        case "JOURNEY": length = "3:59.631"; bpm = 128; break;
-        case "Junction Seven": length = "5:05.240"; bpm = 175; break;
-        case "Katana Blaster": length = "3:18.347"; bpm = 140; break;
-        case "La Danse Macabre": length = "2:00.085"; bpm = 128; break;
-        case "Leaving Leafwood Forest": length = "3:24.591"; bpm = 125; break;
-        case "Legacy": length = "5:17.074"; bpm = 114; break;
-        case "Let It Roar": length = "5:46.409"; bpm = 140; break;
-        case "Lightspeed": length = "4:08.895"; bpm = 158; break;
-        case "Light Sticks": length = "5:19.843"; bpm = 128; break;
-        case "Livewire": length = "5:42.413"; bpm = 130; break;
-        case "Logic Gatekeeper": length = "4:58.736"; bpm = 163; break;
-        case "Long Live The New Fresh": length = "4:27.049"; bpm = 127; break;
-        case "Lycanthropy": length = "4:55.262"; bpm = 150; break;
-        case "Milky Ways": length = "3:07.611"; bpm = 182; break;
-        case "MOSHI": length = "3:35.170"; bpm = 128; break;
-        case "Nemesis": length = "4:20.284"; bpm = 107; break;
-        case "New Game": length = "4:19.317"; bpm = 128; break;
-        case "No Holding On": length = "7:28.104"; bpm = 128; break;
-        case "No Party Like a Mojang Party": length = "5:51.529"; bpm = 125; break;
-        case "OKAY": length = "3:07.141"; bpm = 128; break;
-        case "Omniverse": length = "3:28.718"; bpm = 174; break;
-        case "Once Again": length = "3:46.351"; bpm = 110; break;
-        case "On The Run": length = "4:28.564"; bpm = 160; break;
-        case "Opia": length = "3:09.335"; bpm = 170; break;
-        case "Otis": length = "2:36.081"; bpm = 135; break;
-        case "Paper Dolls": length = "2:55.777"; bpm = 200; break;
-        case "Parallel Processing": length = "8:29.022"; bpm = 109; break;
-        case "PARTY": length = "3:39.480"; bpm = 128; break;
-        case "Partyt Ar Igang": length = "2:57.136"; bpm = 127; break;
-        case "Peer Gynt": length = "2:21.557"; bpm = 142; break;
-        case "Pirate Manners": length = "3:02.151"; bpm = 115; break;
-        case "PIXEL": length = "3:18.373"; bpm = 128; break;
-        case "PLAY": length = "3:04.111"; bpm = 128; break;
-        case "Play It Loud": length = "7:07.154"; bpm = 130; break;
-        case "Play It Loud (Broken Robot Mix)": length = "6:53.204"; bpm = 136; break;
-        case "Pyro": length = "3:36.058"; bpm = 145; break;
-        case "Quake": length = "5:41.498"; bpm = 128; break;
-        case "Rainbow Road": length = "2:53.061"; bpm = 170; break;
-        case "Rally the Troops": length = "6:07.935"; bpm = 150; break;
-        case "Rat Twist": length = "4:00.117"; bpm = 128; break;
-        case "Razor Sharp": length = "4:41.808"; bpm = 110; break;
-        case "Renegade": length = "6:10.546"; bpm = 127; break;
-        case "Renzokuken": length = "7:11.491"; bpm = 128; break;
-        case "Rhapsody": length = "6:13.054"; bpm = 104; break;
-        case "Rhusma": length = "5:52.835"; bpm = 128; break;
-        case "Rinse Out": length = "5:43.353"; bpm = 128; break;
-        case "Rocket": length = "6:28.257"; bpm = 128; break;
-        case "ROCK IT": length = "3:11.242"; bpm = 128; break;
-        case "ROCK IT (VIP)": length = "3:15.135"; bpm = 128; break;
-        case "Rocktronik": length = "5:08.166"; bpm = 130; break;
-        case "SAIKOU": length = "2:55.412"; bpm = 128; break;
-        case "Sentinel": length = "5:28.437"; bpm = 130; break;
-        case "Sevcon": length = "4:34.755"; bpm = 133; break;
-        case "Sexy Beast": length = "5:15.350"; bpm = 128; break;
-        case "Sidewinder": length = "6:46.491"; bpm = 130; break;
-        case "So Far Away": length = "3:39.297"; bpm = 125; break;
-        case "Space Invaders": length = "5:48.108"; bpm = 128; break;
-        case "Spection": length = "4:52.362"; bpm = 170; break;
-        case "Spectra": length = "4:00.117"; bpm = 130; break;
-        case "SPOOKY": length = "3:49.799"; bpm = 128; break;
-        case "Starfish": length = "5:01.923"; bpm = 101; break;
-        case "Starship Showdown": length = "4:08.293"; bpm = 147; break;
-        case "Steampunk Warlord": length = "3:34.099"; bpm = 157; break;
-        case "Stock & Pull": length = "5:51.007"; bpm = 128; break;
-        case "Strike the Earth": length = "3:36.111"; bpm = 174; break;
-        case "Sugar Rush": length = "4:44.865"; bpm = 128; break;
-        case "Surface Tension": length = "5:41.080"; bpm = 174; break;
-        case "Surge": length = "3:56.930"; bpm = 128; break;
-        case "System Failure": length = "3:48.858"; bpm = 150; break;
-        case "Tension": length = "4:58.109"; bpm = 143; break;
-        case "Termination Shock": length = "4:50.272"; bpm = 126; break;
-        case "The Art of War": length = "3:13.280"; bpm = 174; break;
-        case "The Bigger Bang": length = "4:57.247"; bpm = 128; break;
-        case "The Cave, The Treasure": length = "3:27.307"; bpm = 181; break;
-        case "The Devil's Den": length = "4:53.093"; bpm = 128; break;
-        case "The Escape": length = "5:03.673"; bpm = 128; break;
-        case "The Lunar Whale": length = "4:35.826"; bpm = 109; break;
-        case "The Maze of Mayonnaise": length = "3:11.190"; bpm = 135; break;
-        case "This Is It": length = "5:33.792"; bpm = 108; break;
-        case "This Time": length = "4:32.378"; bpm = 128; break;
-        case "Till It\'s Over": length = "4:30.863"; bpm = 110; break;
-        case "Time Goes By": length = "3:26.315"; bpm = 128; break;
-        case "Time Lapse": length = "3:05.391"; bpm = 127; break;
-        case "Timewarp": length = "5:02.419"; bpm = 128; break;
-        case "Tokyo Skies": length = "3:52.463"; bpm = 126; break;
-        case "Tonight": length = "6:45.446"; bpm = 128; break;
-        case "To the Stars": length = "3:22.396"; bpm = 175; break;
-        case "Try This": length = "3:49.694"; bpm = 174; break;
-        case "TURBO": length = "2:50.997"; bpm = 128; break;
-        case "Turbo Penguin": length = "3:31.356"; bpm = 128; break;
-        case "Ultimatum": length = "4:15.216"; bpm = 173; break;
-        case "Unlocked": length = "3:47.683"; bpm = 128; break;
-        case "Vindicate Me": length = "3:26.471"; bpm = 100; break;
-        case "Virus": length = "5:31.885"; bpm = 174; break;
-        case "Warp Zone": length = "3:06.932"; bpm = 128; break;
-        case "Wicked": length = "3:41.126"; bpm = 100; break;
-        case "Wormhole": length = "3:40.395"; bpm = 128; break;
-        case "Yo! Ho! And a Bottle of Bass!": length = "6:24.130"; bpm = 145; break;
-        case "Tunnel Vision": length = "4:25.142"; bpm = 163; break;
+        case "Born Survivor":
+          iconImg = "Back Tracking - EP.jpg.jpg"; length = "5:03.168"; bpm = 122; break;
+        case "Last Tile":
+          iconImg = "Last Tile - Single.jpg.jpg"; length = "3:34.656"; bpm = 145; break;
+        case "On My Way - 2020 Edit":
+          iconImg = "On My Way (2020 Edit).jpg"; length = "5:33.863"; bpm = 170; break;
+        case "Pursuit":
+          iconImg = "Pursuit - Single.jpg.jpg"; length = "1:39.120"; bpm = 120; break;
+        case "Senses Overload":
+          iconImg = "Senses Overload.jpg"; length = "4:43.055"; bpm = 174; break;
+        case "Spider Dance - Shirobon Remix":
+          iconImg = "Spider Dance.jpg"; length = "1:49.343"; bpm = 115; break;
+        case "Terminus":
+          iconImg = "Terminus - Single.jpg.jpg"; length = "8:17.110"; bpm = 130; break;
+        case "Airwaves":
+          iconImg = "Monstercat 002 - Early Stage.jpg.jpg"; length = "4:42.148"; bpm = 128; break;
+        case "Astrocat":
+          iconImg = "Astrocat EP.jpg.jpg"; length = "5:21.619"; bpm = 130; break;
+        case "Atlantic":
+          iconImg = "Monstercat 019 - Endeavour.jpg.jpg"; length = "4:23.471"; bpm = 130; break;
+        case "Backlash":
+          iconImg = "Renegade EP.jpg.jpg"; length = "5:22.115"; bpm = 140; break;
+        case "BAD BOY":
+          iconImg = "BAD BOY.jpg.jpg"; length = "3:32.767"; bpm = 128; break;
+        case "Bad Intentions":
+          iconImg = "Reanimated - EP.jpg.jpg"; length = "4:52.598"; bpm = 128; break;
+        case "Badland":
+          iconImg = "Badland - Single.jpg.jpg"; length = "4:47.634"; bpm = 128; break;
+        case "Bananonymous":
+          iconImg = "Alchemist.jpg.jpg"; length = "6:11.983"; bpm = 128; break;
+        case "Barracuda":
+          iconImg = "Monstercat 022 - Contact.jpg.jpg"; length = "4:22.661"; bpm = 130; break;
+        case "Bass Head":
+          iconImg = "Timestretch.JPG.jpg"; length = "6:37.714"; bpm = 85; break;
+        case "Be Gone Mr. Gawne":
+          iconImg = "Caps On, Hats Off.jpg.jpg"; length = "4:17.906"; bpm = 167; break;
+        case "BEWM":
+          iconImg = "BEWM.jpeg.jpg"; length = "3:30.534"; bpm = 128; break;
+        case "BLAST":
+          iconImg = "BLAST.jpg.jpg"; length = "4:20.937"; bpm = 128; break;
+        case "Blast from the Past":
+          iconImg = "Monstercat 024 - Vanguard.jpg.jpg"; length = "5:52.575"; bpm = 128; break;
+        case "Breakdown":
+          iconImg = "Monstercat 007 - Solace.jpg.jpg"; length = "4:49.097"; bpm = 140; break;
+        case "Breakdown VIP":
+          iconImg = "Monstercat 018 - Frontier.jpg.jpg"; length = "3:54.448"; bpm = 174; break;
+        case "Buzz Kill":
+          iconImg = "Monstercat 016 - Expedition.jpg.jpg"; length = "5:55.813"; bpm = 128; break;
+        case "Caps On, Hats Off":
+          iconImg = "Caps On, Hats Off.jpg.jpg"; length = "2:36.760"; bpm = 95; break;
+        case "Captain Cool":
+          iconImg = "Nice Catch Biggy!.jpg.jpg"; length = "3:19.026"; bpm = 145; break;
+        case "Cascade":
+          iconImg = "Ember.jpg.jpg"; length = "4:20.048"; bpm = 129; break;
+        case "Cheat Codes":
+          iconImg = "Monstercat 017 - Ascension.jpg.jpg"; length = "3:32.349"; bpm = 128; break;
+        case "Cheat Codes VIP":
+          iconImg = "Cheat Codes VIP.jpg.jpg"; length = "3:24.486"; bpm = 128; break;
+        case "Checkpoint":
+          iconImg = "Monstercat 027 - Cataclysm.jpg.jpg"; length = "3:43.895"; bpm = 140; break;
+        case "Children of Hell":
+          iconImg = "F Minor Factory EP.jpg.jpg"; length = "6:44.976"; bpm = 175; break;
+        case "Children of the Night":
+          iconImg = "Monstercat 021 - Perspective.jpg.jpg"; length = "5:03.020"; bpm = 128; break;
+        case "Chipland":
+          iconImg = "Chipland.jpg.jpg"; length = "3:10.458"; bpm = 174; break;
+        case "Chip Zeal":
+          iconImg = "The Glory Days.jpg.jpg"; length = "3:29.920"; bpm = 170; break;
+        case "Chronos":
+          iconImg = "Parallel Processing.jpg.jpg"; length = "4:29.740"; bpm = 134; break;
+        case "Clash":
+          iconImg = "Ninety9lives 99 - Press Start.jpg.jpg"; length = "3:40.447"; bpm = 128; break;
+        case "Close to Me":
+          iconImg = "Domo Loves Chiptune.jpg.jpg"; length = "4:20.466"; bpm = 124; break;
+        case "Commando Steve":
+          iconImg = "Caps On, Hats Off.jpg.jpg"; length = "3:26.942"; bpm = 145; break;
+        case "COOKIES":
+          iconImg = "COOKIES.jpg.jpg"; length = "3:09.361"; bpm = 128; break;
+        case "Cool Friends":
+          iconImg = "Cool Friends - The Remixes.jpg.jpg"; length = "3:59.072"; bpm = 115; break;
+        case "Core":
+          iconImg = "Ground Zero.jpg.jpg"; length = "4:33.371"; bpm = 145; break;
+        case "Corrupted":
+          iconImg = "Parallel Processing.jpg.jpg"; length = "6:16.737"; bpm = 139; break;
+        case "Courtesy":
+          iconImg = ""; length = "3:11.164"; bpm = 130; break;
+        case "Crab Rave":
+          iconImg = "Crab Rave - Single.jpg.jpg"; length = "2:41.776"; bpm = 125; break;
+        case "CRAZY":
+          iconImg = "CRAZY.png.png"; length = "3:16.963"; bpm = 128; break;
+        case "Creatures ov Deception":
+          iconImg = "Creatures Ov Deception (Jsab Instrumental Edit) - Single.jpg.jpg"; length = "2:00.398"; bpm = 190; break;
+        case "Cruise Control":
+          iconImg = "Ground Zero.jpg.jpg"; length = "4:01.606"; bpm = 140; break;
+        case "Crystal Tokyo":
+          iconImg = "Crystal Tokyo - Single.jpg.jpg"; length = "5:28.124"; bpm = 174; break;
+        case "Cybertron":
+          iconImg = "Faster Than Light EP.jpg.jpg"; length = "6:09.475"; bpm = 128; break;
+        case "Dance of the Incognizant":
+          iconImg = "The Massacre EP.jpg.jpg"; length = "7:10.158"; bpm = 135; break;
+        case "Deadlocked":
+          iconImg = "Smash It Vol.2.jpg.jpg"; length = "3:26.132"; bpm = 135; break;
+        case "Delayed Friend Request":
+          iconImg = "Monstercat 014 - Discovery.jpg.jpg"; length = "6:05.897"; bpm = 130; break;
+        case "Destroid 1 - Raise Your Fist":
+          iconImg = "Destroid - The Invasion.jpg.jpg"; length = "4:42.775"; bpm = 174; break;
+        case "Destroid 2 - Wasteland":
+          iconImg = "Destroid - The Invasion.jpg.jpg"; length = "4:38.857"; bpm = 145; break;
+        case "Destroid 3 Crusaders":
+          iconImg = "Destroid - The Invasion.jpg.jpg"; length = "5:29.168"; bpm = 140; break;
+        case "Destroid 5 Activation":
+          iconImg = "Destroid - The Invasion.jpg.jpg"; length = "3:26.080"; bpm = 140; break;
+        case "Destroid 6 - Put It Down":
+          iconImg = "Destroid - The Invasion.jpg.jpg"; length = "3:27.647"; bpm = 176; break;
+        case "Destroid 7 - Bounce":
+          iconImg = "Destroid - The Invasion.jpg.jpg"; length = "4:21.250"; bpm = 140; break;
+        case "Destroid 8 - Annihilate":
+          iconImg = "Destroid - The Invasion.jpg.jpg"; length = "5:10.177"; bpm = 128; break;
+        case "Destroid 10 - Funk Hole":
+          iconImg = "Destroid - The Invasion.jpg.jpg"; length = "4:40.084"; bpm = 110; break;
+        case "Deviance":
+          iconImg = "X Rated.jpg.jpg"; length = "5:04.091"; bpm = 110; break;
+        case "Deviance (Original)":
+          iconImg = "X Rated (The Remixes).jpg.jpg"; length = "4:32.169"; bpm = 140; break;
+        case "Dimensions":
+          iconImg = "Monstercat 009 - Reunion.jpg.jpg"; length = "7:54.122"; bpm = 128; break;
+        case "Disconnected":
+          iconImg = "Monstercat 007 - Solace.jpg.jpg"; length = "4:02.050"; bpm = 128; break;
+        case "Duality":
+          iconImg = "Monstercat 015 - Outlook.jpg.jpg"; length = "5:58.870"; bpm = 160; break;
+        case "Dubwoofer Substep":
+          iconImg = "Xenosphere EP.jpg.jpg"; length = "4:44.865"; bpm = 145; break;
+        case "Eclipse":
+          iconImg = "Monstercat 014 - Discovery.jpg.jpg"; length = "5:37.606"; bpm = 128; break;
+        case "Emergency":
+          iconImg = "Monstercat 019 - Endeavour.jpg.jpg"; length = "4:13.204"; bpm = 128; break;
+        case "Endgame":
+          iconImg = "Monstercat 016 - Expedition.jpg.jpg"; length = "6:59.840"; bpm = 175; break;
+        case "End is Near":
+          iconImg = "Pink Cloud EP.jpg.jpg"; length = "4:03.382"; bpm = 174; break;
+        case "EPIC":
+          iconImg = "EPIC.jpg.jpg"; length = "3:38.618"; bpm = 128; break;
+        case "Evolution":
+          iconImg = "Spectra.jpg.jpg"; length = "5:37.893"; bpm = 146; break;
+        case "Exoskelephone":
+          iconImg = "Monstercat 008 - Anniversary.jpg.jpg"; length = "5:53.123"; bpm = 128; break;
+        case "Farbror Melker Fixar Fiskdamm (Fastbom Cover)":
+          iconImg = "Caps On, Hats Off.jpg.jpg"; length = "3:23.389"; bpm = 169; break;
+        case "Farewell":
+          iconImg = "Monstercat 012 - Aftermath.jpg.jpg"; length = "7:54.409"; bpm = 128; break;
+        case "Faster Than Light":
+          iconImg = "Faster Than Light EP.jpg.jpg"; length = "5:02.785"; bpm = 128; break;
+        case "FIGHT":
+          iconImg = "FIGHT.jpeg.jpg"; length = "3:35.719"; bpm = 128; break;
+        case "Final Boss":
+          iconImg = "Final Boss - Single.jpg.jpg"; length = "5:16.813"; bpm = 130; break;
+        case "Fingerbang":
+          iconImg = "Rise.jpg.jpg"; length = "4:28.852"; bpm = 112; break;
+        case "Fire in the Hole":
+          iconImg = "Monstercat 009 - Reunion.jpg.jpg"; length = "3:47.160"; bpm = 108; break;
+        case "Fire Vortex":
+          iconImg = "Monstercat 013 - Awakening.jpg.jpg"; length = "7:27.320"; bpm = 136; break;
+        case "FLAMES":
+          iconImg = "FLAMES.jpg.jpg"; length = "3:00.350"; bpm = 128; break;
+        case "Flirt Flirt Oh It Hurts":
+          iconImg = "Caps On, Hats Off.jpg.jpg"; length = "3:31.513"; bpm = 168; break;
+        case "Flowers of Antimony":
+          iconImg = "Flowers of Antimony (Rainbowdragonized) - Single.jpg.jpg"; length = "1:46.945"; bpm = 171; break;
+        case "Focus":
+          iconImg = "Super Hexagon EP.jpg.jpg"; length = "2:42.847"; bpm = 174; break;
+        case "Forged in Stars":
+          iconImg = "Spectra.jpg.jpg"; length = "3:16.257"; bpm = 143; break;
+        case "FOX":
+          iconImg = "Dimensions EP.jpg.jpg"; length = "5:17.178"; bpm = 138; break;
+        case "FTW":
+          iconImg = "Monstercat 016 - Expedition.jpg.jpg"; length = "4:17.671"; bpm = 130; break;
+        case "Fugitive":
+          iconImg = "Monstercat 021 - Perspective.jpg.jpg"; length = "4:45.388"; bpm = 125; break;
+        case "Galactic Voyage":
+          iconImg = "Astrocat EP.jpg.jpg"; length = "6:36.016"; bpm = 125; break;
+        case "GET UP":
+          iconImg = "GET UP.jpg.jpg"; length = "3:10.406"; bpm = 128; break;
+        case "Get Up":
+          iconImg = "Monstercat 012 - Aftermath.jpg.jpg"; length = "6:41.188"; bpm = 128; break;
+        case "Glitch":
+          iconImg = "Parallel Processing.jpg.jpg"; length = "5:47.480"; bpm = 158; break;
+        case "Granite":
+          iconImg = "Reject EP.png.png"; length = "2:31.954"; bpm = 128; break;
+        case "Gravity":
+          iconImg = "Monstercat 007 - Solace.jpg.jpg"; length = "5:54.115"; bpm = 128; break;
+        case "Grind":
+          iconImg = "Monstercat 012 - Aftermath.jpg.jpg"; length = "5:15.376"; bpm = 128; break;
+        case "Halcyon":
+          iconImg = "Monstercat 013 - Awakening.jpg.jpg"; length = "6:10.834"; bpm = 92; break;
+        case "Harmony":
+          iconImg = "Monstercat 011 - Revolution.jpg.jpg"; length = "6:17.104"; bpm = 128; break;
+        case "Heat":
+          iconImg = "Heat.jpg.jpg"; length = "5:50.041"; bpm = 128; break;
+        case "Heist":
+          iconImg = "Heist - Single.jpg.jpg"; length = "3:02.204"; bpm = 170; break;
+        case "Here It Comes":
+          iconImg = "Monstercat 018 - Frontier.jpg.jpg"; length = "3:32.088"; bpm = 150; break;
+        case "Here We Go":
+          iconImg = "Timestretch.JPG.jpg"; length = "6:46.961"; bpm = 176; break;
+        case "Hidden Level":
+          iconImg = "Hidden Level - Single.jpg.jpg"; length = "3:30.050"; bpm = 128; break;
+        case "Highscore":
+          iconImg = "Kiko.jpg.jpg"; length = "4:20.832"; bpm = 110; break;
+        case "Houston":
+          iconImg = "The Glory Days.jpg.jpg"; length = "5:23.500"; bpm = 130; break;
+        case "HYPE":
+          iconImg = "HYPE.png.png"; length = "3:02.909"; bpm = 128; break;
+        case "I\'m being Reelistic":
+          iconImg = "Omniverse EP.jpg.jpg"; length = "3:50.687"; bpm = 115; break;
+        case "I Call It Progstep":
+          iconImg = "Reupload.jpg.jpg"; length = "3:55.624"; bpm = 72; break;
+        case "In the Halls of the Usurper":
+          iconImg = "In the Halls of the Usurper (Just Shovels & Knights Version) - Single.jpg.jpg"; length = "2:10.482"; bpm = 155; break;
+        case "Into The Zone":
+          iconImg = "The Arcade Dream.jpg.jpg"; length = "2:41.462"; bpm = 122; break;
+        case "Ism":
+          iconImg = "ISM.jpg.jpg"; length = "5:23.631"; bpm = 151; break;
+        case "It\'s Pronounced Omnitica":
+          iconImg = "Reupload.jpg.jpg"; length = "5:00.225"; bpm = 128; break;
+        case "Jack Russel":
+          iconImg = "Caps On, Hats Off.jpg.jpg"; length = "3:21.691"; bpm = 134; break;
+        case "JOURNEY":
+          iconImg = "JOURNEY.jpeg.jpg"; length = "3:59.631"; bpm = 128; break;
+        case "Junction Seven":
+          iconImg = "F Minor Factory EP.jpg.jpg"; length = "5:05.240"; bpm = 175; break;
+        case "Katana Blaster":
+          iconImg = "Impostor Nostalgia.jpg.jpg"; length = "3:18.347"; bpm = 140; break;
+        case "La Danse Macabre":
+          iconImg = "La Danse Macabre.jpg.jpg"; length = "2:00.085"; bpm = 128; break;
+        case "Leaving Leafwood Forest":
+          iconImg = "Caps On, Hats Off.jpg.jpg"; length = "3:24.591"; bpm = 125; break;
+        case "Legacy":
+          iconImg = "Parallel Processing.jpg.jpg"; length = "5:17.074"; bpm = 114; break;
+        case "Let It Roar":
+          iconImg = "Renegade EP.jpg.jpg"; length = "5:46.409"; bpm = 140; break;
+        case "Lightspeed":
+          iconImg = "Lightspeed - Single.jpg.jpg"; length = "4:08.895"; bpm = 158; break;
+        case "Light Sticks":
+          iconImg = "Faster Than Light EP.jpg.jpg"; length = "5:19.843"; bpm = 128; break;
+        case "Livewire":
+          iconImg = "Ground Zero.jpg.jpg"; length = "5:42.413"; bpm = 130; break;
+        case "Logic Gatekeeper":
+          iconImg = "Parallel Processing.jpg.jpg"; length = "4:58.736"; bpm = 163; break;
+        case "Long Live The New Fresh":
+          iconImg = "Lunaria.jpg.jpg"; length = "4:27.049"; bpm = 127; break;
+        case "Lycanthropy":
+          iconImg = "Lycanthropy - Single.jpg.jpg"; length = "4:55.262"; bpm = 150; break;
+        case "Milky Ways":
+          iconImg = "Caps On, Hats Off.jpg.jpg"; length = "3:07.611"; bpm = 182; break;
+        case "MOSHI":
+          iconImg = "MOSHI.jpg.jpg"; length = "3:35.170"; bpm = 128; break;
+        case "Nemesis":
+          iconImg = "Monstercat 029 - Havoc.jpg.jpg"; length = "4:20.284"; bpm = 107; break;
+        case "New Game":
+          iconImg = "Monstercat 016 - Expedition.jpg.jpg"; length = "4:19.317"; bpm = 128; break;
+        case "No Holding On":
+          iconImg = "Monstercat 014 - Discovery.jpg.jpg"; length = "7:28.104"; bpm = 128; break;
+        case "No Party Like a Mojang Party":
+          iconImg = "The Glory Days.jpg.jpg"; length = "5:51.529"; bpm = 125; break;
+        case "OKAY":
+          iconImg = "OKAY.jpg.jpg"; length = "3:07.141"; bpm = 128; break;
+        case "Omniverse":
+          iconImg = "Omniverse EP.jpg.jpg"; length = "3:28.718"; bpm = 174; break;
+        case "Once Again":
+          iconImg = "Monstercat 016 - Expedition.jpg.jpg"; length = "3:46.351"; bpm = 110; break;
+        case "On The Run":
+          iconImg = "Dimensions EP.jpg.jpg"; length = "4:28.564"; bpm = 160; break;
+        case "Opia":
+          iconImg = "Opia.jpg.jpg"; length = "3:09.335"; bpm = 170; break;
+        case "Otis":
+          iconImg = "Super Hexagon EP.jpg.jpg"; length = "2:36.081"; bpm = 135; break;
+        case "Paper Dolls":
+          iconImg = "Paper Dolls - Single.jpg.jpg"; length = "2:55.777"; bpm = 200; break;
+        case "Parallel Processing":
+          iconImg = "Parallel Processing.jpg.jpg"; length = "8:29.022"; bpm = 109; break;
+        case "PARTY":
+          iconImg = "PARTY.jpg.jpg"; length = "3:39.480"; bpm = 128; break;
+        case "Partyt Ar Igang":
+          iconImg = "Caps On, Hats Off.jpg.jpg"; length = "2:57.136"; bpm = 127; break;
+        case "Peer Gynt":
+          iconImg = ""; length = "2:21.557"; bpm = 142; break;
+        case "Pirate Manners":
+          iconImg = "Caps On, Hats Off.jpg.jpg"; length = "3:02.151"; bpm = 115; break;
+        case "PIXEL":
+          iconImg = "PIXEL.jpg.jpg"; length = "3:18.373"; bpm = 128; break;
+        case "PLAY":
+          iconImg = "PLAY.jpg.jpg"; length = "3:04.111"; bpm = 128; break;
+        case "Play It Loud":
+          iconImg = ""; length = "7:07.154"; bpm = 130; break;
+        case "Play It Loud (Broken Robot Mix)":
+          iconImg = ""; length = "6:53.204"; bpm = 136; break;
+        case "Pyro":
+          iconImg = "Pyro - Single.jpg.jpg"; length = "3:36.058"; bpm = 145; break;
+        case "Quake":
+          iconImg = "Monstercat 013 - Awakening.jpg.jpg"; length = "5:41.498"; bpm = 128; break;
+        case "Rainbow Road":
+          iconImg = "Monstercat 016 - Expedition.jpg.jpg"; length = "2:53.061"; bpm = 170; break;
+        case "Rally the Troops":
+          iconImg = "Rally the Troops - Single.jpg.jpg"; length = "6:07.935"; bpm = 150; break;
+        case "Rat Twist":
+          iconImg = "Monstercat 016 - Expedition.jpg.jpg"; length = "4:00.117"; bpm = 128; break;
+        case "Razor Sharp":
+          iconImg = "Monstercat 013 - Awakening.jpg.jpg"; length = "4:41.808"; bpm = 110; break;
+        case "Renegade":
+          iconImg = "Renegade EP.jpg.jpg"; length = "6:10.546"; bpm = 127; break;
+        case "Renzokuken":
+          iconImg = "Monstercat 016 - Expedition.jpg.jpg"; length = "7:11.491"; bpm = 128; break;
+        case "Rhapsody":
+          iconImg = "Parallel Processing.jpg.jpg"; length = "6:13.054"; bpm = 104; break;
+        case "Rhusma":
+          iconImg = "Monstercat 013 - Awakening.jpg.jpg"; length = "5:52.835"; bpm = 128; break;
+        case "Rinse Out":
+          iconImg = "Rinse Out - Single.jpg.jpg"; length = "5:43.353"; bpm = 128; break;
+        case "Rocket":
+          iconImg = "Rocket - Single.png.png"; length = "6:28.257"; bpm = 128; break;
+        case "ROCK IT":
+          iconImg = "Rocket League x Monstercat Vol. 1.jpg.jpg"; length = "3:11.242"; bpm = 128; break;
+        case "ROCK IT (VIP)":
+          iconImg = "Rock It (Vip) - Single.jpg.jpg"; length = "3:15.135"; bpm = 128; break;
+        case "Rocktronik":
+          iconImg = "Monstercat 008 - Anniversary.jpg.jpg"; length = "5:08.166"; bpm = 130; break;
+        case "SAIKOU":
+          iconImg = "SAIKOU.jpg.jpg"; length = "2:55.412"; bpm = 128; break;
+        case "Sentinel":
+          iconImg = "Monstercat 019 - Endeavour.jpg.jpg"; length = "5:28.437"; bpm = 130; break;
+        case "Sevcon":
+          iconImg = "The Glory Days.jpg.jpg"; length = "4:34.755"; bpm = 133; break;
+        case "Sexy Beast":
+          iconImg = "Monstercat 010 - Conquest.jpg.jpg"; length = "5:15.350"; bpm = 128; break;
+        case "Sidewinder":
+          iconImg = "Monstercat 013 - Awakening.jpg.jpg"; length = "6:46.491"; bpm = 130; break;
+        case "So Far Away":
+          iconImg = "So Far Away.jpg.jpg"; length = "3:39.297"; bpm = 125; break;
+        case "Space Invaders":
+          iconImg = "Space Invaders.jpg.jpg"; length = "5:48.108"; bpm = 128; break;
+        case "Spection":
+          iconImg = "Spection EP.jpg.jpg"; length = "4:52.362"; bpm = 170; break;
+        case "Spectra":
+          iconImg = "Spectra.jpg.jpg"; length = "4:00.117"; bpm = 130; break;
+        case "SPOOKY":
+          iconImg = "SPOOKY.jpg.jpg"; length = "3:49.799"; bpm = 128; break;
+        case "Starfish":
+          iconImg = "ISM.jpg.jpg"; length = "5:01.923"; bpm = 101; break;
+        case "Starship Showdown":
+          iconImg = "Caps On, Hats Off.jpg.jpg"; length = "4:08.293"; bpm = 147; break;
+        case "Steampunk Warlord":
+          iconImg = "Caps On, Hats Off.jpg.jpg"; length = "3:34.099"; bpm = 157; break;
+        case "Stock & Pull":
+          iconImg = "Monstercat 011 - Revolution.jpg.jpg"; length = "5:51.007"; bpm = 128; break;
+        case "Strike the Earth":
+          iconImg = "Strike the Earth.jpg.jpg"; length = "3:36.111"; bpm = 174; break;
+        case "Sugar Rush":
+          iconImg = "Sugar Rush EP.jpg.jpg"; length = "4:44.865"; bpm = 128; break;
+        case "Surface Tension":
+          iconImg = "Rally the Troops - Single.jpg.jpg"; length = "5:41.080"; bpm = 174; break;
+        case "Surge":
+          iconImg = "Surge EP.jpg.jpg"; length = "3:56.930"; bpm = 128; break;
+        case "System Failure":
+          iconImg = "System Failure - Single.jpg.jpg"; length = "3:48.858"; bpm = 150; break;
+        case "Tension":
+          iconImg = "Ground Zero.jpg.jpg"; length = "4:58.109"; bpm = 143; break;
+        case "Termination Shock":
+          iconImg = "Digital Disconnect.jpg.jpg"; length = "4:50.272"; bpm = 126; break;
+        case "The Art of War":
+          iconImg = "Spectra.jpg.jpg"; length = "3:13.280"; bpm = 174; break;
+        case "The Bigger Bang":
+          iconImg = "Excision 2014 Mix Compilation.jpg.jpg"; length = "4:57.247"; bpm = 128; break;
+        case "The Cave, The Treasure":
+          iconImg = "Caps On, Hats Off.jpg.jpg"; length = "3:27.307"; bpm = 181; break;
+        case "The Devil's Den":
+          iconImg = "Bangarang.jpg.jpg"; length = "4:53.093"; bpm = 128; break;
+        case "The Escape":
+          iconImg = "Monstercat 020 - Altitude.jpg.jpg"; length = "5:03.673"; bpm = 128; break;
+        case "The Lunar Whale":
+          iconImg = "Parallel Processing.jpg.jpg"; length = "4:35.826"; bpm = 109; break;
+        case "The Maze of Mayonnaise":
+          iconImg = "Caps On, Hats Off.jpg.jpg"; length = "3:11.190"; bpm = 135; break;
+        case "This Is It":
+          iconImg = "Monstercat 006 - Embrace.jpg.jpg"; length = "5:33.792"; bpm = 108; break;
+        case "This Time":
+          iconImg = "Monstercat 023 - Voyage.jpg.jpg"; length = "4:32.378"; bpm = 128; break;
+        case "Till It\'s Over":
+          iconImg = "Monstercat 016 - Expedition.jpg.jpg"; length = "4:30.863"; bpm = 110; break;
+        case "Time Goes By":
+          iconImg = "Time Goes By.jpg.jpg"; length = "3:26.315"; bpm = 128; break;
+        case "Time Lapse":
+          iconImg = "Time Lapse - Single.jpg.jpg"; length = "3:05.391"; bpm = 127; break;
+        case "Timewarp":
+          iconImg = "Monstercat 009 - Reunion.jpg.jpg"; length = "5:02.419"; bpm = 128; break;
+        case "Tokyo Skies":
+          iconImg = "Spectra.jpg.jpg"; length = "3:52.463"; bpm = 126; break;
+        case "Tonight":
+          iconImg = "Monstercat 012 - Aftermath.jpg.jpg"; length = "6:45.446"; bpm = 128; break;
+        case "To the Stars":
+          iconImg = "Monstercat 015 - Outlook.jpg.jpg"; length = "3:22.396"; bpm = 175; break;
+        case "Try This":
+          iconImg = "Monstercat 022 - Contact.jpg.jpg"; length = "3:49.694"; bpm = 174; break;
+        case "TURBO":
+          iconImg = "TURBO - Single.jpg.jpg"; length = "2:50.997"; bpm = 128; break;
+        case "Turbo Penguin":
+          iconImg = "Monstercat 020 - Altitude.jpg.jpg"; length = "3:31.356"; bpm = 128; break;
+        case "Ultimatum":
+          iconImg = "Monstercat 024 - Vanguard.jpg.jpg"; length = "4:15.216"; bpm = 173; break;
+        case "Unlocked":
+          iconImg = "Unlocked.jpg.jpg"; length = "3:47.683"; bpm = 128; break;
+        case "Vindicate Me":
+          iconImg = "The Glory Days.jpg.jpg"; length = "3:26.471"; bpm = 100; break;
+        case "Virus":
+          iconImg = "Virus.jpg.jpg"; length = "5:31.885"; bpm = 174; break;
+        case "Warp Zone":
+          iconImg = "Warp Zone - Single.jpg.jpg"; length = "3:06.932"; bpm = 128; break;
+        case "Wicked":
+          iconImg = "Wicked - Single.jpg.jpg"; length = "3:41.126"; bpm = 100; break;
+        case "Wormhole":
+          iconImg = "Wormhole EP.jpg.jpg"; length = "3:40.395"; bpm = 128; break;
+        case "Yo! Ho! And a Bottle of Bass!":
+          iconImg = "Reupload.jpg.jpg"; length = "6:24.130"; bpm = 145; break;
+        case "Tunnel Vision":
+          iconImg = "Monstercat 029 - Havoc.jpg.jpg"; length = "4:25.142"; bpm = 163; break;
       }
+      changeFavicon(iconImg == "" ? "http://marblelover003.github.io/Visimusic/VisimusicFavicons/Visimusic.png" : ("http://marblelover003.github.io/VisimusicAlbums/" + iconImg));
       for (var i = 1; i <= 150; i++) {
         progress.classList.remove("c" + i);
         document.body.classList.remove("b" + i);
