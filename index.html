@@ -4466,8 +4466,8 @@
         "The Bigger Bang", "Terminus", "Born Survivor", "Last Tile", "On My Way - 2020 Edit",
         "Pursuit", "Senses Overload", "Spider Dance - Shirobon Remix", "Mortal Kombat"
       ];
-      var isHelper = helpers.contains(song);
-      var isHelper2 = helpers2.contains(song);
+      var isHelper = helpers.includes(song);
+      var isHelper2 = helpers2.includes(song);
       if (isHelper == true) {
         audio.src = "https://marblelover003.github.io/VisimusicHelpers/" + song + ".mp3";
       } else if (isHelper2 == true) {
