@@ -1001,13 +1001,14 @@
     </div>
     <button id="infoBtn" class="notification">
       Info &sol; News
-      <span class="badge">1</span>
+      <span class="badge">2</span>
     </button>
     <div id="infoModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
         <h1>What's new?</h1>
         <p>NEW FAVICONS! Now, when you play a song, its album artwork is displayed as the favicon!</p>
+        <p>Also, a new song has been added: <b class="crazyRed">Mortal Kombat</b> by The Immortals!</p>
         <hr>
         <h1>What's coming?</h1>
         <p>I am still working on the timed lyrics for each song that has lyrics.</p>
@@ -2965,6 +2966,11 @@
     </span>
   </body>
   <script>
+    setInterval(function() {
+      for (var i = 0; i < document.getElementsByClassName("crazyRed").length; i++) {
+        document.getElementsByClassName("crazyRed").style.color = "rgb(255, " + Math.floor(Math.random() * 256) + ", 0)";
+      }
+    }, 10);
     var songs = [];
     var playCounts = [];
     for (var i = 1; i < document.getElementById("song").options.length; i++) {
