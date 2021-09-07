@@ -560,6 +560,7 @@
         <option value="Lycanthropy">Lycanthropy</option>
         <option value="Milky Ways">Milky Ways</option>
         <option value="MOSHI">MOSHI</option>
+        <option value="Mortal Kombat">Mortal Kombat</option>
         <option value="Nemesis">Nemesis</option>
         <option value="New Game">New Game</option>
         <option value="No Holding On">No Holding On (feat. Holly Drummond)</option>
@@ -880,6 +881,7 @@
             <option value="Lycanthropy">Lycanthropy</option>
             <option value="Milky Ways">Milky Ways</option>
             <option value="MOSHI">MOSHI</option>
+            <option value="Mortal Kombat">Mortal Kombat</option>
             <option value="Nemesis">Nemesis</option>
             <option value="New Game">New Game</option>
             <option value="No Holding On">No Holding On (feat. Holly Drummond)</option>
@@ -2218,6 +2220,14 @@
             <td>March 17, 2019</td>
           </tr>
           <tr>
+            <td>Mortal Kombat</td>
+            <td>The Immortals</td>
+            <td>Single release</td>
+            <td>4:51<small>528</small></td>
+            <td>134</td>
+            <td>September 6, 2021</td>
+          </tr>
+          <tr>
             <td>MOSHI</td>
             <td>Pegboard Nerds &amp; Tokyo Machine</td>
             <td>Monstercat 8-Year Anniversary</td>
@@ -3049,6 +3059,9 @@
       var cSong = localStorage.getItem("currentSong");
       var artist2;
       switch (cSong) {
+        case "Mortal Kombat":
+          artist2 = "The Immortals";
+          break;
         case "Last Tile":
           artist2 = "Kommisar";
           break;
@@ -3512,7 +3525,7 @@
         modal3.getElementsByClassName("modal-content")[0].classList.remove("moveout");
       }, 500);
     }
-    var songlengths = ["8:29.022", "8:17.110", "7:54.409", "7:54.122", "7:28.104", "7:27.320", "7:11.491", "7:10.158", "7:07.154", "6:59.840", "6:53.204", "6:46.961", "6:46.491", "6:45.446", "6:44.976", "6:41.188", "6:37.714", "6:36.016", "6:28.257", "6:24.130", "6:17.104", "6:16.737", "6:13.054", "6:11.983", "6:10.834", "6:10.546", "6:09.475", "6:07.935", "6:05.897", "5:58.870", "5:55.813", "5:54.115", "5:53.123", "5:52.835", "5:52.575", "5:51.529", "5:51.007", "5:50.041", "5:48.108", "5:47.480", "5:46.409", "5:43.353", "5:42.413", "5:41.498", "5:41.080", "5:37.893", "5:37.606", "5:33.792", "5:31.885", "5:29.168", "5:28.437", "5:28.124", "5:23.631", "5:23.500", "5:22.115", "5:21.619", "5:19.843", "5:17.178", "5:17.074", "5:16.813", "5:15.376", "5:15.350", "5:10.177", "5:08.166", "5:05.240", "5:04.091", "5:03.673", "5:03.020", "5:02.785", "5:02.419", "5:01.923", "5:00.225", "4:58.736", "4:58.109", "4:55.262", "4:53.093", "4:52.598", "4:52.362", "4:50.272", "4:49.097", "4:47.634", "4:45.388", "4:44.865", "4:44.865", "4:42.775", "4:42.148", "4:41.808", "4:40.084", "4:38.857", "4:35.826", "4:34.755", "4:33.371", "4:32.378", "4:32.169", "4:30.863", "4:29.740", "4:28.852", "4:28.564", "4:27.049", "4:25.142", "4:23.471", "4:22.661", "4:21.250", "4:20.937", "4:20.832", "4:20.466", "4:20.284", "4:20.048", "4:19.317", "4:17.906", "4:17.671", "4:15.216", "4:13.204", "4:08.895", "4:08.293", "4:03.382", "4:02.050", "4:01.606", "4:00.117", "4:00.117", "3:59.631", "3:59.072", "3:56.930", "3:55.624", "3:54.448", "3:52.463", "3:50.687", "3:49.799", "3:49.694", "3:47.683", "3:47.160", "3:46.351", "3:43.895", "3:41.126", "3:40.447", "3:40.395", "3:39.480", "3:39.297", "3:38.618", "3:36.111", "3:36.058", "3:35.719", "3:35.170", "3:34.099", "3:32.767", "3:32.349", "3:32.088", "3:31.513", "3:31.356", "3:30.534", "3:29.920", "3:28.718", "3:27.647", "3:27.307", "3:26.942", "3:26.471", "3:26.315", "3:26.132", "3:26.080", "3:24.591", "3:24.486", "3:23.389", "3:22.396", "3:21.691", "3:19.026", "3:18.373", "3:18.347", "3:16.963", "3:16.257", "3:15.135", "3:13.280", "3:11.242", "3:11.190", "3:11.164", "3:10.458", "3:10.406", "3:09.361", "3:09.335", "3:07.611", "3:07.141", "3:05.391", "3:04.111", "3:02.909", "3:02.204", "3:02.151", "3:00.350", "2:57.136", "2:55.777", "2:55.412", "2:53.061", "2:50.997", "2:42.847", "2:41.776", "2:41.462", "2:36.760", "2:36.081", "2:31.954", "2:21.557", "2:10.482", "2:00.398", "2:00.085", "1:46.945", "3:30.050", "3:48.858", "3:06.932", "4:57.247", "5:03.168", "3:34.656", "5:33.863", "1:39.120", "4:43.055", "1:49.343"];
+    var songlengths = ["4:51.528", "8:29.022", "8:17.110", "7:54.409", "7:54.122", "7:28.104", "7:27.320", "7:11.491", "7:10.158", "7:07.154", "6:59.840", "6:53.204", "6:46.961", "6:46.491", "6:45.446", "6:44.976", "6:41.188", "6:37.714", "6:36.016", "6:28.257", "6:24.130", "6:17.104", "6:16.737", "6:13.054", "6:11.983", "6:10.834", "6:10.546", "6:09.475", "6:07.935", "6:05.897", "5:58.870", "5:55.813", "5:54.115", "5:53.123", "5:52.835", "5:52.575", "5:51.529", "5:51.007", "5:50.041", "5:48.108", "5:47.480", "5:46.409", "5:43.353", "5:42.413", "5:41.498", "5:41.080", "5:37.893", "5:37.606", "5:33.792", "5:31.885", "5:29.168", "5:28.437", "5:28.124", "5:23.631", "5:23.500", "5:22.115", "5:21.619", "5:19.843", "5:17.178", "5:17.074", "5:16.813", "5:15.376", "5:15.350", "5:10.177", "5:08.166", "5:05.240", "5:04.091", "5:03.673", "5:03.020", "5:02.785", "5:02.419", "5:01.923", "5:00.225", "4:58.736", "4:58.109", "4:55.262", "4:53.093", "4:52.598", "4:52.362", "4:50.272", "4:49.097", "4:47.634", "4:45.388", "4:44.865", "4:44.865", "4:42.775", "4:42.148", "4:41.808", "4:40.084", "4:38.857", "4:35.826", "4:34.755", "4:33.371", "4:32.378", "4:32.169", "4:30.863", "4:29.740", "4:28.852", "4:28.564", "4:27.049", "4:25.142", "4:23.471", "4:22.661", "4:21.250", "4:20.937", "4:20.832", "4:20.466", "4:20.284", "4:20.048", "4:19.317", "4:17.906", "4:17.671", "4:15.216", "4:13.204", "4:08.895", "4:08.293", "4:03.382", "4:02.050", "4:01.606", "4:00.117", "4:00.117", "3:59.631", "3:59.072", "3:56.930", "3:55.624", "3:54.448", "3:52.463", "3:50.687", "3:49.799", "3:49.694", "3:47.683", "3:47.160", "3:46.351", "3:43.895", "3:41.126", "3:40.447", "3:40.395", "3:39.480", "3:39.297", "3:38.618", "3:36.111", "3:36.058", "3:35.719", "3:35.170", "3:34.099", "3:32.767", "3:32.349", "3:32.088", "3:31.513", "3:31.356", "3:30.534", "3:29.920", "3:28.718", "3:27.647", "3:27.307", "3:26.942", "3:26.471", "3:26.315", "3:26.132", "3:26.080", "3:24.591", "3:24.486", "3:23.389", "3:22.396", "3:21.691", "3:19.026", "3:18.373", "3:18.347", "3:16.963", "3:16.257", "3:15.135", "3:13.280", "3:11.242", "3:11.190", "3:11.164", "3:10.458", "3:10.406", "3:09.361", "3:09.335", "3:07.611", "3:07.141", "3:05.391", "3:04.111", "3:02.909", "3:02.204", "3:02.151", "3:00.350", "2:57.136", "2:55.777", "2:55.412", "2:53.061", "2:50.997", "2:42.847", "2:41.776", "2:41.462", "2:36.760", "2:36.081", "2:31.954", "2:21.557", "2:10.482", "2:00.398", "2:00.085", "1:46.945", "3:30.050", "3:48.858", "3:06.932", "4:57.247", "5:03.168", "3:34.656", "5:33.863", "1:39.120", "4:43.055", "1:49.343"];
     var tsl_h = 0, tsl_m = 0, tsl_s = 0, tsl_ms = 0;
     var x = 0;
     var timeInit = false;
@@ -3715,6 +3728,9 @@
         }
         document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/" + (document.getElementById("song").value == "I Call It Progstep" ? "I Call It Progstep 2" : (document.getElementById("song").value == "Deviance" ? "Deviance 3" : document.getElementById("song").value)) + (song == "Destroid 3 Crusaders" ? ".png" : ".PNG");
         switch (song) {
+          case "Mortal Kombat":
+            artist = "The Immortals";
+            break;
           case "Last Tile":
             artist = "Kommisar";
             break;
@@ -4081,6 +4097,7 @@
         document.getElementById("artist").innerHTML = artist;
         switch (song) {
           case "": hasLyrics = false; break;
+          case "Mortal Kombat": hasLyrics = true; break;
           case "Born Survivor": hasLyrics = true; break;
           case "Last Tile": hasLyrics = false; break;
           case "On My Way - 2020 Edit": hasLyrics = true; break;
@@ -4441,19 +4458,10 @@
         "Badland", "Lightspeed", "Children of Hell", "Close to Me", "Destroid 5 Activation",
         "Katana Blaster", "Tunnel Vision", "Hidden Level", "System Failure", "Warp Zone",
         "The Bigger Bang", "Terminus", "Born Survivor", "Last Tile", "On My Way - 2020 Edit",
-        "Pursuit", "Senses Overload", "Spider Dance - Shirobon Remix"
+        "Pursuit", "Senses Overload", "Spider Dance - Shirobon Remix", "Mortal Kombat"
       ];
-      var isHelper = false;
-      var isHelper2 = false;
-      for (var i = 0; i < helpers.length; i++) {
-        if (song == helpers[i]) {
-          isHelper = true;
-          break;
-        } else if (song == helpers2[i]) {
-          isHelper2 = true;
-          break;
-        }
-      }
+      var isHelper = helpers.contains(song);
+      var isHelper2 = helpers2.contains(song);
       if (isHelper == true) {
         audio.src = "https://marblelover003.github.io/VisimusicHelpers/" + song + ".mp3";
       } else if (isHelper2 == true) {
@@ -4792,6 +4800,7 @@
         case "Terminus":
         case "On My Way - 2020 Edit":
         case "Senses Overload":
+        case "Mortal Kombat":
           colors = ["#ffffff"];
           style = styles.single;
           barcolor = 23;
@@ -5059,6 +5068,8 @@
       }
       var iconImg;
       switch (song) {
+        case "Mortal Kombat":
+          iconImg = "MortalKombat.jpg"; length = "4:51.528"; bpm = 134; break;
         case "Born Survivor":
           iconImg = "Back Tracking - EP.jpg.jpg"; length = "5:03.168"; bpm = 122; break;
         case "Last Tile":
@@ -5565,6 +5576,80 @@
         } else if (t >= 196.5 && t <= 207) {
           currentLyrics = "(The devil's den) (x7)";
         }
+      } else if (song == "Mortal Kombat") {
+        var lyrics = [
+          [4.2, 6, "Test your might"],
+          [7.8, 9.6, "Test your might"],
+          [11.3, 13.1, "Test your might"],
+          [15, 16.6, "Test your might"],
+          [16.7, 18.6, "<span style=\"color: rgb(255, " + Math.floor(Math.random() * 256) + ", 0)\">MORTAL KOMBAT!</span>"],
+          [25.3, 25.7, "Fight"],
+          [38.2, 40, "<span style=\"color: rgb(255, " + Math.floor(Math.random() * 256) + ", 0)\">MORTAL KOMBAT!</span>"],
+          [46.3, 47.2, "Excellent"],
+          [53.5, 54.3, "Excellent"],
+          [54.4, 56.1, "Kano"],
+          [56.1, 57.9, "Kano, Liu Kang"],
+          [57.9, 59.7, "Kano, Liu Kang, Raiden"],
+          [59.7, 61.5, "Kano, Liu Kang, Raiden, Johnny Cage"],
+          [61.5, 63.3, "Kano, Liu Kang, Raiden, Johnny Cage, Scorpion"],
+          [63.3, 65.1, "Kano, Liu Kang, Raiden, Johnny Cage, Scorpion, Sub-Zero"],
+          [65.1, 66.5, "Kano, Liu Kang, Raiden, Johnny Cage, Scorpion, Sub-Zero, Sonya"],
+          [66.5, 66.9, "Kano, Liu Kang, Raiden, Johnny Cage, Scorpion, Sub-Zero, Sonya..."],
+          [66.9, 68.7, "Kano, Liu Kang, Raiden, Johnny Cage, Scorpion, Sub-Zero, Sonya...<br><span style=\"color: rgb(255, " + Math.floor(Math.random() * 256) + ", 0)\">MORTAL KOMBAT!</span>"],
+          [75.4, 75.9, "Fight"],
+          [88.4, 90.2, "<span style=\"color: rgb(255, " + Math.floor(Math.random() * 256) + ", 0)\">MORTAL KOMBAT!</span>"],
+          [96.4, 97.4, "Excellent"],
+          [103.6, 104.5, "Excellent"],
+          [104.5, 106.3, "Test your might"],
+          [108.1, 109.9, "Test your might"],
+          [111.7, 113.5, "Test your might"],
+          [115.3, 117.1, "Test your might"],
+          [117.1, 118.85, "Test your might<br><span style=\"color: rgb(255, " + Math.floor(Math.random() * 256) + ", 0)\">MORTAL KOMBAT!</span>"],
+          [118.9, 120.6, "Kano"],
+          [120.6, 122.4, "Kano, Liu Kang"],
+          [122.4, 124.2, "Kano, Liu Kang, Raiden"],
+          [124.2, 126, "Kano, Liu Kang, Raiden, Johnny Cage"],
+          [126, 127.8, "Kano, Liu Kang, Raiden, Johnny Cage, Scorpion"],
+          [127.8, 129.6, "Kano, Liu Kang, Raiden, Johnny Cage, Scorpion, Sub-Zero"],
+          [129.6, 130.95, "Kano, Liu Kang, Raiden, Johnny Cage, Scorpion, Sub-Zero, Sonya"],
+          [130.95, 131.4, "Kano, Liu Kang, Raiden, Johnny Cage, Scorpion, Sub-Zero, Sonya..."],
+          [131.4, 133.17, "Kano, Liu Kang, Raiden, Johnny Cage, Scorpion, Sub-Zero, Sonya...<br><span style=\"color: rgb(255, " + Math.floor(Math.random() * 256) + ", 0)\">MORTAL KOMBAT!</span>"],
+          [133.17, 133.85, "Excellent"],
+          [136.75, 137.45, "Excellent"],
+          [140.3, 141.05, "Excellent"],
+          [143.95, 144.64, "Excellent"],
+          [147.1, 147.5, "Fight"],
+          [160.05, 161.85, "<span style=\"color: rgb(255, " + Math.floor(Math.random() * 256) + ", 0)\">MORTAL KOMBAT!</span>"],
+          [174.33, 174.96, "Test"],
+          [174.96, 175.28, "Test your"],
+          [175.28, 176.14, "Test your might"],
+          [183.33, 185.13, "Test your might"],
+          [186.9, 188.67, "Test your might"],
+          [188.67, 190.41, "Test your might<br><span style=\"color: rgb(255, " + Math.floor(Math.random() * 256) + ", 0)\">MORTAL KOMBAT!</span>"],
+          [190.46, 192.23, "Kano"],
+          [192.23, 194, "Kano, Liu Kang"],
+          [194, 195.8, "Kano, Liu Kang, Raiden"],
+          [195.8, 197.6, "Kano, Liu Kang, Raiden, Johnny Cage"],
+          [197.6, 199.38, "Kano, Liu Kang, Raiden, Johnny Cage, Scorpion"],
+          [199.38, 201.2, "Kano, Liu Kang, Raiden, Johnny Cage, Scorpion, Sub-Zero"],
+          [201.2, 202.59, "Kano, Liu Kang, Raiden, Johnny Cage, Scorpion, Sub-Zero, Sonya"],
+          [202.59, 203, "Kano, Liu Kang, Raiden, Johnny Cage, Scorpion, Sub-Zero, Sonya..."],
+          [203, 203.63, "Kano, Liu Kang, Raiden, Johnny Cage, Scorpion, Sub-Zero, Sonya...<br>Test"],
+          [203.63, 203.93, "Kano, Liu Kang, Raiden, Johnny Cage, Scorpion, Sub-Zero, Sonya...<br>Test your"],
+          [203.93, 204.85, "Kano, Liu Kang, Raiden, Johnny Cage, Scorpion, Sub-Zero, Sonya...<br>Test your might"],
+          [217.35, 219.15, "<span style=\"color: rgb(255, " + Math.floor(Math.random() * 256) + ", 0)\">MORTAL KOMBAT!</span>"],
+          [231.68, 233.48, "<span style=\"color: rgb(255, " + Math.floor(Math.random() * 256) + ", 0)\">MORTAL KOMBAT!</span>"],
+          [246, 247.8, "<span style=\"color: rgb(255, " + Math.floor(Math.random() * 256) + ", 0)\">MORTAL KOMBAT!</span>"],
+          [267.47, 269.22, "<span style=\"color: rgb(255, " + Math.floor(Math.random() * 256) + ", 0)\">MORTAL KOMBAT!</span>"],
+          [274.65, 276.45, "<span style=\"color: rgb(255, " + Math.floor(Math.random() * 256) + ", 0)\">MORTAL KOMBAT!</span>"],
+          [281.81, 283.65, "<span style=\"color: rgb(255, " + Math.floor(Math.random() * 256) + ", 0)\">MORTAL KOMBAT!</span>"],
+          [283.65, 290, "<span style=\"color: rgb(" + (128 - ((290 / 283.65) * 6.35)) + ", 0, 0)\">MORTAL KOMBAT!</span>"],
+        ];
+        for (var i = 0; i < lyrics.length; i++) {
+          if (t >= lyrics[i][0] && t <= lyrics[i][1]) {
+            currentLyrics = lyrics[i][2];
+          }
+        }
       } else if (song == "Virus") {
         var lyrics = [
           [0, 3, "&bull;"],
@@ -5856,11 +5941,11 @@
           [112, 118.2, "&bull;"],
           [118.2, 124.4, "&bull;&bull;"],
           [124.4, 130.6, "&bull;&bull;&bull;"],
-          [130.6, 132.3, "Like surface tension,"],
-          [132.3, 132.7, "Like surface tension, IT'S"],
-          [132.7, 132.9, "Like surface tension, IT'S TE"],
-          [132.9, 133.1, "Like surface tension, IT'S TEMI"],
-          [133.1, 134, "Like surface tension, IT'S TEMINITE"],
+          [130.6, 132.3, "Like surface tension"],
+          [132.3, 132.7, "Like surface tension - IT'S"],
+          [132.7, 132.9, "Like surface tension - IT'S TE"],
+          [132.9, 133.1, "Like surface tension - IT'S TEMI"],
+          [133.1, 134, "Like surface tension - IT'S TEMINITE"],
           [134, 148.4333, "&bull;"],
           [148.4333, 162.8667, "&bull;&bull;"],
           [162.8667, 177.3, "&bull;&bull;&bull;"],
