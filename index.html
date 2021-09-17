@@ -731,13 +731,11 @@
         <option>-55</option>
         <option>-50</option>
       </select><br>
-      Use
-      <select id="songTagVer" onchange="checkSong()" disabled="true">
-        <option value=4>v4</option>
-        <option value=5>v5</option>
-        <option value=6>v6</option>
-        <option value=0 selected>no</option>
-      </select> song tags. <a href="javascript:noSongTag()">?</a><br>
+      Song tags:
+      <select id="songTagVer" onchange="checkSong()">
+        <option value=1>ON</option>
+        <option value=0 selected>OFF</option>
+      </select><br>
       <button onclick="setDefaults()">Set Defaults</button> <button onclick="resetDefaults()" class="red">Reset Defaults</button>
       <button onclick="selectSong()" id="button" disabled="true">Play! &#9656;</button><br>
     </span>
@@ -2957,7 +2955,7 @@
       bpm<br>
       <b id="bpm" style="font-size: 50px;">0</b>
     </span>
-    <img width="216" height="216" style="position: absolute; top: 8px; right: 8px; visibility: hidden;" id="songTag" src="https://marblelover003.github.io/VisimusicSongTags/v4/Not playing.PNG">
+    <img width="216" height="216" style="position: absolute; top: 8px; right: 8px; visibility: hidden;" id="songTag" src="https://marblelover003.github.io/VisimusicSongTags/Not playing.png">
     <span id="visualizer">
       <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
     </span>
@@ -3714,25 +3712,30 @@
     }
     function checkSong() {
       song = document.getElementById("song").value;
-      document.getElementById("songTag").width = document.getElementById("songTagVer").value == 5 ? 384 : 216;
+      document.getElementById("songTag").width = 216;
       document.getElementById("songTag").height = 216;
       if (song == "") {
         document.getElementById("button").disabled = true;
-        document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/Not playing.PNG";
+        document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/Not playing.png";
         document.getElementById("artist").innerHTML = "???";
       } else {
         if (song == "") {
           document.getElementById("button").disabled = true;
         } else {
-          //if (song == "BEWM") {
-            document.getElementById("songTagVer").options.selectedIndex = 3;
-            document.getElementById("songTagVer").disabled = true;
-          //} else {
-          //  document.getElementById("songTagVer").disabled = false;
-          //}
           document.getElementById("button").disabled = false;
         }
-        document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/" + (document.getElementById("song").value == "I Call It Progstep" ? "I Call It Progstep 2" : (document.getElementById("song").value == "Deviance" ? "Deviance 3" : document.getElementById("song").value)) + (song == "Destroid 3 Crusaders" ? ".png" : ".PNG");
+        var t = document.getElementById("song").value;
+        switch (document.getElementById("song").value) {
+          case "Destroid 1 - Raise Your Fist":
+          case "Faster Than Light":
+          case "It's Pronounced Omnitica":
+          case "ROCK IT (VIP)":
+          case "Virus":
+          case "Wicked":
+          case "Wormhole":
+            t += " 1";
+        }
+        document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/" + (document.getElementById("song").value == "I Call It Progstep" ? "I Call It Progstep 2" : (document.getElementById("song").value == "Deviance" ? "Deviance 1" : (document.getElementById("song").value == "Terminus" ? "Terminus 8" : document.getElementById("song").value))) + ".png";
         switch (song) {
           case "Mortal Kombat":
             artist = "The Immortals";
@@ -4397,7 +4400,7 @@
             endMessage(document.getElementById("song").value + " by " + artist + " has ended.");
           }
           audio.src = "";
-          document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + document.getElementById("songTagVer").value + "/Not playing.PNG";
+          document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/Not playing.png";
           document.getElementById("song").selectedIndex = 0;
           changeFavicon("https://marblelover003.github.io/Visimusic/VisimusicFavicons/Visimusic.png");
           var x = 0;
@@ -4475,7 +4478,7 @@
       } else {
         audio.src = "https://marblelover003.github.io/Visimusic/" + song + ".mp3";
       }
-      document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/" + (song == "Deviance" ? "Deviance 2" : song) + ".PNG";
+      document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/" + (song == "Deviance" ? "Deviance 1" : song) + ".png";
       if (pageInitiated == false) {
         initPage();
       }
@@ -6823,22 +6826,50 @@
       if (song == "Terminus") {
         if (audio.currentTime < 147) {
           bpm = "???";
+          document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/Terminus 1.png";
         } else if (audio.currentTime < 163.75) {
           bpm = Math.floor(130 - ((163.75 - audio.currentTime) / 16.75 * 30));
+          document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/Terminus 2.png";
+          if (bpm < 110) {
+            document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/Terminus 3.png";
+          } else if (bpm < 115) {
+            document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/Terminus 4.png";
+          } else if (bpm < 120) {
+            document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/Terminus 5.png";
+          } else if (bpm < 125) {
+            document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/Terminus 6.png";
+          } else if (bpm < 130) {
+            document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/Terminus 7.png";
+          }
         } else if (audio.currentTime < 450) {
           bpm = 130;
+          document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/Terminus 8.png";
         } else if (audio.currentTime < 466) {
           bpm = Math.floor(100 + ((466 - audio.currentTime) / 16 * 30));
+          if (bpm >= 125) {
+            document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/Terminus 8.png";
+          } else if (bpm >= 115) {
+            document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/Terminus 6.png";
+          } else if (bpm >= 105) {
+            document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/Terminus 4.png";
+          } else if (bpm >= 100) {
+            document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/Terminus 2.png";
+          }
         } else if (audio.currentTime < 477) {
           bpm = Math.floor(95 + ((477 - audio.currentTime) / 11 * 5));
+          document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/Terminus 1.png";
         } else if (audio.currentTime < 480) {
           bpm = Math.floor(70 + ((480 - audio.currentTime) / 3 * 25));
+          document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/Terminus 1.png";
         } else if (audio.currentTime < 494.2) {
           bpm = Math.floor(20 + ((494.2 - audio.currentTime) / 14.2 * 50));
+          document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/Terminus 1.png";
         } else if (audio.currentTime < 495.2) {
           bpm = 20;
+          document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/Terminus 1.png";
         } else {
           bpm = 0;
+          document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/Terminus 1.png";
         }
       }
       if (song == "Cruise Control" && audio.currentTime < 17.85) {
@@ -6862,7 +6893,7 @@
         bpm = Math.floor(170 - ((186.9 - audio.currentTime) / 1.6 * 42));
       }
       if (song == "Faster Than Light" && audio.currentTime >= 186.9) {
-        document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Faster Than Light 2.PNG";
+        document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/Faster Than Light 2.png";
         bpm = 170;
       }
       if (song == "ROCK IT (VIP)" && audio.currentTime >= 118.8 && audio.currentTime < 125.4) {
@@ -6872,25 +6903,27 @@
         bpm = 150;
       }
       if (song == "Destroid 1 - Raise Your Fist" && audio.currentTime >= 183.5) {
-        document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Destroid 1 - Raise Your Fist 2.PNG";
+        document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/Destroid 1 - Raise Your Fist 2.png";
         bpm = 210;
       }
       if (song == "It\'s Pronounced Omnitica" && audio.currentTime >= 199.1 && audio.currentTime < 209.7) {
         bpm = Math.floor(170 - ((209.7 - audio.currentTime) / 10.6 * 42));
       }
+      if (song == "It\'s Pronounced Omnitica" && audio.currentTime >= 209) {
+        document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/It\'s Pronounced Omnitica 2.png";
+      }
       if (song == "It\'s Pronounced Omnitica" && audio.currentTime >= 209.7) {
-        document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/It\'s Pronounced Omnitica 2.PNG";
         bpm = 170;
       }
       if (song == "Wormhole" && audio.currentTime >= 135 && audio.currentTime < 162.5) {
         bpm = Math.floor(150 - ((162.5 - audio.currentTime) / 27.5 * 22));
       }
       if (song == "Wormhole" && audio.currentTime >= 162.5) {
-        document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Wormhole 2.PNG";
+        document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/Wormhole 2.png";
         bpm = 150;
       }
       if (song == "Caps On, Hats Off" && audio.currentTime >= 116) {
-        document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Caps On, Hats Off 2.PNG";
+        document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/Caps On, Hats Off 2.png";
         bpm = 190;
       }
       if (song == "Virus") {
@@ -6898,7 +6931,7 @@
           bpm = Math.floor(150 + ((210 - audio.currentTime) / 2.9 * 24));
         }
         if (audio.currentTime >= 210) {
-          document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Virus 2.PNG";
+          document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/Virus 2.png";
           bpm = 150;
         }
       }
@@ -6910,12 +6943,12 @@
           bpm = Math.floor(144 - ((176 - audio.currentTime) / 7.4 * 44));
         }
         if (audio.currentTime >= 24.4 && audio.currentTime < 175.7) {
-          document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/I Call It Progstep 2.PNG";
+          document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/I Call It Progstep 2.png";
           if (audio.currentTime < 168) {
             bpm = 100;
           }
         } else if (audio.currentTime >= 176) {
-          document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/I Call It Progstep 3.PNG";
+          document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/I Call It Progstep 3.png";
           bpm = 144;
         }
       }
@@ -6926,22 +6959,21 @@
         if (audio.currentTime >= 298.2 && audio.currentTime < 303.2) {
           bpm = Math.floor(Math.pow(Math.pow((303.2 - audio.currentTime) / 5, 1/5), 5) * 175);
         }
-        if (audio.currentTime < 166.5) {
-          document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Deviance 2.PNG";
+        if (audio.currentTime < 154.74) {
+          document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/Deviance 1.png";
           if (audio.currentTime < 139) {
             bpm = 110;
           }
-        } else if (audio.currentTime >= 154.5 && audio.currentTime < 297) {
-          document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Deviance 3.PNG";
+        } else if (audio.currentTime >= 154.74 && audio.currentTime < 297) {
           bpm = 175;
         }
       }
       if (song == "Wicked") {
         if ((audio.currentTime >= 48 && audio.currentTime < 77) || (audio.currentTime >= 163.2 && audio.currentTime < 192.2)) {
-          document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Wicked 2.PNG";
+          document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/Wicked 2.png";
           bpm = 200;
         } else {
-          document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/v" + songTagVer.value + "/Wicked.PNG";
+          document.getElementById("songTag").src = "https://marblelover003.github.io/VisimusicSongTags/Wicked 1.png";
           bpm = 100;
         }
       }
