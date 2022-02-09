@@ -463,6 +463,7 @@
         <option value="Cheat Codes VIP">Cheat Codes VIP</option>
         <option value="Checkpoint">Checkpoint</option>
         <option value="Children of Hell">Children of Hell</option>
+        <option value="Children of Hell X">Children of Hell X</option>
         <option value="Children of the Night">Children of the Night</option>
         <option value="Chipland">Chipland</option>
         <option value="Chip Zeal">Chip Zeal</option>
@@ -782,6 +783,7 @@
             <option value="Cheat Codes VIP">Cheat Codes VIP</option>
             <option value="Checkpoint">Checkpoint</option>
             <option value="Children of Hell">Children of Hell</option>
+            <option value="Children of Hell X">Children of Hell X</option>
             <option value="Children of the Night">Children of the Night</option>
             <option value="Chipland">Chipland</option>
             <option value="Chip Zeal">Chip Zeal</option>
@@ -1000,14 +1002,14 @@
     </div>
     <button id="infoBtn" class="notification">
       Info &sol; News
-      <span class="badge">2</span>
+      <span class="badge">1</span>
     </button>
     <div id="infoModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
         <h1>What's new?</h1>
-        <p>Visimusic has a brand-new catchphrase: <b>Keep Calm and Visualize On</b>! This catchphrase is a trademark of Visimusic, so don't take it as your own&hellip;</p>
-        <p>I updated the lyrics to <b>Children of Hell</b> since I realized they weren&apos;t completely accurate. But now they are, so no worries!</p>
+        <p>The name &quot;Muzzy&quot; is no more; as of February 9, 2022, he will be known as <b>MUZZ</b> - and he has a brand new song here on Visimusic, called <b>Children of Hell X</b>!</p>
+        <p>Keep Calm and Visualize On!</p>
         <hr>
         <h1>What's coming?</h1>
         <p>I am still working on the timed lyrics for each song that has lyrics.</p>
@@ -1437,11 +1439,19 @@
           </tr>
           <tr>
             <td>Children of Hell</td>
-            <td>Muzzy</td>
+            <td>MUZZ</td>
             <td>F Minor Factory EP</td>
             <td>6:44<small>976</small></td>
             <td>175</td>
             <td>September 13, 2020</td>
+          </tr>
+          <tr>
+            <td>Children of Hell X</td>
+            <td>MUZZ</td>
+            <td>Catharsis X EP</td>
+            <td>3:53<small>430</small></td>
+            <td>175</td>
+            <td>February 9, 2022</td>
           </tr>
           <tr>
             <td>Children of the Night</td>
@@ -1741,7 +1751,7 @@
           </tr>
           <tr>
             <td>Endgame</td>
-            <td>Muzzy</td>
+            <td>MUZZ</td>
             <td>Monstercat 016 - Expedition</td>
             <td>6:59<small>840</small></td>
             <td>175</td>
@@ -2109,7 +2119,7 @@
           </tr>
           <tr>
             <td>Junction Seven</td>
-            <td>Muzzy</td>
+            <td>MUZZ</td>
             <td>F Minor Factory EP</td>
             <td>5:05<small>240</small></td>
             <td>175</td>
@@ -3416,7 +3426,8 @@
         case "Junction Seven":
         case "Children of Hell":
         case "Endgame":
-          artist2 = "Muzzy";
+        case "Children of Hell X":
+          artist2 = "MUZZ";
           break;
         case "Renzokuken":
         case "Children of the Night":
@@ -4090,7 +4101,8 @@
           case "Junction Seven":
           case "Children of Hell":
           case "Endgame":
-            artist = "Muzzy";
+          case "Children of Hell X":
+            artist = "MUZZ";
             break;
           case "Renzokuken":
           case "Children of the Night":
@@ -4107,6 +4119,7 @@
         document.getElementById("artist").innerHTML = artist;
         switch (song) {
           case "": hasLyrics = false; break;
+          case "Children of Hell X": hasLyrics = true; break;
           case "Mortal Kombat": hasLyrics = true; break;
           case "Born Survivor": hasLyrics = true; break;
           case "Last Tile": hasLyrics = false; break;
@@ -4468,7 +4481,8 @@
         "Badland", "Lightspeed", "Children of Hell", "Close to Me", "Destroid 5 Activation",
         "Katana Blaster", "Tunnel Vision", "Hidden Level", "System Failure", "Warp Zone",
         "The Bigger Bang", "Terminus", "Born Survivor", "Last Tile", "On My Way - 2020 Edit",
-        "Pursuit", "Senses Overload", "Spider Dance - Shirobon Remix", "Mortal Kombat"
+        "Pursuit", "Senses Overload", "Spider Dance - Shirobon Remix", "Mortal Kombat",
+        "Children of Hell X"
       ];
       var isHelper = helpers.includes(song);
       var isHelper2 = helpers2.includes(song);
@@ -5066,6 +5080,7 @@
           break;
         case "Junction Seven":
         case "Children of Hell":
+        case "Children of Hell X":
           colors = ["#6b7d87", "#4f5e66"];
           style = styles.alternating;
           barcolor = 69;
@@ -5078,6 +5093,8 @@
       }
       var iconImg;
       switch (song) {
+        case "Children of Hell X":
+          iconImg = ""; length = "3:53.430"; bpm = 175; break;
         case "Mortal Kombat":
           iconImg = "MortalKombat.jpg"; length = "4:51.528"; bpm = 134; break;
         case "Born Survivor":
@@ -6437,6 +6454,23 @@
           [128.5, 131.3, "The angels have fell"],
           [131.3, 137.2, "It's time to take back the throne!"],
           [268.4, 274.3, "It's time to take back the throne!"]
+        ];
+        for (var i = 0; i < lyrics.length; i++) {
+          if (t >= lyrics[i][0] && t <= lyrics[i][1]) {
+            currentLyrics = lyrics[i][2];
+          }
+        }
+      } else if (song == "Children of Hell X") {
+        var lyrics = [
+          [00000, 00000, "We're working"],
+          [00000, 00000, "We're working in shackles again"],
+          [00000, 00000, "The age of a trend"],
+          [00000, 00000, "The world descends"],
+          [00000, 00000, "The world descends until we're nothing"],
+          [00000, 00000, "The world descends until we're nothing but the children of hell"],
+          [00000, 00000, "The angels have fell"],
+          [00000, 00000, "It's time to take back the throne!"],
+          [00000, 00000, "It's time to take back the throne!"]
         ];
         for (var i = 0; i < lyrics.length; i++) {
           if (t >= lyrics[i][0] && t <= lyrics[i][1]) {
